@@ -1,0 +1,33 @@
+name: Check
+
+on:
+  push:
+    tags-ignore:
+      - "*.*.*"
+    paths-ignore:
+      - "**.md"
+    branches-ignore:
+      - "documentation"
+  pull_request:
+    branches:
+      - "master"
+    paths-ignore:
+      - "**.md"
+
+jobs:
+  build:
+    name: Test
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Installing Rust toolchain
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          override: true
+          components: rustfmt, clippy
+      - name: Checking out sources
+        uses: actions/checkout@v1
+      - name: Pull submodule(s)
+        run: git submodule update
+      - name: Lint
+        run: make code_gen

@@ -1,0 +1,139 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "*"
+  # Run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  publish:
+    name: ${{ matrix.name }}
+    needs: remove-latest
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: macos-12
+            target: x86_64-apple-darwin
+            name: macOS 12 (x86-64)
+          - os: macos-11
+            target: x86_64-apple-darwin
+            name: macOS 11 (x86-64)
+
+          - os: ubuntu-22.04
+            target: x86_64-unknown-linux-gnu
+            name: Ubuntu 22.04 GNU (x86-64)
+          - os: ubuntu-22.04
+            target: x86_64-unknown-linux-musl
+            name: Ubuntu 22.04 Musl (x86-64)
+          - os: ubuntu-20.04
+            target: x86_64-unknown-linux-gnu
+            name: Ubuntu 20.04 GNU (x86-64)
+          - os: ubuntu-20.04
+            target: x86_64-unknown-linux-musl
+            name: Ubuntu 20.04 Musl (x86-64)
+
+          - os: windows-2022
+            target: x86_64-pc-windows-gnu
+            name: Windows 2022 GNU (x86-64)
+          - os: windows-2022
+            target: x86_64-pc-windows-msvc
+            name: Windows 2022 MSVC (x86-64)
+          - os: windows-2019
+            target: x86_64-pc-windows-gnu
+            name: Windows 2019 GNU (x86-64)
+          - os: windows-2019
+            target: x86_64-pc-windows-msvc
+            name: Windows 2019 MSVC (x86-64)
+
+    steps:
+      - name: Installing Rust toolchain
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          override: true
+
+      - name: Installing needed macOS dependencies
+        if: contains(matrix.os, 'macos-')
+        run: |
+          brew install openssl@1.1
+          brew install make
+
+      - name: Installing needed Linux dependencies
+        if: contains(matrix.os, 'ubuntu-')
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y -qq pkg-config libssl-dev liblzma-dev dpkg dpkg-dev
+          cargo install cargo-deb
+
+      - name: Installing needed Windows dependencies
+        if: contains(matrix.os, 'windows-')
+        run: |
+          rustup target add ${{ matrix.target }}
+
+      - name: Installing needed Linux dependencies for `musl`
+        if: contains(matrix.os, 'ubuntu-') && contains(matrix.target, '-musl')
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y -qq musl-dev musl-tools
+          rustup target add ${{ matrix.target }}
+
+      - name: Checking out sources
+        uses: actions/checkout@v1
+
+      - name: Running `make release`
+        run: make release VERSION=${{ github.ref_name }} TARGET=${{ matrix.target }} RELEASE_FILENAME_POSTFIX=-${{ matrix.os }}
+
+      - name: Running `make deb` on Linux
+        if: contains(matrix.os, 'ubuntu-')
+        shell: bash
+        run: make deb VERSION=${{ github.ref_name }} TARGET=${{ matrix.target }} RELEASE_FILENAME_POSTFIX=-${{ matrix.os }}
+
+      - name: Rename Windows executable
+        if: contains(matrix.os, 'windows-')
+        shell: bash
+        run: |
+          cd build
+          NAME=`ls sssh-*` 
+          mv $NAME `echo $NAME | sed 's/.exe//'`.exe
+          cd -
+
+      - name: Releasing assets for `${{ github.ref_name }}`
+        uses: softprops/action-gh-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref_name }}
+          files: build/sssh-*
+
+      - name: Replace `${{ github.ref_name }}` to `latest` in release files
+        shell: bash
+        run: |
+          cd build
+          for filename in sssh-*; do
+            newfilename=`echo $filename | sed 's/${{ github.ref_name }}/latest/g'`
+            mv $filename $newfilename
+          done
+          cd -
+
+      - name: Releasing assets for latest
+        uses: softprops/action-gh-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: latest
+          files: build/sssh-*
+
+  remove-latest:
+    name: Remove previous latest tag
+    runs-on: ubuntu-latest
+    steps:
+      - uses: dev-drprasad/delete-tag-and-release@v0.2.0
+        with:
+          delete_release: true
+          tag_name: latest
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
