@@ -40,7 +40,10 @@ chrono-integration = ["chrono"]
     let mut feature_writer =
         |comment: String, feature: &HashMap<String, Vec<String>>| -> Result<()> {
             cargo_toml_file.write_all(format!("\n# {}:\n", comment).as_bytes())?;
-            for (feature_name, sub_feature_list) in feature {
+            let mut sorted_feature_name_list = feature.keys().collect::<Vec<_>>();
+            sorted_feature_name_list.sort();
+            for feature_name in sorted_feature_name_list {
+                let sub_feature_list = feature.get(feature_name).unwrap();
                 cargo_toml_file.write_all(feature_name.as_bytes())?;
                 cargo_toml_file.write_all(b" = [")?;
                 cargo_toml_file.write_all(
@@ -59,7 +62,7 @@ chrono-integration = ["chrono"]
     // Regions and Continents have Asia, Europe, and Africa in common!
     let mut new_region_features = HashMap::new();
     for (region, feature_list) in region_features {
-        if ["asia", "europe", "africa"].contains(&region.as_str()) {
+        if ["asia", "europe", "africa", "antarctica"].contains(&region.as_str()) {
             new_region_features.insert("region-".to_owned() + region, feature_list.clone());
         } else {
             new_region_features.insert(region.clone(), feature_list.clone());

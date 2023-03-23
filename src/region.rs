@@ -370,7 +370,6 @@ impl ToString for Continent {
 /// ```
 /// We usually need to convert [`Alpha2`](crate::Alpha2) to [`Country`](crate::Country) and use that object instead.
 pub enum Region {
-    Antarctica,
     /// * The Republic of Angola
     /// * Burkina Faso
     /// * The Republic of Burundi
@@ -490,6 +489,7 @@ pub enum Region {
     /// * The Virgin Islands
     /// * The Virgin Islands of the United States
     Americas,
+    Antarctica,
     /// * The United Arab Emirates
     /// * The Islamic Republic of Afghanistan
     /// * The Republic of Armenia
@@ -629,7 +629,6 @@ impl Region {
     /// country features the conversion will fail.
     pub fn alpha2_list(&self) -> &[&str] {
         match self {
-            Self::Antarctica => &[],
             Self::Africa => &[
                 "AO", "BF", "BI", "BJ", "BW", "CD", "CF", "CG", "CI", "CM", "CV", "DJ", "DZ", "EG",
                 "EH", "ER", "ET", "GA", "GH", "GM", "GN", "GQ", "GW", "IO", "KE", "KM", "LR", "LS",
@@ -644,6 +643,7 @@ impl Region {
                 "PM", "PR", "PY", "SR", "SV", "SX", "TC", "TT", "UM", "US", "UY", "VC", "VE", "VG",
                 "VI",
             ],
+            Self::Antarctica => &[],
             Self::Asia => &[
                 "AE", "AF", "AM", "AZ", "BD", "BH", "BN", "BT", "CN", "CY", "GE", "HK", "ID", "IL",
                 "IN", "IQ", "IR", "JO", "JP", "KG", "KH", "KP", "KR", "KW", "KZ", "LA", "LB", "LK",
@@ -667,9 +667,9 @@ impl TryFrom<&str> for Region {
     type Error = SearchError;
     fn try_from(value: &str) -> Result<Self, Self::Error> {
         match value.to_lowercase().as_str() {
-            "antarctica" => Ok(Self::Antarctica),
             "africa" => Ok(Self::Africa),
             "americas" => Ok(Self::Americas),
+            "antarctica" => Ok(Self::Antarctica),
             "asia" => Ok(Self::Asia),
             "europe" => Ok(Self::Europe),
             "oceania" => Ok(Self::Oceania),
@@ -682,9 +682,9 @@ impl TryFrom<&str> for Region {
 impl ToString for Region {
     fn to_string(&self) -> String {
         match self {
-            Self::Antarctica => "Antarctica",
             Self::Africa => "africa",
             Self::Americas => "americas",
+            Self::Antarctica => "antarctica",
             Self::Asia => "asia",
             Self::Europe => "europe",
             Self::Oceania => "oceania",

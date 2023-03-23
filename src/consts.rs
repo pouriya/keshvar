@@ -1018,8 +1018,6 @@ pub const SUPPORTED_ALPHA2_LIST: &[Alpha2] = &[
 ];
 lazy_static! {
     pub static ref SUPPORTED_REGION_LIST: &'static [Region] = &[
-        #[cfg(all())]
-        Region::Antarctica,
         #[cfg(all(
             feature = "ao",
             feature = "bf",
@@ -1143,6 +1141,8 @@ lazy_static! {
             feature = "vi"
         ))]
         Region::Americas,
+        #[cfg(all())]
+        Region::Antarctica,
         #[cfg(all(
             feature = "ae",
             feature = "af",
