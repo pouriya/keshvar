@@ -370,6 +370,126 @@ impl ToString for Continent {
 /// ```
 /// We usually need to convert [`Alpha2`](crate::Alpha2) to [`Country`](crate::Country) and use that object instead.
 pub enum Region {
+    Antarctica,
+    /// * The Republic of Angola
+    /// * Burkina Faso
+    /// * The Republic of Burundi
+    /// * The Republic of Benin
+    /// * The Republic of Botswana
+    /// * The Democratic Republic of the Congo
+    /// * The Central African Republic
+    /// * The Republic of the Congo
+    /// * The Republic of Côte d'Ivoire
+    /// * The Republic of Cameroon
+    /// * The Republic of Cabo Verde
+    /// * The Republic of Djibouti
+    /// * The People's Democratic Republic of Algeria
+    /// * The Arab Republic of Egypt
+    /// * The Sahrawi Arab Democratic Republic
+    /// * The State of Eritrea
+    /// * The Federal Democratic Republic of Ethiopia
+    /// * The Gabonese Republic
+    /// * The Republic of Ghana
+    /// * The Republic of The Gambia
+    /// * The Republic of Guinea
+    /// * The Republic of Equatorial Guinea
+    /// * The Republic of Guinea-Bissau
+    /// * The British Indian Ocean Territory
+    /// * The Republic of Kenya
+    /// * The Union of the Comoros
+    /// * The Republic of Liberia
+    /// * The Kingdom of Lesotho
+    /// * The State of Libya
+    /// * The Kingdom of Morocco
+    /// * The Republic of Madagascar
+    /// * The Republic of Mali
+    /// * The Islamic Republic of Mauritania
+    /// * The Republic of Mauritius
+    /// * The Republic of Malawi
+    /// * The Republic of Mozambique
+    /// * The Republic of Namibia
+    /// * The Republic of the Niger
+    /// * The Federal Republic of Nigeria
+    /// * Réunion
+    /// * The Republic of Rwanda
+    /// * The Republic of Seychelles
+    /// * The Republic of the Sudan
+    /// * Saint Helena, Ascension and Tristan da Cunha
+    /// * The Republic of Sierra Leone
+    /// * The Republic of Senegal
+    /// * The Federal Republic of Somalia
+    /// * The Republic of South Sudan
+    /// * The Democratic Republic of São Tomé and Príncipe
+    /// * The Kingdom of Eswatini
+    /// * The Republic of Chad
+    /// * The French Southern and Antarctic Lands
+    /// * The Togolese Republic
+    /// * The Republic of Tunisia
+    /// * The United Republic of Tanzania
+    /// * The Republic of Uganda
+    /// * The Department of Mayotte
+    /// * The Republic of South Africa
+    /// * The Republic of Zambia
+    /// * The Republic of Zimbabwe
+    Africa,
+    /// * Antigua and Barbuda
+    /// * Anguilla
+    /// * The Argentine Republic
+    /// * Aruba
+    /// * Barbados
+    /// * The Collectivity of Saint-Barthélemy
+    /// * Bermuda
+    /// * The Plurinational State of Bolivia
+    /// * Bonaire, Sint Eustatius and Saba
+    /// * The Federative Republic of Brazil
+    /// * The Commonwealth of The Bahamas
+    /// * Belize
+    /// * Canada
+    /// * The Republic of Chile
+    /// * The Republic of Colombia
+    /// * The Republic of Costa Rica
+    /// * The Republic of Cuba
+    /// * The Country of Curaçao
+    /// * The Commonwealth of Dominica
+    /// * The Dominican Republic
+    /// * The Republic of Ecuador
+    /// * The Falkland Islands
+    /// * Grenada
+    /// * Guyane
+    /// * Kalaallit Nunaat
+    /// * Guadeloupe
+    /// * South Georgia and the South Sandwich Islands
+    /// * The Republic of Guatemala
+    /// * The Co-operative Republic of Guyana
+    /// * The Republic of Honduras
+    /// * The Republic of Haiti
+    /// * Jamaica
+    /// * Saint Kitts and Nevis
+    /// * The Cayman Islands
+    /// * Saint Lucia
+    /// * The Collectivity of Saint-Martin
+    /// * Martinique
+    /// * Montserrat
+    /// * The United Mexican States
+    /// * The Republic of Nicaragua
+    /// * The Republic of Panamá
+    /// * The Republic of Perú
+    /// * The Overseas Collectivity of Saint-Pierre and Miquelon
+    /// * The Commonwealth of Puerto Rico
+    /// * The Republic of Paraguay
+    /// * The Republic of Suriname
+    /// * The Republic of El Salvador
+    /// * Sint Maarten
+    /// * The Turks and Caicos Islands
+    /// * The Republic of Trinidad and Tobago
+    /// * United States Minor Outlying Islands
+    /// * The United States of America
+    /// * The Oriental Republic of Uruguay
+    /// * Saint Vincent and the Grenadines
+    /// * The Bolivarian Republic of Venezuela
+    /// * The Virgin Islands
+    /// * The Virgin Islands of the United States
+    Americas,
     /// * The United Arab Emirates
     /// * The Islamic Republic of Afghanistan
     /// * The Republic of Armenia
@@ -474,65 +594,6 @@ pub enum Region {
     /// * Ukraine
     /// * The Holy See
     Europe,
-    /// * Antigua and Barbuda
-    /// * Anguilla
-    /// * The Argentine Republic
-    /// * Aruba
-    /// * Barbados
-    /// * The Collectivity of Saint-Barthélemy
-    /// * Bermuda
-    /// * The Plurinational State of Bolivia
-    /// * Bonaire, Sint Eustatius and Saba
-    /// * The Federative Republic of Brazil
-    /// * The Commonwealth of The Bahamas
-    /// * Belize
-    /// * Canada
-    /// * The Republic of Chile
-    /// * The Republic of Colombia
-    /// * The Republic of Costa Rica
-    /// * The Republic of Cuba
-    /// * The Country of Curaçao
-    /// * The Commonwealth of Dominica
-    /// * The Dominican Republic
-    /// * The Republic of Ecuador
-    /// * The Falkland Islands
-    /// * Grenada
-    /// * Guyane
-    /// * Kalaallit Nunaat
-    /// * Guadeloupe
-    /// * South Georgia and the South Sandwich Islands
-    /// * The Republic of Guatemala
-    /// * The Co-operative Republic of Guyana
-    /// * The Republic of Honduras
-    /// * The Republic of Haiti
-    /// * Jamaica
-    /// * Saint Kitts and Nevis
-    /// * The Cayman Islands
-    /// * Saint Lucia
-    /// * The Collectivity of Saint-Martin
-    /// * Martinique
-    /// * Montserrat
-    /// * The United Mexican States
-    /// * The Republic of Nicaragua
-    /// * The Republic of Panamá
-    /// * The Republic of Perú
-    /// * The Overseas Collectivity of Saint-Pierre and Miquelon
-    /// * The Commonwealth of Puerto Rico
-    /// * The Republic of Paraguay
-    /// * The Republic of Suriname
-    /// * The Republic of El Salvador
-    /// * Sint Maarten
-    /// * The Turks and Caicos Islands
-    /// * The Republic of Trinidad and Tobago
-    /// * United States Minor Outlying Islands
-    /// * The United States of America
-    /// * The Oriental Republic of Uruguay
-    /// * Saint Vincent and the Grenadines
-    /// * The Bolivarian Republic of Venezuela
-    /// * The Virgin Islands
-    /// * The Virgin Islands of the United States
-    Americas,
-    Antarctica,
     /// * The Territory of American Samoa
     /// * The Commonwealth of Australia
     /// * The Territory of Cocos (Keeling) Islands
@@ -561,67 +622,6 @@ pub enum Region {
     /// * The Territory of the Wallis and Futuna Islands
     /// * The Independent State of Samoa
     Oceania,
-    /// * The Republic of Angola
-    /// * Burkina Faso
-    /// * The Republic of Burundi
-    /// * The Republic of Benin
-    /// * The Republic of Botswana
-    /// * The Democratic Republic of the Congo
-    /// * The Central African Republic
-    /// * The Republic of the Congo
-    /// * The Republic of Côte d'Ivoire
-    /// * The Republic of Cameroon
-    /// * The Republic of Cabo Verde
-    /// * The Republic of Djibouti
-    /// * The People's Democratic Republic of Algeria
-    /// * The Arab Republic of Egypt
-    /// * The Sahrawi Arab Democratic Republic
-    /// * The State of Eritrea
-    /// * The Federal Democratic Republic of Ethiopia
-    /// * The Gabonese Republic
-    /// * The Republic of Ghana
-    /// * The Republic of The Gambia
-    /// * The Republic of Guinea
-    /// * The Republic of Equatorial Guinea
-    /// * The Republic of Guinea-Bissau
-    /// * The British Indian Ocean Territory
-    /// * The Republic of Kenya
-    /// * The Union of the Comoros
-    /// * The Republic of Liberia
-    /// * The Kingdom of Lesotho
-    /// * The State of Libya
-    /// * The Kingdom of Morocco
-    /// * The Republic of Madagascar
-    /// * The Republic of Mali
-    /// * The Islamic Republic of Mauritania
-    /// * The Republic of Mauritius
-    /// * The Republic of Malawi
-    /// * The Republic of Mozambique
-    /// * The Republic of Namibia
-    /// * The Republic of the Niger
-    /// * The Federal Republic of Nigeria
-    /// * Réunion
-    /// * The Republic of Rwanda
-    /// * The Republic of Seychelles
-    /// * The Republic of the Sudan
-    /// * Saint Helena, Ascension and Tristan da Cunha
-    /// * The Republic of Sierra Leone
-    /// * The Republic of Senegal
-    /// * The Federal Republic of Somalia
-    /// * The Republic of South Sudan
-    /// * The Democratic Republic of São Tomé and Príncipe
-    /// * The Kingdom of Eswatini
-    /// * The Republic of Chad
-    /// * The French Southern and Antarctic Lands
-    /// * The Togolese Republic
-    /// * The Republic of Tunisia
-    /// * The United Republic of Tanzania
-    /// * The Republic of Uganda
-    /// * The Department of Mayotte
-    /// * The Republic of South Africa
-    /// * The Republic of Zambia
-    /// * The Republic of Zimbabwe
-    Africa,
 }
 
 impl Region {

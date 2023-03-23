@@ -170,10 +170,12 @@ pub enum Region {
 "#
         .as_bytes(),
     )?;
-    for region in region_features.keys() {
+    let mut sorted_region_features = region_features.keys().collect::<Vec<_>>();
+    sorted_region_features.sort();
+    for region in &sorted_region_features {
         for (_, info) in countries_info_list {
             if let Some(ref country_region) = info.region {
-                if region == &utils::to_cargo_feature_name(country_region) {
+                if **region == utils::to_cargo_feature_name(country_region) {
                     region_rs_file
                         .write_all(format!("    /// * {}\n", info.iso_long_name).as_bytes())?;
                 }
@@ -192,8 +194,6 @@ impl Region {
 "#
         .as_bytes(),
     )?;
-    let mut sorted_region_features = region_features.keys().collect::<Vec<_>>();
-    sorted_region_features.sort();
     for region in &sorted_region_features {
         let countries = region_features.get(*region).unwrap();
         region_rs_file.write_all(
