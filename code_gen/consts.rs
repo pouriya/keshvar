@@ -106,7 +106,10 @@ lazy_static! { pub static ref UNSUPPORTED_COUNTRIES_COUNT: usize = ALL_COUNTRIES
     consts_rs_file.write_all(
         b"lazy_static! { pub static ref SUPPORTED_REGION_LIST: &'static [Region] = &[\n",
     )?;
-    for (region, feature_list) in region_features.iter() {
+    let mut sorted_region_features = region_features.keys().collect::<Vec<_>>();
+    sorted_region_features.sort();
+    for region in sorted_region_features {
+        let feature_list = region_features.get(region).unwrap();
         consts_rs_file.write_all(b"    #[\n        cfg(\n            all(\n")?;
         consts_rs_file.write_all(
             feature_list
@@ -125,7 +128,10 @@ lazy_static! { pub static ref UNSUPPORTED_COUNTRIES_COUNT: usize = ALL_COUNTRIES
     consts_rs_file.write_all(
         b"lazy_static! { pub static ref SUPPORTED_SUBREGION_LIST: &'static [SubRegion] = &[\n",
     )?;
-    for (subregion, feature_list) in subregion_features.iter() {
+    let mut sorted_subregion_features = subregion_features.keys().collect::<Vec<_>>();
+    sorted_subregion_features.sort();
+    for subregion in sorted_subregion_features {
+        let feature_list = subregion_features.get(subregion).unwrap();
         consts_rs_file.write_all(b"    #[\n        cfg(\n            all(\n")?;
         consts_rs_file.write_all(
             feature_list
@@ -143,7 +149,10 @@ lazy_static! { pub static ref UNSUPPORTED_COUNTRIES_COUNT: usize = ALL_COUNTRIES
     consts_rs_file.write_all(
         b"lazy_static! { pub static ref SUPPORTED_WORLD_REGION_LIST: &'static [WorldRegion] = &[\n",
     )?;
-    for (world_region, feature_list) in world_region_features.iter() {
+    let mut sorted_world_region_features = world_region_features.keys().collect::<Vec<_>>();
+    sorted_world_region_features.sort();
+    for world_region in sorted_world_region_features {
+        let feature_list = world_region_features.get(world_region).unwrap();
         consts_rs_file.write_all(b"    #[\n        cfg(\n            all(\n")?;
         consts_rs_file.write_all(
             feature_list
