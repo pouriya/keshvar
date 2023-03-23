@@ -13,7 +13,7 @@ pub fn generate(
     region_features: &HashMap<String, Vec<String>>,
     subregion_features: &HashMap<String, Vec<String>>,
     world_region_features: &HashMap<String, Vec<String>>,
-    subdivision_type_name_list: &Vec<String>,
+    subdivision_type_name_list: &[String],
 ) -> Result<()> {
     let mut region_rs_file = fs::File::options()
         .create(true)
@@ -50,9 +50,11 @@ pub enum Continent {
 "#
         .as_bytes(),
     )?;
-    for continent in continent_features.keys() {
+    let mut sorted_continent_features = continent_features.keys().collect::<Vec<_>>();
+    sorted_continent_features.sort();
+    for continent in &sorted_continent_features {
         for (_, info) in countries_info_list {
-            if continent == &utils::to_cargo_feature_name(&info.continent) {
+            if **continent == utils::to_cargo_feature_name(&info.continent) {
                 region_rs_file
                     .write_all(format!("    /// * {}\n", utils::country_name(info)).as_bytes())?;
             }
@@ -70,7 +72,8 @@ impl Continent {
 "#
         .as_bytes(),
     )?;
-    for (continent, countries) in continent_features {
+    for continent in &sorted_continent_features {
+        let countries = continent_features.get(*continent).unwrap();
         region_rs_file.write_all(
             format!("            Self::{} => {{\n", utils::capitalize(continent)).as_bytes(),
         )?;
@@ -101,7 +104,7 @@ impl TryFrom<&str> for Continent {
 "#
         .as_bytes(),
     )?;
-    for continent in continent_features.keys() {
+    for continent in &sorted_continent_features {
         region_rs_file.write_all(
             format!(
                 "            {:?} => Ok(Self::{}),\n",
@@ -126,7 +129,7 @@ impl ToString for Continent {
 "#
         .as_bytes(),
     )?;
-    for continent in continent_features.keys() {
+    for continent in &sorted_continent_features {
         region_rs_file.write_all(
             format!(
                 "            Self::{} => {:?},\n",
@@ -189,7 +192,10 @@ impl Region {
 "#
         .as_bytes(),
     )?;
-    for (region, countries) in region_features {
+    let mut sorted_region_features = region_features.keys().collect::<Vec<_>>();
+    sorted_region_features.sort();
+    for region in &sorted_region_features {
+        let countries = region_features.get(*region).unwrap();
         region_rs_file.write_all(
             format!("            Self::{} => {{\n", utils::capitalize(region)).as_bytes(),
         )?;
@@ -220,7 +226,7 @@ impl TryFrom<&str> for Region {
 "#
         .as_bytes(),
     )?;
-    for region in region_features.keys() {
+    for region in &sorted_region_features {
         region_rs_file.write_all(
             format!(
                 "            {:?} => Ok(Self::{}),\n",
@@ -245,7 +251,7 @@ impl ToString for Region {
 "#
         .as_bytes(),
     )?;
-    for region in region_features.keys() {
+    for region in &sorted_region_features {
         region_rs_file.write_all(
             format!(
                 "            Self::{} => {:?},\n",
@@ -285,10 +291,12 @@ pub enum SubRegion {
 "#
         .as_bytes(),
     )?;
-    for subregion in subregion_features.keys() {
+    let mut sorted_subregion_features = subregion_features.keys().collect::<Vec<_>>();
+    sorted_subregion_features.sort();
+    for subregion in &sorted_subregion_features {
         for (_, info) in countries_info_list {
             if let Some(ref country_subregion) = info.subregion {
-                if subregion == &utils::to_cargo_feature_name(country_subregion) {
+                if **subregion == utils::to_cargo_feature_name(country_subregion) {
                     region_rs_file
                         .write_all(format!("    /// * {}\n", info.iso_long_name).as_bytes())?;
                 }
@@ -307,7 +315,8 @@ impl SubRegion {
 "#
         .as_bytes(),
     )?;
-    for (subregion, countries) in subregion_features {
+    for subregion in &sorted_subregion_features {
+        let countries = subregion_features.get(*subregion).unwrap();
         region_rs_file.write_all(
             format!("            Self::{} => {{\n", utils::capitalize(subregion)).as_bytes(),
         )?;
@@ -338,7 +347,7 @@ impl TryFrom<&str> for SubRegion {
 "#
         .as_bytes(),
     )?;
-    for subregion in subregion_features.keys() {
+    for subregion in &sorted_subregion_features {
         region_rs_file.write_all(
             format!(
                 "            {:?} => Ok(Self::{}),\n",
@@ -363,7 +372,7 @@ impl ToString for SubRegion {
 "#
         .as_bytes(),
     )?;
-    for subregion in subregion_features.keys() {
+    for subregion in &sorted_subregion_features {
         region_rs_file.write_all(
             format!(
                 "            Self::{} => {:?},\n",
@@ -403,9 +412,11 @@ pub enum WorldRegion {
 "#
         .as_bytes(),
     )?;
-    for world_region in world_region_features.keys() {
+    let mut sorted_world_region_features = world_region_features.keys().collect::<Vec<_>>();
+    sorted_world_region_features.sort();
+    for world_region in &sorted_world_region_features {
         for (_, info) in countries_info_list {
-            if world_region == &utils::to_cargo_feature_name(&info.world_region) {
+            if **world_region == utils::to_cargo_feature_name(&info.world_region) {
                 region_rs_file
                     .write_all(format!("    /// * {}\n", utils::country_name(info)).as_bytes())?;
             }
@@ -425,7 +436,8 @@ impl WorldRegion {
 "#
         .as_bytes(),
     )?;
-    for (world_region, countries) in world_region_features {
+    for world_region in &sorted_world_region_features {
+        let countries = world_region_features.get(*world_region).unwrap();
         region_rs_file.write_all(
             format!(
                 "            Self::{} => {{\n",
@@ -460,7 +472,7 @@ impl TryFrom<&str> for WorldRegion {
 "#
         .as_bytes(),
     )?;
-    for world_region in world_region_features.keys() {
+    for world_region in &sorted_world_region_features {
         region_rs_file.write_all(
             format!(
                 "            {:?} => Ok(Self::{}),\n",
@@ -485,7 +497,7 @@ impl ToString for WorldRegion {
 "#
         .as_bytes(),
     )?;
-    for world_region in world_region_features.keys() {
+    for world_region in &sorted_world_region_features {
         region_rs_file.write_all(
             format!(
                 "            Self::{} => {:?},\n",
@@ -513,7 +525,9 @@ pub enum SubdivisionType {
         .as_bytes(),
     )?;
     let max_example_count = 3;
-    for subdivision_type_name in subdivision_type_name_list {
+    let mut sorted_subdivision_type_name_list = subdivision_type_name_list.to_owned();
+    sorted_subdivision_type_name_list.sort();
+    for subdivision_type_name in &sorted_subdivision_type_name_list {
         let mut example_count = 0;
         region_rs_file.write_all(b"    /// Examples:\n")?;
         'outer: for (_, info) in countries_info_list {
@@ -548,7 +562,7 @@ impl TryFrom<&str> for SubdivisionType {
 "#
         .as_bytes(),
     )?;
-    for subdivision_type_name in subdivision_type_name_list {
+    for subdivision_type_name in &sorted_subdivision_type_name_list {
         region_rs_file.write_all(
             format!(
                 "            {:?} => Ok(Self::{}),\n",
@@ -574,7 +588,7 @@ impl ToString for SubdivisionType {
 "#
         .as_bytes(),
     )?;
-    for subdivision_type_name in subdivision_type_name_list {
+    for subdivision_type_name in &sorted_subdivision_type_name_list {
         region_rs_file.write_all(
             format!(
                 "            Self::{} => {:?},\n",
