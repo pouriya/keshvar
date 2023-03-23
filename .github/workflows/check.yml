@@ -28,6 +28,6 @@ jobs:
       - name: Checking out sources
         uses: actions/checkout@v1
       - name: Pull submodule(s)
-        run: git submodule update
-      - name: Lint
+        run: git submodule update --init
+      - name: Build & Test
         run: make code_gen

@@ -152,7 +152,7 @@ fn code_gen_countries(data_directory: PathBuf) -> Result<()> {
     // Categorize countries for `region`, `subregion`, and `world region`:
     let mut region_features = HashMap::new();
     // No country is in region `Antarctica`:
-    region_features.insert("Antarctica".to_string(), Vec::new());
+    region_features.insert("antarctica".to_string(), Vec::new());
     let mut subregion_features = HashMap::new();
     let mut world_region_features = HashMap::new();
     let mut continent_features = HashMap::new();
