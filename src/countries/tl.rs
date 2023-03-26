@@ -5,7 +5,7 @@
 #[cfg(all(feature = "tl", feature = "constants"))]
 pub mod consts {
     #[allow(unused_imports)]
-    use crate::{Alpha2, Alpha3, Continent, Region, SubRegion, WeekDay, WorldRegion, GEC};
+    use crate::{Alpha2, Alpha3, Continent, Region, SubRegion, WeekDay, WorldRegion, GEC, IOC};
 
     pub const ADDRESS_FORMAT: Option<&str> = None;
     pub const ALPHA2: Alpha2 = Alpha2::TL;
@@ -15,7 +15,7 @@ pub mod consts {
     pub const CURRENCY_CODE: &str = "IDR";
     pub const GEC: Option<GEC> = Some(GEC::TT);
     pub const INTERNATIONAL_PREFIX: &str = "None";
-    pub const IOC: Option<&str> = Some("TLS");
+    pub const IOC: Option<IOC> = Some(IOC::TLS);
     pub const ISO_SHORT_NAME: &str = "Timor-Leste";
     pub const ISO_LONG_NAME: &str = "The Democratic Republic of Timor-Leste";
     pub const OFFICIAL_LANGUAGE_LIST: &[&str] = &["pt"];
@@ -428,7 +428,9 @@ pub mod subdivisions {
     }
 }
 #[allow(unused_imports)]
-use crate::{Alpha2, Alpha3, Continent, Country, Region, SubRegion, WeekDay, WorldRegion, GEC};
+use crate::{
+    Alpha2, Alpha3, Continent, Country, Region, SubRegion, WeekDay, WorldRegion, GEC, IOC,
+};
 #[allow(unused_imports)]
 use std::collections::HashMap;
 #[cfg(feature = "tl")]
@@ -444,7 +446,7 @@ pub fn new() -> Country {
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "None",
-        ioc: Some("TLS"),
+        ioc: Some(IOC::TLS),
         iso_long_name: "The Democratic Republic of Timor-Leste",
         iso_short_name: "Timor-Leste",
         official_language_list: ["pt"].to_vec(),

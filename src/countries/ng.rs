@@ -5,7 +5,7 @@
 #[cfg(all(feature = "ng", feature = "constants"))]
 pub mod consts {
     #[allow(unused_imports)]
-    use crate::{Alpha2, Alpha3, Continent, Region, SubRegion, WeekDay, WorldRegion, GEC};
+    use crate::{Alpha2, Alpha3, Continent, Region, SubRegion, WeekDay, WorldRegion, GEC, IOC};
 
     pub const ADDRESS_FORMAT: Option<&str> = None;
     pub const ALPHA2: Alpha2 = Alpha2::NG;
@@ -15,7 +15,7 @@ pub mod consts {
     pub const CURRENCY_CODE: &str = "NGN";
     pub const GEC: Option<GEC> = Some(GEC::NI);
     pub const INTERNATIONAL_PREFIX: &str = "009";
-    pub const IOC: Option<&str> = Some("NGR");
+    pub const IOC: Option<IOC> = Some(IOC::NGR);
     pub const ISO_SHORT_NAME: &str = "Nigeria";
     pub const ISO_LONG_NAME: &str = "The Federal Republic of Nigeria";
     pub const OFFICIAL_LANGUAGE_LIST: &[&str] = &["en"];
@@ -789,7 +789,9 @@ pub mod subdivisions {
     }
 }
 #[allow(unused_imports)]
-use crate::{Alpha2, Alpha3, Continent, Country, Region, SubRegion, WeekDay, WorldRegion, GEC};
+use crate::{
+    Alpha2, Alpha3, Continent, Country, Region, SubRegion, WeekDay, WorldRegion, GEC, IOC,
+};
 #[allow(unused_imports)]
 use std::collections::HashMap;
 #[cfg(feature = "ng")]
@@ -805,7 +807,7 @@ pub fn new() -> Country {
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "009",
-        ioc: Some("NGR"),
+        ioc: Some(IOC::NGR),
         iso_long_name: "The Federal Republic of Nigeria",
         iso_short_name: "Nigeria",
         official_language_list: ["en"].to_vec(),

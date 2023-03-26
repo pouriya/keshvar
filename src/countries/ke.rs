@@ -5,7 +5,7 @@
 #[cfg(all(feature = "ke", feature = "constants"))]
 pub mod consts {
     #[allow(unused_imports)]
-    use crate::{Alpha2, Alpha3, Continent, Region, SubRegion, WeekDay, WorldRegion, GEC};
+    use crate::{Alpha2, Alpha3, Continent, Region, SubRegion, WeekDay, WorldRegion, GEC, IOC};
 
     pub const ADDRESS_FORMAT: Option<&str> = None;
     pub const ALPHA2: Alpha2 = Alpha2::KE;
@@ -15,7 +15,7 @@ pub mod consts {
     pub const CURRENCY_CODE: &str = "KES";
     pub const GEC: Option<GEC> = Some(GEC::KE);
     pub const INTERNATIONAL_PREFIX: &str = "000";
-    pub const IOC: Option<&str> = Some("KEN");
+    pub const IOC: Option<IOC> = Some(IOC::KEN);
     pub const ISO_SHORT_NAME: &str = "Kenya";
     pub const ISO_LONG_NAME: &str = "The Republic of Kenya";
     pub const OFFICIAL_LANGUAGE_LIST: &[&str] = &["en", "sw"];
@@ -1831,7 +1831,9 @@ pub mod subdivisions {
     }
 }
 #[allow(unused_imports)]
-use crate::{Alpha2, Alpha3, Continent, Country, Region, SubRegion, WeekDay, WorldRegion, GEC};
+use crate::{
+    Alpha2, Alpha3, Continent, Country, Region, SubRegion, WeekDay, WorldRegion, GEC, IOC,
+};
 #[allow(unused_imports)]
 use std::collections::HashMap;
 #[cfg(feature = "ke")]
@@ -1847,7 +1849,7 @@ pub fn new() -> Country {
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "000",
-        ioc: Some("KEN"),
+        ioc: Some(IOC::KEN),
         iso_long_name: "The Republic of Kenya",
         iso_short_name: "Kenya",
         official_language_list: ["en", "sw"].to_vec(),

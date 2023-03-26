@@ -5,7 +5,7 @@
 #[cfg(all(feature = "jp", feature = "constants"))]
 pub mod consts {
     #[allow(unused_imports)]
-    use crate::{Alpha2, Alpha3, Continent, Region, SubRegion, WeekDay, WorldRegion, GEC};
+    use crate::{Alpha2, Alpha3, Continent, Region, SubRegion, WeekDay, WorldRegion, GEC, IOC};
 
     pub const ADDRESS_FORMAT: Option<&str> =
         Some("〒{{postalcode}}\n{{region_short}}{{city}}{{street}}\n{{recipient}}\n{{country}}");
@@ -16,7 +16,7 @@ pub mod consts {
     pub const CURRENCY_CODE: &str = "JPY";
     pub const GEC: Option<GEC> = Some(GEC::JA);
     pub const INTERNATIONAL_PREFIX: &str = "010";
-    pub const IOC: Option<&str> = Some("JPN");
+    pub const IOC: Option<IOC> = Some(IOC::JPN);
     pub const ISO_SHORT_NAME: &str = "Japan";
     pub const ISO_LONG_NAME: &str = "Japan";
     pub const OFFICIAL_LANGUAGE_LIST: &[&str] = &["ja"];
@@ -932,7 +932,9 @@ pub mod subdivisions {
     }
 }
 #[allow(unused_imports)]
-use crate::{Alpha2, Alpha3, Continent, Country, Region, SubRegion, WeekDay, WorldRegion, GEC};
+use crate::{
+    Alpha2, Alpha3, Continent, Country, Region, SubRegion, WeekDay, WorldRegion, GEC, IOC,
+};
 #[allow(unused_imports)]
 use std::collections::HashMap;
 #[cfg(feature = "jp")]
@@ -950,7 +952,7 @@ pub fn new() -> Country {
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "010",
-        ioc: Some("JPN"),
+        ioc: Some(IOC::JPN),
         iso_long_name: "Japan",
         iso_short_name: "Japan",
         official_language_list: ["ja"].to_vec(),

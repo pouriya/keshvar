@@ -5,7 +5,7 @@
 #[cfg(all(feature = "kp", feature = "constants"))]
 pub mod consts {
     #[allow(unused_imports)]
-    use crate::{Alpha2, Alpha3, Continent, Region, SubRegion, WeekDay, WorldRegion, GEC};
+    use crate::{Alpha2, Alpha3, Continent, Region, SubRegion, WeekDay, WorldRegion, GEC, IOC};
 
     pub const ADDRESS_FORMAT: Option<&str> = None;
     pub const ALPHA2: Alpha2 = Alpha2::KP;
@@ -15,7 +15,7 @@ pub mod consts {
     pub const CURRENCY_CODE: &str = "KPW";
     pub const GEC: Option<GEC> = Some(GEC::KN);
     pub const INTERNATIONAL_PREFIX: &str = "00";
-    pub const IOC: Option<&str> = Some("PRK");
+    pub const IOC: Option<IOC> = Some(IOC::PRK);
     pub const ISO_SHORT_NAME: &str = "Korea (Democratic People's Republic of)";
     pub const ISO_LONG_NAME: &str = "The Democratic People's Republic of Korea";
     pub const OFFICIAL_LANGUAGE_LIST: &[&str] = &["ko"];
@@ -416,7 +416,9 @@ pub mod subdivisions {
     }
 }
 #[allow(unused_imports)]
-use crate::{Alpha2, Alpha3, Continent, Country, Region, SubRegion, WeekDay, WorldRegion, GEC};
+use crate::{
+    Alpha2, Alpha3, Continent, Country, Region, SubRegion, WeekDay, WorldRegion, GEC, IOC,
+};
 #[allow(unused_imports)]
 use std::collections::HashMap;
 #[cfg(feature = "kp")]
@@ -432,7 +434,7 @@ pub fn new() -> Country {
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: Some("PRK"),
+        ioc: Some(IOC::PRK),
         iso_long_name: "The Democratic People's Republic of Korea",
         iso_short_name: "Korea (Democratic People's Republic of)",
         official_language_list: ["ko"].to_vec(),

@@ -5,7 +5,7 @@
 #[cfg(all(feature = "vc", feature = "constants"))]
 pub mod consts {
     #[allow(unused_imports)]
-    use crate::{Alpha2, Alpha3, Continent, Region, SubRegion, WeekDay, WorldRegion, GEC};
+    use crate::{Alpha2, Alpha3, Continent, Region, SubRegion, WeekDay, WorldRegion, GEC, IOC};
 
     pub const ADDRESS_FORMAT: Option<&str> = None;
     pub const ALPHA2: Alpha2 = Alpha2::VC;
@@ -15,7 +15,7 @@ pub mod consts {
     pub const CURRENCY_CODE: &str = "XCD";
     pub const GEC: Option<GEC> = Some(GEC::VC);
     pub const INTERNATIONAL_PREFIX: &str = "011";
-    pub const IOC: Option<&str> = Some("VIN");
+    pub const IOC: Option<IOC> = Some(IOC::VIN);
     pub const ISO_SHORT_NAME: &str = "Saint Vincent and the Grenadines";
     pub const ISO_LONG_NAME: &str = "Saint Vincent and the Grenadines";
     pub const OFFICIAL_LANGUAGE_LIST: &[&str] = &["en"];
@@ -325,7 +325,9 @@ pub mod subdivisions {
     }
 }
 #[allow(unused_imports)]
-use crate::{Alpha2, Alpha3, Continent, Country, Region, SubRegion, WeekDay, WorldRegion, GEC};
+use crate::{
+    Alpha2, Alpha3, Continent, Country, Region, SubRegion, WeekDay, WorldRegion, GEC, IOC,
+};
 #[allow(unused_imports)]
 use std::collections::HashMap;
 #[cfg(feature = "vc")]
@@ -341,7 +343,7 @@ pub fn new() -> Country {
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "011",
-        ioc: Some("VIN"),
+        ioc: Some(IOC::VIN),
         iso_long_name: "Saint Vincent and the Grenadines",
         iso_short_name: "Saint Vincent and the Grenadines",
         official_language_list: ["en"].to_vec(),

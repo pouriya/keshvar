@@ -5,7 +5,7 @@
 #[cfg(all(feature = "al", feature = "constants"))]
 pub mod consts {
     #[allow(unused_imports)]
-    use crate::{Alpha2, Alpha3, Continent, Region, SubRegion, WeekDay, WorldRegion, GEC};
+    use crate::{Alpha2, Alpha3, Continent, Region, SubRegion, WeekDay, WorldRegion, GEC, IOC};
 
     pub const ADDRESS_FORMAT: Option<&str> = None;
     pub const ALPHA2: Alpha2 = Alpha2::AL;
@@ -15,7 +15,7 @@ pub mod consts {
     pub const CURRENCY_CODE: &str = "ALL";
     pub const GEC: Option<GEC> = Some(GEC::AL);
     pub const INTERNATIONAL_PREFIX: &str = "00";
-    pub const IOC: Option<&str> = Some("ALB");
+    pub const IOC: Option<IOC> = Some(IOC::ALB);
     pub const ISO_SHORT_NAME: &str = "Albania";
     pub const ISO_LONG_NAME: &str = "The Republic of Albania";
     pub const OFFICIAL_LANGUAGE_LIST: &[&str] = &["sq"];
@@ -410,7 +410,9 @@ pub mod subdivisions {
     }
 }
 #[allow(unused_imports)]
-use crate::{Alpha2, Alpha3, Continent, Country, Region, SubRegion, WeekDay, WorldRegion, GEC};
+use crate::{
+    Alpha2, Alpha3, Continent, Country, Region, SubRegion, WeekDay, WorldRegion, GEC, IOC,
+};
 #[allow(unused_imports)]
 use std::collections::HashMap;
 #[cfg(feature = "al")]
@@ -426,7 +428,7 @@ pub fn new() -> Country {
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: Some("ALB"),
+        ioc: Some(IOC::ALB),
         iso_long_name: "The Republic of Albania",
         iso_short_name: "Albania",
         official_language_list: ["sq"].to_vec(),

@@ -5,7 +5,7 @@
 #[cfg(all(feature = "to", feature = "constants"))]
 pub mod consts {
     #[allow(unused_imports)]
-    use crate::{Alpha2, Alpha3, Continent, Region, SubRegion, WeekDay, WorldRegion, GEC};
+    use crate::{Alpha2, Alpha3, Continent, Region, SubRegion, WeekDay, WorldRegion, GEC, IOC};
 
     pub const ADDRESS_FORMAT: Option<&str> = None;
     pub const ALPHA2: Alpha2 = Alpha2::TO;
@@ -15,7 +15,7 @@ pub mod consts {
     pub const CURRENCY_CODE: &str = "TOP";
     pub const GEC: Option<GEC> = Some(GEC::TN);
     pub const INTERNATIONAL_PREFIX: &str = "00";
-    pub const IOC: Option<&str> = Some("TGA");
+    pub const IOC: Option<IOC> = Some(IOC::TGA);
     pub const ISO_SHORT_NAME: &str = "Tonga";
     pub const ISO_LONG_NAME: &str = "The Kingdom of Tonga";
     pub const OFFICIAL_LANGUAGE_LIST: &[&str] = &["en", "to"];
@@ -544,7 +544,9 @@ pub mod subdivisions {
     }
 }
 #[allow(unused_imports)]
-use crate::{Alpha2, Alpha3, Continent, Country, Region, SubRegion, WeekDay, WorldRegion, GEC};
+use crate::{
+    Alpha2, Alpha3, Continent, Country, Region, SubRegion, WeekDay, WorldRegion, GEC, IOC,
+};
 #[allow(unused_imports)]
 use std::collections::HashMap;
 #[cfg(feature = "to")]
@@ -560,7 +562,7 @@ pub fn new() -> Country {
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: Some("TGA"),
+        ioc: Some(IOC::TGA),
         iso_long_name: "The Kingdom of Tonga",
         iso_short_name: "Tonga",
         official_language_list: ["en", "to"].to_vec(),

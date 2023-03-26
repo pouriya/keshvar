@@ -1,4 +1,4 @@
-use crate::{Alpha2, Alpha3, Continent, Region, SearchError, SubRegion, WorldRegion, GEC};
+use crate::{Alpha2, Alpha3, Continent, Region, SearchError, SubRegion, WorldRegion, GEC, IOC};
 
 #[cfg(feature = "subdivisions")]
 use crate::{SearchedItems, SubdivisionType};
@@ -22,7 +22,7 @@ pub struct Country {
     #[cfg(feature = "geo")]
     pub geo: CountryGeo,
     pub international_prefix: &'static str,
-    pub ioc: Option<&'static str>,
+    pub ioc: Option<IOC>,
     pub iso_long_name: &'static str,
     pub iso_short_name: &'static str,
     #[cfg_attr(feature = "serde-derive", serde(default))]

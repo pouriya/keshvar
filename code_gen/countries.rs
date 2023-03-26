@@ -48,7 +48,7 @@ pub fn generate_country(destination_file: &PathBuf, info: &CountryInfo) -> Resul
     file.write_all(b"pub mod consts {\n")?;
     file.write_all(b"    #[allow(unused_imports)]\n")?;
     file.write_all(
-        b"    use crate::{Alpha2, Alpha3, GEC, Continent, Region, SubRegion, WorldRegion, WeekDay};\n\n",
+        b"    use crate::{Alpha2, Alpha3, GEC, IOC, Continent, Region, SubRegion, WorldRegion, WeekDay};\n\n",
     )?;
     for (name, _type, value) in [
         (
@@ -93,8 +93,12 @@ pub fn generate_country(destination_file: &PathBuf, info: &CountryInfo) -> Resul
         ),
         (
             "const IOC",
-            "Option<&str>",
-            utils::option_string_to_string(&info.ioc),
+            "Option<IOC>",
+            if let Some(ref ioc) = info.ioc {
+                format!("Some(IOC::{})", utils::capitalize(ioc).to_uppercase())
+            } else {
+                "None".to_string()
+            },
         ),
         (
             "const ISO_SHORT_NAME",
@@ -352,7 +356,7 @@ pub fn generate_country(destination_file: &PathBuf, info: &CountryInfo) -> Resul
     file.write_all(b"}\n")?;
     file.write_all(b"#[allow(unused_imports)]\n")?;
     file.write_all(
-        b"use crate::{Alpha2, Alpha3, GEC, Country, Continent, Region, SubRegion, WorldRegion, WeekDay};\n",
+        b"use crate::{Alpha2, Alpha3, GEC, IOC, Country, Continent, Region, SubRegion, WorldRegion, WeekDay};\n",
     )?;
     file.write_all(b"#[allow(unused_imports)]\n")?;
     file.write_all(b"use std::collections::HashMap;\n")?;
@@ -409,7 +413,11 @@ pub fn new() -> Country {{
                 "None".to_string()
             },
             info.international_prefix,
-            utils::option_string_to_string(&info.ioc),
+            if let Some(ref ioc) = info.ioc {
+                format!("Some(IOC::{})", utils::capitalize(ioc).to_uppercase())
+            } else {
+                "None".to_string()
+            },
             info.iso_long_name,
             info.iso_short_name,
             info.languages_official,

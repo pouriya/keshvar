@@ -5,7 +5,7 @@
 #[cfg(all(feature = "mk", feature = "constants"))]
 pub mod consts {
     #[allow(unused_imports)]
-    use crate::{Alpha2, Alpha3, Continent, Region, SubRegion, WeekDay, WorldRegion, GEC};
+    use crate::{Alpha2, Alpha3, Continent, Region, SubRegion, WeekDay, WorldRegion, GEC, IOC};
 
     pub const ADDRESS_FORMAT: Option<&str> =
         Some("{{recipient}}\n{{street}}\n{{city}} {{postalcode}}\n{{country}}");
@@ -16,7 +16,7 @@ pub mod consts {
     pub const CURRENCY_CODE: &str = "MKD";
     pub const GEC: Option<GEC> = Some(GEC::MK);
     pub const INTERNATIONAL_PREFIX: &str = "00";
-    pub const IOC: Option<&str> = Some("MKD");
+    pub const IOC: Option<IOC> = Some(IOC::MKD);
     pub const ISO_SHORT_NAME: &str = "North Macedonia";
     pub const ISO_LONG_NAME: &str = "The Republic of North Macedonia";
     pub const OFFICIAL_LANGUAGE_LIST: &[&str] = &["mk"];
@@ -1440,7 +1440,9 @@ pub mod subdivisions {
     }
 }
 #[allow(unused_imports)]
-use crate::{Alpha2, Alpha3, Continent, Country, Region, SubRegion, WeekDay, WorldRegion, GEC};
+use crate::{
+    Alpha2, Alpha3, Continent, Country, Region, SubRegion, WeekDay, WorldRegion, GEC, IOC,
+};
 #[allow(unused_imports)]
 use std::collections::HashMap;
 #[cfg(feature = "mk")]
@@ -1456,7 +1458,7 @@ pub fn new() -> Country {
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: Some("MKD"),
+        ioc: Some(IOC::MKD),
         iso_long_name: "The Republic of North Macedonia",
         iso_short_name: "North Macedonia",
         official_language_list: ["mk"].to_vec(),
