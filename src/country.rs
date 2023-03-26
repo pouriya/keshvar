@@ -74,10 +74,16 @@ impl TryFrom<&str> for Country {
                     expected: "a string with two alpha2 or GEC characters",
                 })
         } else if length == 3 {
-            Alpha3::try_from(value).map(|alpha3| alpha3.to_country())
+            Alpha3::try_from(value)
+                .or_else(|_| IOC::try_from(value).map(|ioc| ioc.to_alpha2().to_alpha3()))
+                .map(|alpha3| alpha3.to_country())
+                .map_err(|_| SearchError::BadInput {
+                    expected: "a string with three alpha3 or IOC characters",
+                })
         } else {
             Err(SearchError::BadInput {
-                expected: "a string with three alpha3 characters or two alpha2 or GEC characters",
+                expected:
+                    "a string with three alpha3 or IOC characters or two alpha2 or GEC characters",
             })
         }
     }
