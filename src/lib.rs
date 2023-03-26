@@ -18,14 +18,15 @@ mod error;
 pub use error::*;
 mod consts;
 pub mod countries;
-
-#[cfg(feature = "chrono-integration")]
-#[doc(hidden)]
-pub use chrono;
 pub use consts::{
     SUPPORTED_ALPHA2_LIST, SUPPORTED_CONTINENT_LIST, SUPPORTED_REGION_LIST,
     SUPPORTED_SUBREGION_LIST, SUPPORTED_WORLD_REGION_LIST,
 };
+
+// re-export integrations:
+#[cfg(feature = "chrono-integration")]
+#[doc(hidden)]
+pub use chrono;
 #[doc(hidden)]
 pub use hashbrown;
 #[cfg(feature = "iso-currency-integration")]
@@ -322,8 +323,9 @@ where
         .collect()
 }
 
+// TODO: use this function in other modules:
 #[inline]
-fn make_search_error() -> SearchError {
+pub(crate) fn make_search_error() -> SearchError {
     #[allow(dead_code)]
     if consts::SUPPORT_ALL_COUNTRIES {
         SearchError::NotFound {
