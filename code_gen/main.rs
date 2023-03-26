@@ -262,6 +262,7 @@ fn code_gen_countries(data_directory: PathBuf) -> Result<()> {
     consts::generate(
         &consts_rs_filename,
         &countries_info_list,
+        &continent_features,
         &region_features,
         &subregion_features,
         &world_region_features,

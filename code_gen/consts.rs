@@ -9,6 +9,7 @@ use std::path::PathBuf;
 pub fn generate(
     destination_file: &PathBuf,
     countries_info_list: &Vec<(String, CountryInfo)>,
+    continent_features: &HashMap<String, Vec<String>>,
     region_features: &HashMap<String, Vec<String>>,
     subregion_features: &HashMap<String, Vec<String>>,
     world_region_features: &HashMap<String, Vec<String>>,
@@ -21,7 +22,8 @@ pub fn generate(
         .context(format!("Could not open {:?}", destination_file))?;
     utils::write_first_comments(&mut consts_rs_file, file!())?;
     consts_rs_file.write_all(b"#[allow(unused_imports)]\n")?;
-    consts_rs_file.write_all(b"use crate::{Alpha2, Region, SubRegion, WorldRegion};\n")?;
+    consts_rs_file
+        .write_all(b"use crate::{Alpha2, Continent, Region, SubRegion, WorldRegion};\n")?;
     consts_rs_file.write_all(b"use lazy_static::lazy_static;\n")?;
     consts_rs_file.write_all(b"use hashbrown::HashMap;\n")?;
     consts_rs_file.write_all(
@@ -79,6 +81,19 @@ lazy_static! { pub static ref UNSUPPORTED_COUNTRIES_COUNT: usize = ALL_COUNTRIES
     // }
     // consts_rs_file.write_all(b"];}\n")?;
 
+    consts_rs_file.write_all(
+        r#"
+/// A constant list containing all included [`Alpha2`](crate::Alpha2) codes.
+///
+/// This alphabeticaly sorted list will be created at compile-time based on included country features.
+/// # Example
+/// ```
+/// use keshvar::{Alpha2, SUPPORTED_ALPHA2_LIST};
+/// assert!(SUPPORTED_ALPHA2_LIST.contains(&Alpha2::US));
+/// ```
+"#
+        .as_bytes(),
+    )?;
     consts_rs_file.write_all(b"pub const SUPPORTED_ALPHA2_LIST: &[Alpha2] = &[\n")?;
     for (_, info) in countries_info_list.iter() {
         consts_rs_file
@@ -104,8 +119,54 @@ lazy_static! { pub static ref UNSUPPORTED_COUNTRIES_COUNT: usize = ALL_COUNTRIES
     // consts_rs_file.write_all(b"];}\n")?;
 
     consts_rs_file.write_all(
-        b"lazy_static! { pub static ref SUPPORTED_REGION_LIST: &'static [Region] = &[\n",
+        r#"
+/// A constant list containing all included [`Continent`](crate::Alpha2)s.
+///
+/// This alphabeticaly sorted list will be created at compile-time based on included country features.
+///
+/// # Example
+/// ```
+/// use keshvar::{Continent, SUPPORTED_CONTINENT_LIST};
+/// assert!(SUPPORTED_CONTINENT_LIST.contains(&Continent::Asia));
+/// ```
+"#
+        .as_bytes(),
     )?;
+    consts_rs_file.write_all(b"pub const SUPPORTED_CONTINENT_LIST: &[Continent] = &[\n")?;
+    let mut sorted_continent_features = continent_features.keys().collect::<Vec<_>>();
+    sorted_continent_features.sort();
+    for continent in sorted_continent_features {
+        let feature_list = continent_features.get(continent).unwrap();
+        consts_rs_file.write_all(b"    #[\n        cfg(\n            all(\n")?;
+        consts_rs_file.write_all(
+            feature_list
+                .iter()
+                .map(|x| format!("                feature = {:?}", x))
+                .collect::<Vec<_>>()
+                .join(",\n")
+                .as_bytes(),
+        )?;
+        consts_rs_file.write_all(b"\n            \n)        )\n     ]\n")?;
+        consts_rs_file
+            .write_all(format!("    Continent::{},\n", utils::capitalize(continent)).as_bytes())?;
+    }
+    consts_rs_file.write_all(b"];\n")?;
+
+    consts_rs_file.write_all(
+        r#"
+/// A constant list containing all included [`Region`](crate::Alpha2)s.
+///
+/// This alphabeticaly sorted list will be created at compile-time based on included country features.
+///
+/// # Example
+/// ```
+/// use keshvar::{Region, SUPPORTED_REGION_LIST};
+/// assert!(SUPPORTED_REGION_LIST.contains(&Region::Asia));
+/// ```
+"#
+        .as_bytes(),
+    )?;
+    consts_rs_file.write_all(b"pub const SUPPORTED_REGION_LIST: &[Region] = &[\n")?;
     let mut sorted_region_features = region_features.keys().collect::<Vec<_>>();
     sorted_region_features.sort();
     for region in sorted_region_features {
@@ -123,11 +184,23 @@ lazy_static! { pub static ref UNSUPPORTED_COUNTRIES_COUNT: usize = ALL_COUNTRIES
         consts_rs_file
             .write_all(format!("    Region::{},\n", utils::capitalize(region)).as_bytes())?;
     }
-    consts_rs_file.write_all(b"];}\n")?;
+    consts_rs_file.write_all(b"];\n")?;
 
     consts_rs_file.write_all(
-        b"lazy_static! { pub static ref SUPPORTED_SUBREGION_LIST: &'static [SubRegion] = &[\n",
+        r#"
+/// A constant list containing all included [`SubRegion`](crate::Alpha2)s.
+///
+/// This alphabeticaly sorted list will be created at compile-time based on included country features.
+///
+/// # Example
+/// ```
+/// use keshvar::{SubRegion, SUPPORTED_SUBREGION_LIST};
+/// assert!(SUPPORTED_SUBREGION_LIST.contains(&SubRegion::SouthAmerica));
+/// ```
+"#
+        .as_bytes(),
     )?;
+    consts_rs_file.write_all(b"pub const SUPPORTED_SUBREGION_LIST: &[SubRegion] = &[\n")?;
     let mut sorted_subregion_features = subregion_features.keys().collect::<Vec<_>>();
     sorted_subregion_features.sort();
     for subregion in sorted_subregion_features {
@@ -145,10 +218,23 @@ lazy_static! { pub static ref UNSUPPORTED_COUNTRIES_COUNT: usize = ALL_COUNTRIES
         consts_rs_file
             .write_all(format!("    SubRegion::{},\n", utils::capitalize(subregion)).as_bytes())?;
     }
-    consts_rs_file.write_all(b"];}\n")?;
+    consts_rs_file.write_all(b"];\n")?;
+
     consts_rs_file.write_all(
-        b"lazy_static! { pub static ref SUPPORTED_WORLD_REGION_LIST: &'static [WorldRegion] = &[\n",
+        r#"
+/// A constant list containing all included [`WorldRegion`](crate::Alpha2)s.
+///
+/// This alphabeticaly sorted list will be created at compile-time based on included country features.
+///
+/// # Example
+/// ```
+/// use keshvar::{WorldRegion, SUPPORTED_WORLD_REGION_LIST};
+/// assert!(SUPPORTED_WORLD_REGION_LIST.contains(&WorldRegion::APAC));
+/// ```
+"#
+        .as_bytes(),
     )?;
+    consts_rs_file.write_all(b"pub const SUPPORTED_WORLD_REGION_LIST: &[WorldRegion] = &[\n")?;
     let mut sorted_world_region_features = world_region_features.keys().collect::<Vec<_>>();
     sorted_world_region_features.sort();
     for world_region in sorted_world_region_features {
@@ -171,7 +257,7 @@ lazy_static! { pub static ref UNSUPPORTED_COUNTRIES_COUNT: usize = ALL_COUNTRIES
             .as_bytes(),
         )?;
     }
-    consts_rs_file.write_all(b"];}\n")?;
+    consts_rs_file.write_all(b"];\n")?;
 
     consts_rs_file
         .write_all(b"lazy_static! { pub static ref SUPPORTED_ISO_SHORT_NAMES: HashMap<&'static str, Alpha2> = HashMap::from([\n")?;
