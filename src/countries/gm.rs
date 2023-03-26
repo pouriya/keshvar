@@ -5,17 +5,19 @@
 #[cfg(all(feature = "gm", feature = "constants"))]
 pub mod consts {
     #[allow(unused_imports)]
-    use crate::{Alpha2, Alpha3, Continent, Region, SubRegion, WeekDay, WorldRegion, GEC};
+    use crate::{
+        Alpha2, Alpha3, Continent, CurrencyCode, Region, SubRegion, WeekDay, WorldRegion, GEC, IOC,
+    };
 
     pub const ADDRESS_FORMAT: Option<&str> = None;
     pub const ALPHA2: Alpha2 = Alpha2::GM;
     pub const ALPHA3: Alpha3 = Alpha3::GMB;
     pub const CONTINENT: Continent = Continent::Africa;
     pub const COUNTRY_CODE: usize = 220;
-    pub const CURRENCY_CODE: &str = "GMD";
+    pub const CURRENCY_CODE: CurrencyCode = CurrencyCode::GMD;
     pub const GEC: Option<GEC> = Some(GEC::GA);
     pub const INTERNATIONAL_PREFIX: &str = "00";
-    pub const IOC: Option<&str> = Some("GAM");
+    pub const IOC: Option<IOC> = Some(IOC::GAM);
     pub const ISO_SHORT_NAME: &str = "Gambia";
     pub const ISO_LONG_NAME: &str = "The Republic of The Gambia";
     pub const OFFICIAL_LANGUAGE_LIST: &[&str] = &["en"];
@@ -316,7 +318,10 @@ pub mod subdivisions {
     }
 }
 #[allow(unused_imports)]
-use crate::{Alpha2, Alpha3, Continent, Country, Region, SubRegion, WeekDay, WorldRegion, GEC};
+use crate::{
+    Alpha2, Alpha3, Continent, Country, CurrencyCode, Region, SubRegion, WeekDay, WorldRegion, GEC,
+    IOC,
+};
 #[allow(unused_imports)]
 use std::collections::HashMap;
 #[cfg(feature = "gm")]
@@ -327,12 +332,12 @@ pub fn new() -> Country {
         address_format: None,
         continent: Continent::Africa,
         country_code: 220,
-        currency_code: "GMD",
+        currency_code: CurrencyCode::GMD,
         gec: Some(GEC::GA),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: Some("GAM"),
+        ioc: Some(IOC::GAM),
         iso_long_name: "The Republic of The Gambia",
         iso_short_name: "Gambia",
         official_language_list: ["en"].to_vec(),

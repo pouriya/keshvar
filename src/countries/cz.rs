@@ -5,7 +5,9 @@
 #[cfg(all(feature = "cz", feature = "constants"))]
 pub mod consts {
     #[allow(unused_imports)]
-    use crate::{Alpha2, Alpha3, Continent, Region, SubRegion, WeekDay, WorldRegion, GEC};
+    use crate::{
+        Alpha2, Alpha3, Continent, CurrencyCode, Region, SubRegion, WeekDay, WorldRegion, GEC, IOC,
+    };
 
     pub const ADDRESS_FORMAT: Option<&str> =
         Some("{{recipient}}\n{{street}}\n{{postalcode}} {{city}}\n{{country}}");
@@ -13,10 +15,10 @@ pub mod consts {
     pub const ALPHA3: Alpha3 = Alpha3::CZE;
     pub const CONTINENT: Continent = Continent::Europe;
     pub const COUNTRY_CODE: usize = 420;
-    pub const CURRENCY_CODE: &str = "CZK";
+    pub const CURRENCY_CODE: CurrencyCode = CurrencyCode::CZK;
     pub const GEC: Option<GEC> = Some(GEC::EZ);
     pub const INTERNATIONAL_PREFIX: &str = "00";
-    pub const IOC: Option<&str> = Some("CZE");
+    pub const IOC: Option<IOC> = Some(IOC::CZE);
     pub const ISO_SHORT_NAME: &str = "Czechia";
     pub const ISO_LONG_NAME: &str = "The Czech Republic";
     pub const OFFICIAL_LANGUAGE_LIST: &[&str] = &["cs", "sk"];
@@ -1586,7 +1588,10 @@ pub mod subdivisions {
     }
 }
 #[allow(unused_imports)]
-use crate::{Alpha2, Alpha3, Continent, Country, Region, SubRegion, WeekDay, WorldRegion, GEC};
+use crate::{
+    Alpha2, Alpha3, Continent, Country, CurrencyCode, Region, SubRegion, WeekDay, WorldRegion, GEC,
+    IOC,
+};
 #[allow(unused_imports)]
 use std::collections::HashMap;
 #[cfg(feature = "cz")]
@@ -1597,12 +1602,12 @@ pub fn new() -> Country {
         address_format: Some("{{recipient}}\n{{street}}\n{{postalcode}} {{city}}\n{{country}}"),
         continent: Continent::Europe,
         country_code: 420,
-        currency_code: "CZK",
+        currency_code: CurrencyCode::CZK,
         gec: Some(GEC::EZ),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: Some("CZE"),
+        ioc: Some(IOC::CZE),
         iso_long_name: "The Czech Republic",
         iso_short_name: "Czechia",
         official_language_list: ["cs", "sk"].to_vec(),

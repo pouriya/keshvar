@@ -11,6 +11,7 @@ code_gen:
 	@rm -rf src/region.rs && touch src/region.rs
 	@rm -rf src/gec.rs && touch src/gec.rs
 	@rm -rf src/ioc.rs && touch src/ioc.rs
+	@rm -rf src/currency_code.rs && touch src/currency_code.rs
 	@cp Cargo.default.toml Cargo.toml
 	@rm -rf build.log
 	@echo "Generate & Compile new codes..."

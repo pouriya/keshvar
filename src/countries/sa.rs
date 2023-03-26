@@ -5,7 +5,9 @@
 #[cfg(all(feature = "sa", feature = "constants"))]
 pub mod consts {
     #[allow(unused_imports)]
-    use crate::{Alpha2, Alpha3, Continent, Region, SubRegion, WeekDay, WorldRegion, GEC};
+    use crate::{
+        Alpha2, Alpha3, Continent, CurrencyCode, Region, SubRegion, WeekDay, WorldRegion, GEC, IOC,
+    };
 
     pub const ADDRESS_FORMAT: Option<&str> =
         Some("{{recipient}}\n{{street}}\n{{postalcode}} {{city}}\n{{country}}");
@@ -13,10 +15,10 @@ pub mod consts {
     pub const ALPHA3: Alpha3 = Alpha3::SAU;
     pub const CONTINENT: Continent = Continent::Asia;
     pub const COUNTRY_CODE: usize = 966;
-    pub const CURRENCY_CODE: &str = "SAR";
+    pub const CURRENCY_CODE: CurrencyCode = CurrencyCode::SAR;
     pub const GEC: Option<GEC> = Some(GEC::SA);
     pub const INTERNATIONAL_PREFIX: &str = "00";
-    pub const IOC: Option<&str> = Some("KSA");
+    pub const IOC: Option<IOC> = Some(IOC::KSA);
     pub const ISO_SHORT_NAME: &str = "Saudi Arabia";
     pub const ISO_LONG_NAME: &str = "The Kingdom of Saudi Arabia";
     pub const OFFICIAL_LANGUAGE_LIST: &[&str] = &["ar"];
@@ -440,7 +442,10 @@ pub mod subdivisions {
     }
 }
 #[allow(unused_imports)]
-use crate::{Alpha2, Alpha3, Continent, Country, Region, SubRegion, WeekDay, WorldRegion, GEC};
+use crate::{
+    Alpha2, Alpha3, Continent, Country, CurrencyCode, Region, SubRegion, WeekDay, WorldRegion, GEC,
+    IOC,
+};
 #[allow(unused_imports)]
 use std::collections::HashMap;
 #[cfg(feature = "sa")]
@@ -451,12 +456,12 @@ pub fn new() -> Country {
         address_format: Some("{{recipient}}\n{{street}}\n{{postalcode}} {{city}}\n{{country}}"),
         continent: Continent::Asia,
         country_code: 966,
-        currency_code: "SAR",
+        currency_code: CurrencyCode::SAR,
         gec: Some(GEC::SA),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: Some("KSA"),
+        ioc: Some(IOC::KSA),
         iso_long_name: "The Kingdom of Saudi Arabia",
         iso_short_name: "Saudi Arabia",
         official_language_list: ["ar"].to_vec(),

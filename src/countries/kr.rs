@@ -5,7 +5,9 @@
 #[cfg(all(feature = "kr", feature = "constants"))]
 pub mod consts {
     #[allow(unused_imports)]
-    use crate::{Alpha2, Alpha3, Continent, Region, SubRegion, WeekDay, WorldRegion, GEC};
+    use crate::{
+        Alpha2, Alpha3, Continent, CurrencyCode, Region, SubRegion, WeekDay, WorldRegion, GEC, IOC,
+    };
 
     pub const ADDRESS_FORMAT: Option<&str> =
         Some("{{recipient}}\n{{street}}\n{{city}} {{region_short}}\n{{postalcode}}\n{{country}}");
@@ -13,10 +15,10 @@ pub mod consts {
     pub const ALPHA3: Alpha3 = Alpha3::KOR;
     pub const CONTINENT: Continent = Continent::Asia;
     pub const COUNTRY_CODE: usize = 82;
-    pub const CURRENCY_CODE: &str = "KRW";
+    pub const CURRENCY_CODE: CurrencyCode = CurrencyCode::KRW;
     pub const GEC: Option<GEC> = Some(GEC::KS);
     pub const INTERNATIONAL_PREFIX: &str = "001";
-    pub const IOC: Option<&str> = Some("KOR");
+    pub const IOC: Option<IOC> = Some(IOC::KOR);
     pub const ISO_SHORT_NAME: &str = "Korea (Republic of)";
     pub const ISO_LONG_NAME: &str = "The Republic of Korea";
     pub const OFFICIAL_LANGUAGE_LIST: &[&str] = &["ko"];
@@ -500,7 +502,10 @@ pub mod subdivisions {
     }
 }
 #[allow(unused_imports)]
-use crate::{Alpha2, Alpha3, Continent, Country, Region, SubRegion, WeekDay, WorldRegion, GEC};
+use crate::{
+    Alpha2, Alpha3, Continent, Country, CurrencyCode, Region, SubRegion, WeekDay, WorldRegion, GEC,
+    IOC,
+};
 #[allow(unused_imports)]
 use std::collections::HashMap;
 #[cfg(feature = "kr")]
@@ -513,12 +518,12 @@ pub fn new() -> Country {
         ),
         continent: Continent::Asia,
         country_code: 82,
-        currency_code: "KRW",
+        currency_code: CurrencyCode::KRW,
         gec: Some(GEC::KS),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "001",
-        ioc: Some("KOR"),
+        ioc: Some(IOC::KOR),
         iso_long_name: "The Republic of Korea",
         iso_short_name: "Korea (Republic of)",
         official_language_list: ["ko"].to_vec(),

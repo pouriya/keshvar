@@ -5,7 +5,9 @@
 #[cfg(all(feature = "ru", feature = "constants"))]
 pub mod consts {
     #[allow(unused_imports)]
-    use crate::{Alpha2, Alpha3, Continent, Region, SubRegion, WeekDay, WorldRegion, GEC};
+    use crate::{
+        Alpha2, Alpha3, Continent, CurrencyCode, Region, SubRegion, WeekDay, WorldRegion, GEC, IOC,
+    };
 
     pub const ADDRESS_FORMAT: Option<&str> =
         Some("{{recipient}}\n{{postalcode}} {{city}}\n{{street}}\n{{country}}");
@@ -13,10 +15,10 @@ pub mod consts {
     pub const ALPHA3: Alpha3 = Alpha3::RUS;
     pub const CONTINENT: Continent = Continent::Europe;
     pub const COUNTRY_CODE: usize = 7;
-    pub const CURRENCY_CODE: &str = "RUB";
+    pub const CURRENCY_CODE: CurrencyCode = CurrencyCode::RUB;
     pub const GEC: Option<GEC> = Some(GEC::RS);
     pub const INTERNATIONAL_PREFIX: &str = "810";
-    pub const IOC: Option<&str> = Some("RUS");
+    pub const IOC: Option<IOC> = Some(IOC::RUS);
     pub const ISO_SHORT_NAME: &str = "Russian Federation";
     pub const ISO_LONG_NAME: &str = "The Russian Federation";
     pub const OFFICIAL_LANGUAGE_LIST: &[&str] = &["ru"];
@@ -1490,7 +1492,10 @@ pub mod subdivisions {
     }
 }
 #[allow(unused_imports)]
-use crate::{Alpha2, Alpha3, Continent, Country, Region, SubRegion, WeekDay, WorldRegion, GEC};
+use crate::{
+    Alpha2, Alpha3, Continent, Country, CurrencyCode, Region, SubRegion, WeekDay, WorldRegion, GEC,
+    IOC,
+};
 #[allow(unused_imports)]
 use std::collections::HashMap;
 #[cfg(feature = "ru")]
@@ -1501,12 +1506,12 @@ pub fn new() -> Country {
         address_format: Some("{{recipient}}\n{{postalcode}} {{city}}\n{{street}}\n{{country}}"),
         continent: Continent::Europe,
         country_code: 7,
-        currency_code: "RUB",
+        currency_code: CurrencyCode::RUB,
         gec: Some(GEC::RS),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "810",
-        ioc: Some("RUS"),
+        ioc: Some(IOC::RUS),
         iso_long_name: "The Russian Federation",
         iso_short_name: "Russian Federation",
         official_language_list: ["ru"].to_vec(),

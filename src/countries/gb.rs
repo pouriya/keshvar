@@ -5,7 +5,9 @@
 #[cfg(all(feature = "gb", feature = "constants"))]
 pub mod consts {
     #[allow(unused_imports)]
-    use crate::{Alpha2, Alpha3, Continent, Region, SubRegion, WeekDay, WorldRegion, GEC};
+    use crate::{
+        Alpha2, Alpha3, Continent, CurrencyCode, Region, SubRegion, WeekDay, WorldRegion, GEC, IOC,
+    };
 
     pub const ADDRESS_FORMAT: Option<&str> =
         Some("{{recipient}}\n{{street}}\n{{city}}\n{{region}}\n{{postalcode}}\n{{country}}");
@@ -13,10 +15,10 @@ pub mod consts {
     pub const ALPHA3: Alpha3 = Alpha3::GBR;
     pub const CONTINENT: Continent = Continent::Europe;
     pub const COUNTRY_CODE: usize = 44;
-    pub const CURRENCY_CODE: &str = "GBP";
+    pub const CURRENCY_CODE: CurrencyCode = CurrencyCode::GBP;
     pub const GEC: Option<GEC> = Some(GEC::UK);
     pub const INTERNATIONAL_PREFIX: &str = "00";
-    pub const IOC: Option<&str> = Some("GBR");
+    pub const IOC: Option<IOC> = Some(IOC::GBR);
     pub const ISO_SHORT_NAME: &str = "United Kingdom of Great Britain and Northern Ireland";
     pub const ISO_LONG_NAME: &str = "The United Kingdom of Great Britain and Northern Ireland";
     pub const OFFICIAL_LANGUAGE_LIST: &[&str] = &["en"];
@@ -3552,7 +3554,10 @@ pub mod subdivisions {
     }
 }
 #[allow(unused_imports)]
-use crate::{Alpha2, Alpha3, Continent, Country, Region, SubRegion, WeekDay, WorldRegion, GEC};
+use crate::{
+    Alpha2, Alpha3, Continent, Country, CurrencyCode, Region, SubRegion, WeekDay, WorldRegion, GEC,
+    IOC,
+};
 #[allow(unused_imports)]
 use std::collections::HashMap;
 #[cfg(feature = "gb")]
@@ -3563,12 +3568,12 @@ pub fn new() -> Country {
         address_format: Some("{{recipient}}\n{{street}}\n{{city}}\n{{region}}\n{{postalcode}}\n{{country}}"),
         continent: Continent::Europe,
         country_code: 44,
-        currency_code: "GBP",
+        currency_code: CurrencyCode::GBP,
         gec: Some(GEC::UK),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: Some("GBR"),
+        ioc: Some(IOC::GBR),
         iso_long_name: "The United Kingdom of Great Britain and Northern Ireland",
         iso_short_name: "United Kingdom of Great Britain and Northern Ireland",
         official_language_list: ["en"].to_vec(),

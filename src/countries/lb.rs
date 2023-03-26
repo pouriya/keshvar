@@ -5,7 +5,9 @@
 #[cfg(all(feature = "lb", feature = "constants"))]
 pub mod consts {
     #[allow(unused_imports)]
-    use crate::{Alpha2, Alpha3, Continent, Region, SubRegion, WeekDay, WorldRegion, GEC};
+    use crate::{
+        Alpha2, Alpha3, Continent, CurrencyCode, Region, SubRegion, WeekDay, WorldRegion, GEC, IOC,
+    };
 
     pub const ADDRESS_FORMAT: Option<&str> =
         Some("{{recipient}}\n{{street}}\n{{postalcode}} {{city}}\n{{country}}");
@@ -13,10 +15,10 @@ pub mod consts {
     pub const ALPHA3: Alpha3 = Alpha3::LBN;
     pub const CONTINENT: Continent = Continent::Asia;
     pub const COUNTRY_CODE: usize = 961;
-    pub const CURRENCY_CODE: &str = "LBP";
+    pub const CURRENCY_CODE: CurrencyCode = CurrencyCode::LBP;
     pub const GEC: Option<GEC> = Some(GEC::LE);
     pub const INTERNATIONAL_PREFIX: &str = "00";
-    pub const IOC: Option<&str> = Some("LIB");
+    pub const IOC: Option<IOC> = Some(IOC::LIB);
     pub const ISO_SHORT_NAME: &str = "Lebanon";
     pub const ISO_LONG_NAME: &str = "The Lebanese Republic";
     pub const OFFICIAL_LANGUAGE_LIST: &[&str] = &["ar", "fr"];
@@ -351,7 +353,10 @@ pub mod subdivisions {
     }
 }
 #[allow(unused_imports)]
-use crate::{Alpha2, Alpha3, Continent, Country, Region, SubRegion, WeekDay, WorldRegion, GEC};
+use crate::{
+    Alpha2, Alpha3, Continent, Country, CurrencyCode, Region, SubRegion, WeekDay, WorldRegion, GEC,
+    IOC,
+};
 #[allow(unused_imports)]
 use std::collections::HashMap;
 #[cfg(feature = "lb")]
@@ -362,12 +367,12 @@ pub fn new() -> Country {
         address_format: Some("{{recipient}}\n{{street}}\n{{postalcode}} {{city}}\n{{country}}"),
         continent: Continent::Asia,
         country_code: 961,
-        currency_code: "LBP",
+        currency_code: CurrencyCode::LBP,
         gec: Some(GEC::LE),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: Some("LIB"),
+        ioc: Some(IOC::LIB),
         iso_long_name: "The Lebanese Republic",
         iso_short_name: "Lebanon",
         official_language_list: ["ar", "fr"].to_vec(),

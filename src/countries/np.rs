@@ -5,7 +5,9 @@
 #[cfg(all(feature = "np", feature = "constants"))]
 pub mod consts {
     #[allow(unused_imports)]
-    use crate::{Alpha2, Alpha3, Continent, Region, SubRegion, WeekDay, WorldRegion, GEC};
+    use crate::{
+        Alpha2, Alpha3, Continent, CurrencyCode, Region, SubRegion, WeekDay, WorldRegion, GEC, IOC,
+    };
 
     pub const ADDRESS_FORMAT: Option<&str> =
         Some("{{recipient}}\n{{street}}\n{{city}}\n{{region}} {{postalcode}}\n{{country}}");
@@ -13,10 +15,10 @@ pub mod consts {
     pub const ALPHA3: Alpha3 = Alpha3::NPL;
     pub const CONTINENT: Continent = Continent::Asia;
     pub const COUNTRY_CODE: usize = 977;
-    pub const CURRENCY_CODE: &str = "NPR";
+    pub const CURRENCY_CODE: CurrencyCode = CurrencyCode::NPR;
     pub const GEC: Option<GEC> = Some(GEC::NP);
     pub const INTERNATIONAL_PREFIX: &str = "00";
-    pub const IOC: Option<&str> = Some("NEP");
+    pub const IOC: Option<IOC> = Some(IOC::NEP);
     pub const ISO_SHORT_NAME: &str = "Nepal";
     pub const ISO_LONG_NAME: &str = "The Federal Democratic Republic of Nepal";
     pub const OFFICIAL_LANGUAGE_LIST: &[&str] = &["ne"];
@@ -622,7 +624,10 @@ pub mod subdivisions {
     }
 }
 #[allow(unused_imports)]
-use crate::{Alpha2, Alpha3, Continent, Country, Region, SubRegion, WeekDay, WorldRegion, GEC};
+use crate::{
+    Alpha2, Alpha3, Continent, Country, CurrencyCode, Region, SubRegion, WeekDay, WorldRegion, GEC,
+    IOC,
+};
 #[allow(unused_imports)]
 use std::collections::HashMap;
 #[cfg(feature = "np")]
@@ -635,12 +640,12 @@ pub fn new() -> Country {
         ),
         continent: Continent::Asia,
         country_code: 977,
-        currency_code: "NPR",
+        currency_code: CurrencyCode::NPR,
         gec: Some(GEC::NP),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: Some("NEP"),
+        ioc: Some(IOC::NEP),
         iso_long_name: "The Federal Democratic Republic of Nepal",
         iso_short_name: "Nepal",
         official_language_list: ["ne"].to_vec(),

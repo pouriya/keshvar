@@ -5,7 +5,9 @@
 #[cfg(all(feature = "vn", feature = "constants"))]
 pub mod consts {
     #[allow(unused_imports)]
-    use crate::{Alpha2, Alpha3, Continent, Region, SubRegion, WeekDay, WorldRegion, GEC};
+    use crate::{
+        Alpha2, Alpha3, Continent, CurrencyCode, Region, SubRegion, WeekDay, WorldRegion, GEC, IOC,
+    };
 
     pub const ADDRESS_FORMAT: Option<&str> =
         Some("{{recipient}}\n{{street}}\n{{city}}\n{{region}}\n{{country}}");
@@ -13,10 +15,10 @@ pub mod consts {
     pub const ALPHA3: Alpha3 = Alpha3::VNM;
     pub const CONTINENT: Continent = Continent::Asia;
     pub const COUNTRY_CODE: usize = 84;
-    pub const CURRENCY_CODE: &str = "VND";
+    pub const CURRENCY_CODE: CurrencyCode = CurrencyCode::VND;
     pub const GEC: Option<GEC> = Some(GEC::VM);
     pub const INTERNATIONAL_PREFIX: &str = "00";
-    pub const IOC: Option<&str> = Some("VIE");
+    pub const IOC: Option<IOC> = Some(IOC::VIE);
     pub const ISO_SHORT_NAME: &str = "Viet Nam";
     pub const ISO_LONG_NAME: &str = "The Socialist Republic of Viet Nam";
     pub const OFFICIAL_LANGUAGE_LIST: &[&str] = &["vi"];
@@ -1175,7 +1177,10 @@ pub mod subdivisions {
     }
 }
 #[allow(unused_imports)]
-use crate::{Alpha2, Alpha3, Continent, Country, Region, SubRegion, WeekDay, WorldRegion, GEC};
+use crate::{
+    Alpha2, Alpha3, Continent, Country, CurrencyCode, Region, SubRegion, WeekDay, WorldRegion, GEC,
+    IOC,
+};
 #[allow(unused_imports)]
 use std::collections::HashMap;
 #[cfg(feature = "vn")]
@@ -1186,12 +1191,12 @@ pub fn new() -> Country {
         address_format: Some("{{recipient}}\n{{street}}\n{{city}}\n{{region}}\n{{country}}"),
         continent: Continent::Asia,
         country_code: 84,
-        currency_code: "VND",
+        currency_code: CurrencyCode::VND,
         gec: Some(GEC::VM),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: Some("VIE"),
+        ioc: Some(IOC::VIE),
         iso_long_name: "The Socialist Republic of Viet Nam",
         iso_short_name: "Viet Nam",
         official_language_list: ["vi"].to_vec(),

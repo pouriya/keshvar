@@ -5,7 +5,9 @@
 #[cfg(all(feature = "hr", feature = "constants"))]
 pub mod consts {
     #[allow(unused_imports)]
-    use crate::{Alpha2, Alpha3, Continent, Region, SubRegion, WeekDay, WorldRegion, GEC};
+    use crate::{
+        Alpha2, Alpha3, Continent, CurrencyCode, Region, SubRegion, WeekDay, WorldRegion, GEC, IOC,
+    };
 
     pub const ADDRESS_FORMAT: Option<&str> =
         Some("{{recipient}}\n{{street}}\n{{postalcode}} {{city}}\n{{country}}");
@@ -13,10 +15,10 @@ pub mod consts {
     pub const ALPHA3: Alpha3 = Alpha3::HRV;
     pub const CONTINENT: Continent = Continent::Europe;
     pub const COUNTRY_CODE: usize = 385;
-    pub const CURRENCY_CODE: &str = "HRK";
+    pub const CURRENCY_CODE: CurrencyCode = CurrencyCode::HRK;
     pub const GEC: Option<GEC> = Some(GEC::HR);
     pub const INTERNATIONAL_PREFIX: &str = "00";
-    pub const IOC: Option<&str> = Some("CRO");
+    pub const IOC: Option<IOC> = Some(IOC::CRO);
     pub const ISO_SHORT_NAME: &str = "Croatia";
     pub const ISO_LONG_NAME: &str = "The Republic of Croatia";
     pub const OFFICIAL_LANGUAGE_LIST: &[&str] = &["hr"];
@@ -553,7 +555,10 @@ pub mod subdivisions {
     }
 }
 #[allow(unused_imports)]
-use crate::{Alpha2, Alpha3, Continent, Country, Region, SubRegion, WeekDay, WorldRegion, GEC};
+use crate::{
+    Alpha2, Alpha3, Continent, Country, CurrencyCode, Region, SubRegion, WeekDay, WorldRegion, GEC,
+    IOC,
+};
 #[allow(unused_imports)]
 use std::collections::HashMap;
 #[cfg(feature = "hr")]
@@ -564,12 +569,12 @@ pub fn new() -> Country {
         address_format: Some("{{recipient}}\n{{street}}\n{{postalcode}} {{city}}\n{{country}}"),
         continent: Continent::Europe,
         country_code: 385,
-        currency_code: "HRK",
+        currency_code: CurrencyCode::HRK,
         gec: Some(GEC::HR),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: Some("CRO"),
+        ioc: Some(IOC::CRO),
         iso_long_name: "The Republic of Croatia",
         iso_short_name: "Croatia",
         official_language_list: ["hr"].to_vec(),

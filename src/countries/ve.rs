@@ -5,17 +5,19 @@
 #[cfg(all(feature = "ve", feature = "constants"))]
 pub mod consts {
     #[allow(unused_imports)]
-    use crate::{Alpha2, Alpha3, Continent, Region, SubRegion, WeekDay, WorldRegion, GEC};
+    use crate::{
+        Alpha2, Alpha3, Continent, CurrencyCode, Region, SubRegion, WeekDay, WorldRegion, GEC, IOC,
+    };
 
     pub const ADDRESS_FORMAT: Option<&str> = None;
     pub const ALPHA2: Alpha2 = Alpha2::VE;
     pub const ALPHA3: Alpha3 = Alpha3::VEN;
     pub const CONTINENT: Continent = Continent::SouthAmerica;
     pub const COUNTRY_CODE: usize = 58;
-    pub const CURRENCY_CODE: &str = "VES";
+    pub const CURRENCY_CODE: CurrencyCode = CurrencyCode::VES;
     pub const GEC: Option<GEC> = Some(GEC::VE);
     pub const INTERNATIONAL_PREFIX: &str = "00";
-    pub const IOC: Option<&str> = Some("VEN");
+    pub const IOC: Option<IOC> = Some(IOC::VEN);
     pub const ISO_SHORT_NAME: &str = "Venezuela (Bolivarian Republic of)";
     pub const ISO_LONG_NAME: &str = "The Bolivarian Republic of Venezuela";
     pub const OFFICIAL_LANGUAGE_LIST: &[&str] = &["es"];
@@ -604,7 +606,10 @@ pub mod subdivisions {
     }
 }
 #[allow(unused_imports)]
-use crate::{Alpha2, Alpha3, Continent, Country, Region, SubRegion, WeekDay, WorldRegion, GEC};
+use crate::{
+    Alpha2, Alpha3, Continent, Country, CurrencyCode, Region, SubRegion, WeekDay, WorldRegion, GEC,
+    IOC,
+};
 #[allow(unused_imports)]
 use std::collections::HashMap;
 #[cfg(feature = "ve")]
@@ -615,12 +620,12 @@ pub fn new() -> Country {
         address_format: None,
         continent: Continent::SouthAmerica,
         country_code: 58,
-        currency_code: "VES",
+        currency_code: CurrencyCode::VES,
         gec: Some(GEC::VE),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: Some("VEN"),
+        ioc: Some(IOC::VEN),
         iso_long_name: "The Bolivarian Republic of Venezuela",
         iso_short_name: "Venezuela (Bolivarian Republic of)",
         official_language_list: ["es"].to_vec(),

@@ -5,7 +5,9 @@
 #[cfg(all(feature = "no", feature = "constants"))]
 pub mod consts {
     #[allow(unused_imports)]
-    use crate::{Alpha2, Alpha3, Continent, Region, SubRegion, WeekDay, WorldRegion, GEC};
+    use crate::{
+        Alpha2, Alpha3, Continent, CurrencyCode, Region, SubRegion, WeekDay, WorldRegion, GEC, IOC,
+    };
 
     pub const ADDRESS_FORMAT: Option<&str> =
         Some("{{recipient}}\n{{street}}\n{{postalcode}} {{city}}\n{{country}}");
@@ -13,10 +15,10 @@ pub mod consts {
     pub const ALPHA3: Alpha3 = Alpha3::NOR;
     pub const CONTINENT: Continent = Continent::Europe;
     pub const COUNTRY_CODE: usize = 47;
-    pub const CURRENCY_CODE: &str = "NOK";
+    pub const CURRENCY_CODE: CurrencyCode = CurrencyCode::NOK;
     pub const GEC: Option<GEC> = Some(GEC::NO);
     pub const INTERNATIONAL_PREFIX: &str = "00";
-    pub const IOC: Option<&str> = Some("NOR");
+    pub const IOC: Option<IOC> = Some(IOC::NOR);
     pub const ISO_SHORT_NAME: &str = "Norway";
     pub const ISO_LONG_NAME: &str = "The Kingdom of Norway";
     pub const OFFICIAL_LANGUAGE_LIST: &[&str] = &["nb", "nn"];
@@ -1193,7 +1195,10 @@ pub mod subdivisions {
     }
 }
 #[allow(unused_imports)]
-use crate::{Alpha2, Alpha3, Continent, Country, Region, SubRegion, WeekDay, WorldRegion, GEC};
+use crate::{
+    Alpha2, Alpha3, Continent, Country, CurrencyCode, Region, SubRegion, WeekDay, WorldRegion, GEC,
+    IOC,
+};
 #[allow(unused_imports)]
 use std::collections::HashMap;
 #[cfg(feature = "no")]
@@ -1204,12 +1209,12 @@ pub fn new() -> Country {
         address_format: Some("{{recipient}}\n{{street}}\n{{postalcode}} {{city}}\n{{country}}"),
         continent: Continent::Europe,
         country_code: 47,
-        currency_code: "NOK",
+        currency_code: CurrencyCode::NOK,
         gec: Some(GEC::NO),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: Some("NOR"),
+        ioc: Some(IOC::NOR),
         iso_long_name: "The Kingdom of Norway",
         iso_short_name: "Norway",
         official_language_list: ["nb", "nn"].to_vec(),

@@ -5,7 +5,9 @@
 #[cfg(all(feature = "sg", feature = "constants"))]
 pub mod consts {
     #[allow(unused_imports)]
-    use crate::{Alpha2, Alpha3, Continent, Region, SubRegion, WeekDay, WorldRegion, GEC};
+    use crate::{
+        Alpha2, Alpha3, Continent, CurrencyCode, Region, SubRegion, WeekDay, WorldRegion, GEC, IOC,
+    };
 
     pub const ADDRESS_FORMAT: Option<&str> =
         Some("{{recipient}}\n{{street}}\n{{city}} {{postalcode}}\n{{country}}");
@@ -13,10 +15,10 @@ pub mod consts {
     pub const ALPHA3: Alpha3 = Alpha3::SGP;
     pub const CONTINENT: Continent = Continent::Asia;
     pub const COUNTRY_CODE: usize = 65;
-    pub const CURRENCY_CODE: &str = "SGD";
+    pub const CURRENCY_CODE: CurrencyCode = CurrencyCode::SGD;
     pub const GEC: Option<GEC> = Some(GEC::SN);
     pub const INTERNATIONAL_PREFIX: &str = "001";
-    pub const IOC: Option<&str> = Some("SGP");
+    pub const IOC: Option<IOC> = Some(IOC::SGP);
     pub const ISO_SHORT_NAME: &str = "Singapore";
     pub const ISO_LONG_NAME: &str = "The Republic of Singapore";
     pub const OFFICIAL_LANGUAGE_LIST: &[&str] = &["en", "ms", "ta"];
@@ -306,7 +308,10 @@ pub mod subdivisions {
     }
 }
 #[allow(unused_imports)]
-use crate::{Alpha2, Alpha3, Continent, Country, Region, SubRegion, WeekDay, WorldRegion, GEC};
+use crate::{
+    Alpha2, Alpha3, Continent, Country, CurrencyCode, Region, SubRegion, WeekDay, WorldRegion, GEC,
+    IOC,
+};
 #[allow(unused_imports)]
 use std::collections::HashMap;
 #[cfg(feature = "sg")]
@@ -317,12 +322,12 @@ pub fn new() -> Country {
         address_format: Some("{{recipient}}\n{{street}}\n{{city}} {{postalcode}}\n{{country}}"),
         continent: Continent::Asia,
         country_code: 65,
-        currency_code: "SGD",
+        currency_code: CurrencyCode::SGD,
         gec: Some(GEC::SN),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "001",
-        ioc: Some("SGP"),
+        ioc: Some(IOC::SGP),
         iso_long_name: "The Republic of Singapore",
         iso_short_name: "Singapore",
         official_language_list: ["en", "ms", "ta"].to_vec(),

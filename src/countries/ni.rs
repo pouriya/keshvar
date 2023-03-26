@@ -5,17 +5,19 @@
 #[cfg(all(feature = "ni", feature = "constants"))]
 pub mod consts {
     #[allow(unused_imports)]
-    use crate::{Alpha2, Alpha3, Continent, Region, SubRegion, WeekDay, WorldRegion, GEC};
+    use crate::{
+        Alpha2, Alpha3, Continent, CurrencyCode, Region, SubRegion, WeekDay, WorldRegion, GEC, IOC,
+    };
 
     pub const ADDRESS_FORMAT: Option<&str> = None;
     pub const ALPHA2: Alpha2 = Alpha2::NI;
     pub const ALPHA3: Alpha3 = Alpha3::NIC;
     pub const CONTINENT: Continent = Continent::NorthAmerica;
     pub const COUNTRY_CODE: usize = 505;
-    pub const CURRENCY_CODE: &str = "NIO";
+    pub const CURRENCY_CODE: CurrencyCode = CurrencyCode::NIO;
     pub const GEC: Option<GEC> = Some(GEC::NU);
     pub const INTERNATIONAL_PREFIX: &str = "00";
-    pub const IOC: Option<&str> = Some("NCA");
+    pub const IOC: Option<IOC> = Some(IOC::NCA);
     pub const ISO_SHORT_NAME: &str = "Nicaragua";
     pub const ISO_LONG_NAME: &str = "The Republic of Nicaragua";
     pub const OFFICIAL_LANGUAGE_LIST: &[&str] = &["es"];
@@ -484,7 +486,10 @@ pub mod subdivisions {
     }
 }
 #[allow(unused_imports)]
-use crate::{Alpha2, Alpha3, Continent, Country, Region, SubRegion, WeekDay, WorldRegion, GEC};
+use crate::{
+    Alpha2, Alpha3, Continent, Country, CurrencyCode, Region, SubRegion, WeekDay, WorldRegion, GEC,
+    IOC,
+};
 #[allow(unused_imports)]
 use std::collections::HashMap;
 #[cfg(feature = "ni")]
@@ -495,12 +500,12 @@ pub fn new() -> Country {
         address_format: None,
         continent: Continent::NorthAmerica,
         country_code: 505,
-        currency_code: "NIO",
+        currency_code: CurrencyCode::NIO,
         gec: Some(GEC::NU),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: Some("NCA"),
+        ioc: Some(IOC::NCA),
         iso_long_name: "The Republic of Nicaragua",
         iso_short_name: "Nicaragua",
         official_language_list: ["es"].to_vec(),

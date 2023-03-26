@@ -1,7 +1,6 @@
-#[doc = include_str!("../README.md")]
-mod consts;
-mod country;
+#![doc = include_str!("../README.md")]
 
+mod country;
 pub use country::*;
 mod alpha2;
 pub use alpha2::*;
@@ -13,46 +12,173 @@ mod gec;
 pub use gec::*;
 mod ioc;
 pub use ioc::*;
-pub mod countries;
+mod currency_code;
+pub use currency_code::*;
 mod error;
+pub use error::*;
+mod consts;
+pub mod countries;
+pub use consts::{
+    SUPPORTED_ALPHA2_LIST, SUPPORTED_CONTINENT_LIST, SUPPORTED_REGION_LIST,
+    SUPPORTED_SUBREGION_LIST, SUPPORTED_WORLD_REGION_LIST,
+};
 
-pub use error::{SearchError, SearchedItems};
+// re-export integrations:
+#[cfg(feature = "chrono-integration")]
+#[doc(hidden)]
+pub use chrono;
+#[doc(hidden)]
+pub use hashbrown;
+#[cfg(feature = "iso-currency-integration")]
+#[doc(hidden)]
+pub use iso_currency;
 
+/// Find first match in all included country iso short names.
+///
+/// Note that provided argument SHOULD be lowercase.
+///
+/// # Example
+/// ```
+/// use keshvar::{Alpha2, Country, find_by_iso_short_name};
+///
+/// let short_name = "united arab emirates"; // I'm sure it's lowercase
+/// assert_eq!(Ok(Country::from(Alpha2::AE)), find_by_iso_short_name(short_name));
+///
+/// let other_short_name = "iTaLy"; // I'm NOT sure if it's lowercase
+/// assert_eq!(
+///     Ok(Country::from(Alpha2::IT)),
+///     find_by_iso_short_name(&other_short_name.to_lowercase())
+/// );
+/// ```
 pub fn find_by_iso_short_name(iso_short_name: &str) -> Result<Country, SearchError> {
-    for (country_iso_short_name, alpha2) in consts::SUPPORTED_ISO_SHORT_NAMES.iter() {
-        if country_iso_short_name == &iso_short_name {
-            return Ok((*alpha2).to_country());
-        }
+    if let Some(alpha2) =
+        consts::SUPPORTED_ISO_SHORT_NAMES.get(iso_short_name.to_lowercase().as_str())
+    {
+        Ok((*alpha2).to_country())
+    } else {
+        Err(make_search_error())
     }
-    Err(make_search_error())
 }
 
-pub fn find_by_iso_long_name(iso_long_name: &str) -> Result<Country, SearchError> {
-    for (country_iso_long_name, alpha2) in consts::SUPPORTED_ISO_LONG_NAMES.iter() {
-        if country_iso_long_name == &iso_long_name {
-            return Ok((*alpha2).to_country());
-        }
-    }
-    Err(make_search_error())
-}
-
-pub fn find_by_code(code: usize) -> Result<Country, SearchError> {
-    for (country_code, alpha2) in consts::SUPPORTED_COUNTRY_CODE.iter() {
-        if country_code == &code {
-            return Ok((*alpha2).to_country());
-        }
-    }
-    Err(make_search_error())
-}
-
-pub fn find<F>(filter: F) -> Result<Country, SearchError>
-where
-    F: Fn(Country) -> bool,
-{
-    if let Some(country) = consts::SUPPORTED_ALPHA2_LIST
+/// Search for all matches in all included country iso short names.
+///
+/// Note that provided argument SHOULD be lowercase.
+///
+/// # Example
+/// ```
+/// use keshvar::search_in_iso_short_names;
+///
+/// let search_text = "republic";
+/// let republic_country_list: Vec<&str> = search_in_iso_short_names(search_text)
+///     .into_iter()
+///     .map(|country| country.iso_short_name) // For example we just need their iso short names
+///     .collect();
+/// // Found 11 countries that have `republic` in their iso short names
+/// assert_eq!(11, republic_country_list.len());
+/// assert!(republic_country_list.contains(&"Iran (Islamic Republic of)"));
+/// ```
+pub fn search_in_iso_short_names(name: &str) -> Vec<Country> {
+    let name = name.to_lowercase();
+    consts::SUPPORTED_ISO_SHORT_NAMES
         .iter()
-        .find(|alpha2| filter(alpha2.to_country()))
+        .filter(|(iso_short_name, _)| iso_short_name.contains(&name))
+        .map(|(_, alpha2)| alpha2.to_country())
+        .collect()
+}
+
+/// Find first match in all included country iso long names.
+///
+/// Note that provided argument SHOULD be lowercase.
+///
+/// # Example
+/// ```
+/// use keshvar::{Alpha2, Country, find_by_iso_long_name};
+///
+/// let long_name = "the united mexican states"; // I'm sure it's lowercase
+/// assert_eq!(Ok(Country::from(Alpha2::MX)), find_by_iso_long_name(long_name));
+///
+/// let other_long_name = "tHe repUblic Of UgAndA"; // I'm NOT sure if it's lowercase
+/// assert_eq!(
+///     Ok(Country::from(Alpha2::UG)),
+///     find_by_iso_long_name(&other_long_name.to_lowercase())
+/// );
+/// ```
+pub fn find_by_iso_long_name(iso_long_name: &str) -> Result<Country, SearchError> {
+    if let Some(alpha2) =
+        consts::SUPPORTED_ISO_LONG_NAMES.get(iso_long_name.to_lowercase().as_str())
+    {
+        Ok((*alpha2).to_country())
+    } else {
+        Err(make_search_error())
+    }
+}
+
+/// Search for all matches in all included country iso long names.
+///
+/// Note that provided argument SHOULD be lowercase.
+///
+/// # Example
+/// ```
+/// use keshvar::search_in_iso_long_names;
+///
+/// let search_text = "nia";
+/// let republic_country_list: Vec<&str> = search_in_iso_long_names(search_text)
+///     .into_iter()
+///     .map(|country| country.iso_long_name) // For example we just need their iso long names
+///     .collect();
+/// // Found 11 countries that have `nia` in their iso long names
+/// assert_eq!(11, republic_country_list.len());
+/// assert!(republic_country_list.contains(&"The Republic of Estonia"));
+/// assert!(republic_country_list.contains(&"Bosnia and Herzegovina"));
+/// ```
+pub fn search_in_iso_long_names(iso_long_name: &str) -> Vec<Country> {
+    let iso_long_name = iso_long_name.to_lowercase();
+    consts::SUPPORTED_ISO_LONG_NAMES
+        .iter()
+        .filter(|(name, _)| name.contains(&iso_long_name))
+        .map(|(_, alpha2)| alpha2.to_country())
+        .collect()
+}
+
+/// Find by country code.
+///
+/// # Example
+/// ```
+/// use keshvar::{Alpha2, Country, find_by_code};
+///
+/// let country_code = 880; // The People's Republic of Bangladesh (Asia)
+/// assert_eq!(Ok(Country::from(Alpha2::BD)), find_by_code(country_code));
+/// ```
+pub fn find_by_code(code: usize) -> Result<Country, SearchError> {
+    if let Some(alpha2) = consts::SUPPORTED_COUNTRY_CODE.get(&code) {
+        Ok((*alpha2).to_country())
+    } else {
+        Err(make_search_error())
+    }
+}
+
+/// Find first match in all included countries by your own provided function.
+///
+/// # Example
+/// ```
+/// use keshvar::{Country, Continent, Alpha3, CurrencyCode, find};
+///
+/// // Find first country in Africa with currency code `USD`:
+/// let result = find(
+///     |country: &Country| {
+///         country.continent == Continent::Africa && country.currency_code == CurrencyCode::USD
+///     }
+/// );
+/// assert_eq!(Ok(Country::from(Alpha3::ZWE)), result); // Zimbabwe
+/// ```
+pub fn find<F>(mut filter: F) -> Result<Country, SearchError>
+where
+    F: FnMut(&Country) -> bool,
+{
+    if let Some(country) = SUPPORTED_ALPHA2_LIST
+        .iter()
         .map(|alpha2| alpha2.to_country())
+        .find(|country| filter(country))
     {
         Ok(country)
     } else {
@@ -60,13 +186,147 @@ where
     }
 }
 
-// #[inline]
-// pub fn supported_countries_iterator() -> Iter<'static, Country> {
-//     consts::SUPPORTED_ALPHA2_LIST.iter().map(|alpha2| alpha2.to_country()).collect::<Vec<_>>().iter().collect()
-// }
+/// Search for all matches in all included countries by your own provided function.
+///
+/// # Example
+/// ```
+/// use keshvar::{Country, WeekDay, Alpha3, SubRegion, search};
+///
+/// // Search for all countries in Southern-Asia that their start of the week day is sunday:
+/// let result = search(
+///     |country: &Country| {
+///         if let Some(SubRegion::SouthernAsia) = country.subregion {
+///             country.start_of_week == WeekDay::Sunday
+///         } else {
+///                 false
+///         }
+///     }
+/// );
+/// // Found 3 countries:
+/// assert_eq!(3, result.len());
+/// assert!(result.contains(&Country::from(Alpha3::NPL))); // Nepal
+/// ```
+pub fn search<F>(mut search: F) -> Vec<Country>
+where
+    F: FnMut(&Country) -> bool,
+{
+    SUPPORTED_ALPHA2_LIST
+        .iter()
+        .map(|alpha2| alpha2.to_country())
+        .filter(|country| search(country))
+        .collect()
+}
 
+/// Run a task function for all included countries.
+///
+/// # Example
+/// ```
+/// use std::collections::HashMap;
+/// use keshvar::{Country, Continent, for_each};
+///
+/// // Create a map for spoken languages of all included countries in South-America:
+/// let mut spoken_languages = HashMap::new();
+/// let result = for_each(
+///     |country: &Country| {
+///         if country.continent != Continent::SouthAmerica {
+///             return
+///         }
+///         for lang in &country.spoken_language_list {
+///             // Check if we already added this lang or not:
+///             if !spoken_languages.contains_key(lang) {
+///                 spoken_languages.insert(*lang, Vec::new());
+///             }
+///             // Add its iso short name to our map:
+///             spoken_languages.get_mut(lang).unwrap().push(country.iso_short_name)
+///         };
+///     }
+/// );
+/// // println!("{spoken_languages:#?}");
+/// // {
+/// //     "nl": [
+/// //         "Suriname",
+/// //     ],
+/// //     "gn": [
+/// //         "Argentina",
+/// //         "Paraguay",
+/// //     ],
+/// //     "es": [
+/// //         "Argentina",
+/// //         "Bolivia (Plurinational State of)",
+/// //         "Chile",
+/// //         "Colombia",
+/// //         "Ecuador",
+/// //         "Peru",
+/// //         "Paraguay",
+/// //         "Uruguay",
+/// //         "Venezuela (Bolivarian Republic of)",
+/// //     ],
+/// //     "pt": [
+/// //         "Brazil",
+/// //     ],
+/// //     "qu": [
+/// //         "Bolivia (Plurinational State of)",
+/// //     ],
+/// //     "en": [
+/// //         "Falkland Islands (Malvinas)",
+/// //         "Guyana",
+/// //     ],
+/// //     "fr": [
+/// //         "French Guiana",
+/// //     ],
+/// //     "ay": [
+/// //         "Bolivia (Plurinational State of)",
+/// //     ],
+/// // }
+/// assert!(spoken_languages.get("es").unwrap().contains(&"Colombia"));
+/// assert!(spoken_languages.get("gn").unwrap().contains(&"Argentina"));
+/// assert!(spoken_languages.get("en").unwrap().contains(&"Guyana"));
+/// ```
+pub fn for_each<F>(mut task: F)
+where
+    F: FnMut(&Country),
+{
+    SUPPORTED_ALPHA2_LIST
+        .iter()
+        .map(|alpha2| alpha2.to_country())
+        .for_each(|country| task(&country));
+}
+
+/// Run a task function for all included countries.
+///
+/// # Example
+/// ```
+/// use std::collections::HashMap;
+/// use keshvar::{Country, WeekDay, CurrencyCode, filter_map};
+///
+/// let country_list = filter_map(
+///     |country: &Country| {
+///         if country.start_of_week == WeekDay::Monday && country.currency_code == CurrencyCode::USD {
+///             Some(country.iso_short_name)
+///         } else {
+///             None
+///         }
+///     }
+/// );
+/// // Found 17 countries:
+/// assert_eq!(17, country_list.len());
+/// assert!(country_list.contains(&"Ecuador"));
+/// ```
+pub fn filter_map<F, B>(mut filter_map: F) -> Vec<B>
+where
+    F: FnMut(&Country) -> Option<B>,
+{
+    SUPPORTED_ALPHA2_LIST
+        .iter()
+        .map(|alpha2| alpha2.to_country())
+        .filter_map(|country| filter_map(&country))
+        .collect()
+}
+
+// TODO: use this function in other modules:
 #[inline]
-fn make_search_error() -> SearchError {
+pub(crate) fn make_search_error() -> SearchError {
+    #[allow(dead_code)]
     if consts::SUPPORT_ALL_COUNTRIES {
         SearchError::NotFound {
             searched_items: SearchedItems::AllCountries,
@@ -75,78 +335,5 @@ fn make_search_error() -> SearchError {
         SearchError::NotFound {
             searched_items: SearchedItems::SupportedCountries(*consts::SUPPORTED_COUNTRIES_COUNT),
         }
-    }
-}
-
-#[cfg(test)]
-mod unit_tests {
-    use super::{Alpha2, Alpha3, Country, SearchError, SearchedItems, GEC};
-
-    #[test]
-    fn alpha2() {
-        assert_eq!(Alpha2::UA, Alpha2::from(Alpha3::UKR));
-        // assert_eq!("IS", Alpha2::IS.to_string().as_str());
-        assert_eq!("IRN", Alpha2::IR.to_alpha3().to_string().as_str());
-        assert_eq!(Ok(Alpha2::US), Alpha2::try_from("us"));
-        assert_eq!(Ok(Alpha2::IQ), Alpha2::try_from(&*"iQ".to_string()));
-        assert_eq!(
-            Err("Could not be found in all countries".to_string()),
-            Alpha2::try_from("xx").map_err(|error| error.to_string())
-        );
-        assert_eq!(
-            Err("Expected a string with two characters".to_string()),
-            Alpha2::try_from("123").map_err(|error| error.to_string())
-        );
-    }
-
-    #[test]
-    fn alpha3() {
-        assert_eq!(Alpha3::UKR, Alpha3::from(Alpha2::UA));
-        // assert_eq!("ISR", Alpha3::ISR.to_string().as_str());
-        assert_eq!("IR", Alpha3::IRN.to_alpha2().to_string().as_str());
-        assert_eq!(Ok(Alpha3::USA), Alpha3::try_from("uSa"));
-        assert_eq!(Ok(Alpha3::IRQ), Alpha3::try_from(&*"iRq".to_string()));
-        assert_eq!(
-            Err(SearchError::NotFound {
-                searched_items: SearchedItems::AllCountries
-            }),
-            Alpha3::try_from("xxx")
-        );
-        assert_eq!(
-            Err(SearchError::BadInput {
-                expected: "a string with three characters"
-            }),
-            Alpha3::try_from("1234")
-        );
-    }
-
-    #[test]
-    fn convert() {
-        assert_eq!(Country::from(Alpha2::AF), Country::from(Alpha3::AFG));
-    }
-
-    #[test]
-    fn gec() {
-        assert_eq!(None, Country::from(Alpha3::ALA).gec); // Åland (Europe)
-        assert_eq!(Some(GEC::FP), Country::from(Alpha2::PF).gec); // French Polynesia (Oceania)
-        assert_eq!(GEC::PM.to_alpha2(), Alpha2::PA); // The Republic of Panamá (Americas)
-        assert_eq!(Country::try_from("ai"), Ok(GEC::AV.to_country())); // Anguilla (Americas)
-        assert_eq!(Country::try_from("av"), Ok(GEC::AV.to_country())); // Anguilla (Americas)
-    }
-
-    #[test]
-    fn search() {
-        assert_eq!(
-            Ok(Alpha2::KE.to_country()),
-            super::find_by_iso_short_name("kenya")
-        );
-        assert_eq!(
-            Ok(Alpha2::KE.to_country()),
-            super::find_by_iso_long_name("the republic of kenya")
-        );
-        assert_eq!(
-            Ok(Alpha2::YE.to_country()),
-            super::find_by_code(967) // The Republic of Yemen (Asia)
-        );
     }
 }

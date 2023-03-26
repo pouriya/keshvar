@@ -5,7 +5,9 @@
 #[cfg(all(feature = "sy", feature = "constants"))]
 pub mod consts {
     #[allow(unused_imports)]
-    use crate::{Alpha2, Alpha3, Continent, Region, SubRegion, WeekDay, WorldRegion, GEC};
+    use crate::{
+        Alpha2, Alpha3, Continent, CurrencyCode, Region, SubRegion, WeekDay, WorldRegion, GEC, IOC,
+    };
 
     pub const ADDRESS_FORMAT: Option<&str> =
         Some("{{recipient}}\n{{street}}\n{{postalcode}} {{city}}\n{{country}}");
@@ -13,10 +15,10 @@ pub mod consts {
     pub const ALPHA3: Alpha3 = Alpha3::SYR;
     pub const CONTINENT: Continent = Continent::Asia;
     pub const COUNTRY_CODE: usize = 963;
-    pub const CURRENCY_CODE: &str = "SYP";
+    pub const CURRENCY_CODE: CurrencyCode = CurrencyCode::SYP;
     pub const GEC: Option<GEC> = Some(GEC::SY);
     pub const INTERNATIONAL_PREFIX: &str = "00";
-    pub const IOC: Option<&str> = Some("SYR");
+    pub const IOC: Option<IOC> = Some(IOC::SYR);
     pub const ISO_SHORT_NAME: &str = "Syrian Arab Republic";
     pub const ISO_LONG_NAME: &str = "The Syrian Arab Republic";
     pub const OFFICIAL_LANGUAGE_LIST: &[&str] = &["ar"];
@@ -446,7 +448,10 @@ pub mod subdivisions {
     }
 }
 #[allow(unused_imports)]
-use crate::{Alpha2, Alpha3, Continent, Country, Region, SubRegion, WeekDay, WorldRegion, GEC};
+use crate::{
+    Alpha2, Alpha3, Continent, Country, CurrencyCode, Region, SubRegion, WeekDay, WorldRegion, GEC,
+    IOC,
+};
 #[allow(unused_imports)]
 use std::collections::HashMap;
 #[cfg(feature = "sy")]
@@ -457,12 +462,12 @@ pub fn new() -> Country {
         address_format: Some("{{recipient}}\n{{street}}\n{{postalcode}} {{city}}\n{{country}}"),
         continent: Continent::Asia,
         country_code: 963,
-        currency_code: "SYP",
+        currency_code: CurrencyCode::SYP,
         gec: Some(GEC::SY),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: Some("SYR"),
+        ioc: Some(IOC::SYR),
         iso_long_name: "The Syrian Arab Republic",
         iso_short_name: "Syrian Arab Republic",
         official_language_list: ["ar"].to_vec(),

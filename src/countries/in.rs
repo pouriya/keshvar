@@ -5,7 +5,9 @@
 #[cfg(all(feature = "in", feature = "constants"))]
 pub mod consts {
     #[allow(unused_imports)]
-    use crate::{Alpha2, Alpha3, Continent, Region, SubRegion, WeekDay, WorldRegion, GEC};
+    use crate::{
+        Alpha2, Alpha3, Continent, CurrencyCode, Region, SubRegion, WeekDay, WorldRegion, GEC, IOC,
+    };
 
     pub const ADDRESS_FORMAT: Option<&str> =
         Some("{{recipient}}\n{{street}}\n{{region}}\n{{city}} {{postalcode}}\n{{country}}");
@@ -13,10 +15,10 @@ pub mod consts {
     pub const ALPHA3: Alpha3 = Alpha3::IND;
     pub const CONTINENT: Continent = Continent::Asia;
     pub const COUNTRY_CODE: usize = 91;
-    pub const CURRENCY_CODE: &str = "INR";
+    pub const CURRENCY_CODE: CurrencyCode = CurrencyCode::INR;
     pub const GEC: Option<GEC> = Some(GEC::IN);
     pub const INTERNATIONAL_PREFIX: &str = "00";
-    pub const IOC: Option<&str> = Some("IND");
+    pub const IOC: Option<IOC> = Some(IOC::IND);
     pub const ISO_SHORT_NAME: &str = "India";
     pub const ISO_LONG_NAME: &str = "The Republic of India";
     pub const OFFICIAL_LANGUAGE_LIST: &[&str] = &["en", "hi"];
@@ -773,7 +775,10 @@ pub mod subdivisions {
     }
 }
 #[allow(unused_imports)]
-use crate::{Alpha2, Alpha3, Continent, Country, Region, SubRegion, WeekDay, WorldRegion, GEC};
+use crate::{
+    Alpha2, Alpha3, Continent, Country, CurrencyCode, Region, SubRegion, WeekDay, WorldRegion, GEC,
+    IOC,
+};
 #[allow(unused_imports)]
 use std::collections::HashMap;
 #[cfg(feature = "in")]
@@ -786,12 +791,12 @@ pub fn new() -> Country {
         ),
         continent: Continent::Asia,
         country_code: 91,
-        currency_code: "INR",
+        currency_code: CurrencyCode::INR,
         gec: Some(GEC::IN),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: Some("IND"),
+        ioc: Some(IOC::IND),
         iso_long_name: "The Republic of India",
         iso_short_name: "India",
         official_language_list: ["en", "hi"].to_vec(),

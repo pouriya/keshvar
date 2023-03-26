@@ -5,17 +5,19 @@
 #[cfg(all(feature = "pn", feature = "constants"))]
 pub mod consts {
     #[allow(unused_imports)]
-    use crate::{Alpha2, Alpha3, Continent, Region, SubRegion, WeekDay, WorldRegion, GEC};
+    use crate::{
+        Alpha2, Alpha3, Continent, CurrencyCode, Region, SubRegion, WeekDay, WorldRegion, GEC, IOC,
+    };
 
     pub const ADDRESS_FORMAT: Option<&str> = None;
     pub const ALPHA2: Alpha2 = Alpha2::PN;
     pub const ALPHA3: Alpha3 = Alpha3::PCN;
     pub const CONTINENT: Continent = Continent::Australia;
     pub const COUNTRY_CODE: usize = 64;
-    pub const CURRENCY_CODE: &str = "NZD";
+    pub const CURRENCY_CODE: CurrencyCode = CurrencyCode::NZD;
     pub const GEC: Option<GEC> = Some(GEC::PC);
     pub const INTERNATIONAL_PREFIX: &str = "00";
-    pub const IOC: Option<&str> = None;
+    pub const IOC: Option<IOC> = None;
     pub const ISO_SHORT_NAME: &str = "Pitcairn";
     pub const ISO_LONG_NAME: &str = "The Pitcairn, Henderson, Ducie and Oeno Islands";
     pub const OFFICIAL_LANGUAGE_LIST: &[&str] = &["en"];
@@ -226,7 +228,10 @@ pub mod subdivisions {
     }
 }
 #[allow(unused_imports)]
-use crate::{Alpha2, Alpha3, Continent, Country, Region, SubRegion, WeekDay, WorldRegion, GEC};
+use crate::{
+    Alpha2, Alpha3, Continent, Country, CurrencyCode, Region, SubRegion, WeekDay, WorldRegion, GEC,
+    IOC,
+};
 #[allow(unused_imports)]
 use std::collections::HashMap;
 #[cfg(feature = "pn")]
@@ -237,7 +242,7 @@ pub fn new() -> Country {
         address_format: None,
         continent: Continent::Australia,
         country_code: 64,
-        currency_code: "NZD",
+        currency_code: CurrencyCode::NZD,
         gec: Some(GEC::PC),
         #[cfg(feature = "geo")]
         geo: geo::new(),

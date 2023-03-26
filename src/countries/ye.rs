@@ -5,7 +5,9 @@
 #[cfg(all(feature = "ye", feature = "constants"))]
 pub mod consts {
     #[allow(unused_imports)]
-    use crate::{Alpha2, Alpha3, Continent, Region, SubRegion, WeekDay, WorldRegion, GEC};
+    use crate::{
+        Alpha2, Alpha3, Continent, CurrencyCode, Region, SubRegion, WeekDay, WorldRegion, GEC, IOC,
+    };
 
     pub const ADDRESS_FORMAT: Option<&str> =
         Some("{{recipient}}\n{{street}}\n{{postalcode}} {{city}}\n{{country}}");
@@ -13,10 +15,10 @@ pub mod consts {
     pub const ALPHA3: Alpha3 = Alpha3::YEM;
     pub const CONTINENT: Continent = Continent::Asia;
     pub const COUNTRY_CODE: usize = 967;
-    pub const CURRENCY_CODE: &str = "YER";
+    pub const CURRENCY_CODE: CurrencyCode = CurrencyCode::YER;
     pub const GEC: Option<GEC> = Some(GEC::YM);
     pub const INTERNATIONAL_PREFIX: &str = "00";
-    pub const IOC: Option<&str> = Some("YEM");
+    pub const IOC: Option<IOC> = Some(IOC::YEM);
     pub const ISO_SHORT_NAME: &str = "Yemen";
     pub const ISO_LONG_NAME: &str = "The Republic of Yemen";
     pub const OFFICIAL_LANGUAGE_LIST: &[&str] = &["ar"];
@@ -560,7 +562,10 @@ pub mod subdivisions {
     }
 }
 #[allow(unused_imports)]
-use crate::{Alpha2, Alpha3, Continent, Country, Region, SubRegion, WeekDay, WorldRegion, GEC};
+use crate::{
+    Alpha2, Alpha3, Continent, Country, CurrencyCode, Region, SubRegion, WeekDay, WorldRegion, GEC,
+    IOC,
+};
 #[allow(unused_imports)]
 use std::collections::HashMap;
 #[cfg(feature = "ye")]
@@ -571,12 +576,12 @@ pub fn new() -> Country {
         address_format: Some("{{recipient}}\n{{street}}\n{{postalcode}} {{city}}\n{{country}}"),
         continent: Continent::Asia,
         country_code: 967,
-        currency_code: "YER",
+        currency_code: CurrencyCode::YER,
         gec: Some(GEC::YM),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: Some("YEM"),
+        ioc: Some(IOC::YEM),
         iso_long_name: "The Republic of Yemen",
         iso_short_name: "Yemen",
         official_language_list: ["ar"].to_vec(),
