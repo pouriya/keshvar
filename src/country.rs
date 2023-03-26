@@ -1,4 +1,6 @@
-use crate::{Alpha2, Alpha3, Continent, Region, SearchError, SubRegion, WorldRegion, GEC, IOC};
+use crate::{
+    Alpha2, Alpha3, Continent, CurrencyCode, Region, SearchError, SubRegion, WorldRegion, GEC, IOC,
+};
 
 #[cfg(feature = "subdivisions")]
 use crate::{SearchedItems, SubdivisionType};
@@ -16,7 +18,7 @@ pub struct Country {
     pub alpha3: Alpha3,
     pub country_code: usize,
     pub continent: Continent,
-    pub currency_code: &'static str,
+    pub currency_code: CurrencyCode,
     pub address_format: Option<&'static str>,
     pub gec: Option<GEC>,
     #[cfg(feature = "geo")]
