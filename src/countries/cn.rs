@@ -212,12 +212,13 @@ pub mod geo {
 
 #[cfg(all(feature = "cn", feature = "subdivisions"))]
 pub mod subdivisions {
-    use crate::Subdivision;
+    #[allow(unused_imports)]
+    use crate::{Alpha2, Subdivision, SubdivisionType};
     use std::collections::HashMap;
     // In this state, We do not know if subdivisions have geo or not!
     #[cfg(feature = "geo")]
     #[allow(unused_imports)]
-    use crate::{Alpha2, SubdivisionGeo, SubdivisionType};
+    use crate::SubdivisionGeo;
 
     pub fn new() -> HashMap<&'static str, Subdivision> {
         HashMap::from(
@@ -226,7 +227,7 @@ pub mod subdivisions {
                 (
                     "AH",
                     Subdivision{
-                        name: "AH",
+                        name: "Anhui",
                         country_alpha2: Alpha2::CN,
                         code: "AH",
                         #[cfg(feature = "geo")]
@@ -241,7 +242,7 @@ pub mod subdivisions {
                 (
                     "BJ",
                     Subdivision{
-                        name: "BJ",
+                        name: "Beijing",
                         country_alpha2: Alpha2::CN,
                         code: "BJ",
                         #[cfg(feature = "geo")]
@@ -256,7 +257,7 @@ pub mod subdivisions {
                 (
                     "CQ",
                     Subdivision{
-                        name: "CQ",
+                        name: "Chongqing",
                         country_alpha2: Alpha2::CN,
                         code: "CQ",
                         #[cfg(feature = "geo")]
@@ -271,7 +272,7 @@ pub mod subdivisions {
                 (
                     "FJ",
                     Subdivision{
-                        name: "FJ",
+                        name: "Fujian",
                         country_alpha2: Alpha2::CN,
                         code: "FJ",
                         #[cfg(feature = "geo")]
@@ -286,7 +287,7 @@ pub mod subdivisions {
                 (
                     "GD",
                     Subdivision{
-                        name: "GD",
+                        name: "Guangdong",
                         country_alpha2: Alpha2::CN,
                         code: "GD",
                         #[cfg(feature = "geo")]
@@ -301,7 +302,7 @@ pub mod subdivisions {
                 (
                     "GS",
                     Subdivision{
-                        name: "GS",
+                        name: "Gansu",
                         country_alpha2: Alpha2::CN,
                         code: "GS",
                         #[cfg(feature = "geo")]
@@ -316,7 +317,7 @@ pub mod subdivisions {
                 (
                     "GX",
                     Subdivision{
-                        name: "GX",
+                        name: "Guangxi",
                         country_alpha2: Alpha2::CN,
                         code: "GX",
                         #[cfg(feature = "geo")]
@@ -331,7 +332,7 @@ pub mod subdivisions {
                 (
                     "GZ",
                     Subdivision{
-                        name: "GZ",
+                        name: "Guizhou",
                         country_alpha2: Alpha2::CN,
                         code: "GZ",
                         #[cfg(feature = "geo")]
@@ -346,7 +347,7 @@ pub mod subdivisions {
                 (
                     "HA",
                     Subdivision{
-                        name: "HA",
+                        name: "Henan",
                         country_alpha2: Alpha2::CN,
                         code: "HA",
                         #[cfg(feature = "geo")]
@@ -361,7 +362,7 @@ pub mod subdivisions {
                 (
                     "HB",
                     Subdivision{
-                        name: "HB",
+                        name: "Hubei",
                         country_alpha2: Alpha2::CN,
                         code: "HB",
                         #[cfg(feature = "geo")]
@@ -376,7 +377,7 @@ pub mod subdivisions {
                 (
                     "HE",
                     Subdivision{
-                        name: "HE",
+                        name: "Hebei",
                         country_alpha2: Alpha2::CN,
                         code: "HE",
                         #[cfg(feature = "geo")]
@@ -391,7 +392,7 @@ pub mod subdivisions {
                 (
                     "HI",
                     Subdivision{
-                        name: "HI",
+                        name: "Hainan",
                         country_alpha2: Alpha2::CN,
                         code: "HI",
                         #[cfg(feature = "geo")]
@@ -406,7 +407,7 @@ pub mod subdivisions {
                 (
                     "HK",
                     Subdivision{
-                        name: "HK",
+                        name: "Xianggang (zh) **",
                         country_alpha2: Alpha2::CN,
                         code: "HK",
                         #[cfg(feature = "geo")]
@@ -421,7 +422,7 @@ pub mod subdivisions {
                 (
                     "HL",
                     Subdivision{
-                        name: "HL",
+                        name: "Heilongjiang",
                         country_alpha2: Alpha2::CN,
                         code: "HL",
                         #[cfg(feature = "geo")]
@@ -436,7 +437,7 @@ pub mod subdivisions {
                 (
                     "HN",
                     Subdivision{
-                        name: "HN",
+                        name: "Hunan",
                         country_alpha2: Alpha2::CN,
                         code: "HN",
                         #[cfg(feature = "geo")]
@@ -451,7 +452,7 @@ pub mod subdivisions {
                 (
                     "JL",
                     Subdivision{
-                        name: "JL",
+                        name: "Jilin",
                         country_alpha2: Alpha2::CN,
                         code: "JL",
                         #[cfg(feature = "geo")]
@@ -466,7 +467,7 @@ pub mod subdivisions {
                 (
                     "JS",
                     Subdivision{
-                        name: "JS",
+                        name: "Jiangsu",
                         country_alpha2: Alpha2::CN,
                         code: "JS",
                         #[cfg(feature = "geo")]
@@ -481,7 +482,7 @@ pub mod subdivisions {
                 (
                     "JX",
                     Subdivision{
-                        name: "JX",
+                        name: "Jiangxi",
                         country_alpha2: Alpha2::CN,
                         code: "JX",
                         #[cfg(feature = "geo")]
@@ -496,7 +497,7 @@ pub mod subdivisions {
                 (
                     "LN",
                     Subdivision{
-                        name: "LN",
+                        name: "Liaoning",
                         country_alpha2: Alpha2::CN,
                         code: "LN",
                         #[cfg(feature = "geo")]
@@ -511,7 +512,7 @@ pub mod subdivisions {
                 (
                     "MO",
                     Subdivision{
-                        name: "MO",
+                        name: "Aomen (zh) ***",
                         country_alpha2: Alpha2::CN,
                         code: "MO",
                         #[cfg(feature = "geo")]
@@ -526,7 +527,7 @@ pub mod subdivisions {
                 (
                     "NM",
                     Subdivision{
-                        name: "NM",
+                        name: "Nei Mongol (mn)",
                         country_alpha2: Alpha2::CN,
                         code: "NM",
                         #[cfg(feature = "geo")]
@@ -541,7 +542,7 @@ pub mod subdivisions {
                 (
                     "NX",
                     Subdivision{
-                        name: "NX",
+                        name: "Ningxia",
                         country_alpha2: Alpha2::CN,
                         code: "NX",
                         #[cfg(feature = "geo")]
@@ -556,7 +557,7 @@ pub mod subdivisions {
                 (
                     "QH",
                     Subdivision{
-                        name: "QH",
+                        name: "Qinghai",
                         country_alpha2: Alpha2::CN,
                         code: "QH",
                         #[cfg(feature = "geo")]
@@ -571,7 +572,7 @@ pub mod subdivisions {
                 (
                     "SC",
                     Subdivision{
-                        name: "SC",
+                        name: "Sichuan",
                         country_alpha2: Alpha2::CN,
                         code: "SC",
                         #[cfg(feature = "geo")]
@@ -586,7 +587,7 @@ pub mod subdivisions {
                 (
                     "SD",
                     Subdivision{
-                        name: "SD",
+                        name: "Shandong",
                         country_alpha2: Alpha2::CN,
                         code: "SD",
                         #[cfg(feature = "geo")]
@@ -601,7 +602,7 @@ pub mod subdivisions {
                 (
                     "SH",
                     Subdivision{
-                        name: "SH",
+                        name: "Shanghai",
                         country_alpha2: Alpha2::CN,
                         code: "SH",
                         #[cfg(feature = "geo")]
@@ -616,7 +617,7 @@ pub mod subdivisions {
                 (
                     "SN",
                     Subdivision{
-                        name: "SN",
+                        name: "Shaanxi",
                         country_alpha2: Alpha2::CN,
                         code: "SN",
                         #[cfg(feature = "geo")]
@@ -631,7 +632,7 @@ pub mod subdivisions {
                 (
                     "SX",
                     Subdivision{
-                        name: "SX",
+                        name: "Shanxi",
                         country_alpha2: Alpha2::CN,
                         code: "SX",
                         #[cfg(feature = "geo")]
@@ -646,7 +647,7 @@ pub mod subdivisions {
                 (
                     "TJ",
                     Subdivision{
-                        name: "TJ",
+                        name: "Tianjin",
                         country_alpha2: Alpha2::CN,
                         code: "TJ",
                         #[cfg(feature = "geo")]
@@ -661,7 +662,7 @@ pub mod subdivisions {
                 (
                     "TW",
                     Subdivision{
-                        name: "TW",
+                        name: "Taiwan *",
                         country_alpha2: Alpha2::CN,
                         code: "TW",
                         #[cfg(feature = "geo")]
@@ -676,7 +677,7 @@ pub mod subdivisions {
                 (
                     "XJ",
                     Subdivision{
-                        name: "XJ",
+                        name: "Xinjiang",
                         country_alpha2: Alpha2::CN,
                         code: "XJ",
                         #[cfg(feature = "geo")]
@@ -691,7 +692,7 @@ pub mod subdivisions {
                 (
                     "XZ",
                     Subdivision{
-                        name: "XZ",
+                        name: "Xizang",
                         country_alpha2: Alpha2::CN,
                         code: "XZ",
                         #[cfg(feature = "geo")]
@@ -706,7 +707,7 @@ pub mod subdivisions {
                 (
                     "YN",
                     Subdivision{
-                        name: "YN",
+                        name: "Yunnan",
                         country_alpha2: Alpha2::CN,
                         code: "YN",
                         #[cfg(feature = "geo")]
@@ -721,7 +722,7 @@ pub mod subdivisions {
                 (
                     "ZJ",
                     Subdivision{
-                        name: "ZJ",
+                        name: "Zhejiang",
                         country_alpha2: Alpha2::CN,
                         code: "ZJ",
                         #[cfg(feature = "geo")]

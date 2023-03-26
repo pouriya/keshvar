@@ -211,12 +211,13 @@ pub mod geo {
 
 #[cfg(all(feature = "cu", feature = "subdivisions"))]
 pub mod subdivisions {
-    use crate::Subdivision;
+    #[allow(unused_imports)]
+    use crate::{Alpha2, Subdivision, SubdivisionType};
     use std::collections::HashMap;
     // In this state, We do not know if subdivisions have geo or not!
     #[cfg(feature = "geo")]
     #[allow(unused_imports)]
-    use crate::{Alpha2, SubdivisionGeo, SubdivisionType};
+    use crate::SubdivisionGeo;
 
     pub fn new() -> HashMap<&'static str, Subdivision> {
         HashMap::from(
@@ -225,7 +226,7 @@ pub mod subdivisions {
                 (
                     "01",
                     Subdivision{
-                        name: "01",
+                        name: "Pinar del Río",
                         country_alpha2: Alpha2::CU,
                         code: "01",
                         #[cfg(feature = "geo")]
@@ -240,7 +241,7 @@ pub mod subdivisions {
                 (
                     "03",
                     Subdivision{
-                        name: "03",
+                        name: "La Habana",
                         country_alpha2: Alpha2::CU,
                         code: "03",
                         #[cfg(feature = "geo")]
@@ -255,7 +256,7 @@ pub mod subdivisions {
                 (
                     "04",
                     Subdivision{
-                        name: "04",
+                        name: "Matanzas",
                         country_alpha2: Alpha2::CU,
                         code: "04",
                         #[cfg(feature = "geo")]
@@ -270,7 +271,7 @@ pub mod subdivisions {
                 (
                     "05",
                     Subdivision{
-                        name: "05",
+                        name: "Villa Clara",
                         country_alpha2: Alpha2::CU,
                         code: "05",
                         #[cfg(feature = "geo")]
@@ -285,7 +286,7 @@ pub mod subdivisions {
                 (
                     "06",
                     Subdivision{
-                        name: "06",
+                        name: "Cienfuegos",
                         country_alpha2: Alpha2::CU,
                         code: "06",
                         #[cfg(feature = "geo")]
@@ -300,7 +301,7 @@ pub mod subdivisions {
                 (
                     "07",
                     Subdivision{
-                        name: "07",
+                        name: "Sancti Spíritus",
                         country_alpha2: Alpha2::CU,
                         code: "07",
                         #[cfg(feature = "geo")]
@@ -315,7 +316,7 @@ pub mod subdivisions {
                 (
                     "08",
                     Subdivision{
-                        name: "08",
+                        name: "Ciego de Ávila",
                         country_alpha2: Alpha2::CU,
                         code: "08",
                         #[cfg(feature = "geo")]
@@ -330,7 +331,7 @@ pub mod subdivisions {
                 (
                     "09",
                     Subdivision{
-                        name: "09",
+                        name: "Camagüey",
                         country_alpha2: Alpha2::CU,
                         code: "09",
                         #[cfg(feature = "geo")]
@@ -345,7 +346,7 @@ pub mod subdivisions {
                 (
                     "10",
                     Subdivision{
-                        name: "10",
+                        name: "Las Tunas",
                         country_alpha2: Alpha2::CU,
                         code: "10",
                         #[cfg(feature = "geo")]
@@ -360,7 +361,7 @@ pub mod subdivisions {
                 (
                     "11",
                     Subdivision{
-                        name: "11",
+                        name: "Holguín",
                         country_alpha2: Alpha2::CU,
                         code: "11",
                         #[cfg(feature = "geo")]
@@ -375,7 +376,7 @@ pub mod subdivisions {
                 (
                     "12",
                     Subdivision{
-                        name: "12",
+                        name: "Granma",
                         country_alpha2: Alpha2::CU,
                         code: "12",
                         #[cfg(feature = "geo")]
@@ -390,7 +391,7 @@ pub mod subdivisions {
                 (
                     "13",
                     Subdivision{
-                        name: "13",
+                        name: "Santiago de Cuba",
                         country_alpha2: Alpha2::CU,
                         code: "13",
                         #[cfg(feature = "geo")]
@@ -405,7 +406,7 @@ pub mod subdivisions {
                 (
                     "14",
                     Subdivision{
-                        name: "14",
+                        name: "Guantánamo",
                         country_alpha2: Alpha2::CU,
                         code: "14",
                         #[cfg(feature = "geo")]
@@ -420,7 +421,7 @@ pub mod subdivisions {
                 (
                     "15",
                     Subdivision{
-                        name: "15",
+                        name: "Artemisa",
                         country_alpha2: Alpha2::CU,
                         code: "15",
                         #[cfg(feature = "geo")]
@@ -435,7 +436,7 @@ pub mod subdivisions {
                 (
                     "16",
                     Subdivision{
-                        name: "16",
+                        name: "Mayabeque",
                         country_alpha2: Alpha2::CU,
                         code: "16",
                         #[cfg(feature = "geo")]
@@ -450,7 +451,7 @@ pub mod subdivisions {
                 (
                     "99",
                     Subdivision{
-                        name: "99",
+                        name: "Isla de la Juventud",
                         country_alpha2: Alpha2::CU,
                         code: "99",
                         #[cfg(feature = "geo")]

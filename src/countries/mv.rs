@@ -220,12 +220,13 @@ pub mod geo {
 
 #[cfg(all(feature = "mv", feature = "subdivisions"))]
 pub mod subdivisions {
-    use crate::Subdivision;
+    #[allow(unused_imports)]
+    use crate::{Alpha2, Subdivision, SubdivisionType};
     use std::collections::HashMap;
     // In this state, We do not know if subdivisions have geo or not!
     #[cfg(feature = "geo")]
     #[allow(unused_imports)]
-    use crate::{Alpha2, SubdivisionGeo, SubdivisionType};
+    use crate::SubdivisionGeo;
 
     pub fn new() -> HashMap<&'static str, Subdivision> {
         HashMap::from(
@@ -234,7 +235,7 @@ pub mod subdivisions {
                 (
                     "00",
                     Subdivision{
-                        name: "00",
+                        name: "Ariatholhu Dhekunuburi",
                         country_alpha2: Alpha2::MV,
                         code: "00",
                         #[cfg(feature = "geo")]
@@ -249,7 +250,7 @@ pub mod subdivisions {
                 (
                     "01",
                     Subdivision{
-                        name: "01",
+                        name: "Addu",
                         country_alpha2: Alpha2::MV,
                         code: "01",
                         #[cfg(feature = "geo")]
@@ -264,7 +265,7 @@ pub mod subdivisions {
                 (
                     "02",
                     Subdivision{
-                        name: "02",
+                        name: "Ariatholhu Uthuruburi",
                         country_alpha2: Alpha2::MV,
                         code: "02",
                         #[cfg(feature = "geo")]
@@ -279,7 +280,7 @@ pub mod subdivisions {
                 (
                     "03",
                     Subdivision{
-                        name: "03",
+                        name: "Faadhippolhu",
                         country_alpha2: Alpha2::MV,
                         code: "03",
                         #[cfg(feature = "geo")]
@@ -294,7 +295,7 @@ pub mod subdivisions {
                 (
                     "04",
                     Subdivision{
-                        name: "04",
+                        name: "Felidheatholhu",
                         country_alpha2: Alpha2::MV,
                         code: "04",
                         #[cfg(feature = "geo")]
@@ -309,7 +310,7 @@ pub mod subdivisions {
                 (
                     "05",
                     Subdivision{
-                        name: "05",
+                        name: "Hahdhunmathi",
                         country_alpha2: Alpha2::MV,
                         code: "05",
                         #[cfg(feature = "geo")]
@@ -324,7 +325,7 @@ pub mod subdivisions {
                 (
                     "07",
                     Subdivision{
-                        name: "07",
+                        name: "Thiladhunmathee Uthuruburi",
                         country_alpha2: Alpha2::MV,
                         code: "07",
                         #[cfg(feature = "geo")]
@@ -339,7 +340,7 @@ pub mod subdivisions {
                 (
                     "08",
                     Subdivision{
-                        name: "08",
+                        name: "Kolhumadulu",
                         country_alpha2: Alpha2::MV,
                         code: "08",
                         #[cfg(feature = "geo")]
@@ -354,7 +355,7 @@ pub mod subdivisions {
                 (
                     "12",
                     Subdivision{
-                        name: "12",
+                        name: "Mulakatholhu",
                         country_alpha2: Alpha2::MV,
                         code: "12",
                         #[cfg(feature = "geo")]
@@ -369,7 +370,7 @@ pub mod subdivisions {
                 (
                     "13",
                     Subdivision{
-                        name: "13",
+                        name: "Maalhosmadulu Uthuruburi",
                         country_alpha2: Alpha2::MV,
                         code: "13",
                         #[cfg(feature = "geo")]
@@ -384,7 +385,7 @@ pub mod subdivisions {
                 (
                     "14",
                     Subdivision{
-                        name: "14",
+                        name: "Nilandheatholhu Uthuruburi",
                         country_alpha2: Alpha2::MV,
                         code: "14",
                         #[cfg(feature = "geo")]
@@ -399,7 +400,7 @@ pub mod subdivisions {
                 (
                     "17",
                     Subdivision{
-                        name: "17",
+                        name: "Nilandheatholhu Dhekunuburi",
                         country_alpha2: Alpha2::MV,
                         code: "17",
                         #[cfg(feature = "geo")]
@@ -414,7 +415,7 @@ pub mod subdivisions {
                 (
                     "20",
                     Subdivision{
-                        name: "20",
+                        name: "Maalhosmadulu Dhekunuburi",
                         country_alpha2: Alpha2::MV,
                         code: "20",
                         #[cfg(feature = "geo")]
@@ -429,7 +430,7 @@ pub mod subdivisions {
                 (
                     "23",
                     Subdivision{
-                        name: "23",
+                        name: "Thiladhunmathee Dhekunuburi",
                         country_alpha2: Alpha2::MV,
                         code: "23",
                         #[cfg(feature = "geo")]
@@ -444,7 +445,7 @@ pub mod subdivisions {
                 (
                     "24",
                     Subdivision{
-                        name: "24",
+                        name: "Miladhunmadulu Uthuruburi",
                         country_alpha2: Alpha2::MV,
                         code: "24",
                         #[cfg(feature = "geo")]
@@ -459,7 +460,7 @@ pub mod subdivisions {
                 (
                     "25",
                     Subdivision{
-                        name: "25",
+                        name: "Miladhunmadulu Dhekunuburi",
                         country_alpha2: Alpha2::MV,
                         code: "25",
                         #[cfg(feature = "geo")]
@@ -474,7 +475,7 @@ pub mod subdivisions {
                 (
                     "26",
                     Subdivision{
-                        name: "26",
+                        name: "Maaleatholhu",
                         country_alpha2: Alpha2::MV,
                         code: "26",
                         #[cfg(feature = "geo")]
@@ -489,7 +490,7 @@ pub mod subdivisions {
                 (
                     "27",
                     Subdivision{
-                        name: "27",
+                        name: "Huvadhuatholhu Uthuruburi",
                         country_alpha2: Alpha2::MV,
                         code: "27",
                         #[cfg(feature = "geo")]
@@ -504,7 +505,7 @@ pub mod subdivisions {
                 (
                     "28",
                     Subdivision{
-                        name: "28",
+                        name: "Huvadhuatholhu Dhekunuburi",
                         country_alpha2: Alpha2::MV,
                         code: "28",
                         #[cfg(feature = "geo")]
@@ -519,7 +520,7 @@ pub mod subdivisions {
                 (
                     "29",
                     Subdivision{
-                        name: "29",
+                        name: "Fuvammulah",
                         country_alpha2: Alpha2::MV,
                         code: "29",
                         #[cfg(feature = "geo")]
@@ -534,7 +535,7 @@ pub mod subdivisions {
                 (
                     "MLE",
                     Subdivision{
-                        name: "MLE",
+                        name: "Male",
                         country_alpha2: Alpha2::MV,
                         code: "MLE",
                         #[cfg(feature = "geo")]

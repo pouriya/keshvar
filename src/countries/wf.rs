@@ -233,19 +233,20 @@ pub mod geo {
 
 #[cfg(all(feature = "wf", feature = "subdivisions"))]
 pub mod subdivisions {
-    use crate::Subdivision;
+    #[allow(unused_imports)]
+    use crate::{Alpha2, Subdivision, SubdivisionType};
     use std::collections::HashMap;
     // In this state, We do not know if subdivisions have geo or not!
     #[cfg(feature = "geo")]
     #[allow(unused_imports)]
-    use crate::{Alpha2, SubdivisionGeo, SubdivisionType};
+    use crate::SubdivisionGeo;
 
     pub fn new() -> HashMap<&'static str, Subdivision> {
         HashMap::from([
             (
                 "AL",
                 Subdivision {
-                    name: "AL",
+                    name: "Alo",
                     country_alpha2: Alpha2::WF,
                     code: "AL",
                     #[cfg(feature = "geo")]
@@ -317,7 +318,7 @@ pub mod subdivisions {
             (
                 "SG",
                 Subdivision {
-                    name: "SG",
+                    name: "Sigave",
                     country_alpha2: Alpha2::WF,
                     code: "SG",
                     #[cfg(feature = "geo")]
@@ -386,7 +387,7 @@ pub mod subdivisions {
             (
                 "UV",
                 Subdivision {
-                    name: "UV",
+                    name: "Uvea",
                     country_alpha2: Alpha2::WF,
                     code: "UV",
                     #[cfg(feature = "geo")]

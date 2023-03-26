@@ -215,12 +215,13 @@ pub mod geo {
 
 #[cfg(all(feature = "vn", feature = "subdivisions"))]
 pub mod subdivisions {
-    use crate::Subdivision;
+    #[allow(unused_imports)]
+    use crate::{Alpha2, Subdivision, SubdivisionType};
     use std::collections::HashMap;
     // In this state, We do not know if subdivisions have geo or not!
     #[cfg(feature = "geo")]
     #[allow(unused_imports)]
-    use crate::{Alpha2, SubdivisionGeo, SubdivisionType};
+    use crate::SubdivisionGeo;
 
     pub fn new() -> HashMap<&'static str, Subdivision> {
         HashMap::from(
@@ -229,7 +230,7 @@ pub mod subdivisions {
                 (
                     "01",
                     Subdivision{
-                        name: "01",
+                        name: "Lai Chau",
                         country_alpha2: Alpha2::VN,
                         code: "01",
                         #[cfg(feature = "geo")]
@@ -244,7 +245,7 @@ pub mod subdivisions {
                 (
                     "02",
                     Subdivision{
-                        name: "02",
+                        name: "Lao Cai",
                         country_alpha2: Alpha2::VN,
                         code: "02",
                         #[cfg(feature = "geo")]
@@ -259,7 +260,7 @@ pub mod subdivisions {
                 (
                     "03",
                     Subdivision{
-                        name: "03",
+                        name: "Ha Giang",
                         country_alpha2: Alpha2::VN,
                         code: "03",
                         #[cfg(feature = "geo")]
@@ -274,7 +275,7 @@ pub mod subdivisions {
                 (
                     "04",
                     Subdivision{
-                        name: "04",
+                        name: "Cao Bang",
                         country_alpha2: Alpha2::VN,
                         code: "04",
                         #[cfg(feature = "geo")]
@@ -289,7 +290,7 @@ pub mod subdivisions {
                 (
                     "05",
                     Subdivision{
-                        name: "05",
+                        name: "Son La",
                         country_alpha2: Alpha2::VN,
                         code: "05",
                         #[cfg(feature = "geo")]
@@ -304,7 +305,7 @@ pub mod subdivisions {
                 (
                     "06",
                     Subdivision{
-                        name: "06",
+                        name: "Yen Bai",
                         country_alpha2: Alpha2::VN,
                         code: "06",
                         #[cfg(feature = "geo")]
@@ -319,7 +320,7 @@ pub mod subdivisions {
                 (
                     "07",
                     Subdivision{
-                        name: "07",
+                        name: "Tuyen Quang",
                         country_alpha2: Alpha2::VN,
                         code: "07",
                         #[cfg(feature = "geo")]
@@ -334,7 +335,7 @@ pub mod subdivisions {
                 (
                     "09",
                     Subdivision{
-                        name: "09",
+                        name: "Lang Son",
                         country_alpha2: Alpha2::VN,
                         code: "09",
                         #[cfg(feature = "geo")]
@@ -349,7 +350,7 @@ pub mod subdivisions {
                 (
                     "13",
                     Subdivision{
-                        name: "13",
+                        name: "Quang Ninh",
                         country_alpha2: Alpha2::VN,
                         code: "13",
                         #[cfg(feature = "geo")]
@@ -364,7 +365,7 @@ pub mod subdivisions {
                 (
                     "14",
                     Subdivision{
-                        name: "14",
+                        name: "Hoa Binh",
                         country_alpha2: Alpha2::VN,
                         code: "14",
                         #[cfg(feature = "geo")]
@@ -379,7 +380,7 @@ pub mod subdivisions {
                 (
                     "18",
                     Subdivision{
-                        name: "18",
+                        name: "Ninh Binh",
                         country_alpha2: Alpha2::VN,
                         code: "18",
                         #[cfg(feature = "geo")]
@@ -394,7 +395,7 @@ pub mod subdivisions {
                 (
                     "20",
                     Subdivision{
-                        name: "20",
+                        name: "Thai Binh",
                         country_alpha2: Alpha2::VN,
                         code: "20",
                         #[cfg(feature = "geo")]
@@ -409,7 +410,7 @@ pub mod subdivisions {
                 (
                     "21",
                     Subdivision{
-                        name: "21",
+                        name: "Thanh Hoa",
                         country_alpha2: Alpha2::VN,
                         code: "21",
                         #[cfg(feature = "geo")]
@@ -424,7 +425,7 @@ pub mod subdivisions {
                 (
                     "22",
                     Subdivision{
-                        name: "22",
+                        name: "Nghe An",
                         country_alpha2: Alpha2::VN,
                         code: "22",
                         #[cfg(feature = "geo")]
@@ -439,7 +440,7 @@ pub mod subdivisions {
                 (
                     "23",
                     Subdivision{
-                        name: "23",
+                        name: "Ha Tinh",
                         country_alpha2: Alpha2::VN,
                         code: "23",
                         #[cfg(feature = "geo")]
@@ -454,7 +455,7 @@ pub mod subdivisions {
                 (
                     "24",
                     Subdivision{
-                        name: "24",
+                        name: "Quang Binh",
                         country_alpha2: Alpha2::VN,
                         code: "24",
                         #[cfg(feature = "geo")]
@@ -469,7 +470,7 @@ pub mod subdivisions {
                 (
                     "25",
                     Subdivision{
-                        name: "25",
+                        name: "Quang Tri",
                         country_alpha2: Alpha2::VN,
                         code: "25",
                         #[cfg(feature = "geo")]
@@ -484,7 +485,7 @@ pub mod subdivisions {
                 (
                     "26",
                     Subdivision{
-                        name: "26",
+                        name: "Thua Thien-Hue",
                         country_alpha2: Alpha2::VN,
                         code: "26",
                         #[cfg(feature = "geo")]
@@ -499,7 +500,7 @@ pub mod subdivisions {
                 (
                     "27",
                     Subdivision{
-                        name: "27",
+                        name: "Quang Nam",
                         country_alpha2: Alpha2::VN,
                         code: "27",
                         #[cfg(feature = "geo")]
@@ -514,7 +515,7 @@ pub mod subdivisions {
                 (
                     "28",
                     Subdivision{
-                        name: "28",
+                        name: "Kon Tum",
                         country_alpha2: Alpha2::VN,
                         code: "28",
                         #[cfg(feature = "geo")]
@@ -529,7 +530,7 @@ pub mod subdivisions {
                 (
                     "29",
                     Subdivision{
-                        name: "29",
+                        name: "Quang Ngai",
                         country_alpha2: Alpha2::VN,
                         code: "29",
                         #[cfg(feature = "geo")]
@@ -544,7 +545,7 @@ pub mod subdivisions {
                 (
                     "30",
                     Subdivision{
-                        name: "30",
+                        name: "Gia Lai",
                         country_alpha2: Alpha2::VN,
                         code: "30",
                         #[cfg(feature = "geo")]
@@ -559,7 +560,7 @@ pub mod subdivisions {
                 (
                     "31",
                     Subdivision{
-                        name: "31",
+                        name: "Binh Dinh",
                         country_alpha2: Alpha2::VN,
                         code: "31",
                         #[cfg(feature = "geo")]
@@ -574,7 +575,7 @@ pub mod subdivisions {
                 (
                     "32",
                     Subdivision{
-                        name: "32",
+                        name: "Phu Yen",
                         country_alpha2: Alpha2::VN,
                         code: "32",
                         #[cfg(feature = "geo")]
@@ -589,7 +590,7 @@ pub mod subdivisions {
                 (
                     "33",
                     Subdivision{
-                        name: "33",
+                        name: "Dac Lac",
                         country_alpha2: Alpha2::VN,
                         code: "33",
                         #[cfg(feature = "geo")]
@@ -604,7 +605,7 @@ pub mod subdivisions {
                 (
                     "34",
                     Subdivision{
-                        name: "34",
+                        name: "Khanh Hoa",
                         country_alpha2: Alpha2::VN,
                         code: "34",
                         #[cfg(feature = "geo")]
@@ -619,7 +620,7 @@ pub mod subdivisions {
                 (
                     "35",
                     Subdivision{
-                        name: "35",
+                        name: "Lam Dong",
                         country_alpha2: Alpha2::VN,
                         code: "35",
                         #[cfg(feature = "geo")]
@@ -634,7 +635,7 @@ pub mod subdivisions {
                 (
                     "36",
                     Subdivision{
-                        name: "36",
+                        name: "Ninh Thuan",
                         country_alpha2: Alpha2::VN,
                         code: "36",
                         #[cfg(feature = "geo")]
@@ -649,7 +650,7 @@ pub mod subdivisions {
                 (
                     "37",
                     Subdivision{
-                        name: "37",
+                        name: "Tay Ninh",
                         country_alpha2: Alpha2::VN,
                         code: "37",
                         #[cfg(feature = "geo")]
@@ -664,7 +665,7 @@ pub mod subdivisions {
                 (
                     "39",
                     Subdivision{
-                        name: "39",
+                        name: "Dong Nai",
                         country_alpha2: Alpha2::VN,
                         code: "39",
                         #[cfg(feature = "geo")]
@@ -679,7 +680,7 @@ pub mod subdivisions {
                 (
                     "40",
                     Subdivision{
-                        name: "40",
+                        name: "Binh Thuan",
                         country_alpha2: Alpha2::VN,
                         code: "40",
                         #[cfg(feature = "geo")]
@@ -694,7 +695,7 @@ pub mod subdivisions {
                 (
                     "41",
                     Subdivision{
-                        name: "41",
+                        name: "Long An",
                         country_alpha2: Alpha2::VN,
                         code: "41",
                         #[cfg(feature = "geo")]
@@ -709,7 +710,7 @@ pub mod subdivisions {
                 (
                     "43",
                     Subdivision{
-                        name: "43",
+                        name: "Ba Ria - Vung Tau",
                         country_alpha2: Alpha2::VN,
                         code: "43",
                         #[cfg(feature = "geo")]
@@ -724,7 +725,7 @@ pub mod subdivisions {
                 (
                     "44",
                     Subdivision{
-                        name: "44",
+                        name: "An Giang",
                         country_alpha2: Alpha2::VN,
                         code: "44",
                         #[cfg(feature = "geo")]
@@ -739,7 +740,7 @@ pub mod subdivisions {
                 (
                     "45",
                     Subdivision{
-                        name: "45",
+                        name: "Dong Thap",
                         country_alpha2: Alpha2::VN,
                         code: "45",
                         #[cfg(feature = "geo")]
@@ -754,7 +755,7 @@ pub mod subdivisions {
                 (
                     "46",
                     Subdivision{
-                        name: "46",
+                        name: "Tien Giang",
                         country_alpha2: Alpha2::VN,
                         code: "46",
                         #[cfg(feature = "geo")]
@@ -769,7 +770,7 @@ pub mod subdivisions {
                 (
                     "47",
                     Subdivision{
-                        name: "47",
+                        name: "Kien Giang",
                         country_alpha2: Alpha2::VN,
                         code: "47",
                         #[cfg(feature = "geo")]
@@ -784,7 +785,7 @@ pub mod subdivisions {
                 (
                     "49",
                     Subdivision{
-                        name: "49",
+                        name: "Vinh Long",
                         country_alpha2: Alpha2::VN,
                         code: "49",
                         #[cfg(feature = "geo")]
@@ -799,7 +800,7 @@ pub mod subdivisions {
                 (
                     "50",
                     Subdivision{
-                        name: "50",
+                        name: "Ben Tre",
                         country_alpha2: Alpha2::VN,
                         code: "50",
                         #[cfg(feature = "geo")]
@@ -814,7 +815,7 @@ pub mod subdivisions {
                 (
                     "51",
                     Subdivision{
-                        name: "51",
+                        name: "Tra Vinh",
                         country_alpha2: Alpha2::VN,
                         code: "51",
                         #[cfg(feature = "geo")]
@@ -829,7 +830,7 @@ pub mod subdivisions {
                 (
                     "52",
                     Subdivision{
-                        name: "52",
+                        name: "Soc Trang",
                         country_alpha2: Alpha2::VN,
                         code: "52",
                         #[cfg(feature = "geo")]
@@ -844,7 +845,7 @@ pub mod subdivisions {
                 (
                     "53",
                     Subdivision{
-                        name: "53",
+                        name: "Bac Can",
                         country_alpha2: Alpha2::VN,
                         code: "53",
                         #[cfg(feature = "geo")]
@@ -859,7 +860,7 @@ pub mod subdivisions {
                 (
                     "54",
                     Subdivision{
-                        name: "54",
+                        name: "Bac Giang",
                         country_alpha2: Alpha2::VN,
                         code: "54",
                         #[cfg(feature = "geo")]
@@ -874,7 +875,7 @@ pub mod subdivisions {
                 (
                     "55",
                     Subdivision{
-                        name: "55",
+                        name: "Bac Lieu",
                         country_alpha2: Alpha2::VN,
                         code: "55",
                         #[cfg(feature = "geo")]
@@ -889,7 +890,7 @@ pub mod subdivisions {
                 (
                     "56",
                     Subdivision{
-                        name: "56",
+                        name: "Bac Ninh",
                         country_alpha2: Alpha2::VN,
                         code: "56",
                         #[cfg(feature = "geo")]
@@ -904,7 +905,7 @@ pub mod subdivisions {
                 (
                     "57",
                     Subdivision{
-                        name: "57",
+                        name: "Binh Duong",
                         country_alpha2: Alpha2::VN,
                         code: "57",
                         #[cfg(feature = "geo")]
@@ -919,7 +920,7 @@ pub mod subdivisions {
                 (
                     "58",
                     Subdivision{
-                        name: "58",
+                        name: "Binh Phuoc",
                         country_alpha2: Alpha2::VN,
                         code: "58",
                         #[cfg(feature = "geo")]
@@ -934,7 +935,7 @@ pub mod subdivisions {
                 (
                     "59",
                     Subdivision{
-                        name: "59",
+                        name: "Ca Mau",
                         country_alpha2: Alpha2::VN,
                         code: "59",
                         #[cfg(feature = "geo")]
@@ -949,7 +950,7 @@ pub mod subdivisions {
                 (
                     "61",
                     Subdivision{
-                        name: "61",
+                        name: "Hai Duong",
                         country_alpha2: Alpha2::VN,
                         code: "61",
                         #[cfg(feature = "geo")]
@@ -964,7 +965,7 @@ pub mod subdivisions {
                 (
                     "63",
                     Subdivision{
-                        name: "63",
+                        name: "Ha Nam",
                         country_alpha2: Alpha2::VN,
                         code: "63",
                         #[cfg(feature = "geo")]
@@ -979,7 +980,7 @@ pub mod subdivisions {
                 (
                     "66",
                     Subdivision{
-                        name: "66",
+                        name: "Hung Yen",
                         country_alpha2: Alpha2::VN,
                         code: "66",
                         #[cfg(feature = "geo")]
@@ -994,7 +995,7 @@ pub mod subdivisions {
                 (
                     "67",
                     Subdivision{
-                        name: "67",
+                        name: "Nam Dinh",
                         country_alpha2: Alpha2::VN,
                         code: "67",
                         #[cfg(feature = "geo")]
@@ -1009,7 +1010,7 @@ pub mod subdivisions {
                 (
                     "68",
                     Subdivision{
-                        name: "68",
+                        name: "Phu Tho",
                         country_alpha2: Alpha2::VN,
                         code: "68",
                         #[cfg(feature = "geo")]
@@ -1024,7 +1025,7 @@ pub mod subdivisions {
                 (
                     "69",
                     Subdivision{
-                        name: "69",
+                        name: "Thai Nguyen",
                         country_alpha2: Alpha2::VN,
                         code: "69",
                         #[cfg(feature = "geo")]
@@ -1039,7 +1040,7 @@ pub mod subdivisions {
                 (
                     "70",
                     Subdivision{
-                        name: "70",
+                        name: "Vinh Phuc",
                         country_alpha2: Alpha2::VN,
                         code: "70",
                         #[cfg(feature = "geo")]
@@ -1054,7 +1055,7 @@ pub mod subdivisions {
                 (
                     "71",
                     Subdivision{
-                        name: "71",
+                        name: "Dien Bien",
                         country_alpha2: Alpha2::VN,
                         code: "71",
                         #[cfg(feature = "geo")]
@@ -1069,7 +1070,7 @@ pub mod subdivisions {
                 (
                     "72",
                     Subdivision{
-                        name: "72",
+                        name: "Dak Nong",
                         country_alpha2: Alpha2::VN,
                         code: "72",
                         #[cfg(feature = "geo")]
@@ -1084,7 +1085,7 @@ pub mod subdivisions {
                 (
                     "73",
                     Subdivision{
-                        name: "73",
+                        name: "Hau Giang",
                         country_alpha2: Alpha2::VN,
                         code: "73",
                         #[cfg(feature = "geo")]
@@ -1099,7 +1100,7 @@ pub mod subdivisions {
                 (
                     "CT",
                     Subdivision{
-                        name: "CT",
+                        name: "Can Tho",
                         country_alpha2: Alpha2::VN,
                         code: "CT",
                         #[cfg(feature = "geo")]
@@ -1114,7 +1115,7 @@ pub mod subdivisions {
                 (
                     "DN",
                     Subdivision{
-                        name: "DN",
+                        name: "Da Nang",
                         country_alpha2: Alpha2::VN,
                         code: "DN",
                         #[cfg(feature = "geo")]
@@ -1129,7 +1130,7 @@ pub mod subdivisions {
                 (
                     "HN",
                     Subdivision{
-                        name: "HN",
+                        name: "Ha Noi",
                         country_alpha2: Alpha2::VN,
                         code: "HN",
                         #[cfg(feature = "geo")]
@@ -1144,7 +1145,7 @@ pub mod subdivisions {
                 (
                     "HP",
                     Subdivision{
-                        name: "HP",
+                        name: "Hai Phong",
                         country_alpha2: Alpha2::VN,
                         code: "HP",
                         #[cfg(feature = "geo")]
@@ -1159,7 +1160,7 @@ pub mod subdivisions {
                 (
                     "SG",
                     Subdivision{
-                        name: "SG",
+                        name: "Ho Chi Minh",
                         country_alpha2: Alpha2::VN,
                         code: "SG",
                         #[cfg(feature = "geo")]

@@ -218,12 +218,13 @@ pub mod geo {
 
 #[cfg(all(feature = "in", feature = "subdivisions"))]
 pub mod subdivisions {
-    use crate::Subdivision;
+    #[allow(unused_imports)]
+    use crate::{Alpha2, Subdivision, SubdivisionType};
     use std::collections::HashMap;
     // In this state, We do not know if subdivisions have geo or not!
     #[cfg(feature = "geo")]
     #[allow(unused_imports)]
-    use crate::{Alpha2, SubdivisionGeo, SubdivisionType};
+    use crate::SubdivisionGeo;
 
     pub fn new() -> HashMap<&'static str, Subdivision> {
         HashMap::from(
@@ -232,7 +233,7 @@ pub mod subdivisions {
                 (
                     "AN",
                     Subdivision{
-                        name: "AN",
+                        name: "Andaman and Nicobar Islands",
                         country_alpha2: Alpha2::IN,
                         code: "AN",
                         #[cfg(feature = "geo")]
@@ -247,7 +248,7 @@ pub mod subdivisions {
                 (
                     "AP",
                     Subdivision{
-                        name: "AP",
+                        name: "Andhra Pradesh",
                         country_alpha2: Alpha2::IN,
                         code: "AP",
                         #[cfg(feature = "geo")]
@@ -262,7 +263,7 @@ pub mod subdivisions {
                 (
                     "AR",
                     Subdivision{
-                        name: "AR",
+                        name: "Arunachal Pradesh",
                         country_alpha2: Alpha2::IN,
                         code: "AR",
                         #[cfg(feature = "geo")]
@@ -277,7 +278,7 @@ pub mod subdivisions {
                 (
                     "AS",
                     Subdivision{
-                        name: "AS",
+                        name: "Assam",
                         country_alpha2: Alpha2::IN,
                         code: "AS",
                         #[cfg(feature = "geo")]
@@ -292,7 +293,7 @@ pub mod subdivisions {
                 (
                     "BR",
                     Subdivision{
-                        name: "BR",
+                        name: "Bihar",
                         country_alpha2: Alpha2::IN,
                         code: "BR",
                         #[cfg(feature = "geo")]
@@ -307,7 +308,7 @@ pub mod subdivisions {
                 (
                     "CH",
                     Subdivision{
-                        name: "CH",
+                        name: "Chandigarh",
                         country_alpha2: Alpha2::IN,
                         code: "CH",
                         #[cfg(feature = "geo")]
@@ -322,7 +323,7 @@ pub mod subdivisions {
                 (
                     "CT",
                     Subdivision{
-                        name: "CT",
+                        name: "Chhattisgarh",
                         country_alpha2: Alpha2::IN,
                         code: "CT",
                         #[cfg(feature = "geo")]
@@ -337,7 +338,7 @@ pub mod subdivisions {
                 (
                     "DH",
                     Subdivision{
-                        name: "DH",
+                        name: "Dādra and Nagar Haveli and Damān and Diu",
                         country_alpha2: Alpha2::IN,
                         code: "DH",
                         #[cfg(feature = "geo")]
@@ -352,7 +353,7 @@ pub mod subdivisions {
                 (
                     "DL",
                     Subdivision{
-                        name: "DL",
+                        name: "Delhi",
                         country_alpha2: Alpha2::IN,
                         code: "DL",
                         #[cfg(feature = "geo")]
@@ -367,7 +368,7 @@ pub mod subdivisions {
                 (
                     "GA",
                     Subdivision{
-                        name: "GA",
+                        name: "Goa",
                         country_alpha2: Alpha2::IN,
                         code: "GA",
                         #[cfg(feature = "geo")]
@@ -382,7 +383,7 @@ pub mod subdivisions {
                 (
                     "GJ",
                     Subdivision{
-                        name: "GJ",
+                        name: "Gujarat",
                         country_alpha2: Alpha2::IN,
                         code: "GJ",
                         #[cfg(feature = "geo")]
@@ -397,7 +398,7 @@ pub mod subdivisions {
                 (
                     "HP",
                     Subdivision{
-                        name: "HP",
+                        name: "Himachal Pradesh",
                         country_alpha2: Alpha2::IN,
                         code: "HP",
                         #[cfg(feature = "geo")]
@@ -412,7 +413,7 @@ pub mod subdivisions {
                 (
                     "HR",
                     Subdivision{
-                        name: "HR",
+                        name: "Haryana",
                         country_alpha2: Alpha2::IN,
                         code: "HR",
                         #[cfg(feature = "geo")]
@@ -427,7 +428,7 @@ pub mod subdivisions {
                 (
                     "JH",
                     Subdivision{
-                        name: "JH",
+                        name: "Jharkhand",
                         country_alpha2: Alpha2::IN,
                         code: "JH",
                         #[cfg(feature = "geo")]
@@ -442,7 +443,7 @@ pub mod subdivisions {
                 (
                     "JK",
                     Subdivision{
-                        name: "JK",
+                        name: "Jammu and Kashmir",
                         country_alpha2: Alpha2::IN,
                         code: "JK",
                         #[cfg(feature = "geo")]
@@ -457,7 +458,7 @@ pub mod subdivisions {
                 (
                     "KA",
                     Subdivision{
-                        name: "KA",
+                        name: "Karnataka",
                         country_alpha2: Alpha2::IN,
                         code: "KA",
                         #[cfg(feature = "geo")]
@@ -472,7 +473,7 @@ pub mod subdivisions {
                 (
                     "KL",
                     Subdivision{
-                        name: "KL",
+                        name: "Kerala",
                         country_alpha2: Alpha2::IN,
                         code: "KL",
                         #[cfg(feature = "geo")]
@@ -487,7 +488,7 @@ pub mod subdivisions {
                 (
                     "LA",
                     Subdivision{
-                        name: "LA",
+                        name: "Ladakh",
                         country_alpha2: Alpha2::IN,
                         code: "LA",
                         #[cfg(feature = "geo")]
@@ -502,7 +503,7 @@ pub mod subdivisions {
                 (
                     "LD",
                     Subdivision{
-                        name: "LD",
+                        name: "Lakshadweep",
                         country_alpha2: Alpha2::IN,
                         code: "LD",
                         #[cfg(feature = "geo")]
@@ -517,7 +518,7 @@ pub mod subdivisions {
                 (
                     "MH",
                     Subdivision{
-                        name: "MH",
+                        name: "Maharashtra",
                         country_alpha2: Alpha2::IN,
                         code: "MH",
                         #[cfg(feature = "geo")]
@@ -532,7 +533,7 @@ pub mod subdivisions {
                 (
                     "ML",
                     Subdivision{
-                        name: "ML",
+                        name: "Meghalaya",
                         country_alpha2: Alpha2::IN,
                         code: "ML",
                         #[cfg(feature = "geo")]
@@ -547,7 +548,7 @@ pub mod subdivisions {
                 (
                     "MN",
                     Subdivision{
-                        name: "MN",
+                        name: "Manipur",
                         country_alpha2: Alpha2::IN,
                         code: "MN",
                         #[cfg(feature = "geo")]
@@ -562,7 +563,7 @@ pub mod subdivisions {
                 (
                     "MP",
                     Subdivision{
-                        name: "MP",
+                        name: "Madhya Pradesh",
                         country_alpha2: Alpha2::IN,
                         code: "MP",
                         #[cfg(feature = "geo")]
@@ -577,7 +578,7 @@ pub mod subdivisions {
                 (
                     "MZ",
                     Subdivision{
-                        name: "MZ",
+                        name: "Mizoram",
                         country_alpha2: Alpha2::IN,
                         code: "MZ",
                         #[cfg(feature = "geo")]
@@ -592,7 +593,7 @@ pub mod subdivisions {
                 (
                     "NL",
                     Subdivision{
-                        name: "NL",
+                        name: "Nagaland",
                         country_alpha2: Alpha2::IN,
                         code: "NL",
                         #[cfg(feature = "geo")]
@@ -607,7 +608,7 @@ pub mod subdivisions {
                 (
                     "OR",
                     Subdivision{
-                        name: "OR",
+                        name: "Orissa",
                         country_alpha2: Alpha2::IN,
                         code: "OR",
                         #[cfg(feature = "geo")]
@@ -622,7 +623,7 @@ pub mod subdivisions {
                 (
                     "PB",
                     Subdivision{
-                        name: "PB",
+                        name: "Punjab",
                         country_alpha2: Alpha2::IN,
                         code: "PB",
                         #[cfg(feature = "geo")]
@@ -637,7 +638,7 @@ pub mod subdivisions {
                 (
                     "PY",
                     Subdivision{
-                        name: "PY",
+                        name: "Pondicherry",
                         country_alpha2: Alpha2::IN,
                         code: "PY",
                         #[cfg(feature = "geo")]
@@ -652,7 +653,7 @@ pub mod subdivisions {
                 (
                     "RJ",
                     Subdivision{
-                        name: "RJ",
+                        name: "Rajasthan",
                         country_alpha2: Alpha2::IN,
                         code: "RJ",
                         #[cfg(feature = "geo")]
@@ -667,7 +668,7 @@ pub mod subdivisions {
                 (
                     "SK",
                     Subdivision{
-                        name: "SK",
+                        name: "Sikkim",
                         country_alpha2: Alpha2::IN,
                         code: "SK",
                         #[cfg(feature = "geo")]
@@ -682,7 +683,7 @@ pub mod subdivisions {
                 (
                     "TG",
                     Subdivision{
-                        name: "TG",
+                        name: "त\u{947}ल\u{902}गाना",
                         country_alpha2: Alpha2::IN,
                         code: "TG",
                         #[cfg(feature = "geo")]
@@ -697,7 +698,7 @@ pub mod subdivisions {
                 (
                     "TN",
                     Subdivision{
-                        name: "TN",
+                        name: "Tamil Nadu",
                         country_alpha2: Alpha2::IN,
                         code: "TN",
                         #[cfg(feature = "geo")]
@@ -712,7 +713,7 @@ pub mod subdivisions {
                 (
                     "TR",
                     Subdivision{
-                        name: "TR",
+                        name: "Tripura",
                         country_alpha2: Alpha2::IN,
                         code: "TR",
                         #[cfg(feature = "geo")]
@@ -727,7 +728,7 @@ pub mod subdivisions {
                 (
                     "UP",
                     Subdivision{
-                        name: "UP",
+                        name: "Uttar Pradesh",
                         country_alpha2: Alpha2::IN,
                         code: "UP",
                         #[cfg(feature = "geo")]
@@ -742,7 +743,7 @@ pub mod subdivisions {
                 (
                     "UT",
                     Subdivision{
-                        name: "UT",
+                        name: "उत\u{94d}तराखण\u{94d}ड",
                         country_alpha2: Alpha2::IN,
                         code: "UT",
                         #[cfg(feature = "geo")]
@@ -757,7 +758,7 @@ pub mod subdivisions {
                 (
                     "WB",
                     Subdivision{
-                        name: "WB",
+                        name: "West Bengal",
                         country_alpha2: Alpha2::IN,
                         code: "WB",
                         #[cfg(feature = "geo")]

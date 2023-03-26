@@ -225,12 +225,13 @@ pub mod geo {
 
 #[cfg(all(feature = "dz", feature = "subdivisions"))]
 pub mod subdivisions {
-    use crate::Subdivision;
+    #[allow(unused_imports)]
+    use crate::{Alpha2, Subdivision, SubdivisionType};
     use std::collections::HashMap;
     // In this state, We do not know if subdivisions have geo or not!
     #[cfg(feature = "geo")]
     #[allow(unused_imports)]
-    use crate::{Alpha2, SubdivisionGeo, SubdivisionType};
+    use crate::SubdivisionGeo;
 
     pub fn new() -> HashMap<&'static str, Subdivision> {
         HashMap::from(
@@ -239,7 +240,7 @@ pub mod subdivisions {
                 (
                     "01",
                     Subdivision{
-                        name: "01",
+                        name: "Adrar",
                         country_alpha2: Alpha2::DZ,
                         code: "01",
                         #[cfg(feature = "geo")]
@@ -254,7 +255,7 @@ pub mod subdivisions {
                 (
                     "02",
                     Subdivision{
-                        name: "02",
+                        name: "Chlef",
                         country_alpha2: Alpha2::DZ,
                         code: "02",
                         #[cfg(feature = "geo")]
@@ -269,7 +270,7 @@ pub mod subdivisions {
                 (
                     "03",
                     Subdivision{
-                        name: "03",
+                        name: "Laghouat",
                         country_alpha2: Alpha2::DZ,
                         code: "03",
                         #[cfg(feature = "geo")]
@@ -284,7 +285,7 @@ pub mod subdivisions {
                 (
                     "04",
                     Subdivision{
-                        name: "04",
+                        name: "Oum el Bouaghi",
                         country_alpha2: Alpha2::DZ,
                         code: "04",
                         #[cfg(feature = "geo")]
@@ -299,7 +300,7 @@ pub mod subdivisions {
                 (
                     "05",
                     Subdivision{
-                        name: "05",
+                        name: "Batna",
                         country_alpha2: Alpha2::DZ,
                         code: "05",
                         #[cfg(feature = "geo")]
@@ -314,7 +315,7 @@ pub mod subdivisions {
                 (
                     "06",
                     Subdivision{
-                        name: "06",
+                        name: "Béjaïa",
                         country_alpha2: Alpha2::DZ,
                         code: "06",
                         #[cfg(feature = "geo")]
@@ -329,7 +330,7 @@ pub mod subdivisions {
                 (
                     "07",
                     Subdivision{
-                        name: "07",
+                        name: "Biskra",
                         country_alpha2: Alpha2::DZ,
                         code: "07",
                         #[cfg(feature = "geo")]
@@ -344,7 +345,7 @@ pub mod subdivisions {
                 (
                     "08",
                     Subdivision{
-                        name: "08",
+                        name: "Béchar",
                         country_alpha2: Alpha2::DZ,
                         code: "08",
                         #[cfg(feature = "geo")]
@@ -359,7 +360,7 @@ pub mod subdivisions {
                 (
                     "09",
                     Subdivision{
-                        name: "09",
+                        name: "Blida",
                         country_alpha2: Alpha2::DZ,
                         code: "09",
                         #[cfg(feature = "geo")]
@@ -374,7 +375,7 @@ pub mod subdivisions {
                 (
                     "10",
                     Subdivision{
-                        name: "10",
+                        name: "Bouira",
                         country_alpha2: Alpha2::DZ,
                         code: "10",
                         #[cfg(feature = "geo")]
@@ -389,7 +390,7 @@ pub mod subdivisions {
                 (
                     "11",
                     Subdivision{
-                        name: "11",
+                        name: "Tamanghasset",
                         country_alpha2: Alpha2::DZ,
                         code: "11",
                         #[cfg(feature = "geo")]
@@ -404,7 +405,7 @@ pub mod subdivisions {
                 (
                     "12",
                     Subdivision{
-                        name: "12",
+                        name: "Tébessa",
                         country_alpha2: Alpha2::DZ,
                         code: "12",
                         #[cfg(feature = "geo")]
@@ -419,7 +420,7 @@ pub mod subdivisions {
                 (
                     "13",
                     Subdivision{
-                        name: "13",
+                        name: "Tlemcen",
                         country_alpha2: Alpha2::DZ,
                         code: "13",
                         #[cfg(feature = "geo")]
@@ -434,7 +435,7 @@ pub mod subdivisions {
                 (
                     "14",
                     Subdivision{
-                        name: "14",
+                        name: "Tiaret",
                         country_alpha2: Alpha2::DZ,
                         code: "14",
                         #[cfg(feature = "geo")]
@@ -449,7 +450,7 @@ pub mod subdivisions {
                 (
                     "15",
                     Subdivision{
-                        name: "15",
+                        name: "Tizi Ouzou",
                         country_alpha2: Alpha2::DZ,
                         code: "15",
                         #[cfg(feature = "geo")]
@@ -464,7 +465,7 @@ pub mod subdivisions {
                 (
                     "16",
                     Subdivision{
-                        name: "16",
+                        name: "Alger",
                         country_alpha2: Alpha2::DZ,
                         code: "16",
                         #[cfg(feature = "geo")]
@@ -479,7 +480,7 @@ pub mod subdivisions {
                 (
                     "17",
                     Subdivision{
-                        name: "17",
+                        name: "Djelfa",
                         country_alpha2: Alpha2::DZ,
                         code: "17",
                         #[cfg(feature = "geo")]
@@ -494,7 +495,7 @@ pub mod subdivisions {
                 (
                     "18",
                     Subdivision{
-                        name: "18",
+                        name: "Jijel",
                         country_alpha2: Alpha2::DZ,
                         code: "18",
                         #[cfg(feature = "geo")]
@@ -509,7 +510,7 @@ pub mod subdivisions {
                 (
                     "19",
                     Subdivision{
-                        name: "19",
+                        name: "Sétif",
                         country_alpha2: Alpha2::DZ,
                         code: "19",
                         #[cfg(feature = "geo")]
@@ -524,7 +525,7 @@ pub mod subdivisions {
                 (
                     "20",
                     Subdivision{
-                        name: "20",
+                        name: "Saïda",
                         country_alpha2: Alpha2::DZ,
                         code: "20",
                         #[cfg(feature = "geo")]
@@ -539,7 +540,7 @@ pub mod subdivisions {
                 (
                     "21",
                     Subdivision{
-                        name: "21",
+                        name: "Skikda",
                         country_alpha2: Alpha2::DZ,
                         code: "21",
                         #[cfg(feature = "geo")]
@@ -554,7 +555,7 @@ pub mod subdivisions {
                 (
                     "22",
                     Subdivision{
-                        name: "22",
+                        name: "Sidi Bel Abbès",
                         country_alpha2: Alpha2::DZ,
                         code: "22",
                         #[cfg(feature = "geo")]
@@ -569,7 +570,7 @@ pub mod subdivisions {
                 (
                     "23",
                     Subdivision{
-                        name: "23",
+                        name: "Annaba",
                         country_alpha2: Alpha2::DZ,
                         code: "23",
                         #[cfg(feature = "geo")]
@@ -584,7 +585,7 @@ pub mod subdivisions {
                 (
                     "24",
                     Subdivision{
-                        name: "24",
+                        name: "Guelma",
                         country_alpha2: Alpha2::DZ,
                         code: "24",
                         #[cfg(feature = "geo")]
@@ -599,7 +600,7 @@ pub mod subdivisions {
                 (
                     "25",
                     Subdivision{
-                        name: "25",
+                        name: "Constantine",
                         country_alpha2: Alpha2::DZ,
                         code: "25",
                         #[cfg(feature = "geo")]
@@ -614,7 +615,7 @@ pub mod subdivisions {
                 (
                     "26",
                     Subdivision{
-                        name: "26",
+                        name: "Médéa",
                         country_alpha2: Alpha2::DZ,
                         code: "26",
                         #[cfg(feature = "geo")]
@@ -629,7 +630,7 @@ pub mod subdivisions {
                 (
                     "27",
                     Subdivision{
-                        name: "27",
+                        name: "Mostaganem",
                         country_alpha2: Alpha2::DZ,
                         code: "27",
                         #[cfg(feature = "geo")]
@@ -644,7 +645,7 @@ pub mod subdivisions {
                 (
                     "28",
                     Subdivision{
-                        name: "28",
+                        name: "Msila",
                         country_alpha2: Alpha2::DZ,
                         code: "28",
                         #[cfg(feature = "geo")]
@@ -659,7 +660,7 @@ pub mod subdivisions {
                 (
                     "29",
                     Subdivision{
-                        name: "29",
+                        name: "Mascara",
                         country_alpha2: Alpha2::DZ,
                         code: "29",
                         #[cfg(feature = "geo")]
@@ -674,7 +675,7 @@ pub mod subdivisions {
                 (
                     "30",
                     Subdivision{
-                        name: "30",
+                        name: "Ouargla",
                         country_alpha2: Alpha2::DZ,
                         code: "30",
                         #[cfg(feature = "geo")]
@@ -689,7 +690,7 @@ pub mod subdivisions {
                 (
                     "31",
                     Subdivision{
-                        name: "31",
+                        name: "Oran",
                         country_alpha2: Alpha2::DZ,
                         code: "31",
                         #[cfg(feature = "geo")]
@@ -704,7 +705,7 @@ pub mod subdivisions {
                 (
                     "32",
                     Subdivision{
-                        name: "32",
+                        name: "El Bayadh",
                         country_alpha2: Alpha2::DZ,
                         code: "32",
                         #[cfg(feature = "geo")]
@@ -719,7 +720,7 @@ pub mod subdivisions {
                 (
                     "33",
                     Subdivision{
-                        name: "33",
+                        name: "Illizi",
                         country_alpha2: Alpha2::DZ,
                         code: "33",
                         #[cfg(feature = "geo")]
@@ -734,7 +735,7 @@ pub mod subdivisions {
                 (
                     "34",
                     Subdivision{
-                        name: "34",
+                        name: "Bordj Bou Arréridj",
                         country_alpha2: Alpha2::DZ,
                         code: "34",
                         #[cfg(feature = "geo")]
@@ -749,7 +750,7 @@ pub mod subdivisions {
                 (
                     "35",
                     Subdivision{
-                        name: "35",
+                        name: "Boumerdès",
                         country_alpha2: Alpha2::DZ,
                         code: "35",
                         #[cfg(feature = "geo")]
@@ -764,7 +765,7 @@ pub mod subdivisions {
                 (
                     "36",
                     Subdivision{
-                        name: "36",
+                        name: "El Tarf",
                         country_alpha2: Alpha2::DZ,
                         code: "36",
                         #[cfg(feature = "geo")]
@@ -779,7 +780,7 @@ pub mod subdivisions {
                 (
                     "37",
                     Subdivision{
-                        name: "37",
+                        name: "Tindouf",
                         country_alpha2: Alpha2::DZ,
                         code: "37",
                         #[cfg(feature = "geo")]
@@ -794,7 +795,7 @@ pub mod subdivisions {
                 (
                     "38",
                     Subdivision{
-                        name: "38",
+                        name: "Tissemsilt",
                         country_alpha2: Alpha2::DZ,
                         code: "38",
                         #[cfg(feature = "geo")]
@@ -809,7 +810,7 @@ pub mod subdivisions {
                 (
                     "39",
                     Subdivision{
-                        name: "39",
+                        name: "El Oued",
                         country_alpha2: Alpha2::DZ,
                         code: "39",
                         #[cfg(feature = "geo")]
@@ -824,7 +825,7 @@ pub mod subdivisions {
                 (
                     "40",
                     Subdivision{
-                        name: "40",
+                        name: "Khenchela",
                         country_alpha2: Alpha2::DZ,
                         code: "40",
                         #[cfg(feature = "geo")]
@@ -839,7 +840,7 @@ pub mod subdivisions {
                 (
                     "41",
                     Subdivision{
-                        name: "41",
+                        name: "Souk Ahras",
                         country_alpha2: Alpha2::DZ,
                         code: "41",
                         #[cfg(feature = "geo")]
@@ -854,7 +855,7 @@ pub mod subdivisions {
                 (
                     "42",
                     Subdivision{
-                        name: "42",
+                        name: "Tipaza",
                         country_alpha2: Alpha2::DZ,
                         code: "42",
                         #[cfg(feature = "geo")]
@@ -869,7 +870,7 @@ pub mod subdivisions {
                 (
                     "43",
                     Subdivision{
-                        name: "43",
+                        name: "Mila",
                         country_alpha2: Alpha2::DZ,
                         code: "43",
                         #[cfg(feature = "geo")]
@@ -884,7 +885,7 @@ pub mod subdivisions {
                 (
                     "44",
                     Subdivision{
-                        name: "44",
+                        name: "Aïn Defla",
                         country_alpha2: Alpha2::DZ,
                         code: "44",
                         #[cfg(feature = "geo")]
@@ -899,7 +900,7 @@ pub mod subdivisions {
                 (
                     "45",
                     Subdivision{
-                        name: "45",
+                        name: "Naama",
                         country_alpha2: Alpha2::DZ,
                         code: "45",
                         #[cfg(feature = "geo")]
@@ -914,7 +915,7 @@ pub mod subdivisions {
                 (
                     "46",
                     Subdivision{
-                        name: "46",
+                        name: "Aïn Témouchent",
                         country_alpha2: Alpha2::DZ,
                         code: "46",
                         #[cfg(feature = "geo")]
@@ -929,7 +930,7 @@ pub mod subdivisions {
                 (
                     "47",
                     Subdivision{
-                        name: "47",
+                        name: "Ghardaïa",
                         country_alpha2: Alpha2::DZ,
                         code: "47",
                         #[cfg(feature = "geo")]
@@ -944,7 +945,7 @@ pub mod subdivisions {
                 (
                     "48",
                     Subdivision{
-                        name: "48",
+                        name: "Relizane",
                         country_alpha2: Alpha2::DZ,
                         code: "48",
                         #[cfg(feature = "geo")]

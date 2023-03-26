@@ -211,12 +211,13 @@ pub mod geo {
 
 #[cfg(all(feature = "mm", feature = "subdivisions"))]
 pub mod subdivisions {
-    use crate::Subdivision;
+    #[allow(unused_imports)]
+    use crate::{Alpha2, Subdivision, SubdivisionType};
     use std::collections::HashMap;
     // In this state, We do not know if subdivisions have geo or not!
     #[cfg(feature = "geo")]
     #[allow(unused_imports)]
-    use crate::{Alpha2, SubdivisionGeo, SubdivisionType};
+    use crate::SubdivisionGeo;
 
     pub fn new() -> HashMap<&'static str, Subdivision> {
         HashMap::from(
@@ -225,7 +226,7 @@ pub mod subdivisions {
                 (
                     "01",
                     Subdivision{
-                        name: "01",
+                        name: "Sagaing",
                         country_alpha2: Alpha2::MM,
                         code: "01",
                         #[cfg(feature = "geo")]
@@ -240,7 +241,7 @@ pub mod subdivisions {
                 (
                     "02",
                     Subdivision{
-                        name: "02",
+                        name: "Bago",
                         country_alpha2: Alpha2::MM,
                         code: "02",
                         #[cfg(feature = "geo")]
@@ -255,7 +256,7 @@ pub mod subdivisions {
                 (
                     "03",
                     Subdivision{
-                        name: "03",
+                        name: "Magway",
                         country_alpha2: Alpha2::MM,
                         code: "03",
                         #[cfg(feature = "geo")]
@@ -270,7 +271,7 @@ pub mod subdivisions {
                 (
                     "04",
                     Subdivision{
-                        name: "04",
+                        name: "Mandalay",
                         country_alpha2: Alpha2::MM,
                         code: "04",
                         #[cfg(feature = "geo")]
@@ -285,7 +286,7 @@ pub mod subdivisions {
                 (
                     "05",
                     Subdivision{
-                        name: "05",
+                        name: "Tanintharyi",
                         country_alpha2: Alpha2::MM,
                         code: "05",
                         #[cfg(feature = "geo")]
@@ -300,7 +301,7 @@ pub mod subdivisions {
                 (
                     "06",
                     Subdivision{
-                        name: "06",
+                        name: "Yangon",
                         country_alpha2: Alpha2::MM,
                         code: "06",
                         #[cfg(feature = "geo")]
@@ -315,7 +316,7 @@ pub mod subdivisions {
                 (
                     "07",
                     Subdivision{
-                        name: "07",
+                        name: "Ayeyarwady",
                         country_alpha2: Alpha2::MM,
                         code: "07",
                         #[cfg(feature = "geo")]
@@ -330,7 +331,7 @@ pub mod subdivisions {
                 (
                     "11",
                     Subdivision{
-                        name: "11",
+                        name: "Kachin",
                         country_alpha2: Alpha2::MM,
                         code: "11",
                         #[cfg(feature = "geo")]
@@ -345,7 +346,7 @@ pub mod subdivisions {
                 (
                     "12",
                     Subdivision{
-                        name: "12",
+                        name: "Kayah",
                         country_alpha2: Alpha2::MM,
                         code: "12",
                         #[cfg(feature = "geo")]
@@ -360,7 +361,7 @@ pub mod subdivisions {
                 (
                     "13",
                     Subdivision{
-                        name: "13",
+                        name: "Kayin",
                         country_alpha2: Alpha2::MM,
                         code: "13",
                         #[cfg(feature = "geo")]
@@ -375,7 +376,7 @@ pub mod subdivisions {
                 (
                     "14",
                     Subdivision{
-                        name: "14",
+                        name: "Chin",
                         country_alpha2: Alpha2::MM,
                         code: "14",
                         #[cfg(feature = "geo")]
@@ -390,7 +391,7 @@ pub mod subdivisions {
                 (
                     "15",
                     Subdivision{
-                        name: "15",
+                        name: "Mon",
                         country_alpha2: Alpha2::MM,
                         code: "15",
                         #[cfg(feature = "geo")]
@@ -405,7 +406,7 @@ pub mod subdivisions {
                 (
                     "16",
                     Subdivision{
-                        name: "16",
+                        name: "Rakhine",
                         country_alpha2: Alpha2::MM,
                         code: "16",
                         #[cfg(feature = "geo")]
@@ -420,7 +421,7 @@ pub mod subdivisions {
                 (
                     "17",
                     Subdivision{
-                        name: "17",
+                        name: "Shan",
                         country_alpha2: Alpha2::MM,
                         code: "17",
                         #[cfg(feature = "geo")]
@@ -435,7 +436,7 @@ pub mod subdivisions {
                 (
                     "18",
                     Subdivision{
-                        name: "18",
+                        name: "နေပြည\u{103a}တော\u{103a} ပြည\u{103a}ထောင\u{103a}စ\u{102f}နယ\u{103a}မြေ",
                         country_alpha2: Alpha2::MM,
                         code: "18",
                         #[cfg(feature = "geo")]

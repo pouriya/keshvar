@@ -213,12 +213,13 @@ pub mod geo {
 
 #[cfg(all(feature = "ca", feature = "subdivisions"))]
 pub mod subdivisions {
-    use crate::Subdivision;
+    #[allow(unused_imports)]
+    use crate::{Alpha2, Subdivision, SubdivisionType};
     use std::collections::HashMap;
     // In this state, We do not know if subdivisions have geo or not!
     #[cfg(feature = "geo")]
     #[allow(unused_imports)]
-    use crate::{Alpha2, SubdivisionGeo, SubdivisionType};
+    use crate::SubdivisionGeo;
 
     pub fn new() -> HashMap<&'static str, Subdivision> {
         HashMap::from(
@@ -227,7 +228,7 @@ pub mod subdivisions {
                 (
                     "AB",
                     Subdivision{
-                        name: "AB",
+                        name: "Alberta",
                         country_alpha2: Alpha2::CA,
                         code: "AB",
                         #[cfg(feature = "geo")]
@@ -242,7 +243,7 @@ pub mod subdivisions {
                 (
                     "BC",
                     Subdivision{
-                        name: "BC",
+                        name: "British Columbia",
                         country_alpha2: Alpha2::CA,
                         code: "BC",
                         #[cfg(feature = "geo")]
@@ -257,7 +258,7 @@ pub mod subdivisions {
                 (
                     "MB",
                     Subdivision{
-                        name: "MB",
+                        name: "Manitoba",
                         country_alpha2: Alpha2::CA,
                         code: "MB",
                         #[cfg(feature = "geo")]
@@ -272,7 +273,7 @@ pub mod subdivisions {
                 (
                     "NB",
                     Subdivision{
-                        name: "NB",
+                        name: "New Brunswick",
                         country_alpha2: Alpha2::CA,
                         code: "NB",
                         #[cfg(feature = "geo")]
@@ -287,7 +288,7 @@ pub mod subdivisions {
                 (
                     "NL",
                     Subdivision{
-                        name: "NL",
+                        name: "Newfoundland and Labrador",
                         country_alpha2: Alpha2::CA,
                         code: "NL",
                         #[cfg(feature = "geo")]
@@ -302,7 +303,7 @@ pub mod subdivisions {
                 (
                     "NS",
                     Subdivision{
-                        name: "NS",
+                        name: "Nova Scotia",
                         country_alpha2: Alpha2::CA,
                         code: "NS",
                         #[cfg(feature = "geo")]
@@ -317,7 +318,7 @@ pub mod subdivisions {
                 (
                     "NT",
                     Subdivision{
-                        name: "NT",
+                        name: "Northwest Territories",
                         country_alpha2: Alpha2::CA,
                         code: "NT",
                         #[cfg(feature = "geo")]
@@ -332,7 +333,7 @@ pub mod subdivisions {
                 (
                     "NU",
                     Subdivision{
-                        name: "NU",
+                        name: "Nunavut",
                         country_alpha2: Alpha2::CA,
                         code: "NU",
                         #[cfg(feature = "geo")]
@@ -347,7 +348,7 @@ pub mod subdivisions {
                 (
                     "ON",
                     Subdivision{
-                        name: "ON",
+                        name: "Ontario",
                         country_alpha2: Alpha2::CA,
                         code: "ON",
                         #[cfg(feature = "geo")]
@@ -362,7 +363,7 @@ pub mod subdivisions {
                 (
                     "PE",
                     Subdivision{
-                        name: "PE",
+                        name: "Prince Edward Island",
                         country_alpha2: Alpha2::CA,
                         code: "PE",
                         #[cfg(feature = "geo")]
@@ -377,7 +378,7 @@ pub mod subdivisions {
                 (
                     "QC",
                     Subdivision{
-                        name: "QC",
+                        name: "Quebec",
                         country_alpha2: Alpha2::CA,
                         code: "QC",
                         #[cfg(feature = "geo")]
@@ -392,7 +393,7 @@ pub mod subdivisions {
                 (
                     "SK",
                     Subdivision{
-                        name: "SK",
+                        name: "Saskatchewan",
                         country_alpha2: Alpha2::CA,
                         code: "SK",
                         #[cfg(feature = "geo")]
@@ -407,7 +408,7 @@ pub mod subdivisions {
                 (
                     "YT",
                     Subdivision{
-                        name: "YT",
+                        name: "Yukon",
                         country_alpha2: Alpha2::CA,
                         code: "YT",
                         #[cfg(feature = "geo")]

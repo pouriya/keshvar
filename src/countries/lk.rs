@@ -214,12 +214,13 @@ pub mod geo {
 
 #[cfg(all(feature = "lk", feature = "subdivisions"))]
 pub mod subdivisions {
-    use crate::Subdivision;
+    #[allow(unused_imports)]
+    use crate::{Alpha2, Subdivision, SubdivisionType};
     use std::collections::HashMap;
     // In this state, We do not know if subdivisions have geo or not!
     #[cfg(feature = "geo")]
     #[allow(unused_imports)]
-    use crate::{Alpha2, SubdivisionGeo, SubdivisionType};
+    use crate::SubdivisionGeo;
 
     pub fn new() -> HashMap<&'static str, Subdivision> {
         HashMap::from(
@@ -228,7 +229,7 @@ pub mod subdivisions {
                 (
                     "1",
                     Subdivision{
-                        name: "1",
+                        name: "බස\u{dca}න\u{dcf}හ\u{dd2}ර පළ\u{dcf}ත, ශ\u{dca} ර\u{dd3} ලංක\u{dcf}ව",
                         country_alpha2: Alpha2::LK,
                         code: "1",
                         #[cfg(feature = "geo")]
@@ -243,7 +244,7 @@ pub mod subdivisions {
                 (
                     "11",
                     Subdivision{
-                        name: "11",
+                        name: "Colombo",
                         country_alpha2: Alpha2::LK,
                         code: "11",
                         #[cfg(feature = "geo")]
@@ -258,7 +259,7 @@ pub mod subdivisions {
                 (
                     "12",
                     Subdivision{
-                        name: "12",
+                        name: "Gampaha",
                         country_alpha2: Alpha2::LK,
                         code: "12",
                         #[cfg(feature = "geo")]
@@ -273,7 +274,7 @@ pub mod subdivisions {
                 (
                     "13",
                     Subdivision{
-                        name: "13",
+                        name: "Kalutara",
                         country_alpha2: Alpha2::LK,
                         code: "13",
                         #[cfg(feature = "geo")]
@@ -288,7 +289,7 @@ pub mod subdivisions {
                 (
                     "2",
                     Subdivision{
-                        name: "2",
+                        name: "මධ\u{dca}\u{200d}යම පළ\u{dcf}ත, ශ\u{dca}\u{200d}ර\u{dd3} ලංක\u{dcf}ව",
                         country_alpha2: Alpha2::LK,
                         code: "2",
                         #[cfg(feature = "geo")]
@@ -303,7 +304,7 @@ pub mod subdivisions {
                 (
                     "21",
                     Subdivision{
-                        name: "21",
+                        name: "Kandy",
                         country_alpha2: Alpha2::LK,
                         code: "21",
                         #[cfg(feature = "geo")]
@@ -318,7 +319,7 @@ pub mod subdivisions {
                 (
                     "22",
                     Subdivision{
-                        name: "22",
+                        name: "Matale",
                         country_alpha2: Alpha2::LK,
                         code: "22",
                         #[cfg(feature = "geo")]
@@ -333,7 +334,7 @@ pub mod subdivisions {
                 (
                     "23",
                     Subdivision{
-                        name: "23",
+                        name: "Nuwara Eliya",
                         country_alpha2: Alpha2::LK,
                         code: "23",
                         #[cfg(feature = "geo")]
@@ -348,7 +349,7 @@ pub mod subdivisions {
                 (
                     "3",
                     Subdivision{
-                        name: "3",
+                        name: "දක\u{dd4}ණ\u{dd4} පළ\u{dcf}ත",
                         country_alpha2: Alpha2::LK,
                         code: "3",
                         #[cfg(feature = "geo")]
@@ -363,7 +364,7 @@ pub mod subdivisions {
                 (
                     "31",
                     Subdivision{
-                        name: "31",
+                        name: "Galle",
                         country_alpha2: Alpha2::LK,
                         code: "31",
                         #[cfg(feature = "geo")]
@@ -378,7 +379,7 @@ pub mod subdivisions {
                 (
                     "32",
                     Subdivision{
-                        name: "32",
+                        name: "Matara",
                         country_alpha2: Alpha2::LK,
                         code: "32",
                         #[cfg(feature = "geo")]
@@ -393,7 +394,7 @@ pub mod subdivisions {
                 (
                     "33",
                     Subdivision{
-                        name: "33",
+                        name: "Hambantota",
                         country_alpha2: Alpha2::LK,
                         code: "33",
                         #[cfg(feature = "geo")]
@@ -408,7 +409,7 @@ pub mod subdivisions {
                 (
                     "4",
                     Subdivision{
-                        name: "4",
+                        name: "උත\u{dd4}ර\u{dd4} පළ\u{dcf}ත",
                         country_alpha2: Alpha2::LK,
                         code: "4",
                         #[cfg(feature = "geo")]
@@ -423,7 +424,7 @@ pub mod subdivisions {
                 (
                     "41",
                     Subdivision{
-                        name: "41",
+                        name: "Jaffna",
                         country_alpha2: Alpha2::LK,
                         code: "41",
                         #[cfg(feature = "geo")]
@@ -438,7 +439,7 @@ pub mod subdivisions {
                 (
                     "42",
                     Subdivision{
-                        name: "42",
+                        name: "Kilinochchi",
                         country_alpha2: Alpha2::LK,
                         code: "42",
                         #[cfg(feature = "geo")]
@@ -453,7 +454,7 @@ pub mod subdivisions {
                 (
                     "43",
                     Subdivision{
-                        name: "43",
+                        name: "Mannar",
                         country_alpha2: Alpha2::LK,
                         code: "43",
                         #[cfg(feature = "geo")]
@@ -468,7 +469,7 @@ pub mod subdivisions {
                 (
                     "44",
                     Subdivision{
-                        name: "44",
+                        name: "Vavuniya",
                         country_alpha2: Alpha2::LK,
                         code: "44",
                         #[cfg(feature = "geo")]
@@ -483,7 +484,7 @@ pub mod subdivisions {
                 (
                     "45",
                     Subdivision{
-                        name: "45",
+                        name: "Mullaittivu",
                         country_alpha2: Alpha2::LK,
                         code: "45",
                         #[cfg(feature = "geo")]
@@ -498,7 +499,7 @@ pub mod subdivisions {
                 (
                     "5",
                     Subdivision{
-                        name: "5",
+                        name: "නැගෙනහ\u{dd2}ර පළ\u{dcf}ත, ශ\u{dca} ර\u{dd3} ලංක\u{dcf}ව",
                         country_alpha2: Alpha2::LK,
                         code: "5",
                         #[cfg(feature = "geo")]
@@ -513,7 +514,7 @@ pub mod subdivisions {
                 (
                     "51",
                     Subdivision{
-                        name: "51",
+                        name: "Batticaloa",
                         country_alpha2: Alpha2::LK,
                         code: "51",
                         #[cfg(feature = "geo")]
@@ -528,7 +529,7 @@ pub mod subdivisions {
                 (
                     "52",
                     Subdivision{
-                        name: "52",
+                        name: "Ampara",
                         country_alpha2: Alpha2::LK,
                         code: "52",
                         #[cfg(feature = "geo")]
@@ -543,7 +544,7 @@ pub mod subdivisions {
                 (
                     "53",
                     Subdivision{
-                        name: "53",
+                        name: "Trincomalee",
                         country_alpha2: Alpha2::LK,
                         code: "53",
                         #[cfg(feature = "geo")]
@@ -558,7 +559,7 @@ pub mod subdivisions {
                 (
                     "6",
                     Subdivision{
-                        name: "6",
+                        name: "වයඹ පළ\u{dcf}ත, ශ\u{dca}\u{200d}ර\u{dd3} ලංක\u{dcf}ව",
                         country_alpha2: Alpha2::LK,
                         code: "6",
                         #[cfg(feature = "geo")]
@@ -573,7 +574,7 @@ pub mod subdivisions {
                 (
                     "61",
                     Subdivision{
-                        name: "61",
+                        name: "Kurunegala",
                         country_alpha2: Alpha2::LK,
                         code: "61",
                         #[cfg(feature = "geo")]
@@ -588,7 +589,7 @@ pub mod subdivisions {
                 (
                     "62",
                     Subdivision{
-                        name: "62",
+                        name: "Puttalam",
                         country_alpha2: Alpha2::LK,
                         code: "62",
                         #[cfg(feature = "geo")]
@@ -603,7 +604,7 @@ pub mod subdivisions {
                 (
                     "7",
                     Subdivision{
-                        name: "7",
+                        name: "උත\u{dd4}ර\u{dd4} මැද පළ\u{dcf}ත",
                         country_alpha2: Alpha2::LK,
                         code: "7",
                         #[cfg(feature = "geo")]
@@ -618,7 +619,7 @@ pub mod subdivisions {
                 (
                     "71",
                     Subdivision{
-                        name: "71",
+                        name: "Anuradhapura",
                         country_alpha2: Alpha2::LK,
                         code: "71",
                         #[cfg(feature = "geo")]
@@ -633,7 +634,7 @@ pub mod subdivisions {
                 (
                     "72",
                     Subdivision{
-                        name: "72",
+                        name: "Polonnaruwa",
                         country_alpha2: Alpha2::LK,
                         code: "72",
                         #[cfg(feature = "geo")]
@@ -648,7 +649,7 @@ pub mod subdivisions {
                 (
                     "8",
                     Subdivision{
-                        name: "8",
+                        name: "ඌව පළ\u{dcf}ත",
                         country_alpha2: Alpha2::LK,
                         code: "8",
                         #[cfg(feature = "geo")]
@@ -663,7 +664,7 @@ pub mod subdivisions {
                 (
                     "81",
                     Subdivision{
-                        name: "81",
+                        name: "Badulla",
                         country_alpha2: Alpha2::LK,
                         code: "81",
                         #[cfg(feature = "geo")]
@@ -678,7 +679,7 @@ pub mod subdivisions {
                 (
                     "82",
                     Subdivision{
-                        name: "82",
+                        name: "Monaragala",
                         country_alpha2: Alpha2::LK,
                         code: "82",
                         #[cfg(feature = "geo")]
@@ -693,7 +694,7 @@ pub mod subdivisions {
                 (
                     "9",
                     Subdivision{
-                        name: "9",
+                        name: "සබරගම\u{dd4}ව පළ\u{dcf}ත",
                         country_alpha2: Alpha2::LK,
                         code: "9",
                         #[cfg(feature = "geo")]
@@ -708,7 +709,7 @@ pub mod subdivisions {
                 (
                     "91",
                     Subdivision{
-                        name: "91",
+                        name: "Ratnapura",
                         country_alpha2: Alpha2::LK,
                         code: "91",
                         #[cfg(feature = "geo")]
@@ -723,7 +724,7 @@ pub mod subdivisions {
                 (
                     "92",
                     Subdivision{
-                        name: "92",
+                        name: "Kegalla",
                         country_alpha2: Alpha2::LK,
                         code: "92",
                         #[cfg(feature = "geo")]

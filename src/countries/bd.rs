@@ -211,12 +211,13 @@ pub mod geo {
 
 #[cfg(all(feature = "bd", feature = "subdivisions"))]
 pub mod subdivisions {
-    use crate::Subdivision;
+    #[allow(unused_imports)]
+    use crate::{Alpha2, Subdivision, SubdivisionType};
     use std::collections::HashMap;
     // In this state, We do not know if subdivisions have geo or not!
     #[cfg(feature = "geo")]
     #[allow(unused_imports)]
-    use crate::{Alpha2, SubdivisionGeo, SubdivisionType};
+    use crate::SubdivisionGeo;
 
     pub fn new() -> HashMap<&'static str, Subdivision> {
         HashMap::from(
@@ -225,7 +226,7 @@ pub mod subdivisions {
                 (
                     "01",
                     Subdivision{
-                        name: "01",
+                        name: "Bandarban zila",
                         country_alpha2: Alpha2::BD,
                         code: "01",
                         #[cfg(feature = "geo")]
@@ -240,7 +241,7 @@ pub mod subdivisions {
                 (
                     "02",
                     Subdivision{
-                        name: "02",
+                        name: "Barguna zila",
                         country_alpha2: Alpha2::BD,
                         code: "02",
                         #[cfg(feature = "geo")]
@@ -255,7 +256,7 @@ pub mod subdivisions {
                 (
                     "03",
                     Subdivision{
-                        name: "03",
+                        name: "Bogra zila",
                         country_alpha2: Alpha2::BD,
                         code: "03",
                         #[cfg(feature = "geo")]
@@ -270,7 +271,7 @@ pub mod subdivisions {
                 (
                     "04",
                     Subdivision{
-                        name: "04",
+                        name: "Brahmanbaria zila",
                         country_alpha2: Alpha2::BD,
                         code: "04",
                         #[cfg(feature = "geo")]
@@ -285,7 +286,7 @@ pub mod subdivisions {
                 (
                     "05",
                     Subdivision{
-                        name: "05",
+                        name: "Bagerhat zila",
                         country_alpha2: Alpha2::BD,
                         code: "05",
                         #[cfg(feature = "geo")]
@@ -300,7 +301,7 @@ pub mod subdivisions {
                 (
                     "06",
                     Subdivision{
-                        name: "06",
+                        name: "Barisal zila",
                         country_alpha2: Alpha2::BD,
                         code: "06",
                         #[cfg(feature = "geo")]
@@ -315,7 +316,7 @@ pub mod subdivisions {
                 (
                     "07",
                     Subdivision{
-                        name: "07",
+                        name: "Bhola zila",
                         country_alpha2: Alpha2::BD,
                         code: "07",
                         #[cfg(feature = "geo")]
@@ -330,7 +331,7 @@ pub mod subdivisions {
                 (
                     "08",
                     Subdivision{
-                        name: "08",
+                        name: "Comilla zila",
                         country_alpha2: Alpha2::BD,
                         code: "08",
                         #[cfg(feature = "geo")]
@@ -345,7 +346,7 @@ pub mod subdivisions {
                 (
                     "09",
                     Subdivision{
-                        name: "09",
+                        name: "Chandpur zila",
                         country_alpha2: Alpha2::BD,
                         code: "09",
                         #[cfg(feature = "geo")]
@@ -360,7 +361,7 @@ pub mod subdivisions {
                 (
                     "10",
                     Subdivision{
-                        name: "10",
+                        name: "Chittagong zila",
                         country_alpha2: Alpha2::BD,
                         code: "10",
                         #[cfg(feature = "geo")]
@@ -375,7 +376,7 @@ pub mod subdivisions {
                 (
                     "11",
                     Subdivision{
-                        name: "11",
+                        name: "Cox's Bazar zila",
                         country_alpha2: Alpha2::BD,
                         code: "11",
                         #[cfg(feature = "geo")]
@@ -390,7 +391,7 @@ pub mod subdivisions {
                 (
                     "12",
                     Subdivision{
-                        name: "12",
+                        name: "Chuadanga zila",
                         country_alpha2: Alpha2::BD,
                         code: "12",
                         #[cfg(feature = "geo")]
@@ -405,7 +406,7 @@ pub mod subdivisions {
                 (
                     "13",
                     Subdivision{
-                        name: "13",
+                        name: "Dhaka zila",
                         country_alpha2: Alpha2::BD,
                         code: "13",
                         #[cfg(feature = "geo")]
@@ -420,7 +421,7 @@ pub mod subdivisions {
                 (
                     "14",
                     Subdivision{
-                        name: "14",
+                        name: "Dinajpur zila",
                         country_alpha2: Alpha2::BD,
                         code: "14",
                         #[cfg(feature = "geo")]
@@ -435,7 +436,7 @@ pub mod subdivisions {
                 (
                     "15",
                     Subdivision{
-                        name: "15",
+                        name: "Faridpur zila",
                         country_alpha2: Alpha2::BD,
                         code: "15",
                         #[cfg(feature = "geo")]
@@ -450,7 +451,7 @@ pub mod subdivisions {
                 (
                     "16",
                     Subdivision{
-                        name: "16",
+                        name: "Feni zila",
                         country_alpha2: Alpha2::BD,
                         code: "16",
                         #[cfg(feature = "geo")]
@@ -465,7 +466,7 @@ pub mod subdivisions {
                 (
                     "17",
                     Subdivision{
-                        name: "17",
+                        name: "Gopalganj zila",
                         country_alpha2: Alpha2::BD,
                         code: "17",
                         #[cfg(feature = "geo")]
@@ -480,7 +481,7 @@ pub mod subdivisions {
                 (
                     "18",
                     Subdivision{
-                        name: "18",
+                        name: "Gazipur zila",
                         country_alpha2: Alpha2::BD,
                         code: "18",
                         #[cfg(feature = "geo")]
@@ -495,7 +496,7 @@ pub mod subdivisions {
                 (
                     "19",
                     Subdivision{
-                        name: "19",
+                        name: "Gaibandha zila",
                         country_alpha2: Alpha2::BD,
                         code: "19",
                         #[cfg(feature = "geo")]
@@ -510,7 +511,7 @@ pub mod subdivisions {
                 (
                     "20",
                     Subdivision{
-                        name: "20",
+                        name: "Habiganj zila",
                         country_alpha2: Alpha2::BD,
                         code: "20",
                         #[cfg(feature = "geo")]
@@ -525,7 +526,7 @@ pub mod subdivisions {
                 (
                     "21",
                     Subdivision{
-                        name: "21",
+                        name: "Jamalpur zila",
                         country_alpha2: Alpha2::BD,
                         code: "21",
                         #[cfg(feature = "geo")]
@@ -540,7 +541,7 @@ pub mod subdivisions {
                 (
                     "22",
                     Subdivision{
-                        name: "22",
+                        name: "Jessore zila",
                         country_alpha2: Alpha2::BD,
                         code: "22",
                         #[cfg(feature = "geo")]
@@ -555,7 +556,7 @@ pub mod subdivisions {
                 (
                     "23",
                     Subdivision{
-                        name: "23",
+                        name: "Jhenaidah zila",
                         country_alpha2: Alpha2::BD,
                         code: "23",
                         #[cfg(feature = "geo")]
@@ -570,7 +571,7 @@ pub mod subdivisions {
                 (
                     "24",
                     Subdivision{
-                        name: "24",
+                        name: "Jaipurhat zila",
                         country_alpha2: Alpha2::BD,
                         code: "24",
                         #[cfg(feature = "geo")]
@@ -585,7 +586,7 @@ pub mod subdivisions {
                 (
                     "25",
                     Subdivision{
-                        name: "25",
+                        name: "Jhalakati zila",
                         country_alpha2: Alpha2::BD,
                         code: "25",
                         #[cfg(feature = "geo")]
@@ -600,7 +601,7 @@ pub mod subdivisions {
                 (
                     "26",
                     Subdivision{
-                        name: "26",
+                        name: "Kishoreganj zila",
                         country_alpha2: Alpha2::BD,
                         code: "26",
                         #[cfg(feature = "geo")]
@@ -615,7 +616,7 @@ pub mod subdivisions {
                 (
                     "27",
                     Subdivision{
-                        name: "27",
+                        name: "Khulna zila",
                         country_alpha2: Alpha2::BD,
                         code: "27",
                         #[cfg(feature = "geo")]
@@ -630,7 +631,7 @@ pub mod subdivisions {
                 (
                     "28",
                     Subdivision{
-                        name: "28",
+                        name: "Kurigram zila",
                         country_alpha2: Alpha2::BD,
                         code: "28",
                         #[cfg(feature = "geo")]
@@ -645,7 +646,7 @@ pub mod subdivisions {
                 (
                     "29",
                     Subdivision{
-                        name: "29",
+                        name: "Khagrachari zila",
                         country_alpha2: Alpha2::BD,
                         code: "29",
                         #[cfg(feature = "geo")]
@@ -660,7 +661,7 @@ pub mod subdivisions {
                 (
                     "30",
                     Subdivision{
-                        name: "30",
+                        name: "Kushtia zila",
                         country_alpha2: Alpha2::BD,
                         code: "30",
                         #[cfg(feature = "geo")]
@@ -675,7 +676,7 @@ pub mod subdivisions {
                 (
                     "31",
                     Subdivision{
-                        name: "31",
+                        name: "Lakshmipur zila",
                         country_alpha2: Alpha2::BD,
                         code: "31",
                         #[cfg(feature = "geo")]
@@ -690,7 +691,7 @@ pub mod subdivisions {
                 (
                     "32",
                     Subdivision{
-                        name: "32",
+                        name: "Lalmonirhat zila",
                         country_alpha2: Alpha2::BD,
                         code: "32",
                         #[cfg(feature = "geo")]
@@ -705,7 +706,7 @@ pub mod subdivisions {
                 (
                     "33",
                     Subdivision{
-                        name: "33",
+                        name: "Manikganj zila",
                         country_alpha2: Alpha2::BD,
                         code: "33",
                         #[cfg(feature = "geo")]
@@ -720,7 +721,7 @@ pub mod subdivisions {
                 (
                     "34",
                     Subdivision{
-                        name: "34",
+                        name: "Mymensingh zila",
                         country_alpha2: Alpha2::BD,
                         code: "34",
                         #[cfg(feature = "geo")]
@@ -735,7 +736,7 @@ pub mod subdivisions {
                 (
                     "35",
                     Subdivision{
-                        name: "35",
+                        name: "Munshiganj zila",
                         country_alpha2: Alpha2::BD,
                         code: "35",
                         #[cfg(feature = "geo")]
@@ -750,7 +751,7 @@ pub mod subdivisions {
                 (
                     "36",
                     Subdivision{
-                        name: "36",
+                        name: "Madaripur zila",
                         country_alpha2: Alpha2::BD,
                         code: "36",
                         #[cfg(feature = "geo")]
@@ -765,7 +766,7 @@ pub mod subdivisions {
                 (
                     "37",
                     Subdivision{
-                        name: "37",
+                        name: "Magura zila",
                         country_alpha2: Alpha2::BD,
                         code: "37",
                         #[cfg(feature = "geo")]
@@ -780,7 +781,7 @@ pub mod subdivisions {
                 (
                     "38",
                     Subdivision{
-                        name: "38",
+                        name: "Moulvibazar zila",
                         country_alpha2: Alpha2::BD,
                         code: "38",
                         #[cfg(feature = "geo")]
@@ -795,7 +796,7 @@ pub mod subdivisions {
                 (
                     "39",
                     Subdivision{
-                        name: "39",
+                        name: "Meherpur zila",
                         country_alpha2: Alpha2::BD,
                         code: "39",
                         #[cfg(feature = "geo")]
@@ -810,7 +811,7 @@ pub mod subdivisions {
                 (
                     "40",
                     Subdivision{
-                        name: "40",
+                        name: "Narayanganj zila",
                         country_alpha2: Alpha2::BD,
                         code: "40",
                         #[cfg(feature = "geo")]
@@ -825,7 +826,7 @@ pub mod subdivisions {
                 (
                     "41",
                     Subdivision{
-                        name: "41",
+                        name: "Netrakona zila",
                         country_alpha2: Alpha2::BD,
                         code: "41",
                         #[cfg(feature = "geo")]
@@ -840,7 +841,7 @@ pub mod subdivisions {
                 (
                     "42",
                     Subdivision{
-                        name: "42",
+                        name: "Narsingdi zila",
                         country_alpha2: Alpha2::BD,
                         code: "42",
                         #[cfg(feature = "geo")]
@@ -855,7 +856,7 @@ pub mod subdivisions {
                 (
                     "43",
                     Subdivision{
-                        name: "43",
+                        name: "Narail zila",
                         country_alpha2: Alpha2::BD,
                         code: "43",
                         #[cfg(feature = "geo")]
@@ -870,7 +871,7 @@ pub mod subdivisions {
                 (
                     "44",
                     Subdivision{
-                        name: "44",
+                        name: "Natore zila",
                         country_alpha2: Alpha2::BD,
                         code: "44",
                         #[cfg(feature = "geo")]
@@ -885,7 +886,7 @@ pub mod subdivisions {
                 (
                     "45",
                     Subdivision{
-                        name: "45",
+                        name: "Nawabganj zila",
                         country_alpha2: Alpha2::BD,
                         code: "45",
                         #[cfg(feature = "geo")]
@@ -900,7 +901,7 @@ pub mod subdivisions {
                 (
                     "46",
                     Subdivision{
-                        name: "46",
+                        name: "Nilphamari zila",
                         country_alpha2: Alpha2::BD,
                         code: "46",
                         #[cfg(feature = "geo")]
@@ -915,7 +916,7 @@ pub mod subdivisions {
                 (
                     "47",
                     Subdivision{
-                        name: "47",
+                        name: "Noakhali zila",
                         country_alpha2: Alpha2::BD,
                         code: "47",
                         #[cfg(feature = "geo")]
@@ -930,7 +931,7 @@ pub mod subdivisions {
                 (
                     "48",
                     Subdivision{
-                        name: "48",
+                        name: "Naogaon zila",
                         country_alpha2: Alpha2::BD,
                         code: "48",
                         #[cfg(feature = "geo")]
@@ -945,7 +946,7 @@ pub mod subdivisions {
                 (
                     "49",
                     Subdivision{
-                        name: "49",
+                        name: "Pabna zila",
                         country_alpha2: Alpha2::BD,
                         code: "49",
                         #[cfg(feature = "geo")]
@@ -960,7 +961,7 @@ pub mod subdivisions {
                 (
                     "50",
                     Subdivision{
-                        name: "50",
+                        name: "Pirojpur zila",
                         country_alpha2: Alpha2::BD,
                         code: "50",
                         #[cfg(feature = "geo")]
@@ -975,7 +976,7 @@ pub mod subdivisions {
                 (
                     "51",
                     Subdivision{
-                        name: "51",
+                        name: "Patuakhali zila",
                         country_alpha2: Alpha2::BD,
                         code: "51",
                         #[cfg(feature = "geo")]
@@ -990,7 +991,7 @@ pub mod subdivisions {
                 (
                     "52",
                     Subdivision{
-                        name: "52",
+                        name: "Panchagarh zila",
                         country_alpha2: Alpha2::BD,
                         code: "52",
                         #[cfg(feature = "geo")]
@@ -1005,7 +1006,7 @@ pub mod subdivisions {
                 (
                     "53",
                     Subdivision{
-                        name: "53",
+                        name: "Rajbari zila",
                         country_alpha2: Alpha2::BD,
                         code: "53",
                         #[cfg(feature = "geo")]
@@ -1020,7 +1021,7 @@ pub mod subdivisions {
                 (
                     "54",
                     Subdivision{
-                        name: "54",
+                        name: "Rajshahi zila",
                         country_alpha2: Alpha2::BD,
                         code: "54",
                         #[cfg(feature = "geo")]
@@ -1035,7 +1036,7 @@ pub mod subdivisions {
                 (
                     "55",
                     Subdivision{
-                        name: "55",
+                        name: "Rangpur zila",
                         country_alpha2: Alpha2::BD,
                         code: "55",
                         #[cfg(feature = "geo")]
@@ -1050,7 +1051,7 @@ pub mod subdivisions {
                 (
                     "56",
                     Subdivision{
-                        name: "56",
+                        name: "Rangamati zila",
                         country_alpha2: Alpha2::BD,
                         code: "56",
                         #[cfg(feature = "geo")]
@@ -1065,7 +1066,7 @@ pub mod subdivisions {
                 (
                     "57",
                     Subdivision{
-                        name: "57",
+                        name: "Sherpur zila",
                         country_alpha2: Alpha2::BD,
                         code: "57",
                         #[cfg(feature = "geo")]
@@ -1080,7 +1081,7 @@ pub mod subdivisions {
                 (
                     "58",
                     Subdivision{
-                        name: "58",
+                        name: "Satkhira zila",
                         country_alpha2: Alpha2::BD,
                         code: "58",
                         #[cfg(feature = "geo")]
@@ -1095,7 +1096,7 @@ pub mod subdivisions {
                 (
                     "59",
                     Subdivision{
-                        name: "59",
+                        name: "Sirajganj zila",
                         country_alpha2: Alpha2::BD,
                         code: "59",
                         #[cfg(feature = "geo")]
@@ -1110,7 +1111,7 @@ pub mod subdivisions {
                 (
                     "60",
                     Subdivision{
-                        name: "60",
+                        name: "Sylhet zila",
                         country_alpha2: Alpha2::BD,
                         code: "60",
                         #[cfg(feature = "geo")]
@@ -1125,7 +1126,7 @@ pub mod subdivisions {
                 (
                     "61",
                     Subdivision{
-                        name: "61",
+                        name: "Sunamganj zila",
                         country_alpha2: Alpha2::BD,
                         code: "61",
                         #[cfg(feature = "geo")]
@@ -1140,7 +1141,7 @@ pub mod subdivisions {
                 (
                     "62",
                     Subdivision{
-                        name: "62",
+                        name: "Shariatpur zila",
                         country_alpha2: Alpha2::BD,
                         code: "62",
                         #[cfg(feature = "geo")]
@@ -1155,7 +1156,7 @@ pub mod subdivisions {
                 (
                     "63",
                     Subdivision{
-                        name: "63",
+                        name: "Tangail zila",
                         country_alpha2: Alpha2::BD,
                         code: "63",
                         #[cfg(feature = "geo")]
@@ -1170,7 +1171,7 @@ pub mod subdivisions {
                 (
                     "64",
                     Subdivision{
-                        name: "64",
+                        name: "Thakurgaon zila",
                         country_alpha2: Alpha2::BD,
                         code: "64",
                         #[cfg(feature = "geo")]
@@ -1185,7 +1186,7 @@ pub mod subdivisions {
                 (
                     "A",
                     Subdivision{
-                        name: "A",
+                        name: "বরিশ\u{9be}ল বিভ\u{9be}গ",
                         country_alpha2: Alpha2::BD,
                         code: "A",
                         #[cfg(feature = "geo")]
@@ -1200,7 +1201,7 @@ pub mod subdivisions {
                 (
                     "B",
                     Subdivision{
-                        name: "B",
+                        name: "চট\u{9cd}টগ\u{9cd}র\u{9be}ম বিভ\u{9be}গ",
                         country_alpha2: Alpha2::BD,
                         code: "B",
                         #[cfg(feature = "geo")]
@@ -1215,7 +1216,7 @@ pub mod subdivisions {
                 (
                     "C",
                     Subdivision{
-                        name: "C",
+                        name: "ঢ\u{9be}ক\u{9be} বিভ\u{9be}গ",
                         country_alpha2: Alpha2::BD,
                         code: "C",
                         #[cfg(feature = "geo")]
@@ -1230,7 +1231,7 @@ pub mod subdivisions {
                 (
                     "D",
                     Subdivision{
-                        name: "D",
+                        name: "খ\u{9c1}লন\u{9be} বিভ\u{9be}গ",
                         country_alpha2: Alpha2::BD,
                         code: "D",
                         #[cfg(feature = "geo")]
@@ -1245,7 +1246,7 @@ pub mod subdivisions {
                 (
                     "E",
                     Subdivision{
-                        name: "E",
+                        name: "র\u{9be}জশ\u{9be}হী বিভ\u{9be}গ",
                         country_alpha2: Alpha2::BD,
                         code: "E",
                         #[cfg(feature = "geo")]
@@ -1260,7 +1261,7 @@ pub mod subdivisions {
                 (
                     "F",
                     Subdivision{
-                        name: "F",
+                        name: "রংপ\u{9c1}র বিভ\u{9be}গ",
                         country_alpha2: Alpha2::BD,
                         code: "F",
                         #[cfg(feature = "geo")]
@@ -1275,7 +1276,7 @@ pub mod subdivisions {
                 (
                     "G",
                     Subdivision{
-                        name: "G",
+                        name: "সিলেট বিভ\u{9be}গ",
                         country_alpha2: Alpha2::BD,
                         code: "G",
                         #[cfg(feature = "geo")]
@@ -1290,7 +1291,7 @@ pub mod subdivisions {
                 (
                     "H",
                     Subdivision{
-                        name: "H",
+                        name: "ময\u{9bc}মনসিংহ বিভ\u{9be}গ",
                         country_alpha2: Alpha2::BD,
                         code: "H",
                         #[cfg(feature = "geo")]

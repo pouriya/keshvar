@@ -222,12 +222,13 @@ pub mod geo {
 
 #[cfg(all(feature = "by", feature = "subdivisions"))]
 pub mod subdivisions {
-    use crate::Subdivision;
+    #[allow(unused_imports)]
+    use crate::{Alpha2, Subdivision, SubdivisionType};
     use std::collections::HashMap;
     // In this state, We do not know if subdivisions have geo or not!
     #[cfg(feature = "geo")]
     #[allow(unused_imports)]
-    use crate::{Alpha2, SubdivisionGeo, SubdivisionType};
+    use crate::SubdivisionGeo;
 
     pub fn new() -> HashMap<&'static str, Subdivision> {
         HashMap::from(
@@ -236,7 +237,7 @@ pub mod subdivisions {
                 (
                     "BR",
                     Subdivision{
-                        name: "BR",
+                        name: "Brestskaya voblasts' (be) Brestskaya oblast' (ru)",
                         country_alpha2: Alpha2::BY,
                         code: "BR",
                         #[cfg(feature = "geo")]
@@ -251,7 +252,7 @@ pub mod subdivisions {
                 (
                     "HM",
                     Subdivision{
-                        name: "HM",
+                        name: "Мінск",
                         country_alpha2: Alpha2::BY,
                         code: "HM",
                         #[cfg(feature = "geo")]
@@ -266,7 +267,7 @@ pub mod subdivisions {
                 (
                     "HO",
                     Subdivision{
-                        name: "HO",
+                        name: "Homyel'skaya voblasts' (be) Gomel'skaya oblast' (ru)",
                         country_alpha2: Alpha2::BY,
                         code: "HO",
                         #[cfg(feature = "geo")]
@@ -281,7 +282,7 @@ pub mod subdivisions {
                 (
                     "HR",
                     Subdivision{
-                        name: "HR",
+                        name: "Hrodzenskaya voblasts' (be) Grodnenskaya oblast' (ru)",
                         country_alpha2: Alpha2::BY,
                         code: "HR",
                         #[cfg(feature = "geo")]
@@ -296,7 +297,7 @@ pub mod subdivisions {
                 (
                     "MA",
                     Subdivision{
-                        name: "MA",
+                        name: "Mahilyowskaya voblasts' (be) Mogilevskaya oblast' (ru)",
                         country_alpha2: Alpha2::BY,
                         code: "MA",
                         #[cfg(feature = "geo")]
@@ -311,7 +312,7 @@ pub mod subdivisions {
                 (
                     "MI",
                     Subdivision{
-                        name: "MI",
+                        name: "Minskaya voblasts' (be) Minskaya oblast' (ru)",
                         country_alpha2: Alpha2::BY,
                         code: "MI",
                         #[cfg(feature = "geo")]
@@ -326,7 +327,7 @@ pub mod subdivisions {
                 (
                     "VI",
                     Subdivision{
-                        name: "VI",
+                        name: "Vitsyebskaya voblasts' (be) Vitebskaya oblast' (ru)",
                         country_alpha2: Alpha2::BY,
                         code: "VI",
                         #[cfg(feature = "geo")]

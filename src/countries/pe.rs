@@ -214,12 +214,13 @@ pub mod geo {
 
 #[cfg(all(feature = "pe", feature = "subdivisions"))]
 pub mod subdivisions {
-    use crate::Subdivision;
+    #[allow(unused_imports)]
+    use crate::{Alpha2, Subdivision, SubdivisionType};
     use std::collections::HashMap;
     // In this state, We do not know if subdivisions have geo or not!
     #[cfg(feature = "geo")]
     #[allow(unused_imports)]
-    use crate::{Alpha2, SubdivisionGeo, SubdivisionType};
+    use crate::SubdivisionGeo;
 
     pub fn new() -> HashMap<&'static str, Subdivision> {
         HashMap::from(
@@ -228,7 +229,7 @@ pub mod subdivisions {
                 (
                     "AMA",
                     Subdivision{
-                        name: "AMA",
+                        name: "Amazonas",
                         country_alpha2: Alpha2::PE,
                         code: "AMA",
                         #[cfg(feature = "geo")]
@@ -243,7 +244,7 @@ pub mod subdivisions {
                 (
                     "ANC",
                     Subdivision{
-                        name: "ANC",
+                        name: "Ancash",
                         country_alpha2: Alpha2::PE,
                         code: "ANC",
                         #[cfg(feature = "geo")]
@@ -258,7 +259,7 @@ pub mod subdivisions {
                 (
                     "APU",
                     Subdivision{
-                        name: "APU",
+                        name: "Apurímac",
                         country_alpha2: Alpha2::PE,
                         code: "APU",
                         #[cfg(feature = "geo")]
@@ -273,7 +274,7 @@ pub mod subdivisions {
                 (
                     "ARE",
                     Subdivision{
-                        name: "ARE",
+                        name: "Arequipa",
                         country_alpha2: Alpha2::PE,
                         code: "ARE",
                         #[cfg(feature = "geo")]
@@ -288,7 +289,7 @@ pub mod subdivisions {
                 (
                     "AYA",
                     Subdivision{
-                        name: "AYA",
+                        name: "Ayacucho",
                         country_alpha2: Alpha2::PE,
                         code: "AYA",
                         #[cfg(feature = "geo")]
@@ -303,7 +304,7 @@ pub mod subdivisions {
                 (
                     "CAJ",
                     Subdivision{
-                        name: "CAJ",
+                        name: "Cajamarca",
                         country_alpha2: Alpha2::PE,
                         code: "CAJ",
                         #[cfg(feature = "geo")]
@@ -318,7 +319,7 @@ pub mod subdivisions {
                 (
                     "CAL",
                     Subdivision{
-                        name: "CAL",
+                        name: "El Callao",
                         country_alpha2: Alpha2::PE,
                         code: "CAL",
                         #[cfg(feature = "geo")]
@@ -333,7 +334,7 @@ pub mod subdivisions {
                 (
                     "CUS",
                     Subdivision{
-                        name: "CUS",
+                        name: "Cuzco [Cusco]",
                         country_alpha2: Alpha2::PE,
                         code: "CUS",
                         #[cfg(feature = "geo")]
@@ -348,7 +349,7 @@ pub mod subdivisions {
                 (
                     "HUC",
                     Subdivision{
-                        name: "HUC",
+                        name: "Huánuco",
                         country_alpha2: Alpha2::PE,
                         code: "HUC",
                         #[cfg(feature = "geo")]
@@ -363,7 +364,7 @@ pub mod subdivisions {
                 (
                     "HUV",
                     Subdivision{
-                        name: "HUV",
+                        name: "Huancavelica",
                         country_alpha2: Alpha2::PE,
                         code: "HUV",
                         #[cfg(feature = "geo")]
@@ -378,7 +379,7 @@ pub mod subdivisions {
                 (
                     "ICA",
                     Subdivision{
-                        name: "ICA",
+                        name: "Ica",
                         country_alpha2: Alpha2::PE,
                         code: "ICA",
                         #[cfg(feature = "geo")]
@@ -393,7 +394,7 @@ pub mod subdivisions {
                 (
                     "JUN",
                     Subdivision{
-                        name: "JUN",
+                        name: "Junín",
                         country_alpha2: Alpha2::PE,
                         code: "JUN",
                         #[cfg(feature = "geo")]
@@ -408,7 +409,7 @@ pub mod subdivisions {
                 (
                     "LAL",
                     Subdivision{
-                        name: "LAL",
+                        name: "La Libertad",
                         country_alpha2: Alpha2::PE,
                         code: "LAL",
                         #[cfg(feature = "geo")]
@@ -423,7 +424,7 @@ pub mod subdivisions {
                 (
                     "LAM",
                     Subdivision{
-                        name: "LAM",
+                        name: "Lambayeque",
                         country_alpha2: Alpha2::PE,
                         code: "LAM",
                         #[cfg(feature = "geo")]
@@ -438,7 +439,7 @@ pub mod subdivisions {
                 (
                     "LIM",
                     Subdivision{
-                        name: "LIM",
+                        name: "Lima",
                         country_alpha2: Alpha2::PE,
                         code: "LIM",
                         #[cfg(feature = "geo")]
@@ -453,7 +454,7 @@ pub mod subdivisions {
                 (
                     "LMA",
                     Subdivision{
-                        name: "LMA",
+                        name: "Lima Metropolitana",
                         country_alpha2: Alpha2::PE,
                         code: "LMA",
                         #[cfg(feature = "geo")]
@@ -468,7 +469,7 @@ pub mod subdivisions {
                 (
                     "LOR",
                     Subdivision{
-                        name: "LOR",
+                        name: "Loreto",
                         country_alpha2: Alpha2::PE,
                         code: "LOR",
                         #[cfg(feature = "geo")]
@@ -483,7 +484,7 @@ pub mod subdivisions {
                 (
                     "MDD",
                     Subdivision{
-                        name: "MDD",
+                        name: "Madre de Dios",
                         country_alpha2: Alpha2::PE,
                         code: "MDD",
                         #[cfg(feature = "geo")]
@@ -498,7 +499,7 @@ pub mod subdivisions {
                 (
                     "MOQ",
                     Subdivision{
-                        name: "MOQ",
+                        name: "Moquegua",
                         country_alpha2: Alpha2::PE,
                         code: "MOQ",
                         #[cfg(feature = "geo")]
@@ -513,7 +514,7 @@ pub mod subdivisions {
                 (
                     "PAS",
                     Subdivision{
-                        name: "PAS",
+                        name: "Pasco",
                         country_alpha2: Alpha2::PE,
                         code: "PAS",
                         #[cfg(feature = "geo")]
@@ -528,7 +529,7 @@ pub mod subdivisions {
                 (
                     "PIU",
                     Subdivision{
-                        name: "PIU",
+                        name: "Piura",
                         country_alpha2: Alpha2::PE,
                         code: "PIU",
                         #[cfg(feature = "geo")]
@@ -543,7 +544,7 @@ pub mod subdivisions {
                 (
                     "PUN",
                     Subdivision{
-                        name: "PUN",
+                        name: "Puno",
                         country_alpha2: Alpha2::PE,
                         code: "PUN",
                         #[cfg(feature = "geo")]
@@ -558,7 +559,7 @@ pub mod subdivisions {
                 (
                     "SAM",
                     Subdivision{
-                        name: "SAM",
+                        name: "San Martín",
                         country_alpha2: Alpha2::PE,
                         code: "SAM",
                         #[cfg(feature = "geo")]
@@ -573,7 +574,7 @@ pub mod subdivisions {
                 (
                     "TAC",
                     Subdivision{
-                        name: "TAC",
+                        name: "Tacna",
                         country_alpha2: Alpha2::PE,
                         code: "TAC",
                         #[cfg(feature = "geo")]
@@ -588,7 +589,7 @@ pub mod subdivisions {
                 (
                     "TUM",
                     Subdivision{
-                        name: "TUM",
+                        name: "Tumbes",
                         country_alpha2: Alpha2::PE,
                         code: "TUM",
                         #[cfg(feature = "geo")]
@@ -603,7 +604,7 @@ pub mod subdivisions {
                 (
                     "UCA",
                     Subdivision{
-                        name: "UCA",
+                        name: "Ucayali",
                         country_alpha2: Alpha2::PE,
                         code: "UCA",
                         #[cfg(feature = "geo")]

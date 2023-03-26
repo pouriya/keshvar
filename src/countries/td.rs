@@ -215,12 +215,13 @@ pub mod geo {
 
 #[cfg(all(feature = "td", feature = "subdivisions"))]
 pub mod subdivisions {
-    use crate::Subdivision;
+    #[allow(unused_imports)]
+    use crate::{Alpha2, Subdivision, SubdivisionType};
     use std::collections::HashMap;
     // In this state, We do not know if subdivisions have geo or not!
     #[cfg(feature = "geo")]
     #[allow(unused_imports)]
-    use crate::{Alpha2, SubdivisionGeo, SubdivisionType};
+    use crate::SubdivisionGeo;
 
     pub fn new() -> HashMap<&'static str, Subdivision> {
         HashMap::from(
@@ -229,7 +230,7 @@ pub mod subdivisions {
                 (
                     "BA",
                     Subdivision{
-                        name: "BA",
+                        name: "Batha",
                         country_alpha2: Alpha2::TD,
                         code: "BA",
                         #[cfg(feature = "geo")]
@@ -244,7 +245,7 @@ pub mod subdivisions {
                 (
                     "BG",
                     Subdivision{
-                        name: "BG",
+                        name: "بحر الغزال",
                         country_alpha2: Alpha2::TD,
                         code: "BG",
                         #[cfg(feature = "geo")]
@@ -259,7 +260,7 @@ pub mod subdivisions {
                 (
                     "BO",
                     Subdivision{
-                        name: "BO",
+                        name: "منطقة بوركو",
                         country_alpha2: Alpha2::TD,
                         code: "BO",
                         #[cfg(feature = "geo")]
@@ -274,7 +275,7 @@ pub mod subdivisions {
                 (
                     "CB",
                     Subdivision{
-                        name: "CB",
+                        name: "Chari-Baguirmi",
                         country_alpha2: Alpha2::TD,
                         code: "CB",
                         #[cfg(feature = "geo")]
@@ -289,7 +290,7 @@ pub mod subdivisions {
                 (
                     "EE",
                     Subdivision{
-                        name: "EE",
+                        name: "إنيدي الشرقية",
                         country_alpha2: Alpha2::TD,
                         code: "EE",
                         #[cfg(feature = "geo")]
@@ -304,7 +305,7 @@ pub mod subdivisions {
                 (
                     "EO",
                     Subdivision{
-                        name: "EO",
+                        name: "إنيدي الغربية",
                         country_alpha2: Alpha2::TD,
                         code: "EO",
                         #[cfg(feature = "geo")]
@@ -319,7 +320,7 @@ pub mod subdivisions {
                 (
                     "GR",
                     Subdivision{
-                        name: "GR",
+                        name: "Guéra",
                         country_alpha2: Alpha2::TD,
                         code: "GR",
                         #[cfg(feature = "geo")]
@@ -334,7 +335,7 @@ pub mod subdivisions {
                 (
                     "HL",
                     Subdivision{
-                        name: "HL",
+                        name: "Hadjer Lamis",
                         country_alpha2: Alpha2::TD,
                         code: "HL",
                         #[cfg(feature = "geo")]
@@ -349,7 +350,7 @@ pub mod subdivisions {
                 (
                     "KA",
                     Subdivision{
-                        name: "KA",
+                        name: "Kanem",
                         country_alpha2: Alpha2::TD,
                         code: "KA",
                         #[cfg(feature = "geo")]
@@ -364,7 +365,7 @@ pub mod subdivisions {
                 (
                     "LC",
                     Subdivision{
-                        name: "LC",
+                        name: "Lac",
                         country_alpha2: Alpha2::TD,
                         code: "LC",
                         #[cfg(feature = "geo")]
@@ -379,7 +380,7 @@ pub mod subdivisions {
                 (
                     "LO",
                     Subdivision{
-                        name: "LO",
+                        name: "Logone-Occidental",
                         country_alpha2: Alpha2::TD,
                         code: "LO",
                         #[cfg(feature = "geo")]
@@ -394,7 +395,7 @@ pub mod subdivisions {
                 (
                     "LR",
                     Subdivision{
-                        name: "LR",
+                        name: "Logone-Oriental",
                         country_alpha2: Alpha2::TD,
                         code: "LR",
                         #[cfg(feature = "geo")]
@@ -409,7 +410,7 @@ pub mod subdivisions {
                 (
                     "MA",
                     Subdivision{
-                        name: "MA",
+                        name: "Mandoul",
                         country_alpha2: Alpha2::TD,
                         code: "MA",
                         #[cfg(feature = "geo")]
@@ -424,7 +425,7 @@ pub mod subdivisions {
                 (
                     "MC",
                     Subdivision{
-                        name: "MC",
+                        name: "Moyen-Chari",
                         country_alpha2: Alpha2::TD,
                         code: "MC",
                         #[cfg(feature = "geo")]
@@ -439,7 +440,7 @@ pub mod subdivisions {
                 (
                     "ME",
                     Subdivision{
-                        name: "ME",
+                        name: "Mayo-Kébbi-Est",
                         country_alpha2: Alpha2::TD,
                         code: "ME",
                         #[cfg(feature = "geo")]
@@ -454,7 +455,7 @@ pub mod subdivisions {
                 (
                     "MO",
                     Subdivision{
-                        name: "MO",
+                        name: "Mayo-Kébbi-Ouest",
                         country_alpha2: Alpha2::TD,
                         code: "MO",
                         #[cfg(feature = "geo")]
@@ -469,7 +470,7 @@ pub mod subdivisions {
                 (
                     "ND",
                     Subdivision{
-                        name: "ND",
+                        name: "Ndjamena",
                         country_alpha2: Alpha2::TD,
                         code: "ND",
                         #[cfg(feature = "geo")]
@@ -484,7 +485,7 @@ pub mod subdivisions {
                 (
                     "OD",
                     Subdivision{
-                        name: "OD",
+                        name: "Ouaddaï",
                         country_alpha2: Alpha2::TD,
                         code: "OD",
                         #[cfg(feature = "geo")]
@@ -499,7 +500,7 @@ pub mod subdivisions {
                 (
                     "SA",
                     Subdivision{
-                        name: "SA",
+                        name: "Salamat",
                         country_alpha2: Alpha2::TD,
                         code: "SA",
                         #[cfg(feature = "geo")]
@@ -514,7 +515,7 @@ pub mod subdivisions {
                 (
                     "SI",
                     Subdivision{
-                        name: "SI",
+                        name: "منطقة سيلا",
                         country_alpha2: Alpha2::TD,
                         code: "SI",
                         #[cfg(feature = "geo")]
@@ -529,7 +530,7 @@ pub mod subdivisions {
                 (
                     "TA",
                     Subdivision{
-                        name: "TA",
+                        name: "Tandjilé",
                         country_alpha2: Alpha2::TD,
                         code: "TA",
                         #[cfg(feature = "geo")]
@@ -544,7 +545,7 @@ pub mod subdivisions {
                 (
                     "TI",
                     Subdivision{
-                        name: "TI",
+                        name: "منطقة تبستي",
                         country_alpha2: Alpha2::TD,
                         code: "TI",
                         #[cfg(feature = "geo")]
@@ -559,7 +560,7 @@ pub mod subdivisions {
                 (
                     "WF",
                     Subdivision{
-                        name: "WF",
+                        name: "Wadi Fira",
                         country_alpha2: Alpha2::TD,
                         code: "WF",
                         #[cfg(feature = "geo")]

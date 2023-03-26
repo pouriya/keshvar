@@ -219,19 +219,20 @@ pub mod geo {
 
 #[cfg(all(feature = "no", feature = "subdivisions"))]
 pub mod subdivisions {
-    use crate::Subdivision;
+    #[allow(unused_imports)]
+    use crate::{Alpha2, Subdivision, SubdivisionType};
     use std::collections::HashMap;
     // In this state, We do not know if subdivisions have geo or not!
     #[cfg(feature = "geo")]
     #[allow(unused_imports)]
-    use crate::{Alpha2, SubdivisionGeo, SubdivisionType};
+    use crate::SubdivisionGeo;
 
     pub fn new() -> HashMap<&'static str, Subdivision> {
         HashMap::from([
             (
                 "03",
                 Subdivision {
-                    name: "03",
+                    name: "Oslo",
                     country_alpha2: Alpha2::NO,
                     code: "03",
                     #[cfg(feature = "geo")]
@@ -316,7 +317,7 @@ pub mod subdivisions {
             (
                 "11",
                 Subdivision {
-                    name: "11",
+                    name: "Rogaland",
                     country_alpha2: Alpha2::NO,
                     code: "11",
                     #[cfg(feature = "geo")]
@@ -380,7 +381,7 @@ pub mod subdivisions {
             (
                 "15",
                 Subdivision {
-                    name: "15",
+                    name: "Møre og Romsdal",
                     country_alpha2: Alpha2::NO,
                     code: "15",
                     #[cfg(feature = "geo")]
@@ -442,7 +443,7 @@ pub mod subdivisions {
             (
                 "18",
                 Subdivision {
-                    name: "18",
+                    name: "Nordland",
                     country_alpha2: Alpha2::NO,
                     code: "18",
                     #[cfg(feature = "geo")]
@@ -516,7 +517,7 @@ pub mod subdivisions {
             (
                 "21",
                 Subdivision {
-                    name: "21",
+                    name: "Svalbard (Arctic Region)",
                     country_alpha2: Alpha2::NO,
                     code: "21",
                     #[cfg(feature = "geo")]
@@ -588,7 +589,7 @@ pub mod subdivisions {
             (
                 "22",
                 Subdivision {
-                    name: "22",
+                    name: "Jan Mayen (Arctic Region)",
                     country_alpha2: Alpha2::NO,
                     code: "22",
                     #[cfg(feature = "geo")]
@@ -654,7 +655,7 @@ pub mod subdivisions {
             (
                 "30",
                 Subdivision {
-                    name: "30",
+                    name: "Viken",
                     country_alpha2: Alpha2::NO,
                     code: "30",
                     #[cfg(feature = "geo")]
@@ -696,7 +697,7 @@ pub mod subdivisions {
             (
                 "34",
                 Subdivision {
-                    name: "34",
+                    name: "Innlandet",
                     country_alpha2: Alpha2::NO,
                     code: "34",
                     #[cfg(feature = "geo")]
@@ -940,7 +941,7 @@ pub mod subdivisions {
             (
                 "38",
                 Subdivision {
-                    name: "38",
+                    name: "Vestfold og Telemark",
                     country_alpha2: Alpha2::NO,
                     code: "38",
                     #[cfg(feature = "geo")]
@@ -984,7 +985,7 @@ pub mod subdivisions {
             (
                 "42",
                 Subdivision {
-                    name: "42",
+                    name: "Agder",
                     country_alpha2: Alpha2::NO,
                     code: "42",
                     #[cfg(feature = "geo")]
@@ -1032,7 +1033,7 @@ pub mod subdivisions {
             (
                 "46",
                 Subdivision {
-                    name: "46",
+                    name: "Vestland",
                     country_alpha2: Alpha2::NO,
                     code: "46",
                     #[cfg(feature = "geo")]
@@ -1073,7 +1074,7 @@ pub mod subdivisions {
             (
                 "50",
                 Subdivision {
-                    name: "50",
+                    name: "Trøndelag",
                     country_alpha2: Alpha2::NO,
                     code: "50",
                     #[cfg(feature = "geo")]
@@ -1147,7 +1148,7 @@ pub mod subdivisions {
             (
                 "54",
                 Subdivision {
-                    name: "54",
+                    name: "Troms og Finnmark",
                     country_alpha2: Alpha2::NO,
                     code: "54",
                     #[cfg(feature = "geo")]

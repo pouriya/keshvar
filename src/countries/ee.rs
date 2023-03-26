@@ -211,19 +211,20 @@ pub mod geo {
 
 #[cfg(all(feature = "ee", feature = "subdivisions"))]
 pub mod subdivisions {
-    use crate::Subdivision;
+    #[allow(unused_imports)]
+    use crate::{Alpha2, Subdivision, SubdivisionType};
     use std::collections::HashMap;
     // In this state, We do not know if subdivisions have geo or not!
     #[cfg(feature = "geo")]
     #[allow(unused_imports)]
-    use crate::{Alpha2, SubdivisionGeo, SubdivisionType};
+    use crate::SubdivisionGeo;
 
     pub fn new() -> HashMap<&'static str, Subdivision> {
         HashMap::from([
             (
                 "130",
                 Subdivision {
-                    name: "130",
+                    name: "Alutaguse",
                     country_alpha2: Alpha2::EE,
                     code: "130",
                     #[cfg(feature = "geo")]
@@ -238,7 +239,7 @@ pub mod subdivisions {
             (
                 "141",
                 Subdivision {
-                    name: "141",
+                    name: "Anija",
                     country_alpha2: Alpha2::EE,
                     code: "141",
                     #[cfg(feature = "geo")]
@@ -253,7 +254,7 @@ pub mod subdivisions {
             (
                 "142",
                 Subdivision {
-                    name: "142",
+                    name: "Antsla",
                     country_alpha2: Alpha2::EE,
                     code: "142",
                     #[cfg(feature = "geo")]
@@ -268,7 +269,7 @@ pub mod subdivisions {
             (
                 "171",
                 Subdivision {
-                    name: "171",
+                    name: "Elva",
                     country_alpha2: Alpha2::EE,
                     code: "171",
                     #[cfg(feature = "geo")]
@@ -283,7 +284,7 @@ pub mod subdivisions {
             (
                 "184",
                 Subdivision {
-                    name: "184",
+                    name: "Haapsalu",
                     country_alpha2: Alpha2::EE,
                     code: "184",
                     #[cfg(feature = "geo")]
@@ -298,7 +299,7 @@ pub mod subdivisions {
             (
                 "191",
                 Subdivision {
-                    name: "191",
+                    name: "Haljala",
                     country_alpha2: Alpha2::EE,
                     code: "191",
                     #[cfg(feature = "geo")]
@@ -313,7 +314,7 @@ pub mod subdivisions {
             (
                 "198",
                 Subdivision {
-                    name: "198",
+                    name: "Harku",
                     country_alpha2: Alpha2::EE,
                     code: "198",
                     #[cfg(feature = "geo")]
@@ -328,7 +329,7 @@ pub mod subdivisions {
             (
                 "205",
                 Subdivision {
-                    name: "205",
+                    name: "Hiiumaa",
                     country_alpha2: Alpha2::EE,
                     code: "205",
                     #[cfg(feature = "geo")]
@@ -343,7 +344,7 @@ pub mod subdivisions {
             (
                 "214",
                 Subdivision {
-                    name: "214",
+                    name: "Häädemeeste",
                     country_alpha2: Alpha2::EE,
                     code: "214",
                     #[cfg(feature = "geo")]
@@ -358,7 +359,7 @@ pub mod subdivisions {
             (
                 "245",
                 Subdivision {
-                    name: "245",
+                    name: "Jõelähtme",
                     country_alpha2: Alpha2::EE,
                     code: "245",
                     #[cfg(feature = "geo")]
@@ -373,7 +374,7 @@ pub mod subdivisions {
             (
                 "247",
                 Subdivision {
-                    name: "247",
+                    name: "Jõgeva",
                     country_alpha2: Alpha2::EE,
                     code: "247",
                     #[cfg(feature = "geo")]
@@ -388,7 +389,7 @@ pub mod subdivisions {
             (
                 "251",
                 Subdivision {
-                    name: "251",
+                    name: "Jõhvi",
                     country_alpha2: Alpha2::EE,
                     code: "251",
                     #[cfg(feature = "geo")]
@@ -403,7 +404,7 @@ pub mod subdivisions {
             (
                 "255",
                 Subdivision {
-                    name: "255",
+                    name: "Järva",
                     country_alpha2: Alpha2::EE,
                     code: "255",
                     #[cfg(feature = "geo")]
@@ -418,7 +419,7 @@ pub mod subdivisions {
             (
                 "272",
                 Subdivision {
-                    name: "272",
+                    name: "Kadrina",
                     country_alpha2: Alpha2::EE,
                     code: "272",
                     #[cfg(feature = "geo")]
@@ -433,7 +434,7 @@ pub mod subdivisions {
             (
                 "283",
                 Subdivision {
-                    name: "283",
+                    name: "Kambja",
                     country_alpha2: Alpha2::EE,
                     code: "283",
                     #[cfg(feature = "geo")]
@@ -448,7 +449,7 @@ pub mod subdivisions {
             (
                 "284",
                 Subdivision {
-                    name: "284",
+                    name: "Kanepi",
                     country_alpha2: Alpha2::EE,
                     code: "284",
                     #[cfg(feature = "geo")]
@@ -463,7 +464,7 @@ pub mod subdivisions {
             (
                 "291",
                 Subdivision {
-                    name: "291",
+                    name: "Kastre",
                     country_alpha2: Alpha2::EE,
                     code: "291",
                     #[cfg(feature = "geo")]
@@ -478,7 +479,7 @@ pub mod subdivisions {
             (
                 "293",
                 Subdivision {
-                    name: "293",
+                    name: "Kehtna",
                     country_alpha2: Alpha2::EE,
                     code: "293",
                     #[cfg(feature = "geo")]
@@ -493,7 +494,7 @@ pub mod subdivisions {
             (
                 "296",
                 Subdivision {
-                    name: "296",
+                    name: "Keila",
                     country_alpha2: Alpha2::EE,
                     code: "296",
                     #[cfg(feature = "geo")]
@@ -508,7 +509,7 @@ pub mod subdivisions {
             (
                 "303",
                 Subdivision {
-                    name: "303",
+                    name: "Kihnu",
                     country_alpha2: Alpha2::EE,
                     code: "303",
                     #[cfg(feature = "geo")]
@@ -523,7 +524,7 @@ pub mod subdivisions {
             (
                 "305",
                 Subdivision {
-                    name: "305",
+                    name: "Kiili",
                     country_alpha2: Alpha2::EE,
                     code: "305",
                     #[cfg(feature = "geo")]
@@ -538,7 +539,7 @@ pub mod subdivisions {
             (
                 "317",
                 Subdivision {
-                    name: "317",
+                    name: "Kohila",
                     country_alpha2: Alpha2::EE,
                     code: "317",
                     #[cfg(feature = "geo")]
@@ -553,7 +554,7 @@ pub mod subdivisions {
             (
                 "321",
                 Subdivision {
-                    name: "321",
+                    name: "Kohtla-Järve",
                     country_alpha2: Alpha2::EE,
                     code: "321",
                     #[cfg(feature = "geo")]
@@ -568,7 +569,7 @@ pub mod subdivisions {
             (
                 "338",
                 Subdivision {
-                    name: "338",
+                    name: "Kose",
                     country_alpha2: Alpha2::EE,
                     code: "338",
                     #[cfg(feature = "geo")]
@@ -583,7 +584,7 @@ pub mod subdivisions {
             (
                 "353",
                 Subdivision {
-                    name: "353",
+                    name: "Kuusalu",
                     country_alpha2: Alpha2::EE,
                     code: "353",
                     #[cfg(feature = "geo")]
@@ -598,7 +599,7 @@ pub mod subdivisions {
             (
                 "37",
                 Subdivision {
-                    name: "37",
+                    name: "Harjumaa",
                     country_alpha2: Alpha2::EE,
                     code: "37",
                     #[cfg(feature = "geo")]
@@ -678,7 +679,7 @@ pub mod subdivisions {
             (
                 "39",
                 Subdivision {
-                    name: "39",
+                    name: "Hiiumaa",
                     country_alpha2: Alpha2::EE,
                     code: "39",
                     #[cfg(feature = "geo")]
@@ -758,7 +759,7 @@ pub mod subdivisions {
             (
                 "424",
                 Subdivision {
-                    name: "424",
+                    name: "Loksa",
                     country_alpha2: Alpha2::EE,
                     code: "424",
                     #[cfg(feature = "geo")]
@@ -773,7 +774,7 @@ pub mod subdivisions {
             (
                 "430",
                 Subdivision {
-                    name: "430",
+                    name: "Lääneranna",
                     country_alpha2: Alpha2::EE,
                     code: "430",
                     #[cfg(feature = "geo")]
@@ -788,7 +789,7 @@ pub mod subdivisions {
             (
                 "431",
                 Subdivision {
-                    name: "431",
+                    name: "Lääne-Harju",
                     country_alpha2: Alpha2::EE,
                     code: "431",
                     #[cfg(feature = "geo")]
@@ -803,7 +804,7 @@ pub mod subdivisions {
             (
                 "432",
                 Subdivision {
-                    name: "432",
+                    name: "Luunja",
                     country_alpha2: Alpha2::EE,
                     code: "432",
                     #[cfg(feature = "geo")]
@@ -818,7 +819,7 @@ pub mod subdivisions {
             (
                 "441",
                 Subdivision {
-                    name: "441",
+                    name: "Lääne-Nigula",
                     country_alpha2: Alpha2::EE,
                     code: "441",
                     #[cfg(feature = "geo")]
@@ -833,7 +834,7 @@ pub mod subdivisions {
             (
                 "442",
                 Subdivision {
-                    name: "442",
+                    name: "Lüganuse",
                     country_alpha2: Alpha2::EE,
                     code: "442",
                     #[cfg(feature = "geo")]
@@ -848,7 +849,7 @@ pub mod subdivisions {
             (
                 "446",
                 Subdivision {
-                    name: "446",
+                    name: "Maardu",
                     country_alpha2: Alpha2::EE,
                     code: "446",
                     #[cfg(feature = "geo")]
@@ -863,7 +864,7 @@ pub mod subdivisions {
             (
                 "45",
                 Subdivision {
-                    name: "45",
+                    name: "Ida-Virumaa",
                     country_alpha2: Alpha2::EE,
                     code: "45",
                     #[cfg(feature = "geo")]
@@ -950,7 +951,7 @@ pub mod subdivisions {
             (
                 "478",
                 Subdivision {
-                    name: "478",
+                    name: "Muhu",
                     country_alpha2: Alpha2::EE,
                     code: "478",
                     #[cfg(feature = "geo")]
@@ -965,7 +966,7 @@ pub mod subdivisions {
             (
                 "480",
                 Subdivision {
-                    name: "480",
+                    name: "Mulgi",
                     country_alpha2: Alpha2::EE,
                     code: "480",
                     #[cfg(feature = "geo")]
@@ -980,7 +981,7 @@ pub mod subdivisions {
             (
                 "486",
                 Subdivision {
-                    name: "486",
+                    name: "Mustvee",
                     country_alpha2: Alpha2::EE,
                     code: "486",
                     #[cfg(feature = "geo")]
@@ -995,7 +996,7 @@ pub mod subdivisions {
             (
                 "50",
                 Subdivision {
-                    name: "50",
+                    name: "Jõgevamaa",
                     country_alpha2: Alpha2::EE,
                     code: "50",
                     #[cfg(feature = "geo")]
@@ -1074,7 +1075,7 @@ pub mod subdivisions {
             (
                 "503",
                 Subdivision {
-                    name: "503",
+                    name: "Märjamaa",
                     country_alpha2: Alpha2::EE,
                     code: "503",
                     #[cfg(feature = "geo")]
@@ -1089,7 +1090,7 @@ pub mod subdivisions {
             (
                 "511",
                 Subdivision {
-                    name: "511",
+                    name: "Narva",
                     country_alpha2: Alpha2::EE,
                     code: "511",
                     #[cfg(feature = "geo")]
@@ -1104,7 +1105,7 @@ pub mod subdivisions {
             (
                 "514",
                 Subdivision {
-                    name: "514",
+                    name: "Narva-Jõesuu",
                     country_alpha2: Alpha2::EE,
                     code: "514",
                     #[cfg(feature = "geo")]
@@ -1119,7 +1120,7 @@ pub mod subdivisions {
             (
                 "52",
                 Subdivision {
-                    name: "52",
+                    name: "Järvamaa",
                     country_alpha2: Alpha2::EE,
                     code: "52",
                     #[cfg(feature = "geo")]
@@ -1200,7 +1201,7 @@ pub mod subdivisions {
             (
                 "528",
                 Subdivision {
-                    name: "528",
+                    name: "Nõo",
                     country_alpha2: Alpha2::EE,
                     code: "528",
                     #[cfg(feature = "geo")]
@@ -1215,7 +1216,7 @@ pub mod subdivisions {
             (
                 "557",
                 Subdivision {
-                    name: "557",
+                    name: "Otepää",
                     country_alpha2: Alpha2::EE,
                     code: "557",
                     #[cfg(feature = "geo")]
@@ -1230,7 +1231,7 @@ pub mod subdivisions {
             (
                 "56",
                 Subdivision {
-                    name: "56",
+                    name: "Läänemaa",
                     country_alpha2: Alpha2::EE,
                     code: "56",
                     #[cfg(feature = "geo")]
@@ -1310,7 +1311,7 @@ pub mod subdivisions {
             (
                 "567",
                 Subdivision {
-                    name: "567",
+                    name: "Paide",
                     country_alpha2: Alpha2::EE,
                     code: "567",
                     #[cfg(feature = "geo")]
@@ -1325,7 +1326,7 @@ pub mod subdivisions {
             (
                 "586",
                 Subdivision {
-                    name: "586",
+                    name: "Peipsiääre",
                     country_alpha2: Alpha2::EE,
                     code: "586",
                     #[cfg(feature = "geo")]
@@ -1340,7 +1341,7 @@ pub mod subdivisions {
             (
                 "60",
                 Subdivision {
-                    name: "60",
+                    name: "Lääne-Virumaa",
                     country_alpha2: Alpha2::EE,
                     code: "60",
                     #[cfg(feature = "geo")]
@@ -1418,7 +1419,7 @@ pub mod subdivisions {
             (
                 "615",
                 Subdivision {
-                    name: "615",
+                    name: "Põhja-Sakala",
                     country_alpha2: Alpha2::EE,
                     code: "615",
                     #[cfg(feature = "geo")]
@@ -1433,7 +1434,7 @@ pub mod subdivisions {
             (
                 "618",
                 Subdivision {
-                    name: "618",
+                    name: "Põltsamaa",
                     country_alpha2: Alpha2::EE,
                     code: "618",
                     #[cfg(feature = "geo")]
@@ -1448,7 +1449,7 @@ pub mod subdivisions {
             (
                 "622",
                 Subdivision {
-                    name: "622",
+                    name: "Põlva",
                     country_alpha2: Alpha2::EE,
                     code: "622",
                     #[cfg(feature = "geo")]
@@ -1463,7 +1464,7 @@ pub mod subdivisions {
             (
                 "624",
                 Subdivision {
-                    name: "624",
+                    name: "Pärnu",
                     country_alpha2: Alpha2::EE,
                     code: "624",
                     #[cfg(feature = "geo")]
@@ -1478,7 +1479,7 @@ pub mod subdivisions {
             (
                 "638",
                 Subdivision {
-                    name: "638",
+                    name: "Põhja-Pärnumaa",
                     country_alpha2: Alpha2::EE,
                     code: "638",
                     #[cfg(feature = "geo")]
@@ -1493,7 +1494,7 @@ pub mod subdivisions {
             (
                 "64",
                 Subdivision {
-                    name: "64",
+                    name: "Põlvamaa",
                     country_alpha2: Alpha2::EE,
                     code: "64",
                     #[cfg(feature = "geo")]
@@ -1575,7 +1576,7 @@ pub mod subdivisions {
             (
                 "651",
                 Subdivision {
-                    name: "651",
+                    name: "Raasiku",
                     country_alpha2: Alpha2::EE,
                     code: "651",
                     #[cfg(feature = "geo")]
@@ -1590,7 +1591,7 @@ pub mod subdivisions {
             (
                 "653",
                 Subdivision {
-                    name: "653",
+                    name: "Rae",
                     country_alpha2: Alpha2::EE,
                     code: "653",
                     #[cfg(feature = "geo")]
@@ -1605,7 +1606,7 @@ pub mod subdivisions {
             (
                 "661",
                 Subdivision {
-                    name: "661",
+                    name: "Rakvere",
                     country_alpha2: Alpha2::EE,
                     code: "661",
                     #[cfg(feature = "geo")]
@@ -1620,7 +1621,7 @@ pub mod subdivisions {
             (
                 "663",
                 Subdivision {
-                    name: "663",
+                    name: "Rakvere",
                     country_alpha2: Alpha2::EE,
                     code: "663",
                     #[cfg(feature = "geo")]
@@ -1635,7 +1636,7 @@ pub mod subdivisions {
             (
                 "668",
                 Subdivision {
-                    name: "668",
+                    name: "Rapla",
                     country_alpha2: Alpha2::EE,
                     code: "668",
                     #[cfg(feature = "geo")]
@@ -1650,7 +1651,7 @@ pub mod subdivisions {
             (
                 "68",
                 Subdivision {
-                    name: "68",
+                    name: "Pärnumaa",
                     country_alpha2: Alpha2::EE,
                     code: "68",
                     #[cfg(feature = "geo")]
@@ -1731,7 +1732,7 @@ pub mod subdivisions {
             (
                 "689",
                 Subdivision {
-                    name: "689",
+                    name: "Ruhnu",
                     country_alpha2: Alpha2::EE,
                     code: "689",
                     #[cfg(feature = "geo")]
@@ -1746,7 +1747,7 @@ pub mod subdivisions {
             (
                 "698",
                 Subdivision {
-                    name: "698",
+                    name: "Rõuge",
                     country_alpha2: Alpha2::EE,
                     code: "698",
                     #[cfg(feature = "geo")]
@@ -1761,7 +1762,7 @@ pub mod subdivisions {
             (
                 "708",
                 Subdivision {
-                    name: "708",
+                    name: "Räpina",
                     country_alpha2: Alpha2::EE,
                     code: "708",
                     #[cfg(feature = "geo")]
@@ -1776,7 +1777,7 @@ pub mod subdivisions {
             (
                 "71",
                 Subdivision {
-                    name: "71",
+                    name: "Raplamaa",
                     country_alpha2: Alpha2::EE,
                     code: "71",
                     #[cfg(feature = "geo")]
@@ -1856,7 +1857,7 @@ pub mod subdivisions {
             (
                 "712",
                 Subdivision {
-                    name: "712",
+                    name: "Saarde",
                     country_alpha2: Alpha2::EE,
                     code: "712",
                     #[cfg(feature = "geo")]
@@ -1871,7 +1872,7 @@ pub mod subdivisions {
             (
                 "714",
                 Subdivision {
-                    name: "714",
+                    name: "Saaremaa",
                     country_alpha2: Alpha2::EE,
                     code: "714",
                     #[cfg(feature = "geo")]
@@ -1886,7 +1887,7 @@ pub mod subdivisions {
             (
                 "719",
                 Subdivision {
-                    name: "719",
+                    name: "Saku",
                     country_alpha2: Alpha2::EE,
                     code: "719",
                     #[cfg(feature = "geo")]
@@ -1901,7 +1902,7 @@ pub mod subdivisions {
             (
                 "726",
                 Subdivision {
-                    name: "726",
+                    name: "Saue",
                     country_alpha2: Alpha2::EE,
                     code: "726",
                     #[cfg(feature = "geo")]
@@ -1916,7 +1917,7 @@ pub mod subdivisions {
             (
                 "732",
                 Subdivision {
-                    name: "732",
+                    name: "Setomaa",
                     country_alpha2: Alpha2::EE,
                     code: "732",
                     #[cfg(feature = "geo")]
@@ -1931,7 +1932,7 @@ pub mod subdivisions {
             (
                 "735",
                 Subdivision {
-                    name: "735",
+                    name: "Sillamäe",
                     country_alpha2: Alpha2::EE,
                     code: "735",
                     #[cfg(feature = "geo")]
@@ -1946,7 +1947,7 @@ pub mod subdivisions {
             (
                 "74",
                 Subdivision {
-                    name: "74",
+                    name: "Saaremaa",
                     country_alpha2: Alpha2::EE,
                     code: "74",
                     #[cfg(feature = "geo")]
@@ -2015,7 +2016,7 @@ pub mod subdivisions {
             (
                 "784",
                 Subdivision {
-                    name: "784",
+                    name: "Tallinn",
                     country_alpha2: Alpha2::EE,
                     code: "784",
                     #[cfg(feature = "geo")]
@@ -2030,7 +2031,7 @@ pub mod subdivisions {
             (
                 "79",
                 Subdivision {
-                    name: "79",
+                    name: "Tartumaa",
                     country_alpha2: Alpha2::EE,
                     code: "79",
                     #[cfg(feature = "geo")]
@@ -2110,7 +2111,7 @@ pub mod subdivisions {
             (
                 "792",
                 Subdivision {
-                    name: "792",
+                    name: "Tapa",
                     country_alpha2: Alpha2::EE,
                     code: "792",
                     #[cfg(feature = "geo")]
@@ -2125,7 +2126,7 @@ pub mod subdivisions {
             (
                 "793",
                 Subdivision {
-                    name: "793",
+                    name: "Tartu",
                     country_alpha2: Alpha2::EE,
                     code: "793",
                     #[cfg(feature = "geo")]
@@ -2140,7 +2141,7 @@ pub mod subdivisions {
             (
                 "796",
                 Subdivision {
-                    name: "796",
+                    name: "Tartu",
                     country_alpha2: Alpha2::EE,
                     code: "796",
                     #[cfg(feature = "geo")]
@@ -2155,7 +2156,7 @@ pub mod subdivisions {
             (
                 "803",
                 Subdivision {
-                    name: "803",
+                    name: "Toila",
                     country_alpha2: Alpha2::EE,
                     code: "803",
                     #[cfg(feature = "geo")]
@@ -2170,7 +2171,7 @@ pub mod subdivisions {
             (
                 "809",
                 Subdivision {
-                    name: "809",
+                    name: "Tori",
                     country_alpha2: Alpha2::EE,
                     code: "809",
                     #[cfg(feature = "geo")]
@@ -2185,7 +2186,7 @@ pub mod subdivisions {
             (
                 "81",
                 Subdivision {
-                    name: "81",
+                    name: "Valgamaa",
                     country_alpha2: Alpha2::EE,
                     code: "81",
                     #[cfg(feature = "geo")]
@@ -2264,7 +2265,7 @@ pub mod subdivisions {
             (
                 "824",
                 Subdivision {
-                    name: "824",
+                    name: "Tõrva",
                     country_alpha2: Alpha2::EE,
                     code: "824",
                     #[cfg(feature = "geo")]
@@ -2279,7 +2280,7 @@ pub mod subdivisions {
             (
                 "834",
                 Subdivision {
-                    name: "834",
+                    name: "Türi",
                     country_alpha2: Alpha2::EE,
                     code: "834",
                     #[cfg(feature = "geo")]
@@ -2294,7 +2295,7 @@ pub mod subdivisions {
             (
                 "84",
                 Subdivision {
-                    name: "84",
+                    name: "Viljandimaa",
                     country_alpha2: Alpha2::EE,
                     code: "84",
                     #[cfg(feature = "geo")]
@@ -2377,7 +2378,7 @@ pub mod subdivisions {
             (
                 "855",
                 Subdivision {
-                    name: "855",
+                    name: "Valga",
                     country_alpha2: Alpha2::EE,
                     code: "855",
                     #[cfg(feature = "geo")]
@@ -2392,7 +2393,7 @@ pub mod subdivisions {
             (
                 "87",
                 Subdivision {
-                    name: "87",
+                    name: "Võrumaa",
                     country_alpha2: Alpha2::EE,
                     code: "87",
                     #[cfg(feature = "geo")]
@@ -2471,7 +2472,7 @@ pub mod subdivisions {
             (
                 "890",
                 Subdivision {
-                    name: "890",
+                    name: "Viimsi",
                     country_alpha2: Alpha2::EE,
                     code: "890",
                     #[cfg(feature = "geo")]
@@ -2486,7 +2487,7 @@ pub mod subdivisions {
             (
                 "897",
                 Subdivision {
-                    name: "897",
+                    name: "Viljandi",
                     country_alpha2: Alpha2::EE,
                     code: "897",
                     #[cfg(feature = "geo")]
@@ -2501,7 +2502,7 @@ pub mod subdivisions {
             (
                 "899",
                 Subdivision {
-                    name: "899",
+                    name: "Viljandi",
                     country_alpha2: Alpha2::EE,
                     code: "899",
                     #[cfg(feature = "geo")]
@@ -2516,7 +2517,7 @@ pub mod subdivisions {
             (
                 "901",
                 Subdivision {
-                    name: "901",
+                    name: "Vinni",
                     country_alpha2: Alpha2::EE,
                     code: "901",
                     #[cfg(feature = "geo")]
@@ -2531,7 +2532,7 @@ pub mod subdivisions {
             (
                 "903",
                 Subdivision {
-                    name: "903",
+                    name: "Viru-Nigula",
                     country_alpha2: Alpha2::EE,
                     code: "903",
                     #[cfg(feature = "geo")]
@@ -2546,7 +2547,7 @@ pub mod subdivisions {
             (
                 "907",
                 Subdivision {
-                    name: "907",
+                    name: "Vormsi",
                     country_alpha2: Alpha2::EE,
                     code: "907",
                     #[cfg(feature = "geo")]
@@ -2561,7 +2562,7 @@ pub mod subdivisions {
             (
                 "917",
                 Subdivision {
-                    name: "917",
+                    name: "Võru",
                     country_alpha2: Alpha2::EE,
                     code: "917",
                     #[cfg(feature = "geo")]
@@ -2576,7 +2577,7 @@ pub mod subdivisions {
             (
                 "919",
                 Subdivision {
-                    name: "919",
+                    name: "Võru",
                     country_alpha2: Alpha2::EE,
                     code: "919",
                     #[cfg(feature = "geo")]
@@ -2591,7 +2592,7 @@ pub mod subdivisions {
             (
                 "928",
                 Subdivision {
-                    name: "928",
+                    name: "Väike-Maarja",
                     country_alpha2: Alpha2::EE,
                     code: "928",
                     #[cfg(feature = "geo")]

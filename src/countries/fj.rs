@@ -214,19 +214,20 @@ pub mod geo {
 
 #[cfg(all(feature = "fj", feature = "subdivisions"))]
 pub mod subdivisions {
-    use crate::Subdivision;
+    #[allow(unused_imports)]
+    use crate::{Alpha2, Subdivision, SubdivisionType};
     use std::collections::HashMap;
     // In this state, We do not know if subdivisions have geo or not!
     #[cfg(feature = "geo")]
     #[allow(unused_imports)]
-    use crate::{Alpha2, SubdivisionGeo, SubdivisionType};
+    use crate::SubdivisionGeo;
 
     pub fn new() -> HashMap<&'static str, Subdivision> {
         HashMap::from([
             (
                 "01",
                 Subdivision {
-                    name: "01",
+                    name: "Ba",
                     country_alpha2: Alpha2::FJ,
                     code: "01",
                     #[cfg(feature = "geo")]
@@ -264,7 +265,7 @@ pub mod subdivisions {
             (
                 "02",
                 Subdivision {
-                    name: "02",
+                    name: "Bua",
                     country_alpha2: Alpha2::FJ,
                     code: "02",
                     #[cfg(feature = "geo")]
@@ -299,7 +300,7 @@ pub mod subdivisions {
             (
                 "03",
                 Subdivision {
-                    name: "03",
+                    name: "Cakaudrove",
                     country_alpha2: Alpha2::FJ,
                     code: "03",
                     #[cfg(feature = "geo")]
@@ -336,7 +337,7 @@ pub mod subdivisions {
             (
                 "04",
                 Subdivision {
-                    name: "04",
+                    name: "Kadavu",
                     country_alpha2: Alpha2::FJ,
                     code: "04",
                     #[cfg(feature = "geo")]
@@ -369,7 +370,7 @@ pub mod subdivisions {
             (
                 "05",
                 Subdivision {
-                    name: "05",
+                    name: "Lau",
                     country_alpha2: Alpha2::FJ,
                     code: "05",
                     #[cfg(feature = "geo")]
@@ -402,7 +403,7 @@ pub mod subdivisions {
             (
                 "06",
                 Subdivision {
-                    name: "06",
+                    name: "Lomaiviti",
                     country_alpha2: Alpha2::FJ,
                     code: "06",
                     #[cfg(feature = "geo")]
@@ -440,7 +441,7 @@ pub mod subdivisions {
             (
                 "07",
                 Subdivision {
-                    name: "07",
+                    name: "Macuata",
                     country_alpha2: Alpha2::FJ,
                     code: "07",
                     #[cfg(feature = "geo")]
@@ -477,7 +478,7 @@ pub mod subdivisions {
             (
                 "08",
                 Subdivision {
-                    name: "08",
+                    name: "Nadroga-Navosa",
                     country_alpha2: Alpha2::FJ,
                     code: "08",
                     #[cfg(feature = "geo")]
@@ -515,7 +516,7 @@ pub mod subdivisions {
             (
                 "09",
                 Subdivision {
-                    name: "09",
+                    name: "Naitasiri",
                     country_alpha2: Alpha2::FJ,
                     code: "09",
                     #[cfg(feature = "geo")]
@@ -550,7 +551,7 @@ pub mod subdivisions {
             (
                 "10",
                 Subdivision {
-                    name: "10",
+                    name: "Namosi",
                     country_alpha2: Alpha2::FJ,
                     code: "10",
                     #[cfg(feature = "geo")]
@@ -584,7 +585,7 @@ pub mod subdivisions {
             (
                 "11",
                 Subdivision {
-                    name: "11",
+                    name: "Ra",
                     country_alpha2: Alpha2::FJ,
                     code: "11",
                     #[cfg(feature = "geo")]
@@ -620,7 +621,7 @@ pub mod subdivisions {
             (
                 "12",
                 Subdivision {
-                    name: "12",
+                    name: "Rewa",
                     country_alpha2: Alpha2::FJ,
                     code: "12",
                     #[cfg(feature = "geo")]
@@ -655,7 +656,7 @@ pub mod subdivisions {
             (
                 "13",
                 Subdivision {
-                    name: "13",
+                    name: "Serua",
                     country_alpha2: Alpha2::FJ,
                     code: "13",
                     #[cfg(feature = "geo")]
@@ -691,7 +692,7 @@ pub mod subdivisions {
             (
                 "14",
                 Subdivision {
-                    name: "14",
+                    name: "Tailevu",
                     country_alpha2: Alpha2::FJ,
                     code: "14",
                     #[cfg(feature = "geo")]
@@ -726,7 +727,7 @@ pub mod subdivisions {
             (
                 "C",
                 Subdivision {
-                    name: "C",
+                    name: "Central",
                     country_alpha2: Alpha2::FJ,
                     code: "C",
                     #[cfg(feature = "geo")]
@@ -791,7 +792,7 @@ pub mod subdivisions {
             (
                 "E",
                 Subdivision {
-                    name: "E",
+                    name: "Eastern",
                     country_alpha2: Alpha2::FJ,
                     code: "E",
                     #[cfg(feature = "geo")]
@@ -858,7 +859,7 @@ pub mod subdivisions {
             (
                 "N",
                 Subdivision {
-                    name: "N",
+                    name: "Northern",
                     country_alpha2: Alpha2::FJ,
                     code: "N",
                     #[cfg(feature = "geo")]
@@ -925,7 +926,7 @@ pub mod subdivisions {
             (
                 "R",
                 Subdivision {
-                    name: "R",
+                    name: "Rotuma",
                     country_alpha2: Alpha2::FJ,
                     code: "R",
                     #[cfg(feature = "geo")]
@@ -1002,7 +1003,7 @@ pub mod subdivisions {
             (
                 "W",
                 Subdivision {
-                    name: "W",
+                    name: "Western",
                     country_alpha2: Alpha2::FJ,
                     code: "W",
                     #[cfg(feature = "geo")]

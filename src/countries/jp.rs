@@ -212,12 +212,13 @@ pub mod geo {
 
 #[cfg(all(feature = "jp", feature = "subdivisions"))]
 pub mod subdivisions {
-    use crate::Subdivision;
+    #[allow(unused_imports)]
+    use crate::{Alpha2, Subdivision, SubdivisionType};
     use std::collections::HashMap;
     // In this state, We do not know if subdivisions have geo or not!
     #[cfg(feature = "geo")]
     #[allow(unused_imports)]
-    use crate::{Alpha2, SubdivisionGeo, SubdivisionType};
+    use crate::SubdivisionGeo;
 
     pub fn new() -> HashMap<&'static str, Subdivision> {
         HashMap::from(
@@ -226,7 +227,7 @@ pub mod subdivisions {
                 (
                     "01",
                     Subdivision{
-                        name: "01",
+                        name: "Hokkaido",
                         country_alpha2: Alpha2::JP,
                         code: "01",
                         #[cfg(feature = "geo")]
@@ -241,7 +242,7 @@ pub mod subdivisions {
                 (
                     "02",
                     Subdivision{
-                        name: "02",
+                        name: "Aomori",
                         country_alpha2: Alpha2::JP,
                         code: "02",
                         #[cfg(feature = "geo")]
@@ -256,7 +257,7 @@ pub mod subdivisions {
                 (
                     "03",
                     Subdivision{
-                        name: "03",
+                        name: "Iwate",
                         country_alpha2: Alpha2::JP,
                         code: "03",
                         #[cfg(feature = "geo")]
@@ -271,7 +272,7 @@ pub mod subdivisions {
                 (
                     "04",
                     Subdivision{
-                        name: "04",
+                        name: "Miyagi",
                         country_alpha2: Alpha2::JP,
                         code: "04",
                         #[cfg(feature = "geo")]
@@ -286,7 +287,7 @@ pub mod subdivisions {
                 (
                     "05",
                     Subdivision{
-                        name: "05",
+                        name: "Akita",
                         country_alpha2: Alpha2::JP,
                         code: "05",
                         #[cfg(feature = "geo")]
@@ -301,7 +302,7 @@ pub mod subdivisions {
                 (
                     "06",
                     Subdivision{
-                        name: "06",
+                        name: "Yamagata",
                         country_alpha2: Alpha2::JP,
                         code: "06",
                         #[cfg(feature = "geo")]
@@ -316,7 +317,7 @@ pub mod subdivisions {
                 (
                     "07",
                     Subdivision{
-                        name: "07",
+                        name: "Fukushima",
                         country_alpha2: Alpha2::JP,
                         code: "07",
                         #[cfg(feature = "geo")]
@@ -331,7 +332,7 @@ pub mod subdivisions {
                 (
                     "08",
                     Subdivision{
-                        name: "08",
+                        name: "Ibaraki",
                         country_alpha2: Alpha2::JP,
                         code: "08",
                         #[cfg(feature = "geo")]
@@ -346,7 +347,7 @@ pub mod subdivisions {
                 (
                     "09",
                     Subdivision{
-                        name: "09",
+                        name: "Tochigi",
                         country_alpha2: Alpha2::JP,
                         code: "09",
                         #[cfg(feature = "geo")]
@@ -361,7 +362,7 @@ pub mod subdivisions {
                 (
                     "10",
                     Subdivision{
-                        name: "10",
+                        name: "Gunma",
                         country_alpha2: Alpha2::JP,
                         code: "10",
                         #[cfg(feature = "geo")]
@@ -376,7 +377,7 @@ pub mod subdivisions {
                 (
                     "11",
                     Subdivision{
-                        name: "11",
+                        name: "Saitama",
                         country_alpha2: Alpha2::JP,
                         code: "11",
                         #[cfg(feature = "geo")]
@@ -391,7 +392,7 @@ pub mod subdivisions {
                 (
                     "12",
                     Subdivision{
-                        name: "12",
+                        name: "Chiba",
                         country_alpha2: Alpha2::JP,
                         code: "12",
                         #[cfg(feature = "geo")]
@@ -406,7 +407,7 @@ pub mod subdivisions {
                 (
                     "13",
                     Subdivision{
-                        name: "13",
+                        name: "Tokyo",
                         country_alpha2: Alpha2::JP,
                         code: "13",
                         #[cfg(feature = "geo")]
@@ -421,7 +422,7 @@ pub mod subdivisions {
                 (
                     "14",
                     Subdivision{
-                        name: "14",
+                        name: "Kanagawa",
                         country_alpha2: Alpha2::JP,
                         code: "14",
                         #[cfg(feature = "geo")]
@@ -436,7 +437,7 @@ pub mod subdivisions {
                 (
                     "15",
                     Subdivision{
-                        name: "15",
+                        name: "Niigata",
                         country_alpha2: Alpha2::JP,
                         code: "15",
                         #[cfg(feature = "geo")]
@@ -451,7 +452,7 @@ pub mod subdivisions {
                 (
                     "16",
                     Subdivision{
-                        name: "16",
+                        name: "Toyama",
                         country_alpha2: Alpha2::JP,
                         code: "16",
                         #[cfg(feature = "geo")]
@@ -466,7 +467,7 @@ pub mod subdivisions {
                 (
                     "17",
                     Subdivision{
-                        name: "17",
+                        name: "Ishikawa",
                         country_alpha2: Alpha2::JP,
                         code: "17",
                         #[cfg(feature = "geo")]
@@ -481,7 +482,7 @@ pub mod subdivisions {
                 (
                     "18",
                     Subdivision{
-                        name: "18",
+                        name: "Fukui",
                         country_alpha2: Alpha2::JP,
                         code: "18",
                         #[cfg(feature = "geo")]
@@ -496,7 +497,7 @@ pub mod subdivisions {
                 (
                     "19",
                     Subdivision{
-                        name: "19",
+                        name: "Yamanashi",
                         country_alpha2: Alpha2::JP,
                         code: "19",
                         #[cfg(feature = "geo")]
@@ -511,7 +512,7 @@ pub mod subdivisions {
                 (
                     "20",
                     Subdivision{
-                        name: "20",
+                        name: "Nagano",
                         country_alpha2: Alpha2::JP,
                         code: "20",
                         #[cfg(feature = "geo")]
@@ -526,7 +527,7 @@ pub mod subdivisions {
                 (
                     "21",
                     Subdivision{
-                        name: "21",
+                        name: "Gifu",
                         country_alpha2: Alpha2::JP,
                         code: "21",
                         #[cfg(feature = "geo")]
@@ -541,7 +542,7 @@ pub mod subdivisions {
                 (
                     "22",
                     Subdivision{
-                        name: "22",
+                        name: "Shizuoka",
                         country_alpha2: Alpha2::JP,
                         code: "22",
                         #[cfg(feature = "geo")]
@@ -556,7 +557,7 @@ pub mod subdivisions {
                 (
                     "23",
                     Subdivision{
-                        name: "23",
+                        name: "Aichi",
                         country_alpha2: Alpha2::JP,
                         code: "23",
                         #[cfg(feature = "geo")]
@@ -571,7 +572,7 @@ pub mod subdivisions {
                 (
                     "24",
                     Subdivision{
-                        name: "24",
+                        name: "Mie",
                         country_alpha2: Alpha2::JP,
                         code: "24",
                         #[cfg(feature = "geo")]
@@ -586,7 +587,7 @@ pub mod subdivisions {
                 (
                     "25",
                     Subdivision{
-                        name: "25",
+                        name: "Shiga",
                         country_alpha2: Alpha2::JP,
                         code: "25",
                         #[cfg(feature = "geo")]
@@ -601,7 +602,7 @@ pub mod subdivisions {
                 (
                     "26",
                     Subdivision{
-                        name: "26",
+                        name: "Kyoto",
                         country_alpha2: Alpha2::JP,
                         code: "26",
                         #[cfg(feature = "geo")]
@@ -616,7 +617,7 @@ pub mod subdivisions {
                 (
                     "27",
                     Subdivision{
-                        name: "27",
+                        name: "Osaka",
                         country_alpha2: Alpha2::JP,
                         code: "27",
                         #[cfg(feature = "geo")]
@@ -631,7 +632,7 @@ pub mod subdivisions {
                 (
                     "28",
                     Subdivision{
-                        name: "28",
+                        name: "Hyogo",
                         country_alpha2: Alpha2::JP,
                         code: "28",
                         #[cfg(feature = "geo")]
@@ -646,7 +647,7 @@ pub mod subdivisions {
                 (
                     "29",
                     Subdivision{
-                        name: "29",
+                        name: "Nara",
                         country_alpha2: Alpha2::JP,
                         code: "29",
                         #[cfg(feature = "geo")]
@@ -661,7 +662,7 @@ pub mod subdivisions {
                 (
                     "30",
                     Subdivision{
-                        name: "30",
+                        name: "Wakayama",
                         country_alpha2: Alpha2::JP,
                         code: "30",
                         #[cfg(feature = "geo")]
@@ -676,7 +677,7 @@ pub mod subdivisions {
                 (
                     "31",
                     Subdivision{
-                        name: "31",
+                        name: "Tottori",
                         country_alpha2: Alpha2::JP,
                         code: "31",
                         #[cfg(feature = "geo")]
@@ -691,7 +692,7 @@ pub mod subdivisions {
                 (
                     "32",
                     Subdivision{
-                        name: "32",
+                        name: "Shimane",
                         country_alpha2: Alpha2::JP,
                         code: "32",
                         #[cfg(feature = "geo")]
@@ -706,7 +707,7 @@ pub mod subdivisions {
                 (
                     "33",
                     Subdivision{
-                        name: "33",
+                        name: "Okayama",
                         country_alpha2: Alpha2::JP,
                         code: "33",
                         #[cfg(feature = "geo")]
@@ -721,7 +722,7 @@ pub mod subdivisions {
                 (
                     "34",
                     Subdivision{
-                        name: "34",
+                        name: "Hiroshima",
                         country_alpha2: Alpha2::JP,
                         code: "34",
                         #[cfg(feature = "geo")]
@@ -736,7 +737,7 @@ pub mod subdivisions {
                 (
                     "35",
                     Subdivision{
-                        name: "35",
+                        name: "Yamaguchi",
                         country_alpha2: Alpha2::JP,
                         code: "35",
                         #[cfg(feature = "geo")]
@@ -751,7 +752,7 @@ pub mod subdivisions {
                 (
                     "36",
                     Subdivision{
-                        name: "36",
+                        name: "Tokushima",
                         country_alpha2: Alpha2::JP,
                         code: "36",
                         #[cfg(feature = "geo")]
@@ -766,7 +767,7 @@ pub mod subdivisions {
                 (
                     "37",
                     Subdivision{
-                        name: "37",
+                        name: "Kagawa",
                         country_alpha2: Alpha2::JP,
                         code: "37",
                         #[cfg(feature = "geo")]
@@ -781,7 +782,7 @@ pub mod subdivisions {
                 (
                     "38",
                     Subdivision{
-                        name: "38",
+                        name: "Ehime",
                         country_alpha2: Alpha2::JP,
                         code: "38",
                         #[cfg(feature = "geo")]
@@ -796,7 +797,7 @@ pub mod subdivisions {
                 (
                     "39",
                     Subdivision{
-                        name: "39",
+                        name: "Kochi",
                         country_alpha2: Alpha2::JP,
                         code: "39",
                         #[cfg(feature = "geo")]
@@ -811,7 +812,7 @@ pub mod subdivisions {
                 (
                     "40",
                     Subdivision{
-                        name: "40",
+                        name: "Fukuoka",
                         country_alpha2: Alpha2::JP,
                         code: "40",
                         #[cfg(feature = "geo")]
@@ -826,7 +827,7 @@ pub mod subdivisions {
                 (
                     "41",
                     Subdivision{
-                        name: "41",
+                        name: "Saga",
                         country_alpha2: Alpha2::JP,
                         code: "41",
                         #[cfg(feature = "geo")]
@@ -841,7 +842,7 @@ pub mod subdivisions {
                 (
                     "42",
                     Subdivision{
-                        name: "42",
+                        name: "Nagasaki",
                         country_alpha2: Alpha2::JP,
                         code: "42",
                         #[cfg(feature = "geo")]
@@ -856,7 +857,7 @@ pub mod subdivisions {
                 (
                     "43",
                     Subdivision{
-                        name: "43",
+                        name: "Kumamoto",
                         country_alpha2: Alpha2::JP,
                         code: "43",
                         #[cfg(feature = "geo")]
@@ -871,7 +872,7 @@ pub mod subdivisions {
                 (
                     "44",
                     Subdivision{
-                        name: "44",
+                        name: "Oita",
                         country_alpha2: Alpha2::JP,
                         code: "44",
                         #[cfg(feature = "geo")]
@@ -886,7 +887,7 @@ pub mod subdivisions {
                 (
                     "45",
                     Subdivision{
-                        name: "45",
+                        name: "Miyazaki",
                         country_alpha2: Alpha2::JP,
                         code: "45",
                         #[cfg(feature = "geo")]
@@ -901,7 +902,7 @@ pub mod subdivisions {
                 (
                     "46",
                     Subdivision{
-                        name: "46",
+                        name: "Kagoshima",
                         country_alpha2: Alpha2::JP,
                         code: "46",
                         #[cfg(feature = "geo")]
@@ -916,7 +917,7 @@ pub mod subdivisions {
                 (
                     "47",
                     Subdivision{
-                        name: "47",
+                        name: "Okinawa",
                         country_alpha2: Alpha2::JP,
                         code: "47",
                         #[cfg(feature = "geo")]

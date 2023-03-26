@@ -214,12 +214,13 @@ pub mod geo {
 
 #[cfg(all(feature = "zw", feature = "subdivisions"))]
 pub mod subdivisions {
-    use crate::Subdivision;
+    #[allow(unused_imports)]
+    use crate::{Alpha2, Subdivision, SubdivisionType};
     use std::collections::HashMap;
     // In this state, We do not know if subdivisions have geo or not!
     #[cfg(feature = "geo")]
     #[allow(unused_imports)]
-    use crate::{Alpha2, SubdivisionGeo, SubdivisionType};
+    use crate::SubdivisionGeo;
 
     pub fn new() -> HashMap<&'static str, Subdivision> {
         HashMap::from(
@@ -228,7 +229,7 @@ pub mod subdivisions {
                 (
                     "BU",
                     Subdivision{
-                        name: "BU",
+                        name: "Bulawayo",
                         country_alpha2: Alpha2::ZW,
                         code: "BU",
                         #[cfg(feature = "geo")]
@@ -243,7 +244,7 @@ pub mod subdivisions {
                 (
                     "HA",
                     Subdivision{
-                        name: "HA",
+                        name: "Harare",
                         country_alpha2: Alpha2::ZW,
                         code: "HA",
                         #[cfg(feature = "geo")]
@@ -258,7 +259,7 @@ pub mod subdivisions {
                 (
                     "MA",
                     Subdivision{
-                        name: "MA",
+                        name: "Manicaland",
                         country_alpha2: Alpha2::ZW,
                         code: "MA",
                         #[cfg(feature = "geo")]
@@ -273,7 +274,7 @@ pub mod subdivisions {
                 (
                     "MC",
                     Subdivision{
-                        name: "MC",
+                        name: "Mashonaland Central",
                         country_alpha2: Alpha2::ZW,
                         code: "MC",
                         #[cfg(feature = "geo")]
@@ -288,7 +289,7 @@ pub mod subdivisions {
                 (
                     "ME",
                     Subdivision{
-                        name: "ME",
+                        name: "Mashonaland East",
                         country_alpha2: Alpha2::ZW,
                         code: "ME",
                         #[cfg(feature = "geo")]
@@ -303,7 +304,7 @@ pub mod subdivisions {
                 (
                     "MI",
                     Subdivision{
-                        name: "MI",
+                        name: "Midlands",
                         country_alpha2: Alpha2::ZW,
                         code: "MI",
                         #[cfg(feature = "geo")]
@@ -318,7 +319,7 @@ pub mod subdivisions {
                 (
                     "MN",
                     Subdivision{
-                        name: "MN",
+                        name: "Matabeleland North",
                         country_alpha2: Alpha2::ZW,
                         code: "MN",
                         #[cfg(feature = "geo")]
@@ -333,7 +334,7 @@ pub mod subdivisions {
                 (
                     "MS",
                     Subdivision{
-                        name: "MS",
+                        name: "Matabeleland South",
                         country_alpha2: Alpha2::ZW,
                         code: "MS",
                         #[cfg(feature = "geo")]
@@ -348,7 +349,7 @@ pub mod subdivisions {
                 (
                     "MV",
                     Subdivision{
-                        name: "MV",
+                        name: "Masvingo",
                         country_alpha2: Alpha2::ZW,
                         code: "MV",
                         #[cfg(feature = "geo")]
@@ -363,7 +364,7 @@ pub mod subdivisions {
                 (
                     "MW",
                     Subdivision{
-                        name: "MW",
+                        name: "Mashonaland West",
                         country_alpha2: Alpha2::ZW,
                         code: "MW",
                         #[cfg(feature = "geo")]

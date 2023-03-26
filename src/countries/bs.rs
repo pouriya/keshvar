@@ -211,12 +211,13 @@ pub mod geo {
 
 #[cfg(all(feature = "bs", feature = "subdivisions"))]
 pub mod subdivisions {
-    use crate::Subdivision;
+    #[allow(unused_imports)]
+    use crate::{Alpha2, Subdivision, SubdivisionType};
     use std::collections::HashMap;
     // In this state, We do not know if subdivisions have geo or not!
     #[cfg(feature = "geo")]
     #[allow(unused_imports)]
-    use crate::{Alpha2, SubdivisionGeo, SubdivisionType};
+    use crate::SubdivisionGeo;
 
     pub fn new() -> HashMap<&'static str, Subdivision> {
         HashMap::from(
@@ -225,7 +226,7 @@ pub mod subdivisions {
                 (
                     "AK",
                     Subdivision{
-                        name: "AK",
+                        name: "Acklins",
                         country_alpha2: Alpha2::BS,
                         code: "AK",
                         #[cfg(feature = "geo")]
@@ -240,7 +241,7 @@ pub mod subdivisions {
                 (
                     "BI",
                     Subdivision{
-                        name: "BI",
+                        name: "Bimini",
                         country_alpha2: Alpha2::BS,
                         code: "BI",
                         #[cfg(feature = "geo")]
@@ -255,7 +256,7 @@ pub mod subdivisions {
                 (
                     "BP",
                     Subdivision{
-                        name: "BP",
+                        name: "Black Point",
                         country_alpha2: Alpha2::BS,
                         code: "BP",
                         #[cfg(feature = "geo")]
@@ -270,7 +271,7 @@ pub mod subdivisions {
                 (
                     "BY",
                     Subdivision{
-                        name: "BY",
+                        name: "Berry Islands",
                         country_alpha2: Alpha2::BS,
                         code: "BY",
                         #[cfg(feature = "geo")]
@@ -285,7 +286,7 @@ pub mod subdivisions {
                 (
                     "CE",
                     Subdivision{
-                        name: "CE",
+                        name: "Central Eleuthera",
                         country_alpha2: Alpha2::BS,
                         code: "CE",
                         #[cfg(feature = "geo")]
@@ -300,7 +301,7 @@ pub mod subdivisions {
                 (
                     "CI",
                     Subdivision{
-                        name: "CI",
+                        name: "Cat Island",
                         country_alpha2: Alpha2::BS,
                         code: "CI",
                         #[cfg(feature = "geo")]
@@ -315,7 +316,7 @@ pub mod subdivisions {
                 (
                     "CK",
                     Subdivision{
-                        name: "CK",
+                        name: "Crooked Island",
                         country_alpha2: Alpha2::BS,
                         code: "CK",
                         #[cfg(feature = "geo")]
@@ -330,7 +331,7 @@ pub mod subdivisions {
                 (
                     "CO",
                     Subdivision{
-                        name: "CO",
+                        name: "Central Abaco",
                         country_alpha2: Alpha2::BS,
                         code: "CO",
                         #[cfg(feature = "geo")]
@@ -345,7 +346,7 @@ pub mod subdivisions {
                 (
                     "CS",
                     Subdivision{
-                        name: "CS",
+                        name: "Central Andros",
                         country_alpha2: Alpha2::BS,
                         code: "CS",
                         #[cfg(feature = "geo")]
@@ -360,7 +361,7 @@ pub mod subdivisions {
                 (
                     "EG",
                     Subdivision{
-                        name: "EG",
+                        name: "East Grand Bahama",
                         country_alpha2: Alpha2::BS,
                         code: "EG",
                         #[cfg(feature = "geo")]
@@ -375,7 +376,7 @@ pub mod subdivisions {
                 (
                     "EX",
                     Subdivision{
-                        name: "EX",
+                        name: "Exuma",
                         country_alpha2: Alpha2::BS,
                         code: "EX",
                         #[cfg(feature = "geo")]
@@ -390,7 +391,7 @@ pub mod subdivisions {
                 (
                     "FP",
                     Subdivision{
-                        name: "FP",
+                        name: "Freeport",
                         country_alpha2: Alpha2::BS,
                         code: "FP",
                         #[cfg(feature = "geo")]
@@ -405,7 +406,7 @@ pub mod subdivisions {
                 (
                     "GC",
                     Subdivision{
-                        name: "GC",
+                        name: "Grand Cay",
                         country_alpha2: Alpha2::BS,
                         code: "GC",
                         #[cfg(feature = "geo")]
@@ -420,7 +421,7 @@ pub mod subdivisions {
                 (
                     "HI",
                     Subdivision{
-                        name: "HI",
+                        name: "Harbour Island",
                         country_alpha2: Alpha2::BS,
                         code: "HI",
                         #[cfg(feature = "geo")]
@@ -435,7 +436,7 @@ pub mod subdivisions {
                 (
                     "HT",
                     Subdivision{
-                        name: "HT",
+                        name: "Hope Town",
                         country_alpha2: Alpha2::BS,
                         code: "HT",
                         #[cfg(feature = "geo")]
@@ -450,7 +451,7 @@ pub mod subdivisions {
                 (
                     "IN",
                     Subdivision{
-                        name: "IN",
+                        name: "Inagua",
                         country_alpha2: Alpha2::BS,
                         code: "IN",
                         #[cfg(feature = "geo")]
@@ -465,7 +466,7 @@ pub mod subdivisions {
                 (
                     "LI",
                     Subdivision{
-                        name: "LI",
+                        name: "Long Island",
                         country_alpha2: Alpha2::BS,
                         code: "LI",
                         #[cfg(feature = "geo")]
@@ -480,7 +481,7 @@ pub mod subdivisions {
                 (
                     "MC",
                     Subdivision{
-                        name: "MC",
+                        name: "Mangrove Cay",
                         country_alpha2: Alpha2::BS,
                         code: "MC",
                         #[cfg(feature = "geo")]
@@ -495,7 +496,7 @@ pub mod subdivisions {
                 (
                     "MG",
                     Subdivision{
-                        name: "MG",
+                        name: "Mayaguana",
                         country_alpha2: Alpha2::BS,
                         code: "MG",
                         #[cfg(feature = "geo")]
@@ -510,7 +511,7 @@ pub mod subdivisions {
                 (
                     "MI",
                     Subdivision{
-                        name: "MI",
+                        name: "Moore’s Island",
                         country_alpha2: Alpha2::BS,
                         code: "MI",
                         #[cfg(feature = "geo")]
@@ -525,7 +526,7 @@ pub mod subdivisions {
                 (
                     "NE",
                     Subdivision{
-                        name: "NE",
+                        name: "North Eleuthera",
                         country_alpha2: Alpha2::BS,
                         code: "NE",
                         #[cfg(feature = "geo")]
@@ -540,7 +541,7 @@ pub mod subdivisions {
                 (
                     "NO",
                     Subdivision{
-                        name: "NO",
+                        name: "North Abaco",
                         country_alpha2: Alpha2::BS,
                         code: "NO",
                         #[cfg(feature = "geo")]
@@ -555,7 +556,7 @@ pub mod subdivisions {
                 (
                     "NP",
                     Subdivision{
-                        name: "NP",
+                        name: "New Providence",
                         country_alpha2: Alpha2::BS,
                         code: "NP",
                         #[cfg(feature = "geo")]
@@ -570,7 +571,7 @@ pub mod subdivisions {
                 (
                     "NS",
                     Subdivision{
-                        name: "NS",
+                        name: "North Andros",
                         country_alpha2: Alpha2::BS,
                         code: "NS",
                         #[cfg(feature = "geo")]
@@ -585,7 +586,7 @@ pub mod subdivisions {
                 (
                     "RC",
                     Subdivision{
-                        name: "RC",
+                        name: "Rum Cay",
                         country_alpha2: Alpha2::BS,
                         code: "RC",
                         #[cfg(feature = "geo")]
@@ -600,7 +601,7 @@ pub mod subdivisions {
                 (
                     "RI",
                     Subdivision{
-                        name: "RI",
+                        name: "Ragged Island",
                         country_alpha2: Alpha2::BS,
                         code: "RI",
                         #[cfg(feature = "geo")]
@@ -615,7 +616,7 @@ pub mod subdivisions {
                 (
                     "SA",
                     Subdivision{
-                        name: "SA",
+                        name: "South Andros",
                         country_alpha2: Alpha2::BS,
                         code: "SA",
                         #[cfg(feature = "geo")]
@@ -630,7 +631,7 @@ pub mod subdivisions {
                 (
                     "SE",
                     Subdivision{
-                        name: "SE",
+                        name: "South Eleuthera",
                         country_alpha2: Alpha2::BS,
                         code: "SE",
                         #[cfg(feature = "geo")]
@@ -645,7 +646,7 @@ pub mod subdivisions {
                 (
                     "SO",
                     Subdivision{
-                        name: "SO",
+                        name: "South Abaco",
                         country_alpha2: Alpha2::BS,
                         code: "SO",
                         #[cfg(feature = "geo")]
@@ -660,7 +661,7 @@ pub mod subdivisions {
                 (
                     "SS",
                     Subdivision{
-                        name: "SS",
+                        name: "San Salvador",
                         country_alpha2: Alpha2::BS,
                         code: "SS",
                         #[cfg(feature = "geo")]
@@ -675,7 +676,7 @@ pub mod subdivisions {
                 (
                     "SW",
                     Subdivision{
-                        name: "SW",
+                        name: "Spanish Wells",
                         country_alpha2: Alpha2::BS,
                         code: "SW",
                         #[cfg(feature = "geo")]
@@ -690,7 +691,7 @@ pub mod subdivisions {
                 (
                     "WG",
                     Subdivision{
-                        name: "WG",
+                        name: "West Grand Bahama",
                         country_alpha2: Alpha2::BS,
                         code: "WG",
                         #[cfg(feature = "geo")]

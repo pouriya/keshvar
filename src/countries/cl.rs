@@ -211,12 +211,13 @@ pub mod geo {
 
 #[cfg(all(feature = "cl", feature = "subdivisions"))]
 pub mod subdivisions {
-    use crate::Subdivision;
+    #[allow(unused_imports)]
+    use crate::{Alpha2, Subdivision, SubdivisionType};
     use std::collections::HashMap;
     // In this state, We do not know if subdivisions have geo or not!
     #[cfg(feature = "geo")]
     #[allow(unused_imports)]
-    use crate::{Alpha2, SubdivisionGeo, SubdivisionType};
+    use crate::SubdivisionGeo;
 
     pub fn new() -> HashMap<&'static str, Subdivision> {
         HashMap::from(
@@ -225,7 +226,7 @@ pub mod subdivisions {
                 (
                     "AI",
                     Subdivision{
-                        name: "AI",
+                        name: "Aisén del General Carlos Ibáñez del Campo",
                         country_alpha2: Alpha2::CL,
                         code: "AI",
                         #[cfg(feature = "geo")]
@@ -240,7 +241,7 @@ pub mod subdivisions {
                 (
                     "AN",
                     Subdivision{
-                        name: "AN",
+                        name: "Antofagasta",
                         country_alpha2: Alpha2::CL,
                         code: "AN",
                         #[cfg(feature = "geo")]
@@ -255,7 +256,7 @@ pub mod subdivisions {
                 (
                     "AP",
                     Subdivision{
-                        name: "AP",
+                        name: "Arica y Parinacota",
                         country_alpha2: Alpha2::CL,
                         code: "AP",
                         #[cfg(feature = "geo")]
@@ -270,7 +271,7 @@ pub mod subdivisions {
                 (
                     "AR",
                     Subdivision{
-                        name: "AR",
+                        name: "Araucanía",
                         country_alpha2: Alpha2::CL,
                         code: "AR",
                         #[cfg(feature = "geo")]
@@ -285,7 +286,7 @@ pub mod subdivisions {
                 (
                     "AT",
                     Subdivision{
-                        name: "AT",
+                        name: "Atacama",
                         country_alpha2: Alpha2::CL,
                         code: "AT",
                         #[cfg(feature = "geo")]
@@ -300,7 +301,7 @@ pub mod subdivisions {
                 (
                     "BI",
                     Subdivision{
-                        name: "BI",
+                        name: "Bío-Bío",
                         country_alpha2: Alpha2::CL,
                         code: "BI",
                         #[cfg(feature = "geo")]
@@ -315,7 +316,7 @@ pub mod subdivisions {
                 (
                     "CO",
                     Subdivision{
-                        name: "CO",
+                        name: "Coquimbo",
                         country_alpha2: Alpha2::CL,
                         code: "CO",
                         #[cfg(feature = "geo")]
@@ -330,7 +331,7 @@ pub mod subdivisions {
                 (
                     "LI",
                     Subdivision{
-                        name: "LI",
+                        name: "Libertador General Bernardo O'Higgins",
                         country_alpha2: Alpha2::CL,
                         code: "LI",
                         #[cfg(feature = "geo")]
@@ -345,7 +346,7 @@ pub mod subdivisions {
                 (
                     "LL",
                     Subdivision{
-                        name: "LL",
+                        name: "Los Lagos",
                         country_alpha2: Alpha2::CL,
                         code: "LL",
                         #[cfg(feature = "geo")]
@@ -360,7 +361,7 @@ pub mod subdivisions {
                 (
                     "LR",
                     Subdivision{
-                        name: "LR",
+                        name: "Los Ríos",
                         country_alpha2: Alpha2::CL,
                         code: "LR",
                         #[cfg(feature = "geo")]
@@ -375,7 +376,7 @@ pub mod subdivisions {
                 (
                     "MA",
                     Subdivision{
-                        name: "MA",
+                        name: "Magallanes",
                         country_alpha2: Alpha2::CL,
                         code: "MA",
                         #[cfg(feature = "geo")]
@@ -390,7 +391,7 @@ pub mod subdivisions {
                 (
                     "ML",
                     Subdivision{
-                        name: "ML",
+                        name: "Maule",
                         country_alpha2: Alpha2::CL,
                         code: "ML",
                         #[cfg(feature = "geo")]
@@ -405,7 +406,7 @@ pub mod subdivisions {
                 (
                     "NB",
                     Subdivision{
-                        name: "NB",
+                        name: "Región de Ñuble",
                         country_alpha2: Alpha2::CL,
                         code: "NB",
                         #[cfg(feature = "geo")]
@@ -420,7 +421,7 @@ pub mod subdivisions {
                 (
                     "RM",
                     Subdivision{
-                        name: "RM",
+                        name: "Región Metropolitana de Santiago",
                         country_alpha2: Alpha2::CL,
                         code: "RM",
                         #[cfg(feature = "geo")]
@@ -435,7 +436,7 @@ pub mod subdivisions {
                 (
                     "TA",
                     Subdivision{
-                        name: "TA",
+                        name: "Tarapacá",
                         country_alpha2: Alpha2::CL,
                         code: "TA",
                         #[cfg(feature = "geo")]
@@ -450,7 +451,7 @@ pub mod subdivisions {
                 (
                     "VS",
                     Subdivision{
-                        name: "VS",
+                        name: "Valparaíso",
                         country_alpha2: Alpha2::CL,
                         code: "VS",
                         #[cfg(feature = "geo")]

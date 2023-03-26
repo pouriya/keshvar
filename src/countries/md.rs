@@ -222,12 +222,13 @@ pub mod geo {
 
 #[cfg(all(feature = "md", feature = "subdivisions"))]
 pub mod subdivisions {
-    use crate::Subdivision;
+    #[allow(unused_imports)]
+    use crate::{Alpha2, Subdivision, SubdivisionType};
     use std::collections::HashMap;
     // In this state, We do not know if subdivisions have geo or not!
     #[cfg(feature = "geo")]
     #[allow(unused_imports)]
-    use crate::{Alpha2, SubdivisionGeo, SubdivisionType};
+    use crate::SubdivisionGeo;
 
     pub fn new() -> HashMap<&'static str, Subdivision> {
         HashMap::from(
@@ -236,7 +237,7 @@ pub mod subdivisions {
                 (
                     "AN",
                     Subdivision{
-                        name: "AN",
+                        name: "Anenii Noi",
                         country_alpha2: Alpha2::MD,
                         code: "AN",
                         #[cfg(feature = "geo")]
@@ -251,7 +252,7 @@ pub mod subdivisions {
                 (
                     "BA",
                     Subdivision{
-                        name: "BA",
+                        name: "Balti",
                         country_alpha2: Alpha2::MD,
                         code: "BA",
                         #[cfg(feature = "geo")]
@@ -266,7 +267,7 @@ pub mod subdivisions {
                 (
                     "BD",
                     Subdivision{
-                        name: "BD",
+                        name: "Bender [Tighina]",
                         country_alpha2: Alpha2::MD,
                         code: "BD",
                         #[cfg(feature = "geo")]
@@ -281,7 +282,7 @@ pub mod subdivisions {
                 (
                     "BR",
                     Subdivision{
-                        name: "BR",
+                        name: "Briceni",
                         country_alpha2: Alpha2::MD,
                         code: "BR",
                         #[cfg(feature = "geo")]
@@ -296,7 +297,7 @@ pub mod subdivisions {
                 (
                     "BS",
                     Subdivision{
-                        name: "BS",
+                        name: "Basarabeasca",
                         country_alpha2: Alpha2::MD,
                         code: "BS",
                         #[cfg(feature = "geo")]
@@ -311,7 +312,7 @@ pub mod subdivisions {
                 (
                     "CA",
                     Subdivision{
-                        name: "CA",
+                        name: "Cahul",
                         country_alpha2: Alpha2::MD,
                         code: "CA",
                         #[cfg(feature = "geo")]
@@ -326,7 +327,7 @@ pub mod subdivisions {
                 (
                     "CL",
                     Subdivision{
-                        name: "CL",
+                        name: "Călărași",
                         country_alpha2: Alpha2::MD,
                         code: "CL",
                         #[cfg(feature = "geo")]
@@ -341,7 +342,7 @@ pub mod subdivisions {
                 (
                     "CM",
                     Subdivision{
-                        name: "CM",
+                        name: "Cimișlia",
                         country_alpha2: Alpha2::MD,
                         code: "CM",
                         #[cfg(feature = "geo")]
@@ -356,7 +357,7 @@ pub mod subdivisions {
                 (
                     "CR",
                     Subdivision{
-                        name: "CR",
+                        name: "Criuleni",
                         country_alpha2: Alpha2::MD,
                         code: "CR",
                         #[cfg(feature = "geo")]
@@ -371,7 +372,7 @@ pub mod subdivisions {
                 (
                     "CS",
                     Subdivision{
-                        name: "CS",
+                        name: "Căușeni",
                         country_alpha2: Alpha2::MD,
                         code: "CS",
                         #[cfg(feature = "geo")]
@@ -386,7 +387,7 @@ pub mod subdivisions {
                 (
                     "CT",
                     Subdivision{
-                        name: "CT",
+                        name: "Cantemir",
                         country_alpha2: Alpha2::MD,
                         code: "CT",
                         #[cfg(feature = "geo")]
@@ -401,7 +402,7 @@ pub mod subdivisions {
                 (
                     "CU",
                     Subdivision{
-                        name: "CU",
+                        name: "Chisinau",
                         country_alpha2: Alpha2::MD,
                         code: "CU",
                         #[cfg(feature = "geo")]
@@ -416,7 +417,7 @@ pub mod subdivisions {
                 (
                     "DO",
                     Subdivision{
-                        name: "DO",
+                        name: "Dondușeni",
                         country_alpha2: Alpha2::MD,
                         code: "DO",
                         #[cfg(feature = "geo")]
@@ -431,7 +432,7 @@ pub mod subdivisions {
                 (
                     "DR",
                     Subdivision{
-                        name: "DR",
+                        name: "Drochia",
                         country_alpha2: Alpha2::MD,
                         code: "DR",
                         #[cfg(feature = "geo")]
@@ -446,7 +447,7 @@ pub mod subdivisions {
                 (
                     "DU",
                     Subdivision{
-                        name: "DU",
+                        name: "Dubăsari",
                         country_alpha2: Alpha2::MD,
                         code: "DU",
                         #[cfg(feature = "geo")]
@@ -461,7 +462,7 @@ pub mod subdivisions {
                 (
                     "ED",
                     Subdivision{
-                        name: "ED",
+                        name: "Edinet",
                         country_alpha2: Alpha2::MD,
                         code: "ED",
                         #[cfg(feature = "geo")]
@@ -476,7 +477,7 @@ pub mod subdivisions {
                 (
                     "FA",
                     Subdivision{
-                        name: "FA",
+                        name: "Fălești",
                         country_alpha2: Alpha2::MD,
                         code: "FA",
                         #[cfg(feature = "geo")]
@@ -491,7 +492,7 @@ pub mod subdivisions {
                 (
                     "FL",
                     Subdivision{
-                        name: "FL",
+                        name: "Florești",
                         country_alpha2: Alpha2::MD,
                         code: "FL",
                         #[cfg(feature = "geo")]
@@ -506,7 +507,7 @@ pub mod subdivisions {
                 (
                     "GA",
                     Subdivision{
-                        name: "GA",
+                        name: "Gagauzia, Unitate Teritoriala Autonoma (UTAG)",
                         country_alpha2: Alpha2::MD,
                         code: "GA",
                         #[cfg(feature = "geo")]
@@ -521,7 +522,7 @@ pub mod subdivisions {
                 (
                     "GL",
                     Subdivision{
-                        name: "GL",
+                        name: "Glodeni",
                         country_alpha2: Alpha2::MD,
                         code: "GL",
                         #[cfg(feature = "geo")]
@@ -536,7 +537,7 @@ pub mod subdivisions {
                 (
                     "HI",
                     Subdivision{
-                        name: "HI",
+                        name: "Hîncești",
                         country_alpha2: Alpha2::MD,
                         code: "HI",
                         #[cfg(feature = "geo")]
@@ -551,7 +552,7 @@ pub mod subdivisions {
                 (
                     "IA",
                     Subdivision{
-                        name: "IA",
+                        name: "Ialoveni",
                         country_alpha2: Alpha2::MD,
                         code: "IA",
                         #[cfg(feature = "geo")]
@@ -566,7 +567,7 @@ pub mod subdivisions {
                 (
                     "LE",
                     Subdivision{
-                        name: "LE",
+                        name: "Leova",
                         country_alpha2: Alpha2::MD,
                         code: "LE",
                         #[cfg(feature = "geo")]
@@ -581,7 +582,7 @@ pub mod subdivisions {
                 (
                     "NI",
                     Subdivision{
-                        name: "NI",
+                        name: "Nisporeni",
                         country_alpha2: Alpha2::MD,
                         code: "NI",
                         #[cfg(feature = "geo")]
@@ -596,7 +597,7 @@ pub mod subdivisions {
                 (
                     "OC",
                     Subdivision{
-                        name: "OC",
+                        name: "Ocnița",
                         country_alpha2: Alpha2::MD,
                         code: "OC",
                         #[cfg(feature = "geo")]
@@ -611,7 +612,7 @@ pub mod subdivisions {
                 (
                     "OR",
                     Subdivision{
-                        name: "OR",
+                        name: "Orhei",
                         country_alpha2: Alpha2::MD,
                         code: "OR",
                         #[cfg(feature = "geo")]
@@ -626,7 +627,7 @@ pub mod subdivisions {
                 (
                     "RE",
                     Subdivision{
-                        name: "RE",
+                        name: "Rezina",
                         country_alpha2: Alpha2::MD,
                         code: "RE",
                         #[cfg(feature = "geo")]
@@ -641,7 +642,7 @@ pub mod subdivisions {
                 (
                     "RI",
                     Subdivision{
-                        name: "RI",
+                        name: "Rîșcani",
                         country_alpha2: Alpha2::MD,
                         code: "RI",
                         #[cfg(feature = "geo")]
@@ -656,7 +657,7 @@ pub mod subdivisions {
                 (
                     "SD",
                     Subdivision{
-                        name: "SD",
+                        name: "Șoldănești",
                         country_alpha2: Alpha2::MD,
                         code: "SD",
                         #[cfg(feature = "geo")]
@@ -671,7 +672,7 @@ pub mod subdivisions {
                 (
                     "SI",
                     Subdivision{
-                        name: "SI",
+                        name: "Sîngerei",
                         country_alpha2: Alpha2::MD,
                         code: "SI",
                         #[cfg(feature = "geo")]
@@ -686,7 +687,7 @@ pub mod subdivisions {
                 (
                     "SN",
                     Subdivision{
-                        name: "SN",
+                        name: "Stînga Nistrului, unitatea teritoriala din",
                         country_alpha2: Alpha2::MD,
                         code: "SN",
                         #[cfg(feature = "geo")]
@@ -701,7 +702,7 @@ pub mod subdivisions {
                 (
                     "SO",
                     Subdivision{
-                        name: "SO",
+                        name: "Soroca",
                         country_alpha2: Alpha2::MD,
                         code: "SO",
                         #[cfg(feature = "geo")]
@@ -716,7 +717,7 @@ pub mod subdivisions {
                 (
                     "ST",
                     Subdivision{
-                        name: "ST",
+                        name: "Strășeni",
                         country_alpha2: Alpha2::MD,
                         code: "ST",
                         #[cfg(feature = "geo")]
@@ -731,7 +732,7 @@ pub mod subdivisions {
                 (
                     "SV",
                     Subdivision{
-                        name: "SV",
+                        name: "Ștefan Vodă",
                         country_alpha2: Alpha2::MD,
                         code: "SV",
                         #[cfg(feature = "geo")]
@@ -746,7 +747,7 @@ pub mod subdivisions {
                 (
                     "TA",
                     Subdivision{
-                        name: "TA",
+                        name: "Taraclia",
                         country_alpha2: Alpha2::MD,
                         code: "TA",
                         #[cfg(feature = "geo")]
@@ -761,7 +762,7 @@ pub mod subdivisions {
                 (
                     "TE",
                     Subdivision{
-                        name: "TE",
+                        name: "Telenești",
                         country_alpha2: Alpha2::MD,
                         code: "TE",
                         #[cfg(feature = "geo")]
@@ -776,7 +777,7 @@ pub mod subdivisions {
                 (
                     "UN",
                     Subdivision{
-                        name: "UN",
+                        name: "Ungheni",
                         country_alpha2: Alpha2::MD,
                         code: "UN",
                         #[cfg(feature = "geo")]

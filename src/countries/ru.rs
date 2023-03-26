@@ -230,12 +230,13 @@ pub mod geo {
 
 #[cfg(all(feature = "ru", feature = "subdivisions"))]
 pub mod subdivisions {
-    use crate::Subdivision;
+    #[allow(unused_imports)]
+    use crate::{Alpha2, Subdivision, SubdivisionType};
     use std::collections::HashMap;
     // In this state, We do not know if subdivisions have geo or not!
     #[cfg(feature = "geo")]
     #[allow(unused_imports)]
-    use crate::{Alpha2, SubdivisionGeo, SubdivisionType};
+    use crate::SubdivisionGeo;
 
     pub fn new() -> HashMap<&'static str, Subdivision> {
         HashMap::from(
@@ -244,7 +245,7 @@ pub mod subdivisions {
                 (
                     "AD",
                     Subdivision{
-                        name: "AD",
+                        name: "Adygeya, Respublika",
                         country_alpha2: Alpha2::RU,
                         code: "AD",
                         #[cfg(feature = "geo")]
@@ -259,7 +260,7 @@ pub mod subdivisions {
                 (
                     "AL",
                     Subdivision{
-                        name: "AL",
+                        name: "Altay, Respublika",
                         country_alpha2: Alpha2::RU,
                         code: "AL",
                         #[cfg(feature = "geo")]
@@ -274,7 +275,7 @@ pub mod subdivisions {
                 (
                     "ALT",
                     Subdivision{
-                        name: "ALT",
+                        name: "Altayskiy kray",
                         country_alpha2: Alpha2::RU,
                         code: "ALT",
                         #[cfg(feature = "geo")]
@@ -289,7 +290,7 @@ pub mod subdivisions {
                 (
                     "AMU",
                     Subdivision{
-                        name: "AMU",
+                        name: "Amurskaya oblast'",
                         country_alpha2: Alpha2::RU,
                         code: "AMU",
                         #[cfg(feature = "geo")]
@@ -304,7 +305,7 @@ pub mod subdivisions {
                 (
                     "ARK",
                     Subdivision{
-                        name: "ARK",
+                        name: "Arkhangel'skaya oblast'",
                         country_alpha2: Alpha2::RU,
                         code: "ARK",
                         #[cfg(feature = "geo")]
@@ -319,7 +320,7 @@ pub mod subdivisions {
                 (
                     "AST",
                     Subdivision{
-                        name: "AST",
+                        name: "Astrakhanskaya oblast'",
                         country_alpha2: Alpha2::RU,
                         code: "AST",
                         #[cfg(feature = "geo")]
@@ -334,7 +335,7 @@ pub mod subdivisions {
                 (
                     "BA",
                     Subdivision{
-                        name: "BA",
+                        name: "Bashkortostan, Respublika",
                         country_alpha2: Alpha2::RU,
                         code: "BA",
                         #[cfg(feature = "geo")]
@@ -349,7 +350,7 @@ pub mod subdivisions {
                 (
                     "BEL",
                     Subdivision{
-                        name: "BEL",
+                        name: "Belgorodskaya oblast'",
                         country_alpha2: Alpha2::RU,
                         code: "BEL",
                         #[cfg(feature = "geo")]
@@ -364,7 +365,7 @@ pub mod subdivisions {
                 (
                     "BRY",
                     Subdivision{
-                        name: "BRY",
+                        name: "Bryanskaya oblast'",
                         country_alpha2: Alpha2::RU,
                         code: "BRY",
                         #[cfg(feature = "geo")]
@@ -379,7 +380,7 @@ pub mod subdivisions {
                 (
                     "BU",
                     Subdivision{
-                        name: "BU",
+                        name: "Buryatiya, Respublika",
                         country_alpha2: Alpha2::RU,
                         code: "BU",
                         #[cfg(feature = "geo")]
@@ -394,7 +395,7 @@ pub mod subdivisions {
                 (
                     "CE",
                     Subdivision{
-                        name: "CE",
+                        name: "Chechenskaya Respublika",
                         country_alpha2: Alpha2::RU,
                         code: "CE",
                         #[cfg(feature = "geo")]
@@ -409,7 +410,7 @@ pub mod subdivisions {
                 (
                     "CHE",
                     Subdivision{
-                        name: "CHE",
+                        name: "Chelyabinskaya oblast'",
                         country_alpha2: Alpha2::RU,
                         code: "CHE",
                         #[cfg(feature = "geo")]
@@ -424,7 +425,7 @@ pub mod subdivisions {
                 (
                     "CHU",
                     Subdivision{
-                        name: "CHU",
+                        name: "Chukotskiy avtonomnyy okrug",
                         country_alpha2: Alpha2::RU,
                         code: "CHU",
                         #[cfg(feature = "geo")]
@@ -439,7 +440,7 @@ pub mod subdivisions {
                 (
                     "CU",
                     Subdivision{
-                        name: "CU",
+                        name: "Chuvashskaya Respublika",
                         country_alpha2: Alpha2::RU,
                         code: "CU",
                         #[cfg(feature = "geo")]
@@ -454,7 +455,7 @@ pub mod subdivisions {
                 (
                     "DA",
                     Subdivision{
-                        name: "DA",
+                        name: "Dagestan, Respublika",
                         country_alpha2: Alpha2::RU,
                         code: "DA",
                         #[cfg(feature = "geo")]
@@ -469,7 +470,7 @@ pub mod subdivisions {
                 (
                     "IN",
                     Subdivision{
-                        name: "IN",
+                        name: "Ingushskaya Respublika [Respublika Ingushetiya]",
                         country_alpha2: Alpha2::RU,
                         code: "IN",
                         #[cfg(feature = "geo")]
@@ -484,7 +485,7 @@ pub mod subdivisions {
                 (
                     "IRK",
                     Subdivision{
-                        name: "IRK",
+                        name: "Irkutskaya oblast'",
                         country_alpha2: Alpha2::RU,
                         code: "IRK",
                         #[cfg(feature = "geo")]
@@ -499,7 +500,7 @@ pub mod subdivisions {
                 (
                     "IVA",
                     Subdivision{
-                        name: "IVA",
+                        name: "Ivanovskaya oblast'",
                         country_alpha2: Alpha2::RU,
                         code: "IVA",
                         #[cfg(feature = "geo")]
@@ -514,7 +515,7 @@ pub mod subdivisions {
                 (
                     "KAM",
                     Subdivision{
-                        name: "KAM",
+                        name: "Kamchatskaya oblast'",
                         country_alpha2: Alpha2::RU,
                         code: "KAM",
                         #[cfg(feature = "geo")]
@@ -529,7 +530,7 @@ pub mod subdivisions {
                 (
                     "KB",
                     Subdivision{
-                        name: "KB",
+                        name: "Kabardino-Balkarskaya Respublika",
                         country_alpha2: Alpha2::RU,
                         code: "KB",
                         #[cfg(feature = "geo")]
@@ -544,7 +545,7 @@ pub mod subdivisions {
                 (
                     "KC",
                     Subdivision{
-                        name: "KC",
+                        name: "Karachayevo-Cherkesskaya Respublika",
                         country_alpha2: Alpha2::RU,
                         code: "KC",
                         #[cfg(feature = "geo")]
@@ -559,7 +560,7 @@ pub mod subdivisions {
                 (
                     "KDA",
                     Subdivision{
-                        name: "KDA",
+                        name: "Krasnodarskiy kray",
                         country_alpha2: Alpha2::RU,
                         code: "KDA",
                         #[cfg(feature = "geo")]
@@ -574,7 +575,7 @@ pub mod subdivisions {
                 (
                     "KEM",
                     Subdivision{
-                        name: "KEM",
+                        name: "Kemerovskaya oblast'",
                         country_alpha2: Alpha2::RU,
                         code: "KEM",
                         #[cfg(feature = "geo")]
@@ -589,7 +590,7 @@ pub mod subdivisions {
                 (
                     "KGD",
                     Subdivision{
-                        name: "KGD",
+                        name: "Kaliningradskaya oblast'",
                         country_alpha2: Alpha2::RU,
                         code: "KGD",
                         #[cfg(feature = "geo")]
@@ -604,7 +605,7 @@ pub mod subdivisions {
                 (
                     "KGN",
                     Subdivision{
-                        name: "KGN",
+                        name: "Kurganskaya oblast'",
                         country_alpha2: Alpha2::RU,
                         code: "KGN",
                         #[cfg(feature = "geo")]
@@ -619,7 +620,7 @@ pub mod subdivisions {
                 (
                     "KHA",
                     Subdivision{
-                        name: "KHA",
+                        name: "Khabarovskiy kray",
                         country_alpha2: Alpha2::RU,
                         code: "KHA",
                         #[cfg(feature = "geo")]
@@ -634,7 +635,7 @@ pub mod subdivisions {
                 (
                     "KHM",
                     Subdivision{
-                        name: "KHM",
+                        name: "Khanty-Mansiyskiy avtonomnyy okrug [Yugra]",
                         country_alpha2: Alpha2::RU,
                         code: "KHM",
                         #[cfg(feature = "geo")]
@@ -649,7 +650,7 @@ pub mod subdivisions {
                 (
                     "KIR",
                     Subdivision{
-                        name: "KIR",
+                        name: "Kirovskaya oblast'",
                         country_alpha2: Alpha2::RU,
                         code: "KIR",
                         #[cfg(feature = "geo")]
@@ -664,7 +665,7 @@ pub mod subdivisions {
                 (
                     "KK",
                     Subdivision{
-                        name: "KK",
+                        name: "Khakasiya, Respublika",
                         country_alpha2: Alpha2::RU,
                         code: "KK",
                         #[cfg(feature = "geo")]
@@ -679,7 +680,7 @@ pub mod subdivisions {
                 (
                     "KL",
                     Subdivision{
-                        name: "KL",
+                        name: "Kalmykiya, Respublika",
                         country_alpha2: Alpha2::RU,
                         code: "KL",
                         #[cfg(feature = "geo")]
@@ -694,7 +695,7 @@ pub mod subdivisions {
                 (
                     "KLU",
                     Subdivision{
-                        name: "KLU",
+                        name: "Kaluzhskaya oblast'",
                         country_alpha2: Alpha2::RU,
                         code: "KLU",
                         #[cfg(feature = "geo")]
@@ -709,7 +710,7 @@ pub mod subdivisions {
                 (
                     "KO",
                     Subdivision{
-                        name: "KO",
+                        name: "Komi, Respublika",
                         country_alpha2: Alpha2::RU,
                         code: "KO",
                         #[cfg(feature = "geo")]
@@ -724,7 +725,7 @@ pub mod subdivisions {
                 (
                     "KOS",
                     Subdivision{
-                        name: "KOS",
+                        name: "Kostromskaya oblast'",
                         country_alpha2: Alpha2::RU,
                         code: "KOS",
                         #[cfg(feature = "geo")]
@@ -739,7 +740,7 @@ pub mod subdivisions {
                 (
                     "KR",
                     Subdivision{
-                        name: "KR",
+                        name: "Kareliya, Respublika",
                         country_alpha2: Alpha2::RU,
                         code: "KR",
                         #[cfg(feature = "geo")]
@@ -754,7 +755,7 @@ pub mod subdivisions {
                 (
                     "KRS",
                     Subdivision{
-                        name: "KRS",
+                        name: "Kurskaya oblast'",
                         country_alpha2: Alpha2::RU,
                         code: "KRS",
                         #[cfg(feature = "geo")]
@@ -769,7 +770,7 @@ pub mod subdivisions {
                 (
                     "KYA",
                     Subdivision{
-                        name: "KYA",
+                        name: "Krasnoyarskiy kray",
                         country_alpha2: Alpha2::RU,
                         code: "KYA",
                         #[cfg(feature = "geo")]
@@ -784,7 +785,7 @@ pub mod subdivisions {
                 (
                     "LEN",
                     Subdivision{
-                        name: "LEN",
+                        name: "Leningradskaya oblast'",
                         country_alpha2: Alpha2::RU,
                         code: "LEN",
                         #[cfg(feature = "geo")]
@@ -799,7 +800,7 @@ pub mod subdivisions {
                 (
                     "LIP",
                     Subdivision{
-                        name: "LIP",
+                        name: "Lipetskaya oblast'",
                         country_alpha2: Alpha2::RU,
                         code: "LIP",
                         #[cfg(feature = "geo")]
@@ -814,7 +815,7 @@ pub mod subdivisions {
                 (
                     "MAG",
                     Subdivision{
-                        name: "MAG",
+                        name: "Magadanskaya oblast'",
                         country_alpha2: Alpha2::RU,
                         code: "MAG",
                         #[cfg(feature = "geo")]
@@ -829,7 +830,7 @@ pub mod subdivisions {
                 (
                     "ME",
                     Subdivision{
-                        name: "ME",
+                        name: "Mariy El, Respublika",
                         country_alpha2: Alpha2::RU,
                         code: "ME",
                         #[cfg(feature = "geo")]
@@ -844,7 +845,7 @@ pub mod subdivisions {
                 (
                     "MO",
                     Subdivision{
-                        name: "MO",
+                        name: "Mordoviya, Respublika",
                         country_alpha2: Alpha2::RU,
                         code: "MO",
                         #[cfg(feature = "geo")]
@@ -859,7 +860,7 @@ pub mod subdivisions {
                 (
                     "MOS",
                     Subdivision{
-                        name: "MOS",
+                        name: "Moskovskaya oblast'",
                         country_alpha2: Alpha2::RU,
                         code: "MOS",
                         #[cfg(feature = "geo")]
@@ -874,7 +875,7 @@ pub mod subdivisions {
                 (
                     "MOW",
                     Subdivision{
-                        name: "MOW",
+                        name: "Moskva",
                         country_alpha2: Alpha2::RU,
                         code: "MOW",
                         #[cfg(feature = "geo")]
@@ -889,7 +890,7 @@ pub mod subdivisions {
                 (
                     "MUR",
                     Subdivision{
-                        name: "MUR",
+                        name: "Murmanskaya oblast'",
                         country_alpha2: Alpha2::RU,
                         code: "MUR",
                         #[cfg(feature = "geo")]
@@ -904,7 +905,7 @@ pub mod subdivisions {
                 (
                     "NEN",
                     Subdivision{
-                        name: "NEN",
+                        name: "Nenetskiy avtonomnyy okrug",
                         country_alpha2: Alpha2::RU,
                         code: "NEN",
                         #[cfg(feature = "geo")]
@@ -919,7 +920,7 @@ pub mod subdivisions {
                 (
                     "NGR",
                     Subdivision{
-                        name: "NGR",
+                        name: "Novgorodskaya oblast'",
                         country_alpha2: Alpha2::RU,
                         code: "NGR",
                         #[cfg(feature = "geo")]
@@ -934,7 +935,7 @@ pub mod subdivisions {
                 (
                     "NIZ",
                     Subdivision{
-                        name: "NIZ",
+                        name: "Nizhegorodskaya oblast'",
                         country_alpha2: Alpha2::RU,
                         code: "NIZ",
                         #[cfg(feature = "geo")]
@@ -949,7 +950,7 @@ pub mod subdivisions {
                 (
                     "NVS",
                     Subdivision{
-                        name: "NVS",
+                        name: "Novosibirskaya oblast'",
                         country_alpha2: Alpha2::RU,
                         code: "NVS",
                         #[cfg(feature = "geo")]
@@ -964,7 +965,7 @@ pub mod subdivisions {
                 (
                     "OMS",
                     Subdivision{
-                        name: "OMS",
+                        name: "Omskaya oblast'",
                         country_alpha2: Alpha2::RU,
                         code: "OMS",
                         #[cfg(feature = "geo")]
@@ -979,7 +980,7 @@ pub mod subdivisions {
                 (
                     "ORE",
                     Subdivision{
-                        name: "ORE",
+                        name: "Orenburgskaya oblast'",
                         country_alpha2: Alpha2::RU,
                         code: "ORE",
                         #[cfg(feature = "geo")]
@@ -994,7 +995,7 @@ pub mod subdivisions {
                 (
                     "ORL",
                     Subdivision{
-                        name: "ORL",
+                        name: "Orlovskaya oblast'",
                         country_alpha2: Alpha2::RU,
                         code: "ORL",
                         #[cfg(feature = "geo")]
@@ -1009,7 +1010,7 @@ pub mod subdivisions {
                 (
                     "PER",
                     Subdivision{
-                        name: "PER",
+                        name: "Perm",
                         country_alpha2: Alpha2::RU,
                         code: "PER",
                         #[cfg(feature = "geo")]
@@ -1024,7 +1025,7 @@ pub mod subdivisions {
                 (
                     "PNZ",
                     Subdivision{
-                        name: "PNZ",
+                        name: "Penzenskaya oblast'",
                         country_alpha2: Alpha2::RU,
                         code: "PNZ",
                         #[cfg(feature = "geo")]
@@ -1039,7 +1040,7 @@ pub mod subdivisions {
                 (
                     "PRI",
                     Subdivision{
-                        name: "PRI",
+                        name: "Primorskiy kray",
                         country_alpha2: Alpha2::RU,
                         code: "PRI",
                         #[cfg(feature = "geo")]
@@ -1054,7 +1055,7 @@ pub mod subdivisions {
                 (
                     "PSK",
                     Subdivision{
-                        name: "PSK",
+                        name: "Pskovskaya oblast'",
                         country_alpha2: Alpha2::RU,
                         code: "PSK",
                         #[cfg(feature = "geo")]
@@ -1069,7 +1070,7 @@ pub mod subdivisions {
                 (
                     "ROS",
                     Subdivision{
-                        name: "ROS",
+                        name: "Rostovskaya oblast'",
                         country_alpha2: Alpha2::RU,
                         code: "ROS",
                         #[cfg(feature = "geo")]
@@ -1084,7 +1085,7 @@ pub mod subdivisions {
                 (
                     "RYA",
                     Subdivision{
-                        name: "RYA",
+                        name: "Ryazanskaya oblast'",
                         country_alpha2: Alpha2::RU,
                         code: "RYA",
                         #[cfg(feature = "geo")]
@@ -1099,7 +1100,7 @@ pub mod subdivisions {
                 (
                     "SA",
                     Subdivision{
-                        name: "SA",
+                        name: "Sakha, Respublika [Yakutiya]",
                         country_alpha2: Alpha2::RU,
                         code: "SA",
                         #[cfg(feature = "geo")]
@@ -1114,7 +1115,7 @@ pub mod subdivisions {
                 (
                     "SAK",
                     Subdivision{
-                        name: "SAK",
+                        name: "Sakhalinskaya oblast'",
                         country_alpha2: Alpha2::RU,
                         code: "SAK",
                         #[cfg(feature = "geo")]
@@ -1129,7 +1130,7 @@ pub mod subdivisions {
                 (
                     "SAM",
                     Subdivision{
-                        name: "SAM",
+                        name: "Samarskaya oblast'",
                         country_alpha2: Alpha2::RU,
                         code: "SAM",
                         #[cfg(feature = "geo")]
@@ -1144,7 +1145,7 @@ pub mod subdivisions {
                 (
                     "SAR",
                     Subdivision{
-                        name: "SAR",
+                        name: "Saratovskaya oblast'",
                         country_alpha2: Alpha2::RU,
                         code: "SAR",
                         #[cfg(feature = "geo")]
@@ -1159,7 +1160,7 @@ pub mod subdivisions {
                 (
                     "SE",
                     Subdivision{
-                        name: "SE",
+                        name: "Severnaya Osetiya, Respublika [Alaniya] [Respublika Severnaya Osetiya-Alaniya]",
                         country_alpha2: Alpha2::RU,
                         code: "SE",
                         #[cfg(feature = "geo")]
@@ -1174,7 +1175,7 @@ pub mod subdivisions {
                 (
                     "SMO",
                     Subdivision{
-                        name: "SMO",
+                        name: "Smolenskaya oblast'",
                         country_alpha2: Alpha2::RU,
                         code: "SMO",
                         #[cfg(feature = "geo")]
@@ -1189,7 +1190,7 @@ pub mod subdivisions {
                 (
                     "SPE",
                     Subdivision{
-                        name: "SPE",
+                        name: "Sankt-Peterburg",
                         country_alpha2: Alpha2::RU,
                         code: "SPE",
                         #[cfg(feature = "geo")]
@@ -1204,7 +1205,7 @@ pub mod subdivisions {
                 (
                     "STA",
                     Subdivision{
-                        name: "STA",
+                        name: "Stavropol'skiy kray",
                         country_alpha2: Alpha2::RU,
                         code: "STA",
                         #[cfg(feature = "geo")]
@@ -1219,7 +1220,7 @@ pub mod subdivisions {
                 (
                     "SVE",
                     Subdivision{
-                        name: "SVE",
+                        name: "Sverdlovskaya oblast'",
                         country_alpha2: Alpha2::RU,
                         code: "SVE",
                         #[cfg(feature = "geo")]
@@ -1234,7 +1235,7 @@ pub mod subdivisions {
                 (
                     "TA",
                     Subdivision{
-                        name: "TA",
+                        name: "Tatarstan, Respublika",
                         country_alpha2: Alpha2::RU,
                         code: "TA",
                         #[cfg(feature = "geo")]
@@ -1249,7 +1250,7 @@ pub mod subdivisions {
                 (
                     "TAM",
                     Subdivision{
-                        name: "TAM",
+                        name: "Tambovskaya oblast'",
                         country_alpha2: Alpha2::RU,
                         code: "TAM",
                         #[cfg(feature = "geo")]
@@ -1264,7 +1265,7 @@ pub mod subdivisions {
                 (
                     "TOM",
                     Subdivision{
-                        name: "TOM",
+                        name: "Tomskaya oblast'",
                         country_alpha2: Alpha2::RU,
                         code: "TOM",
                         #[cfg(feature = "geo")]
@@ -1279,7 +1280,7 @@ pub mod subdivisions {
                 (
                     "TUL",
                     Subdivision{
-                        name: "TUL",
+                        name: "Tul'skaya oblast'",
                         country_alpha2: Alpha2::RU,
                         code: "TUL",
                         #[cfg(feature = "geo")]
@@ -1294,7 +1295,7 @@ pub mod subdivisions {
                 (
                     "TVE",
                     Subdivision{
-                        name: "TVE",
+                        name: "Tverskaya oblast'",
                         country_alpha2: Alpha2::RU,
                         code: "TVE",
                         #[cfg(feature = "geo")]
@@ -1309,7 +1310,7 @@ pub mod subdivisions {
                 (
                     "TY",
                     Subdivision{
-                        name: "TY",
+                        name: "Tyva, Respublika [Tuva]",
                         country_alpha2: Alpha2::RU,
                         code: "TY",
                         #[cfg(feature = "geo")]
@@ -1324,7 +1325,7 @@ pub mod subdivisions {
                 (
                     "TYU",
                     Subdivision{
-                        name: "TYU",
+                        name: "Tyumenskaya oblast'",
                         country_alpha2: Alpha2::RU,
                         code: "TYU",
                         #[cfg(feature = "geo")]
@@ -1339,7 +1340,7 @@ pub mod subdivisions {
                 (
                     "UD",
                     Subdivision{
-                        name: "UD",
+                        name: "Udmurtskaya Respublika",
                         country_alpha2: Alpha2::RU,
                         code: "UD",
                         #[cfg(feature = "geo")]
@@ -1354,7 +1355,7 @@ pub mod subdivisions {
                 (
                     "ULY",
                     Subdivision{
-                        name: "ULY",
+                        name: "Ul'yanovskaya oblast'",
                         country_alpha2: Alpha2::RU,
                         code: "ULY",
                         #[cfg(feature = "geo")]
@@ -1369,7 +1370,7 @@ pub mod subdivisions {
                 (
                     "VGG",
                     Subdivision{
-                        name: "VGG",
+                        name: "Volgogradskaya oblast'",
                         country_alpha2: Alpha2::RU,
                         code: "VGG",
                         #[cfg(feature = "geo")]
@@ -1384,7 +1385,7 @@ pub mod subdivisions {
                 (
                     "VLA",
                     Subdivision{
-                        name: "VLA",
+                        name: "Vladimirskaya oblast'",
                         country_alpha2: Alpha2::RU,
                         code: "VLA",
                         #[cfg(feature = "geo")]
@@ -1399,7 +1400,7 @@ pub mod subdivisions {
                 (
                     "VLG",
                     Subdivision{
-                        name: "VLG",
+                        name: "Vologodskaya oblast'",
                         country_alpha2: Alpha2::RU,
                         code: "VLG",
                         #[cfg(feature = "geo")]
@@ -1414,7 +1415,7 @@ pub mod subdivisions {
                 (
                     "VOR",
                     Subdivision{
-                        name: "VOR",
+                        name: "Voronezhskaya oblast'",
                         country_alpha2: Alpha2::RU,
                         code: "VOR",
                         #[cfg(feature = "geo")]
@@ -1429,7 +1430,7 @@ pub mod subdivisions {
                 (
                     "YAN",
                     Subdivision{
-                        name: "YAN",
+                        name: "Yamalo-Nenetskiy avtonomnyy okrug",
                         country_alpha2: Alpha2::RU,
                         code: "YAN",
                         #[cfg(feature = "geo")]
@@ -1444,7 +1445,7 @@ pub mod subdivisions {
                 (
                     "YAR",
                     Subdivision{
-                        name: "YAR",
+                        name: "Yaroslavskaya oblast'",
                         country_alpha2: Alpha2::RU,
                         code: "YAR",
                         #[cfg(feature = "geo")]
@@ -1459,7 +1460,7 @@ pub mod subdivisions {
                 (
                     "YEV",
                     Subdivision{
-                        name: "YEV",
+                        name: "Yevreyskaya avtonomnaya oblast'",
                         country_alpha2: Alpha2::RU,
                         code: "YEV",
                         #[cfg(feature = "geo")]
@@ -1474,7 +1475,7 @@ pub mod subdivisions {
                 (
                     "ZAB",
                     Subdivision{
-                        name: "ZAB",
+                        name: "Zabaykal'skij kray",
                         country_alpha2: Alpha2::RU,
                         code: "ZAB",
                         #[cfg(feature = "geo")]

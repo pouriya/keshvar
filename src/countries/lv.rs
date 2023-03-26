@@ -222,12 +222,13 @@ pub mod geo {
 
 #[cfg(all(feature = "lv", feature = "subdivisions"))]
 pub mod subdivisions {
-    use crate::Subdivision;
+    #[allow(unused_imports)]
+    use crate::{Alpha2, Subdivision, SubdivisionType};
     use std::collections::HashMap;
     // In this state, We do not know if subdivisions have geo or not!
     #[cfg(feature = "geo")]
     #[allow(unused_imports)]
-    use crate::{Alpha2, SubdivisionGeo, SubdivisionType};
+    use crate::SubdivisionGeo;
 
     pub fn new() -> HashMap<&'static str, Subdivision> {
         HashMap::from(
@@ -236,7 +237,7 @@ pub mod subdivisions {
                 (
                     "002",
                     Subdivision{
-                        name: "002",
+                        name: "Aizkraukles novads",
                         country_alpha2: Alpha2::LV,
                         code: "002",
                         #[cfg(feature = "geo")]
@@ -251,7 +252,7 @@ pub mod subdivisions {
                 (
                     "007",
                     Subdivision{
-                        name: "007",
+                        name: "Alūksnes novads",
                         country_alpha2: Alpha2::LV,
                         code: "007",
                         #[cfg(feature = "geo")]
@@ -266,7 +267,7 @@ pub mod subdivisions {
                 (
                     "011",
                     Subdivision{
-                        name: "011",
+                        name: "Ādažu novads",
                         country_alpha2: Alpha2::LV,
                         code: "011",
                         #[cfg(feature = "geo")]
@@ -281,7 +282,7 @@ pub mod subdivisions {
                 (
                     "015",
                     Subdivision{
-                        name: "015",
+                        name: "Balvu novads",
                         country_alpha2: Alpha2::LV,
                         code: "015",
                         #[cfg(feature = "geo")]
@@ -296,7 +297,7 @@ pub mod subdivisions {
                 (
                     "016",
                     Subdivision{
-                        name: "016",
+                        name: "Bauskas novads",
                         country_alpha2: Alpha2::LV,
                         code: "016",
                         #[cfg(feature = "geo")]
@@ -311,7 +312,7 @@ pub mod subdivisions {
                 (
                     "022",
                     Subdivision{
-                        name: "022",
+                        name: "Cēsu novads",
                         country_alpha2: Alpha2::LV,
                         code: "022",
                         #[cfg(feature = "geo")]
@@ -326,7 +327,7 @@ pub mod subdivisions {
                 (
                     "026",
                     Subdivision{
-                        name: "026",
+                        name: "Dobeles novads",
                         country_alpha2: Alpha2::LV,
                         code: "026",
                         #[cfg(feature = "geo")]
@@ -341,7 +342,7 @@ pub mod subdivisions {
                 (
                     "033",
                     Subdivision{
-                        name: "033",
+                        name: "Gulbenes novads",
                         country_alpha2: Alpha2::LV,
                         code: "033",
                         #[cfg(feature = "geo")]
@@ -356,7 +357,7 @@ pub mod subdivisions {
                 (
                     "041",
                     Subdivision{
-                        name: "041",
+                        name: "Jelgavas novads",
                         country_alpha2: Alpha2::LV,
                         code: "041",
                         #[cfg(feature = "geo")]
@@ -371,7 +372,7 @@ pub mod subdivisions {
                 (
                     "042",
                     Subdivision{
-                        name: "042",
+                        name: "Jēkabpils novads",
                         country_alpha2: Alpha2::LV,
                         code: "042",
                         #[cfg(feature = "geo")]
@@ -386,7 +387,7 @@ pub mod subdivisions {
                 (
                     "047",
                     Subdivision{
-                        name: "047",
+                        name: "Krāslavas novads",
                         country_alpha2: Alpha2::LV,
                         code: "047",
                         #[cfg(feature = "geo")]
@@ -401,7 +402,7 @@ pub mod subdivisions {
                 (
                     "050",
                     Subdivision{
-                        name: "050",
+                        name: "Kuldīgas novads",
                         country_alpha2: Alpha2::LV,
                         code: "050",
                         #[cfg(feature = "geo")]
@@ -416,7 +417,7 @@ pub mod subdivisions {
                 (
                     "052",
                     Subdivision{
-                        name: "052",
+                        name: "Ķekavas novads",
                         country_alpha2: Alpha2::LV,
                         code: "052",
                         #[cfg(feature = "geo")]
@@ -431,7 +432,7 @@ pub mod subdivisions {
                 (
                     "054",
                     Subdivision{
-                        name: "054",
+                        name: "Limbažu novads",
                         country_alpha2: Alpha2::LV,
                         code: "054",
                         #[cfg(feature = "geo")]
@@ -446,7 +447,7 @@ pub mod subdivisions {
                 (
                     "056",
                     Subdivision{
-                        name: "056",
+                        name: "Līvānu novads",
                         country_alpha2: Alpha2::LV,
                         code: "056",
                         #[cfg(feature = "geo")]
@@ -461,7 +462,7 @@ pub mod subdivisions {
                 (
                     "058",
                     Subdivision{
-                        name: "058",
+                        name: "Ludzas novads",
                         country_alpha2: Alpha2::LV,
                         code: "058",
                         #[cfg(feature = "geo")]
@@ -476,7 +477,7 @@ pub mod subdivisions {
                 (
                     "059",
                     Subdivision{
-                        name: "059",
+                        name: "Madonas novads",
                         country_alpha2: Alpha2::LV,
                         code: "059",
                         #[cfg(feature = "geo")]
@@ -491,7 +492,7 @@ pub mod subdivisions {
                 (
                     "062",
                     Subdivision{
-                        name: "062",
+                        name: "Mārupes novads",
                         country_alpha2: Alpha2::LV,
                         code: "062",
                         #[cfg(feature = "geo")]
@@ -506,7 +507,7 @@ pub mod subdivisions {
                 (
                     "067",
                     Subdivision{
-                        name: "067",
+                        name: "Ogres novads",
                         country_alpha2: Alpha2::LV,
                         code: "067",
                         #[cfg(feature = "geo")]
@@ -521,7 +522,7 @@ pub mod subdivisions {
                 (
                     "068",
                     Subdivision{
-                        name: "068",
+                        name: "Olaines novads",
                         country_alpha2: Alpha2::LV,
                         code: "068",
                         #[cfg(feature = "geo")]
@@ -536,7 +537,7 @@ pub mod subdivisions {
                 (
                     "073",
                     Subdivision{
-                        name: "073",
+                        name: "Preiļu novads",
                         country_alpha2: Alpha2::LV,
                         code: "073",
                         #[cfg(feature = "geo")]
@@ -551,7 +552,7 @@ pub mod subdivisions {
                 (
                     "077",
                     Subdivision{
-                        name: "077",
+                        name: "Rēzeknes novads",
                         country_alpha2: Alpha2::LV,
                         code: "077",
                         #[cfg(feature = "geo")]
@@ -566,7 +567,7 @@ pub mod subdivisions {
                 (
                     "080",
                     Subdivision{
-                        name: "080",
+                        name: "Ropažu novads",
                         country_alpha2: Alpha2::LV,
                         code: "080",
                         #[cfg(feature = "geo")]
@@ -581,7 +582,7 @@ pub mod subdivisions {
                 (
                     "087",
                     Subdivision{
-                        name: "087",
+                        name: "Salaspils novads",
                         country_alpha2: Alpha2::LV,
                         code: "087",
                         #[cfg(feature = "geo")]
@@ -596,7 +597,7 @@ pub mod subdivisions {
                 (
                     "088",
                     Subdivision{
-                        name: "088",
+                        name: "Saldus novads",
                         country_alpha2: Alpha2::LV,
                         code: "088",
                         #[cfg(feature = "geo")]
@@ -611,7 +612,7 @@ pub mod subdivisions {
                 (
                     "089",
                     Subdivision{
-                        name: "089",
+                        name: "Saulkrastu novads",
                         country_alpha2: Alpha2::LV,
                         code: "089",
                         #[cfg(feature = "geo")]
@@ -626,7 +627,7 @@ pub mod subdivisions {
                 (
                     "091",
                     Subdivision{
-                        name: "091",
+                        name: "Siguldas novads",
                         country_alpha2: Alpha2::LV,
                         code: "091",
                         #[cfg(feature = "geo")]
@@ -641,7 +642,7 @@ pub mod subdivisions {
                 (
                     "094",
                     Subdivision{
-                        name: "094",
+                        name: "Smiltenes novads",
                         country_alpha2: Alpha2::LV,
                         code: "094",
                         #[cfg(feature = "geo")]
@@ -656,7 +657,7 @@ pub mod subdivisions {
                 (
                     "097",
                     Subdivision{
-                        name: "097",
+                        name: "Talsu novads",
                         country_alpha2: Alpha2::LV,
                         code: "097",
                         #[cfg(feature = "geo")]
@@ -671,7 +672,7 @@ pub mod subdivisions {
                 (
                     "099",
                     Subdivision{
-                        name: "099",
+                        name: "Tukuma novads",
                         country_alpha2: Alpha2::LV,
                         code: "099",
                         #[cfg(feature = "geo")]
@@ -686,7 +687,7 @@ pub mod subdivisions {
                 (
                     "101",
                     Subdivision{
-                        name: "101",
+                        name: "Valkas novads",
                         country_alpha2: Alpha2::LV,
                         code: "101",
                         #[cfg(feature = "geo")]
@@ -701,7 +702,7 @@ pub mod subdivisions {
                 (
                     "102",
                     Subdivision{
-                        name: "102",
+                        name: "Varakļānu novads",
                         country_alpha2: Alpha2::LV,
                         code: "102",
                         #[cfg(feature = "geo")]
@@ -716,7 +717,7 @@ pub mod subdivisions {
                 (
                     "106",
                     Subdivision{
-                        name: "106",
+                        name: "Ventspils novads",
                         country_alpha2: Alpha2::LV,
                         code: "106",
                         #[cfg(feature = "geo")]
@@ -731,7 +732,7 @@ pub mod subdivisions {
                 (
                     "111",
                     Subdivision{
-                        name: "111",
+                        name: "Augšdaugavas novads",
                         country_alpha2: Alpha2::LV,
                         code: "111",
                         #[cfg(feature = "geo")]
@@ -746,7 +747,7 @@ pub mod subdivisions {
                 (
                     "112",
                     Subdivision{
-                        name: "112",
+                        name: "Dienvidkurzemes Novads",
                         country_alpha2: Alpha2::LV,
                         code: "112",
                         #[cfg(feature = "geo")]
@@ -761,7 +762,7 @@ pub mod subdivisions {
                 (
                     "113",
                     Subdivision{
-                        name: "113",
+                        name: "Valmieras Novads",
                         country_alpha2: Alpha2::LV,
                         code: "113",
                         #[cfg(feature = "geo")]
@@ -776,7 +777,7 @@ pub mod subdivisions {
                 (
                     "DGV",
                     Subdivision{
-                        name: "DGV",
+                        name: "Daugavpils",
                         country_alpha2: Alpha2::LV,
                         code: "DGV",
                         #[cfg(feature = "geo")]
@@ -791,7 +792,7 @@ pub mod subdivisions {
                 (
                     "JEL",
                     Subdivision{
-                        name: "JEL",
+                        name: "Jelgava",
                         country_alpha2: Alpha2::LV,
                         code: "JEL",
                         #[cfg(feature = "geo")]
@@ -806,7 +807,7 @@ pub mod subdivisions {
                 (
                     "JUR",
                     Subdivision{
-                        name: "JUR",
+                        name: "Jurmala",
                         country_alpha2: Alpha2::LV,
                         code: "JUR",
                         #[cfg(feature = "geo")]
@@ -821,7 +822,7 @@ pub mod subdivisions {
                 (
                     "LPX",
                     Subdivision{
-                        name: "LPX",
+                        name: "Liepaja",
                         country_alpha2: Alpha2::LV,
                         code: "LPX",
                         #[cfg(feature = "geo")]
@@ -836,7 +837,7 @@ pub mod subdivisions {
                 (
                     "REZ",
                     Subdivision{
-                        name: "REZ",
+                        name: "Rezekne",
                         country_alpha2: Alpha2::LV,
                         code: "REZ",
                         #[cfg(feature = "geo")]
@@ -851,7 +852,7 @@ pub mod subdivisions {
                 (
                     "RIX",
                     Subdivision{
-                        name: "RIX",
+                        name: "Riga",
                         country_alpha2: Alpha2::LV,
                         code: "RIX",
                         #[cfg(feature = "geo")]
@@ -866,7 +867,7 @@ pub mod subdivisions {
                 (
                     "VEN",
                     Subdivision{
-                        name: "VEN",
+                        name: "Ventspils",
                         country_alpha2: Alpha2::LV,
                         code: "VEN",
                         #[cfg(feature = "geo")]

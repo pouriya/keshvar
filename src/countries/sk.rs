@@ -222,12 +222,13 @@ pub mod geo {
 
 #[cfg(all(feature = "sk", feature = "subdivisions"))]
 pub mod subdivisions {
-    use crate::Subdivision;
+    #[allow(unused_imports)]
+    use crate::{Alpha2, Subdivision, SubdivisionType};
     use std::collections::HashMap;
     // In this state, We do not know if subdivisions have geo or not!
     #[cfg(feature = "geo")]
     #[allow(unused_imports)]
-    use crate::{Alpha2, SubdivisionGeo, SubdivisionType};
+    use crate::SubdivisionGeo;
 
     pub fn new() -> HashMap<&'static str, Subdivision> {
         HashMap::from(
@@ -236,7 +237,7 @@ pub mod subdivisions {
                 (
                     "BC",
                     Subdivision{
-                        name: "BC",
+                        name: "Banskobystrický kraj",
                         country_alpha2: Alpha2::SK,
                         code: "BC",
                         #[cfg(feature = "geo")]
@@ -251,7 +252,7 @@ pub mod subdivisions {
                 (
                     "BL",
                     Subdivision{
-                        name: "BL",
+                        name: "Bratislavský kraj",
                         country_alpha2: Alpha2::SK,
                         code: "BL",
                         #[cfg(feature = "geo")]
@@ -266,7 +267,7 @@ pub mod subdivisions {
                 (
                     "KI",
                     Subdivision{
-                        name: "KI",
+                        name: "Košický kraj",
                         country_alpha2: Alpha2::SK,
                         code: "KI",
                         #[cfg(feature = "geo")]
@@ -281,7 +282,7 @@ pub mod subdivisions {
                 (
                     "NI",
                     Subdivision{
-                        name: "NI",
+                        name: "Nitriansky kraj",
                         country_alpha2: Alpha2::SK,
                         code: "NI",
                         #[cfg(feature = "geo")]
@@ -296,7 +297,7 @@ pub mod subdivisions {
                 (
                     "PV",
                     Subdivision{
-                        name: "PV",
+                        name: "Prešovský kraj",
                         country_alpha2: Alpha2::SK,
                         code: "PV",
                         #[cfg(feature = "geo")]
@@ -311,7 +312,7 @@ pub mod subdivisions {
                 (
                     "TA",
                     Subdivision{
-                        name: "TA",
+                        name: "Trnavský kraj",
                         country_alpha2: Alpha2::SK,
                         code: "TA",
                         #[cfg(feature = "geo")]
@@ -326,7 +327,7 @@ pub mod subdivisions {
                 (
                     "TC",
                     Subdivision{
-                        name: "TC",
+                        name: "Trenciansky kraj",
                         country_alpha2: Alpha2::SK,
                         code: "TC",
                         #[cfg(feature = "geo")]
@@ -341,7 +342,7 @@ pub mod subdivisions {
                 (
                     "ZI",
                     Subdivision{
-                        name: "ZI",
+                        name: "Žilinský kraj",
                         country_alpha2: Alpha2::SK,
                         code: "ZI",
                         #[cfg(feature = "geo")]

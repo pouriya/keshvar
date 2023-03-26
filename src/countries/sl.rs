@@ -214,19 +214,20 @@ pub mod geo {
 
 #[cfg(all(feature = "sl", feature = "subdivisions"))]
 pub mod subdivisions {
-    use crate::Subdivision;
+    #[allow(unused_imports)]
+    use crate::{Alpha2, Subdivision, SubdivisionType};
     use std::collections::HashMap;
     // In this state, We do not know if subdivisions have geo or not!
     #[cfg(feature = "geo")]
     #[allow(unused_imports)]
-    use crate::{Alpha2, SubdivisionGeo, SubdivisionType};
+    use crate::SubdivisionGeo;
 
     pub fn new() -> HashMap<&'static str, Subdivision> {
         HashMap::from([
             (
                 "E",
                 Subdivision {
-                    name: "E",
+                    name: "Eastern",
                     country_alpha2: Alpha2::SL,
                     code: "E",
                     #[cfg(feature = "geo")]
@@ -295,7 +296,7 @@ pub mod subdivisions {
             (
                 "N",
                 Subdivision {
-                    name: "N",
+                    name: "Northern",
                     country_alpha2: Alpha2::SL,
                     code: "N",
                     #[cfg(feature = "geo")]
@@ -364,7 +365,7 @@ pub mod subdivisions {
             (
                 "NW",
                 Subdivision {
-                    name: "NW",
+                    name: "North Western",
                     country_alpha2: Alpha2::SL,
                     code: "NW",
                     #[cfg(feature = "geo")]
@@ -386,7 +387,7 @@ pub mod subdivisions {
             (
                 "S",
                 Subdivision {
-                    name: "S",
+                    name: "Southern",
                     country_alpha2: Alpha2::SL,
                     code: "S",
                     #[cfg(feature = "geo")]
@@ -455,7 +456,7 @@ pub mod subdivisions {
             (
                 "W",
                 Subdivision {
-                    name: "W",
+                    name: "Western Area (Freetown)",
                     country_alpha2: Alpha2::SL,
                     code: "W",
                     #[cfg(feature = "geo")]

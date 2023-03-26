@@ -214,19 +214,20 @@ pub mod geo {
 
 #[cfg(all(feature = "so", feature = "subdivisions"))]
 pub mod subdivisions {
-    use crate::Subdivision;
+    #[allow(unused_imports)]
+    use crate::{Alpha2, Subdivision, SubdivisionType};
     use std::collections::HashMap;
     // In this state, We do not know if subdivisions have geo or not!
     #[cfg(feature = "geo")]
     #[allow(unused_imports)]
-    use crate::{Alpha2, SubdivisionGeo, SubdivisionType};
+    use crate::SubdivisionGeo;
 
     pub fn new() -> HashMap<&'static str, Subdivision> {
         HashMap::from([
             (
                 "AW",
                 Subdivision {
-                    name: "AW",
+                    name: "Awdal",
                     country_alpha2: Alpha2::SO,
                     code: "AW",
                     #[cfg(feature = "geo")]
@@ -278,7 +279,7 @@ pub mod subdivisions {
             (
                 "BK",
                 Subdivision {
-                    name: "BK",
+                    name: "Bakool",
                     country_alpha2: Alpha2::SO,
                     code: "BK",
                     #[cfg(feature = "geo")]
@@ -345,7 +346,7 @@ pub mod subdivisions {
             (
                 "BN",
                 Subdivision {
-                    name: "BN",
+                    name: "Banaadir",
                     country_alpha2: Alpha2::SO,
                     code: "BN",
                     #[cfg(feature = "geo")]
@@ -412,7 +413,7 @@ pub mod subdivisions {
             (
                 "BR",
                 Subdivision {
-                    name: "BR",
+                    name: "Bari",
                     country_alpha2: Alpha2::SO,
                     code: "BR",
                     #[cfg(feature = "geo")]
@@ -480,7 +481,7 @@ pub mod subdivisions {
             (
                 "BY",
                 Subdivision {
-                    name: "BY",
+                    name: "Bay",
                     country_alpha2: Alpha2::SO,
                     code: "BY",
                     #[cfg(feature = "geo")]
@@ -548,7 +549,7 @@ pub mod subdivisions {
             (
                 "GA",
                 Subdivision {
-                    name: "GA",
+                    name: "Galguduud",
                     country_alpha2: Alpha2::SO,
                     code: "GA",
                     #[cfg(feature = "geo")]
@@ -615,7 +616,7 @@ pub mod subdivisions {
             (
                 "GE",
                 Subdivision {
-                    name: "GE",
+                    name: "Gedo",
                     country_alpha2: Alpha2::SO,
                     code: "GE",
                     #[cfg(feature = "geo")]
@@ -682,7 +683,7 @@ pub mod subdivisions {
             (
                 "HI",
                 Subdivision {
-                    name: "HI",
+                    name: "Hiiraan",
                     country_alpha2: Alpha2::SO,
                     code: "HI",
                     #[cfg(feature = "geo")]
@@ -749,7 +750,7 @@ pub mod subdivisions {
             (
                 "JD",
                 Subdivision {
-                    name: "JD",
+                    name: "Jubbada Dhexe",
                     country_alpha2: Alpha2::SO,
                     code: "JD",
                     #[cfg(feature = "geo")]
@@ -817,7 +818,7 @@ pub mod subdivisions {
             (
                 "JH",
                 Subdivision {
-                    name: "JH",
+                    name: "Jubbada Hoose",
                     country_alpha2: Alpha2::SO,
                     code: "JH",
                     #[cfg(feature = "geo")]
@@ -885,7 +886,7 @@ pub mod subdivisions {
             (
                 "MU",
                 Subdivision {
-                    name: "MU",
+                    name: "Mudug",
                     country_alpha2: Alpha2::SO,
                     code: "MU",
                     #[cfg(feature = "geo")]
@@ -953,7 +954,7 @@ pub mod subdivisions {
             (
                 "NU",
                 Subdivision {
-                    name: "NU",
+                    name: "Nugaal",
                     country_alpha2: Alpha2::SO,
                     code: "NU",
                     #[cfg(feature = "geo")]
@@ -1019,7 +1020,7 @@ pub mod subdivisions {
             (
                 "SA",
                 Subdivision {
-                    name: "SA",
+                    name: "Sanaag",
                     country_alpha2: Alpha2::SO,
                     code: "SA",
                     #[cfg(feature = "geo")]
@@ -1069,7 +1070,7 @@ pub mod subdivisions {
             (
                 "SD",
                 Subdivision {
-                    name: "SD",
+                    name: "Shabeellaha Dhexe",
                     country_alpha2: Alpha2::SO,
                     code: "SD",
                     #[cfg(feature = "geo")]
@@ -1140,7 +1141,7 @@ pub mod subdivisions {
             (
                 "SH",
                 Subdivision {
-                    name: "SH",
+                    name: "Shabeellaha Hoose",
                     country_alpha2: Alpha2::SO,
                     code: "SH",
                     #[cfg(feature = "geo")]
@@ -1208,7 +1209,7 @@ pub mod subdivisions {
             (
                 "SO",
                 Subdivision {
-                    name: "SO",
+                    name: "Sool",
                     country_alpha2: Alpha2::SO,
                     code: "SO",
                     #[cfg(feature = "geo")]
@@ -1260,7 +1261,7 @@ pub mod subdivisions {
             (
                 "TO",
                 Subdivision {
-                    name: "TO",
+                    name: "Togdheer",
                     country_alpha2: Alpha2::SO,
                     code: "TO",
                     #[cfg(feature = "geo")]
@@ -1309,7 +1310,7 @@ pub mod subdivisions {
             (
                 "WO",
                 Subdivision {
-                    name: "WO",
+                    name: "Woqooyi Galbeed",
                     country_alpha2: Alpha2::SO,
                     code: "WO",
                     #[cfg(feature = "geo")]

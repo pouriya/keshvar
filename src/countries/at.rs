@@ -218,12 +218,13 @@ pub mod geo {
 
 #[cfg(all(feature = "at", feature = "subdivisions"))]
 pub mod subdivisions {
-    use crate::Subdivision;
+    #[allow(unused_imports)]
+    use crate::{Alpha2, Subdivision, SubdivisionType};
     use std::collections::HashMap;
     // In this state, We do not know if subdivisions have geo or not!
     #[cfg(feature = "geo")]
     #[allow(unused_imports)]
-    use crate::{Alpha2, SubdivisionGeo, SubdivisionType};
+    use crate::SubdivisionGeo;
 
     pub fn new() -> HashMap<&'static str, Subdivision> {
         HashMap::from(
@@ -232,7 +233,7 @@ pub mod subdivisions {
                 (
                     "1",
                     Subdivision{
-                        name: "1",
+                        name: "Burgenland",
                         country_alpha2: Alpha2::AT,
                         code: "1",
                         #[cfg(feature = "geo")]
@@ -247,7 +248,7 @@ pub mod subdivisions {
                 (
                     "2",
                     Subdivision{
-                        name: "2",
+                        name: "Kärnten",
                         country_alpha2: Alpha2::AT,
                         code: "2",
                         #[cfg(feature = "geo")]
@@ -262,7 +263,7 @@ pub mod subdivisions {
                 (
                     "3",
                     Subdivision{
-                        name: "3",
+                        name: "Niederösterreich",
                         country_alpha2: Alpha2::AT,
                         code: "3",
                         #[cfg(feature = "geo")]
@@ -277,7 +278,7 @@ pub mod subdivisions {
                 (
                     "4",
                     Subdivision{
-                        name: "4",
+                        name: "Oberösterreich",
                         country_alpha2: Alpha2::AT,
                         code: "4",
                         #[cfg(feature = "geo")]
@@ -292,7 +293,7 @@ pub mod subdivisions {
                 (
                     "5",
                     Subdivision{
-                        name: "5",
+                        name: "Salzburg",
                         country_alpha2: Alpha2::AT,
                         code: "5",
                         #[cfg(feature = "geo")]
@@ -307,7 +308,7 @@ pub mod subdivisions {
                 (
                     "6",
                     Subdivision{
-                        name: "6",
+                        name: "Steiermark",
                         country_alpha2: Alpha2::AT,
                         code: "6",
                         #[cfg(feature = "geo")]
@@ -322,7 +323,7 @@ pub mod subdivisions {
                 (
                     "7",
                     Subdivision{
-                        name: "7",
+                        name: "Tirol",
                         country_alpha2: Alpha2::AT,
                         code: "7",
                         #[cfg(feature = "geo")]
@@ -337,7 +338,7 @@ pub mod subdivisions {
                 (
                     "8",
                     Subdivision{
-                        name: "8",
+                        name: "Vorarlberg",
                         country_alpha2: Alpha2::AT,
                         code: "8",
                         #[cfg(feature = "geo")]
@@ -352,7 +353,7 @@ pub mod subdivisions {
                 (
                     "9",
                     Subdivision{
-                        name: "9",
+                        name: "Wien",
                         country_alpha2: Alpha2::AT,
                         code: "9",
                         #[cfg(feature = "geo")]

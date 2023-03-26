@@ -225,12 +225,13 @@ pub mod geo {
 
 #[cfg(all(feature = "ch", feature = "subdivisions"))]
 pub mod subdivisions {
-    use crate::Subdivision;
+    #[allow(unused_imports)]
+    use crate::{Alpha2, Subdivision, SubdivisionType};
     use std::collections::HashMap;
     // In this state, We do not know if subdivisions have geo or not!
     #[cfg(feature = "geo")]
     #[allow(unused_imports)]
-    use crate::{Alpha2, SubdivisionGeo, SubdivisionType};
+    use crate::SubdivisionGeo;
 
     pub fn new() -> HashMap<&'static str, Subdivision> {
         HashMap::from(
@@ -239,7 +240,7 @@ pub mod subdivisions {
                 (
                     "AG",
                     Subdivision{
-                        name: "AG",
+                        name: "Aargau (de)",
                         country_alpha2: Alpha2::CH,
                         code: "AG",
                         #[cfg(feature = "geo")]
@@ -254,7 +255,7 @@ pub mod subdivisions {
                 (
                     "AI",
                     Subdivision{
-                        name: "AI",
+                        name: "Appenzell Innerrhoden (de)",
                         country_alpha2: Alpha2::CH,
                         code: "AI",
                         #[cfg(feature = "geo")]
@@ -269,7 +270,7 @@ pub mod subdivisions {
                 (
                     "AR",
                     Subdivision{
-                        name: "AR",
+                        name: "Appenzell Ausserrhoden (de)",
                         country_alpha2: Alpha2::CH,
                         code: "AR",
                         #[cfg(feature = "geo")]
@@ -284,7 +285,7 @@ pub mod subdivisions {
                 (
                     "BE",
                     Subdivision{
-                        name: "BE",
+                        name: "Bern (de)",
                         country_alpha2: Alpha2::CH,
                         code: "BE",
                         #[cfg(feature = "geo")]
@@ -299,7 +300,7 @@ pub mod subdivisions {
                 (
                     "BL",
                     Subdivision{
-                        name: "BL",
+                        name: "Basel-Landschaft (de)",
                         country_alpha2: Alpha2::CH,
                         code: "BL",
                         #[cfg(feature = "geo")]
@@ -314,7 +315,7 @@ pub mod subdivisions {
                 (
                     "BS",
                     Subdivision{
-                        name: "BS",
+                        name: "Basel-Stadt (de)",
                         country_alpha2: Alpha2::CH,
                         code: "BS",
                         #[cfg(feature = "geo")]
@@ -329,7 +330,7 @@ pub mod subdivisions {
                 (
                     "FR",
                     Subdivision{
-                        name: "FR",
+                        name: "Fribourg (fr)",
                         country_alpha2: Alpha2::CH,
                         code: "FR",
                         #[cfg(feature = "geo")]
@@ -344,7 +345,7 @@ pub mod subdivisions {
                 (
                     "GE",
                     Subdivision{
-                        name: "GE",
+                        name: "Genève (fr)",
                         country_alpha2: Alpha2::CH,
                         code: "GE",
                         #[cfg(feature = "geo")]
@@ -359,7 +360,7 @@ pub mod subdivisions {
                 (
                     "GL",
                     Subdivision{
-                        name: "GL",
+                        name: "Glarus (de)",
                         country_alpha2: Alpha2::CH,
                         code: "GL",
                         #[cfg(feature = "geo")]
@@ -374,7 +375,7 @@ pub mod subdivisions {
                 (
                     "GR",
                     Subdivision{
-                        name: "GR",
+                        name: "Graubünden (de)",
                         country_alpha2: Alpha2::CH,
                         code: "GR",
                         #[cfg(feature = "geo")]
@@ -389,7 +390,7 @@ pub mod subdivisions {
                 (
                     "JU",
                     Subdivision{
-                        name: "JU",
+                        name: "Jura (fr)",
                         country_alpha2: Alpha2::CH,
                         code: "JU",
                         #[cfg(feature = "geo")]
@@ -404,7 +405,7 @@ pub mod subdivisions {
                 (
                     "LU",
                     Subdivision{
-                        name: "LU",
+                        name: "Luzern (de)",
                         country_alpha2: Alpha2::CH,
                         code: "LU",
                         #[cfg(feature = "geo")]
@@ -419,7 +420,7 @@ pub mod subdivisions {
                 (
                     "NE",
                     Subdivision{
-                        name: "NE",
+                        name: "Neuchâtel (fr)",
                         country_alpha2: Alpha2::CH,
                         code: "NE",
                         #[cfg(feature = "geo")]
@@ -434,7 +435,7 @@ pub mod subdivisions {
                 (
                     "NW",
                     Subdivision{
-                        name: "NW",
+                        name: "Nidwalden (de)",
                         country_alpha2: Alpha2::CH,
                         code: "NW",
                         #[cfg(feature = "geo")]
@@ -449,7 +450,7 @@ pub mod subdivisions {
                 (
                     "OW",
                     Subdivision{
-                        name: "OW",
+                        name: "Obwalden (de)",
                         country_alpha2: Alpha2::CH,
                         code: "OW",
                         #[cfg(feature = "geo")]
@@ -464,7 +465,7 @@ pub mod subdivisions {
                 (
                     "SG",
                     Subdivision{
-                        name: "SG",
+                        name: "Sankt Gallen (de)",
                         country_alpha2: Alpha2::CH,
                         code: "SG",
                         #[cfg(feature = "geo")]
@@ -479,7 +480,7 @@ pub mod subdivisions {
                 (
                     "SH",
                     Subdivision{
-                        name: "SH",
+                        name: "Schaffhausen (de)",
                         country_alpha2: Alpha2::CH,
                         code: "SH",
                         #[cfg(feature = "geo")]
@@ -494,7 +495,7 @@ pub mod subdivisions {
                 (
                     "SO",
                     Subdivision{
-                        name: "SO",
+                        name: "Solothurn (de)",
                         country_alpha2: Alpha2::CH,
                         code: "SO",
                         #[cfg(feature = "geo")]
@@ -509,7 +510,7 @@ pub mod subdivisions {
                 (
                     "SZ",
                     Subdivision{
-                        name: "SZ",
+                        name: "Schwyz (de)",
                         country_alpha2: Alpha2::CH,
                         code: "SZ",
                         #[cfg(feature = "geo")]
@@ -524,7 +525,7 @@ pub mod subdivisions {
                 (
                     "TG",
                     Subdivision{
-                        name: "TG",
+                        name: "Thurgau (de)",
                         country_alpha2: Alpha2::CH,
                         code: "TG",
                         #[cfg(feature = "geo")]
@@ -539,7 +540,7 @@ pub mod subdivisions {
                 (
                     "TI",
                     Subdivision{
-                        name: "TI",
+                        name: "Ticino (it)",
                         country_alpha2: Alpha2::CH,
                         code: "TI",
                         #[cfg(feature = "geo")]
@@ -554,7 +555,7 @@ pub mod subdivisions {
                 (
                     "UR",
                     Subdivision{
-                        name: "UR",
+                        name: "Uri (de)",
                         country_alpha2: Alpha2::CH,
                         code: "UR",
                         #[cfg(feature = "geo")]
@@ -569,7 +570,7 @@ pub mod subdivisions {
                 (
                     "VD",
                     Subdivision{
-                        name: "VD",
+                        name: "Vaud (fr)",
                         country_alpha2: Alpha2::CH,
                         code: "VD",
                         #[cfg(feature = "geo")]
@@ -584,7 +585,7 @@ pub mod subdivisions {
                 (
                     "VS",
                     Subdivision{
-                        name: "VS",
+                        name: "Valais (fr)",
                         country_alpha2: Alpha2::CH,
                         code: "VS",
                         #[cfg(feature = "geo")]
@@ -599,7 +600,7 @@ pub mod subdivisions {
                 (
                     "ZG",
                     Subdivision{
-                        name: "ZG",
+                        name: "Zug (de)",
                         country_alpha2: Alpha2::CH,
                         code: "ZG",
                         #[cfg(feature = "geo")]
@@ -614,7 +615,7 @@ pub mod subdivisions {
                 (
                     "ZH",
                     Subdivision{
-                        name: "ZH",
+                        name: "Zürich (de)",
                         country_alpha2: Alpha2::CH,
                         code: "ZH",
                         #[cfg(feature = "geo")]

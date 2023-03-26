@@ -230,12 +230,13 @@ pub mod geo {
 
 #[cfg(all(feature = "kr", feature = "subdivisions"))]
 pub mod subdivisions {
-    use crate::Subdivision;
+    #[allow(unused_imports)]
+    use crate::{Alpha2, Subdivision, SubdivisionType};
     use std::collections::HashMap;
     // In this state, We do not know if subdivisions have geo or not!
     #[cfg(feature = "geo")]
     #[allow(unused_imports)]
-    use crate::{Alpha2, SubdivisionGeo, SubdivisionType};
+    use crate::SubdivisionGeo;
 
     pub fn new() -> HashMap<&'static str, Subdivision> {
         HashMap::from(
@@ -244,7 +245,7 @@ pub mod subdivisions {
                 (
                     "11",
                     Subdivision{
-                        name: "11",
+                        name: "Seoul Teugbyeolsi [Seoul-T'ukpyolshi]",
                         country_alpha2: Alpha2::KR,
                         code: "11",
                         #[cfg(feature = "geo")]
@@ -259,7 +260,7 @@ pub mod subdivisions {
                 (
                     "26",
                     Subdivision{
-                        name: "26",
+                        name: "Busan Gwang'yeogsi [Pusan-Kwangyokshi]",
                         country_alpha2: Alpha2::KR,
                         code: "26",
                         #[cfg(feature = "geo")]
@@ -274,7 +275,7 @@ pub mod subdivisions {
                 (
                     "27",
                     Subdivision{
-                        name: "27",
+                        name: "Daegu Gwang'yeogsi [Taegu-Kwangyokshi]",
                         country_alpha2: Alpha2::KR,
                         code: "27",
                         #[cfg(feature = "geo")]
@@ -289,7 +290,7 @@ pub mod subdivisions {
                 (
                     "28",
                     Subdivision{
-                        name: "28",
+                        name: "Incheon Gwang'yeogsi [Inch'n-Kwangyokshi]",
                         country_alpha2: Alpha2::KR,
                         code: "28",
                         #[cfg(feature = "geo")]
@@ -304,7 +305,7 @@ pub mod subdivisions {
                 (
                     "29",
                     Subdivision{
-                        name: "29",
+                        name: "Gwangju Gwang'yeogsi [Kwangju-Kwangyokshi]",
                         country_alpha2: Alpha2::KR,
                         code: "29",
                         #[cfg(feature = "geo")]
@@ -319,7 +320,7 @@ pub mod subdivisions {
                 (
                     "30",
                     Subdivision{
-                        name: "30",
+                        name: "Daejeon Gwang'yeogsi [Taejon-Kwangyokshi]",
                         country_alpha2: Alpha2::KR,
                         code: "30",
                         #[cfg(feature = "geo")]
@@ -334,7 +335,7 @@ pub mod subdivisions {
                 (
                     "31",
                     Subdivision{
-                        name: "31",
+                        name: "Ulsan Gwang'yeogsi [Ulsan-Kwangyokshi]",
                         country_alpha2: Alpha2::KR,
                         code: "31",
                         #[cfg(feature = "geo")]
@@ -349,7 +350,7 @@ pub mod subdivisions {
                 (
                     "41",
                     Subdivision{
-                        name: "41",
+                        name: "Gyeonggido [Kyonggi-do]",
                         country_alpha2: Alpha2::KR,
                         code: "41",
                         #[cfg(feature = "geo")]
@@ -364,7 +365,7 @@ pub mod subdivisions {
                 (
                     "42",
                     Subdivision{
-                        name: "42",
+                        name: "Gang'weondo [Kang-won-do]",
                         country_alpha2: Alpha2::KR,
                         code: "42",
                         #[cfg(feature = "geo")]
@@ -379,7 +380,7 @@ pub mod subdivisions {
                 (
                     "43",
                     Subdivision{
-                        name: "43",
+                        name: "Chungcheongbugdo [Ch'ungch'ongbuk-do]",
                         country_alpha2: Alpha2::KR,
                         code: "43",
                         #[cfg(feature = "geo")]
@@ -394,7 +395,7 @@ pub mod subdivisions {
                 (
                     "44",
                     Subdivision{
-                        name: "44",
+                        name: "Chungcheongnamdo [Ch'ungch'ongnam-do]",
                         country_alpha2: Alpha2::KR,
                         code: "44",
                         #[cfg(feature = "geo")]
@@ -409,7 +410,7 @@ pub mod subdivisions {
                 (
                     "45",
                     Subdivision{
-                        name: "45",
+                        name: "Jeonrabugdo[Chollabuk-do]",
                         country_alpha2: Alpha2::KR,
                         code: "45",
                         #[cfg(feature = "geo")]
@@ -424,7 +425,7 @@ pub mod subdivisions {
                 (
                     "46",
                     Subdivision{
-                        name: "46",
+                        name: "Jeonranamdo [Chollanam-do]",
                         country_alpha2: Alpha2::KR,
                         code: "46",
                         #[cfg(feature = "geo")]
@@ -439,7 +440,7 @@ pub mod subdivisions {
                 (
                     "47",
                     Subdivision{
-                        name: "47",
+                        name: "Gyeongsangbugdo [Kyongsangbuk-do]",
                         country_alpha2: Alpha2::KR,
                         code: "47",
                         #[cfg(feature = "geo")]
@@ -454,7 +455,7 @@ pub mod subdivisions {
                 (
                     "48",
                     Subdivision{
-                        name: "48",
+                        name: "Gyeongsangnamdo [Kyongsangnam-do]",
                         country_alpha2: Alpha2::KR,
                         code: "48",
                         #[cfg(feature = "geo")]
@@ -469,7 +470,7 @@ pub mod subdivisions {
                 (
                     "49",
                     Subdivision{
-                        name: "49",
+                        name: "Jejudo [Cheju-do]",
                         country_alpha2: Alpha2::KR,
                         code: "49",
                         #[cfg(feature = "geo")]
@@ -484,7 +485,7 @@ pub mod subdivisions {
                 (
                     "50",
                     Subdivision{
-                        name: "50",
+                        name: "세종특별자치시",
                         country_alpha2: Alpha2::KR,
                         code: "50",
                         #[cfg(feature = "geo")]

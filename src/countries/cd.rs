@@ -220,12 +220,13 @@ pub mod geo {
 
 #[cfg(all(feature = "cd", feature = "subdivisions"))]
 pub mod subdivisions {
-    use crate::Subdivision;
+    #[allow(unused_imports)]
+    use crate::{Alpha2, Subdivision, SubdivisionType};
     use std::collections::HashMap;
     // In this state, We do not know if subdivisions have geo or not!
     #[cfg(feature = "geo")]
     #[allow(unused_imports)]
-    use crate::{Alpha2, SubdivisionGeo, SubdivisionType};
+    use crate::SubdivisionGeo;
 
     pub fn new() -> HashMap<&'static str, Subdivision> {
         HashMap::from(
@@ -234,7 +235,7 @@ pub mod subdivisions {
                 (
                     "BC",
                     Subdivision{
-                        name: "BC",
+                        name: "Bas-Congo",
                         country_alpha2: Alpha2::CD,
                         code: "BC",
                         #[cfg(feature = "geo")]
@@ -249,7 +250,7 @@ pub mod subdivisions {
                 (
                     "BU",
                     Subdivision{
-                        name: "BU",
+                        name: "Bas-Uele",
                         country_alpha2: Alpha2::CD,
                         code: "BU",
                         #[cfg(feature = "geo")]
@@ -264,7 +265,7 @@ pub mod subdivisions {
                 (
                     "EQ",
                     Subdivision{
-                        name: "EQ",
+                        name: "Équateur",
                         country_alpha2: Alpha2::CD,
                         code: "EQ",
                         #[cfg(feature = "geo")]
@@ -279,7 +280,7 @@ pub mod subdivisions {
                 (
                     "HK",
                     Subdivision{
-                        name: "HK",
+                        name: "Haut-Katanga",
                         country_alpha2: Alpha2::CD,
                         code: "HK",
                         #[cfg(feature = "geo")]
@@ -294,7 +295,7 @@ pub mod subdivisions {
                 (
                     "HL",
                     Subdivision{
-                        name: "HL",
+                        name: "Haut-Lomami",
                         country_alpha2: Alpha2::CD,
                         code: "HL",
                         #[cfg(feature = "geo")]
@@ -309,7 +310,7 @@ pub mod subdivisions {
                 (
                     "HU",
                     Subdivision{
-                        name: "HU",
+                        name: "Haut-Uele",
                         country_alpha2: Alpha2::CD,
                         code: "HU",
                         #[cfg(feature = "geo")]
@@ -324,7 +325,7 @@ pub mod subdivisions {
                 (
                     "IT",
                     Subdivision{
-                        name: "IT",
+                        name: "Ituri",
                         country_alpha2: Alpha2::CD,
                         code: "IT",
                         #[cfg(feature = "geo")]
@@ -339,7 +340,7 @@ pub mod subdivisions {
                 (
                     "KC",
                     Subdivision{
-                        name: "KC",
+                        name: "Lulua",
                         country_alpha2: Alpha2::CD,
                         code: "KC",
                         #[cfg(feature = "geo")]
@@ -354,7 +355,7 @@ pub mod subdivisions {
                 (
                     "KE",
                     Subdivision{
-                        name: "KE",
+                        name: "Kasai-Oriental",
                         country_alpha2: Alpha2::CD,
                         code: "KE",
                         #[cfg(feature = "geo")]
@@ -369,7 +370,7 @@ pub mod subdivisions {
                 (
                     "KG",
                     Subdivision{
-                        name: "KG",
+                        name: "Kwango",
                         country_alpha2: Alpha2::CD,
                         code: "KG",
                         #[cfg(feature = "geo")]
@@ -384,7 +385,7 @@ pub mod subdivisions {
                 (
                     "KL",
                     Subdivision{
-                        name: "KL",
+                        name: "Kwilu",
                         country_alpha2: Alpha2::CD,
                         code: "KL",
                         #[cfg(feature = "geo")]
@@ -399,7 +400,7 @@ pub mod subdivisions {
                 (
                     "KN",
                     Subdivision{
-                        name: "KN",
+                        name: "Kinshasa",
                         country_alpha2: Alpha2::CD,
                         code: "KN",
                         #[cfg(feature = "geo")]
@@ -414,7 +415,7 @@ pub mod subdivisions {
                 (
                     "KS",
                     Subdivision{
-                        name: "KS",
+                        name: "Kasaï",
                         country_alpha2: Alpha2::CD,
                         code: "KS",
                         #[cfg(feature = "geo")]
@@ -429,7 +430,7 @@ pub mod subdivisions {
                 (
                     "LO",
                     Subdivision{
-                        name: "LO",
+                        name: "Kabinda",
                         country_alpha2: Alpha2::CD,
                         code: "LO",
                         #[cfg(feature = "geo")]
@@ -444,7 +445,7 @@ pub mod subdivisions {
                 (
                     "LU",
                     Subdivision{
-                        name: "LU",
+                        name: "Lualaba",
                         country_alpha2: Alpha2::CD,
                         code: "LU",
                         #[cfg(feature = "geo")]
@@ -459,7 +460,7 @@ pub mod subdivisions {
                 (
                     "MA",
                     Subdivision{
-                        name: "MA",
+                        name: "Maniema",
                         country_alpha2: Alpha2::CD,
                         code: "MA",
                         #[cfg(feature = "geo")]
@@ -474,7 +475,7 @@ pub mod subdivisions {
                 (
                     "MN",
                     Subdivision{
-                        name: "MN",
+                        name: "Mai-Ndombe",
                         country_alpha2: Alpha2::CD,
                         code: "MN",
                         #[cfg(feature = "geo")]
@@ -489,7 +490,7 @@ pub mod subdivisions {
                 (
                     "MO",
                     Subdivision{
-                        name: "MO",
+                        name: "Mongala",
                         country_alpha2: Alpha2::CD,
                         code: "MO",
                         #[cfg(feature = "geo")]
@@ -504,7 +505,7 @@ pub mod subdivisions {
                 (
                     "NK",
                     Subdivision{
-                        name: "NK",
+                        name: "Nord-Kivu",
                         country_alpha2: Alpha2::CD,
                         code: "NK",
                         #[cfg(feature = "geo")]
@@ -519,7 +520,7 @@ pub mod subdivisions {
                 (
                     "NU",
                     Subdivision{
-                        name: "NU",
+                        name: "Nord-Ubangi",
                         country_alpha2: Alpha2::CD,
                         code: "NU",
                         #[cfg(feature = "geo")]
@@ -534,7 +535,7 @@ pub mod subdivisions {
                 (
                     "SA",
                     Subdivision{
-                        name: "SA",
+                        name: "Sankuru",
                         country_alpha2: Alpha2::CD,
                         code: "SA",
                         #[cfg(feature = "geo")]
@@ -549,7 +550,7 @@ pub mod subdivisions {
                 (
                     "SK",
                     Subdivision{
-                        name: "SK",
+                        name: "Sud-Kivu",
                         country_alpha2: Alpha2::CD,
                         code: "SK",
                         #[cfg(feature = "geo")]
@@ -564,7 +565,7 @@ pub mod subdivisions {
                 (
                     "SU",
                     Subdivision{
-                        name: "SU",
+                        name: "Sud-Ubangi",
                         country_alpha2: Alpha2::CD,
                         code: "SU",
                         #[cfg(feature = "geo")]
@@ -579,7 +580,7 @@ pub mod subdivisions {
                 (
                     "TA",
                     Subdivision{
-                        name: "TA",
+                        name: "Tanganyika",
                         country_alpha2: Alpha2::CD,
                         code: "TA",
                         #[cfg(feature = "geo")]
@@ -594,7 +595,7 @@ pub mod subdivisions {
                 (
                     "TO",
                     Subdivision{
-                        name: "TO",
+                        name: "Tshopo",
                         country_alpha2: Alpha2::CD,
                         code: "TO",
                         #[cfg(feature = "geo")]
@@ -609,7 +610,7 @@ pub mod subdivisions {
                 (
                     "TU",
                     Subdivision{
-                        name: "TU",
+                        name: "Tshuapa",
                         country_alpha2: Alpha2::CD,
                         code: "TU",
                         #[cfg(feature = "geo")]

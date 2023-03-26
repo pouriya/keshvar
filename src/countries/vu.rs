@@ -214,19 +214,20 @@ pub mod geo {
 
 #[cfg(all(feature = "vu", feature = "subdivisions"))]
 pub mod subdivisions {
-    use crate::Subdivision;
+    #[allow(unused_imports)]
+    use crate::{Alpha2, Subdivision, SubdivisionType};
     use std::collections::HashMap;
     // In this state, We do not know if subdivisions have geo or not!
     #[cfg(feature = "geo")]
     #[allow(unused_imports)]
-    use crate::{Alpha2, SubdivisionGeo, SubdivisionType};
+    use crate::SubdivisionGeo;
 
     pub fn new() -> HashMap<&'static str, Subdivision> {
         HashMap::from([
             (
                 "MAP",
                 Subdivision {
-                    name: "MAP",
+                    name: "Malampa",
                     country_alpha2: Alpha2::VU,
                     code: "MAP",
                     #[cfg(feature = "geo")]
@@ -305,7 +306,7 @@ pub mod subdivisions {
             (
                 "PAM",
                 Subdivision {
-                    name: "PAM",
+                    name: "Pénama",
                     country_alpha2: Alpha2::VU,
                     code: "PAM",
                     #[cfg(feature = "geo")]
@@ -382,7 +383,7 @@ pub mod subdivisions {
             (
                 "SAM",
                 Subdivision {
-                    name: "SAM",
+                    name: "Sanma",
                     country_alpha2: Alpha2::VU,
                     code: "SAM",
                     #[cfg(feature = "geo")]
@@ -454,7 +455,7 @@ pub mod subdivisions {
             (
                 "SEE",
                 Subdivision {
-                    name: "SEE",
+                    name: "Shéfa",
                     country_alpha2: Alpha2::VU,
                     code: "SEE",
                     #[cfg(feature = "geo")]
@@ -524,7 +525,7 @@ pub mod subdivisions {
             (
                 "TAE",
                 Subdivision {
-                    name: "TAE",
+                    name: "Taféa",
                     country_alpha2: Alpha2::VU,
                     code: "TAE",
                     #[cfg(feature = "geo")]
@@ -593,7 +594,7 @@ pub mod subdivisions {
             (
                 "TOB",
                 Subdivision {
-                    name: "TOB",
+                    name: "Torba",
                     country_alpha2: Alpha2::VU,
                     code: "TOB",
                     #[cfg(feature = "geo")]

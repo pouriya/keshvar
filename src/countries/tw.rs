@@ -218,12 +218,13 @@ pub mod geo {
 
 #[cfg(all(feature = "tw", feature = "subdivisions"))]
 pub mod subdivisions {
-    use crate::Subdivision;
+    #[allow(unused_imports)]
+    use crate::{Alpha2, Subdivision, SubdivisionType};
     use std::collections::HashMap;
     // In this state, We do not know if subdivisions have geo or not!
     #[cfg(feature = "geo")]
     #[allow(unused_imports)]
-    use crate::{Alpha2, SubdivisionGeo, SubdivisionType};
+    use crate::SubdivisionGeo;
 
     pub fn new() -> HashMap<&'static str, Subdivision> {
         HashMap::from(
@@ -232,7 +233,7 @@ pub mod subdivisions {
                 (
                     "CHA",
                     Subdivision{
-                        name: "CHA",
+                        name: "Changhua",
                         country_alpha2: Alpha2::TW,
                         code: "CHA",
                         #[cfg(feature = "geo")]
@@ -247,7 +248,7 @@ pub mod subdivisions {
                 (
                     "CYI",
                     Subdivision{
-                        name: "CYI",
+                        name: "Chiayi Municipality",
                         country_alpha2: Alpha2::TW,
                         code: "CYI",
                         #[cfg(feature = "geo")]
@@ -262,7 +263,7 @@ pub mod subdivisions {
                 (
                     "CYQ",
                     Subdivision{
-                        name: "CYQ",
+                        name: "Chiayi",
                         country_alpha2: Alpha2::TW,
                         code: "CYQ",
                         #[cfg(feature = "geo")]
@@ -277,7 +278,7 @@ pub mod subdivisions {
                 (
                     "HSQ",
                     Subdivision{
-                        name: "HSQ",
+                        name: "Hsinchu",
                         country_alpha2: Alpha2::TW,
                         code: "HSQ",
                         #[cfg(feature = "geo")]
@@ -292,7 +293,7 @@ pub mod subdivisions {
                 (
                     "HSZ",
                     Subdivision{
-                        name: "HSZ",
+                        name: "Hsinchu Municipality",
                         country_alpha2: Alpha2::TW,
                         code: "HSZ",
                         #[cfg(feature = "geo")]
@@ -307,7 +308,7 @@ pub mod subdivisions {
                 (
                     "HUA",
                     Subdivision{
-                        name: "HUA",
+                        name: "Hualien",
                         country_alpha2: Alpha2::TW,
                         code: "HUA",
                         #[cfg(feature = "geo")]
@@ -322,7 +323,7 @@ pub mod subdivisions {
                 (
                     "ILA",
                     Subdivision{
-                        name: "ILA",
+                        name: "Ilan",
                         country_alpha2: Alpha2::TW,
                         code: "ILA",
                         #[cfg(feature = "geo")]
@@ -337,7 +338,7 @@ pub mod subdivisions {
                 (
                     "KEE",
                     Subdivision{
-                        name: "KEE",
+                        name: "Keelung Municipality",
                         country_alpha2: Alpha2::TW,
                         code: "KEE",
                         #[cfg(feature = "geo")]
@@ -352,7 +353,7 @@ pub mod subdivisions {
                 (
                     "KHH",
                     Subdivision{
-                        name: "KHH",
+                        name: "Kaohsiung Special Municipality",
                         country_alpha2: Alpha2::TW,
                         code: "KHH",
                         #[cfg(feature = "geo")]
@@ -367,7 +368,7 @@ pub mod subdivisions {
                 (
                     "KIN",
                     Subdivision{
-                        name: "KIN",
+                        name: "金門縣",
                         country_alpha2: Alpha2::TW,
                         code: "KIN",
                         #[cfg(feature = "geo")]
@@ -382,7 +383,7 @@ pub mod subdivisions {
                 (
                     "LIE",
                     Subdivision{
-                        name: "LIE",
+                        name: "連江縣",
                         country_alpha2: Alpha2::TW,
                         code: "LIE",
                         #[cfg(feature = "geo")]
@@ -397,7 +398,7 @@ pub mod subdivisions {
                 (
                     "MIA",
                     Subdivision{
-                        name: "MIA",
+                        name: "Miaoli",
                         country_alpha2: Alpha2::TW,
                         code: "MIA",
                         #[cfg(feature = "geo")]
@@ -412,7 +413,7 @@ pub mod subdivisions {
                 (
                     "NAN",
                     Subdivision{
-                        name: "NAN",
+                        name: "Nantou",
                         country_alpha2: Alpha2::TW,
                         code: "NAN",
                         #[cfg(feature = "geo")]
@@ -427,7 +428,7 @@ pub mod subdivisions {
                 (
                     "NWT",
                     Subdivision{
-                        name: "NWT",
+                        name: "New Taipei",
                         country_alpha2: Alpha2::TW,
                         code: "NWT",
                         #[cfg(feature = "geo")]
@@ -442,7 +443,7 @@ pub mod subdivisions {
                 (
                     "PEN",
                     Subdivision{
-                        name: "PEN",
+                        name: "Penghu",
                         country_alpha2: Alpha2::TW,
                         code: "PEN",
                         #[cfg(feature = "geo")]
@@ -457,7 +458,7 @@ pub mod subdivisions {
                 (
                     "PIF",
                     Subdivision{
-                        name: "PIF",
+                        name: "Pingtung",
                         country_alpha2: Alpha2::TW,
                         code: "PIF",
                         #[cfg(feature = "geo")]
@@ -472,7 +473,7 @@ pub mod subdivisions {
                 (
                     "TAO",
                     Subdivision{
-                        name: "TAO",
+                        name: "Taoyuan",
                         country_alpha2: Alpha2::TW,
                         code: "TAO",
                         #[cfg(feature = "geo")]
@@ -487,7 +488,7 @@ pub mod subdivisions {
                 (
                     "TNN",
                     Subdivision{
-                        name: "TNN",
+                        name: "Tainan Municipality",
                         country_alpha2: Alpha2::TW,
                         code: "TNN",
                         #[cfg(feature = "geo")]
@@ -502,7 +503,7 @@ pub mod subdivisions {
                 (
                     "TPE",
                     Subdivision{
-                        name: "TPE",
+                        name: "Taipei Special Municipality",
                         country_alpha2: Alpha2::TW,
                         code: "TPE",
                         #[cfg(feature = "geo")]
@@ -517,7 +518,7 @@ pub mod subdivisions {
                 (
                     "TTT",
                     Subdivision{
-                        name: "TTT",
+                        name: "Taitung",
                         country_alpha2: Alpha2::TW,
                         code: "TTT",
                         #[cfg(feature = "geo")]
@@ -532,7 +533,7 @@ pub mod subdivisions {
                 (
                     "TXG",
                     Subdivision{
-                        name: "TXG",
+                        name: "Taichung Municipality",
                         country_alpha2: Alpha2::TW,
                         code: "TXG",
                         #[cfg(feature = "geo")]
@@ -547,7 +548,7 @@ pub mod subdivisions {
                 (
                     "YUN",
                     Subdivision{
-                        name: "YUN",
+                        name: "Yunlin",
                         country_alpha2: Alpha2::TW,
                         code: "YUN",
                         #[cfg(feature = "geo")]

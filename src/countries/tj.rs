@@ -224,12 +224,13 @@ pub mod geo {
 
 #[cfg(all(feature = "tj", feature = "subdivisions"))]
 pub mod subdivisions {
-    use crate::Subdivision;
+    #[allow(unused_imports)]
+    use crate::{Alpha2, Subdivision, SubdivisionType};
     use std::collections::HashMap;
     // In this state, We do not know if subdivisions have geo or not!
     #[cfg(feature = "geo")]
     #[allow(unused_imports)]
-    use crate::{Alpha2, SubdivisionGeo, SubdivisionType};
+    use crate::SubdivisionGeo;
 
     pub fn new() -> HashMap<&'static str, Subdivision> {
         HashMap::from(
@@ -238,7 +239,7 @@ pub mod subdivisions {
                 (
                     "DU",
                     Subdivision{
-                        name: "DU",
+                        name: "Dushanbe",
                         country_alpha2: Alpha2::TJ,
                         code: "DU",
                         #[cfg(feature = "geo")]
@@ -253,7 +254,7 @@ pub mod subdivisions {
                 (
                     "GB",
                     Subdivision{
-                        name: "GB",
+                        name: "Gorno-Badakhshan",
                         country_alpha2: Alpha2::TJ,
                         code: "GB",
                         #[cfg(feature = "geo")]
@@ -268,7 +269,7 @@ pub mod subdivisions {
                 (
                     "KT",
                     Subdivision{
-                        name: "KT",
+                        name: "Khatlon",
                         country_alpha2: Alpha2::TJ,
                         code: "KT",
                         #[cfg(feature = "geo")]
@@ -283,7 +284,7 @@ pub mod subdivisions {
                 (
                     "RA",
                     Subdivision{
-                        name: "RA",
+                        name: "Nohiyahoi Tobei Jumhurí",
                         country_alpha2: Alpha2::TJ,
                         code: "RA",
                         #[cfg(feature = "geo")]
@@ -298,7 +299,7 @@ pub mod subdivisions {
                 (
                     "SU",
                     Subdivision{
-                        name: "SU",
+                        name: "Sughd",
                         country_alpha2: Alpha2::TJ,
                         code: "SU",
                         #[cfg(feature = "geo")]

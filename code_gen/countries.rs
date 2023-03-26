@@ -301,16 +301,17 @@ pub fn generate_country(destination_file: &PathBuf, info: &CountryInfo) -> Resul
     )?;
     file.write_all(b"pub mod subdivisions {\n")?;
     file.write_all(b"    use std::collections::HashMap;\n")?;
-    file.write_all(b"    use crate::Subdivision;\n")?;
+    file.write_all(b"    #[allow(unused_imports)]\n")?;
+    file.write_all(b"    use crate::{Subdivision, Alpha2, SubdivisionType};\n")?;
     file.write_all(b"    // In this state, We do not know if subdivisions have geo or not!\n")?;
     file.write_all(b"    #[cfg(feature = \"geo\")]\n")?;
     file.write_all(b"    #[allow(unused_imports)]\n")?;
-    file.write_all(b"    use crate::{Alpha2, SubdivisionGeo, SubdivisionType};\n\n")?;
+    file.write_all(b"    use crate::SubdivisionGeo;\n\n")?;
     file.write_all(b"    pub fn new() -> HashMap<&'static str, Subdivision> {\n")?;
     file.write_all(b"        HashMap::from(\n")?;
     file.write_all(b"            [\n")?;
     if !info.subdivisions.is_empty() {
-        for (key, value) in info.subdivisions.iter() {
+        for (_, value) in info.subdivisions.iter() {
             file.write_all(
                 format!(r#"
                 (
@@ -329,7 +330,7 @@ pub fn generate_country(destination_file: &PathBuf, info: &CountryInfo) -> Resul
                     }}
                 ),"#,
                         value.code,
-                        key,
+                        value.name,
                         info.alpha2_upper,
                         value.code,
                         if let Some(ref geo) = value.geo {

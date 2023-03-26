@@ -219,12 +219,13 @@ pub mod geo {
 
 #[cfg(all(feature = "gr", feature = "subdivisions"))]
 pub mod subdivisions {
-    use crate::Subdivision;
+    #[allow(unused_imports)]
+    use crate::{Alpha2, Subdivision, SubdivisionType};
     use std::collections::HashMap;
     // In this state, We do not know if subdivisions have geo or not!
     #[cfg(feature = "geo")]
     #[allow(unused_imports)]
-    use crate::{Alpha2, SubdivisionGeo, SubdivisionType};
+    use crate::SubdivisionGeo;
 
     pub fn new() -> HashMap<&'static str, Subdivision> {
         HashMap::from(
@@ -233,7 +234,7 @@ pub mod subdivisions {
                 (
                     "69",
                     Subdivision{
-                        name: "69",
+                        name: "Ágion Óros",
                         country_alpha2: Alpha2::GR,
                         code: "69",
                         #[cfg(feature = "geo")]
@@ -248,7 +249,7 @@ pub mod subdivisions {
                 (
                     "A",
                     Subdivision{
-                        name: "A",
+                        name: "Anatolikí Makedonía kai Thráki",
                         country_alpha2: Alpha2::GR,
                         code: "A",
                         #[cfg(feature = "geo")]
@@ -263,7 +264,7 @@ pub mod subdivisions {
                 (
                     "B",
                     Subdivision{
-                        name: "B",
+                        name: "Kentrikí Makedonía",
                         country_alpha2: Alpha2::GR,
                         code: "B",
                         #[cfg(feature = "geo")]
@@ -278,7 +279,7 @@ pub mod subdivisions {
                 (
                     "C",
                     Subdivision{
-                        name: "C",
+                        name: "Dytikí Makedonía",
                         country_alpha2: Alpha2::GR,
                         code: "C",
                         #[cfg(feature = "geo")]
@@ -293,7 +294,7 @@ pub mod subdivisions {
                 (
                     "D",
                     Subdivision{
-                        name: "D",
+                        name: "Ípeiros",
                         country_alpha2: Alpha2::GR,
                         code: "D",
                         #[cfg(feature = "geo")]
@@ -308,7 +309,7 @@ pub mod subdivisions {
                 (
                     "E",
                     Subdivision{
-                        name: "E",
+                        name: "Thessalía",
                         country_alpha2: Alpha2::GR,
                         code: "E",
                         #[cfg(feature = "geo")]
@@ -323,7 +324,7 @@ pub mod subdivisions {
                 (
                     "F",
                     Subdivision{
-                        name: "F",
+                        name: "Ionía Nísia",
                         country_alpha2: Alpha2::GR,
                         code: "F",
                         #[cfg(feature = "geo")]
@@ -338,7 +339,7 @@ pub mod subdivisions {
                 (
                     "G",
                     Subdivision{
-                        name: "G",
+                        name: "Dytikí Elláda",
                         country_alpha2: Alpha2::GR,
                         code: "G",
                         #[cfg(feature = "geo")]
@@ -353,7 +354,7 @@ pub mod subdivisions {
                 (
                     "H",
                     Subdivision{
-                        name: "H",
+                        name: "Stereá Elláda",
                         country_alpha2: Alpha2::GR,
                         code: "H",
                         #[cfg(feature = "geo")]
@@ -368,7 +369,7 @@ pub mod subdivisions {
                 (
                     "I",
                     Subdivision{
-                        name: "I",
+                        name: "Attikí",
                         country_alpha2: Alpha2::GR,
                         code: "I",
                         #[cfg(feature = "geo")]
@@ -383,7 +384,7 @@ pub mod subdivisions {
                 (
                     "J",
                     Subdivision{
-                        name: "J",
+                        name: "Pelopónnisos",
                         country_alpha2: Alpha2::GR,
                         code: "J",
                         #[cfg(feature = "geo")]
@@ -398,7 +399,7 @@ pub mod subdivisions {
                 (
                     "K",
                     Subdivision{
-                        name: "K",
+                        name: "Vóreio Aigaío",
                         country_alpha2: Alpha2::GR,
                         code: "K",
                         #[cfg(feature = "geo")]
@@ -413,7 +414,7 @@ pub mod subdivisions {
                 (
                     "L",
                     Subdivision{
-                        name: "L",
+                        name: "Nótio Aigaío",
                         country_alpha2: Alpha2::GR,
                         code: "L",
                         #[cfg(feature = "geo")]
@@ -428,7 +429,7 @@ pub mod subdivisions {
                 (
                     "M",
                     Subdivision{
-                        name: "M",
+                        name: "Kríti",
                         country_alpha2: Alpha2::GR,
                         code: "M",
                         #[cfg(feature = "geo")]

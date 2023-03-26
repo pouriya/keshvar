@@ -212,19 +212,20 @@ pub mod geo {
 
 #[cfg(all(feature = "my", feature = "subdivisions"))]
 pub mod subdivisions {
-    use crate::Subdivision;
+    #[allow(unused_imports)]
+    use crate::{Alpha2, Subdivision, SubdivisionType};
     use std::collections::HashMap;
     // In this state, We do not know if subdivisions have geo or not!
     #[cfg(feature = "geo")]
     #[allow(unused_imports)]
-    use crate::{Alpha2, SubdivisionGeo, SubdivisionType};
+    use crate::SubdivisionGeo;
 
     pub fn new() -> HashMap<&'static str, Subdivision> {
         HashMap::from([
             (
                 "01",
                 Subdivision {
-                    name: "01",
+                    name: "Johor",
                     country_alpha2: Alpha2::MY,
                     code: "01",
                     #[cfg(feature = "geo")]
@@ -300,7 +301,7 @@ pub mod subdivisions {
             (
                 "02",
                 Subdivision {
-                    name: "02",
+                    name: "Kedah",
                     country_alpha2: Alpha2::MY,
                     code: "02",
                     #[cfg(feature = "geo")]
@@ -373,7 +374,7 @@ pub mod subdivisions {
             (
                 "03",
                 Subdivision {
-                    name: "03",
+                    name: "Kelantan",
                     country_alpha2: Alpha2::MY,
                     code: "03",
                     #[cfg(feature = "geo")]
@@ -448,7 +449,7 @@ pub mod subdivisions {
             (
                 "04",
                 Subdivision {
-                    name: "04",
+                    name: "Melaka",
                     country_alpha2: Alpha2::MY,
                     code: "04",
                     #[cfg(feature = "geo")]
@@ -527,7 +528,7 @@ pub mod subdivisions {
             (
                 "05",
                 Subdivision {
-                    name: "05",
+                    name: "Negeri Sembilan",
                     country_alpha2: Alpha2::MY,
                     code: "05",
                     #[cfg(feature = "geo")]
@@ -602,7 +603,7 @@ pub mod subdivisions {
             (
                 "06",
                 Subdivision {
-                    name: "06",
+                    name: "Pahang",
                     country_alpha2: Alpha2::MY,
                     code: "06",
                     #[cfg(feature = "geo")]
@@ -676,7 +677,7 @@ pub mod subdivisions {
             (
                 "07",
                 Subdivision {
-                    name: "07",
+                    name: "Pulau Pinang",
                     country_alpha2: Alpha2::MY,
                     code: "07",
                     #[cfg(feature = "geo")]
@@ -752,7 +753,7 @@ pub mod subdivisions {
             (
                 "08",
                 Subdivision {
-                    name: "08",
+                    name: "Perak",
                     country_alpha2: Alpha2::MY,
                     code: "08",
                     #[cfg(feature = "geo")]
@@ -827,7 +828,7 @@ pub mod subdivisions {
             (
                 "09",
                 Subdivision {
-                    name: "09",
+                    name: "Perlis",
                     country_alpha2: Alpha2::MY,
                     code: "09",
                     #[cfg(feature = "geo")]
@@ -900,7 +901,7 @@ pub mod subdivisions {
             (
                 "10",
                 Subdivision {
-                    name: "10",
+                    name: "Selangor",
                     country_alpha2: Alpha2::MY,
                     code: "10",
                     #[cfg(feature = "geo")]
@@ -975,7 +976,7 @@ pub mod subdivisions {
             (
                 "11",
                 Subdivision {
-                    name: "11",
+                    name: "Terengganu",
                     country_alpha2: Alpha2::MY,
                     code: "11",
                     #[cfg(feature = "geo")]
@@ -1049,7 +1050,7 @@ pub mod subdivisions {
             (
                 "12",
                 Subdivision {
-                    name: "12",
+                    name: "Sabah",
                     country_alpha2: Alpha2::MY,
                     code: "12",
                     #[cfg(feature = "geo")]
@@ -1129,7 +1130,7 @@ pub mod subdivisions {
             (
                 "13",
                 Subdivision {
-                    name: "13",
+                    name: "Sarawak",
                     country_alpha2: Alpha2::MY,
                     code: "13",
                     #[cfg(feature = "geo")]
@@ -1212,7 +1213,7 @@ pub mod subdivisions {
             (
                 "14",
                 Subdivision {
-                    name: "14",
+                    name: "Wilayah Persekutuan Kuala Lumpur",
                     country_alpha2: Alpha2::MY,
                     code: "14",
                     #[cfg(feature = "geo")]
@@ -1330,7 +1331,7 @@ pub mod subdivisions {
             (
                 "15",
                 Subdivision {
-                    name: "15",
+                    name: "Wilayah Persekutuan Labuan",
                     country_alpha2: Alpha2::MY,
                     code: "15",
                     #[cfg(feature = "geo")]
@@ -1404,7 +1405,7 @@ pub mod subdivisions {
             (
                 "16",
                 Subdivision {
-                    name: "16",
+                    name: "Wilayah Persekutuan Putrajaya",
                     country_alpha2: Alpha2::MY,
                     code: "16",
                     #[cfg(feature = "geo")]

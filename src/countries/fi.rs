@@ -221,12 +221,13 @@ pub mod geo {
 
 #[cfg(all(feature = "fi", feature = "subdivisions"))]
 pub mod subdivisions {
-    use crate::Subdivision;
+    #[allow(unused_imports)]
+    use crate::{Alpha2, Subdivision, SubdivisionType};
     use std::collections::HashMap;
     // In this state, We do not know if subdivisions have geo or not!
     #[cfg(feature = "geo")]
     #[allow(unused_imports)]
-    use crate::{Alpha2, SubdivisionGeo, SubdivisionType};
+    use crate::SubdivisionGeo;
 
     pub fn new() -> HashMap<&'static str, Subdivision> {
         HashMap::from(
@@ -235,7 +236,7 @@ pub mod subdivisions {
                 (
                     "01",
                     Subdivision{
-                        name: "01",
+                        name: "Ahvenanmaan maakunta",
                         country_alpha2: Alpha2::FI,
                         code: "01",
                         #[cfg(feature = "geo")]
@@ -250,7 +251,7 @@ pub mod subdivisions {
                 (
                     "02",
                     Subdivision{
-                        name: "02",
+                        name: "Etelä-Karjala",
                         country_alpha2: Alpha2::FI,
                         code: "02",
                         #[cfg(feature = "geo")]
@@ -265,7 +266,7 @@ pub mod subdivisions {
                 (
                     "03",
                     Subdivision{
-                        name: "03",
+                        name: "Etelä-Pohjanmaa",
                         country_alpha2: Alpha2::FI,
                         code: "03",
                         #[cfg(feature = "geo")]
@@ -280,7 +281,7 @@ pub mod subdivisions {
                 (
                     "04",
                     Subdivision{
-                        name: "04",
+                        name: "Etelä-Savo",
                         country_alpha2: Alpha2::FI,
                         code: "04",
                         #[cfg(feature = "geo")]
@@ -295,7 +296,7 @@ pub mod subdivisions {
                 (
                     "05",
                     Subdivision{
-                        name: "05",
+                        name: "Kainuu",
                         country_alpha2: Alpha2::FI,
                         code: "05",
                         #[cfg(feature = "geo")]
@@ -310,7 +311,7 @@ pub mod subdivisions {
                 (
                     "06",
                     Subdivision{
-                        name: "06",
+                        name: "Kanta-Häme",
                         country_alpha2: Alpha2::FI,
                         code: "06",
                         #[cfg(feature = "geo")]
@@ -325,7 +326,7 @@ pub mod subdivisions {
                 (
                     "07",
                     Subdivision{
-                        name: "07",
+                        name: "Keski-Pohjanmaa",
                         country_alpha2: Alpha2::FI,
                         code: "07",
                         #[cfg(feature = "geo")]
@@ -340,7 +341,7 @@ pub mod subdivisions {
                 (
                     "08",
                     Subdivision{
-                        name: "08",
+                        name: "Keski-Suomi",
                         country_alpha2: Alpha2::FI,
                         code: "08",
                         #[cfg(feature = "geo")]
@@ -355,7 +356,7 @@ pub mod subdivisions {
                 (
                     "09",
                     Subdivision{
-                        name: "09",
+                        name: "Kymenlaakso",
                         country_alpha2: Alpha2::FI,
                         code: "09",
                         #[cfg(feature = "geo")]
@@ -370,7 +371,7 @@ pub mod subdivisions {
                 (
                     "10",
                     Subdivision{
-                        name: "10",
+                        name: "Lappi",
                         country_alpha2: Alpha2::FI,
                         code: "10",
                         #[cfg(feature = "geo")]
@@ -385,7 +386,7 @@ pub mod subdivisions {
                 (
                     "11",
                     Subdivision{
-                        name: "11",
+                        name: "Pirkanmaa",
                         country_alpha2: Alpha2::FI,
                         code: "11",
                         #[cfg(feature = "geo")]
@@ -400,7 +401,7 @@ pub mod subdivisions {
                 (
                     "12",
                     Subdivision{
-                        name: "12",
+                        name: "Pohjanmaa",
                         country_alpha2: Alpha2::FI,
                         code: "12",
                         #[cfg(feature = "geo")]
@@ -415,7 +416,7 @@ pub mod subdivisions {
                 (
                     "13",
                     Subdivision{
-                        name: "13",
+                        name: "Pohjois-Karjala",
                         country_alpha2: Alpha2::FI,
                         code: "13",
                         #[cfg(feature = "geo")]
@@ -430,7 +431,7 @@ pub mod subdivisions {
                 (
                     "14",
                     Subdivision{
-                        name: "14",
+                        name: "Pohjois-Pohjanmaa",
                         country_alpha2: Alpha2::FI,
                         code: "14",
                         #[cfg(feature = "geo")]
@@ -445,7 +446,7 @@ pub mod subdivisions {
                 (
                     "15",
                     Subdivision{
-                        name: "15",
+                        name: "Pohjois-Savo",
                         country_alpha2: Alpha2::FI,
                         code: "15",
                         #[cfg(feature = "geo")]
@@ -460,7 +461,7 @@ pub mod subdivisions {
                 (
                     "16",
                     Subdivision{
-                        name: "16",
+                        name: "Päijät-Häme",
                         country_alpha2: Alpha2::FI,
                         code: "16",
                         #[cfg(feature = "geo")]
@@ -475,7 +476,7 @@ pub mod subdivisions {
                 (
                     "17",
                     Subdivision{
-                        name: "17",
+                        name: "Satakunta",
                         country_alpha2: Alpha2::FI,
                         code: "17",
                         #[cfg(feature = "geo")]
@@ -490,7 +491,7 @@ pub mod subdivisions {
                 (
                     "18",
                     Subdivision{
-                        name: "18",
+                        name: "Uusimaa",
                         country_alpha2: Alpha2::FI,
                         code: "18",
                         #[cfg(feature = "geo")]
@@ -505,7 +506,7 @@ pub mod subdivisions {
                 (
                     "19",
                     Subdivision{
-                        name: "19",
+                        name: "Varsinais-Suomi",
                         country_alpha2: Alpha2::FI,
                         code: "19",
                         #[cfg(feature = "geo")]

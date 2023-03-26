@@ -222,12 +222,13 @@ pub mod geo {
 
 #[cfg(all(feature = "si", feature = "subdivisions"))]
 pub mod subdivisions {
-    use crate::Subdivision;
+    #[allow(unused_imports)]
+    use crate::{Alpha2, Subdivision, SubdivisionType};
     use std::collections::HashMap;
     // In this state, We do not know if subdivisions have geo or not!
     #[cfg(feature = "geo")]
     #[allow(unused_imports)]
-    use crate::{Alpha2, SubdivisionGeo, SubdivisionType};
+    use crate::SubdivisionGeo;
 
     pub fn new() -> HashMap<&'static str, Subdivision> {
         HashMap::from(
@@ -236,7 +237,7 @@ pub mod subdivisions {
                 (
                     "001",
                     Subdivision{
-                        name: "001",
+                        name: "Ajdovšcina",
                         country_alpha2: Alpha2::SI,
                         code: "001",
                         #[cfg(feature = "geo")]
@@ -251,7 +252,7 @@ pub mod subdivisions {
                 (
                     "002",
                     Subdivision{
-                        name: "002",
+                        name: "Beltinci",
                         country_alpha2: Alpha2::SI,
                         code: "002",
                         #[cfg(feature = "geo")]
@@ -266,7 +267,7 @@ pub mod subdivisions {
                 (
                     "003",
                     Subdivision{
-                        name: "003",
+                        name: "Bled",
                         country_alpha2: Alpha2::SI,
                         code: "003",
                         #[cfg(feature = "geo")]
@@ -281,7 +282,7 @@ pub mod subdivisions {
                 (
                     "004",
                     Subdivision{
-                        name: "004",
+                        name: "Bohinj",
                         country_alpha2: Alpha2::SI,
                         code: "004",
                         #[cfg(feature = "geo")]
@@ -296,7 +297,7 @@ pub mod subdivisions {
                 (
                     "005",
                     Subdivision{
-                        name: "005",
+                        name: "Borovnica",
                         country_alpha2: Alpha2::SI,
                         code: "005",
                         #[cfg(feature = "geo")]
@@ -311,7 +312,7 @@ pub mod subdivisions {
                 (
                     "006",
                     Subdivision{
-                        name: "006",
+                        name: "Bovec",
                         country_alpha2: Alpha2::SI,
                         code: "006",
                         #[cfg(feature = "geo")]
@@ -326,7 +327,7 @@ pub mod subdivisions {
                 (
                     "007",
                     Subdivision{
-                        name: "007",
+                        name: "Brda",
                         country_alpha2: Alpha2::SI,
                         code: "007",
                         #[cfg(feature = "geo")]
@@ -341,7 +342,7 @@ pub mod subdivisions {
                 (
                     "008",
                     Subdivision{
-                        name: "008",
+                        name: "Brezovica",
                         country_alpha2: Alpha2::SI,
                         code: "008",
                         #[cfg(feature = "geo")]
@@ -356,7 +357,7 @@ pub mod subdivisions {
                 (
                     "009",
                     Subdivision{
-                        name: "009",
+                        name: "Brežice",
                         country_alpha2: Alpha2::SI,
                         code: "009",
                         #[cfg(feature = "geo")]
@@ -371,7 +372,7 @@ pub mod subdivisions {
                 (
                     "010",
                     Subdivision{
-                        name: "010",
+                        name: "Tišina",
                         country_alpha2: Alpha2::SI,
                         code: "010",
                         #[cfg(feature = "geo")]
@@ -386,7 +387,7 @@ pub mod subdivisions {
                 (
                     "011",
                     Subdivision{
-                        name: "011",
+                        name: "Celje",
                         country_alpha2: Alpha2::SI,
                         code: "011",
                         #[cfg(feature = "geo")]
@@ -401,7 +402,7 @@ pub mod subdivisions {
                 (
                     "012",
                     Subdivision{
-                        name: "012",
+                        name: "Cerklje na Gorenjskem",
                         country_alpha2: Alpha2::SI,
                         code: "012",
                         #[cfg(feature = "geo")]
@@ -416,7 +417,7 @@ pub mod subdivisions {
                 (
                     "013",
                     Subdivision{
-                        name: "013",
+                        name: "Cerknica",
                         country_alpha2: Alpha2::SI,
                         code: "013",
                         #[cfg(feature = "geo")]
@@ -431,7 +432,7 @@ pub mod subdivisions {
                 (
                     "014",
                     Subdivision{
-                        name: "014",
+                        name: "Cerkno",
                         country_alpha2: Alpha2::SI,
                         code: "014",
                         #[cfg(feature = "geo")]
@@ -446,7 +447,7 @@ pub mod subdivisions {
                 (
                     "015",
                     Subdivision{
-                        name: "015",
+                        name: "Crenšovci",
                         country_alpha2: Alpha2::SI,
                         code: "015",
                         #[cfg(feature = "geo")]
@@ -461,7 +462,7 @@ pub mod subdivisions {
                 (
                     "016",
                     Subdivision{
-                        name: "016",
+                        name: "Crna na Koroškem",
                         country_alpha2: Alpha2::SI,
                         code: "016",
                         #[cfg(feature = "geo")]
@@ -476,7 +477,7 @@ pub mod subdivisions {
                 (
                     "017",
                     Subdivision{
-                        name: "017",
+                        name: "Crnomelj",
                         country_alpha2: Alpha2::SI,
                         code: "017",
                         #[cfg(feature = "geo")]
@@ -491,7 +492,7 @@ pub mod subdivisions {
                 (
                     "018",
                     Subdivision{
-                        name: "018",
+                        name: "Destrnik",
                         country_alpha2: Alpha2::SI,
                         code: "018",
                         #[cfg(feature = "geo")]
@@ -506,7 +507,7 @@ pub mod subdivisions {
                 (
                     "019",
                     Subdivision{
-                        name: "019",
+                        name: "Divaca",
                         country_alpha2: Alpha2::SI,
                         code: "019",
                         #[cfg(feature = "geo")]
@@ -521,7 +522,7 @@ pub mod subdivisions {
                 (
                     "020",
                     Subdivision{
-                        name: "020",
+                        name: "Dobrepolje",
                         country_alpha2: Alpha2::SI,
                         code: "020",
                         #[cfg(feature = "geo")]
@@ -536,7 +537,7 @@ pub mod subdivisions {
                 (
                     "021",
                     Subdivision{
-                        name: "021",
+                        name: "Dobrova-Polhov Gradec",
                         country_alpha2: Alpha2::SI,
                         code: "021",
                         #[cfg(feature = "geo")]
@@ -551,7 +552,7 @@ pub mod subdivisions {
                 (
                     "022",
                     Subdivision{
-                        name: "022",
+                        name: "Dol pri Ljubljani",
                         country_alpha2: Alpha2::SI,
                         code: "022",
                         #[cfg(feature = "geo")]
@@ -566,7 +567,7 @@ pub mod subdivisions {
                 (
                     "023",
                     Subdivision{
-                        name: "023",
+                        name: "Domžale",
                         country_alpha2: Alpha2::SI,
                         code: "023",
                         #[cfg(feature = "geo")]
@@ -581,7 +582,7 @@ pub mod subdivisions {
                 (
                     "024",
                     Subdivision{
-                        name: "024",
+                        name: "Dornava",
                         country_alpha2: Alpha2::SI,
                         code: "024",
                         #[cfg(feature = "geo")]
@@ -596,7 +597,7 @@ pub mod subdivisions {
                 (
                     "025",
                     Subdivision{
-                        name: "025",
+                        name: "Dravograd",
                         country_alpha2: Alpha2::SI,
                         code: "025",
                         #[cfg(feature = "geo")]
@@ -611,7 +612,7 @@ pub mod subdivisions {
                 (
                     "026",
                     Subdivision{
-                        name: "026",
+                        name: "Duplek",
                         country_alpha2: Alpha2::SI,
                         code: "026",
                         #[cfg(feature = "geo")]
@@ -626,7 +627,7 @@ pub mod subdivisions {
                 (
                     "027",
                     Subdivision{
-                        name: "027",
+                        name: "Gorenja vas-Poljane",
                         country_alpha2: Alpha2::SI,
                         code: "027",
                         #[cfg(feature = "geo")]
@@ -641,7 +642,7 @@ pub mod subdivisions {
                 (
                     "028",
                     Subdivision{
-                        name: "028",
+                        name: "Gorišnica",
                         country_alpha2: Alpha2::SI,
                         code: "028",
                         #[cfg(feature = "geo")]
@@ -656,7 +657,7 @@ pub mod subdivisions {
                 (
                     "029",
                     Subdivision{
-                        name: "029",
+                        name: "Gornja Radgona",
                         country_alpha2: Alpha2::SI,
                         code: "029",
                         #[cfg(feature = "geo")]
@@ -671,7 +672,7 @@ pub mod subdivisions {
                 (
                     "030",
                     Subdivision{
-                        name: "030",
+                        name: "Gornji Grad",
                         country_alpha2: Alpha2::SI,
                         code: "030",
                         #[cfg(feature = "geo")]
@@ -686,7 +687,7 @@ pub mod subdivisions {
                 (
                     "031",
                     Subdivision{
-                        name: "031",
+                        name: "Gornji Petrovci",
                         country_alpha2: Alpha2::SI,
                         code: "031",
                         #[cfg(feature = "geo")]
@@ -701,7 +702,7 @@ pub mod subdivisions {
                 (
                     "032",
                     Subdivision{
-                        name: "032",
+                        name: "Grosuplje",
                         country_alpha2: Alpha2::SI,
                         code: "032",
                         #[cfg(feature = "geo")]
@@ -716,7 +717,7 @@ pub mod subdivisions {
                 (
                     "033",
                     Subdivision{
-                        name: "033",
+                        name: "Šalovci",
                         country_alpha2: Alpha2::SI,
                         code: "033",
                         #[cfg(feature = "geo")]
@@ -731,7 +732,7 @@ pub mod subdivisions {
                 (
                     "034",
                     Subdivision{
-                        name: "034",
+                        name: "Hrastnik",
                         country_alpha2: Alpha2::SI,
                         code: "034",
                         #[cfg(feature = "geo")]
@@ -746,7 +747,7 @@ pub mod subdivisions {
                 (
                     "035",
                     Subdivision{
-                        name: "035",
+                        name: "Hrpelje-Kozina",
                         country_alpha2: Alpha2::SI,
                         code: "035",
                         #[cfg(feature = "geo")]
@@ -761,7 +762,7 @@ pub mod subdivisions {
                 (
                     "036",
                     Subdivision{
-                        name: "036",
+                        name: "Idrija",
                         country_alpha2: Alpha2::SI,
                         code: "036",
                         #[cfg(feature = "geo")]
@@ -776,7 +777,7 @@ pub mod subdivisions {
                 (
                     "037",
                     Subdivision{
-                        name: "037",
+                        name: "Ig",
                         country_alpha2: Alpha2::SI,
                         code: "037",
                         #[cfg(feature = "geo")]
@@ -791,7 +792,7 @@ pub mod subdivisions {
                 (
                     "038",
                     Subdivision{
-                        name: "038",
+                        name: "Ilirska Bistrica",
                         country_alpha2: Alpha2::SI,
                         code: "038",
                         #[cfg(feature = "geo")]
@@ -806,7 +807,7 @@ pub mod subdivisions {
                 (
                     "039",
                     Subdivision{
-                        name: "039",
+                        name: "Ivancna Gorica",
                         country_alpha2: Alpha2::SI,
                         code: "039",
                         #[cfg(feature = "geo")]
@@ -821,7 +822,7 @@ pub mod subdivisions {
                 (
                     "040",
                     Subdivision{
-                        name: "040",
+                        name: "Izola/Isola",
                         country_alpha2: Alpha2::SI,
                         code: "040",
                         #[cfg(feature = "geo")]
@@ -836,7 +837,7 @@ pub mod subdivisions {
                 (
                     "041",
                     Subdivision{
-                        name: "041",
+                        name: "Jesenice",
                         country_alpha2: Alpha2::SI,
                         code: "041",
                         #[cfg(feature = "geo")]
@@ -851,7 +852,7 @@ pub mod subdivisions {
                 (
                     "042",
                     Subdivision{
-                        name: "042",
+                        name: "Juršinci",
                         country_alpha2: Alpha2::SI,
                         code: "042",
                         #[cfg(feature = "geo")]
@@ -866,7 +867,7 @@ pub mod subdivisions {
                 (
                     "043",
                     Subdivision{
-                        name: "043",
+                        name: "Kamnik",
                         country_alpha2: Alpha2::SI,
                         code: "043",
                         #[cfg(feature = "geo")]
@@ -881,7 +882,7 @@ pub mod subdivisions {
                 (
                     "044",
                     Subdivision{
-                        name: "044",
+                        name: "Kanal",
                         country_alpha2: Alpha2::SI,
                         code: "044",
                         #[cfg(feature = "geo")]
@@ -896,7 +897,7 @@ pub mod subdivisions {
                 (
                     "045",
                     Subdivision{
-                        name: "045",
+                        name: "Kidricevo",
                         country_alpha2: Alpha2::SI,
                         code: "045",
                         #[cfg(feature = "geo")]
@@ -911,7 +912,7 @@ pub mod subdivisions {
                 (
                     "046",
                     Subdivision{
-                        name: "046",
+                        name: "Kobarid",
                         country_alpha2: Alpha2::SI,
                         code: "046",
                         #[cfg(feature = "geo")]
@@ -926,7 +927,7 @@ pub mod subdivisions {
                 (
                     "047",
                     Subdivision{
-                        name: "047",
+                        name: "Kobilje",
                         country_alpha2: Alpha2::SI,
                         code: "047",
                         #[cfg(feature = "geo")]
@@ -941,7 +942,7 @@ pub mod subdivisions {
                 (
                     "048",
                     Subdivision{
-                        name: "048",
+                        name: "Kocevje",
                         country_alpha2: Alpha2::SI,
                         code: "048",
                         #[cfg(feature = "geo")]
@@ -956,7 +957,7 @@ pub mod subdivisions {
                 (
                     "049",
                     Subdivision{
-                        name: "049",
+                        name: "Komen",
                         country_alpha2: Alpha2::SI,
                         code: "049",
                         #[cfg(feature = "geo")]
@@ -971,7 +972,7 @@ pub mod subdivisions {
                 (
                     "050",
                     Subdivision{
-                        name: "050",
+                        name: "Koper/Capodistria",
                         country_alpha2: Alpha2::SI,
                         code: "050",
                         #[cfg(feature = "geo")]
@@ -986,7 +987,7 @@ pub mod subdivisions {
                 (
                     "051",
                     Subdivision{
-                        name: "051",
+                        name: "Kozje",
                         country_alpha2: Alpha2::SI,
                         code: "051",
                         #[cfg(feature = "geo")]
@@ -1001,7 +1002,7 @@ pub mod subdivisions {
                 (
                     "052",
                     Subdivision{
-                        name: "052",
+                        name: "Kranj",
                         country_alpha2: Alpha2::SI,
                         code: "052",
                         #[cfg(feature = "geo")]
@@ -1016,7 +1017,7 @@ pub mod subdivisions {
                 (
                     "053",
                     Subdivision{
-                        name: "053",
+                        name: "Kranjska Gora",
                         country_alpha2: Alpha2::SI,
                         code: "053",
                         #[cfg(feature = "geo")]
@@ -1031,7 +1032,7 @@ pub mod subdivisions {
                 (
                     "054",
                     Subdivision{
-                        name: "054",
+                        name: "Krško",
                         country_alpha2: Alpha2::SI,
                         code: "054",
                         #[cfg(feature = "geo")]
@@ -1046,7 +1047,7 @@ pub mod subdivisions {
                 (
                     "055",
                     Subdivision{
-                        name: "055",
+                        name: "Kungota",
                         country_alpha2: Alpha2::SI,
                         code: "055",
                         #[cfg(feature = "geo")]
@@ -1061,7 +1062,7 @@ pub mod subdivisions {
                 (
                     "056",
                     Subdivision{
-                        name: "056",
+                        name: "Kuzma",
                         country_alpha2: Alpha2::SI,
                         code: "056",
                         #[cfg(feature = "geo")]
@@ -1076,7 +1077,7 @@ pub mod subdivisions {
                 (
                     "057",
                     Subdivision{
-                        name: "057",
+                        name: "Laško",
                         country_alpha2: Alpha2::SI,
                         code: "057",
                         #[cfg(feature = "geo")]
@@ -1091,7 +1092,7 @@ pub mod subdivisions {
                 (
                     "058",
                     Subdivision{
-                        name: "058",
+                        name: "Lenart",
                         country_alpha2: Alpha2::SI,
                         code: "058",
                         #[cfg(feature = "geo")]
@@ -1106,7 +1107,7 @@ pub mod subdivisions {
                 (
                     "059",
                     Subdivision{
-                        name: "059",
+                        name: "Lendava/Lendva",
                         country_alpha2: Alpha2::SI,
                         code: "059",
                         #[cfg(feature = "geo")]
@@ -1121,7 +1122,7 @@ pub mod subdivisions {
                 (
                     "060",
                     Subdivision{
-                        name: "060",
+                        name: "Litija",
                         country_alpha2: Alpha2::SI,
                         code: "060",
                         #[cfg(feature = "geo")]
@@ -1136,7 +1137,7 @@ pub mod subdivisions {
                 (
                     "061",
                     Subdivision{
-                        name: "061",
+                        name: "Ljubljana",
                         country_alpha2: Alpha2::SI,
                         code: "061",
                         #[cfg(feature = "geo")]
@@ -1151,7 +1152,7 @@ pub mod subdivisions {
                 (
                     "062",
                     Subdivision{
-                        name: "062",
+                        name: "Ljubno",
                         country_alpha2: Alpha2::SI,
                         code: "062",
                         #[cfg(feature = "geo")]
@@ -1166,7 +1167,7 @@ pub mod subdivisions {
                 (
                     "063",
                     Subdivision{
-                        name: "063",
+                        name: "Ljutomer",
                         country_alpha2: Alpha2::SI,
                         code: "063",
                         #[cfg(feature = "geo")]
@@ -1181,7 +1182,7 @@ pub mod subdivisions {
                 (
                     "064",
                     Subdivision{
-                        name: "064",
+                        name: "Logatec",
                         country_alpha2: Alpha2::SI,
                         code: "064",
                         #[cfg(feature = "geo")]
@@ -1196,7 +1197,7 @@ pub mod subdivisions {
                 (
                     "065",
                     Subdivision{
-                        name: "065",
+                        name: "Loška dolina",
                         country_alpha2: Alpha2::SI,
                         code: "065",
                         #[cfg(feature = "geo")]
@@ -1211,7 +1212,7 @@ pub mod subdivisions {
                 (
                     "066",
                     Subdivision{
-                        name: "066",
+                        name: "Loški Potok",
                         country_alpha2: Alpha2::SI,
                         code: "066",
                         #[cfg(feature = "geo")]
@@ -1226,7 +1227,7 @@ pub mod subdivisions {
                 (
                     "067",
                     Subdivision{
-                        name: "067",
+                        name: "Luce",
                         country_alpha2: Alpha2::SI,
                         code: "067",
                         #[cfg(feature = "geo")]
@@ -1241,7 +1242,7 @@ pub mod subdivisions {
                 (
                     "068",
                     Subdivision{
-                        name: "068",
+                        name: "Lukovica",
                         country_alpha2: Alpha2::SI,
                         code: "068",
                         #[cfg(feature = "geo")]
@@ -1256,7 +1257,7 @@ pub mod subdivisions {
                 (
                     "069",
                     Subdivision{
-                        name: "069",
+                        name: "Majšperk",
                         country_alpha2: Alpha2::SI,
                         code: "069",
                         #[cfg(feature = "geo")]
@@ -1271,7 +1272,7 @@ pub mod subdivisions {
                 (
                     "070",
                     Subdivision{
-                        name: "070",
+                        name: "Maribor",
                         country_alpha2: Alpha2::SI,
                         code: "070",
                         #[cfg(feature = "geo")]
@@ -1286,7 +1287,7 @@ pub mod subdivisions {
                 (
                     "071",
                     Subdivision{
-                        name: "071",
+                        name: "Medvode",
                         country_alpha2: Alpha2::SI,
                         code: "071",
                         #[cfg(feature = "geo")]
@@ -1301,7 +1302,7 @@ pub mod subdivisions {
                 (
                     "072",
                     Subdivision{
-                        name: "072",
+                        name: "Mengeš",
                         country_alpha2: Alpha2::SI,
                         code: "072",
                         #[cfg(feature = "geo")]
@@ -1316,7 +1317,7 @@ pub mod subdivisions {
                 (
                     "073",
                     Subdivision{
-                        name: "073",
+                        name: "Metlika",
                         country_alpha2: Alpha2::SI,
                         code: "073",
                         #[cfg(feature = "geo")]
@@ -1331,7 +1332,7 @@ pub mod subdivisions {
                 (
                     "074",
                     Subdivision{
-                        name: "074",
+                        name: "Mežica",
                         country_alpha2: Alpha2::SI,
                         code: "074",
                         #[cfg(feature = "geo")]
@@ -1346,7 +1347,7 @@ pub mod subdivisions {
                 (
                     "075",
                     Subdivision{
-                        name: "075",
+                        name: "Miren-Kostanjevica",
                         country_alpha2: Alpha2::SI,
                         code: "075",
                         #[cfg(feature = "geo")]
@@ -1361,7 +1362,7 @@ pub mod subdivisions {
                 (
                     "076",
                     Subdivision{
-                        name: "076",
+                        name: "Mislinja",
                         country_alpha2: Alpha2::SI,
                         code: "076",
                         #[cfg(feature = "geo")]
@@ -1376,7 +1377,7 @@ pub mod subdivisions {
                 (
                     "077",
                     Subdivision{
-                        name: "077",
+                        name: "Moravce",
                         country_alpha2: Alpha2::SI,
                         code: "077",
                         #[cfg(feature = "geo")]
@@ -1391,7 +1392,7 @@ pub mod subdivisions {
                 (
                     "078",
                     Subdivision{
-                        name: "078",
+                        name: "Moravske Toplice",
                         country_alpha2: Alpha2::SI,
                         code: "078",
                         #[cfg(feature = "geo")]
@@ -1406,7 +1407,7 @@ pub mod subdivisions {
                 (
                     "079",
                     Subdivision{
-                        name: "079",
+                        name: "Mozirje",
                         country_alpha2: Alpha2::SI,
                         code: "079",
                         #[cfg(feature = "geo")]
@@ -1421,7 +1422,7 @@ pub mod subdivisions {
                 (
                     "080",
                     Subdivision{
-                        name: "080",
+                        name: "Murska Sobota",
                         country_alpha2: Alpha2::SI,
                         code: "080",
                         #[cfg(feature = "geo")]
@@ -1436,7 +1437,7 @@ pub mod subdivisions {
                 (
                     "081",
                     Subdivision{
-                        name: "081",
+                        name: "Muta",
                         country_alpha2: Alpha2::SI,
                         code: "081",
                         #[cfg(feature = "geo")]
@@ -1451,7 +1452,7 @@ pub mod subdivisions {
                 (
                     "082",
                     Subdivision{
-                        name: "082",
+                        name: "Naklo",
                         country_alpha2: Alpha2::SI,
                         code: "082",
                         #[cfg(feature = "geo")]
@@ -1466,7 +1467,7 @@ pub mod subdivisions {
                 (
                     "083",
                     Subdivision{
-                        name: "083",
+                        name: "Nazarje",
                         country_alpha2: Alpha2::SI,
                         code: "083",
                         #[cfg(feature = "geo")]
@@ -1481,7 +1482,7 @@ pub mod subdivisions {
                 (
                     "084",
                     Subdivision{
-                        name: "084",
+                        name: "Nova Gorica",
                         country_alpha2: Alpha2::SI,
                         code: "084",
                         #[cfg(feature = "geo")]
@@ -1496,7 +1497,7 @@ pub mod subdivisions {
                 (
                     "085",
                     Subdivision{
-                        name: "085",
+                        name: "Novo mesto",
                         country_alpha2: Alpha2::SI,
                         code: "085",
                         #[cfg(feature = "geo")]
@@ -1511,7 +1512,7 @@ pub mod subdivisions {
                 (
                     "086",
                     Subdivision{
-                        name: "086",
+                        name: "Odranci",
                         country_alpha2: Alpha2::SI,
                         code: "086",
                         #[cfg(feature = "geo")]
@@ -1526,7 +1527,7 @@ pub mod subdivisions {
                 (
                     "087",
                     Subdivision{
-                        name: "087",
+                        name: "Ormož",
                         country_alpha2: Alpha2::SI,
                         code: "087",
                         #[cfg(feature = "geo")]
@@ -1541,7 +1542,7 @@ pub mod subdivisions {
                 (
                     "088",
                     Subdivision{
-                        name: "088",
+                        name: "Osilnica",
                         country_alpha2: Alpha2::SI,
                         code: "088",
                         #[cfg(feature = "geo")]
@@ -1556,7 +1557,7 @@ pub mod subdivisions {
                 (
                     "089",
                     Subdivision{
-                        name: "089",
+                        name: "Pesnica",
                         country_alpha2: Alpha2::SI,
                         code: "089",
                         #[cfg(feature = "geo")]
@@ -1571,7 +1572,7 @@ pub mod subdivisions {
                 (
                     "090",
                     Subdivision{
-                        name: "090",
+                        name: "Piran/Pirano",
                         country_alpha2: Alpha2::SI,
                         code: "090",
                         #[cfg(feature = "geo")]
@@ -1586,7 +1587,7 @@ pub mod subdivisions {
                 (
                     "091",
                     Subdivision{
-                        name: "091",
+                        name: "Pivka",
                         country_alpha2: Alpha2::SI,
                         code: "091",
                         #[cfg(feature = "geo")]
@@ -1601,7 +1602,7 @@ pub mod subdivisions {
                 (
                     "092",
                     Subdivision{
-                        name: "092",
+                        name: "Podcetrtek",
                         country_alpha2: Alpha2::SI,
                         code: "092",
                         #[cfg(feature = "geo")]
@@ -1616,7 +1617,7 @@ pub mod subdivisions {
                 (
                     "093",
                     Subdivision{
-                        name: "093",
+                        name: "Podvelka",
                         country_alpha2: Alpha2::SI,
                         code: "093",
                         #[cfg(feature = "geo")]
@@ -1631,7 +1632,7 @@ pub mod subdivisions {
                 (
                     "094",
                     Subdivision{
-                        name: "094",
+                        name: "Postojna",
                         country_alpha2: Alpha2::SI,
                         code: "094",
                         #[cfg(feature = "geo")]
@@ -1646,7 +1647,7 @@ pub mod subdivisions {
                 (
                     "095",
                     Subdivision{
-                        name: "095",
+                        name: "Preddvor",
                         country_alpha2: Alpha2::SI,
                         code: "095",
                         #[cfg(feature = "geo")]
@@ -1661,7 +1662,7 @@ pub mod subdivisions {
                 (
                     "096",
                     Subdivision{
-                        name: "096",
+                        name: "Ptuj",
                         country_alpha2: Alpha2::SI,
                         code: "096",
                         #[cfg(feature = "geo")]
@@ -1676,7 +1677,7 @@ pub mod subdivisions {
                 (
                     "097",
                     Subdivision{
-                        name: "097",
+                        name: "Puconci",
                         country_alpha2: Alpha2::SI,
                         code: "097",
                         #[cfg(feature = "geo")]
@@ -1691,7 +1692,7 @@ pub mod subdivisions {
                 (
                     "098",
                     Subdivision{
-                        name: "098",
+                        name: "Race-Fram",
                         country_alpha2: Alpha2::SI,
                         code: "098",
                         #[cfg(feature = "geo")]
@@ -1706,7 +1707,7 @@ pub mod subdivisions {
                 (
                     "099",
                     Subdivision{
-                        name: "099",
+                        name: "Radece",
                         country_alpha2: Alpha2::SI,
                         code: "099",
                         #[cfg(feature = "geo")]
@@ -1721,7 +1722,7 @@ pub mod subdivisions {
                 (
                     "100",
                     Subdivision{
-                        name: "100",
+                        name: "Radenci",
                         country_alpha2: Alpha2::SI,
                         code: "100",
                         #[cfg(feature = "geo")]
@@ -1736,7 +1737,7 @@ pub mod subdivisions {
                 (
                     "101",
                     Subdivision{
-                        name: "101",
+                        name: "Radlje ob Dravi",
                         country_alpha2: Alpha2::SI,
                         code: "101",
                         #[cfg(feature = "geo")]
@@ -1751,7 +1752,7 @@ pub mod subdivisions {
                 (
                     "102",
                     Subdivision{
-                        name: "102",
+                        name: "Radovljica",
                         country_alpha2: Alpha2::SI,
                         code: "102",
                         #[cfg(feature = "geo")]
@@ -1766,7 +1767,7 @@ pub mod subdivisions {
                 (
                     "103",
                     Subdivision{
-                        name: "103",
+                        name: "Ravne na Koroškem",
                         country_alpha2: Alpha2::SI,
                         code: "103",
                         #[cfg(feature = "geo")]
@@ -1781,7 +1782,7 @@ pub mod subdivisions {
                 (
                     "104",
                     Subdivision{
-                        name: "104",
+                        name: "Ribnica",
                         country_alpha2: Alpha2::SI,
                         code: "104",
                         #[cfg(feature = "geo")]
@@ -1796,7 +1797,7 @@ pub mod subdivisions {
                 (
                     "105",
                     Subdivision{
-                        name: "105",
+                        name: "Rogašovci",
                         country_alpha2: Alpha2::SI,
                         code: "105",
                         #[cfg(feature = "geo")]
@@ -1811,7 +1812,7 @@ pub mod subdivisions {
                 (
                     "106",
                     Subdivision{
-                        name: "106",
+                        name: "Rogaška Slatina",
                         country_alpha2: Alpha2::SI,
                         code: "106",
                         #[cfg(feature = "geo")]
@@ -1826,7 +1827,7 @@ pub mod subdivisions {
                 (
                     "107",
                     Subdivision{
-                        name: "107",
+                        name: "Rogatec",
                         country_alpha2: Alpha2::SI,
                         code: "107",
                         #[cfg(feature = "geo")]
@@ -1841,7 +1842,7 @@ pub mod subdivisions {
                 (
                     "108",
                     Subdivision{
-                        name: "108",
+                        name: "Ruše",
                         country_alpha2: Alpha2::SI,
                         code: "108",
                         #[cfg(feature = "geo")]
@@ -1856,7 +1857,7 @@ pub mod subdivisions {
                 (
                     "109",
                     Subdivision{
-                        name: "109",
+                        name: "Semic",
                         country_alpha2: Alpha2::SI,
                         code: "109",
                         #[cfg(feature = "geo")]
@@ -1871,7 +1872,7 @@ pub mod subdivisions {
                 (
                     "110",
                     Subdivision{
-                        name: "110",
+                        name: "Sevnica",
                         country_alpha2: Alpha2::SI,
                         code: "110",
                         #[cfg(feature = "geo")]
@@ -1886,7 +1887,7 @@ pub mod subdivisions {
                 (
                     "111",
                     Subdivision{
-                        name: "111",
+                        name: "Sežana",
                         country_alpha2: Alpha2::SI,
                         code: "111",
                         #[cfg(feature = "geo")]
@@ -1901,7 +1902,7 @@ pub mod subdivisions {
                 (
                     "112",
                     Subdivision{
-                        name: "112",
+                        name: "Slovenj Gradec",
                         country_alpha2: Alpha2::SI,
                         code: "112",
                         #[cfg(feature = "geo")]
@@ -1916,7 +1917,7 @@ pub mod subdivisions {
                 (
                     "113",
                     Subdivision{
-                        name: "113",
+                        name: "Slovenska Bistrica",
                         country_alpha2: Alpha2::SI,
                         code: "113",
                         #[cfg(feature = "geo")]
@@ -1931,7 +1932,7 @@ pub mod subdivisions {
                 (
                     "114",
                     Subdivision{
-                        name: "114",
+                        name: "Slovenske Konjice",
                         country_alpha2: Alpha2::SI,
                         code: "114",
                         #[cfg(feature = "geo")]
@@ -1946,7 +1947,7 @@ pub mod subdivisions {
                 (
                     "115",
                     Subdivision{
-                        name: "115",
+                        name: "Starše",
                         country_alpha2: Alpha2::SI,
                         code: "115",
                         #[cfg(feature = "geo")]
@@ -1961,7 +1962,7 @@ pub mod subdivisions {
                 (
                     "116",
                     Subdivision{
-                        name: "116",
+                        name: "Sveti Jurij",
                         country_alpha2: Alpha2::SI,
                         code: "116",
                         #[cfg(feature = "geo")]
@@ -1976,7 +1977,7 @@ pub mod subdivisions {
                 (
                     "117",
                     Subdivision{
-                        name: "117",
+                        name: "Šencur",
                         country_alpha2: Alpha2::SI,
                         code: "117",
                         #[cfg(feature = "geo")]
@@ -1991,7 +1992,7 @@ pub mod subdivisions {
                 (
                     "118",
                     Subdivision{
-                        name: "118",
+                        name: "Šentilj",
                         country_alpha2: Alpha2::SI,
                         code: "118",
                         #[cfg(feature = "geo")]
@@ -2006,7 +2007,7 @@ pub mod subdivisions {
                 (
                     "119",
                     Subdivision{
-                        name: "119",
+                        name: "Šentjernej",
                         country_alpha2: Alpha2::SI,
                         code: "119",
                         #[cfg(feature = "geo")]
@@ -2021,7 +2022,7 @@ pub mod subdivisions {
                 (
                     "120",
                     Subdivision{
-                        name: "120",
+                        name: "Šentjur pri Celju",
                         country_alpha2: Alpha2::SI,
                         code: "120",
                         #[cfg(feature = "geo")]
@@ -2036,7 +2037,7 @@ pub mod subdivisions {
                 (
                     "121",
                     Subdivision{
-                        name: "121",
+                        name: "Škocjan",
                         country_alpha2: Alpha2::SI,
                         code: "121",
                         #[cfg(feature = "geo")]
@@ -2051,7 +2052,7 @@ pub mod subdivisions {
                 (
                     "122",
                     Subdivision{
-                        name: "122",
+                        name: "Škofja Loka",
                         country_alpha2: Alpha2::SI,
                         code: "122",
                         #[cfg(feature = "geo")]
@@ -2066,7 +2067,7 @@ pub mod subdivisions {
                 (
                     "123",
                     Subdivision{
-                        name: "123",
+                        name: "Škofljica",
                         country_alpha2: Alpha2::SI,
                         code: "123",
                         #[cfg(feature = "geo")]
@@ -2081,7 +2082,7 @@ pub mod subdivisions {
                 (
                     "124",
                     Subdivision{
-                        name: "124",
+                        name: "Šmarje pri Jelšah",
                         country_alpha2: Alpha2::SI,
                         code: "124",
                         #[cfg(feature = "geo")]
@@ -2096,7 +2097,7 @@ pub mod subdivisions {
                 (
                     "125",
                     Subdivision{
-                        name: "125",
+                        name: "Šmartno ob Paki",
                         country_alpha2: Alpha2::SI,
                         code: "125",
                         #[cfg(feature = "geo")]
@@ -2111,7 +2112,7 @@ pub mod subdivisions {
                 (
                     "126",
                     Subdivision{
-                        name: "126",
+                        name: "Šoštanj",
                         country_alpha2: Alpha2::SI,
                         code: "126",
                         #[cfg(feature = "geo")]
@@ -2126,7 +2127,7 @@ pub mod subdivisions {
                 (
                     "127",
                     Subdivision{
-                        name: "127",
+                        name: "Štore",
                         country_alpha2: Alpha2::SI,
                         code: "127",
                         #[cfg(feature = "geo")]
@@ -2141,7 +2142,7 @@ pub mod subdivisions {
                 (
                     "128",
                     Subdivision{
-                        name: "128",
+                        name: "Tolmin",
                         country_alpha2: Alpha2::SI,
                         code: "128",
                         #[cfg(feature = "geo")]
@@ -2156,7 +2157,7 @@ pub mod subdivisions {
                 (
                     "129",
                     Subdivision{
-                        name: "129",
+                        name: "Trbovlje",
                         country_alpha2: Alpha2::SI,
                         code: "129",
                         #[cfg(feature = "geo")]
@@ -2171,7 +2172,7 @@ pub mod subdivisions {
                 (
                     "130",
                     Subdivision{
-                        name: "130",
+                        name: "Trebnje",
                         country_alpha2: Alpha2::SI,
                         code: "130",
                         #[cfg(feature = "geo")]
@@ -2186,7 +2187,7 @@ pub mod subdivisions {
                 (
                     "131",
                     Subdivision{
-                        name: "131",
+                        name: "Tržic",
                         country_alpha2: Alpha2::SI,
                         code: "131",
                         #[cfg(feature = "geo")]
@@ -2201,7 +2202,7 @@ pub mod subdivisions {
                 (
                     "132",
                     Subdivision{
-                        name: "132",
+                        name: "Turnišce",
                         country_alpha2: Alpha2::SI,
                         code: "132",
                         #[cfg(feature = "geo")]
@@ -2216,7 +2217,7 @@ pub mod subdivisions {
                 (
                     "133",
                     Subdivision{
-                        name: "133",
+                        name: "Velenje",
                         country_alpha2: Alpha2::SI,
                         code: "133",
                         #[cfg(feature = "geo")]
@@ -2231,7 +2232,7 @@ pub mod subdivisions {
                 (
                     "134",
                     Subdivision{
-                        name: "134",
+                        name: "Velike Lašce",
                         country_alpha2: Alpha2::SI,
                         code: "134",
                         #[cfg(feature = "geo")]
@@ -2246,7 +2247,7 @@ pub mod subdivisions {
                 (
                     "135",
                     Subdivision{
-                        name: "135",
+                        name: "Videm",
                         country_alpha2: Alpha2::SI,
                         code: "135",
                         #[cfg(feature = "geo")]
@@ -2261,7 +2262,7 @@ pub mod subdivisions {
                 (
                     "136",
                     Subdivision{
-                        name: "136",
+                        name: "Vipava",
                         country_alpha2: Alpha2::SI,
                         code: "136",
                         #[cfg(feature = "geo")]
@@ -2276,7 +2277,7 @@ pub mod subdivisions {
                 (
                     "137",
                     Subdivision{
-                        name: "137",
+                        name: "Vitanje",
                         country_alpha2: Alpha2::SI,
                         code: "137",
                         #[cfg(feature = "geo")]
@@ -2291,7 +2292,7 @@ pub mod subdivisions {
                 (
                     "138",
                     Subdivision{
-                        name: "138",
+                        name: "Vodice",
                         country_alpha2: Alpha2::SI,
                         code: "138",
                         #[cfg(feature = "geo")]
@@ -2306,7 +2307,7 @@ pub mod subdivisions {
                 (
                     "139",
                     Subdivision{
-                        name: "139",
+                        name: "Vojnik",
                         country_alpha2: Alpha2::SI,
                         code: "139",
                         #[cfg(feature = "geo")]
@@ -2321,7 +2322,7 @@ pub mod subdivisions {
                 (
                     "140",
                     Subdivision{
-                        name: "140",
+                        name: "Vrhnika",
                         country_alpha2: Alpha2::SI,
                         code: "140",
                         #[cfg(feature = "geo")]
@@ -2336,7 +2337,7 @@ pub mod subdivisions {
                 (
                     "141",
                     Subdivision{
-                        name: "141",
+                        name: "Vuzenica",
                         country_alpha2: Alpha2::SI,
                         code: "141",
                         #[cfg(feature = "geo")]
@@ -2351,7 +2352,7 @@ pub mod subdivisions {
                 (
                     "142",
                     Subdivision{
-                        name: "142",
+                        name: "Zagorje ob Savi",
                         country_alpha2: Alpha2::SI,
                         code: "142",
                         #[cfg(feature = "geo")]
@@ -2366,7 +2367,7 @@ pub mod subdivisions {
                 (
                     "143",
                     Subdivision{
-                        name: "143",
+                        name: "Zavrc",
                         country_alpha2: Alpha2::SI,
                         code: "143",
                         #[cfg(feature = "geo")]
@@ -2381,7 +2382,7 @@ pub mod subdivisions {
                 (
                     "144",
                     Subdivision{
-                        name: "144",
+                        name: "Zrece",
                         country_alpha2: Alpha2::SI,
                         code: "144",
                         #[cfg(feature = "geo")]
@@ -2396,7 +2397,7 @@ pub mod subdivisions {
                 (
                     "146",
                     Subdivision{
-                        name: "146",
+                        name: "Železniki",
                         country_alpha2: Alpha2::SI,
                         code: "146",
                         #[cfg(feature = "geo")]
@@ -2411,7 +2412,7 @@ pub mod subdivisions {
                 (
                     "147",
                     Subdivision{
-                        name: "147",
+                        name: "Žiri",
                         country_alpha2: Alpha2::SI,
                         code: "147",
                         #[cfg(feature = "geo")]
@@ -2426,7 +2427,7 @@ pub mod subdivisions {
                 (
                     "148",
                     Subdivision{
-                        name: "148",
+                        name: "Benedikt",
                         country_alpha2: Alpha2::SI,
                         code: "148",
                         #[cfg(feature = "geo")]
@@ -2441,7 +2442,7 @@ pub mod subdivisions {
                 (
                     "149",
                     Subdivision{
-                        name: "149",
+                        name: "Bistrica ob Sotli",
                         country_alpha2: Alpha2::SI,
                         code: "149",
                         #[cfg(feature = "geo")]
@@ -2456,7 +2457,7 @@ pub mod subdivisions {
                 (
                     "150",
                     Subdivision{
-                        name: "150",
+                        name: "Bloke",
                         country_alpha2: Alpha2::SI,
                         code: "150",
                         #[cfg(feature = "geo")]
@@ -2471,7 +2472,7 @@ pub mod subdivisions {
                 (
                     "151",
                     Subdivision{
-                        name: "151",
+                        name: "Braslovce",
                         country_alpha2: Alpha2::SI,
                         code: "151",
                         #[cfg(feature = "geo")]
@@ -2486,7 +2487,7 @@ pub mod subdivisions {
                 (
                     "152",
                     Subdivision{
-                        name: "152",
+                        name: "Cankova",
                         country_alpha2: Alpha2::SI,
                         code: "152",
                         #[cfg(feature = "geo")]
@@ -2501,7 +2502,7 @@ pub mod subdivisions {
                 (
                     "153",
                     Subdivision{
-                        name: "153",
+                        name: "Cerkvenjak",
                         country_alpha2: Alpha2::SI,
                         code: "153",
                         #[cfg(feature = "geo")]
@@ -2516,7 +2517,7 @@ pub mod subdivisions {
                 (
                     "154",
                     Subdivision{
-                        name: "154",
+                        name: "Dobje",
                         country_alpha2: Alpha2::SI,
                         code: "154",
                         #[cfg(feature = "geo")]
@@ -2531,7 +2532,7 @@ pub mod subdivisions {
                 (
                     "155",
                     Subdivision{
-                        name: "155",
+                        name: "Dobrna",
                         country_alpha2: Alpha2::SI,
                         code: "155",
                         #[cfg(feature = "geo")]
@@ -2546,7 +2547,7 @@ pub mod subdivisions {
                 (
                     "156",
                     Subdivision{
-                        name: "156",
+                        name: "Dobrovnik/Dobronak",
                         country_alpha2: Alpha2::SI,
                         code: "156",
                         #[cfg(feature = "geo")]
@@ -2561,7 +2562,7 @@ pub mod subdivisions {
                 (
                     "157",
                     Subdivision{
-                        name: "157",
+                        name: "Dolenjske Toplice",
                         country_alpha2: Alpha2::SI,
                         code: "157",
                         #[cfg(feature = "geo")]
@@ -2576,7 +2577,7 @@ pub mod subdivisions {
                 (
                     "158",
                     Subdivision{
-                        name: "158",
+                        name: "Grad",
                         country_alpha2: Alpha2::SI,
                         code: "158",
                         #[cfg(feature = "geo")]
@@ -2591,7 +2592,7 @@ pub mod subdivisions {
                 (
                     "159",
                     Subdivision{
-                        name: "159",
+                        name: "Hajdina",
                         country_alpha2: Alpha2::SI,
                         code: "159",
                         #[cfg(feature = "geo")]
@@ -2606,7 +2607,7 @@ pub mod subdivisions {
                 (
                     "160",
                     Subdivision{
-                        name: "160",
+                        name: "Hoce-Slivnica",
                         country_alpha2: Alpha2::SI,
                         code: "160",
                         #[cfg(feature = "geo")]
@@ -2621,7 +2622,7 @@ pub mod subdivisions {
                 (
                     "161",
                     Subdivision{
-                        name: "161",
+                        name: "Hodoš/Hodos",
                         country_alpha2: Alpha2::SI,
                         code: "161",
                         #[cfg(feature = "geo")]
@@ -2636,7 +2637,7 @@ pub mod subdivisions {
                 (
                     "162",
                     Subdivision{
-                        name: "162",
+                        name: "Horjul",
                         country_alpha2: Alpha2::SI,
                         code: "162",
                         #[cfg(feature = "geo")]
@@ -2651,7 +2652,7 @@ pub mod subdivisions {
                 (
                     "163",
                     Subdivision{
-                        name: "163",
+                        name: "Jezersko",
                         country_alpha2: Alpha2::SI,
                         code: "163",
                         #[cfg(feature = "geo")]
@@ -2666,7 +2667,7 @@ pub mod subdivisions {
                 (
                     "164",
                     Subdivision{
-                        name: "164",
+                        name: "Komenda",
                         country_alpha2: Alpha2::SI,
                         code: "164",
                         #[cfg(feature = "geo")]
@@ -2681,7 +2682,7 @@ pub mod subdivisions {
                 (
                     "165",
                     Subdivision{
-                        name: "165",
+                        name: "Kostel",
                         country_alpha2: Alpha2::SI,
                         code: "165",
                         #[cfg(feature = "geo")]
@@ -2696,7 +2697,7 @@ pub mod subdivisions {
                 (
                     "166",
                     Subdivision{
-                        name: "166",
+                        name: "Križevci",
                         country_alpha2: Alpha2::SI,
                         code: "166",
                         #[cfg(feature = "geo")]
@@ -2711,7 +2712,7 @@ pub mod subdivisions {
                 (
                     "167",
                     Subdivision{
-                        name: "167",
+                        name: "Lovrenc na Pohorju",
                         country_alpha2: Alpha2::SI,
                         code: "167",
                         #[cfg(feature = "geo")]
@@ -2726,7 +2727,7 @@ pub mod subdivisions {
                 (
                     "168",
                     Subdivision{
-                        name: "168",
+                        name: "Markovci",
                         country_alpha2: Alpha2::SI,
                         code: "168",
                         #[cfg(feature = "geo")]
@@ -2741,7 +2742,7 @@ pub mod subdivisions {
                 (
                     "169",
                     Subdivision{
-                        name: "169",
+                        name: "Miklavž na Dravskem polju",
                         country_alpha2: Alpha2::SI,
                         code: "169",
                         #[cfg(feature = "geo")]
@@ -2756,7 +2757,7 @@ pub mod subdivisions {
                 (
                     "170",
                     Subdivision{
-                        name: "170",
+                        name: "Mirna Pec",
                         country_alpha2: Alpha2::SI,
                         code: "170",
                         #[cfg(feature = "geo")]
@@ -2771,7 +2772,7 @@ pub mod subdivisions {
                 (
                     "171",
                     Subdivision{
-                        name: "171",
+                        name: "Oplotnica",
                         country_alpha2: Alpha2::SI,
                         code: "171",
                         #[cfg(feature = "geo")]
@@ -2786,7 +2787,7 @@ pub mod subdivisions {
                 (
                     "172",
                     Subdivision{
-                        name: "172",
+                        name: "Podlehnik",
                         country_alpha2: Alpha2::SI,
                         code: "172",
                         #[cfg(feature = "geo")]
@@ -2801,7 +2802,7 @@ pub mod subdivisions {
                 (
                     "173",
                     Subdivision{
-                        name: "173",
+                        name: "Polzela",
                         country_alpha2: Alpha2::SI,
                         code: "173",
                         #[cfg(feature = "geo")]
@@ -2816,7 +2817,7 @@ pub mod subdivisions {
                 (
                     "174",
                     Subdivision{
-                        name: "174",
+                        name: "Prebold",
                         country_alpha2: Alpha2::SI,
                         code: "174",
                         #[cfg(feature = "geo")]
@@ -2831,7 +2832,7 @@ pub mod subdivisions {
                 (
                     "175",
                     Subdivision{
-                        name: "175",
+                        name: "Prevalje",
                         country_alpha2: Alpha2::SI,
                         code: "175",
                         #[cfg(feature = "geo")]
@@ -2846,7 +2847,7 @@ pub mod subdivisions {
                 (
                     "176",
                     Subdivision{
-                        name: "176",
+                        name: "Razkrižje",
                         country_alpha2: Alpha2::SI,
                         code: "176",
                         #[cfg(feature = "geo")]
@@ -2861,7 +2862,7 @@ pub mod subdivisions {
                 (
                     "177",
                     Subdivision{
-                        name: "177",
+                        name: "Ribnica na Pohorju",
                         country_alpha2: Alpha2::SI,
                         code: "177",
                         #[cfg(feature = "geo")]
@@ -2876,7 +2877,7 @@ pub mod subdivisions {
                 (
                     "178",
                     Subdivision{
-                        name: "178",
+                        name: "Selnica ob Dravi",
                         country_alpha2: Alpha2::SI,
                         code: "178",
                         #[cfg(feature = "geo")]
@@ -2891,7 +2892,7 @@ pub mod subdivisions {
                 (
                     "179",
                     Subdivision{
-                        name: "179",
+                        name: "Sodražica",
                         country_alpha2: Alpha2::SI,
                         code: "179",
                         #[cfg(feature = "geo")]
@@ -2906,7 +2907,7 @@ pub mod subdivisions {
                 (
                     "180",
                     Subdivision{
-                        name: "180",
+                        name: "Solcava",
                         country_alpha2: Alpha2::SI,
                         code: "180",
                         #[cfg(feature = "geo")]
@@ -2921,7 +2922,7 @@ pub mod subdivisions {
                 (
                     "181",
                     Subdivision{
-                        name: "181",
+                        name: "Sveta Ana",
                         country_alpha2: Alpha2::SI,
                         code: "181",
                         #[cfg(feature = "geo")]
@@ -2936,7 +2937,7 @@ pub mod subdivisions {
                 (
                     "182",
                     Subdivision{
-                        name: "182",
+                        name: "Sveti Andraž v Slovenskih goricah",
                         country_alpha2: Alpha2::SI,
                         code: "182",
                         #[cfg(feature = "geo")]
@@ -2951,7 +2952,7 @@ pub mod subdivisions {
                 (
                     "183",
                     Subdivision{
-                        name: "183",
+                        name: "Šempeter-Vrtojba",
                         country_alpha2: Alpha2::SI,
                         code: "183",
                         #[cfg(feature = "geo")]
@@ -2966,7 +2967,7 @@ pub mod subdivisions {
                 (
                     "184",
                     Subdivision{
-                        name: "184",
+                        name: "Tabor",
                         country_alpha2: Alpha2::SI,
                         code: "184",
                         #[cfg(feature = "geo")]
@@ -2981,7 +2982,7 @@ pub mod subdivisions {
                 (
                     "185",
                     Subdivision{
-                        name: "185",
+                        name: "Trnovska vas",
                         country_alpha2: Alpha2::SI,
                         code: "185",
                         #[cfg(feature = "geo")]
@@ -2996,7 +2997,7 @@ pub mod subdivisions {
                 (
                     "186",
                     Subdivision{
-                        name: "186",
+                        name: "Trzin",
                         country_alpha2: Alpha2::SI,
                         code: "186",
                         #[cfg(feature = "geo")]
@@ -3011,7 +3012,7 @@ pub mod subdivisions {
                 (
                     "187",
                     Subdivision{
-                        name: "187",
+                        name: "Velika Polana",
                         country_alpha2: Alpha2::SI,
                         code: "187",
                         #[cfg(feature = "geo")]
@@ -3026,7 +3027,7 @@ pub mod subdivisions {
                 (
                     "188",
                     Subdivision{
-                        name: "188",
+                        name: "Veržej",
                         country_alpha2: Alpha2::SI,
                         code: "188",
                         #[cfg(feature = "geo")]
@@ -3041,7 +3042,7 @@ pub mod subdivisions {
                 (
                     "189",
                     Subdivision{
-                        name: "189",
+                        name: "Vransko",
                         country_alpha2: Alpha2::SI,
                         code: "189",
                         #[cfg(feature = "geo")]
@@ -3056,7 +3057,7 @@ pub mod subdivisions {
                 (
                     "190",
                     Subdivision{
-                        name: "190",
+                        name: "Žalec",
                         country_alpha2: Alpha2::SI,
                         code: "190",
                         #[cfg(feature = "geo")]
@@ -3071,7 +3072,7 @@ pub mod subdivisions {
                 (
                     "191",
                     Subdivision{
-                        name: "191",
+                        name: "Žetale",
                         country_alpha2: Alpha2::SI,
                         code: "191",
                         #[cfg(feature = "geo")]
@@ -3086,7 +3087,7 @@ pub mod subdivisions {
                 (
                     "192",
                     Subdivision{
-                        name: "192",
+                        name: "Žirovnica",
                         country_alpha2: Alpha2::SI,
                         code: "192",
                         #[cfg(feature = "geo")]
@@ -3101,7 +3102,7 @@ pub mod subdivisions {
                 (
                     "193",
                     Subdivision{
-                        name: "193",
+                        name: "Žužemberk",
                         country_alpha2: Alpha2::SI,
                         code: "193",
                         #[cfg(feature = "geo")]
@@ -3116,7 +3117,7 @@ pub mod subdivisions {
                 (
                     "194",
                     Subdivision{
-                        name: "194",
+                        name: "Šmartno pri Litiji",
                         country_alpha2: Alpha2::SI,
                         code: "194",
                         #[cfg(feature = "geo")]
@@ -3131,7 +3132,7 @@ pub mod subdivisions {
                 (
                     "195",
                     Subdivision{
-                        name: "195",
+                        name: "Občina Apače",
                         country_alpha2: Alpha2::SI,
                         code: "195",
                         #[cfg(feature = "geo")]
@@ -3146,7 +3147,7 @@ pub mod subdivisions {
                 (
                     "196",
                     Subdivision{
-                        name: "196",
+                        name: "Občina Cirkulane",
                         country_alpha2: Alpha2::SI,
                         code: "196",
                         #[cfg(feature = "geo")]
@@ -3161,7 +3162,7 @@ pub mod subdivisions {
                 (
                     "197",
                     Subdivision{
-                        name: "197",
+                        name: "Občina Kostanjevica na Krki",
                         country_alpha2: Alpha2::SI,
                         code: "197",
                         #[cfg(feature = "geo")]
@@ -3176,7 +3177,7 @@ pub mod subdivisions {
                 (
                     "198",
                     Subdivision{
-                        name: "198",
+                        name: "Občina Makole",
                         country_alpha2: Alpha2::SI,
                         code: "198",
                         #[cfg(feature = "geo")]
@@ -3191,7 +3192,7 @@ pub mod subdivisions {
                 (
                     "199",
                     Subdivision{
-                        name: "199",
+                        name: "Občina Mokronog - Trebelno",
                         country_alpha2: Alpha2::SI,
                         code: "199",
                         #[cfg(feature = "geo")]
@@ -3206,7 +3207,7 @@ pub mod subdivisions {
                 (
                     "200",
                     Subdivision{
-                        name: "200",
+                        name: "Občina Poljčane",
                         country_alpha2: Alpha2::SI,
                         code: "200",
                         #[cfg(feature = "geo")]
@@ -3221,7 +3222,7 @@ pub mod subdivisions {
                 (
                     "201",
                     Subdivision{
-                        name: "201",
+                        name: "Občina Renče - Vogrsko",
                         country_alpha2: Alpha2::SI,
                         code: "201",
                         #[cfg(feature = "geo")]
@@ -3236,7 +3237,7 @@ pub mod subdivisions {
                 (
                     "202",
                     Subdivision{
-                        name: "202",
+                        name: "Občina Središče ob Dravi",
                         country_alpha2: Alpha2::SI,
                         code: "202",
                         #[cfg(feature = "geo")]
@@ -3251,7 +3252,7 @@ pub mod subdivisions {
                 (
                     "203",
                     Subdivision{
-                        name: "203",
+                        name: "Občina Straža",
                         country_alpha2: Alpha2::SI,
                         code: "203",
                         #[cfg(feature = "geo")]
@@ -3266,7 +3267,7 @@ pub mod subdivisions {
                 (
                     "204",
                     Subdivision{
-                        name: "204",
+                        name: "Občina Sveta Trojica v Slovenskih goricah",
                         country_alpha2: Alpha2::SI,
                         code: "204",
                         #[cfg(feature = "geo")]
@@ -3281,7 +3282,7 @@ pub mod subdivisions {
                 (
                     "205",
                     Subdivision{
-                        name: "205",
+                        name: "Občina Sveti Tomaž",
                         country_alpha2: Alpha2::SI,
                         code: "205",
                         #[cfg(feature = "geo")]
@@ -3296,7 +3297,7 @@ pub mod subdivisions {
                 (
                     "206",
                     Subdivision{
-                        name: "206",
+                        name: "Občina Šmarješke Toplice",
                         country_alpha2: Alpha2::SI,
                         code: "206",
                         #[cfg(feature = "geo")]
@@ -3311,7 +3312,7 @@ pub mod subdivisions {
                 (
                     "207",
                     Subdivision{
-                        name: "207",
+                        name: "Občina Gorje",
                         country_alpha2: Alpha2::SI,
                         code: "207",
                         #[cfg(feature = "geo")]
@@ -3326,7 +3327,7 @@ pub mod subdivisions {
                 (
                     "208",
                     Subdivision{
-                        name: "208",
+                        name: "Občina Log - Dragomer",
                         country_alpha2: Alpha2::SI,
                         code: "208",
                         #[cfg(feature = "geo")]
@@ -3341,7 +3342,7 @@ pub mod subdivisions {
                 (
                     "209",
                     Subdivision{
-                        name: "209",
+                        name: "Občina Rečica ob Savinji",
                         country_alpha2: Alpha2::SI,
                         code: "209",
                         #[cfg(feature = "geo")]
@@ -3356,7 +3357,7 @@ pub mod subdivisions {
                 (
                     "210",
                     Subdivision{
-                        name: "210",
+                        name: "Občina Sveti Jurij v Slovenskih goricah",
                         country_alpha2: Alpha2::SI,
                         code: "210",
                         #[cfg(feature = "geo")]
@@ -3371,7 +3372,7 @@ pub mod subdivisions {
                 (
                     "211",
                     Subdivision{
-                        name: "211",
+                        name: "Občina Šentrupert",
                         country_alpha2: Alpha2::SI,
                         code: "211",
                         #[cfg(feature = "geo")]
@@ -3386,7 +3387,7 @@ pub mod subdivisions {
                 (
                     "212",
                     Subdivision{
-                        name: "212",
+                        name: "Mirna",
                         country_alpha2: Alpha2::SI,
                         code: "212",
                         #[cfg(feature = "geo")]
@@ -3401,7 +3402,7 @@ pub mod subdivisions {
                 (
                     "213",
                     Subdivision{
-                        name: "213",
+                        name: "Občina Ankaran",
                         country_alpha2: Alpha2::SI,
                         code: "213",
                         #[cfg(feature = "geo")]

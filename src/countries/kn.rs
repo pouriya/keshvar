@@ -220,12 +220,13 @@ pub mod geo {
 
 #[cfg(all(feature = "kn", feature = "subdivisions"))]
 pub mod subdivisions {
-    use crate::Subdivision;
+    #[allow(unused_imports)]
+    use crate::{Alpha2, Subdivision, SubdivisionType};
     use std::collections::HashMap;
     // In this state, We do not know if subdivisions have geo or not!
     #[cfg(feature = "geo")]
     #[allow(unused_imports)]
-    use crate::{Alpha2, SubdivisionGeo, SubdivisionType};
+    use crate::SubdivisionGeo;
 
     pub fn new() -> HashMap<&'static str, Subdivision> {
         HashMap::from(
@@ -234,7 +235,7 @@ pub mod subdivisions {
                 (
                     "01",
                     Subdivision{
-                        name: "01",
+                        name: "Christ Church Nichola Town",
                         country_alpha2: Alpha2::KN,
                         code: "01",
                         #[cfg(feature = "geo")]
@@ -249,7 +250,7 @@ pub mod subdivisions {
                 (
                     "02",
                     Subdivision{
-                        name: "02",
+                        name: "Saint Anne Sandy Point",
                         country_alpha2: Alpha2::KN,
                         code: "02",
                         #[cfg(feature = "geo")]
@@ -264,7 +265,7 @@ pub mod subdivisions {
                 (
                     "03",
                     Subdivision{
-                        name: "03",
+                        name: "Saint George Basseterre",
                         country_alpha2: Alpha2::KN,
                         code: "03",
                         #[cfg(feature = "geo")]
@@ -279,7 +280,7 @@ pub mod subdivisions {
                 (
                     "04",
                     Subdivision{
-                        name: "04",
+                        name: "Saint George Gingerland",
                         country_alpha2: Alpha2::KN,
                         code: "04",
                         #[cfg(feature = "geo")]
@@ -294,7 +295,7 @@ pub mod subdivisions {
                 (
                     "05",
                     Subdivision{
-                        name: "05",
+                        name: "Saint James Windward",
                         country_alpha2: Alpha2::KN,
                         code: "05",
                         #[cfg(feature = "geo")]
@@ -309,7 +310,7 @@ pub mod subdivisions {
                 (
                     "06",
                     Subdivision{
-                        name: "06",
+                        name: "Saint John Capisterre",
                         country_alpha2: Alpha2::KN,
                         code: "06",
                         #[cfg(feature = "geo")]
@@ -324,7 +325,7 @@ pub mod subdivisions {
                 (
                     "07",
                     Subdivision{
-                        name: "07",
+                        name: "Saint John Figtree",
                         country_alpha2: Alpha2::KN,
                         code: "07",
                         #[cfg(feature = "geo")]
@@ -339,7 +340,7 @@ pub mod subdivisions {
                 (
                     "08",
                     Subdivision{
-                        name: "08",
+                        name: "Saint Mary Cayon",
                         country_alpha2: Alpha2::KN,
                         code: "08",
                         #[cfg(feature = "geo")]
@@ -354,7 +355,7 @@ pub mod subdivisions {
                 (
                     "09",
                     Subdivision{
-                        name: "09",
+                        name: "Saint Paul Capisterre",
                         country_alpha2: Alpha2::KN,
                         code: "09",
                         #[cfg(feature = "geo")]
@@ -369,7 +370,7 @@ pub mod subdivisions {
                 (
                     "10",
                     Subdivision{
-                        name: "10",
+                        name: "Saint Paul Charlestown",
                         country_alpha2: Alpha2::KN,
                         code: "10",
                         #[cfg(feature = "geo")]
@@ -384,7 +385,7 @@ pub mod subdivisions {
                 (
                     "11",
                     Subdivision{
-                        name: "11",
+                        name: "Saint Peter Basseterre",
                         country_alpha2: Alpha2::KN,
                         code: "11",
                         #[cfg(feature = "geo")]
@@ -399,7 +400,7 @@ pub mod subdivisions {
                 (
                     "12",
                     Subdivision{
-                        name: "12",
+                        name: "Saint Thomas Lowland",
                         country_alpha2: Alpha2::KN,
                         code: "12",
                         #[cfg(feature = "geo")]
@@ -414,7 +415,7 @@ pub mod subdivisions {
                 (
                     "13",
                     Subdivision{
-                        name: "13",
+                        name: "Saint Thomas Middle Island",
                         country_alpha2: Alpha2::KN,
                         code: "13",
                         #[cfg(feature = "geo")]
@@ -429,7 +430,7 @@ pub mod subdivisions {
                 (
                     "15",
                     Subdivision{
-                        name: "15",
+                        name: "Trinity Palmetto Point",
                         country_alpha2: Alpha2::KN,
                         code: "15",
                         #[cfg(feature = "geo")]
@@ -444,7 +445,7 @@ pub mod subdivisions {
                 (
                     "K",
                     Subdivision{
-                        name: "K",
+                        name: "Saint Kitts",
                         country_alpha2: Alpha2::KN,
                         code: "K",
                         #[cfg(feature = "geo")]
@@ -459,7 +460,7 @@ pub mod subdivisions {
                 (
                     "N",
                     Subdivision{
-                        name: "N",
+                        name: "Nevis",
                         country_alpha2: Alpha2::KN,
                         code: "N",
                         #[cfg(feature = "geo")]

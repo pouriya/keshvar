@@ -222,12 +222,13 @@ pub mod geo {
 
 #[cfg(all(feature = "tr", feature = "subdivisions"))]
 pub mod subdivisions {
-    use crate::Subdivision;
+    #[allow(unused_imports)]
+    use crate::{Alpha2, Subdivision, SubdivisionType};
     use std::collections::HashMap;
     // In this state, We do not know if subdivisions have geo or not!
     #[cfg(feature = "geo")]
     #[allow(unused_imports)]
-    use crate::{Alpha2, SubdivisionGeo, SubdivisionType};
+    use crate::SubdivisionGeo;
 
     pub fn new() -> HashMap<&'static str, Subdivision> {
         HashMap::from(
@@ -236,7 +237,7 @@ pub mod subdivisions {
                 (
                     "01",
                     Subdivision{
-                        name: "01",
+                        name: "Adana",
                         country_alpha2: Alpha2::TR,
                         code: "01",
                         #[cfg(feature = "geo")]
@@ -251,7 +252,7 @@ pub mod subdivisions {
                 (
                     "02",
                     Subdivision{
-                        name: "02",
+                        name: "Adıyaman",
                         country_alpha2: Alpha2::TR,
                         code: "02",
                         #[cfg(feature = "geo")]
@@ -266,7 +267,7 @@ pub mod subdivisions {
                 (
                     "03",
                     Subdivision{
-                        name: "03",
+                        name: "Afyon",
                         country_alpha2: Alpha2::TR,
                         code: "03",
                         #[cfg(feature = "geo")]
@@ -281,7 +282,7 @@ pub mod subdivisions {
                 (
                     "04",
                     Subdivision{
-                        name: "04",
+                        name: "Ağrı",
                         country_alpha2: Alpha2::TR,
                         code: "04",
                         #[cfg(feature = "geo")]
@@ -296,7 +297,7 @@ pub mod subdivisions {
                 (
                     "05",
                     Subdivision{
-                        name: "05",
+                        name: "Amasya",
                         country_alpha2: Alpha2::TR,
                         code: "05",
                         #[cfg(feature = "geo")]
@@ -311,7 +312,7 @@ pub mod subdivisions {
                 (
                     "06",
                     Subdivision{
-                        name: "06",
+                        name: "Ankara",
                         country_alpha2: Alpha2::TR,
                         code: "06",
                         #[cfg(feature = "geo")]
@@ -326,7 +327,7 @@ pub mod subdivisions {
                 (
                     "07",
                     Subdivision{
-                        name: "07",
+                        name: "Antalya",
                         country_alpha2: Alpha2::TR,
                         code: "07",
                         #[cfg(feature = "geo")]
@@ -341,7 +342,7 @@ pub mod subdivisions {
                 (
                     "08",
                     Subdivision{
-                        name: "08",
+                        name: "Artvin",
                         country_alpha2: Alpha2::TR,
                         code: "08",
                         #[cfg(feature = "geo")]
@@ -356,7 +357,7 @@ pub mod subdivisions {
                 (
                     "09",
                     Subdivision{
-                        name: "09",
+                        name: "Aydın",
                         country_alpha2: Alpha2::TR,
                         code: "09",
                         #[cfg(feature = "geo")]
@@ -371,7 +372,7 @@ pub mod subdivisions {
                 (
                     "10",
                     Subdivision{
-                        name: "10",
+                        name: "Balıkesir",
                         country_alpha2: Alpha2::TR,
                         code: "10",
                         #[cfg(feature = "geo")]
@@ -386,7 +387,7 @@ pub mod subdivisions {
                 (
                     "11",
                     Subdivision{
-                        name: "11",
+                        name: "Bilecik",
                         country_alpha2: Alpha2::TR,
                         code: "11",
                         #[cfg(feature = "geo")]
@@ -401,7 +402,7 @@ pub mod subdivisions {
                 (
                     "12",
                     Subdivision{
-                        name: "12",
+                        name: "Bingöl",
                         country_alpha2: Alpha2::TR,
                         code: "12",
                         #[cfg(feature = "geo")]
@@ -416,7 +417,7 @@ pub mod subdivisions {
                 (
                     "13",
                     Subdivision{
-                        name: "13",
+                        name: "Bitlis",
                         country_alpha2: Alpha2::TR,
                         code: "13",
                         #[cfg(feature = "geo")]
@@ -431,7 +432,7 @@ pub mod subdivisions {
                 (
                     "14",
                     Subdivision{
-                        name: "14",
+                        name: "Bolu",
                         country_alpha2: Alpha2::TR,
                         code: "14",
                         #[cfg(feature = "geo")]
@@ -446,7 +447,7 @@ pub mod subdivisions {
                 (
                     "15",
                     Subdivision{
-                        name: "15",
+                        name: "Burdur",
                         country_alpha2: Alpha2::TR,
                         code: "15",
                         #[cfg(feature = "geo")]
@@ -461,7 +462,7 @@ pub mod subdivisions {
                 (
                     "16",
                     Subdivision{
-                        name: "16",
+                        name: "Bursa",
                         country_alpha2: Alpha2::TR,
                         code: "16",
                         #[cfg(feature = "geo")]
@@ -476,7 +477,7 @@ pub mod subdivisions {
                 (
                     "17",
                     Subdivision{
-                        name: "17",
+                        name: "Çanakkale",
                         country_alpha2: Alpha2::TR,
                         code: "17",
                         #[cfg(feature = "geo")]
@@ -491,7 +492,7 @@ pub mod subdivisions {
                 (
                     "18",
                     Subdivision{
-                        name: "18",
+                        name: "Çankırı",
                         country_alpha2: Alpha2::TR,
                         code: "18",
                         #[cfg(feature = "geo")]
@@ -506,7 +507,7 @@ pub mod subdivisions {
                 (
                     "19",
                     Subdivision{
-                        name: "19",
+                        name: "Çorum",
                         country_alpha2: Alpha2::TR,
                         code: "19",
                         #[cfg(feature = "geo")]
@@ -521,7 +522,7 @@ pub mod subdivisions {
                 (
                     "20",
                     Subdivision{
-                        name: "20",
+                        name: "Denizli",
                         country_alpha2: Alpha2::TR,
                         code: "20",
                         #[cfg(feature = "geo")]
@@ -536,7 +537,7 @@ pub mod subdivisions {
                 (
                     "21",
                     Subdivision{
-                        name: "21",
+                        name: "Diyarbakır",
                         country_alpha2: Alpha2::TR,
                         code: "21",
                         #[cfg(feature = "geo")]
@@ -551,7 +552,7 @@ pub mod subdivisions {
                 (
                     "22",
                     Subdivision{
-                        name: "22",
+                        name: "Edirne",
                         country_alpha2: Alpha2::TR,
                         code: "22",
                         #[cfg(feature = "geo")]
@@ -566,7 +567,7 @@ pub mod subdivisions {
                 (
                     "23",
                     Subdivision{
-                        name: "23",
+                        name: "Elazığ",
                         country_alpha2: Alpha2::TR,
                         code: "23",
                         #[cfg(feature = "geo")]
@@ -581,7 +582,7 @@ pub mod subdivisions {
                 (
                     "24",
                     Subdivision{
-                        name: "24",
+                        name: "Erzincan",
                         country_alpha2: Alpha2::TR,
                         code: "24",
                         #[cfg(feature = "geo")]
@@ -596,7 +597,7 @@ pub mod subdivisions {
                 (
                     "25",
                     Subdivision{
-                        name: "25",
+                        name: "Erzurum",
                         country_alpha2: Alpha2::TR,
                         code: "25",
                         #[cfg(feature = "geo")]
@@ -611,7 +612,7 @@ pub mod subdivisions {
                 (
                     "26",
                     Subdivision{
-                        name: "26",
+                        name: "Eskişehir",
                         country_alpha2: Alpha2::TR,
                         code: "26",
                         #[cfg(feature = "geo")]
@@ -626,7 +627,7 @@ pub mod subdivisions {
                 (
                     "27",
                     Subdivision{
-                        name: "27",
+                        name: "Gaziantep",
                         country_alpha2: Alpha2::TR,
                         code: "27",
                         #[cfg(feature = "geo")]
@@ -641,7 +642,7 @@ pub mod subdivisions {
                 (
                     "28",
                     Subdivision{
-                        name: "28",
+                        name: "Giresun",
                         country_alpha2: Alpha2::TR,
                         code: "28",
                         #[cfg(feature = "geo")]
@@ -656,7 +657,7 @@ pub mod subdivisions {
                 (
                     "29",
                     Subdivision{
-                        name: "29",
+                        name: "Gümüşhane",
                         country_alpha2: Alpha2::TR,
                         code: "29",
                         #[cfg(feature = "geo")]
@@ -671,7 +672,7 @@ pub mod subdivisions {
                 (
                     "30",
                     Subdivision{
-                        name: "30",
+                        name: "Hakkâri",
                         country_alpha2: Alpha2::TR,
                         code: "30",
                         #[cfg(feature = "geo")]
@@ -686,7 +687,7 @@ pub mod subdivisions {
                 (
                     "31",
                     Subdivision{
-                        name: "31",
+                        name: "Hatay",
                         country_alpha2: Alpha2::TR,
                         code: "31",
                         #[cfg(feature = "geo")]
@@ -701,7 +702,7 @@ pub mod subdivisions {
                 (
                     "32",
                     Subdivision{
-                        name: "32",
+                        name: "Isparta",
                         country_alpha2: Alpha2::TR,
                         code: "32",
                         #[cfg(feature = "geo")]
@@ -716,7 +717,7 @@ pub mod subdivisions {
                 (
                     "33",
                     Subdivision{
-                        name: "33",
+                        name: "İçel",
                         country_alpha2: Alpha2::TR,
                         code: "33",
                         #[cfg(feature = "geo")]
@@ -731,7 +732,7 @@ pub mod subdivisions {
                 (
                     "34",
                     Subdivision{
-                        name: "34",
+                        name: "İstanbul",
                         country_alpha2: Alpha2::TR,
                         code: "34",
                         #[cfg(feature = "geo")]
@@ -746,7 +747,7 @@ pub mod subdivisions {
                 (
                     "35",
                     Subdivision{
-                        name: "35",
+                        name: "İzmir",
                         country_alpha2: Alpha2::TR,
                         code: "35",
                         #[cfg(feature = "geo")]
@@ -761,7 +762,7 @@ pub mod subdivisions {
                 (
                     "36",
                     Subdivision{
-                        name: "36",
+                        name: "Kars",
                         country_alpha2: Alpha2::TR,
                         code: "36",
                         #[cfg(feature = "geo")]
@@ -776,7 +777,7 @@ pub mod subdivisions {
                 (
                     "37",
                     Subdivision{
-                        name: "37",
+                        name: "Kastamonu",
                         country_alpha2: Alpha2::TR,
                         code: "37",
                         #[cfg(feature = "geo")]
@@ -791,7 +792,7 @@ pub mod subdivisions {
                 (
                     "38",
                     Subdivision{
-                        name: "38",
+                        name: "Kayseri",
                         country_alpha2: Alpha2::TR,
                         code: "38",
                         #[cfg(feature = "geo")]
@@ -806,7 +807,7 @@ pub mod subdivisions {
                 (
                     "39",
                     Subdivision{
-                        name: "39",
+                        name: "Kırklareli",
                         country_alpha2: Alpha2::TR,
                         code: "39",
                         #[cfg(feature = "geo")]
@@ -821,7 +822,7 @@ pub mod subdivisions {
                 (
                     "40",
                     Subdivision{
-                        name: "40",
+                        name: "Kırşehir",
                         country_alpha2: Alpha2::TR,
                         code: "40",
                         #[cfg(feature = "geo")]
@@ -836,7 +837,7 @@ pub mod subdivisions {
                 (
                     "41",
                     Subdivision{
-                        name: "41",
+                        name: "Kocaeli",
                         country_alpha2: Alpha2::TR,
                         code: "41",
                         #[cfg(feature = "geo")]
@@ -851,7 +852,7 @@ pub mod subdivisions {
                 (
                     "42",
                     Subdivision{
-                        name: "42",
+                        name: "Konya",
                         country_alpha2: Alpha2::TR,
                         code: "42",
                         #[cfg(feature = "geo")]
@@ -866,7 +867,7 @@ pub mod subdivisions {
                 (
                     "43",
                     Subdivision{
-                        name: "43",
+                        name: "Kütahya",
                         country_alpha2: Alpha2::TR,
                         code: "43",
                         #[cfg(feature = "geo")]
@@ -881,7 +882,7 @@ pub mod subdivisions {
                 (
                     "44",
                     Subdivision{
-                        name: "44",
+                        name: "Malatya",
                         country_alpha2: Alpha2::TR,
                         code: "44",
                         #[cfg(feature = "geo")]
@@ -896,7 +897,7 @@ pub mod subdivisions {
                 (
                     "45",
                     Subdivision{
-                        name: "45",
+                        name: "Manisa",
                         country_alpha2: Alpha2::TR,
                         code: "45",
                         #[cfg(feature = "geo")]
@@ -911,7 +912,7 @@ pub mod subdivisions {
                 (
                     "46",
                     Subdivision{
-                        name: "46",
+                        name: "Kahramanmaraş",
                         country_alpha2: Alpha2::TR,
                         code: "46",
                         #[cfg(feature = "geo")]
@@ -926,7 +927,7 @@ pub mod subdivisions {
                 (
                     "47",
                     Subdivision{
-                        name: "47",
+                        name: "Mardin",
                         country_alpha2: Alpha2::TR,
                         code: "47",
                         #[cfg(feature = "geo")]
@@ -941,7 +942,7 @@ pub mod subdivisions {
                 (
                     "48",
                     Subdivision{
-                        name: "48",
+                        name: "Muğla",
                         country_alpha2: Alpha2::TR,
                         code: "48",
                         #[cfg(feature = "geo")]
@@ -956,7 +957,7 @@ pub mod subdivisions {
                 (
                     "49",
                     Subdivision{
-                        name: "49",
+                        name: "Muş",
                         country_alpha2: Alpha2::TR,
                         code: "49",
                         #[cfg(feature = "geo")]
@@ -971,7 +972,7 @@ pub mod subdivisions {
                 (
                     "50",
                     Subdivision{
-                        name: "50",
+                        name: "Nevşehir",
                         country_alpha2: Alpha2::TR,
                         code: "50",
                         #[cfg(feature = "geo")]
@@ -986,7 +987,7 @@ pub mod subdivisions {
                 (
                     "51",
                     Subdivision{
-                        name: "51",
+                        name: "Niğde",
                         country_alpha2: Alpha2::TR,
                         code: "51",
                         #[cfg(feature = "geo")]
@@ -1001,7 +1002,7 @@ pub mod subdivisions {
                 (
                     "52",
                     Subdivision{
-                        name: "52",
+                        name: "Ordu",
                         country_alpha2: Alpha2::TR,
                         code: "52",
                         #[cfg(feature = "geo")]
@@ -1016,7 +1017,7 @@ pub mod subdivisions {
                 (
                     "53",
                     Subdivision{
-                        name: "53",
+                        name: "Rize",
                         country_alpha2: Alpha2::TR,
                         code: "53",
                         #[cfg(feature = "geo")]
@@ -1031,7 +1032,7 @@ pub mod subdivisions {
                 (
                     "54",
                     Subdivision{
-                        name: "54",
+                        name: "Sakarya",
                         country_alpha2: Alpha2::TR,
                         code: "54",
                         #[cfg(feature = "geo")]
@@ -1046,7 +1047,7 @@ pub mod subdivisions {
                 (
                     "55",
                     Subdivision{
-                        name: "55",
+                        name: "Samsun",
                         country_alpha2: Alpha2::TR,
                         code: "55",
                         #[cfg(feature = "geo")]
@@ -1061,7 +1062,7 @@ pub mod subdivisions {
                 (
                     "56",
                     Subdivision{
-                        name: "56",
+                        name: "Siirt",
                         country_alpha2: Alpha2::TR,
                         code: "56",
                         #[cfg(feature = "geo")]
@@ -1076,7 +1077,7 @@ pub mod subdivisions {
                 (
                     "57",
                     Subdivision{
-                        name: "57",
+                        name: "Sinop",
                         country_alpha2: Alpha2::TR,
                         code: "57",
                         #[cfg(feature = "geo")]
@@ -1091,7 +1092,7 @@ pub mod subdivisions {
                 (
                     "58",
                     Subdivision{
-                        name: "58",
+                        name: "Sivas",
                         country_alpha2: Alpha2::TR,
                         code: "58",
                         #[cfg(feature = "geo")]
@@ -1106,7 +1107,7 @@ pub mod subdivisions {
                 (
                     "59",
                     Subdivision{
-                        name: "59",
+                        name: "Tekirdağ",
                         country_alpha2: Alpha2::TR,
                         code: "59",
                         #[cfg(feature = "geo")]
@@ -1121,7 +1122,7 @@ pub mod subdivisions {
                 (
                     "60",
                     Subdivision{
-                        name: "60",
+                        name: "Tokat",
                         country_alpha2: Alpha2::TR,
                         code: "60",
                         #[cfg(feature = "geo")]
@@ -1136,7 +1137,7 @@ pub mod subdivisions {
                 (
                     "61",
                     Subdivision{
-                        name: "61",
+                        name: "Trabzon",
                         country_alpha2: Alpha2::TR,
                         code: "61",
                         #[cfg(feature = "geo")]
@@ -1151,7 +1152,7 @@ pub mod subdivisions {
                 (
                     "62",
                     Subdivision{
-                        name: "62",
+                        name: "Tunceli",
                         country_alpha2: Alpha2::TR,
                         code: "62",
                         #[cfg(feature = "geo")]
@@ -1166,7 +1167,7 @@ pub mod subdivisions {
                 (
                     "63",
                     Subdivision{
-                        name: "63",
+                        name: "Şanlıurfa",
                         country_alpha2: Alpha2::TR,
                         code: "63",
                         #[cfg(feature = "geo")]
@@ -1181,7 +1182,7 @@ pub mod subdivisions {
                 (
                     "64",
                     Subdivision{
-                        name: "64",
+                        name: "Uşak",
                         country_alpha2: Alpha2::TR,
                         code: "64",
                         #[cfg(feature = "geo")]
@@ -1196,7 +1197,7 @@ pub mod subdivisions {
                 (
                     "65",
                     Subdivision{
-                        name: "65",
+                        name: "Van",
                         country_alpha2: Alpha2::TR,
                         code: "65",
                         #[cfg(feature = "geo")]
@@ -1211,7 +1212,7 @@ pub mod subdivisions {
                 (
                     "66",
                     Subdivision{
-                        name: "66",
+                        name: "Yozgat",
                         country_alpha2: Alpha2::TR,
                         code: "66",
                         #[cfg(feature = "geo")]
@@ -1226,7 +1227,7 @@ pub mod subdivisions {
                 (
                     "67",
                     Subdivision{
-                        name: "67",
+                        name: "Zonguldak",
                         country_alpha2: Alpha2::TR,
                         code: "67",
                         #[cfg(feature = "geo")]
@@ -1241,7 +1242,7 @@ pub mod subdivisions {
                 (
                     "68",
                     Subdivision{
-                        name: "68",
+                        name: "Aksaray",
                         country_alpha2: Alpha2::TR,
                         code: "68",
                         #[cfg(feature = "geo")]
@@ -1256,7 +1257,7 @@ pub mod subdivisions {
                 (
                     "69",
                     Subdivision{
-                        name: "69",
+                        name: "Bayburt",
                         country_alpha2: Alpha2::TR,
                         code: "69",
                         #[cfg(feature = "geo")]
@@ -1271,7 +1272,7 @@ pub mod subdivisions {
                 (
                     "70",
                     Subdivision{
-                        name: "70",
+                        name: "Karaman",
                         country_alpha2: Alpha2::TR,
                         code: "70",
                         #[cfg(feature = "geo")]
@@ -1286,7 +1287,7 @@ pub mod subdivisions {
                 (
                     "71",
                     Subdivision{
-                        name: "71",
+                        name: "Kırıkkale",
                         country_alpha2: Alpha2::TR,
                         code: "71",
                         #[cfg(feature = "geo")]
@@ -1301,7 +1302,7 @@ pub mod subdivisions {
                 (
                     "72",
                     Subdivision{
-                        name: "72",
+                        name: "Batman",
                         country_alpha2: Alpha2::TR,
                         code: "72",
                         #[cfg(feature = "geo")]
@@ -1316,7 +1317,7 @@ pub mod subdivisions {
                 (
                     "73",
                     Subdivision{
-                        name: "73",
+                        name: "Şırnak",
                         country_alpha2: Alpha2::TR,
                         code: "73",
                         #[cfg(feature = "geo")]
@@ -1331,7 +1332,7 @@ pub mod subdivisions {
                 (
                     "74",
                     Subdivision{
-                        name: "74",
+                        name: "Bartın",
                         country_alpha2: Alpha2::TR,
                         code: "74",
                         #[cfg(feature = "geo")]
@@ -1346,7 +1347,7 @@ pub mod subdivisions {
                 (
                     "75",
                     Subdivision{
-                        name: "75",
+                        name: "Ardahan",
                         country_alpha2: Alpha2::TR,
                         code: "75",
                         #[cfg(feature = "geo")]
@@ -1361,7 +1362,7 @@ pub mod subdivisions {
                 (
                     "76",
                     Subdivision{
-                        name: "76",
+                        name: "Iğdır",
                         country_alpha2: Alpha2::TR,
                         code: "76",
                         #[cfg(feature = "geo")]
@@ -1376,7 +1377,7 @@ pub mod subdivisions {
                 (
                     "77",
                     Subdivision{
-                        name: "77",
+                        name: "Yalova",
                         country_alpha2: Alpha2::TR,
                         code: "77",
                         #[cfg(feature = "geo")]
@@ -1391,7 +1392,7 @@ pub mod subdivisions {
                 (
                     "78",
                     Subdivision{
-                        name: "78",
+                        name: "Karabük",
                         country_alpha2: Alpha2::TR,
                         code: "78",
                         #[cfg(feature = "geo")]
@@ -1406,7 +1407,7 @@ pub mod subdivisions {
                 (
                     "79",
                     Subdivision{
-                        name: "79",
+                        name: "Kilis",
                         country_alpha2: Alpha2::TR,
                         code: "79",
                         #[cfg(feature = "geo")]
@@ -1421,7 +1422,7 @@ pub mod subdivisions {
                 (
                     "80",
                     Subdivision{
-                        name: "80",
+                        name: "Osmaniye",
                         country_alpha2: Alpha2::TR,
                         code: "80",
                         #[cfg(feature = "geo")]
@@ -1436,7 +1437,7 @@ pub mod subdivisions {
                 (
                     "81",
                     Subdivision{
-                        name: "81",
+                        name: "Düzce",
                         country_alpha2: Alpha2::TR,
                         code: "81",
                         #[cfg(feature = "geo")]

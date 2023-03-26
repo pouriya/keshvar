@@ -214,19 +214,20 @@ pub mod geo {
 
 #[cfg(all(feature = "ws", feature = "subdivisions"))]
 pub mod subdivisions {
-    use crate::Subdivision;
+    #[allow(unused_imports)]
+    use crate::{Alpha2, Subdivision, SubdivisionType};
     use std::collections::HashMap;
     // In this state, We do not know if subdivisions have geo or not!
     #[cfg(feature = "geo")]
     #[allow(unused_imports)]
-    use crate::{Alpha2, SubdivisionGeo, SubdivisionType};
+    use crate::SubdivisionGeo;
 
     pub fn new() -> HashMap<&'static str, Subdivision> {
         HashMap::from([
             (
                 "AA",
                 Subdivision {
-                    name: "AA",
+                    name: "A'ana",
                     country_alpha2: Alpha2::WS,
                     code: "AA",
                     #[cfg(feature = "geo")]
@@ -292,7 +293,7 @@ pub mod subdivisions {
             (
                 "AL",
                 Subdivision {
-                    name: "AL",
+                    name: "Aiga-i-le-Tai",
                     country_alpha2: Alpha2::WS,
                     code: "AL",
                     #[cfg(feature = "geo")]
@@ -358,7 +359,7 @@ pub mod subdivisions {
             (
                 "AT",
                 Subdivision {
-                    name: "AT",
+                    name: "Atua",
                     country_alpha2: Alpha2::WS,
                     code: "AT",
                     #[cfg(feature = "geo")]
@@ -423,7 +424,7 @@ pub mod subdivisions {
             (
                 "FA",
                 Subdivision {
-                    name: "FA",
+                    name: "Fa'asaleleaga",
                     country_alpha2: Alpha2::WS,
                     code: "FA",
                     #[cfg(feature = "geo")]
@@ -488,7 +489,7 @@ pub mod subdivisions {
             (
                 "GE",
                 Subdivision {
-                    name: "GE",
+                    name: "Gaga'emauga",
                     country_alpha2: Alpha2::WS,
                     code: "GE",
                     #[cfg(feature = "geo")]
@@ -553,7 +554,7 @@ pub mod subdivisions {
             (
                 "GI",
                 Subdivision {
-                    name: "GI",
+                    name: "Gagaifomauga",
                     country_alpha2: Alpha2::WS,
                     code: "GI",
                     #[cfg(feature = "geo")]
@@ -619,7 +620,7 @@ pub mod subdivisions {
             (
                 "PA",
                 Subdivision {
-                    name: "PA",
+                    name: "Palauli",
                     country_alpha2: Alpha2::WS,
                     code: "PA",
                     #[cfg(feature = "geo")]
@@ -685,7 +686,7 @@ pub mod subdivisions {
             (
                 "SA",
                 Subdivision {
-                    name: "SA",
+                    name: "Satupa'itea",
                     country_alpha2: Alpha2::WS,
                     code: "SA",
                     #[cfg(feature = "geo")]
@@ -750,7 +751,7 @@ pub mod subdivisions {
             (
                 "TU",
                 Subdivision {
-                    name: "TU",
+                    name: "Tuamasaga",
                     country_alpha2: Alpha2::WS,
                     code: "TU",
                     #[cfg(feature = "geo")]
@@ -816,7 +817,7 @@ pub mod subdivisions {
             (
                 "VF",
                 Subdivision {
-                    name: "VF",
+                    name: "Va'a-o-Fonoti",
                     country_alpha2: Alpha2::WS,
                     code: "VF",
                     #[cfg(feature = "geo")]
@@ -879,7 +880,7 @@ pub mod subdivisions {
             (
                 "VS",
                 Subdivision {
-                    name: "VS",
+                    name: "Vaisigano",
                     country_alpha2: Alpha2::WS,
                     code: "VS",
                     #[cfg(feature = "geo")]

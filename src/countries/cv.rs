@@ -218,12 +218,13 @@ pub mod geo {
 
 #[cfg(all(feature = "cv", feature = "subdivisions"))]
 pub mod subdivisions {
-    use crate::Subdivision;
+    #[allow(unused_imports)]
+    use crate::{Alpha2, Subdivision, SubdivisionType};
     use std::collections::HashMap;
     // In this state, We do not know if subdivisions have geo or not!
     #[cfg(feature = "geo")]
     #[allow(unused_imports)]
-    use crate::{Alpha2, SubdivisionGeo, SubdivisionType};
+    use crate::SubdivisionGeo;
 
     pub fn new() -> HashMap<&'static str, Subdivision> {
         HashMap::from(
@@ -232,7 +233,7 @@ pub mod subdivisions {
                 (
                     "B",
                     Subdivision{
-                        name: "B",
+                        name: "Ilhas de Barlavento",
                         country_alpha2: Alpha2::CV,
                         code: "B",
                         #[cfg(feature = "geo")]
@@ -247,7 +248,7 @@ pub mod subdivisions {
                 (
                     "BR",
                     Subdivision{
-                        name: "BR",
+                        name: "Brava",
                         country_alpha2: Alpha2::CV,
                         code: "BR",
                         #[cfg(feature = "geo")]
@@ -262,7 +263,7 @@ pub mod subdivisions {
                 (
                     "BV",
                     Subdivision{
-                        name: "BV",
+                        name: "Boa Vista",
                         country_alpha2: Alpha2::CV,
                         code: "BV",
                         #[cfg(feature = "geo")]
@@ -277,7 +278,7 @@ pub mod subdivisions {
                 (
                     "CA",
                     Subdivision{
-                        name: "CA",
+                        name: "Santa Catarina",
                         country_alpha2: Alpha2::CV,
                         code: "CA",
                         #[cfg(feature = "geo")]
@@ -292,7 +293,7 @@ pub mod subdivisions {
                 (
                     "CF",
                     Subdivision{
-                        name: "CF",
+                        name: "Santa Catarina do Fogo",
                         country_alpha2: Alpha2::CV,
                         code: "CF",
                         #[cfg(feature = "geo")]
@@ -307,7 +308,7 @@ pub mod subdivisions {
                 (
                     "CR",
                     Subdivision{
-                        name: "CR",
+                        name: "Santa Cruz",
                         country_alpha2: Alpha2::CV,
                         code: "CR",
                         #[cfg(feature = "geo")]
@@ -322,7 +323,7 @@ pub mod subdivisions {
                 (
                     "CS",
                     Subdivision{
-                        name: "CS",
+                        name: "Calheta de São Miguel",
                         country_alpha2: Alpha2::CV,
                         code: "CS",
                         #[cfg(feature = "geo")]
@@ -337,7 +338,7 @@ pub mod subdivisions {
                 (
                     "MA",
                     Subdivision{
-                        name: "MA",
+                        name: "Maio",
                         country_alpha2: Alpha2::CV,
                         code: "MA",
                         #[cfg(feature = "geo")]
@@ -352,7 +353,7 @@ pub mod subdivisions {
                 (
                     "MO",
                     Subdivision{
-                        name: "MO",
+                        name: "Mosteiros",
                         country_alpha2: Alpha2::CV,
                         code: "MO",
                         #[cfg(feature = "geo")]
@@ -367,7 +368,7 @@ pub mod subdivisions {
                 (
                     "PA",
                     Subdivision{
-                        name: "PA",
+                        name: "Paúl",
                         country_alpha2: Alpha2::CV,
                         code: "PA",
                         #[cfg(feature = "geo")]
@@ -382,7 +383,7 @@ pub mod subdivisions {
                 (
                     "PN",
                     Subdivision{
-                        name: "PN",
+                        name: "Porto Novo",
                         country_alpha2: Alpha2::CV,
                         code: "PN",
                         #[cfg(feature = "geo")]
@@ -397,7 +398,7 @@ pub mod subdivisions {
                 (
                     "PR",
                     Subdivision{
-                        name: "PR",
+                        name: "Praia",
                         country_alpha2: Alpha2::CV,
                         code: "PR",
                         #[cfg(feature = "geo")]
@@ -412,7 +413,7 @@ pub mod subdivisions {
                 (
                     "RB",
                     Subdivision{
-                        name: "RB",
+                        name: "Ribeira Brava",
                         country_alpha2: Alpha2::CV,
                         code: "RB",
                         #[cfg(feature = "geo")]
@@ -427,7 +428,7 @@ pub mod subdivisions {
                 (
                     "RG",
                     Subdivision{
-                        name: "RG",
+                        name: "Ribeira Grande",
                         country_alpha2: Alpha2::CV,
                         code: "RG",
                         #[cfg(feature = "geo")]
@@ -442,7 +443,7 @@ pub mod subdivisions {
                 (
                     "RS",
                     Subdivision{
-                        name: "RS",
+                        name: "Ribeira Grande de Santiago",
                         country_alpha2: Alpha2::CV,
                         code: "RS",
                         #[cfg(feature = "geo")]
@@ -457,7 +458,7 @@ pub mod subdivisions {
                 (
                     "S",
                     Subdivision{
-                        name: "S",
+                        name: "Ilhas de Sotavento",
                         country_alpha2: Alpha2::CV,
                         code: "S",
                         #[cfg(feature = "geo")]
@@ -472,7 +473,7 @@ pub mod subdivisions {
                 (
                     "SD",
                     Subdivision{
-                        name: "SD",
+                        name: "São Domingos",
                         country_alpha2: Alpha2::CV,
                         code: "SD",
                         #[cfg(feature = "geo")]
@@ -487,7 +488,7 @@ pub mod subdivisions {
                 (
                     "SF",
                     Subdivision{
-                        name: "SF",
+                        name: "São Filipe",
                         country_alpha2: Alpha2::CV,
                         code: "SF",
                         #[cfg(feature = "geo")]
@@ -502,7 +503,7 @@ pub mod subdivisions {
                 (
                     "SL",
                     Subdivision{
-                        name: "SL",
+                        name: "Sal",
                         country_alpha2: Alpha2::CV,
                         code: "SL",
                         #[cfg(feature = "geo")]
@@ -517,7 +518,7 @@ pub mod subdivisions {
                 (
                     "SM",
                     Subdivision{
-                        name: "SM",
+                        name: "São Miguel",
                         country_alpha2: Alpha2::CV,
                         code: "SM",
                         #[cfg(feature = "geo")]
@@ -532,7 +533,7 @@ pub mod subdivisions {
                 (
                     "SN",
                     Subdivision{
-                        name: "SN",
+                        name: "São Nicolau",
                         country_alpha2: Alpha2::CV,
                         code: "SN",
                         #[cfg(feature = "geo")]
@@ -547,7 +548,7 @@ pub mod subdivisions {
                 (
                     "SO",
                     Subdivision{
-                        name: "SO",
+                        name: "São Lourenço dos Órgãos",
                         country_alpha2: Alpha2::CV,
                         code: "SO",
                         #[cfg(feature = "geo")]
@@ -562,7 +563,7 @@ pub mod subdivisions {
                 (
                     "SS",
                     Subdivision{
-                        name: "SS",
+                        name: "São Salvador do Mundo",
                         country_alpha2: Alpha2::CV,
                         code: "SS",
                         #[cfg(feature = "geo")]
@@ -577,7 +578,7 @@ pub mod subdivisions {
                 (
                     "SV",
                     Subdivision{
-                        name: "SV",
+                        name: "São Vicente",
                         country_alpha2: Alpha2::CV,
                         code: "SV",
                         #[cfg(feature = "geo")]
@@ -592,7 +593,7 @@ pub mod subdivisions {
                 (
                     "TA",
                     Subdivision{
-                        name: "TA",
+                        name: "Tarrafal",
                         country_alpha2: Alpha2::CV,
                         code: "TA",
                         #[cfg(feature = "geo")]
@@ -607,7 +608,7 @@ pub mod subdivisions {
                 (
                     "TS",
                     Subdivision{
-                        name: "TS",
+                        name: "Tarrafal de São Nicolau",
                         country_alpha2: Alpha2::CV,
                         code: "TS",
                         #[cfg(feature = "geo")]

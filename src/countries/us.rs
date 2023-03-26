@@ -236,12 +236,13 @@ pub mod geo {
 
 #[cfg(all(feature = "us", feature = "subdivisions"))]
 pub mod subdivisions {
-    use crate::Subdivision;
+    #[allow(unused_imports)]
+    use crate::{Alpha2, Subdivision, SubdivisionType};
     use std::collections::HashMap;
     // In this state, We do not know if subdivisions have geo or not!
     #[cfg(feature = "geo")]
     #[allow(unused_imports)]
-    use crate::{Alpha2, SubdivisionGeo, SubdivisionType};
+    use crate::SubdivisionGeo;
 
     pub fn new() -> HashMap<&'static str, Subdivision> {
         HashMap::from(
@@ -250,7 +251,7 @@ pub mod subdivisions {
                 (
                     "AK",
                     Subdivision{
-                        name: "AK",
+                        name: "Alaska",
                         country_alpha2: Alpha2::US,
                         code: "AK",
                         #[cfg(feature = "geo")]
@@ -265,7 +266,7 @@ pub mod subdivisions {
                 (
                     "AL",
                     Subdivision{
-                        name: "AL",
+                        name: "Alabama",
                         country_alpha2: Alpha2::US,
                         code: "AL",
                         #[cfg(feature = "geo")]
@@ -280,7 +281,7 @@ pub mod subdivisions {
                 (
                     "AR",
                     Subdivision{
-                        name: "AR",
+                        name: "Arkansas",
                         country_alpha2: Alpha2::US,
                         code: "AR",
                         #[cfg(feature = "geo")]
@@ -295,7 +296,7 @@ pub mod subdivisions {
                 (
                     "AS",
                     Subdivision{
-                        name: "AS",
+                        name: "American Samoa",
                         country_alpha2: Alpha2::US,
                         code: "AS",
                         #[cfg(feature = "geo")]
@@ -310,7 +311,7 @@ pub mod subdivisions {
                 (
                     "AZ",
                     Subdivision{
-                        name: "AZ",
+                        name: "Arizona",
                         country_alpha2: Alpha2::US,
                         code: "AZ",
                         #[cfg(feature = "geo")]
@@ -325,7 +326,7 @@ pub mod subdivisions {
                 (
                     "CA",
                     Subdivision{
-                        name: "CA",
+                        name: "California",
                         country_alpha2: Alpha2::US,
                         code: "CA",
                         #[cfg(feature = "geo")]
@@ -340,7 +341,7 @@ pub mod subdivisions {
                 (
                     "CO",
                     Subdivision{
-                        name: "CO",
+                        name: "Colorado",
                         country_alpha2: Alpha2::US,
                         code: "CO",
                         #[cfg(feature = "geo")]
@@ -355,7 +356,7 @@ pub mod subdivisions {
                 (
                     "CT",
                     Subdivision{
-                        name: "CT",
+                        name: "Connecticut",
                         country_alpha2: Alpha2::US,
                         code: "CT",
                         #[cfg(feature = "geo")]
@@ -370,7 +371,7 @@ pub mod subdivisions {
                 (
                     "DC",
                     Subdivision{
-                        name: "DC",
+                        name: "District of Columbia",
                         country_alpha2: Alpha2::US,
                         code: "DC",
                         #[cfg(feature = "geo")]
@@ -385,7 +386,7 @@ pub mod subdivisions {
                 (
                     "DE",
                     Subdivision{
-                        name: "DE",
+                        name: "Delaware",
                         country_alpha2: Alpha2::US,
                         code: "DE",
                         #[cfg(feature = "geo")]
@@ -400,7 +401,7 @@ pub mod subdivisions {
                 (
                     "FL",
                     Subdivision{
-                        name: "FL",
+                        name: "Florida",
                         country_alpha2: Alpha2::US,
                         code: "FL",
                         #[cfg(feature = "geo")]
@@ -415,7 +416,7 @@ pub mod subdivisions {
                 (
                     "GA",
                     Subdivision{
-                        name: "GA",
+                        name: "Georgia",
                         country_alpha2: Alpha2::US,
                         code: "GA",
                         #[cfg(feature = "geo")]
@@ -430,7 +431,7 @@ pub mod subdivisions {
                 (
                     "GU",
                     Subdivision{
-                        name: "GU",
+                        name: "Guam",
                         country_alpha2: Alpha2::US,
                         code: "GU",
                         #[cfg(feature = "geo")]
@@ -445,7 +446,7 @@ pub mod subdivisions {
                 (
                     "HI",
                     Subdivision{
-                        name: "HI",
+                        name: "Hawaii",
                         country_alpha2: Alpha2::US,
                         code: "HI",
                         #[cfg(feature = "geo")]
@@ -460,7 +461,7 @@ pub mod subdivisions {
                 (
                     "IA",
                     Subdivision{
-                        name: "IA",
+                        name: "Iowa",
                         country_alpha2: Alpha2::US,
                         code: "IA",
                         #[cfg(feature = "geo")]
@@ -475,7 +476,7 @@ pub mod subdivisions {
                 (
                     "ID",
                     Subdivision{
-                        name: "ID",
+                        name: "Idaho",
                         country_alpha2: Alpha2::US,
                         code: "ID",
                         #[cfg(feature = "geo")]
@@ -490,7 +491,7 @@ pub mod subdivisions {
                 (
                     "IL",
                     Subdivision{
-                        name: "IL",
+                        name: "Illinois",
                         country_alpha2: Alpha2::US,
                         code: "IL",
                         #[cfg(feature = "geo")]
@@ -505,7 +506,7 @@ pub mod subdivisions {
                 (
                     "IN",
                     Subdivision{
-                        name: "IN",
+                        name: "Indiana",
                         country_alpha2: Alpha2::US,
                         code: "IN",
                         #[cfg(feature = "geo")]
@@ -520,7 +521,7 @@ pub mod subdivisions {
                 (
                     "KS",
                     Subdivision{
-                        name: "KS",
+                        name: "Kansas",
                         country_alpha2: Alpha2::US,
                         code: "KS",
                         #[cfg(feature = "geo")]
@@ -535,7 +536,7 @@ pub mod subdivisions {
                 (
                     "KY",
                     Subdivision{
-                        name: "KY",
+                        name: "Kentucky",
                         country_alpha2: Alpha2::US,
                         code: "KY",
                         #[cfg(feature = "geo")]
@@ -550,7 +551,7 @@ pub mod subdivisions {
                 (
                     "LA",
                     Subdivision{
-                        name: "LA",
+                        name: "Louisiana",
                         country_alpha2: Alpha2::US,
                         code: "LA",
                         #[cfg(feature = "geo")]
@@ -565,7 +566,7 @@ pub mod subdivisions {
                 (
                     "MA",
                     Subdivision{
-                        name: "MA",
+                        name: "Massachusetts",
                         country_alpha2: Alpha2::US,
                         code: "MA",
                         #[cfg(feature = "geo")]
@@ -580,7 +581,7 @@ pub mod subdivisions {
                 (
                     "MD",
                     Subdivision{
-                        name: "MD",
+                        name: "Maryland",
                         country_alpha2: Alpha2::US,
                         code: "MD",
                         #[cfg(feature = "geo")]
@@ -595,7 +596,7 @@ pub mod subdivisions {
                 (
                     "ME",
                     Subdivision{
-                        name: "ME",
+                        name: "Maine",
                         country_alpha2: Alpha2::US,
                         code: "ME",
                         #[cfg(feature = "geo")]
@@ -610,7 +611,7 @@ pub mod subdivisions {
                 (
                     "MI",
                     Subdivision{
-                        name: "MI",
+                        name: "Michigan",
                         country_alpha2: Alpha2::US,
                         code: "MI",
                         #[cfg(feature = "geo")]
@@ -625,7 +626,7 @@ pub mod subdivisions {
                 (
                     "MN",
                     Subdivision{
-                        name: "MN",
+                        name: "Minnesota",
                         country_alpha2: Alpha2::US,
                         code: "MN",
                         #[cfg(feature = "geo")]
@@ -640,7 +641,7 @@ pub mod subdivisions {
                 (
                     "MO",
                     Subdivision{
-                        name: "MO",
+                        name: "Missouri",
                         country_alpha2: Alpha2::US,
                         code: "MO",
                         #[cfg(feature = "geo")]
@@ -655,7 +656,7 @@ pub mod subdivisions {
                 (
                     "MP",
                     Subdivision{
-                        name: "MP",
+                        name: "Northern Mariana Islands",
                         country_alpha2: Alpha2::US,
                         code: "MP",
                         #[cfg(feature = "geo")]
@@ -670,7 +671,7 @@ pub mod subdivisions {
                 (
                     "MS",
                     Subdivision{
-                        name: "MS",
+                        name: "Mississippi",
                         country_alpha2: Alpha2::US,
                         code: "MS",
                         #[cfg(feature = "geo")]
@@ -685,7 +686,7 @@ pub mod subdivisions {
                 (
                     "MT",
                     Subdivision{
-                        name: "MT",
+                        name: "Montana",
                         country_alpha2: Alpha2::US,
                         code: "MT",
                         #[cfg(feature = "geo")]
@@ -700,7 +701,7 @@ pub mod subdivisions {
                 (
                     "NC",
                     Subdivision{
-                        name: "NC",
+                        name: "North Carolina",
                         country_alpha2: Alpha2::US,
                         code: "NC",
                         #[cfg(feature = "geo")]
@@ -715,7 +716,7 @@ pub mod subdivisions {
                 (
                     "ND",
                     Subdivision{
-                        name: "ND",
+                        name: "North Dakota",
                         country_alpha2: Alpha2::US,
                         code: "ND",
                         #[cfg(feature = "geo")]
@@ -730,7 +731,7 @@ pub mod subdivisions {
                 (
                     "NE",
                     Subdivision{
-                        name: "NE",
+                        name: "Nebraska",
                         country_alpha2: Alpha2::US,
                         code: "NE",
                         #[cfg(feature = "geo")]
@@ -745,7 +746,7 @@ pub mod subdivisions {
                 (
                     "NH",
                     Subdivision{
-                        name: "NH",
+                        name: "New Hampshire",
                         country_alpha2: Alpha2::US,
                         code: "NH",
                         #[cfg(feature = "geo")]
@@ -760,7 +761,7 @@ pub mod subdivisions {
                 (
                     "NJ",
                     Subdivision{
-                        name: "NJ",
+                        name: "New Jersey",
                         country_alpha2: Alpha2::US,
                         code: "NJ",
                         #[cfg(feature = "geo")]
@@ -775,7 +776,7 @@ pub mod subdivisions {
                 (
                     "NM",
                     Subdivision{
-                        name: "NM",
+                        name: "New Mexico",
                         country_alpha2: Alpha2::US,
                         code: "NM",
                         #[cfg(feature = "geo")]
@@ -790,7 +791,7 @@ pub mod subdivisions {
                 (
                     "NV",
                     Subdivision{
-                        name: "NV",
+                        name: "Nevada",
                         country_alpha2: Alpha2::US,
                         code: "NV",
                         #[cfg(feature = "geo")]
@@ -805,7 +806,7 @@ pub mod subdivisions {
                 (
                     "NY",
                     Subdivision{
-                        name: "NY",
+                        name: "New York",
                         country_alpha2: Alpha2::US,
                         code: "NY",
                         #[cfg(feature = "geo")]
@@ -820,7 +821,7 @@ pub mod subdivisions {
                 (
                     "OH",
                     Subdivision{
-                        name: "OH",
+                        name: "Ohio",
                         country_alpha2: Alpha2::US,
                         code: "OH",
                         #[cfg(feature = "geo")]
@@ -835,7 +836,7 @@ pub mod subdivisions {
                 (
                     "OK",
                     Subdivision{
-                        name: "OK",
+                        name: "Oklahoma",
                         country_alpha2: Alpha2::US,
                         code: "OK",
                         #[cfg(feature = "geo")]
@@ -850,7 +851,7 @@ pub mod subdivisions {
                 (
                     "OR",
                     Subdivision{
-                        name: "OR",
+                        name: "Oregon",
                         country_alpha2: Alpha2::US,
                         code: "OR",
                         #[cfg(feature = "geo")]
@@ -865,7 +866,7 @@ pub mod subdivisions {
                 (
                     "PA",
                     Subdivision{
-                        name: "PA",
+                        name: "Pennsylvania",
                         country_alpha2: Alpha2::US,
                         code: "PA",
                         #[cfg(feature = "geo")]
@@ -880,7 +881,7 @@ pub mod subdivisions {
                 (
                     "PR",
                     Subdivision{
-                        name: "PR",
+                        name: "Puerto Rico",
                         country_alpha2: Alpha2::US,
                         code: "PR",
                         #[cfg(feature = "geo")]
@@ -895,7 +896,7 @@ pub mod subdivisions {
                 (
                     "RI",
                     Subdivision{
-                        name: "RI",
+                        name: "Rhode Island",
                         country_alpha2: Alpha2::US,
                         code: "RI",
                         #[cfg(feature = "geo")]
@@ -910,7 +911,7 @@ pub mod subdivisions {
                 (
                     "SC",
                     Subdivision{
-                        name: "SC",
+                        name: "South Carolina",
                         country_alpha2: Alpha2::US,
                         code: "SC",
                         #[cfg(feature = "geo")]
@@ -925,7 +926,7 @@ pub mod subdivisions {
                 (
                     "SD",
                     Subdivision{
-                        name: "SD",
+                        name: "South Dakota",
                         country_alpha2: Alpha2::US,
                         code: "SD",
                         #[cfg(feature = "geo")]
@@ -940,7 +941,7 @@ pub mod subdivisions {
                 (
                     "TN",
                     Subdivision{
-                        name: "TN",
+                        name: "Tennessee",
                         country_alpha2: Alpha2::US,
                         code: "TN",
                         #[cfg(feature = "geo")]
@@ -955,7 +956,7 @@ pub mod subdivisions {
                 (
                     "TX",
                     Subdivision{
-                        name: "TX",
+                        name: "Texas",
                         country_alpha2: Alpha2::US,
                         code: "TX",
                         #[cfg(feature = "geo")]
@@ -970,7 +971,7 @@ pub mod subdivisions {
                 (
                     "UM",
                     Subdivision{
-                        name: "UM",
+                        name: "United States Minor Outlying Islands",
                         country_alpha2: Alpha2::US,
                         code: "UM",
                         #[cfg(feature = "geo")]
@@ -985,7 +986,7 @@ pub mod subdivisions {
                 (
                     "UT",
                     Subdivision{
-                        name: "UT",
+                        name: "Utah",
                         country_alpha2: Alpha2::US,
                         code: "UT",
                         #[cfg(feature = "geo")]
@@ -1000,7 +1001,7 @@ pub mod subdivisions {
                 (
                     "VA",
                     Subdivision{
-                        name: "VA",
+                        name: "Virginia",
                         country_alpha2: Alpha2::US,
                         code: "VA",
                         #[cfg(feature = "geo")]
@@ -1015,7 +1016,7 @@ pub mod subdivisions {
                 (
                     "VI",
                     Subdivision{
-                        name: "VI",
+                        name: "Virgin Islands, U.S.",
                         country_alpha2: Alpha2::US,
                         code: "VI",
                         #[cfg(feature = "geo")]
@@ -1030,7 +1031,7 @@ pub mod subdivisions {
                 (
                     "VT",
                     Subdivision{
-                        name: "VT",
+                        name: "Vermont",
                         country_alpha2: Alpha2::US,
                         code: "VT",
                         #[cfg(feature = "geo")]
@@ -1045,7 +1046,7 @@ pub mod subdivisions {
                 (
                     "WA",
                     Subdivision{
-                        name: "WA",
+                        name: "Washington",
                         country_alpha2: Alpha2::US,
                         code: "WA",
                         #[cfg(feature = "geo")]
@@ -1060,7 +1061,7 @@ pub mod subdivisions {
                 (
                     "WI",
                     Subdivision{
-                        name: "WI",
+                        name: "Wisconsin",
                         country_alpha2: Alpha2::US,
                         code: "WI",
                         #[cfg(feature = "geo")]
@@ -1075,7 +1076,7 @@ pub mod subdivisions {
                 (
                     "WV",
                     Subdivision{
-                        name: "WV",
+                        name: "West Virginia",
                         country_alpha2: Alpha2::US,
                         code: "WV",
                         #[cfg(feature = "geo")]
@@ -1090,7 +1091,7 @@ pub mod subdivisions {
                 (
                     "WY",
                     Subdivision{
-                        name: "WY",
+                        name: "Wyoming",
                         country_alpha2: Alpha2::US,
                         code: "WY",
                         #[cfg(feature = "geo")]
