@@ -1,6 +1,6 @@
 use crate::structs::CountryInfo;
+use crate::utils;
 use crate::utils::country_name;
-use crate::{log, utils};
 use anyhow::Result;
 use std::collections::HashMap;
 use std::io::Write;
