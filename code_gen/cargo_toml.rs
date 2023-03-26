@@ -28,12 +28,14 @@ pub fn generate(
 
 # Automatically generated via `build.rs`
 [features]
-serde-derive = ["serde"]
 subdivisions = []
 constants = []
 geo = []
 translations = []
+# Integrations:
+serde-derive = ["serde"]
 chrono-integration = ["chrono"]
+iso-currency-integration = ["iso_currency"]
 "#
         .as_bytes(),
     )?;
@@ -97,7 +99,7 @@ default = ["#
             .as_bytes(),
     )?;
     cargo_toml_file.write_all(b"]\n")?;
-    cargo_toml_file.write_all(b"\n#Countries:\n")?;
+    cargo_toml_file.write_all(b"\n# Countries:\n")?;
     for (_, info) in countries_info_list.iter() {
         cargo_toml_file.write_all(
             format!(

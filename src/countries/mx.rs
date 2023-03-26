@@ -5,7 +5,9 @@
 #[cfg(all(feature = "mx", feature = "constants"))]
 pub mod consts {
     #[allow(unused_imports)]
-    use crate::{Alpha2, Alpha3, Continent, Region, SubRegion, WeekDay, WorldRegion, GEC, IOC};
+    use crate::{
+        Alpha2, Alpha3, Continent, CurrencyCode, Region, SubRegion, WeekDay, WorldRegion, GEC, IOC,
+    };
 
     pub const ADDRESS_FORMAT: Option<&str> =
         Some("{{recipient}}\n{{street}}\n{{postalcode}} {{city}} {{region_short}}\n{{country}}");
@@ -13,7 +15,7 @@ pub mod consts {
     pub const ALPHA3: Alpha3 = Alpha3::MEX;
     pub const CONTINENT: Continent = Continent::NorthAmerica;
     pub const COUNTRY_CODE: usize = 52;
-    pub const CURRENCY_CODE: &str = "MXN";
+    pub const CURRENCY_CODE: CurrencyCode = CurrencyCode::MXN;
     pub const GEC: Option<GEC> = Some(GEC::MX);
     pub const INTERNATIONAL_PREFIX: &str = "00";
     pub const IOC: Option<IOC> = Some(IOC::MEX);
@@ -712,7 +714,8 @@ pub mod subdivisions {
 }
 #[allow(unused_imports)]
 use crate::{
-    Alpha2, Alpha3, Continent, Country, Region, SubRegion, WeekDay, WorldRegion, GEC, IOC,
+    Alpha2, Alpha3, Continent, Country, CurrencyCode, Region, SubRegion, WeekDay, WorldRegion, GEC,
+    IOC,
 };
 #[allow(unused_imports)]
 use std::collections::HashMap;
@@ -726,7 +729,7 @@ pub fn new() -> Country {
         ),
         continent: Continent::NorthAmerica,
         country_code: 52,
-        currency_code: "MXN",
+        currency_code: CurrencyCode::MXN,
         gec: Some(GEC::MX),
         #[cfg(feature = "geo")]
         geo: geo::new(),

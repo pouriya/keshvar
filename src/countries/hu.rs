@@ -5,7 +5,9 @@
 #[cfg(all(feature = "hu", feature = "constants"))]
 pub mod consts {
     #[allow(unused_imports)]
-    use crate::{Alpha2, Alpha3, Continent, Region, SubRegion, WeekDay, WorldRegion, GEC, IOC};
+    use crate::{
+        Alpha2, Alpha3, Continent, CurrencyCode, Region, SubRegion, WeekDay, WorldRegion, GEC, IOC,
+    };
 
     pub const ADDRESS_FORMAT: Option<&str> =
         Some("{{recipient}}\n{{city}}\n{{street}}\n{{postalcode}}\n{{country}}");
@@ -13,7 +15,7 @@ pub mod consts {
     pub const ALPHA3: Alpha3 = Alpha3::HUN;
     pub const CONTINENT: Continent = Continent::Europe;
     pub const COUNTRY_CODE: usize = 36;
-    pub const CURRENCY_CODE: &str = "HUF";
+    pub const CURRENCY_CODE: CurrencyCode = CurrencyCode::HUF;
     pub const GEC: Option<GEC> = Some(GEC::HU);
     pub const INTERNATIONAL_PREFIX: &str = "00";
     pub const IOC: Option<IOC> = Some(IOC::HUN);
@@ -883,7 +885,8 @@ pub mod subdivisions {
 }
 #[allow(unused_imports)]
 use crate::{
-    Alpha2, Alpha3, Continent, Country, Region, SubRegion, WeekDay, WorldRegion, GEC, IOC,
+    Alpha2, Alpha3, Continent, Country, CurrencyCode, Region, SubRegion, WeekDay, WorldRegion, GEC,
+    IOC,
 };
 #[allow(unused_imports)]
 use std::collections::HashMap;
@@ -895,7 +898,7 @@ pub fn new() -> Country {
         address_format: Some("{{recipient}}\n{{city}}\n{{street}}\n{{postalcode}}\n{{country}}"),
         continent: Continent::Europe,
         country_code: 36,
-        currency_code: "HUF",
+        currency_code: CurrencyCode::HUF,
         gec: Some(GEC::HU),
         #[cfg(feature = "geo")]
         geo: geo::new(),

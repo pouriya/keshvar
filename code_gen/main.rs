@@ -3,6 +3,7 @@ mod alpha3;
 mod cargo_toml;
 mod consts;
 mod countries;
+mod currency_code;
 mod gec;
 mod ioc;
 mod region;
@@ -247,6 +248,9 @@ fn code_gen_countries(data_directory: PathBuf) -> Result<()> {
 
     let ioc_rs_filename = PathBuf::from("src").join("ioc.rs");
     ioc::generate(&ioc_rs_filename, &countries_info_list)?;
+
+    let currency_code_rs_filename = PathBuf::from("src").join("currency_code.rs");
+    currency_code::generate(&currency_code_rs_filename, &countries_info_list)?;
 
     let alpha2_rs_filename = PathBuf::from("src").join("alpha2.rs");
     alpha2::generate(&alpha2_rs_filename, &countries_info_list)?;

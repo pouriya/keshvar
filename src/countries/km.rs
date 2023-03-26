@@ -5,14 +5,16 @@
 #[cfg(all(feature = "km", feature = "constants"))]
 pub mod consts {
     #[allow(unused_imports)]
-    use crate::{Alpha2, Alpha3, Continent, Region, SubRegion, WeekDay, WorldRegion, GEC, IOC};
+    use crate::{
+        Alpha2, Alpha3, Continent, CurrencyCode, Region, SubRegion, WeekDay, WorldRegion, GEC, IOC,
+    };
 
     pub const ADDRESS_FORMAT: Option<&str> = None;
     pub const ALPHA2: Alpha2 = Alpha2::KM;
     pub const ALPHA3: Alpha3 = Alpha3::COM;
     pub const CONTINENT: Continent = Continent::Africa;
     pub const COUNTRY_CODE: usize = 269;
-    pub const CURRENCY_CODE: &str = "KMF";
+    pub const CURRENCY_CODE: CurrencyCode = CurrencyCode::KMF;
     pub const GEC: Option<GEC> = Some(GEC::CN);
     pub const INTERNATIONAL_PREFIX: &str = "00";
     pub const IOC: Option<IOC> = Some(IOC::COM);
@@ -457,7 +459,8 @@ pub mod subdivisions {
 }
 #[allow(unused_imports)]
 use crate::{
-    Alpha2, Alpha3, Continent, Country, Region, SubRegion, WeekDay, WorldRegion, GEC, IOC,
+    Alpha2, Alpha3, Continent, Country, CurrencyCode, Region, SubRegion, WeekDay, WorldRegion, GEC,
+    IOC,
 };
 #[allow(unused_imports)]
 use std::collections::HashMap;
@@ -469,7 +472,7 @@ pub fn new() -> Country {
         address_format: None,
         continent: Continent::Africa,
         country_code: 269,
-        currency_code: "KMF",
+        currency_code: CurrencyCode::KMF,
         gec: Some(GEC::CN),
         #[cfg(feature = "geo")]
         geo: geo::new(),

@@ -5,14 +5,16 @@
 #[cfg(all(feature = "uy", feature = "constants"))]
 pub mod consts {
     #[allow(unused_imports)]
-    use crate::{Alpha2, Alpha3, Continent, Region, SubRegion, WeekDay, WorldRegion, GEC, IOC};
+    use crate::{
+        Alpha2, Alpha3, Continent, CurrencyCode, Region, SubRegion, WeekDay, WorldRegion, GEC, IOC,
+    };
 
     pub const ADDRESS_FORMAT: Option<&str> = None;
     pub const ALPHA2: Alpha2 = Alpha2::UY;
     pub const ALPHA3: Alpha3 = Alpha3::URY;
     pub const CONTINENT: Continent = Continent::SouthAmerica;
     pub const COUNTRY_CODE: usize = 598;
-    pub const CURRENCY_CODE: &str = "UYU";
+    pub const CURRENCY_CODE: CurrencyCode = CurrencyCode::UYU;
     pub const GEC: Option<GEC> = Some(GEC::UY);
     pub const INTERNATIONAL_PREFIX: &str = "00";
     pub const IOC: Option<IOC> = Some(IOC::URU);
@@ -515,7 +517,8 @@ pub mod subdivisions {
 }
 #[allow(unused_imports)]
 use crate::{
-    Alpha2, Alpha3, Continent, Country, Region, SubRegion, WeekDay, WorldRegion, GEC, IOC,
+    Alpha2, Alpha3, Continent, Country, CurrencyCode, Region, SubRegion, WeekDay, WorldRegion, GEC,
+    IOC,
 };
 #[allow(unused_imports)]
 use std::collections::HashMap;
@@ -527,7 +530,7 @@ pub fn new() -> Country {
         address_format: None,
         continent: Continent::SouthAmerica,
         country_code: 598,
-        currency_code: "UYU",
+        currency_code: CurrencyCode::UYU,
         gec: Some(GEC::UY),
         #[cfg(feature = "geo")]
         geo: geo::new(),
