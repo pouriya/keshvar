@@ -569,7 +569,7 @@ pub enum IOC {
     /// The Kingdom of Tonga (Oceania)
     TGA,
     #[cfg(feature = "tr")]
-    /// The Republic of Turkey (Asia)
+    /// The Republic of Türkiye (Asia)
     TUR,
     #[cfg(feature = "tt")]
     /// The Republic of Trinidad and Tobago (Americas)
@@ -1216,7 +1216,7 @@ mod impls {
                 IOC::TUN => Alpha2::TN,
                 #[cfg(feature = "to")] // The Kingdom of Tonga (Oceania)
                 IOC::TGA => Alpha2::TO,
-                #[cfg(feature = "tr")] // The Republic of Turkey (Asia)
+                #[cfg(feature = "tr")] // The Republic of Türkiye (Asia)
                 IOC::TUR => Alpha2::TR,
                 #[cfg(feature = "tt")] // The Republic of Trinidad and Tobago (Americas)
                 IOC::TRI => Alpha2::TT,
@@ -1639,7 +1639,7 @@ mod impls {
                 IOC::TUN => "TUN",
                 #[cfg(feature = "to")] // The Kingdom of Tonga (Oceania)
                 IOC::TGA => "TGA",
-                #[cfg(feature = "tr")] // The Republic of Turkey (Asia)
+                #[cfg(feature = "tr")] // The Republic of Türkiye (Asia)
                 IOC::TUR => "TUR",
                 #[cfg(feature = "tt")] // The Republic of Trinidad and Tobago (Americas)
                 IOC::TRI => "TRI",
@@ -2066,7 +2066,7 @@ mod impls {
                 "TUN" => Ok(IOC::TUN),
                 #[cfg(feature = "to")] // The Kingdom of Tonga (Oceania)
                 "TGA" => Ok(IOC::TGA),
-                #[cfg(feature = "tr")] // The Republic of Turkey (Asia)
+                #[cfg(feature = "tr")] // The Republic of Türkiye (Asia)
                 "TUR" => Ok(IOC::TUR),
                 #[cfg(feature = "tt")] // The Republic of Trinidad and Tobago (Americas)
                 "TRI" => Ok(IOC::TRI),

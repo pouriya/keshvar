@@ -20,7 +20,7 @@ pub mod consts {
     pub const IOC: Option<IOC> = Some(IOC::TKM);
     pub const ISO_SHORT_NAME: &str = "Turkmenistan";
     pub const ISO_LONG_NAME: &str = "Turkmenistan";
-    pub const OFFICIAL_LANGUAGE_LIST: &[&str] = &["ru", "tk"];
+    pub const OFFICIAL_LANGUAGE_LIST: &[&str] = &["tk"];
     pub const SPOKEN_LANGUAGE_LIST: &[&str] = &["ru", "tk"];
     pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: &[usize] = &[2];
     pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[8];
@@ -38,6 +38,7 @@ pub mod consts {
         "Turkménistan",
         "Turkmenistán",
         "トルクメニスタン",
+        "Turkmenia",
     ];
     pub const WORLD_REGION: WorldRegion = WorldRegion::EMEA;
     #[cfg(feature = "translations")]
@@ -623,7 +624,7 @@ pub mod subdivisions {
                     #[cfg(feature = "geo")]
                     geo: None,
                     comments: None,
-                    subdivision_type: SubdivisionType::City,
+                    subdivision_type: SubdivisionType::CapitalCity,
                     #[cfg(feature = "translations")]
                     translations: HashMap::from([
                         ("af", "Asjchabat"),
@@ -734,7 +735,7 @@ pub fn new() -> Country {
         ioc: Some(IOC::TKM),
         iso_long_name: "Turkmenistan",
         iso_short_name: "Turkmenistan",
-        official_language_list: ["ru", "tk"].to_vec(),
+        official_language_list: ["tk"].to_vec(),
         spoken_language_list: ["ru", "tk"].to_vec(),
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [8].to_vec(),
@@ -747,7 +748,7 @@ pub fn new() -> Country {
         start_of_week: WeekDay::Monday,
         subregion: Some(SubRegion::CentralAsia),
         un_locode: "TM",
-        unofficial_name_list: ["Turkmenistan", "Turkménistan", "Turkmenistán", "トルクメニスタン"].to_vec(),
+        unofficial_name_list: ["Turkmenistan", "Turkménistan", "Turkmenistán", "トルクメニスタン", "Turkmenia"].to_vec(),
         world_region: WorldRegion::EMEA,
         #[cfg(feature = "translations")]
         translations: HashMap::from([("ab", "Turkmenistan"), ("af", "Toerkmenië"), ("ak", "Turkmenistan"), ("am", "ቱርክመኒስታን"), ("an", "Turkmenistan"), ("ar", "تركمانستان"), ("as", "ত\u{9c1}ৰ\u{9cd}কমেনিস\u{9cd}ত\u{9be}ন"), ("ay", "Turkmenistan"), ("az", "Türkmənistan"), ("ba", "Turkmenistan"), ("be", "Туркменістан"), ("bg", "Туркменистан"), ("bi", "Turkmenistan"), ("bn", "ত\u{9c1}র\u{9cd}কমেনিস\u{9cd}ত\u{9be}ন"), ("bn_IN", "ত\u{9c1}র\u{9cd}কমেনিস\u{9cd}ত\u{9be}ন"), ("br", "Turkmenistan"), ("bs", "Turkmenistan"), ("ca", "Turkmenistan"), ("ce", "Туркмени"), ("ch", "Turkmenistan"), ("cs", "Turkmenistán"), ("cv", "Туркмени"), ("cy", "Turkmenistan"), ("da", "Turkmenistan"), ("de", "Turkmenistan"), ("dv", "ތ\u{7aa}ރ\u{7aa}ކ\u{7aa}މ\u{7ac}ނ\u{7a8}ސ\u{7b0}ތ\u{7a7}ނ\u{7b0}"), ("dz", "ཊརཀ་མ\u{f72}་ན\u{f72}ས\u{f72}་ཏ\u{f71}ན།"), ("ee", "Turkmenistan"), ("el", "Τουρκμενιστάν"), ("en", "Turkmenistan"), ("eo", "Turkmenio"), ("es", "Turkmenistán"), ("et", "Türkmenistan"), ("eu", "Turkmenistan"), ("fa", "ترکمنستان"), ("ff", "Turkmenistan"), ("fi", "Turkmenistan"), ("fo", "Turkmenistan"), ("fr", "Turkménistan"), ("fy", "Turkmenistan"), ("ga", "An Tuircméanastáin"), ("gl", "Turkmenistán"), ("gn", "Turkmenistan"), ("gu", "ત\u{ac1}ર\u{acd}કમ\u{ac7}નિસ\u{acd}તાન"), ("gv", "Yn Turkmenistaan"), ("ha", "Turkmenistan"), ("he", "טורקמניסטן"), ("hi", "त\u{941}र\u{94d}कम\u{947}निस\u{94d}तान"), ("hr", "Turkmenistan"), ("ht", "Tirkmenistan"), ("hu", "Türkmenisztán"), ("hy", "Թուրքմենստան"), ("ia", "Turkmenistan"), ("id", "Turkmenistan"), ("io", "Turkmenistan"), ("is", "Túrkmenistan"), ("it", "Turkmenistan"), ("iu", "Turkmenistan"), ("ja", "トルクメニスタン"), ("ka", "თურქმენეთი"), ("ki", "Turkmenistan"), ("kk", "Түрікменстан"), ("kl", "Turkmenistan"), ("km", "ទ\u{17bd}គមេន\u{17b8}ស\u{17d2}តង\u{17cb}"), ("kn", "ತುರ\u{ccd}ಕ\u{ccd}ಮ\u{cc6}ನ\u{ccd}\u{200d}ಸ\u{ccd}ತಾನ\u{ccd}"), ("ko", "투르크메니스탄"), ("ku", "Tirkmenîstan"), ("kv", "Туркменистан"), ("kw", "Pow Turkmen"), ("ky", "Түркмөнстан"), ("lo", "Turkmenistan"), ("lt", "Turkmėnistanas"), ("lv", "Turkmenistāna"), ("mi", "Turkmenistan"), ("mk", "Туркменистан"), ("ml", "ത\u{d41}ര\u{d4d}\u{200d}ക\u{d4d}\u{200c}മെനിസ\u{d4d}ത\u{d3e}ന\u{d4d}\u{200d}"), ("mn", "Туркменстан"), ("mr", "त\u{941}र\u{94d}कम\u{947}निस\u{94d}तान"), ("ms", "Turkmenistan"), ("mt", "Turkmenistan"), ("my", "တာ\u{1037}ခ\u{103a}မင\u{103a}နစ\u{1039}စတန\u{103a}န\u{102d}\u{102f}င\u{103a}င\u{1036}"), ("na", "Turkmenistan"), ("nb", "Turkmenistan"), ("ne", "ट\u{941}र\u{94d}कम\u{947}निस\u{94d}तान"), ("nl", "Turkmenistan"), ("nn", "Turkmenistan"), ("nv", "Tʼóokmen Bikéyah"), ("oc", "Turcmenistan"), ("or", "ତ\u{b41}ର\u{b4d}କମେନ\u{b3f}ସ\u{b4d}ତ\u{b3e}ନ"), ("pa", "ਤ\u{a41}ਰਕਮਸਤਾਨ"), ("pi", "त\u{941}र\u{94d}कमिनिस\u{94d}थान"), ("pl", "Turkmenistan"), ("ps", "ترکمنستان"), ("pt", "Turquemenistão"), ("pt_BR", "Turcomenistão"), ("ro", "Turkmenistan"), ("ru", "Туркменистан"), ("rw", "Turikimenisitani"), ("sc", "Turkmènistan"), ("sd", "ترڪمانستان"), ("si", "ත\u{dd4}ර\u{dca}ක\u{dd2}මෙන\u{dd2}ස\u{dca}ත\u{dcf}නය"), ("sk", "Turkménsko"), ("sl", "Turkmenistan"), ("so", "Turkmenistan"), ("sq", "Turkmenistan"), ("sr", "Туркменистан"), ("sv", "Turkmenistan"), ("sw", "Turkmenistan"), ("ta", "துர\u{bcd}க\u{bcd}மெனிஸ\u{bcd}த\u{bbe}ன\u{bcd}"), ("te", "టర\u{c4d}కమ\u{c46}న\u{c3f}స\u{c4d}త\u{c3e}న\u{c4d}"), ("tg", "Туркманистон"), ("th", "เต\u{e34}ร\u{e4c}กเมน\u{e34}สถาน"), ("ti", "Turkmenistan"), ("tk", "Türkmenistan"), ("tl", "Turkmenistan"), ("tr", "Türkmenistan"), ("tt", "Төркмәнстан"), ("ug", "تۈركمەنىستان"), ("uk", "Туркменістан"), ("ur", "ترکمانستان"), ("uz", "Turkmaniston"), ("ve", "Turkmenistan"), ("vi", "Tuốc-mê-ni-xtanh"), ("wa", "Turcmenistan"), ("wo", "Turkumenistaan"), ("xh", "Turkmenistan"), ("yo", "Turkmẹ\u{301}nìstán"), ("zh_CN", "土库曼斯坦"), ("zh_HK", "土庫曼"), ("zh_TW", "土庫曼"), ("zu", "Turkmenistan")]),

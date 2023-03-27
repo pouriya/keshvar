@@ -729,7 +729,7 @@ pub enum Alpha2 {
     /// The Kingdom of Tonga (Oceania)
     TO,
     #[cfg(feature = "tr")]
-    /// The Republic of Turkey (Asia)
+    /// The Republic of Türkiye (Asia)
     TR,
     #[cfg(feature = "tt")]
     /// The Republic of Trinidad and Tobago (Americas)
@@ -1532,7 +1532,7 @@ mod impls {
                 "TN" => Ok(Self::TN),
                 #[cfg(feature = "to")] // The Kingdom of Tonga (Oceania)
                 "TO" => Ok(Self::TO),
-                #[cfg(feature = "tr")] // The Republic of Turkey (Asia)
+                #[cfg(feature = "tr")] // The Republic of Türkiye (Asia)
                 "TR" => Ok(Self::TR),
                 #[cfg(feature = "tt")] // The Republic of Trinidad and Tobago (Americas)
                 "TT" => Ok(Self::TT),
@@ -3316,7 +3316,7 @@ mod impls {
                 Alpha2::TN => crate::countries::tn::new(),
                 #[cfg(feature = "to")] // The Kingdom of Tonga (Oceania)
                 Alpha2::TO => crate::countries::to::new(),
-                #[cfg(feature = "tr")] // The Republic of Turkey (Asia)
+                #[cfg(feature = "tr")] // The Republic of Türkiye (Asia)
                 Alpha2::TR => crate::countries::tr::new(),
                 #[cfg(feature = "tt")] // The Republic of Trinidad and Tobago (Americas)
                 Alpha2::TT => crate::countries::tt::new(),
@@ -3824,7 +3824,7 @@ mod impls {
                 Alpha2::TN => Alpha3::TUN,
                 #[cfg(feature = "to")] // The Kingdom of Tonga (Oceania)
                 Alpha2::TO => Alpha3::TON,
-                #[cfg(feature = "tr")] // The Republic of Turkey (Asia)
+                #[cfg(feature = "tr")] // The Republic of Türkiye (Asia)
                 Alpha2::TR => Alpha3::TUR,
                 #[cfg(feature = "tt")] // The Republic of Trinidad and Tobago (Americas)
                 Alpha2::TT => Alpha3::TTO,

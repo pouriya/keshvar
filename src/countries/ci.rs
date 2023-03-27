@@ -69,7 +69,7 @@ pub mod consts {
         ("cv", "Côte d'Ivoire"),
         ("cy", "Côte d'Ivoire"),
         ("da", "Elfenbenskysten"),
-        ("de", "Côte d'Ivoire"),
+        ("de", "Elfenbeinküste"),
         ("dv", "Côte d'Ivoire"),
         (
             "dz",
@@ -522,7 +522,7 @@ pub fn new() -> Country {
             ("cv", "Côte d'Ivoire"),
             ("cy", "Côte d'Ivoire"),
             ("da", "Elfenbenskysten"),
-            ("de", "Côte d'Ivoire"),
+            ("de", "Elfenbeinküste"),
             ("dv", "Côte d'Ivoire"),
             (
                 "dz",
