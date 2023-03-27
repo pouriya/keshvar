@@ -29,5 +29,9 @@ jobs:
         uses: actions/checkout@v1
       - name: Pull submodule(s)
         run: git submodule update --init
-      - name: Build & Test
+      - name: Build
         run: make code_gen
+      - name: Test
+        run: make test
+      - name: Lint
+        run: make lint
