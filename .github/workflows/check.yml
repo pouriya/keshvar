@@ -25,13 +25,24 @@ jobs:
           toolchain: stable
           override: true
           components: rustfmt, clippy
+
       - name: Checking out sources
         uses: actions/checkout@v1
       - name: Pull submodule(s)
         run: git submodule update --init
-      - name: Build
-        run: make code_gen
-      - name: Test
+
+      - name: Build current source
+        run: make build
+      - name: Check style
+        run: make check-style
+      - name: Test current source
         run: make test
-      - name: Lint
-        run: make lint
+
+      - name: Generate new source
+        run: make generate
+      - name: Build newly generated source
+        run: make build
+      - name: Test newly generated source
+        run: make test
+      - name: Clippy
+        run: make clippy
