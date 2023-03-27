@@ -1,8 +1,7 @@
 use crate::structs::CountryInfo;
 use crate::utils;
-use anyhow::{Context, Result};
+use anyhow::Result;
 use std::collections::HashMap;
-use std::fs;
 use std::io::Write;
 use std::path::PathBuf;
 
