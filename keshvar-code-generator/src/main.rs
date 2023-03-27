@@ -14,7 +14,7 @@ mod utils;
 use structs::CountryInfo;
 
 use anyhow::{bail, Context, Result};
-use std::{fs, env, collections::HashMap, path::PathBuf};
+use std::{collections::HashMap, env, fs, path::PathBuf};
 
 fn main() -> Result<()> {
     if env::args().len() != 3 {
@@ -46,9 +46,8 @@ fn code_gen(input_directory: PathBuf, output_directory: PathBuf) -> Result<()> {
 fn code_gen_countries(data_directory: PathBuf, output_directory: PathBuf) -> Result<()> {
     let src_directory = output_directory.join("src");
     if !src_directory.exists() {
-        fs::create_dir(src_directory.clone()).context(format!(
-            "Could not create directory {src_directory:?}"
-        ))?;
+        fs::create_dir(src_directory.clone())
+            .context(format!("Could not create directory {src_directory:?}"))?;
     }
     let countries_directory = src_directory.join("countries");
     if !countries_directory.exists() {
@@ -153,7 +152,8 @@ fn code_gen_countries(data_directory: PathBuf, output_directory: PathBuf) -> Res
     }
     // Generate codes for each country:
     countries_info_list.iter().try_for_each(|(name, info)| {
-        let module_filename = countries_directory.join(PathBuf::from(name.to_lowercase()).with_extension("rs"));
+        let module_filename =
+            countries_directory.join(PathBuf::from(name.to_lowercase()).with_extension("rs"));
         countries::generate_country(&module_filename, info)
     })?;
     // Categorize countries for `region`, `subregion`, and `world region`:
