@@ -23,33 +23,34 @@ build:
 	cargo build --no-default-features --all-features
 	@ ls -lash target/debug/*keshvar*
 
-code_gen:
-	@echo "Removing auto-generated codes..."
-	@rm -rf ${OUTPUT_SRC_DIRECTORY}/countries/* && touch ${OUTPUT_SRC_DIRECTORY}/countries/mod.rs
-	@rm -rf ${OUTPUT_SRC_DIRECTORY}/alpha2.rs && touch ${OUTPUT_SRC_DIRECTORY}/alpha2.rs
-	@rm -rf ${OUTPUT_SRC_DIRECTORY}/alpha3.rs && touch ${OUTPUT_SRC_DIRECTORY}/alpha3.rs
-	@rm -rf ${OUTPUT_SRC_DIRECTORY}/consts.rs && touch ${OUTPUT_SRC_DIRECTORY}/consts.rs
-	@rm -rf ${OUTPUT_SRC_DIRECTORY}/region.rs && touch ${OUTPUT_SRC_DIRECTORY}/region.rs
-	@rm -rf ${OUTPUT_SRC_DIRECTORY}/gec.rs && touch ${OUTPUT_SRC_DIRECTORY}/gec.rs
-	@rm -rf ${OUTPUT_SRC_DIRECTORY}/ioc.rs && touch ${OUTPUT_SRC_DIRECTORY}/ioc.rs
-	@rm -rf ${OUTPUT_SRC_DIRECTORY}/currency_code.rs && touch ${OUTPUT_SRC_DIRECTORY}/currency_code.rs
-	@rm -rf build.log
-	@echo "Generating new codes..."
-	@cd ${CODE_GENERATOR_DIRECTORY} && cargo run -- ${INPUT_DIRECTORY} ${OUTPUT_DIRECTORY}
-	@echo "Compiling newly generated codes"
+generate:
+	@ echo "Removing auto-generated codes..."
+	@ rm -rf ${OUTPUT_SRC_DIRECTORY}/countries/* && touch ${OUTPUT_SRC_DIRECTORY}/countries/mod.rs
+	@ rm -rf ${OUTPUT_SRC_DIRECTORY}/alpha2.rs && touch ${OUTPUT_SRC_DIRECTORY}/alpha2.rs
+	@ rm -rf ${OUTPUT_SRC_DIRECTORY}/alpha3.rs && touch ${OUTPUT_SRC_DIRECTORY}/alpha3.rs
+	@ rm -rf ${OUTPUT_SRC_DIRECTORY}/consts.rs && touch ${OUTPUT_SRC_DIRECTORY}/consts.rs
+	@ rm -rf ${OUTPUT_SRC_DIRECTORY}/region.rs && touch ${OUTPUT_SRC_DIRECTORY}/region.rs
+	@ rm -rf ${OUTPUT_SRC_DIRECTORY}/gec.rs && touch ${OUTPUT_SRC_DIRECTORY}/gec.rs
+	@ rm -rf ${OUTPUT_SRC_DIRECTORY}/ioc.rs && touch ${OUTPUT_SRC_DIRECTORY}/ioc.rs
+	@ rm -rf ${OUTPUT_SRC_DIRECTORY}/currency_code.rs && touch ${OUTPUT_SRC_DIRECTORY}/currency_code.rs
+	@ rm -rf build.log
+	@ echo "Generating new codes..."
+	@ cd ${CODE_GENERATOR_DIRECTORY} && cargo run -- ${INPUT_DIRECTORY} ${OUTPUT_DIRECTORY}
+	@ echo "Compiling newly generated codes"
 	@ ${MAKE} build
-	@ ${MAKE} fmt
 
-fmt:
-	@echo "Formatting codes..."
-	cargo fmt
+check-style:
+	@ echo "Checking code-generator style..."
+	@ cd ${CODE_GENERATOR_DIRECTORY} && cargo fmt --check
+	@ echo "Checking generator source style..."
+	cargo fmt --check > /dev/null
 
 test:
 	@echo "Running tests..."
 	cargo test --all-features
 
-lint:
+clippy:
 	@echo "Running Clippy..."
 	cargo clippy
 
-.PHONY: build code_gen test lint
+.PHONY: build generate check-style test clippy
