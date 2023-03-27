@@ -5,7 +5,7 @@ use crate::{
 #[cfg(feature = "subdivisions")]
 use crate::{SearchedItems, SubdivisionType};
 
-#[cfg(feature = "subdivisions")]
+#[cfg(any(feature = "subdivisions", feature = "translations"))]
 use std::collections::HashMap;
 
 #[cfg(feature = "serde-derive")]
