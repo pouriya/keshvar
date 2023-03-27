@@ -33,7 +33,7 @@ jobs:
 
       - name: Build current source
         run: make build
-      - name: Check style
+      - name: Check current source style
         run: make check-style
       - name: Test current source
         run: make test
