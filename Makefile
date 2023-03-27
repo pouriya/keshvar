@@ -42,8 +42,14 @@ generate:
 check-style:
 	@ echo "Checking code-generator style..."
 	@ cd ${CODE_GENERATOR_DIRECTORY} && cargo fmt --check
-	@ echo "Checking generator source style..."
+	@ echo "Checking generated source style..."
 	cargo fmt --check > /dev/null
+
+format-style:
+	@ echo "Formatting code-generator style..."
+	@ cd ${CODE_GENERATOR_DIRECTORY} && cargo fmt
+	@ echo "Formatting generated source style..."
+	cargo fmt
 
 test:
 	@echo "Running tests..."
@@ -53,4 +59,4 @@ clippy:
 	@echo "Running Clippy..."
 	cargo clippy
 
-.PHONY: build generate check-style test clippy
+.PHONY: build generate check-style format-style test clippy
