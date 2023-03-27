@@ -217,7 +217,7 @@ pub enum Continent {
     /// * Svalbard and Jan Mayen (Europe)
     /// * The Slovak Republic (Europe)
     /// * The Republic of San Marino (Europe)
-    /// * The Republic of Turkey (Asia)
+    /// * The Republic of Türkiye (Asia)
     /// * Ukraine (Europe)
     /// * The Holy See (Europe)
     Europe,
@@ -536,7 +536,7 @@ pub enum Region {
     /// * The Republic of Tajikistan
     /// * The Democratic Republic of Timor-Leste
     /// * Turkmenistan
-    /// * The Republic of Turkey
+    /// * The Republic of Türkiye
     /// * The Republic of China
     /// * The Republic of Uzbekistan
     /// * The Socialist Republic of Viet Nam
@@ -965,7 +965,7 @@ pub enum SubRegion {
     /// * The State of Qatar
     /// * The Kingdom of Saudi Arabia
     /// * The Syrian Arab Republic
-    /// * The Republic of Turkey
+    /// * The Republic of Türkiye
     /// * The Republic of Yemen
     WesternAsia,
     /// * The Republic of Austria
@@ -1352,7 +1352,7 @@ pub enum WorldRegion {
     /// * The Republic of Tajikistan (Asia)
     /// * Turkmenistan (Asia)
     /// * The Republic of Tunisia (Africa)
-    /// * The Republic of Turkey (Asia)
+    /// * The Republic of Türkiye (Asia)
     /// * The United Republic of Tanzania (Africa)
     /// * Ukraine (Europe)
     /// * The Republic of Uganda (Africa)
@@ -1512,7 +1512,6 @@ pub enum SubdivisionType {
     Canton,
     /// Examples:
     /// * `Ciudad de México` in `The United Mexican States (Americas)`
-    /// * `Asunción` in `The Republic of Paraguay (Americas)`
     Capital,
     /// Examples:
     /// * `Praha, Hlavní město` in `The Czech Republic (Europe)`

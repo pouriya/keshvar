@@ -34,7 +34,7 @@ pub mod consts {
     pub const START_DAY_OF_WEEK: WeekDay = WeekDay::Monday;
     pub const SUBREGION: Option<SubRegion> = Some(SubRegion::EasternAsia);
     pub const UN_LOCODE: &str = "TW";
-    pub const UNOFFICIAL_NAME_LIST: &[&str] = &["Taiwan", "Taiwán", "台灣"];
+    pub const UNOFFICIAL_NAME_LIST: &[&str] = &["Taiwan", "Taiwán", "台灣", "臺灣", "台湾"];
     pub const WORLD_REGION: WorldRegion = WorldRegion::APAC;
     #[cfg(feature = "translations")]
     pub const TRANSLATIONS: &[(&str, &str)] = &[
@@ -603,7 +603,7 @@ pub fn new() -> Country {
         start_of_week: WeekDay::Monday,
         subregion: Some(SubRegion::EasternAsia),
         un_locode: "TW",
-        unofficial_name_list: ["Taiwan", "Taiwán", "台灣"].to_vec(),
+        unofficial_name_list: ["Taiwan", "Taiwán", "台灣", "臺灣", "台湾"].to_vec(),
         world_region: WorldRegion::APAC,
         #[cfg(feature = "translations")]
         translations: HashMap::from([

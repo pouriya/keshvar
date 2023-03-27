@@ -683,7 +683,7 @@ pub enum GEC {
     /// The Kingdom of Tonga (Oceania)
     TN,
     #[cfg(feature = "tr")]
-    /// The Republic of Turkey (Asia)
+    /// The Republic of Türkiye (Asia)
     TU,
     #[cfg(feature = "tt")]
     /// The Republic of Trinidad and Tobago (Americas)
@@ -1457,7 +1457,7 @@ mod impls {
                 GEC::TS => Alpha2::TN,
                 #[cfg(feature = "to")] // The Kingdom of Tonga (Oceania)
                 GEC::TN => Alpha2::TO,
-                #[cfg(feature = "tr")] // The Republic of Turkey (Asia)
+                #[cfg(feature = "tr")] // The Republic of Türkiye (Asia)
                 GEC::TU => Alpha2::TR,
                 #[cfg(feature = "tt")] // The Republic of Trinidad and Tobago (Americas)
                 GEC::TD => Alpha2::TT,
@@ -1963,7 +1963,7 @@ mod impls {
                 GEC::TS => "TS",
                 #[cfg(feature = "to")] // The Kingdom of Tonga (Oceania)
                 GEC::TN => "TN",
-                #[cfg(feature = "tr")] // The Republic of Turkey (Asia)
+                #[cfg(feature = "tr")] // The Republic of Türkiye (Asia)
                 GEC::TU => "TU",
                 #[cfg(feature = "tt")] // The Republic of Trinidad and Tobago (Americas)
                 GEC::TD => "TD",
@@ -2473,7 +2473,7 @@ mod impls {
                 "TS" => Ok(GEC::TS),
                 #[cfg(feature = "to")] // The Kingdom of Tonga (Oceania)
                 "TN" => Ok(GEC::TN),
-                #[cfg(feature = "tr")] // The Republic of Turkey (Asia)
+                #[cfg(feature = "tr")] // The Republic of Türkiye (Asia)
                 "TU" => Ok(GEC::TU),
                 #[cfg(feature = "tt")] // The Republic of Trinidad and Tobago (Americas)
                 "TD" => Ok(GEC::TD),

@@ -448,7 +448,7 @@ pub mod tm;
 pub mod tn;
 #[cfg(feature = "to")] // The Kingdom of Tonga (Oceania)
 pub mod to;
-#[cfg(feature = "tr")] // The Republic of Turkey (Asia)
+#[cfg(feature = "tr")] // The Republic of Türkiye (Asia)
 pub mod tr;
 #[cfg(feature = "tt")] // The Republic of Trinidad and Tobago (Americas)
 pub mod tt;

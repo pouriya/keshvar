@@ -974,7 +974,7 @@ pub const SUPPORTED_ALPHA2_LIST: &[Alpha2] = &[
     Alpha2::TN,
     #[cfg(feature = "to")] // The Kingdom of Tonga (Oceania)
     Alpha2::TO,
-    #[cfg(feature = "tr")] // The Republic of Turkey (Asia)
+    #[cfg(feature = "tr")] // The Republic of Türkiye (Asia)
     Alpha2::TR,
     #[cfg(feature = "tt")] // The Republic of Trinidad and Tobago (Americas)
     Alpha2::TT,
@@ -2620,8 +2620,8 @@ lazy_static! { pub static ref SUPPORTED_ISO_SHORT_NAMES: HashMap<&'static str, A
     ("tunisia", Alpha2::TN),
     #[cfg(feature = "to")] // The Kingdom of Tonga (Oceania)
     ("tonga", Alpha2::TO),
-    #[cfg(feature = "tr")] // The Republic of Turkey (Asia)
-    ("turkey", Alpha2::TR),
+    #[cfg(feature = "tr")] // The Republic of Türkiye (Asia)
+    ("türkiye", Alpha2::TR),
     #[cfg(feature = "tt")] // The Republic of Trinidad and Tobago (Americas)
     ("trinidad and tobago", Alpha2::TT),
     #[cfg(feature = "tv")] // Tuvalu (Oceania)
@@ -3120,8 +3120,8 @@ lazy_static! { pub static ref SUPPORTED_ISO_LONG_NAMES: HashMap<&'static str, Al
     ("the republic of tunisia", Alpha2::TN),
     #[cfg(feature = "to")] // The Kingdom of Tonga (Oceania)
     ("the kingdom of tonga", Alpha2::TO),
-    #[cfg(feature = "tr")] // The Republic of Turkey (Asia)
-    ("the republic of turkey", Alpha2::TR),
+    #[cfg(feature = "tr")] // The Republic of Türkiye (Asia)
+    ("the republic of türkiye", Alpha2::TR),
     #[cfg(feature = "tt")] // The Republic of Trinidad and Tobago (Americas)
     ("the republic of trinidad and tobago", Alpha2::TT),
     #[cfg(feature = "tv")] // Tuvalu (Oceania)
@@ -3620,7 +3620,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_CODE: HashMap<usize, Alpha2> = H
     (216, Alpha2::TN),
     #[cfg(feature = "to")] // The Kingdom of Tonga (Oceania)
     (676, Alpha2::TO),
-    #[cfg(feature = "tr")] // The Republic of Turkey (Asia)
+    #[cfg(feature = "tr")] // The Republic of Türkiye (Asia)
     (90, Alpha2::TR),
     #[cfg(feature = "tt")] // The Republic of Trinidad and Tobago (Americas)
     (1, Alpha2::TT),

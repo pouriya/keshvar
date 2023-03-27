@@ -132,6 +132,7 @@ pub enum CurrencyCode {
     /// * Guyane (Americas)
     /// * Guadeloupe (Americas)
     /// * The Hellenic Republic (Europe)
+    /// * The Republic of Croatia (Europe)
     /// * Ireland (Europe)
     /// * The Italian Republic (Europe)
     /// * The Republic of Lithuania (Europe)
@@ -181,8 +182,6 @@ pub enum CurrencyCode {
     HKD,
     /// * The Republic of Honduras (Americas)
     HNL,
-    /// * The Republic of Croatia (Europe)
-    HRK,
     /// * The Republic of Haiti (Americas)
     HTG,
     /// * Hungary (Europe)
@@ -348,7 +347,7 @@ pub enum CurrencyCode {
     TND,
     /// * The Kingdom of Tonga (Oceania)
     TOP,
-    /// * The Republic of Turkey (Asia)
+    /// * The Republic of Türkiye (Asia)
     TRY,
     /// * The Republic of Trinidad and Tobago (Americas)
     TTD,
@@ -474,8 +473,8 @@ impl CurrencyCode {
             Self::ETB => &["ER", "ET"],
             Self::EUR => &[
                 "AD", "AT", "AX", "BE", "BL", "CY", "DE", "EE", "ES", "FI", "FR", "GF", "GP", "GR",
-                "IE", "IT", "LT", "LU", "LV", "MC", "ME", "MF", "MQ", "MT", "NL", "PM", "PT", "RE",
-                "SI", "SK", "SM", "TF", "VA", "YT",
+                "HR", "IE", "IT", "LT", "LU", "LV", "MC", "ME", "MF", "MQ", "MT", "NL", "PM", "PT",
+                "RE", "SI", "SK", "SM", "TF", "VA", "YT",
             ],
             Self::FJD => &["FJ"],
             Self::FKP => &["FK"],
@@ -489,7 +488,6 @@ impl CurrencyCode {
             Self::GYD => &["GY"],
             Self::HKD => &["HK"],
             Self::HNL => &["HN"],
-            Self::HRK => &["HR"],
             Self::HTG => &["HT"],
             Self::HUF => &["HU"],
             Self::IDR => &["ID", "TL"],
@@ -652,7 +650,6 @@ impl ToString for CurrencyCode {
             Self::GYD => "GYD",
             Self::HKD => "HKD",
             Self::HNL => "HNL",
-            Self::HRK => "HRK",
             Self::HTG => "HTG",
             Self::HUF => "HUF",
             Self::IDR => "IDR",
@@ -820,7 +817,6 @@ impl TryFrom<&str> for CurrencyCode {
             "GYD" => Ok(Self::GYD),
             "HKD" => Ok(Self::HKD),
             "HNL" => Ok(Self::HNL),
-            "HRK" => Ok(Self::HRK),
             "HTG" => Ok(Self::HTG),
             "HUF" => Ok(Self::HUF),
             "IDR" => Ok(Self::IDR),
@@ -986,7 +982,6 @@ impl CurrencyCode {
             Self::GYD => iso_currency::Currency::GYD,
             Self::HKD => iso_currency::Currency::HKD,
             Self::HNL => iso_currency::Currency::HNL,
-            Self::HRK => iso_currency::Currency::HRK,
             Self::HTG => iso_currency::Currency::HTG,
             Self::HUF => iso_currency::Currency::HUF,
             Self::IDR => iso_currency::Currency::IDR,

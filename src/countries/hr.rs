@@ -15,7 +15,7 @@ pub mod consts {
     pub const ALPHA3: Alpha3 = Alpha3::HRV;
     pub const CONTINENT: Continent = Continent::Europe;
     pub const COUNTRY_CODE: usize = 385;
-    pub const CURRENCY_CODE: CurrencyCode = CurrencyCode::HRK;
+    pub const CURRENCY_CODE: CurrencyCode = CurrencyCode::EUR;
     pub const GEC: Option<GEC> = Some(GEC::HR);
     pub const INTERNATIONAL_PREFIX: &str = "00";
     pub const IOC: Option<IOC> = Some(IOC::CRO);
@@ -570,7 +570,7 @@ pub fn new() -> Country {
         address_format: Some("{{recipient}}\n{{street}}\n{{postalcode}} {{city}}\n{{country}}"),
         continent: Continent::Europe,
         country_code: 385,
-        currency_code: CurrencyCode::HRK,
+        currency_code: CurrencyCode::EUR,
         gec: Some(GEC::HR),
         #[cfg(feature = "geo")]
         geo: geo::new(),
