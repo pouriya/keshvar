@@ -87,7 +87,7 @@ impl Continent {
             )
             .as_bytes(),
         )?;
-        region_rs_file.write_all(b"                }\n")?;
+        region_rs_file.write_all(b"            }\n")?;
     }
     region_rs_file.write_all(
         r#"        }
@@ -209,7 +209,7 @@ impl Region {
             )
             .as_bytes(),
         )?;
-        region_rs_file.write_all(b"                }\n")?;
+        region_rs_file.write_all(b"            }\n")?;
     }
     region_rs_file.write_all(
         r#"        }
@@ -330,7 +330,7 @@ impl SubRegion {
             )
             .as_bytes(),
         )?;
-        region_rs_file.write_all(b"                }\n")?;
+        region_rs_file.write_all(b"            }\n")?;
     }
     region_rs_file.write_all(
         r#"        }

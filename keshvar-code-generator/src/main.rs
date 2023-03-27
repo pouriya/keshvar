@@ -11,48 +11,55 @@ mod structs;
 mod translations;
 mod utils;
 
-use anyhow::{bail, Context, Result};
-use std::collections::HashMap;
-use std::env;
-use std::{fs, path::PathBuf};
-
 use structs::CountryInfo;
 
+use anyhow::{bail, Context, Result};
+use std::{fs, env, collections::HashMap, path::PathBuf};
+
 fn main() -> Result<()> {
-    if env::var("KESHVAR_GENERATE").is_err() {
-        return Ok(());
+    if env::args().len() != 3 {
+        bail!("You should set input (`countries` library) and output directories");
     }
+    let argument_list: Vec<_> = env::args().collect();
+    let input_directory = PathBuf::from(&argument_list[1]);
+    if !input_directory.exists() {
+        bail!("Could not found input directory {input_directory:?}");
+    }
+    let output_directory = PathBuf::from(&argument_list[2]);
+    // if output_directory.exists() {
+    //     bail!("Output directory {output_directory:?} should be empty!");
+    // }
     utils::remove_log_file();
-    code_gen()
+    code_gen(input_directory, output_directory)
 }
 
-fn code_gen() -> Result<()> {
-    let library_directory = PathBuf::from("countries");
-    if !library_directory.exists() {
-        bail!("Could not found `countries` library");
-    }
-    let data_directory = library_directory.join("lib").join("countries").join("data");
+fn code_gen(input_directory: PathBuf, output_directory: PathBuf) -> Result<()> {
+    let data_directory = input_directory.join("lib").join("countries").join("data");
     if !data_directory.exists() {
         bail!(
-            "Could not found main data directory {:?} inside `countries` library",
-            data_directory
+            "Could not found main data directory {data_directory:?} inside input directory {input_directory:?}"
         );
     }
-    code_gen_countries(data_directory)
+    code_gen_countries(data_directory, output_directory)
 }
 
-fn code_gen_countries(data_directory: PathBuf) -> Result<()> {
-    let countries_directory = PathBuf::from("src").join("countries");
-    if !countries_directory.exists() {
-        fs::create_dir(countries_directory.clone()).context(format!(
-            "Could not create directory {:?}",
-            countries_directory
+fn code_gen_countries(data_directory: PathBuf, output_directory: PathBuf) -> Result<()> {
+    let src_directory = output_directory.join("src");
+    if !src_directory.exists() {
+        fs::create_dir(src_directory.clone()).context(format!(
+            "Could not create directory {src_directory:?}"
         ))?;
     }
-    let mut filename_list = fs::read_dir(data_directory.join("countries"))
+    let countries_directory = src_directory.join("countries");
+    if !countries_directory.exists() {
+        fs::create_dir(countries_directory.clone()).context(format!(
+            "Could not create directory {countries_directory:?}"
+        ))?;
+    }
+    let input_countries_directory = data_directory.join("countries");
+    let mut filename_list = fs::read_dir(&input_countries_directory)
         .context(format!(
-            "Could not read directory {:?}",
-            data_directory.join("countries")
+            "Could not read directory {input_countries_directory:?}"
         ))?
         .map(|x| x.unwrap().path())
         .collect::<Vec<_>>();
@@ -82,10 +89,11 @@ fn code_gen_countries(data_directory: PathBuf) -> Result<()> {
         countries_info_list.push((country_name, info))
     }
     countries_info_list.sort_by_key(|(name, _)| name.clone());
-    let mut translation_filename_list = fs::read_dir(data_directory.join("translations"))
+
+    let input_translations_directory = data_directory.join("translations");
+    let mut translation_filename_list = fs::read_dir(&input_translations_directory)
         .context(format!(
-            "Could not read directory {:?}",
-            data_directory.join("translations")
+            "Could not read directory {input_translations_directory:?}"
         ))?
         .map(|x| x.unwrap().path())
         .collect::<Vec<_>>();
@@ -145,9 +153,7 @@ fn code_gen_countries(data_directory: PathBuf) -> Result<()> {
     }
     // Generate codes for each country:
     countries_info_list.iter().try_for_each(|(name, info)| {
-        let module_filename = PathBuf::from("src")
-            .join("countries")
-            .join(PathBuf::from(name.to_lowercase()).with_extension("rs"));
+        let module_filename = countries_directory.join(PathBuf::from(name.to_lowercase()).with_extension("rs"));
         countries::generate_country(&module_filename, info)
     })?;
     // Categorize countries for `region`, `subregion`, and `world region`:
@@ -232,7 +238,7 @@ fn code_gen_countries(data_directory: PathBuf) -> Result<()> {
     let mod_rs_filename = countries_directory.join("mod.rs");
     countries::generate_mod(&mod_rs_filename, &countries_info_list)?;
 
-    let region_rs_filename = PathBuf::from("src").join("region.rs");
+    let region_rs_filename = src_directory.join("region.rs");
     region::generate(
         &region_rs_filename,
         &countries_info_list,
@@ -243,22 +249,22 @@ fn code_gen_countries(data_directory: PathBuf) -> Result<()> {
         &subdivision_type_name_list,
     )?;
 
-    let gec_rs_filename = PathBuf::from("src").join("gec.rs");
+    let gec_rs_filename = src_directory.join("gec.rs");
     gec::generate(&gec_rs_filename, &countries_info_list)?;
 
-    let ioc_rs_filename = PathBuf::from("src").join("ioc.rs");
+    let ioc_rs_filename = src_directory.join("ioc.rs");
     ioc::generate(&ioc_rs_filename, &countries_info_list)?;
 
-    let currency_code_rs_filename = PathBuf::from("src").join("currency_code.rs");
+    let currency_code_rs_filename = src_directory.join("currency_code.rs");
     currency_code::generate(&currency_code_rs_filename, &countries_info_list)?;
 
-    let alpha2_rs_filename = PathBuf::from("src").join("alpha2.rs");
+    let alpha2_rs_filename = src_directory.join("alpha2.rs");
     alpha2::generate(&alpha2_rs_filename, &countries_info_list)?;
 
-    let alpha3_rs_filename = PathBuf::from("src").join("alpha3.rs");
+    let alpha3_rs_filename = src_directory.join("alpha3.rs");
     alpha3::generate(&alpha3_rs_filename, &countries_info_list)?;
 
-    let consts_rs_filename = PathBuf::from("src").join("consts.rs");
+    let consts_rs_filename = src_directory.join("consts.rs");
     consts::generate(
         &consts_rs_filename,
         &countries_info_list,
@@ -268,10 +274,8 @@ fn code_gen_countries(data_directory: PathBuf) -> Result<()> {
         &world_region_features,
     )?;
 
-    let cargo_toml_default_filename = PathBuf::from("Cargo.default.toml");
-    let cargo_toml_filename = PathBuf::from("Cargo.toml");
+    let cargo_toml_filename = output_directory.join("Cargo.toml");
     cargo_toml::generate(
-        &cargo_toml_default_filename,
         &cargo_toml_filename,
         &countries_info_list,
         &country_feature_list,
