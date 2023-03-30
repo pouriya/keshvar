@@ -1,8 +1,16 @@
-# Copied from `keshvar-code-generator/Cargo.header.toml`
+# Copied from `keshvar-code-generator/src/Cargo.header.toml`
 [package]
 name = "keshvar"
 version = "0.1.0"
 edition = "2021"
+description = "collection of all sorts of useful information for every country"
+license-file = "LICENSE"
+readme = "README.md"
+homepage = "https://crates.io/crates/keshvar"
+documentation = "https://docs.rs/keshvar"
+repository = "https://github.com/pouriya/keshvar"
+categories = ["localization", "science::geo", "internationalization", "finance"]
+keywords = ["country", "countries", "iso-3166", "geo", "translation"]
 
 [dependencies]
 thiserror = "1.0"

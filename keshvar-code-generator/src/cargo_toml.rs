@@ -17,7 +17,7 @@ pub fn generate(
 ) -> Result<()> {
     let default_contents = include_str!("Cargo.header.toml");
     let mut cargo_toml_file = utils::create_new_file(destination_file, "Cargo")?;
-    cargo_toml_file.write_all(b"# Copied from `keshvar-code-generator/Cargo.header.toml`\n")?;
+    cargo_toml_file.write_all(b"# Copied from `keshvar-code-generator/src/Cargo.header.toml`\n")?;
     cargo_toml_file.write_all(default_contents.as_bytes())?;
     cargo_toml_file.write_all(
         format!(

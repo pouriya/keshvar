@@ -3,6 +3,9 @@
 // The Kyrgyz Republic
 
 #[cfg(all(feature = "kg", feature = "constants"))]
+/// A module to access all constant country data for `The Kyrgyz Republic`.
+///
+/// Note that to use this module, `constant` feature should be enabled.
 pub mod consts {
     #[allow(unused_imports)]
     use crate::{
@@ -184,6 +187,7 @@ pub mod consts {
         ("zu", "Kyrgyzstan"),
     ];
     #[cfg(all(feature = "kg", feature = "geo", feature = "constants"))]
+    /// GEO data as constants
     pub mod geo {
         pub const LATITUDE: f64 = 41.20438;
         pub const LONGITUDE: f64 = 74.766098;
@@ -198,9 +202,11 @@ pub mod consts {
     }
 }
 #[cfg(all(feature = "kg", feature = "geo"))]
+/// GEO module for this country.
 pub mod geo {
     use crate::{CountryGeo, CountryGeoBound, CountryGeoBounds};
 
+    /// GEO information for this country.
     pub fn new() -> CountryGeo {
         CountryGeo {
             latitude: 41.20438,
@@ -224,6 +230,7 @@ pub mod geo {
 }
 
 #[cfg(all(feature = "kg", feature = "subdivisions"))]
+/// Subdivision module for this country.
 pub mod subdivisions {
     #[allow(unused_imports)]
     use crate::{Alpha2, Subdivision, SubdivisionType};
@@ -233,6 +240,7 @@ pub mod subdivisions {
     #[allow(unused_imports)]
     use crate::SubdivisionGeo;
 
+    /// Subdivisions for this country.
     pub fn new() -> HashMap<&'static str, Subdivision> {
         HashMap::from([
             (
@@ -983,6 +991,7 @@ use crate::{
 #[allow(unused_imports)]
 use std::collections::HashMap;
 #[cfg(feature = "kg")]
+/// [`Country`](crate::Country) struct for this country.
 pub fn new() -> Country {
     Country {
         alpha2: Alpha2::KG,
