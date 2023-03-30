@@ -4,24 +4,24 @@ OUTPUT_SRC_DIRECTORY=${OUTPUT_DIRECTORY}/src
 CODE_GENERATOR_DIRECTORY=${CURDIR}/keshvar-code-generator/
 
 build:
-	@ echo "Building without default features..."
+	@ echo && echo "Building without default features..."
 	cargo build --no-default-features
-	@ ls -lash target/debug/*keshvar*
-	@ echo "Building with default features..."
+	@ ls -sh target/debug/*keshvar*
+	@ echo && echo "Building with default features..."
 	cargo build
-	@ ls -lash target/debug/*keshvar*
-	@ echo "Building with 'geo' feature..."
+	@ ls -sh target/debug/*keshvar*
+	@ echo && echo "Building with 'geo' feature..."
 	cargo build --features "geo"
-	@ ls -lash target/debug/*keshvar*
-	@ echo "Building with 'translations' feature..."
+	@ ls -sh target/debug/*keshvar*
+	@ echo && echo "Building with 'translations' feature..."
 	cargo build --features "translations"
-	@ ls -lash target/debug/*keshvar*
-	@ echo "Building with 'subdivisions' feature..."
+	@ ls -sh target/debug/*keshvar*
+	@ echo && echo "Building with 'subdivisions' feature..."
 	cargo build --features "subdivisions"
-	@ ls -lash target/debug/*keshvar*
-	@ echo "Building with all features..."
+	@ ls -sh target/debug/*keshvar*
+	@ echo && echo "Building with all features..."
 	cargo build --no-default-features --all-features
-	@ ls -lash target/debug/*keshvar*
+	@ ls -sh target/debug/*keshvar*
 
 generate:
 	@ echo "Removing auto-generated codes..."
@@ -57,6 +57,6 @@ test:
 
 clippy:
 	@echo "Running Clippy..."
-	cargo clippy
+	cargo clippy --all-features
 
 .PHONY: build generate check-style format-style test clippy
