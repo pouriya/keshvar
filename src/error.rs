@@ -1,3 +1,4 @@
+use crate::consts::{SUPPORTED_COUNTRIES_COUNT, SUPPORT_ALL_COUNTRIES};
 use thiserror::Error;
 
 #[derive(Debug, Clone, Copy, PartialEq, Error)]
@@ -30,4 +31,17 @@ pub enum SearchedItems {
     #[cfg(feature = "subdivisions")]
     #[cfg_attr(feature = "subdivisions", error("all {0} subdivisions"))]
     AllSubdivisions(usize),
+}
+
+#[allow(dead_code)]
+pub(crate) fn make_search_error() -> SearchError {
+    if SUPPORT_ALL_COUNTRIES {
+        SearchError::NotFound {
+            searched_items: SearchedItems::AllCountries,
+        }
+    } else {
+        SearchError::NotFound {
+            searched_items: SearchedItems::SupportedCountries(*SUPPORTED_COUNTRIES_COUNT),
+        }
+    }
 }
