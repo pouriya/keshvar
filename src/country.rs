@@ -14,45 +14,166 @@ use serde::{Deserialize, Serialize};
 #[derive(Debug, Clone)]
 #[cfg_attr(feature = "serde-derive", derive(Serialize, Deserialize))]
 pub struct Country {
-    pub alpha2: Alpha2,
-    pub alpha3: Alpha3,
-    pub country_code: usize,
-    pub continent: Continent,
-    pub currency_code: CurrencyCode,
-    pub address_format: Option<&'static str>,
-    pub gec: Option<GEC>,
+    pub(crate) alpha2: Alpha2,
+    pub(crate) alpha3: Alpha3,
+    pub(crate) country_code: usize,
+    pub(crate) continent: Continent,
+    pub(crate) currency_code: CurrencyCode,
+    pub(crate) address_format: Option<&'static str>,
+    pub(crate) gec: Option<GEC>,
     #[cfg(feature = "geo")]
-    pub geo: CountryGeo,
-    pub international_prefix: &'static str,
-    pub ioc: Option<IOC>,
-    pub iso_long_name: &'static str,
-    pub iso_short_name: &'static str,
+    pub(crate) geo: CountryGeo,
+    pub(crate) international_prefix: &'static str,
+    pub(crate) ioc: Option<IOC>,
+    pub(crate) iso_long_name: &'static str,
+    pub(crate) iso_short_name: &'static str,
     #[cfg_attr(feature = "serde-derive", serde(default))]
-    pub official_language_list: Vec<&'static str>,
+    pub(crate) official_language_list: Vec<&'static str>,
     #[cfg_attr(feature = "serde-derive", serde(default))]
-    pub spoken_language_list: Vec<&'static str>,
+    pub(crate) spoken_language_list: Vec<&'static str>,
     #[cfg_attr(feature = "serde-derive", serde(default))]
-    pub national_destination_code_length_list: Vec<usize>,
+    pub(crate) national_destination_code_length_list: Vec<usize>,
     #[cfg_attr(feature = "serde-derive", serde(default))]
-    pub national_number_length_list: Vec<u8>,
-    pub national_prefix: &'static str,
-    pub nationality: Option<&'static str>,
-    pub number: &'static str,
-    pub postal_code: bool,
-    pub postal_code_format: Option<&'static str>,
-    pub region: Option<Region>,
-    pub start_of_week: WeekDay,
-    pub subregion: Option<SubRegion>,
-    pub un_locode: &'static str,
+    pub(crate) national_number_length_list: Vec<u8>,
+    pub(crate) national_prefix: &'static str,
+    pub(crate) nationality: Option<&'static str>,
+    pub(crate) number: &'static str,
+    pub(crate) postal_code: bool,
+    pub(crate) postal_code_format: Option<&'static str>,
+    pub(crate) region: Option<Region>,
+    pub(crate) start_of_week: WeekDay,
+    pub(crate) subregion: Option<SubRegion>,
+    pub(crate) un_locode: &'static str,
     #[cfg_attr(feature = "serde-derive", serde(default))]
-    pub unofficial_name_list: Vec<&'static str>,
-    pub world_region: WorldRegion,
+    pub(crate) unofficial_name_list: Vec<&'static str>,
+    pub(crate) world_region: WorldRegion,
     #[cfg(feature = "translations")]
     #[cfg_attr(feature = "serde-derive", serde(default))]
-    pub translations: HashMap<&'static str, &'static str>,
+    pub(crate) translations: HashMap<&'static str, &'static str>,
     #[cfg(feature = "subdivisions")]
     #[cfg_attr(feature = "serde-derive", serde(default))]
-    pub subdivisions: HashMap<&'static str, Subdivision>,
+    pub(crate) subdivisions: HashMap<&'static str, Subdivision>,
+}
+
+impl Country {
+    pub fn alpha2(&self) -> Alpha2 {
+        self.alpha2
+    }
+
+    pub fn alpha3(&self) -> Alpha3 {
+        self.alpha3
+    }
+
+    pub fn country_code(&self) -> usize {
+        self.country_code
+    }
+
+    pub fn continent(&self) -> Continent {
+        self.continent
+    }
+
+    pub fn currency_code(&self) -> CurrencyCode {
+        self.currency_code
+    }
+
+    pub fn address_format(&self) -> Option<&str> {
+        self.address_format
+    }
+
+    pub fn gec(&self) -> Option<GEC> {
+        self.gec
+    }
+
+    #[cfg(feature = "geo")]
+    pub fn geo(&self) -> CountryGeo {
+        self.geo
+    }
+
+    pub fn international_prefix(&self) -> &str {
+        self.international_prefix
+    }
+
+    pub fn ioc(&self) -> Option<IOC> {
+        self.ioc
+    }
+
+    pub fn iso_long_name(&self) -> &str {
+        self.iso_long_name
+    }
+
+    pub fn iso_short_name(&self) -> &str {
+        self.iso_short_name
+    }
+
+    pub fn official_language_list(&self) -> &[&str] {
+        &self.official_language_list
+    }
+
+    pub fn spoken_language_list(&self) -> &[&str] {
+        &self.spoken_language_list
+    }
+
+    pub fn national_destination_code_length_list(&self) -> &[usize] {
+        &self.national_destination_code_length_list
+    }
+
+    pub fn national_number_length_list(&self) -> &[u8] {
+        &self.national_number_length_list
+    }
+
+    pub fn national_prefix(&self) -> &str {
+        self.national_prefix
+    }
+
+    pub fn nationality(&self) -> Option<&str> {
+        self.nationality
+    }
+
+    pub fn number(&self) -> &str {
+        self.number
+    }
+
+    pub fn postal_code(&self) -> bool {
+        self.postal_code
+    }
+
+    pub fn postal_code_format(&self) -> Option<&str> {
+        self.postal_code_format
+    }
+
+    pub fn region(&self) -> Option<Region> {
+        self.region
+    }
+
+    pub fn start_of_week(&self) -> WeekDay {
+        self.start_of_week
+    }
+
+    pub fn subregion(&self) -> Option<SubRegion> {
+        self.subregion
+    }
+
+    pub fn un_locode(&self) -> &str {
+        self.un_locode
+    }
+
+    pub fn unofficial_name_list(&self) -> &[&str] {
+        &self.unofficial_name_list
+    }
+
+    pub fn world_region(&self) -> WorldRegion {
+        self.world_region
+    }
+
+    #[cfg(feature = "translations")]
+    pub fn translations(&self) -> &HashMap<&str, &str> {
+        &self.translations
+    }
+
+    #[cfg(feature = "subdivisions")]
+    pub fn subdivisions(&self) -> &HashMap<&str, Subdivision> {
+        &self.subdivisions
+    }
 }
 
 impl PartialEq for Country {
@@ -91,62 +212,179 @@ impl TryFrom<&str> for Country {
 
 #[cfg(feature = "geo")]
 #[cfg_attr(feature = "serde-derive", derive(Serialize, Deserialize))]
-#[derive(Debug, Clone, PartialEq)]
+#[derive(Debug, Clone, Copy, PartialEq)]
 pub struct CountryGeo {
-    pub latitude: f64,
-    pub longitude: f64,
-    pub max_latitude: f64,
-    pub max_longitude: f64,
-    pub min_latitude: f64,
-    pub min_longitude: f64,
-    pub bounds: CountryGeoBounds,
+    pub(crate) latitude: f64,
+    pub(crate) longitude: f64,
+    pub(crate) max_latitude: f64,
+    pub(crate) max_longitude: f64,
+    pub(crate) min_latitude: f64,
+    pub(crate) min_longitude: f64,
+    pub(crate) bounds: CountryGeoBounds,
+}
+
+#[cfg(feature = "geo")]
+impl CountryGeo {
+    pub fn latitude(&self) -> f64 {
+        self.latitude
+    }
+
+    pub fn longitude(&self) -> f64 {
+        self.longitude
+    }
+
+    pub fn max_latitude(&self) -> f64 {
+        self.max_latitude
+    }
+
+    pub fn max_longitude(&self) -> f64 {
+        self.max_longitude
+    }
+
+    pub fn min_latitude(&self) -> f64 {
+        self.min_latitude
+    }
+
+    pub fn min_longitude(&self) -> f64 {
+        self.min_longitude
+    }
+
+    pub fn bounds(&self) -> CountryGeoBounds {
+        self.bounds
+    }
 }
 
 #[cfg(feature = "geo")]
 #[cfg_attr(feature = "serde-derive", derive(Serialize, Deserialize))]
-#[derive(Debug, Clone, PartialEq)]
+#[derive(Debug, Clone, Copy, PartialEq)]
 pub struct CountryGeoBounds {
-    pub northeast: CountryGeoBound,
-    pub southwest: CountryGeoBound,
+    pub(crate) northeast: CountryGeoBound,
+    pub(crate) southwest: CountryGeoBound,
+}
+
+#[cfg(feature = "geo")]
+impl CountryGeoBounds {
+    pub fn northeast(&self) -> CountryGeoBound {
+        self.northeast
+    }
+
+    pub fn southwest(&self) -> CountryGeoBound {
+        self.southwest
+    }
 }
 
 #[cfg(feature = "geo")]
 #[cfg_attr(feature = "serde-derive", derive(Serialize, Deserialize))]
-#[derive(Debug, Clone, PartialEq)]
+#[derive(Debug, Clone, Copy, PartialEq)]
 pub struct CountryGeoBound {
-    pub latitude: f64,
-    pub longitude: f64,
+    pub(crate) latitude: f64,
+    pub(crate) longitude: f64,
+}
+
+#[cfg(feature = "geo")]
+impl CountryGeoBound {
+    pub fn latitude(&self) -> f64 {
+        self.latitude
+    }
+
+    pub fn longitude(&self) -> f64 {
+        self.longitude
+    }
 }
 
 #[cfg(feature = "subdivisions")]
 #[cfg_attr(feature = "serde-derive", derive(Serialize, Deserialize))]
 #[derive(Debug, Clone)]
 pub struct Subdivision {
-    pub code: &'static str,
-    pub country_alpha2: Alpha2,
-    pub name: &'static str,
+    pub(crate) code: &'static str,
+    pub(crate) country_alpha2: Alpha2,
+    pub(crate) name: &'static str,
     #[cfg(feature = "geo")]
-    pub geo: Option<SubdivisionGeo>,
-    pub comments: Option<&'static str>,
+    pub(crate) geo: Option<SubdivisionGeo>,
+    pub(crate) comments: Option<&'static str>,
     #[cfg_attr(feature = "serde-derive", serde(alias = "type"))]
-    pub subdivision_type: SubdivisionType,
+    pub(crate) subdivision_type: SubdivisionType,
     #[cfg(feature = "translations")]
     #[cfg_attr(feature = "serde-derive", serde(default))]
-    pub translations: HashMap<&'static str, &'static str>,
+    pub(crate) translations: HashMap<&'static str, &'static str>,
     #[cfg_attr(feature = "serde-derive", serde(default))]
-    pub unofficial_name_list: Vec<&'static str>,
+    pub(crate) unofficial_name_list: Vec<&'static str>,
+}
+
+#[cfg(feature = "subdivisions")]
+impl Subdivision {
+    pub fn code(&self) -> &str {
+        self.code
+    }
+
+    pub fn country_alpha2(&self) -> Alpha2 {
+        self.country_alpha2
+    }
+
+    pub fn name(&self) -> &str {
+        self.name
+    }
+
+    #[cfg(feature = "geo")]
+    pub fn geo(&self) -> Option<SubdivisionGeo> {
+        self.geo
+    }
+
+    pub fn comments(&self) -> Option<&str> {
+        self.comments
+    }
+
+    pub fn subdivision_type(&self) -> SubdivisionType {
+        self.subdivision_type
+    }
+
+    #[cfg(feature = "translations")]
+    pub fn translations(&self) -> &HashMap<&str, &str> {
+        &self.translations
+    }
+
+    pub fn unofficial_name_list(&self) -> &[&str] {
+        &self.unofficial_name_list
+    }
 }
 
 #[cfg(all(feature = "geo", feature = "subdivisions"))]
 #[cfg_attr(feature = "serde-derive", derive(Serialize, Deserialize))]
-#[derive(Debug, Clone, PartialEq)]
+#[derive(Debug, Clone, Copy, PartialEq)]
 pub struct SubdivisionGeo {
-    pub latitude: Option<f64>,
-    pub longitude: Option<f64>,
-    pub max_latitude: Option<f64>,
-    pub max_longitude: Option<f64>,
-    pub min_latitude: Option<f64>,
-    pub min_longitude: Option<f64>,
+    pub(crate) latitude: Option<f64>,
+    pub(crate) longitude: Option<f64>,
+    pub(crate) max_latitude: Option<f64>,
+    pub(crate) max_longitude: Option<f64>,
+    pub(crate) min_latitude: Option<f64>,
+    pub(crate) min_longitude: Option<f64>,
+}
+
+#[cfg(all(feature = "geo", feature = "subdivisions"))]
+impl SubdivisionGeo {
+    pub fn latitude(&self) -> Option<f64> {
+        self.latitude
+    }
+
+    pub fn longitude(&self) -> Option<f64> {
+        self.longitude
+    }
+
+    pub fn max_latitude(&self) -> Option<f64> {
+        self.max_latitude
+    }
+
+    pub fn max_longitude(&self) -> Option<f64> {
+        self.max_longitude
+    }
+
+    pub fn min_latitude(&self) -> Option<f64> {
+        self.min_latitude
+    }
+
+    pub fn min_longitude(&self) -> Option<f64> {
+        self.min_longitude
+    }
 }
 
 #[cfg(feature = "subdivisions")]
