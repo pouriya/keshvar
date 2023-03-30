@@ -37,11 +37,27 @@ pub fn generate_country(destination_file: &PathBuf, info: &CountryInfo) -> Resul
             destination_file
         ))?;
     utils::write_first_comments(&mut file, file!())?;
-    file.write_all(format!("// {}\n\n", info.iso_long_name.clone()).as_bytes())?;
+    file.write_all(
+        format!(
+            "//! A module for country `{}`\n\n",
+            info.iso_long_name.clone()
+        )
+        .as_bytes(),
+    )?;
     file.write_all(
         format!(
             "#[cfg(all(feature = {:?}, feature = \"constants\"))]\n",
             info.feature_name
+        )
+        .as_bytes(),
+    )?;
+    file.write_all(
+        format!(
+            r#"/// A module to access all constant country data for `{}`.
+///
+/// Note that to use this module, `constant` feature should be enabled.
+"#,
+            info.iso_long_name.clone()
         )
         .as_bytes(),
     )?;
@@ -205,6 +221,7 @@ pub fn generate_country(destination_file: &PathBuf, info: &CountryInfo) -> Resul
         )
         .as_bytes(),
     )?;
+    file.write_all(b"    /// GEO data as constants\n")?;
     file.write_all(b"    pub mod geo {\n")?;
     for (name, _type, value) in [
         ("const LATITUDE", "f64", info.geo.latitude),
@@ -252,11 +269,13 @@ pub fn generate_country(destination_file: &PathBuf, info: &CountryInfo) -> Resul
         )
         .as_bytes(),
     )?;
+    file.write_all(b"/// GEO module for this country.\n")?;
     file.write_all(b"pub mod geo {\n")?;
     file.write_all(b"    use crate::{CountryGeo, CountryGeoBounds, CountryGeoBound};\n")?;
     file.write_all(
         format!(
             r#"
+    /// GEO information for this country.
     pub fn new() -> CountryGeo {{
         CountryGeo {{
             latitude: {},
@@ -299,6 +318,7 @@ pub fn generate_country(destination_file: &PathBuf, info: &CountryInfo) -> Resul
         )
         .as_bytes(),
     )?;
+    file.write_all(b"/// Subdivision module for this country.\n")?;
     file.write_all(b"pub mod subdivisions {\n")?;
     file.write_all(b"    use std::collections::HashMap;\n")?;
     file.write_all(b"    #[allow(unused_imports)]\n")?;
@@ -307,6 +327,7 @@ pub fn generate_country(destination_file: &PathBuf, info: &CountryInfo) -> Resul
     file.write_all(b"    #[cfg(feature = \"geo\")]\n")?;
     file.write_all(b"    #[allow(unused_imports)]\n")?;
     file.write_all(b"    use crate::SubdivisionGeo;\n\n")?;
+    file.write_all(b"    /// Subdivisions for this country.\n")?;
     file.write_all(b"    pub fn new() -> HashMap<&'static str, Subdivision> {\n")?;
     file.write_all(b"        HashMap::from(\n")?;
     file.write_all(b"            [\n")?;
@@ -365,6 +386,7 @@ pub fn generate_country(destination_file: &PathBuf, info: &CountryInfo) -> Resul
     file.write_all(
         format!(
             r#"
+/// [`Country`](crate::Country) struct for this country.
 pub fn new() -> Country {{
     Country{{
         alpha2: Alpha2::{},

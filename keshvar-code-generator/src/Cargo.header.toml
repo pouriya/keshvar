@@ -1,6 +1,6 @@
 [package]
 name = "keshvar"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 description = "collection of all sorts of useful information for every country"
 license-file = "LICENSE"
@@ -10,6 +10,7 @@ documentation = "https://docs.rs/keshvar"
 repository = "https://github.com/pouriya/keshvar"
 categories = ["localization", "science::geo", "internationalization", "finance"]
 keywords = ["country", "countries", "iso-3166", "geo", "translation"]
+include = ["src", "Cargo.toml", "LICENSE", "README.md", ".gitignore"]
 
 [dependencies]
 thiserror = "1.0"
