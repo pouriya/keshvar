@@ -18,8 +18,7 @@ pub fn generate_mod(
     utils::write_first_comments(&mut mod_rs_file, file!())?;
     // `filename_list` is sorted so we iterate over it and lookup info from `countries_info`:
     for (_, info) in countries_info_list {
-        mod_rs_file
-            .write_all(utils::country_cfg_feature_and_doc_commented_name(info, 0).as_bytes())?;
+        mod_rs_file.write_all(utils::country_cfg_feature_and_commented_name(info, 0).as_bytes())?;
         mod_rs_file.write_all(format!("pub mod {};\n", info.module_name).as_bytes())?;
     }
     log!("Generated {:?}", destination_file);
@@ -38,7 +37,13 @@ pub fn generate_country(destination_file: &PathBuf, info: &CountryInfo) -> Resul
             destination_file
         ))?;
     utils::write_first_comments(&mut file, file!())?;
-    file.write_all(format!("// {}\n\n", info.iso_long_name.clone()).as_bytes())?;
+    file.write_all(
+        format!(
+            "//! A module for country `{}`\n\n",
+            info.iso_long_name.clone()
+        )
+        .as_bytes(),
+    )?;
     file.write_all(
         format!(
             "#[cfg(all(feature = {:?}, feature = \"constants\"))]\n",
