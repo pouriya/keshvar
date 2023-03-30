@@ -62,51 +62,13 @@ Additionally, You can only include countries for different continents, regions, 
 # - Countries of `northern-africa` subregion.
 keshvar = {version = "<VERSION>", default-features = false, features = ["asia", "oceania", "northern-africa"]}
 ```
-[Continent](crate::Continent) feature names:
-* africa
-* antarctica
-* asia
-* australia
-* europe
-* north-america
-* south-america
+[Continent](crate::Continent) feature names: `africa` | `antarctica` | `asia` | `australia` | `europe` | `north-america` | `south-america`
 
-[Region](crate::Region) feature names:
-* americas
-* oceania
-* region-africa
-* region-antarctica
-* region-asia
-* region-europe
+[Region](crate::Region) feature names: `americas` | `oceania` | `region-africa` | `region-antarctica` | `region-asia` | `region-europe`
 
-[Subregion](crate::SubRegion) feature names:
-* australia-and-new-zealand
-* caribbean
-* central-america
-* central-asia
-* eastern-africa
-* eastern-asia
-* eastern-europe
-* melanesia
-* micronesia
-* middle-africa
-* northern-africa
-* northern-america
-* northern-europe
-* polynesia
-* south-eastern-asia
-* southern-africa
-* southern-asia
-* southern-europe
-* subregion-south-america
-* western-africa
-* western-asia
-* western-europe
+[Subregion](crate::SubRegion) feature names: `australia-and-new-zealand` | `caribbean` | `central-america` | `central-asia` | `eastern-africa` | `eastern-asia` | `eastern-europe` | `melanesia` | `micronesia` | `middle-africa` | `northern-africa` | `northern-america` | `northern-europe` | `polynesia` | `south-eastern-asia` | `southern-africa` | `southern-asia` | `southern-europe` | `subregion-south-america` | `western-africa` | `western-asia` | `western-europe`
 
-[World region](crate::WorldRegion) feature names:
-* amer
-* apac
-* emea
+[World region](crate::WorldRegion) feature names: `amer` | `apac` | `emea`
 
 # Examples
 
