@@ -136,7 +136,7 @@ impl Alpha3 {
     alpha3_rs_file.write_all(
         r#"mod impls {
     use super::{Alpha3, Alpha2};
-    use crate::{SearchError, SearchedItems};
+    use crate::{SearchError, make_search_error};
 
     impl TryFrom<&str> for Alpha3 {
         type Error = SearchError;
@@ -160,35 +160,7 @@ impl Alpha3 {
             .as_bytes(),
         )?;
     }
-    alpha3_rs_file.write_all(
-        utils::country_cfg_features(
-            countries_info_list
-                .iter()
-                .map(|(_, info)| info.feature_name.clone())
-                .collect(),
-            "all",
-            4,
-        )
-        .as_bytes(),
-    )?;
-    alpha3_rs_file.write_all(
-        r#"                _ => Err(
-                    SearchError::NotFound{
-                        searched_items: SearchedItems::AllCountries
-                    }
-                ),
-"#
-        .as_bytes(),
-    )?;
-    alpha3_rs_file.write_all(
-        r#"                #[allow(unreachable_patterns)]
-                _ => Err(
-                    SearchError::NotFound{
-                        searched_items: SearchedItems::SupportedCountries(*crate::consts::SUPPORTED_COUNTRIES_COUNT)
-                    }
-                ),
-"#.as_bytes()
-    )?;
+    alpha3_rs_file.write_all(b"                _ => Err(make_search_error()),\n")?;
     alpha3_rs_file.write_all("            }\n        }\n    }\n".as_bytes())?;
 
     alpha3_rs_file.write_all(

@@ -68,7 +68,7 @@ pub enum GEC {
     gec_rs_file.write_all(
         r#"mod impls {
     use super::GEC;
-    use crate::{Alpha2, Country, SearchError, SearchedItems};
+    use crate::{Alpha2, Country, SearchError, make_search_error};
 "#
         .as_bytes(),
     )?;
@@ -155,35 +155,7 @@ pub enum GEC {
             .as_bytes(),
         )?;
     }
-    gec_rs_file.write_all(
-        utils::country_cfg_features(
-            new_countries_info_list
-                .iter()
-                .map(|info| info.feature_name.clone())
-                .collect(),
-            "all",
-            4,
-        )
-        .as_bytes(),
-    )?;
-    gec_rs_file.write_all(
-        r#"                _ => Err(
-                    SearchError::NotFound{
-                        searched_items: SearchedItems::AllCountries
-                    }
-                ),
-"#
-        .as_bytes(),
-    )?;
-    gec_rs_file.write_all(
-        r#"                #[allow(unreachable_patterns)]
-                _ => Err(
-                    SearchError::NotFound{
-                        searched_items: SearchedItems::SupportedCountries(*crate::consts::SUPPORTED_COUNTRIES_COUNT)
-                    }
-                ),
-"#.as_bytes()
-    )?;
+    gec_rs_file.write_all(b"                _ => Err(make_search_error()),")?;
     gec_rs_file.write_all(
         r#"            }
         }
