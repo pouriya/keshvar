@@ -1,7 +1,7 @@
 # Copied from `keshvar-code-generator/src/Cargo.header.toml`
 [package]
 name = "keshvar"
-version = "0.1.1"
+version = "0.1.2"
 edition = "2021"
 description = "collection of all sorts of useful information for every country"
 license = "BSD-3-Clause"
