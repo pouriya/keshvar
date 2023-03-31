@@ -4,15 +4,11 @@ on:
   push:
     tags-ignore:
       - "*.*.*"
-    paths-ignore:
-      - "**.md"
     branches-ignore:
       - "documentation"
   pull_request:
     branches:
       - "master"
-    paths-ignore:
-      - "**.md"
 
 jobs:
   build:
