@@ -1,0 +1,21 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "*"
+
+jobs:
+  publish:
+    name: Publish on crates.io
+    runs-on: ubuntu-latest
+    steps:
+      - name: Installing Rust toolchain
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          override: true
+      - name: Checking out source
+        uses: actions/checkout@v1
+      - name: Publishing
+        run: cargo publish --all-features --token ${{ secrets.CRATES_IO_SECRET_TOKEN }}

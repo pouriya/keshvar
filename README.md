@@ -18,9 +18,9 @@ This library contains collection of all sorts of useful information for every co
 * Country Subdivisions. (Optional)
 * GEO locations for countries and their subdivisions (Optional)
 * Translations for countries and subdivisions (Optional)
-* [`serde`](serde) integration (Optional)
-* [`chrono`](chrono) integration (Optional)
-* [`iso_currency (ISO 4217)`](iso_currency) integration (Optional)
+* [`serde`](https://docs.rs/serde) integration (Optional)
+* [`chrono`](https://docs.rs/chrono) integration (Optional)
+* [`iso_currency (ISO 4217)`](https://docs.rs/iso_currency) integration (Optional)
 
 # Installation
 Add this library as a dependency (from commandline or do it manually) in your `Cargo.toml` file.
@@ -241,4 +241,9 @@ let country = find_by_code(971).unwrap(); // The United Arab Emirates (Asia)
 assert_eq!(Alpha3::ARE, country.alpha3());
 assert_eq!(Continent::Asia, country.continent());
 ```
-[//]: # (#  A Rust wrapper with some integrations on top of Ruby's [`countries`]&#40;https://github.com/countries/countries&#41; updated data.)
+
+# Contribution
+See [**CONTRIBUTING.md** file](https://github.com/pouriya/keshvar/blob/master/CONTRIBUTING.md).
+
+# License
+`keshvar` source-code generator and the generated source are distributed under BSD-3-Clause license (See `LICENSE` file) but the data that is used to feed the generator is distributed under MIT License (See [`countries` license file](https://github.com/countries/countries/blob/master/LICENSE)).  

@@ -4,14 +4,14 @@ name = "keshvar"
 version = "0.1.1"
 edition = "2021"
 description = "collection of all sorts of useful information for every country"
-license-file = "LICENSE"
+license = "BSD-3-Clause"
 readme = "README.md"
 homepage = "https://crates.io/crates/keshvar"
 documentation = "https://docs.rs/keshvar"
 repository = "https://github.com/pouriya/keshvar"
 categories = ["localization", "science::geo", "internationalization", "finance"]
 keywords = ["country", "countries", "iso-3166", "geo", "translation"]
-include = ["src", "Cargo.toml", "LICENSE", "README.md", ".gitignore"]
+include = ["src/**/*.rs", "Cargo.toml", "LICENSE", "README.md", "CONTRIBUTING.md"]
 
 [dependencies]
 thiserror = "1.0"
