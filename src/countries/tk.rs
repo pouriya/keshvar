@@ -39,6 +39,8 @@ pub mod consts {
     pub const UNOFFICIAL_NAME_LIST: &[&str] =
         &["Tokelau", "Îles Tokelau", "Islas Tokelau", "トケラウ"];
     pub const WORLD_REGION: WorldRegion = WorldRegion::APAC;
+    #[cfg(feature = "emojis")]
+    pub const EMOJI: &str = "🇹🇰";
     #[cfg(feature = "translations")]
     pub const TRANSLATIONS: &[(&str, &str)] = &[
         ("ab", "Tokelau"),
@@ -271,6 +273,8 @@ pub fn new() -> Country {
         un_locode: "TK",
         unofficial_name_list: ["Tokelau", "Îles Tokelau", "Islas Tokelau", "トケラウ"].to_vec(),
         world_region: WorldRegion::APAC,
+        #[cfg(feature = "emojis")]
+        emoji: "🇹🇰",
         #[cfg(feature = "translations")]
         translations: HashMap::from([
             ("ab", "Tokelau"),

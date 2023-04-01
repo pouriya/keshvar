@@ -47,6 +47,8 @@ pub struct Country {
     #[cfg_attr(feature = "serde-derive", serde(default))]
     pub(crate) unofficial_name_list: Vec<&'static str>,
     pub(crate) world_region: WorldRegion,
+    #[cfg(feature = "emojis")]
+    pub(crate) emoji: &'static str,
     #[cfg(feature = "translations")]
     #[cfg_attr(feature = "serde-derive", serde(default))]
     pub(crate) translations: HashMap<&'static str, &'static str>,
@@ -163,6 +165,11 @@ impl Country {
 
     pub fn world_region(&self) -> WorldRegion {
         self.world_region
+    }
+
+    #[cfg(feature = "emojis")]
+    pub fn emoji(&self) -> &str {
+        self.emoji
     }
 
     #[cfg(feature = "translations")]

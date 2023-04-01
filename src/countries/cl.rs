@@ -38,6 +38,8 @@ pub mod consts {
     pub const UN_LOCODE: &str = "CL";
     pub const UNOFFICIAL_NAME_LIST: &[&str] = &["Chile", "チリ", "Chili"];
     pub const WORLD_REGION: WorldRegion = WorldRegion::AMER;
+    #[cfg(feature = "emojis")]
+    pub const EMOJI: &str = "🇨🇱";
     #[cfg(feature = "translations")]
     pub const TRANSLATIONS: &[(&str, &str)] = &[
         ("ab", "Chile"),
@@ -515,6 +517,8 @@ pub fn new() -> Country {
         un_locode: "CL",
         unofficial_name_list: ["Chile", "チリ", "Chili"].to_vec(),
         world_region: WorldRegion::AMER,
+        #[cfg(feature = "emojis")]
+        emoji: "🇨🇱",
         #[cfg(feature = "translations")]
         translations: HashMap::from([("ab", "Chile"), ("af", "Chili"), ("ak", "Chile"), ("am", "ኁሑ"), ("an", "Chile"), ("ar", "تشيلي"), ("as", "চিলি"), ("ay", "Chile"), ("az", "Çili"), ("ba", "Chile"), ("be", "Чылі"), ("bg", "Чили"), ("bi", "Chile"), ("bn", "চিলি"), ("bn_IN", "চিলি"), ("br", "Chile"), ("bs", "Čile"), ("ca", "Xile"), ("ce", "Чили"), ("ch", "Chile"), ("cs", "Chile"), ("cv", "Чили"), ("cy", "Chile"), ("da", "Chile"), ("de", "Chile"), ("dv", "ޗ\u{7a8}ލ\u{7a9}"), ("dz", "ཅ\u{f72}་ལ\u{f72}།"), ("ee", "Chile"), ("el", "Χιλή"), ("en", "Chile"), ("eo", "Ĉilio"), ("es", "Chile"), ("et", "Tšiili"), ("eu", "Txile"), ("fa", "شیلی"), ("ff", "Ciile"), ("fi", "Chile"), ("fo", "Kili"), ("fr", "Chili"), ("fy", "Sily"), ("ga", "An tSile"), ("gl", "Chile"), ("gn", "Chile"), ("gu", "ચીલી"), ("gv", "Yn Çhillee"), ("ha", "Chile"), ("he", "צ'ילה"), ("hi", "चिली"), ("hr", "Čile"), ("ht", "Chili"), ("hu", "Chile"), ("hy", "Չիլի"), ("ia", "Chile"), ("id", "Chili"), ("io", "Chili"), ("is", "Síle"), ("it", "Cile"), ("iu", "ᓯᓕ"), ("ja", "チリ"), ("ka", "ჩილი"), ("ki", "Chile"), ("kk", "Чили"), ("kl", "Chile"), ("km", "ឈ\u{17b8}ល\u{17b8}"), ("kn", "ಚ\u{cbf}ಲ\u{cbf}"), ("ko", "칠레"), ("ku", "Sîlî"), ("kv", "Чили"), ("kw", "Chile"), ("ky", "Чили"), ("lo", "Chile"), ("lt", "Čilė"), ("lv", "Čīle"), ("mi", "Hiri"), ("mk", "Чиле"), ("ml", "ചിലി"), ("mn", "Чили"), ("mr", "चिली"), ("ms", "Chile"), ("mt", "Ċile"), ("my", "ချ\u{102e}လ\u{102e}ပြည\u{103a}သ\u{1030}\u{1037}သမ\u{1039}မတန\u{102d}\u{102f}င\u{103a}င\u{1036}"), ("na", "Tsire"), ("nb", "Chile"), ("ne", "चिली"), ("nl", "Chili"), ("nn", "Chile"), ("nv", "Chile"), ("oc", "Chile"), ("or", "ଚ\u{b3f}ଲୀ"), ("pa", "ਚਿ\u{a71}ਲੀ"), ("pi", "चिल\u{947}"), ("pl", "Chile"), ("ps", "چېلي"), ("pt", "Chile"), ("pt_BR", "Chile"), ("ro", "Chile"), ("ru", "Чили"), ("rw", "Shili"), ("sc", "Tzile"), ("sd", "چلي"), ("si", "ච\u{dd2}ල\u{dd3}"), ("sk", "Čile"), ("sl", "Čile"), ("so", "Jili"), ("sq", "Kili"), ("sr", "Чиле"), ("sv", "Chile"), ("sw", "Chile"), ("ta", "சிலி"), ("te", "చ\u{c3f}ల\u{c40}"), ("tg", "Чили"), ("th", "ช\u{e34}ล\u{e35}"), ("ti", "ቺሊ"), ("tk", "Çili"), ("tl", "Tsile"), ("tr", "Şili"), ("tt", "Чили"), ("ug", "چىلى"), ("uk", "Чилі"), ("ur", "چلی"), ("uz", "Chili"), ("ve", "Shile"), ("vi", "Chi-lê"), ("wa", "Tchili"), ("wo", "Ciili"), ("xh", "Chile"), ("yo", "Tsílè"), ("zh_CN", "智利"), ("zh_HK", "智利"), ("zh_TW", "智利"), ("zu", "I-Chile")]),
         #[cfg(feature = "subdivisions")]

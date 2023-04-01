@@ -39,6 +39,8 @@ pub mod consts {
     pub const UNOFFICIAL_NAME_LIST: &[&str] =
         &["Åland Islands", "Åland", "オーランド諸島", "Ålandeilanden"];
     pub const WORLD_REGION: WorldRegion = WorldRegion::EMEA;
+    #[cfg(feature = "emojis")]
+    pub const EMOJI: &str = "🇦🇽";
     #[cfg(feature = "translations")]
     pub const TRANSLATIONS: &[(&str, &str)] = &[
         ("ab", "Åland Islands"),
@@ -284,6 +286,8 @@ pub fn new() -> Country {
         unofficial_name_list: ["Åland Islands", "Åland", "オーランド諸島", "Ålandeilanden"]
             .to_vec(),
         world_region: WorldRegion::EMEA,
+        #[cfg(feature = "emojis")]
+        emoji: "🇦🇽",
         #[cfg(feature = "translations")]
         translations: HashMap::from([
             ("ab", "Åland Islands"),

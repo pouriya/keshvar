@@ -30,6 +30,8 @@ pub struct CountryInfo {
     pub subdivisions: Vec<(String, Subdivision)>,
     #[serde(default, skip)]
     pub translation_list: Vec<(String, String)>,
+    #[serde(default, skip)]
+    pub emoji: String,
 
     pub address_format: Option<String>,
     pub alpha2: String,
@@ -161,6 +163,7 @@ pub fn load_country_info(filename: &PathBuf) -> Result<(String, CountryInfo)> {
     info.alpha3_lower = info.alpha3.to_lowercase();
     info.feature_name = info.alpha2_lower.clone();
     info.module_name = utils::to_module_name(&info.alpha2);
+    info.emoji = emoji(&info.alpha2);
     info.languages_spoken.sort();
     info.languages_official.sort();
 
@@ -261,4 +264,13 @@ pub fn load_country_subdivisions(filename: &PathBuf) -> Result<Vec<(String, Subd
     );
     subdivision_list.sort_by_key(|x| x.0.clone());
     Ok(subdivision_list)
+}
+
+fn emoji(alpha2: &str) -> String {
+    alpha2
+        .to_lowercase()
+        .chars()
+        .map(|char| char as u32 + 127365)
+        .map(|number| char::from_u32(number).unwrap())
+        .collect()
 }

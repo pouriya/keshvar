@@ -38,6 +38,8 @@ pub mod consts {
     pub const UN_LOCODE: &str = "ML";
     pub const UNOFFICIAL_NAME_LIST: &[&str] = &["Mali", "マリ"];
     pub const WORLD_REGION: WorldRegion = WorldRegion::EMEA;
+    #[cfg(feature = "emojis")]
+    pub const EMOJI: &str = "🇲🇱";
     #[cfg(feature = "translations")]
     pub const TRANSLATIONS: &[(&str, &str)] = &[
         ("ab", "Mali"),
@@ -970,6 +972,8 @@ pub fn new() -> Country {
         un_locode: "ML",
         unofficial_name_list: ["Mali", "マリ"].to_vec(),
         world_region: WorldRegion::EMEA,
+        #[cfg(feature = "emojis")]
+        emoji: "🇲🇱",
         #[cfg(feature = "translations")]
         translations: HashMap::from([
             ("ab", "Mali"),

@@ -44,6 +44,8 @@ pub mod consts {
         "Maldiven",
     ];
     pub const WORLD_REGION: WorldRegion = WorldRegion::APAC;
+    #[cfg(feature = "emojis")]
+    pub const EMOJI: &str = "🇲🇻";
     #[cfg(feature = "translations")]
     pub const TRANSLATIONS: &[(&str, &str)] = &[
         ("ab", "Maldives"),
@@ -606,6 +608,8 @@ pub fn new() -> Country {
         ]
         .to_vec(),
         world_region: WorldRegion::APAC,
+        #[cfg(feature = "emojis")]
+        emoji: "🇲🇻",
         #[cfg(feature = "translations")]
         translations: HashMap::from([
             ("ab", "Maldives"),

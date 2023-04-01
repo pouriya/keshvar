@@ -35,7 +35,7 @@ Add `keshvar = "0.1"` under `dependencies` section inside your `Cargo.toml` file
 Now you're ready to use it inside your Cargo project.
 
 ### Cargo features
-By default, all countries are included. Additionally, you can add `subdivisions`, `translations`, `geo`, `serde-derive`, `chrono-integration`, and `iso-currency-integration` to your `Cargo.toml` file:
+By default, all countries are included. Additionally, you can add `subdivisions`, `translations`, `geo`, `emojis`, `serde-derive`, `chrono-integration`, and `iso-currency-integration` to your `Cargo.toml` file:
 ```toml
 [dependencies]
 # Include:
@@ -77,12 +77,22 @@ Main struct of this library is the [`Country`](crate::Country) struct. Most othe
 ```rust
 use keshvar::{Country, CurrencyCode, WeekDay};
 
-let country = Country::try_from("US").unwrap(); // "US" is its alpha2 code
+let country = Country::try_from("US").unwrap();
 assert_eq!("United States of America", country.iso_short_name());
 assert_eq!("The United States of America", country.iso_long_name());
 assert!(country.unofficial_name_list().contains(&"United States"));
 assert_eq!(CurrencyCode::USD, country.currency_code());
 assert_eq!(WeekDay::Sunday, country.start_of_week());
+assert_eq!("🇺🇸", country.emoji());
+
+// IOC (International Olympic Committee):
+assert_eq!(keshvar::IOC::USA.to_country(), country);
+// GEC (Geopolitical Entities and Codes):
+assert_eq!(keshvar::GEC::US.to_country(), country);
+// ISO 3166 alpha2 code:
+assert_eq!(keshvar::Alpha2::US.to_country(), country);
+// ISO 3166 alpha3 code:
+assert_eq!(keshvar::Alpha3::USA.to_country(), country);
 ```
 For more info see [`Country`](crate::Country).
 
