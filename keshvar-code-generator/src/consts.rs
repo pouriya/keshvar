@@ -5,6 +5,7 @@ use std::collections::HashMap;
 use std::fs;
 use std::io::Write;
 use std::path::PathBuf;
+use std::str::FromStr;
 
 pub fn generate(
     destination_file: &PathBuf,
@@ -300,6 +301,22 @@ lazy_static! { pub static ref UNSUPPORTED_COUNTRIES_COUNT: usize = ALL_COUNTRIES
             format!(
                 "    ({}, Alpha2::{}),\n",
                 info.country_code, info.alpha2_upper
+            )
+            .as_bytes(),
+        )?;
+    }
+    consts_rs_file.write_all(b"]);}\n")?;
+
+    consts_rs_file
+        .write_all(b"lazy_static! { pub static ref SUPPORTED_COUNTRY_NUMBERS: HashMap<usize, Alpha2> = HashMap::from([\n")?;
+    for (_, info) in countries_info_list.iter() {
+        consts_rs_file
+            .write_all(utils::country_cfg_feature_and_commented_name(info, 1).as_bytes())?;
+        consts_rs_file.write_all(
+            format!(
+                "    ({}, Alpha2::{}),\n",
+                usize::from_str(&info.number).unwrap(),
+                info.alpha2_upper,
             )
             .as_bytes(),
         )?;
