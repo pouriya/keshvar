@@ -3671,3 +3671,503 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_CODE: HashMap<usize, Alpha2> = H
     #[cfg(feature = "zw")] // The Republic of Zimbabwe (Africa)
     (263, Alpha2::ZW),
 ]);}
+lazy_static! { pub static ref SUPPORTED_COUNTRY_NUMBERS: HashMap<usize, Alpha2> = HashMap::from([
+    #[cfg(feature = "ad")] // The Principality of Andorra (Europe)
+    (20, Alpha2::AD),
+    #[cfg(feature = "ae")] // The United Arab Emirates (Asia)
+    (784, Alpha2::AE),
+    #[cfg(feature = "af")] // The Islamic Republic of Afghanistan (Asia)
+    (4, Alpha2::AF),
+    #[cfg(feature = "ag")] // Antigua and Barbuda (Americas)
+    (28, Alpha2::AG),
+    #[cfg(feature = "ai")] // Anguilla (Americas)
+    (660, Alpha2::AI),
+    #[cfg(feature = "al")] // The Republic of Albania (Europe)
+    (8, Alpha2::AL),
+    #[cfg(feature = "am")] // The Republic of Armenia (Asia)
+    (51, Alpha2::AM),
+    #[cfg(feature = "ao")] // The Republic of Angola (Africa)
+    (24, Alpha2::AO),
+    #[cfg(feature = "aq")] // Antarctica
+    (10, Alpha2::AQ),
+    #[cfg(feature = "ar")] // The Argentine Republic (Americas)
+    (32, Alpha2::AR),
+    #[cfg(feature = "as")] // The Territory of American Samoa (Oceania)
+    (16, Alpha2::AS),
+    #[cfg(feature = "at")] // The Republic of Austria (Europe)
+    (40, Alpha2::AT),
+    #[cfg(feature = "au")] // The Commonwealth of Australia (Oceania)
+    (36, Alpha2::AU),
+    #[cfg(feature = "aw")] // Aruba (Americas)
+    (533, Alpha2::AW),
+    #[cfg(feature = "ax")] // Åland (Europe)
+    (248, Alpha2::AX),
+    #[cfg(feature = "az")] // The Republic of Azerbaijan (Asia)
+    (31, Alpha2::AZ),
+    #[cfg(feature = "ba")] // Bosnia and Herzegovina (Europe)
+    (70, Alpha2::BA),
+    #[cfg(feature = "bb")] // Barbados (Americas)
+    (52, Alpha2::BB),
+    #[cfg(feature = "bd")] // The People's Republic of Bangladesh (Asia)
+    (50, Alpha2::BD),
+    #[cfg(feature = "be")] // The Kingdom of Belgium (Europe)
+    (56, Alpha2::BE),
+    #[cfg(feature = "bf")] // Burkina Faso (Africa)
+    (854, Alpha2::BF),
+    #[cfg(feature = "bg")] // The Republic of Bulgaria (Europe)
+    (100, Alpha2::BG),
+    #[cfg(feature = "bh")] // The Kingdom of Bahrain (Asia)
+    (48, Alpha2::BH),
+    #[cfg(feature = "bi")] // The Republic of Burundi (Africa)
+    (108, Alpha2::BI),
+    #[cfg(feature = "bj")] // The Republic of Benin (Africa)
+    (204, Alpha2::BJ),
+    #[cfg(feature = "bl")] // The Collectivity of Saint-Barthélemy (Americas)
+    (652, Alpha2::BL),
+    #[cfg(feature = "bm")] // Bermuda (Americas)
+    (60, Alpha2::BM),
+    #[cfg(feature = "bn")] // The Nation of Brunei, the Abode of Peace (Asia)
+    (96, Alpha2::BN),
+    #[cfg(feature = "bo")] // The Plurinational State of Bolivia (Americas)
+    (68, Alpha2::BO),
+    #[cfg(feature = "bq")] // Bonaire, Sint Eustatius and Saba (Americas)
+    (535, Alpha2::BQ),
+    #[cfg(feature = "br")] // The Federative Republic of Brazil (Americas)
+    (76, Alpha2::BR),
+    #[cfg(feature = "bs")] // The Commonwealth of The Bahamas (Americas)
+    (44, Alpha2::BS),
+    #[cfg(feature = "bt")] // The Kingdom of Bhutan (Asia)
+    (64, Alpha2::BT),
+    #[cfg(feature = "bv")] // Bouvet Island
+    (74, Alpha2::BV),
+    #[cfg(feature = "bw")] // The Republic of Botswana (Africa)
+    (72, Alpha2::BW),
+    #[cfg(feature = "by")] // The Republic of Belarus (Europe)
+    (112, Alpha2::BY),
+    #[cfg(feature = "bz")] // Belize (Americas)
+    (84, Alpha2::BZ),
+    #[cfg(feature = "ca")] // Canada (Americas)
+    (124, Alpha2::CA),
+    #[cfg(feature = "cc")] // The Territory of Cocos (Keeling) Islands (Oceania)
+    (166, Alpha2::CC),
+    #[cfg(feature = "cd")] // The Democratic Republic of the Congo (Africa)
+    (180, Alpha2::CD),
+    #[cfg(feature = "cf")] // The Central African Republic (Africa)
+    (140, Alpha2::CF),
+    #[cfg(feature = "cg")] // The Republic of the Congo (Africa)
+    (178, Alpha2::CG),
+    #[cfg(feature = "ch")] // The Swiss Confederation (Europe)
+    (756, Alpha2::CH),
+    #[cfg(feature = "ci")] // The Republic of Côte d'Ivoire (Africa)
+    (384, Alpha2::CI),
+    #[cfg(feature = "ck")] // The Cook Islands (Oceania)
+    (184, Alpha2::CK),
+    #[cfg(feature = "cl")] // The Republic of Chile (Americas)
+    (152, Alpha2::CL),
+    #[cfg(feature = "cm")] // The Republic of Cameroon (Africa)
+    (120, Alpha2::CM),
+    #[cfg(feature = "cn")] // The People's Republic of China (Asia)
+    (156, Alpha2::CN),
+    #[cfg(feature = "co")] // The Republic of Colombia (Americas)
+    (170, Alpha2::CO),
+    #[cfg(feature = "cr")] // The Republic of Costa Rica (Americas)
+    (188, Alpha2::CR),
+    #[cfg(feature = "cu")] // The Republic of Cuba (Americas)
+    (192, Alpha2::CU),
+    #[cfg(feature = "cv")] // The Republic of Cabo Verde (Africa)
+    (132, Alpha2::CV),
+    #[cfg(feature = "cw")] // The Country of Curaçao (Americas)
+    (531, Alpha2::CW),
+    #[cfg(feature = "cx")] // The Territory of Christmas Island (Oceania)
+    (162, Alpha2::CX),
+    #[cfg(feature = "cy")] // The Republic of Cyprus (Asia)
+    (196, Alpha2::CY),
+    #[cfg(feature = "cz")] // The Czech Republic (Europe)
+    (203, Alpha2::CZ),
+    #[cfg(feature = "de")] // The Federal Republic of Germany (Europe)
+    (276, Alpha2::DE),
+    #[cfg(feature = "dj")] // The Republic of Djibouti (Africa)
+    (262, Alpha2::DJ),
+    #[cfg(feature = "dk")] // The Kingdom of Denmark (Europe)
+    (208, Alpha2::DK),
+    #[cfg(feature = "dm")] // The Commonwealth of Dominica (Americas)
+    (212, Alpha2::DM),
+    #[cfg(feature = "do")] // The Dominican Republic (Americas)
+    (214, Alpha2::DO),
+    #[cfg(feature = "dz")] // The People's Democratic Republic of Algeria (Africa)
+    (12, Alpha2::DZ),
+    #[cfg(feature = "ec")] // The Republic of Ecuador (Americas)
+    (218, Alpha2::EC),
+    #[cfg(feature = "ee")] // The Republic of Estonia (Europe)
+    (233, Alpha2::EE),
+    #[cfg(feature = "eg")] // The Arab Republic of Egypt (Africa)
+    (818, Alpha2::EG),
+    #[cfg(feature = "eh")] // The Sahrawi Arab Democratic Republic (Africa)
+    (732, Alpha2::EH),
+    #[cfg(feature = "er")] // The State of Eritrea (Africa)
+    (232, Alpha2::ER),
+    #[cfg(feature = "es")] // The Kingdom of Spain (Europe)
+    (724, Alpha2::ES),
+    #[cfg(feature = "et")] // The Federal Democratic Republic of Ethiopia (Africa)
+    (231, Alpha2::ET),
+    #[cfg(feature = "fi")] // The Republic of Finland (Europe)
+    (246, Alpha2::FI),
+    #[cfg(feature = "fj")] // The Republic of Fiji (Oceania)
+    (242, Alpha2::FJ),
+    #[cfg(feature = "fk")] // The Falkland Islands (Americas)
+    (238, Alpha2::FK),
+    #[cfg(feature = "fm")] // The Federated States of Micronesia (Oceania)
+    (583, Alpha2::FM),
+    #[cfg(feature = "fo")] // The Faroe Islands (Europe)
+    (234, Alpha2::FO),
+    #[cfg(feature = "fr")] // The French Republic (Europe)
+    (250, Alpha2::FR),
+    #[cfg(feature = "ga")] // The Gabonese Republic (Africa)
+    (266, Alpha2::GA),
+    #[cfg(feature = "gb")] // The United Kingdom of Great Britain and Northern Ireland (Europe)
+    (826, Alpha2::GB),
+    #[cfg(feature = "gd")] // Grenada (Americas)
+    (308, Alpha2::GD),
+    #[cfg(feature = "ge")] // Georgia (Asia)
+    (268, Alpha2::GE),
+    #[cfg(feature = "gf")] // Guyane (Americas)
+    (254, Alpha2::GF),
+    #[cfg(feature = "gg")] // The Bailiwick of Guernsey (Europe)
+    (831, Alpha2::GG),
+    #[cfg(feature = "gh")] // The Republic of Ghana (Africa)
+    (288, Alpha2::GH),
+    #[cfg(feature = "gi")] // Gibraltar (Europe)
+    (292, Alpha2::GI),
+    #[cfg(feature = "gl")] // Kalaallit Nunaat (Americas)
+    (304, Alpha2::GL),
+    #[cfg(feature = "gm")] // The Republic of The Gambia (Africa)
+    (270, Alpha2::GM),
+    #[cfg(feature = "gn")] // The Republic of Guinea (Africa)
+    (324, Alpha2::GN),
+    #[cfg(feature = "gp")] // Guadeloupe (Americas)
+    (312, Alpha2::GP),
+    #[cfg(feature = "gq")] // The Republic of Equatorial Guinea (Africa)
+    (226, Alpha2::GQ),
+    #[cfg(feature = "gr")] // The Hellenic Republic (Europe)
+    (300, Alpha2::GR),
+    #[cfg(feature = "gs")] // South Georgia and the South Sandwich Islands (Americas)
+    (239, Alpha2::GS),
+    #[cfg(feature = "gt")] // The Republic of Guatemala (Americas)
+    (320, Alpha2::GT),
+    #[cfg(feature = "gu")] // The Territory of Guam (Oceania)
+    (316, Alpha2::GU),
+    #[cfg(feature = "gw")] // The Republic of Guinea-Bissau (Africa)
+    (624, Alpha2::GW),
+    #[cfg(feature = "gy")] // The Co-operative Republic of Guyana (Americas)
+    (328, Alpha2::GY),
+    #[cfg(feature = "hk")] // The Hong Kong Special Administrative Region of China (Asia)
+    (344, Alpha2::HK),
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    (334, Alpha2::HM),
+    #[cfg(feature = "hn")] // The Republic of Honduras (Americas)
+    (340, Alpha2::HN),
+    #[cfg(feature = "hr")] // The Republic of Croatia (Europe)
+    (191, Alpha2::HR),
+    #[cfg(feature = "ht")] // The Republic of Haiti (Americas)
+    (332, Alpha2::HT),
+    #[cfg(feature = "hu")] // Hungary (Europe)
+    (348, Alpha2::HU),
+    #[cfg(feature = "id")] // The Republic of Indonesia (Asia)
+    (360, Alpha2::ID),
+    #[cfg(feature = "ie")] // Ireland (Europe)
+    (372, Alpha2::IE),
+    #[cfg(feature = "il")] // The State of Israel (Asia)
+    (376, Alpha2::IL),
+    #[cfg(feature = "im")] // The Isle of Man (Europe)
+    (833, Alpha2::IM),
+    #[cfg(feature = "in")] // The Republic of India (Asia)
+    (356, Alpha2::IN),
+    #[cfg(feature = "io")] // The British Indian Ocean Territory (Africa)
+    (86, Alpha2::IO),
+    #[cfg(feature = "iq")] // The Republic of Iraq (Asia)
+    (368, Alpha2::IQ),
+    #[cfg(feature = "ir")] // The Islamic Republic of Iran (Asia)
+    (364, Alpha2::IR),
+    #[cfg(feature = "is")] // Iceland (Europe)
+    (352, Alpha2::IS),
+    #[cfg(feature = "it")] // The Italian Republic (Europe)
+    (380, Alpha2::IT),
+    #[cfg(feature = "je")] // The Bailiwick of Jersey (Europe)
+    (832, Alpha2::JE),
+    #[cfg(feature = "jm")] // Jamaica (Americas)
+    (388, Alpha2::JM),
+    #[cfg(feature = "jo")] // The Hashemite Kingdom of Jordan (Asia)
+    (400, Alpha2::JO),
+    #[cfg(feature = "jp")] // Japan (Asia)
+    (392, Alpha2::JP),
+    #[cfg(feature = "ke")] // The Republic of Kenya (Africa)
+    (404, Alpha2::KE),
+    #[cfg(feature = "kg")] // The Kyrgyz Republic (Asia)
+    (417, Alpha2::KG),
+    #[cfg(feature = "kh")] // The Kingdom of Cambodia (Asia)
+    (116, Alpha2::KH),
+    #[cfg(feature = "ki")] // The Republic of Kiribati (Oceania)
+    (296, Alpha2::KI),
+    #[cfg(feature = "km")] // The Union of the Comoros (Africa)
+    (174, Alpha2::KM),
+    #[cfg(feature = "kn")] // Saint Kitts and Nevis (Americas)
+    (659, Alpha2::KN),
+    #[cfg(feature = "kp")] // The Democratic People's Republic of Korea (Asia)
+    (408, Alpha2::KP),
+    #[cfg(feature = "kr")] // The Republic of Korea (Asia)
+    (410, Alpha2::KR),
+    #[cfg(feature = "kw")] // The State of Kuwait (Asia)
+    (414, Alpha2::KW),
+    #[cfg(feature = "ky")] // The Cayman Islands (Americas)
+    (136, Alpha2::KY),
+    #[cfg(feature = "kz")] // The Republic of Kazakhstan (Asia)
+    (398, Alpha2::KZ),
+    #[cfg(feature = "la")] // The Lao People's Democratic Republic (Asia)
+    (418, Alpha2::LA),
+    #[cfg(feature = "lb")] // The Lebanese Republic (Asia)
+    (422, Alpha2::LB),
+    #[cfg(feature = "lc")] // Saint Lucia (Americas)
+    (662, Alpha2::LC),
+    #[cfg(feature = "li")] // The Principality of Liechtenstein (Europe)
+    (438, Alpha2::LI),
+    #[cfg(feature = "lk")] // The Democratic Socialist Republic of Sri Lanka (Asia)
+    (144, Alpha2::LK),
+    #[cfg(feature = "lr")] // The Republic of Liberia (Africa)
+    (430, Alpha2::LR),
+    #[cfg(feature = "ls")] // The Kingdom of Lesotho (Africa)
+    (426, Alpha2::LS),
+    #[cfg(feature = "lt")] // The Republic of Lithuania (Europe)
+    (440, Alpha2::LT),
+    #[cfg(feature = "lu")] // The Grand Duchy of Luxembourg (Europe)
+    (442, Alpha2::LU),
+    #[cfg(feature = "lv")] // The Republic of Latvia (Europe)
+    (428, Alpha2::LV),
+    #[cfg(feature = "ly")] // The State of Libya (Africa)
+    (434, Alpha2::LY),
+    #[cfg(feature = "ma")] // The Kingdom of Morocco (Africa)
+    (504, Alpha2::MA),
+    #[cfg(feature = "mc")] // The Principality of Monaco (Europe)
+    (492, Alpha2::MC),
+    #[cfg(feature = "md")] // The Republic of Moldova (Europe)
+    (498, Alpha2::MD),
+    #[cfg(feature = "me")] // Montenegro (Europe)
+    (499, Alpha2::ME),
+    #[cfg(feature = "mf")] // The Collectivity of Saint-Martin (Americas)
+    (663, Alpha2::MF),
+    #[cfg(feature = "mg")] // The Republic of Madagascar (Africa)
+    (450, Alpha2::MG),
+    #[cfg(feature = "mh")] // The Republic of the Marshall Islands (Oceania)
+    (584, Alpha2::MH),
+    #[cfg(feature = "mk")] // The Republic of North Macedonia (Europe)
+    (807, Alpha2::MK),
+    #[cfg(feature = "ml")] // The Republic of Mali (Africa)
+    (466, Alpha2::ML),
+    #[cfg(feature = "mm")] // The Republic of the Union of Myanmar (Asia)
+    (104, Alpha2::MM),
+    #[cfg(feature = "mn")] // Mongolia (Asia)
+    (496, Alpha2::MN),
+    #[cfg(feature = "mo")] // The Macao Special Administrative Region of China (Asia)
+    (446, Alpha2::MO),
+    #[cfg(feature = "mp")] // The Commonwealth of the Northern Mariana Islands (Oceania)
+    (580, Alpha2::MP),
+    #[cfg(feature = "mq")] // Martinique (Americas)
+    (474, Alpha2::MQ),
+    #[cfg(feature = "mr")] // The Islamic Republic of Mauritania (Africa)
+    (478, Alpha2::MR),
+    #[cfg(feature = "ms")] // Montserrat (Americas)
+    (500, Alpha2::MS),
+    #[cfg(feature = "mt")] // The Republic of Malta (Europe)
+    (470, Alpha2::MT),
+    #[cfg(feature = "mu")] // The Republic of Mauritius (Africa)
+    (480, Alpha2::MU),
+    #[cfg(feature = "mv")] // The Republic of Maldives (Asia)
+    (462, Alpha2::MV),
+    #[cfg(feature = "mw")] // The Republic of Malawi (Africa)
+    (454, Alpha2::MW),
+    #[cfg(feature = "mx")] // The United Mexican States (Americas)
+    (484, Alpha2::MX),
+    #[cfg(feature = "my")] // Malaysia (Asia)
+    (458, Alpha2::MY),
+    #[cfg(feature = "mz")] // The Republic of Mozambique (Africa)
+    (508, Alpha2::MZ),
+    #[cfg(feature = "na")] // The Republic of Namibia (Africa)
+    (516, Alpha2::NA),
+    #[cfg(feature = "nc")] // New Caledonia (Oceania)
+    (540, Alpha2::NC),
+    #[cfg(feature = "ne")] // The Republic of the Niger (Africa)
+    (562, Alpha2::NE),
+    #[cfg(feature = "nf")] // The Territory of Norfolk Island (Oceania)
+    (574, Alpha2::NF),
+    #[cfg(feature = "ng")] // The Federal Republic of Nigeria (Africa)
+    (566, Alpha2::NG),
+    #[cfg(feature = "ni")] // The Republic of Nicaragua (Americas)
+    (558, Alpha2::NI),
+    #[cfg(feature = "nl")] // The Kingdom of the Netherlands (Europe)
+    (528, Alpha2::NL),
+    #[cfg(feature = "no")] // The Kingdom of Norway (Europe)
+    (578, Alpha2::NO),
+    #[cfg(feature = "np")] // The Federal Democratic Republic of Nepal (Asia)
+    (524, Alpha2::NP),
+    #[cfg(feature = "nr")] // The Republic of Nauru (Oceania)
+    (520, Alpha2::NR),
+    #[cfg(feature = "nu")] // Niue (Oceania)
+    (570, Alpha2::NU),
+    #[cfg(feature = "nz")] // New Zealand (Oceania)
+    (554, Alpha2::NZ),
+    #[cfg(feature = "om")] // The Sultanate of Oman (Asia)
+    (512, Alpha2::OM),
+    #[cfg(feature = "pa")] // The Republic of Panamá (Americas)
+    (591, Alpha2::PA),
+    #[cfg(feature = "pe")] // The Republic of Perú (Americas)
+    (604, Alpha2::PE),
+    #[cfg(feature = "pf")] // French Polynesia (Oceania)
+    (258, Alpha2::PF),
+    #[cfg(feature = "pg")] // The Independent State of Papua New Guinea (Oceania)
+    (598, Alpha2::PG),
+    #[cfg(feature = "ph")] // The Republic of the Philippines (Asia)
+    (608, Alpha2::PH),
+    #[cfg(feature = "pk")] // The Islamic Republic of Pakistan (Asia)
+    (586, Alpha2::PK),
+    #[cfg(feature = "pl")] // The Republic of Poland (Europe)
+    (616, Alpha2::PL),
+    #[cfg(feature = "pm")] // The Overseas Collectivity of Saint-Pierre and Miquelon (Americas)
+    (666, Alpha2::PM),
+    #[cfg(feature = "pn")] // The Pitcairn, Henderson, Ducie and Oeno Islands (Oceania)
+    (612, Alpha2::PN),
+    #[cfg(feature = "pr")] // The Commonwealth of Puerto Rico (Americas)
+    (630, Alpha2::PR),
+    #[cfg(feature = "ps")] // The State of Palestine (Asia)
+    (275, Alpha2::PS),
+    #[cfg(feature = "pt")] // The Portuguese Republic (Europe)
+    (620, Alpha2::PT),
+    #[cfg(feature = "pw")] // The Republic of Palau (Oceania)
+    (585, Alpha2::PW),
+    #[cfg(feature = "py")] // The Republic of Paraguay (Americas)
+    (600, Alpha2::PY),
+    #[cfg(feature = "qa")] // The State of Qatar (Asia)
+    (634, Alpha2::QA),
+    #[cfg(feature = "re")] // Réunion (Africa)
+    (638, Alpha2::RE),
+    #[cfg(feature = "ro")] // Romania (Europe)
+    (642, Alpha2::RO),
+    #[cfg(feature = "rs")] // The Republic of Serbia (Europe)
+    (688, Alpha2::RS),
+    #[cfg(feature = "ru")] // The Russian Federation (Europe)
+    (643, Alpha2::RU),
+    #[cfg(feature = "rw")] // The Republic of Rwanda (Africa)
+    (646, Alpha2::RW),
+    #[cfg(feature = "sa")] // The Kingdom of Saudi Arabia (Asia)
+    (682, Alpha2::SA),
+    #[cfg(feature = "sb")] // The Solomon Islands (Oceania)
+    (90, Alpha2::SB),
+    #[cfg(feature = "sc")] // The Republic of Seychelles (Africa)
+    (690, Alpha2::SC),
+    #[cfg(feature = "sd")] // The Republic of the Sudan (Africa)
+    (729, Alpha2::SD),
+    #[cfg(feature = "se")] // The Kingdom of Sweden (Europe)
+    (752, Alpha2::SE),
+    #[cfg(feature = "sg")] // The Republic of Singapore (Asia)
+    (702, Alpha2::SG),
+    #[cfg(feature = "sh")] // Saint Helena, Ascension and Tristan da Cunha (Africa)
+    (654, Alpha2::SH),
+    #[cfg(feature = "si")] // The Republic of Slovenia (Europe)
+    (705, Alpha2::SI),
+    #[cfg(feature = "sj")] // Svalbard and Jan Mayen (Europe)
+    (744, Alpha2::SJ),
+    #[cfg(feature = "sk")] // The Slovak Republic (Europe)
+    (703, Alpha2::SK),
+    #[cfg(feature = "sl")] // The Republic of Sierra Leone (Africa)
+    (694, Alpha2::SL),
+    #[cfg(feature = "sm")] // The Republic of San Marino (Europe)
+    (674, Alpha2::SM),
+    #[cfg(feature = "sn")] // The Republic of Senegal (Africa)
+    (686, Alpha2::SN),
+    #[cfg(feature = "so")] // The Federal Republic of Somalia (Africa)
+    (706, Alpha2::SO),
+    #[cfg(feature = "sr")] // The Republic of Suriname (Americas)
+    (740, Alpha2::SR),
+    #[cfg(feature = "ss")] // The Republic of South Sudan (Africa)
+    (728, Alpha2::SS),
+    #[cfg(feature = "st")] // The Democratic Republic of São Tomé and Príncipe (Africa)
+    (678, Alpha2::ST),
+    #[cfg(feature = "sv")] // The Republic of El Salvador (Americas)
+    (222, Alpha2::SV),
+    #[cfg(feature = "sx")] // Sint Maarten (Americas)
+    (534, Alpha2::SX),
+    #[cfg(feature = "sy")] // The Syrian Arab Republic (Asia)
+    (760, Alpha2::SY),
+    #[cfg(feature = "sz")] // The Kingdom of Eswatini (Africa)
+    (748, Alpha2::SZ),
+    #[cfg(feature = "tc")] // The Turks and Caicos Islands (Americas)
+    (796, Alpha2::TC),
+    #[cfg(feature = "td")] // The Republic of Chad (Africa)
+    (148, Alpha2::TD),
+    #[cfg(feature = "tf")] // The French Southern and Antarctic Lands (Africa)
+    (260, Alpha2::TF),
+    #[cfg(feature = "tg")] // The Togolese Republic (Africa)
+    (768, Alpha2::TG),
+    #[cfg(feature = "th")] // The Kingdom of Thailand (Asia)
+    (764, Alpha2::TH),
+    #[cfg(feature = "tj")] // The Republic of Tajikistan (Asia)
+    (762, Alpha2::TJ),
+    #[cfg(feature = "tk")] // Tokelau (Oceania)
+    (772, Alpha2::TK),
+    #[cfg(feature = "tl")] // The Democratic Republic of Timor-Leste (Asia)
+    (626, Alpha2::TL),
+    #[cfg(feature = "tm")] // Turkmenistan (Asia)
+    (795, Alpha2::TM),
+    #[cfg(feature = "tn")] // The Republic of Tunisia (Africa)
+    (788, Alpha2::TN),
+    #[cfg(feature = "to")] // The Kingdom of Tonga (Oceania)
+    (776, Alpha2::TO),
+    #[cfg(feature = "tr")] // The Republic of Türkiye (Asia)
+    (792, Alpha2::TR),
+    #[cfg(feature = "tt")] // The Republic of Trinidad and Tobago (Americas)
+    (780, Alpha2::TT),
+    #[cfg(feature = "tv")] // Tuvalu (Oceania)
+    (798, Alpha2::TV),
+    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    (158, Alpha2::TW),
+    #[cfg(feature = "tz")] // The United Republic of Tanzania (Africa)
+    (834, Alpha2::TZ),
+    #[cfg(feature = "ua")] // Ukraine (Europe)
+    (804, Alpha2::UA),
+    #[cfg(feature = "ug")] // The Republic of Uganda (Africa)
+    (800, Alpha2::UG),
+    #[cfg(feature = "um")] // United States Minor Outlying Islands (Americas)
+    (581, Alpha2::UM),
+    #[cfg(feature = "us")] // The United States of America (Americas)
+    (840, Alpha2::US),
+    #[cfg(feature = "uy")] // The Oriental Republic of Uruguay (Americas)
+    (858, Alpha2::UY),
+    #[cfg(feature = "uz")] // The Republic of Uzbekistan (Asia)
+    (860, Alpha2::UZ),
+    #[cfg(feature = "va")] // The Holy See (Europe)
+    (336, Alpha2::VA),
+    #[cfg(feature = "vc")] // Saint Vincent and the Grenadines (Americas)
+    (670, Alpha2::VC),
+    #[cfg(feature = "ve")] // The Bolivarian Republic of Venezuela (Americas)
+    (862, Alpha2::VE),
+    #[cfg(feature = "vg")] // The Virgin Islands (Americas)
+    (92, Alpha2::VG),
+    #[cfg(feature = "vi")] // The Virgin Islands of the United States (Americas)
+    (850, Alpha2::VI),
+    #[cfg(feature = "vn")] // The Socialist Republic of Viet Nam (Asia)
+    (704, Alpha2::VN),
+    #[cfg(feature = "vu")] // The Republic of Vanuatu (Oceania)
+    (548, Alpha2::VU),
+    #[cfg(feature = "wf")] // The Territory of the Wallis and Futuna Islands (Oceania)
+    (876, Alpha2::WF),
+    #[cfg(feature = "ws")] // The Independent State of Samoa (Oceania)
+    (882, Alpha2::WS),
+    #[cfg(feature = "ye")] // The Republic of Yemen (Asia)
+    (887, Alpha2::YE),
+    #[cfg(feature = "yt")] // The Department of Mayotte (Africa)
+    (175, Alpha2::YT),
+    #[cfg(feature = "za")] // The Republic of South Africa (Africa)
+    (710, Alpha2::ZA),
+    #[cfg(feature = "zm")] // The Republic of Zambia (Africa)
+    (894, Alpha2::ZM),
+    #[cfg(feature = "zw")] // The Republic of Zimbabwe (Africa)
+    (716, Alpha2::ZW),
+]);}

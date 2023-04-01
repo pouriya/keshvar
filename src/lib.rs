@@ -104,3 +104,20 @@ pub fn find_by_code(code: usize) -> Result<Country, SearchError> {
         Err(make_search_error())
     }
 }
+
+/// Find by ISO 3166-1 number.
+///
+/// # Example
+/// ```
+/// use keshvar::{Alpha2, Country, find_by_number};
+///
+/// let number = 704; // Vietnam
+/// assert_eq!(Ok(Country::from(Alpha2::VN)), find_by_number(number));
+/// ```
+pub fn find_by_number(code: usize) -> Result<Country, SearchError> {
+    if let Some(alpha2) = consts::SUPPORTED_COUNTRY_NUMBERS.get(&code) {
+        Ok((*alpha2).to_country())
+    } else {
+        Err(make_search_error())
+    }
+}
