@@ -35,7 +35,7 @@ Add `keshvar = "0.1"` under `dependencies` section inside your `Cargo.toml` file
 Now you're ready to use it inside your Cargo project.
 
 ### Cargo features
-By default, all countries are included. Additionally, you can add `subdivisions`, `translations`, `geo`, `serde-derive`, `chrono-integration`, and `iso-currency-integration` to your `Cargo.toml` file:
+By default, all countries are included. Additionally, you can add `subdivisions`, `translations`, `geo`, `emojis`, `serde-derive`, `chrono-integration`, and `iso-currency-integration` to your `Cargo.toml` file:
 ```toml
 [dependencies]
 # Include:
