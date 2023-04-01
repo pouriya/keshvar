@@ -39,6 +39,8 @@ pub mod consts {
     pub const UNOFFICIAL_NAME_LIST: &[&str] =
         &["Bouvet Island", "Bouvetinsel", "ブーベ島", "Bouveteiland"];
     pub const WORLD_REGION: WorldRegion = WorldRegion::APAC;
+    #[cfg(feature = "emojis")]
+    pub const EMOJI: &str = "🇧🇻";
     #[cfg(feature = "translations")]
     pub const TRANSLATIONS: &[(&str, &str)] = &[
         ("ab", "Bouvet Island"),
@@ -274,6 +276,8 @@ pub fn new() -> Country {
         un_locode: "BV",
         unofficial_name_list: ["Bouvet Island", "Bouvetinsel", "ブーベ島", "Bouveteiland"].to_vec(),
         world_region: WorldRegion::APAC,
+        #[cfg(feature = "emojis")]
+        emoji: "🇧🇻",
         #[cfg(feature = "translations")]
         translations: HashMap::from([
             ("ab", "Bouvet Island"),

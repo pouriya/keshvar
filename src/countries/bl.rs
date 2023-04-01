@@ -39,6 +39,8 @@ pub mod consts {
     pub const UNOFFICIAL_NAME_LIST: &[&str] =
         &["Saint Barthélemy", "Saint-Barthélemy", "サン・バルテルミー"];
     pub const WORLD_REGION: WorldRegion = WorldRegion::APAC;
+    #[cfg(feature = "emojis")]
+    pub const EMOJI: &str = "🇧🇱";
     #[cfg(feature = "translations")]
     pub const TRANSLATIONS: &[(&str, &str)] = &[
         ("ab", "Saint Barthélemy"),
@@ -275,6 +277,8 @@ pub fn new() -> Country {
         unofficial_name_list: ["Saint Barthélemy", "Saint-Barthélemy", "サン・バルテルミー"]
             .to_vec(),
         world_region: WorldRegion::APAC,
+        #[cfg(feature = "emojis")]
+        emoji: "🇧🇱",
         #[cfg(feature = "translations")]
         translations: HashMap::from([
             ("ab", "Saint Barthélemy"),

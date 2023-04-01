@@ -27,6 +27,7 @@ subdivisions = []
 constants = []
 geo = []
 translations = []
+emojis = []
 # Integrations:
 serde-derive = ["serde"]
 chrono-integration = ["chrono"]

@@ -207,6 +207,8 @@ pub fn generate_country(destination_file: &PathBuf, info: &CountryInfo) -> Resul
     ] {
         file.write_all(format!("    pub {}: {} = {};\n", name, _type, value).as_bytes())?;
     }
+    file.write_all(b"    #[cfg(feature = \"emojis\")]\n")?;
+    file.write_all(format!("    pub const EMOJI: &str = {:?};\n", info.emoji).as_bytes())?;
     file.write_all(b"    #[cfg(feature = \"translations\")]\n")?;
     file.write_all(b"    pub const TRANSLATIONS: &[(&str, &str)] = &[\n")?;
     for (language, translation) in info.translation_list.iter() {
@@ -417,6 +419,8 @@ pub fn new() -> Country {{
         un_locode: {:?},
         unofficial_name_list: {:?}.to_vec(),
         world_region: WorldRegion::{},
+        #[cfg(feature = "emojis")]
+        emoji: {:?},
         #[cfg(feature = "translations")]
         translations: HashMap::from({:?}),
         #[cfg(feature = "subdivisions")]
@@ -466,6 +470,7 @@ pub fn new() -> Country {{
             info.un_locode,
             info.unofficial_names,
             utils::capitalize(&info.world_region).to_uppercase(),
+            info.emoji,
             info.translation_list
         )
         .as_bytes(),
