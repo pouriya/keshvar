@@ -34,6 +34,11 @@ constants = []
 geo = []
 translations = []
 emojis = []
+# Search:
+search-iso-short-name = []
+search-iso-long-name = []
+search-iso-number = []
+search-country-code = []
 # Integrations:
 serde-derive = ["serde"]
 chrono-integration = ["chrono"]

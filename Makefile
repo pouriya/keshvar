@@ -26,6 +26,7 @@ build:
 generate:
 	@ echo "Removing auto-generated codes..."
 	@ rm -rf ${OUTPUT_SRC_DIRECTORY}/countries/* && touch ${OUTPUT_SRC_DIRECTORY}/countries/mod.rs
+	@ rm -rf ${OUTPUT_SRC_DIRECTORY}/search/* && touch ${OUTPUT_SRC_DIRECTORY}/search/mod.rs
 	@ rm -rf ${OUTPUT_SRC_DIRECTORY}/alpha2.rs && touch ${OUTPUT_SRC_DIRECTORY}/alpha2.rs
 	@ rm -rf ${OUTPUT_SRC_DIRECTORY}/alpha3.rs && touch ${OUTPUT_SRC_DIRECTORY}/alpha3.rs
 	@ rm -rf ${OUTPUT_SRC_DIRECTORY}/consts.rs && touch ${OUTPUT_SRC_DIRECTORY}/consts.rs

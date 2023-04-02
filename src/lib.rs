@@ -19,6 +19,8 @@ pub use error::*;
 pub mod countries;
 mod iterator;
 pub use iterator::*;
+mod search;
+pub use search::*;
 mod consts;
 pub use consts::{
     SUPPORTED_ALPHA2_LIST, SUPPORTED_CONTINENT_LIST, SUPPORTED_REGION_LIST,
@@ -34,6 +36,7 @@ pub use hashbrown;
 #[doc(hidden)]
 pub use iso_currency;
 
+#[cfg(feature = "search-iso-short-name")]
 /// Find first match in all included country iso short names.
 ///
 /// Note that provided argument SHOULD be lowercase.
@@ -53,7 +56,7 @@ pub use iso_currency;
 /// ```
 pub fn find_by_iso_short_name(iso_short_name: &str) -> Result<Country, SearchError> {
     if let Some(alpha2) =
-        consts::SUPPORTED_ISO_SHORT_NAMES.get(iso_short_name.to_lowercase().as_str())
+        search::SUPPORTED_ISO_SHORT_NAMES.get(iso_short_name.to_lowercase().as_str())
     {
         Ok((*alpha2).to_country())
     } else {
@@ -61,6 +64,7 @@ pub fn find_by_iso_short_name(iso_short_name: &str) -> Result<Country, SearchErr
     }
 }
 
+#[cfg(feature = "search-iso-long-name")]
 /// Find first match in all included country iso long names.
 ///
 /// Note that provided argument SHOULD be lowercase.
@@ -80,7 +84,7 @@ pub fn find_by_iso_short_name(iso_short_name: &str) -> Result<Country, SearchErr
 /// ```
 pub fn find_by_iso_long_name(iso_long_name: &str) -> Result<Country, SearchError> {
     if let Some(alpha2) =
-        consts::SUPPORTED_ISO_LONG_NAMES.get(iso_long_name.to_lowercase().as_str())
+        search::SUPPORTED_ISO_LONG_NAMES.get(iso_long_name.to_lowercase().as_str())
     {
         Ok((*alpha2).to_country())
     } else {
@@ -88,6 +92,7 @@ pub fn find_by_iso_long_name(iso_long_name: &str) -> Result<Country, SearchError
     }
 }
 
+#[cfg(feature = "search-country-code")]
 /// Find by country code.
 ///
 /// # Example
@@ -98,13 +103,14 @@ pub fn find_by_iso_long_name(iso_long_name: &str) -> Result<Country, SearchError
 /// assert_eq!(Ok(Country::from(Alpha2::BD)), find_by_code(country_code));
 /// ```
 pub fn find_by_code(code: usize) -> Result<Country, SearchError> {
-    if let Some(alpha2) = consts::SUPPORTED_COUNTRY_CODE.get(&code) {
+    if let Some(alpha2) = search::SUPPORTED_COUNTRY_CODE.get(&code) {
         Ok((*alpha2).to_country())
     } else {
         Err(make_search_error())
     }
 }
 
+#[cfg(feature = "search-iso-number")]
 /// Find by ISO 3166-1 number.
 ///
 /// # Example
@@ -115,7 +121,7 @@ pub fn find_by_code(code: usize) -> Result<Country, SearchError> {
 /// assert_eq!(Ok(Country::from(Alpha2::VN)), find_by_number(number));
 /// ```
 pub fn find_by_number(code: usize) -> Result<Country, SearchError> {
-    if let Some(alpha2) = consts::SUPPORTED_COUNTRY_NUMBERS.get(&code) {
+    if let Some(alpha2) = search::SUPPORTED_COUNTRY_NUMBERS.get(&code) {
         Ok((*alpha2).to_country())
     } else {
         Err(make_search_error())
