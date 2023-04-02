@@ -4,22 +4,24 @@ OUTPUT_SRC_DIRECTORY=${OUTPUT_DIRECTORY}/src
 CODE_GENERATOR_DIRECTORY=${CURDIR}/keshvar-code-generator/
 
 build:
-	@ echo && echo "Building without default features..."
+	@ echo "\n\n" && echo "Building without default features..."
 	cargo build --no-default-features
 	@ ls -sh target/debug/*keshvar*
-	@ echo && echo "Building with default features..."
+	@ echo "\n\n" && echo "Building with default features..."
 	cargo build
 	@ ls -sh target/debug/*keshvar*
-	@ echo && echo "Building with 'geo' feature..."
+	@ echo "\n\n" && echo "Building with 'geo' feature..."
 	cargo build --features "geo"
 	@ ls -sh target/debug/*keshvar*
-	@ echo && echo "Building with 'translations' feature..."
+	@ echo "\n\n" && echo "Building with 'translations' feature..."
 	cargo build --features "translations"
 	@ ls -sh target/debug/*keshvar*
-	@ echo && echo "Building with 'subdivisions' feature..."
+	@ echo "\n\n" && echo "Building with 'subdivisions' feature..."
 	cargo build --features "subdivisions"
+	@ echo "\n\n" && echo "Building with 'search-translations' feature..."
+	cargo build --features "search-translations"
 	@ ls -sh target/debug/*keshvar*
-	@ echo && echo "Building with all features..."
+	@ echo "\n\n" && echo "Building with all features..."
 	cargo build --no-default-features --all-features
 	@ ls -sh target/debug/*keshvar*
 
