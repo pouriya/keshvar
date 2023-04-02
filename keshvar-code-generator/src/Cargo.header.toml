@@ -1,6 +1,6 @@
 [package]
 name = "keshvar"
-version = "0.1.3"
+version = "0.1.4"
 edition = "2021"
 description = "collection of all sorts of useful information for every country"
 license = "BSD-3-Clause"
