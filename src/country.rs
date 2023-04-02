@@ -13,6 +13,7 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Debug, Clone)]
 #[cfg_attr(feature = "serde-derive", derive(Serialize, Deserialize))]
+/// A struct containing useful information for a country.
 pub struct Country {
     pub(crate) alpha2: Alpha2,
     pub(crate) alpha3: Alpha3,
@@ -78,15 +79,18 @@ impl Country {
         self.currency_code
     }
 
+    /// A regex that helps you validate address format of this country.
     pub fn address_format(&self) -> Option<&str> {
         self.address_format
     }
 
+    /// GEC (Geopolitical Entities and Codes) for this country.
     pub fn gec(&self) -> Option<GEC> {
         self.gec
     }
 
     #[cfg(feature = "geo")]
+    /// Enabled if `geo` feature is enabled.
     pub fn geo(&self) -> CountryGeo {
         self.geo
     }
@@ -95,6 +99,7 @@ impl Country {
         self.international_prefix
     }
 
+    /// IOC (International Olympic Committee) for this country.
     pub fn ioc(&self) -> Option<IOC> {
         self.ioc
     }
@@ -173,11 +178,14 @@ impl Country {
     }
 
     #[cfg(feature = "translations")]
+    /// A hashmap containing languages as keys and translations as values.
+    /// Enabled if `translations` feature is enabled.
     pub fn translations(&self) -> &HashMap<&str, &str> {
         &self.translations
     }
 
     #[cfg(feature = "subdivisions")]
+    /// Enabled if `subdivisions` feature is enabled.
     pub fn subdivisions(&self) -> &HashMap<&str, Subdivision> {
         &self.subdivisions
     }
@@ -192,6 +200,7 @@ impl PartialEq for Country {
 impl TryFrom<&str> for Country {
     type Error = SearchError;
 
+    /// The `value` should be [`Alpha2`](crate::Alpha2), [`Alpha3`](crate::Alpha3), [`GEC`](crate::GEC), [`IOC`](crate::IOC) of a country in string format.
     fn try_from(value: &str) -> Result<Self, Self::Error> {
         let length = value.len();
         if length == 2 {
@@ -220,6 +229,7 @@ impl TryFrom<&str> for Country {
 #[cfg(feature = "geo")]
 #[cfg_attr(feature = "serde-derive", derive(Serialize, Deserialize))]
 #[derive(Debug, Clone, Copy, PartialEq)]
+/// GEO information for a [`Country`](crate::Country).
 pub struct CountryGeo {
     pub(crate) latitude: f64,
     pub(crate) longitude: f64,
@@ -264,6 +274,7 @@ impl CountryGeo {
 #[cfg(feature = "geo")]
 #[cfg_attr(feature = "serde-derive", derive(Serialize, Deserialize))]
 #[derive(Debug, Clone, Copy, PartialEq)]
+/// Northeast and southwest GEO bounds for a [`Country`](crate::Country).
 pub struct CountryGeoBounds {
     pub(crate) northeast: CountryGeoBound,
     pub(crate) southwest: CountryGeoBound,
@@ -283,6 +294,7 @@ impl CountryGeoBounds {
 #[cfg(feature = "geo")]
 #[cfg_attr(feature = "serde-derive", derive(Serialize, Deserialize))]
 #[derive(Debug, Clone, Copy, PartialEq)]
+/// GEO information for a northeast/southwest bound for a [`Country`](crate::Country)..
 pub struct CountryGeoBound {
     pub(crate) latitude: f64,
     pub(crate) longitude: f64,
@@ -300,6 +312,7 @@ impl CountryGeoBound {
 }
 
 #[cfg(feature = "subdivisions")]
+/// A struct containing useful information about a subdivision.
 #[cfg_attr(feature = "serde-derive", derive(Serialize, Deserialize))]
 #[derive(Debug, Clone)]
 pub struct Subdivision {
@@ -320,6 +333,7 @@ pub struct Subdivision {
 
 #[cfg(feature = "subdivisions")]
 impl Subdivision {
+    /// A unique code for this subdivision in its country.
     pub fn code(&self) -> &str {
         self.code
     }
@@ -328,11 +342,13 @@ impl Subdivision {
         self.country_alpha2
     }
 
+    /// Name of this subdivision.
     pub fn name(&self) -> &str {
         self.name
     }
 
     #[cfg(feature = "geo")]
+    /// Enabled if `geo` feature is enabled.
     pub fn geo(&self) -> Option<SubdivisionGeo> {
         self.geo
     }
@@ -346,6 +362,7 @@ impl Subdivision {
     }
 
     #[cfg(feature = "translations")]
+    /// Enabled if `translations` feature is enabled.
     pub fn translations(&self) -> &HashMap<&str, &str> {
         &self.translations
     }
@@ -358,6 +375,7 @@ impl Subdivision {
 #[cfg(all(feature = "geo", feature = "subdivisions"))]
 #[cfg_attr(feature = "serde-derive", derive(Serialize, Deserialize))]
 #[derive(Debug, Clone, Copy, PartialEq)]
+/// GEO information for a [`Subdivision`](crate::Subdivision).
 pub struct SubdivisionGeo {
     pub(crate) latitude: Option<f64>,
     pub(crate) longitude: Option<f64>,

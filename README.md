@@ -1,7 +1,50 @@
 # Keshvar
 This library contains collection of all sorts of useful information for every country.
 
-[Package](https://crates.io/crates/keshvar)   |   [Documentation](https://docs.rs/keshvar)   |   [Repository](https://github.com/pouriya/keshvar)
+[**Package**](https://crates.io/crates/keshvar)   |   [**Documentation**](https://docs.rs/keshvar)   |   [**Repository**](https://github.com/pouriya/keshvar)
+
+# Demo
+```rust
+use keshvar::{CurrencyCode, WeekDay, Region, SubdivisionType, find_by_name};
+
+let country_name_in_any_language = "estados unidos"; // The US in spanish!
+let country = find_by_name(country_name_in_any_language).unwrap();
+assert_eq!(country.iso_long_name(), "The United States of America");
+assert_eq!(country.nationality(), Some("American"));
+assert_eq!(country.currency_code(), CurrencyCode::USD);
+assert_eq!(country.start_of_week(), WeekDay::Sunday);
+assert_eq!(country.emoji(), "🇺🇸");
+assert_eq!(country.country_code(), 1);
+assert_eq!(country.region(), Some(Region::Americas));
+assert!(country.unofficial_name_list().contains(&"United States"));
+assert!(country.spoken_language_list().contains(&"en"));
+
+let geo = country.geo();
+assert_eq!(
+    (geo.latitude(), geo.longitude()),
+    (37.09024, -95.712891)
+);
+assert_eq!(
+    (geo.min_latitude(), geo.max_longitude()),
+    (18.91619, -66.96466)
+);
+assert_eq!(geo.bounds().northeast().latitude(), 71.3577635769);
+assert_eq!(geo.bounds().southwest().longitude(), -171.791110603);
+
+let subdivisions = country.subdivisions();
+let california = subdivisions.get("CA").unwrap();
+let geo = california.geo().unwrap();
+assert_eq!(california.name(), "California");
+assert_eq!(
+    (geo.latitude(), geo.longitude()),
+    (Some(36.778261), Some(-119.4179324))
+);
+assert_eq!(california.subdivision_type(), SubdivisionType::State);
+assert_eq!(
+    california.translations().get(&"cs"), // in Czech language
+    Some(&"Kalifornie")
+);
+```
 
 # Features
 * Cargo features to support different countries, sub-regions, regions, continents, and world regions.  
@@ -35,7 +78,7 @@ Add `keshvar = "0.1"` under `dependencies` section inside your `Cargo.toml` file
 Now you're ready to use it inside your Cargo project.
 
 ### Cargo features
-By default, all countries are included. Additionally, you can add `subdivisions`, `translations`, `geo`, `emojis`, `serde-derive`, `chrono-integration`, and `iso-currency-integration` to your `Cargo.toml` file:
+By default, all countries are included. Additionally, you can add `subdivisions`, `translations`, `geo`, `search-iso-short-name`, `search-iso-long-name`, `search-iso-number`, `search-country-code`, `search-translations`, `emojis`, `serde-derive`, `chrono-integration`, and `iso-currency-integration` to your `Cargo.toml` file:
 ```toml
 [dependencies]
 # Include:
@@ -75,24 +118,17 @@ keshvar = {version = "<VERSION>", default-features = false, features = ["asia", 
 ## Country struct
 Main struct of this library is the [`Country`](crate::Country) struct. Most other types have a `to_country()` method, and we usually want to convert them to this struct.
 ```rust
-use keshvar::{Country, CurrencyCode, WeekDay};
+use keshvar::{Country, Alpha2, Alpha3, GEC, IOC};
 
 let country = Country::try_from("US").unwrap();
-assert_eq!("United States of America", country.iso_short_name());
-assert_eq!("The United States of America", country.iso_long_name());
-assert!(country.unofficial_name_list().contains(&"United States"));
-assert_eq!(CurrencyCode::USD, country.currency_code());
-assert_eq!(WeekDay::Sunday, country.start_of_week());
-assert_eq!("🇺🇸", country.emoji());
-
 // IOC (International Olympic Committee):
-assert_eq!(keshvar::IOC::USA.to_country(), country);
+assert_eq!(IOC::USA.to_country(), country);
 // GEC (Geopolitical Entities and Codes):
-assert_eq!(keshvar::GEC::US.to_country(), country);
+assert_eq!(GEC::US.to_country(), country);
 // ISO 3166 alpha2 code:
-assert_eq!(keshvar::Alpha2::US.to_country(), country);
+assert_eq!(Alpha2::US.to_country(), country);
 // ISO 3166 alpha3 code:
-assert_eq!(keshvar::Alpha3::USA.to_country(), country);
+assert_eq!(Alpha3::USA.to_country(), country);
 ```
 For more info see [`Country`](crate::Country).
 
@@ -234,11 +270,15 @@ assert_eq!((6.216999899999999, 141.0425), (bounds.northeast().latitude(), bounds
 assert_eq!((-11.1082999, 94.7351), (bounds.southwest().latitude(), bounds.southwest().longitude()));
 ```
 
-## Utility functions
+## Search functions
 ```rust
 use keshvar::{Alpha2, Alpha3, Region, SubRegion, Continent};
 // Utility functions:
-use keshvar::{find_by_iso_short_name, find_by_iso_long_name, find_by_code};
+use keshvar::{
+    find_by_iso_short_name, // if `search-iso-short-name` feature is enabled
+    find_by_iso_long_name,  // if `search-iso-long-name` feature is enabled
+    find_by_code            // if `search-country-code` feature is enabled
+};
 
 let country = find_by_iso_short_name("united states of america").unwrap();
 assert_eq!(Some("American"), country.nationality());
@@ -251,6 +291,9 @@ let country = find_by_code(971).unwrap(); // The United Arab Emirates (Asia)
 assert_eq!(Alpha3::ARE, country.alpha3());
 assert_eq!(Continent::Asia, country.continent());
 ```
+
+# Naming
+keshvar (/keʃvar/ or کِشوَر) simply means `country` in [persian/farsi language](https://en.wikipedia.org/wiki/Persian_language).
 
 # Contribution
 See [**CONTRIBUTING.md** file](https://github.com/pouriya/keshvar/blob/master/CONTRIBUTING.md).
