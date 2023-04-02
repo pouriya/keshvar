@@ -354,6 +354,62 @@ fn code_gen_countries(data_directory: PathBuf, output_directory: PathBuf) -> Res
     )?;
     search_features_and_modules.push((search_iso_country_code_feature, "country_code"));
 
+    let search_translations_rs_filename = search_directory.join("translations.rs");
+    let search_translations_feature = "search-translations";
+    search::generate(
+        &search_translations_rs_filename,
+        "search iso number",
+        &countries_info_list,
+        "SUPPORTED_COUNTRY_TRANSLATED_NAMES",
+        "HashMap<&'static str, Alpha2>",
+        search_translations_feature,
+        &["crate::Alpha2"],
+        |countries_info_list| {
+            let mut all_name_list: Vec<_> = countries_info_list
+                .iter()
+                .map(|(_, info)| {
+                    let mut name_list = Vec::from([
+                        info.iso_short_name.clone().to_lowercase(),
+                        info.iso_long_name.clone().to_lowercase(),
+                    ]);
+                    name_list.extend(
+                        info.unofficial_names
+                            .clone()
+                            .into_iter()
+                            .map(|name| name.to_lowercase()),
+                    );
+                    name_list.extend(
+                        info.translation_list
+                            .clone()
+                            .iter()
+                            .map(|(_, name)| name.clone()),
+                    );
+                    let mut name_list: Vec<_> = name_list
+                        .into_iter()
+                        .map(|name| {
+                            (
+                                utils::country_cfg_feature_and_commented_name(&info, 1),
+                                info.alpha2_upper.clone(),
+                                name.to_lowercase(),
+                            )
+                        })
+                        .collect();
+                    name_list.sort_by_key(|(_, _, x)| x.clone());
+                    name_list
+                })
+                .flatten()
+                .collect();
+            all_name_list.sort_by_key(|(_, _, x)| x.clone());
+            all_name_list
+                .into_iter()
+                .map(|(feature_name, alpha2, name)| {
+                    format!("{}    ({:?}, Alpha2::{}),\n", feature_name, name, alpha2)
+                })
+                .collect()
+        },
+    )?;
+    search_features_and_modules.push((search_translations_feature, "translations"));
+
     let search_mod_rs_filename = search_directory.join("mod.rs");
     search::generate_mod(&search_mod_rs_filename, &search_features_and_modules)?;
 

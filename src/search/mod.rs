@@ -19,3 +19,8 @@ pub use number::*;
 mod country_code;
 #[cfg(feature = "search-country-code")]
 pub use country_code::*;
+
+#[cfg(feature = "search-translations")]
+mod translations;
+#[cfg(feature = "search-translations")]
+pub use translations::*;
