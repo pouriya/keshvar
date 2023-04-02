@@ -7,6 +7,7 @@ mod currency_code;
 mod gec;
 mod ioc;
 mod region;
+mod search;
 mod structs;
 mod translations;
 mod utils;
@@ -14,6 +15,7 @@ mod utils;
 use structs::CountryInfo;
 
 use anyhow::{bail, Context, Result};
+use std::str::FromStr;
 use std::{collections::HashMap, env, fs, path::PathBuf};
 
 fn main() -> Result<()> {
@@ -54,6 +56,11 @@ fn code_gen_countries(data_directory: PathBuf, output_directory: PathBuf) -> Res
         fs::create_dir(countries_directory.clone()).context(format!(
             "Could not create directory {countries_directory:?}"
         ))?;
+    }
+    let search_directory = src_directory.join("search");
+    if !search_directory.exists() {
+        fs::create_dir(search_directory.clone())
+            .context(format!("Could not create directory {search_directory:?}"))?;
     }
     let input_countries_directory = data_directory.join("countries");
     let mut filename_list = fs::read_dir(&input_countries_directory)
@@ -150,12 +157,6 @@ fn code_gen_countries(data_directory: PathBuf, output_directory: PathBuf) -> Res
             )
         }
     }
-    // Generate codes for each country:
-    countries_info_list.iter().try_for_each(|(name, info)| {
-        let module_filename =
-            countries_directory.join(PathBuf::from(name.to_lowercase()).with_extension("rs"));
-        countries::generate_country(&module_filename, info)
-    })?;
     // Categorize countries for `region`, `subregion`, and `world region`:
     let mut region_features = HashMap::new();
     // No country is in region `Antarctica`:
@@ -235,8 +236,182 @@ fn code_gen_countries(data_directory: PathBuf, output_directory: PathBuf) -> Res
         subdivision_type_name_list
     );
 
-    let mod_rs_filename = countries_directory.join("mod.rs");
-    countries::generate_mod(&mod_rs_filename, &countries_info_list)?;
+    let countries_mod_rs_filename = countries_directory.join("mod.rs");
+    countries::generate_mod(&countries_mod_rs_filename, &countries_info_list)?;
+    // Generate codes for each country:
+    countries_info_list.iter().try_for_each(|(name, info)| {
+        let module_filename =
+            countries_directory.join(PathBuf::from(name.to_lowercase()).with_extension("rs"));
+        countries::generate_country(&module_filename, info)
+    })?;
+
+    let mut search_features_and_modules = Vec::new();
+
+    let search_iso_short_name_rs_filename = search_directory.join("iso_short_name.rs");
+    let search_iso_shortname_feature = "search-iso-short-name";
+    search::generate(
+        &search_iso_short_name_rs_filename,
+        "search iso shortname",
+        &countries_info_list,
+        "SUPPORTED_ISO_SHORT_NAMES",
+        "HashMap<&'static str, Alpha2>",
+        search_iso_shortname_feature,
+        &["crate::Alpha2"],
+        |countries_info_list| {
+            countries_info_list
+                .iter()
+                .map(|(_, info)| {
+                    utils::country_cfg_feature_and_commented_name(info, 1)
+                        + format!(
+                            "    ({:?}, Alpha2::{}),\n",
+                            info.iso_short_name.to_lowercase(),
+                            info.alpha2_upper
+                        )
+                        .as_str()
+                })
+                .collect()
+        },
+    )?;
+    search_features_and_modules.push((search_iso_shortname_feature, "iso_short_name"));
+
+    let search_iso_long_name_rs_filename = search_directory.join("iso_long_name.rs");
+    let search_iso_long_name_feature = "search-iso-long-name";
+    search::generate(
+        &search_iso_long_name_rs_filename,
+        "search iso longname",
+        &countries_info_list,
+        "SUPPORTED_ISO_LONG_NAMES",
+        "HashMap<&'static str, Alpha2>",
+        search_iso_long_name_feature,
+        &["crate::Alpha2"],
+        |countries_info_list| {
+            countries_info_list
+                .iter()
+                .map(|(_, info)| {
+                    utils::country_cfg_feature_and_commented_name(info, 1)
+                        + format!(
+                            "    ({:?}, Alpha2::{}),\n",
+                            info.iso_long_name.to_lowercase(),
+                            info.alpha2_upper
+                        )
+                        .as_str()
+                })
+                .collect()
+        },
+    )?;
+    search_features_and_modules.push((search_iso_long_name_feature, "iso_long_name"));
+
+    let search_iso_number_rs_filename = search_directory.join("number.rs");
+    let search_iso_number_feature = "search-iso-number";
+    search::generate(
+        &search_iso_number_rs_filename,
+        "search iso number",
+        &countries_info_list,
+        "SUPPORTED_COUNTRY_NUMBERS",
+        "HashMap<usize, Alpha2>",
+        search_iso_number_feature,
+        &["crate::Alpha2"],
+        |countries_info_list| {
+            countries_info_list
+                .iter()
+                .map(|(_, info)| {
+                    utils::country_cfg_feature_and_commented_name(info, 1)
+                        + format!(
+                            "    ({}, Alpha2::{}),\n",
+                            usize::from_str(&info.number).unwrap(),
+                            info.alpha2_upper,
+                        )
+                        .as_str()
+                })
+                .collect()
+        },
+    )?;
+    search_features_and_modules.push((search_iso_number_feature, "number"));
+
+    let search_iso_country_code_rs_filename = search_directory.join("country_code.rs");
+    let search_iso_country_code_feature = "search-country-code";
+    search::generate(
+        &search_iso_country_code_rs_filename,
+        "search iso number",
+        &countries_info_list,
+        "SUPPORTED_COUNTRY_CODE",
+        "HashMap<usize, Alpha2>",
+        search_iso_country_code_feature,
+        &["crate::Alpha2"],
+        |countries_info_list| {
+            countries_info_list
+                .iter()
+                .map(|(_, info)| {
+                    utils::country_cfg_feature_and_commented_name(info, 1)
+                        + format!(
+                            "    ({}, Alpha2::{}),\n",
+                            info.country_code, info.alpha2_upper
+                        )
+                        .as_str()
+                })
+                .collect()
+        },
+    )?;
+    search_features_and_modules.push((search_iso_country_code_feature, "country_code"));
+
+    let search_translations_rs_filename = search_directory.join("translations.rs");
+    let search_translations_feature = "search-translations";
+    search::generate(
+        &search_translations_rs_filename,
+        "search iso number",
+        &countries_info_list,
+        "SUPPORTED_COUNTRY_TRANSLATED_NAMES",
+        "HashMap<&'static str, Alpha2>",
+        search_translations_feature,
+        &["crate::Alpha2"],
+        |countries_info_list| {
+            let mut all_name_list: Vec<_> = countries_info_list
+                .iter()
+                .map(|(_, info)| {
+                    let mut name_list = Vec::from([
+                        info.iso_short_name.clone().to_lowercase(),
+                        info.iso_long_name.clone().to_lowercase(),
+                    ]);
+                    name_list.extend(
+                        info.unofficial_names
+                            .clone()
+                            .into_iter()
+                            .map(|name| name.to_lowercase()),
+                    );
+                    name_list.extend(
+                        info.translation_list
+                            .clone()
+                            .iter()
+                            .map(|(_, name)| name.clone()),
+                    );
+                    let mut name_list: Vec<_> = name_list
+                        .into_iter()
+                        .map(|name| {
+                            (
+                                utils::country_cfg_feature_and_commented_name(&info, 1),
+                                info.alpha2_upper.clone(),
+                                name.to_lowercase(),
+                            )
+                        })
+                        .collect();
+                    name_list.sort_by_key(|(_, _, x)| x.clone());
+                    name_list
+                })
+                .flatten()
+                .collect();
+            all_name_list.sort_by_key(|(_, _, x)| x.clone());
+            all_name_list
+                .into_iter()
+                .map(|(feature_name, alpha2, name)| {
+                    format!("{}    ({:?}, Alpha2::{}),\n", feature_name, name, alpha2)
+                })
+                .collect()
+        },
+    )?;
+    search_features_and_modules.push((search_translations_feature, "translations"));
+
+    let search_mod_rs_filename = search_directory.join("mod.rs");
+    search::generate_mod(&search_mod_rs_filename, &search_features_and_modules)?;
 
     let region_rs_filename = src_directory.join("region.rs");
     region::generate(

@@ -1,11 +1,9 @@
 use crate::structs::CountryInfo;
 use crate::utils;
-use anyhow::{Context, Result};
+use anyhow::Result;
 use std::collections::HashMap;
-use std::fs;
 use std::io::Write;
 use std::path::PathBuf;
-use std::str::FromStr;
 
 pub fn generate(
     destination_file: &PathBuf,
@@ -15,18 +13,12 @@ pub fn generate(
     subregion_features: &HashMap<String, Vec<String>>,
     world_region_features: &HashMap<String, Vec<String>>,
 ) -> Result<()> {
-    let mut consts_rs_file = fs::File::options()
-        .create(true)
-        .write(true)
-        .truncate(true)
-        .open(destination_file.clone())
-        .context(format!("Could not open {:?}", destination_file))?;
+    let mut consts_rs_file = utils::create_new_file(&destination_file, "constant")?;
     utils::write_first_comments(&mut consts_rs_file, file!())?;
     consts_rs_file.write_all(b"#[allow(unused_imports)]\n")?;
     consts_rs_file
         .write_all(b"use crate::{Alpha2, Continent, Region, SubRegion, WorldRegion};\n")?;
     consts_rs_file.write_all(b"use lazy_static::lazy_static;\n")?;
-    consts_rs_file.write_all(b"use hashbrown::HashMap;\n")?;
     consts_rs_file.write_all(
         format!(
             "pub const ALL_COUNTRIES_COUNT: usize = {};",
@@ -259,68 +251,5 @@ lazy_static! { pub static ref UNSUPPORTED_COUNTRIES_COUNT: usize = ALL_COUNTRIES
         )?;
     }
     consts_rs_file.write_all(b"];\n")?;
-
-    consts_rs_file
-        .write_all(b"lazy_static! { pub static ref SUPPORTED_ISO_SHORT_NAMES: HashMap<&'static str, Alpha2> = HashMap::from([\n")?;
-    for (_, info) in countries_info_list.iter() {
-        consts_rs_file
-            .write_all(utils::country_cfg_feature_and_commented_name(info, 1).as_bytes())?;
-        consts_rs_file.write_all(
-            format!(
-                "    ({:?}, Alpha2::{}),\n",
-                info.iso_short_name.to_lowercase(),
-                info.alpha2_upper
-            )
-            .as_bytes(),
-        )?;
-    }
-    consts_rs_file.write_all(b"]);}\n")?;
-
-    consts_rs_file
-        .write_all(b"lazy_static! { pub static ref SUPPORTED_ISO_LONG_NAMES: HashMap<&'static str, Alpha2> = HashMap::from([\n")?;
-    for (_, info) in countries_info_list.iter() {
-        consts_rs_file
-            .write_all(utils::country_cfg_feature_and_commented_name(info, 1).as_bytes())?;
-        consts_rs_file.write_all(
-            format!(
-                "    ({:?}, Alpha2::{}),\n",
-                info.iso_long_name.to_lowercase(),
-                info.alpha2_upper
-            )
-            .as_bytes(),
-        )?;
-    }
-    consts_rs_file.write_all(b"]);}\n")?;
-
-    consts_rs_file
-        .write_all(b"lazy_static! { pub static ref SUPPORTED_COUNTRY_CODE: HashMap<usize, Alpha2> = HashMap::from([\n")?;
-    for (_, info) in countries_info_list.iter() {
-        consts_rs_file
-            .write_all(utils::country_cfg_feature_and_commented_name(info, 1).as_bytes())?;
-        consts_rs_file.write_all(
-            format!(
-                "    ({}, Alpha2::{}),\n",
-                info.country_code, info.alpha2_upper
-            )
-            .as_bytes(),
-        )?;
-    }
-    consts_rs_file.write_all(b"]);}\n")?;
-
-    consts_rs_file
-        .write_all(b"lazy_static! { pub static ref SUPPORTED_COUNTRY_NUMBERS: HashMap<usize, Alpha2> = HashMap::from([\n")?;
-    for (_, info) in countries_info_list.iter() {
-        consts_rs_file
-            .write_all(utils::country_cfg_feature_and_commented_name(info, 1).as_bytes())?;
-        consts_rs_file.write_all(
-            format!(
-                "    ({}, Alpha2::{}),\n",
-                usize::from_str(&info.number).unwrap(),
-                info.alpha2_upper,
-            )
-            .as_bytes(),
-        )?;
-    }
-    consts_rs_file.write_all(b"]);}\n")?;
     Ok(())
 }
