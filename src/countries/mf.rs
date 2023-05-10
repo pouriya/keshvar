@@ -28,7 +28,7 @@ pub mod consts {
     pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: &[usize] = &[];
     pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[];
     pub const NATIONAL_PREFIX: &str = "";
-    pub const NATIONALITY: Option<&str> = Some("Saint Martin Islander");
+    pub const NATIONALITY: Option<&str> = Some("French");
     pub const NUMBER: &str = "663";
     pub const POSTAL_CODE: bool = true;
     pub const POSTAL_CODE_FORMAT: Option<&str> = Some("9[78][01]\\d{2}");
@@ -266,7 +266,7 @@ pub fn new() -> Country {
         national_destination_code_length_list: [].to_vec(),
         national_number_length_list: [].to_vec(),
         national_prefix: "",
-        nationality: Some("Saint Martin Islander"),
+        nationality: Some("French"),
         number: "663",
         postal_code: true,
         postal_code_format: Some("9[78][01]\\d{2}"),
