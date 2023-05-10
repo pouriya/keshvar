@@ -8831,8 +8831,6 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     #[cfg(feature = "cz")] // The Czech Republic (Europe)
     ("czechia", Alpha2::CZ),
     #[cfg(feature = "cz")] // The Czech Republic (Europe)
-    ("czechia", Alpha2::CZ),
-    #[cfg(feature = "cz")] // The Czech Republic (Europe)
     ("czechy", Alpha2::CZ),
     #[cfg(feature = "ca")] // Canada (Americas)
     ("cànada", Alpha2::CA),
@@ -10790,8 +10788,6 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("esvatini", Alpha2::SZ),
     #[cfg(feature = "sz")] // The Kingdom of Eswatini (Africa)
     ("esvatiní (svasíland)", Alpha2::SZ),
-    #[cfg(feature = "sz")] // The Kingdom of Eswatini (Africa)
-    ("eswatini", Alpha2::SZ),
     #[cfg(feature = "sz")] // The Kingdom of Eswatini (Africa)
     ("eswatini", Alpha2::SZ),
     #[cfg(feature = "sz")] // The Kingdom of Eswatini (Africa)
@@ -23451,6 +23447,8 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     #[cfg(feature = "my")] // Malaysia (Asia)
     ("malaysia", Alpha2::MY),
     #[cfg(feature = "my")] // Malaysia (Asia)
+    ("malaysia", Alpha2::MY),
+    #[cfg(feature = "my")] // Malaysia (Asia)
     ("malayziya", Alpha2::MY),
     #[cfg(feature = "my")] // Malaysia (Asia)
     ("malayziya", Alpha2::MY),
@@ -25054,8 +25052,6 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("mexico", Alpha2::MX),
     #[cfg(feature = "mx")] // The United Mexican States (Americas)
     ("mexico", Alpha2::MX),
-    #[cfg(feature = "my")] // Malaysia (Asia)
-    ("mexico", Alpha2::MY),
     #[cfg(feature = "mx")] // The United Mexican States (Americas)
     ("mexikia", Alpha2::MX),
     #[cfg(feature = "mx")] // The United Mexican States (Americas)
@@ -28374,8 +28370,6 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("north korea", Alpha2::KP),
     #[cfg(feature = "kp")] // The Democratic People's Republic of Korea (Asia)
     ("north korea", Alpha2::KP),
-    #[cfg(feature = "mk")] // The Republic of North Macedonia (Europe)
-    ("north macedonia", Alpha2::MK),
     #[cfg(feature = "mk")] // The Republic of North Macedonia (Europe)
     ("north macedonia", Alpha2::MK),
     #[cfg(feature = "mk")] // The Republic of North Macedonia (Europe)
@@ -65690,6 +65684,8 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("エストニア", Alpha2::EE),
     #[cfg(feature = "ee")] // The Republic of Estonia (Europe)
     ("エストニア", Alpha2::EE),
+    #[cfg(feature = "sz")] // The Kingdom of Eswatini (Africa)
+    ("エスワティニ王国", Alpha2::SZ),
     #[cfg(feature = "et")] // The Federal Democratic Republic of Ethiopia (Africa)
     ("エチオピア", Alpha2::ET),
     #[cfg(feature = "et")] // The Federal Democratic Republic of Ethiopia (Africa)
@@ -66038,6 +66034,8 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("タークス及びカイコス諸島", Alpha2::TC),
     #[cfg(feature = "cz")] // The Czech Republic (Europe)
     ("チェコ", Alpha2::CZ),
+    #[cfg(feature = "cz")] // The Czech Republic (Europe)
+    ("チェコ共和国", Alpha2::CZ),
     #[cfg(feature = "td")] // The Republic of Chad (Africa)
     ("チャド", Alpha2::TD),
     #[cfg(feature = "td")] // The Republic of Chad (Africa)
@@ -66652,6 +66650,8 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("匈牙利", Alpha2::HU),
     #[cfg(feature = "hu")] // Hungary (Europe)
     ("匈牙利", Alpha2::HU),
+    #[cfg(feature = "mk")] // The Republic of North Macedonia (Europe)
+    ("北マケドニア共和国", Alpha2::MK),
     #[cfg(feature = "mp")] // The Commonwealth of the Northern Mariana Islands (Oceania)
     ("北マリアナ諸島", Alpha2::MP),
     #[cfg(feature = "mp")] // The Commonwealth of the Northern Mariana Islands (Oceania)
