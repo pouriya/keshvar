@@ -648,8 +648,8 @@ pub mod subdivisions {
 }
 #[allow(unused_imports)]
 use crate::{
-    Alpha2, Alpha3, Continent, Country, CurrencyCode, Region, SubRegion, WeekDay, WorldRegion, GEC,
-    IOC,
+    Alpha2, Alpha3, Continent, Country, CurrencyCode, Region, SubRegion, VatRates, WeekDay,
+    WorldRegion, GEC, IOC,
 };
 #[allow(unused_imports)]
 use std::collections::HashMap;
@@ -841,5 +841,11 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: false,
+        vat_rates: Some(VatRates {
+            standard: 7.7,
+            reduced: Vec::from([2.5, 3.7]),
+            super_reduced: None,
+            parking: None,
+        }),
     }
 }

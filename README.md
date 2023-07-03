@@ -60,6 +60,8 @@ assert_eq!(
   * Postal code format
   * Start of the week
   * Phone number (E.164)
+  * GDPR compliance
+  * VAT (Value-added Tax) rate
   * ...
 * Country Subdivisions. (Optional)
 * GEO locations for countries and their subdivisions (Optional)
