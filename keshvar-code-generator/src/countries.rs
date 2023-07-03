@@ -400,7 +400,7 @@ pub fn generate_country(destination_file: &PathBuf, info: &CountryInfo) -> Resul
     file.write_all(b"}\n")?;
     file.write_all(b"#[allow(unused_imports)]\n")?;
     file.write_all(
-        b"use crate::{Alpha2, Alpha3, GEC, IOC, Country, CurrencyCode, Continent, Region, SubRegion, WorldRegion, WeekDay};\n",
+        b"use crate::{Alpha2, Alpha3, GEC, IOC, Country, CurrencyCode, Continent, Region, SubRegion, WorldRegion, WeekDay, VatRates};\n",
     )?;
     file.write_all(b"#[allow(unused_imports)]\n")?;
     file.write_all(b"use std::collections::HashMap;\n")?;
@@ -449,6 +449,7 @@ pub fn new() -> Country {{
         g20_member: {},
         eu_member: {},
         eea_member: {},
+        vat_rates: {},
     }}
 }}
             "#,
@@ -500,6 +501,17 @@ pub fn new() -> Country {{
             info.g20_member.unwrap_or(false).to_string(),
             info.eu_member.unwrap_or(false).to_string(),
             info.eea_member.unwrap_or(false).to_string(),
+            if let Some(ref vat_rates) = info.vat_rates {
+                format!(
+                    "Some(VatRates{{standard: {}, reduced: Vec::from({:?}), super_reduced: {}, parking: {}}})",
+                    utils::to_float_string(vat_rates.standard),
+                    vat_rates.reduced,
+                    utils::option_f64_to_string(&vat_rates.super_reduced),
+                    utils::option_f64_to_string(&vat_rates.parking),
+                )
+            } else {
+                "None".to_string()
+            },
         )
         .as_bytes(),
     )?;

@@ -64,6 +64,7 @@ pub struct CountryInfo {
     pub g20_member: Option<bool>,
     pub eea_member: Option<bool>,
     pub eu_member: Option<bool>,
+    pub vat_rates: Option<VatRates>,
 }
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
@@ -121,6 +122,15 @@ pub struct SubdivisionGeo {
 pub enum SubdivisionUnofficialName {
     ListOfNames(Vec<String>),
     Name(String),
+}
+
+#[derive(Clone, Debug, Serialize, Deserialize)]
+pub struct VatRates {
+    pub standard: f64,
+    #[serde(default)]
+    pub reduced: Vec<f64>,
+    pub super_reduced: Option<f64>,
+    pub parking: Option<f64>,
 }
 
 pub fn load_country_info(filename: &PathBuf) -> Result<(String, CountryInfo)> {

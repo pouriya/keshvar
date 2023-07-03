@@ -64,6 +64,7 @@ pub struct Country {
     pub(crate) eu_member: bool,
     #[cfg_attr(feature = "serde-derive", serde(default))]
     pub(crate) eea_member: bool,
+    pub(crate) vat_rates: Option<VatRates>,
 }
 
 impl Country {
@@ -221,6 +222,11 @@ impl Country {
     /// Is this country [GDPR](https://en.wikipedia.org/wiki/General_Data_Protection_Regulation) compliant?
     pub fn gdpr_compliant(&self) -> bool {
         self.eea_member || self.alpha2.to_string() == "GB"
+    }
+
+    /// [Value-added Tax](https://en.wikipedia.org/wiki/Value-added_tax) for this country.
+    pub fn vat_rates(&self) -> Option<&VatRates> {
+        self.vat_rates.as_ref()
     }
 }
 
@@ -512,6 +518,35 @@ impl WeekDay {
             Self::Saturday => chrono::Weekday::Sat,
             Self::Sunday => chrono::Weekday::Sun,
         }
+    }
+}
+
+#[cfg_attr(feature = "serde-derive", derive(Serialize, Deserialize))]
+#[derive(Debug, Clone, PartialEq)]
+/// [Value-added Tax](https://en.wikipedia.org/wiki/Value-added_tax)
+pub struct VatRates {
+    pub(crate) standard: f64,
+    #[cfg_attr(feature = "serde-derive", serde(default))]
+    pub(crate) reduced: Vec<f64>,
+    pub(crate) super_reduced: Option<f64>,
+    pub(crate) parking: Option<f64>,
+}
+
+impl VatRates {
+    pub fn standard(&self) -> f64 {
+        self.standard
+    }
+
+    pub fn reduced(&self) -> Vec<f64> {
+        self.reduced.clone()
+    }
+
+    pub fn super_reduced(&self) -> Option<f64> {
+        self.super_reduced
+    }
+
+    pub fn parking(&self) -> Option<f64> {
+        self.parking
     }
 }
 
