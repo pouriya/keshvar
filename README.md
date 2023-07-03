@@ -19,6 +19,7 @@ assert_eq!(country.region(), Some(Region::Americas));
 assert!(country.unofficial_name_list().contains(&"United States"));
 assert!(country.spoken_language_list().contains(&"en"));
 assert!(country.g7_member() && country.g20_member());
+assert!(!country.eu_member() && !country.eea_member()); // Not in `European Union` and `European Economic Area` 
 
 let geo = country.geo();
 assert_eq!(

@@ -60,6 +60,10 @@ pub struct Country {
     pub(crate) g7_member: bool,
     #[cfg_attr(feature = "serde-derive", serde(default))]
     pub(crate) g20_member: bool,
+    #[cfg_attr(feature = "serde-derive", serde(default))]
+    pub(crate) eu_member: bool,
+    #[cfg_attr(feature = "serde-derive", serde(default))]
+    pub(crate) eea_member: bool,
 }
 
 impl Country {
@@ -202,6 +206,16 @@ impl Country {
     /// Is this country a member of [G20](https://en.wikipedia.org/wiki/G7)?.
     pub fn g20_member(&self) -> bool {
         self.g20_member
+    }
+
+    /// Is this country a member of [EU](https://en.wikipedia.org/wiki/European_Union)?.
+    pub fn eu_member(&self) -> bool {
+        self.eu_member
+    }
+
+    /// Is this country a member of [EEA](https://en.wikipedia.org/wiki/European_Economic_Area)?.
+    pub fn eea_member(&self) -> bool {
+        self.eea_member
     }
 }
 
