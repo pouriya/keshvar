@@ -40,6 +40,8 @@ pub mod consts {
     pub const WORLD_REGION: WorldRegion = WorldRegion::AMER;
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
+    pub const EU_MEMBER: bool = true;
+    pub const EEA_MEMBER: bool = true;
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇲🇶";
     #[cfg(feature = "translations")]
@@ -414,5 +416,7 @@ pub fn new() -> Country {
         subdivisions: subdivisions::new(),
         g7_member: false,
         g20_member: false,
+        eu_member: true,
+        eea_member: false,
     }
 }

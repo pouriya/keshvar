@@ -214,6 +214,16 @@ pub fn generate_country(destination_file: &PathBuf, info: &CountryInfo) -> Resul
             "bool",
             info.g20_member.unwrap_or(false).to_string(),
         ),
+        (
+            "const EU_MEMBER",
+            "bool",
+            info.eu_member.unwrap_or(false).to_string(),
+        ),
+        (
+            "const EEA_MEMBER",
+            "bool",
+            info.eu_member.unwrap_or(false).to_string(),
+        ),
     ] {
         file.write_all(format!("    pub {}: {} = {};\n", name, _type, value).as_bytes())?;
     }
@@ -437,6 +447,8 @@ pub fn new() -> Country {{
         subdivisions: subdivisions::new(),
         g7_member: {},
         g20_member: {},
+        eu_member: {},
+        eea_member: {},
     }}
 }}
             "#,
@@ -486,6 +498,8 @@ pub fn new() -> Country {{
             info.translation_list,
             info.g7_member.unwrap_or(false).to_string(),
             info.g20_member.unwrap_or(false).to_string(),
+            info.eu_member.unwrap_or(false).to_string(),
+            info.eea_member.unwrap_or(false).to_string(),
         )
         .as_bytes(),
     )?;

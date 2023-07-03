@@ -62,6 +62,8 @@ pub struct CountryInfo {
     pub world_region: String,
     pub g7_member: Option<bool>,
     pub g20_member: Option<bool>,
+    pub eea_member: Option<bool>,
+    pub eu_member: Option<bool>,
 }
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
