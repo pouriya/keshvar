@@ -203,19 +203,24 @@ impl Country {
         self.g7_member
     }
 
-    /// Is this country a member of [G20](https://en.wikipedia.org/wiki/G7)?.
+    /// Is this country a member of [G20](https://en.wikipedia.org/wiki/G7)?
     pub fn g20_member(&self) -> bool {
         self.g20_member
     }
 
-    /// Is this country a member of [EU](https://en.wikipedia.org/wiki/European_Union)?.
+    /// Is this country a member of [EU](https://en.wikipedia.org/wiki/European_Union)?
     pub fn eu_member(&self) -> bool {
         self.eu_member
     }
 
-    /// Is this country a member of [EEA](https://en.wikipedia.org/wiki/European_Economic_Area)?.
+    /// Is this country a member of [EEA](https://en.wikipedia.org/wiki/European_Economic_Area)?
     pub fn eea_member(&self) -> bool {
         self.eea_member
+    }
+
+    /// Is this country [GDPR](https://en.wikipedia.org/wiki/General_Data_Protection_Regulation) compliant?
+    pub fn gdpr_compliant(&self) -> bool {
+        self.eea_member || self.alpha2.to_string() == "GB"
     }
 }
 
