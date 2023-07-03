@@ -38,6 +38,8 @@ pub mod consts {
     pub const UN_LOCODE: &str = "AD";
     pub const UNOFFICIAL_NAME_LIST: &[&str] = &["Andorre", "Andorra", "アンドラ"];
     pub const WORLD_REGION: WorldRegion = WorldRegion::EMEA;
+    pub const G7_MEMBER: bool = false;
+    pub const G20_MEMBER: bool = false;
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇦🇩";
     #[cfg(feature = "translations")]
@@ -252,7 +254,7 @@ pub mod subdivisions {
                     comments: None,
                     subdivision_type: SubdivisionType::Parish,
                     #[cfg(feature = "translations")]
-                    translations: HashMap::from([("en", "Canillo")]),
+                    translations: HashMap::from([("en", "Canillo"), ("ja", "カニーリョ教区")]),
                     unofficial_name_list: ["Canillo"].to_vec(),
                 },
             ),
@@ -274,7 +276,7 @@ pub mod subdivisions {
                     comments: None,
                     subdivision_type: SubdivisionType::Parish,
                     #[cfg(feature = "translations")]
-                    translations: HashMap::from([("en", "Encamp")]),
+                    translations: HashMap::from([("en", "Encamp"), ("ja", "アンカム教区")]),
                     unofficial_name_list: ["Encamp"].to_vec(),
                 },
             ),
@@ -296,7 +298,7 @@ pub mod subdivisions {
                     comments: None,
                     subdivision_type: SubdivisionType::Parish,
                     #[cfg(feature = "translations")]
-                    translations: HashMap::from([("en", "La Massana")]),
+                    translations: HashMap::from([("en", "La Massana"), ("ja", "ラ・マサナ教区")]),
                     unofficial_name_list: ["La Massana"].to_vec(),
                 },
             ),
@@ -318,7 +320,7 @@ pub mod subdivisions {
                     comments: None,
                     subdivision_type: SubdivisionType::Parish,
                     #[cfg(feature = "translations")]
-                    translations: HashMap::from([("en", "Ordino")]),
+                    translations: HashMap::from([("en", "Ordino"), ("ja", "オルディノ教区")]),
                     unofficial_name_list: ["Ordino"].to_vec(),
                 },
             ),
@@ -340,7 +342,10 @@ pub mod subdivisions {
                     comments: None,
                     subdivision_type: SubdivisionType::Parish,
                     #[cfg(feature = "translations")]
-                    translations: HashMap::from([("en", "Sant Julià de Lòria")]),
+                    translations: HashMap::from([
+                        ("en", "Sant Julià de Lòria"),
+                        ("ja", "サン・ジュリア・デ・ロリア教区"),
+                    ]),
                     unofficial_name_list: ["Saint Julia de Loria"].to_vec(),
                 },
             ),
@@ -362,7 +367,10 @@ pub mod subdivisions {
                     comments: None,
                     subdivision_type: SubdivisionType::Parish,
                     #[cfg(feature = "translations")]
-                    translations: HashMap::from([("en", "Andorra la Vella")]),
+                    translations: HashMap::from([
+                        ("en", "Andorra la Vella"),
+                        ("ja", "アンドラ・ラ・ベリャ教区"),
+                    ]),
                     unofficial_name_list: ["Andorra la Vieja", "Andorre-la-Vieille"].to_vec(),
                 },
             ),
@@ -384,7 +392,10 @@ pub mod subdivisions {
                     comments: None,
                     subdivision_type: SubdivisionType::Parish,
                     #[cfg(feature = "translations")]
-                    translations: HashMap::from([("en", "Escaldes-Engordany")]),
+                    translations: HashMap::from([
+                        ("en", "Escaldes-Engordany"),
+                        ("ja", "エスカルデス＝エンゴルダニ教区"),
+                    ]),
                     unofficial_name_list: ["Les Escaldes"].to_vec(),
                 },
             ),
@@ -571,5 +582,7 @@ pub fn new() -> Country {
         ]),
         #[cfg(feature = "subdivisions")]
         subdivisions: subdivisions::new(),
+        g7_member: false,
+        g20_member: false,
     }
 }

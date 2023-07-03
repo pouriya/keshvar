@@ -44,6 +44,8 @@ pub mod consts {
         "Guinea Bissau",
     ];
     pub const WORLD_REGION: WorldRegion = WorldRegion::EMEA;
+    pub const G7_MEMBER: bool = false;
+    pub const G20_MEMBER: bool = false;
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇬🇼";
     #[cfg(feature = "translations")]
@@ -271,6 +273,7 @@ pub mod subdivisions {
                         ("el", "Μπαφατά"),
                         ("en", "Bafatá"),
                         ("es", "Región de Bafatá"),
+                        ("fa", "ناحیه بافتا"),
                         ("fi", "Bafatán alue"),
                         ("fr", "Région Bafatá"),
                         ("gu", "બફતા પ\u{acd}રદ\u{ac7}શ"),
@@ -337,6 +340,7 @@ pub mod subdivisions {
                         ("en", "Bolama"),
                         ("es", "Región de Bolama"),
                         ("et", "Bolama piirkond"),
+                        ("fa", "ناحیه بولاما"),
                         ("fi", "Bolaman alue"),
                         ("fr", "Bolama-Bijagos"),
                         ("gu", "બોલમા પ\u{acd}રદ\u{ac7}શ"),
@@ -481,6 +485,8 @@ pub mod subdivisions {
                         ("ga", "Bissau"),
                         ("gl", "Bissau"),
                         ("gu", "બિસ\u{acd}સૌ"),
+                        ("ha", "Bisau"),
+                        ("ha_NE", "Bisau"),
                         ("he", "ביסאו"),
                         ("hi", "बिसाउ"),
                         ("hr", "Bissau"),
@@ -507,6 +513,7 @@ pub mod subdivisions {
                         ("no", "Bissau"),
                         ("pa", "ਬਿਸਾਊ"),
                         ("pl", "Bissau"),
+                        ("ps", "بیساو"),
                         ("pt", "Bissau"),
                         ("ro", "Bissau"),
                         ("ru", "Бисау"),
@@ -626,12 +633,14 @@ pub mod subdivisions {
                         ("bn", "গ\u{9be}ব\u{9c1} অঞ\u{9cd}চল"),
                         ("ca", "Regió de Gabú"),
                         ("ccp", "𑄉𑄝\u{1112a}"),
+                        ("ceb", "Gabú (rehiyon)"),
                         ("cs", "Gabú"),
                         ("da", "Gabú Region"),
                         ("de", "Gabú"),
                         ("el", "Γκαμπού"),
                         ("en", "Gabú"),
                         ("es", "Región de Gabú"),
+                        ("fa", "ناحیه گابو"),
                         ("fi", "Gabún alue"),
                         ("fr", "Gabu"),
                         ("gu", "ગ\u{ac7}બ\u{ac2} પ\u{acd}રદ\u{ac7}શ"),
@@ -679,8 +688,13 @@ pub mod subdivisions {
                     #[cfg(feature = "translations")]
                     translations: HashMap::from([
                         ("ccp", "𑄣𑄬𑄌\u{11134}𑄑𑄬"),
+                        ("cy", "Talaith Leste"),
                         ("de", "Provinz Leste"),
                         ("en", "Leste"),
+                        ("fa", "استان شرقی (گینه بیسائو)"),
+                        ("ja", "東地方"),
+                        ("pt", "Província Leste"),
+                        ("ru", "Восточная провинция"),
                     ]),
                     unofficial_name_list: [].to_vec(),
                 },
@@ -697,9 +711,15 @@ pub mod subdivisions {
                     subdivision_type: SubdivisionType::Province,
                     #[cfg(feature = "translations")]
                     translations: HashMap::from([
+                        ("ca", "província Nord"),
                         ("ccp", "𑄚\u{11127}𑄢\u{11134}𑄑𑄬"),
+                        ("cy", "Talaith Norte"),
                         ("de", "Provinz Norte"),
                         ("en", "Norte"),
+                        ("fa", "شمال (گینه بیسائو)"),
+                        ("ja", "北地方"),
+                        ("pt", "Província Norte"),
+                        ("ru", "Северная провинция"),
                     ]),
                     unofficial_name_list: [].to_vec(),
                 },
@@ -801,6 +821,7 @@ pub mod subdivisions {
                         ("el", "Κουινάρα"),
                         ("en", "Quinara"),
                         ("es", "Región de Quinara"),
+                        ("fa", "ناحیه کوینارا"),
                         ("fi", "Quinaran alue"),
                         ("fr", "Quinara"),
                         ("gl", "Quinara"),
@@ -849,8 +870,12 @@ pub mod subdivisions {
                     #[cfg(feature = "translations")]
                     translations: HashMap::from([
                         ("ccp", "𑄥𑄣\u{11134}"),
+                        ("cy", "Talaith Sul"),
                         ("de", "Provinz Sul"),
                         ("en", "Sul"),
+                        ("fa", "استان جنوبی (گینه بیسائو)"),
+                        ("pt", "Província Sul"),
+                        ("ru", "Южная провинция"),
                     ]),
                     unofficial_name_list: [].to_vec(),
                 },
@@ -886,6 +911,7 @@ pub mod subdivisions {
                         ("el", "Τόμπαλι"),
                         ("en", "Tombali"),
                         ("es", "Región de Tombali"),
+                        ("fa", "ناحیه تومبالی"),
                         ("fi", "Tombalin alue"),
                         ("fr", "Tombali"),
                         ("gu", "ટોમ\u{acd}બાલી પ\u{acd}રદ\u{ac7}શ"),
@@ -1110,5 +1136,7 @@ pub fn new() -> Country {
         ]),
         #[cfg(feature = "subdivisions")]
         subdivisions: subdivisions::new(),
+        g7_member: false,
+        g20_member: false,
     }
 }

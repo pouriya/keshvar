@@ -38,6 +38,8 @@ pub mod consts {
     pub const UN_LOCODE: &str = "JE";
     pub const UNOFFICIAL_NAME_LIST: &[&str] = &["Jersey", "ジャージー"];
     pub const WORLD_REGION: WorldRegion = WorldRegion::EMEA;
+    pub const G7_MEMBER: bool = false;
+    pub const G20_MEMBER: bool = false;
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇯🇪";
     #[cfg(feature = "translations")]
@@ -410,5 +412,7 @@ pub fn new() -> Country {
         ]),
         #[cfg(feature = "subdivisions")]
         subdivisions: subdivisions::new(),
+        g7_member: false,
+        g20_member: false,
     }
 }

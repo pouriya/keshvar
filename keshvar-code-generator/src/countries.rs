@@ -204,6 +204,16 @@ pub fn generate_country(destination_file: &PathBuf, info: &CountryInfo) -> Resul
                 utils::capitalize(&info.world_region).to_uppercase()
             ),
         ),
+        (
+            "const G7_MEMBER",
+            "bool",
+            info.g7_member.unwrap_or(false).to_string(),
+        ),
+        (
+            "const G20_MEMBER",
+            "bool",
+            info.g20_member.unwrap_or(false).to_string(),
+        ),
     ] {
         file.write_all(format!("    pub {}: {} = {};\n", name, _type, value).as_bytes())?;
     }
@@ -425,6 +435,8 @@ pub fn new() -> Country {{
         translations: HashMap::from({:?}),
         #[cfg(feature = "subdivisions")]
         subdivisions: subdivisions::new(),
+        g7_member: {},
+        g20_member: {},
     }}
 }}
             "#,
@@ -471,7 +483,9 @@ pub fn new() -> Country {{
             info.unofficial_names,
             utils::capitalize(&info.world_region).to_uppercase(),
             info.emoji,
-            info.translation_list
+            info.translation_list,
+            info.g7_member.unwrap_or(false).to_string(),
+            info.g20_member.unwrap_or(false).to_string(),
         )
         .as_bytes(),
     )?;

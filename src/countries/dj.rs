@@ -38,6 +38,8 @@ pub mod consts {
     pub const UN_LOCODE: &str = "DJ";
     pub const UNOFFICIAL_NAME_LIST: &[&str] = &["Djibouti", "جيبوتي", "Dschibuti", "ジブチ"];
     pub const WORLD_REGION: WorldRegion = WorldRegion::EMEA;
+    pub const G7_MEMBER: bool = false;
+    pub const G20_MEMBER: bool = false;
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇩🇯";
     #[cfg(feature = "translations")]
@@ -257,6 +259,7 @@ pub mod subdivisions {
                         ("be", "Рэгіён Арта"),
                         ("bg", "Арта (регион)"),
                         ("bn", "আরট\u{9be} অঞ\u{9cd}চল"),
+                        ("bs", "Arta (regija)"),
                         ("ca", "Regió d’Arta"),
                         ("ccp", "𑄃𑄢\u{11134}𑄑"),
                         ("ceb", "Arta Region"),
@@ -266,6 +269,7 @@ pub mod subdivisions {
                         ("en", "Arta"),
                         ("es", "Región de Arta"),
                         ("et", "Arta piirkond"),
+                        ("eu", "Arta eskualdea"),
                         ("fa", "منطقه عرتا"),
                         ("fi", "Artan maakunta"),
                         ("fr", "Région d’Arta"),
@@ -290,6 +294,7 @@ pub mod subdivisions {
                         ("ro", "Regiunea Arta"),
                         ("ru", "Арта (регион)"),
                         ("si", "අර\u{dca}ට\u{dcf} කල\u{dcf}පය"),
+                        ("so", "Gobolka Carta"),
                         ("sv", "Arta (region)"),
                         ("ta", "ஆர\u{bcd}ட\u{bbe} பகுதி"),
                         ("te", "ఆర\u{c4d}జ\u{c46}\u{c4d}ట\u{c3e} ప\u{c4d}ర\u{c3e}ంతం"),
@@ -299,6 +304,7 @@ pub mod subdivisions {
                         ("ur", "ارتا علاقہ"),
                         ("vi", "Khu vực Arta"),
                         ("zh", "阿爾塔州 (吉布提)"),
+                        ("zu", "Arta Region"),
                     ]),
                     unofficial_name_list: ["Arta"].to_vec(),
                 },
@@ -325,6 +331,7 @@ pub mod subdivisions {
                         ("ar", "إقليم علي صبيح"),
                         ("bg", "Али Сабих"),
                         ("bn", "আলি স\u{9be}বি অঞ\u{9cd}চল"),
+                        ("bs", "Ali Sabieh (regija)"),
                         ("ca", "Regió d’Ali Sabieh"),
                         ("ccp", "𑄃𑄣\u{11128} 𑄥𑄝\u{11128}𑄠𑄬𑄦\u{11134}"),
                         ("ceb", "Ali Sabieh Region"),
@@ -334,10 +341,12 @@ pub mod subdivisions {
                         ("en", "Ali Sabieh"),
                         ("es", "Región de Ali Sabieh"),
                         ("et", "Ali Sabiehi piirkond"),
+                        ("eu", "Ali Sabieh eskualdea"),
                         ("fa", "اقلیم علی صبیح"),
                         ("fi", "Ali Sabiehin alue"),
                         ("fr", "Région d’Ali Sabieh"),
                         ("gu", "અલી સબ\u{ac7}હ પ\u{acd}રદ\u{ac7}શ"),
+                        ("he", "עלי סביח"),
                         ("hi", "अली सबीह प\u{94d}रद\u{947}श"),
                         ("hy", "Ալի Սաբիյեհ"),
                         ("id", "Wilayah Ali Sabieh"),
@@ -397,6 +406,7 @@ pub mod subdivisions {
                         ("be", "Рэгіён Дыхіл"),
                         ("bg", "Дихил"),
                         ("bn", "ডিকি অঞ\u{9cd}চল"),
+                        ("bs", "Dikhil (regija)"),
                         ("ca", "Regió de Dikhil"),
                         ("ccp", "𑄓\u{11128}𑄈\u{11128}𑄣\u{11134}"),
                         ("ceb", "Dikhil"),
@@ -406,6 +416,7 @@ pub mod subdivisions {
                         ("en", "Dikhil"),
                         ("es", "Dikhil"),
                         ("et", "Dikhili piirkond"),
+                        ("eu", "Dikhil eskualdea"),
                         ("fa", "منطقه دخیل"),
                         ("fi", "Dikhilin maakunta"),
                         ("fr", "Région de Dikhil"),
@@ -566,9 +577,11 @@ pub mod subdivisions {
                     #[cfg(feature = "translations")]
                     translations: HashMap::from([
                         ("ar", "إقليم أوبوك"),
+                        ("az", "Obok regionu"),
                         ("be", "Рэгіён Абок"),
                         ("bg", "Обок"),
                         ("bn", "ওব\u{9be}ক অঞ\u{9cd}চল"),
+                        ("bs", "Obock (regija)"),
                         ("ca", "Regió d’Obock"),
                         ("ccp", "𑄃\u{1112e}𑄝\u{1112e}𑄇\u{11134}"),
                         ("ceb", "Obock"),
@@ -578,10 +591,12 @@ pub mod subdivisions {
                         ("en", "Obock"),
                         ("es", "Región de Obock"),
                         ("et", "Obocki piirkond"),
+                        ("eu", "Obock eskualdea"),
                         ("fa", "منطقه اوبوک"),
                         ("fi", "Obockin maakunta"),
                         ("fr", "Région d’Obock"),
                         ("gu", "ઓબોક પ\u{acd}રદ\u{ac7}શ"),
+                        ("he", "מחוז אובוק"),
                         ("hi", "ओबॉक क\u{94d}ष\u{947}त\u{94d}र"),
                         ("hy", "Օբոքի երկրամաս"),
                         ("id", "Wilayah Obock"),
@@ -638,6 +653,7 @@ pub mod subdivisions {
                         ("be", "Рэгіён Таджура"),
                         ("bg", "Таджура"),
                         ("bn", "ত\u{9be}জ\u{9c1}র\u{9be}হ অঞ\u{9cd}চল"),
+                        ("bs", "Tadjourah (regija)"),
                         ("ca", "Regió de Tadjoura"),
                         ("ccp", "𑄒𑄖\u{11134}𑄇\u{1112f}𑄢𑄦\u{11134}"),
                         ("ceb", "Tadjourah"),
@@ -647,10 +663,12 @@ pub mod subdivisions {
                         ("en", "Tadjourah"),
                         ("es", "Tadjoura"),
                         ("et", "Tadjoura piirkond"),
+                        ("eu", "Tadjourah eskualdea"),
                         ("fa", "منطقه تاجوره"),
                         ("fi", "Tadjourahin maakunta"),
                         ("fr", "Région de Tadjourah"),
                         ("gu", "તજૌરહ પ\u{acd}રદ\u{ac7}શ"),
+                        ("he", "טאג׳ורה"),
                         ("hi", "तदजौरा क\u{94d}ष\u{947}त\u{94d}र"),
                         ("hy", "Թանջուրահ"),
                         ("id", "Wilayah Tadjourah"),
@@ -870,5 +888,7 @@ pub fn new() -> Country {
         ]),
         #[cfg(feature = "subdivisions")]
         subdivisions: subdivisions::new(),
+        g7_member: false,
+        g20_member: false,
     }
 }

@@ -40,6 +40,8 @@ pub mod consts {
     pub const UNOFFICIAL_NAME_LIST: &[&str] =
         &["Singapore", "Singapur", "Singapour", "シンガポール"];
     pub const WORLD_REGION: WorldRegion = WorldRegion::APAC;
+    pub const G7_MEMBER: bool = false;
+    pub const G20_MEMBER: bool = false;
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇸🇬";
     #[cfg(feature = "translations")]
@@ -249,7 +251,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::District,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ccp", "𑄥𑄬𑄚\u{11134}𑄑\u{11133}𑄢𑄣\u{11134} 𑄥\u{11128}\u{11101}𑄉𑄛\u{1112a}𑄢\u{11134}"), ("ceb", "Central Singapore Community Development Council"), ("de", "Central Singapore District"), ("en", "Central Singapore"), ("es", "Consejo Central (Singapur)"), ("fr", "Singapour central"), ("ja", "シンガポール中央地区"), ("ko", "중앙싱가포르 지구 사회 발전 이사회"), ("ur", "مرکزی سنگاپور کمیونٹی ڈیولپمنٹ کونسل"), ("zh", "中区社区发展理事会")]),
+                        translations: HashMap::from([("ccp", "𑄥𑄬𑄚\u{11134}𑄑\u{11133}𑄢𑄣\u{11134} 𑄥\u{11128}\u{11101}𑄉𑄛\u{1112a}𑄢\u{11134}"), ("ceb", "Central Singapore Community Development Council"), ("de", "Central Singapore District"), ("en", "Central Singapore"), ("es", "Consejo Central (Singapur)"), ("fr", "Singapour central"), ("id", "Dewan Pengembangan Masyarakat Singapura Tengah"), ("ja", "シンガポール中央地区"), ("ko", "중앙싱가포르 지구 사회 발전 이사회"), ("ur", "مرکزی سنگاپور کمیونٹی ڈیولپمنٹ کونسل"), ("zh", "中区社区发展理事会")]),
                         unofficial_name_list: ["Central Singapore"].to_vec(),
                     }
                 ),
@@ -264,7 +266,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::District,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ccp", "𑄅\u{1112a}𑄖\u{11133}𑄦\u{11127}𑄢\u{11134} 𑄛\u{1112a}𑄇\u{11134}"), ("ceb", "North East Community Development Region"), ("en", "North East"), ("es", "Consejo del Noreste (Singapur)"), ("fr", "District du Nord-Est"), ("it", "Distretto Nordorientale"), ("ja", "北東地区 (シンガポール)"), ("ko", "북동부 지구 사회 발전 이사회"), ("nl", "North East Community Development Council"), ("ur", "شمال مشرقی کمیونٹی ڈیولپمنٹ کونسل"), ("zh", "东北社区发展理事会")]),
+                        translations: HashMap::from([("ccp", "𑄅\u{1112a}𑄖\u{11133}𑄦\u{11127}𑄢\u{11134} 𑄛\u{1112a}𑄇\u{11134}"), ("ceb", "North East Community Development Region"), ("de", "North East (Singapur)"), ("en", "North East"), ("es", "Consejo del Noreste (Singapur)"), ("fr", "District du Nord-Est"), ("id", "Dewan Pengembangan Masyarakat Timur Laut"), ("it", "Distretto Nordorientale"), ("ja", "北東地区 (シンガポール)"), ("ko", "북동부 지구 사회 발전 이사회"), ("ms", "Majlis Pembangunan Masyarakat Timur Laut"), ("nl", "North East Community Development Council"), ("ur", "شمال مشرقی کمیونٹی ڈیولپمنٹ کونسل"), ("zh", "东北社区发展理事会")]),
                         unofficial_name_list: ["North East"].to_vec(),
                     }
                 ),
@@ -279,7 +281,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::District,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ccp", "𑄅\u{1112a}𑄖\u{11133}𑄦\u{11127}𑄢\u{11134} 𑄛\u{11127}𑄏\u{11128}𑄟\u{11134}"), ("ceb", "North West Community Development Council"), ("en", "North West"), ("es", "Consejo del Noroeste (Singapur)"), ("fr", "District du Nord-Ouest"), ("ja", "北西地区 (シンガポール)"), ("ko", "북서부 지구 사회 발전 이사회"), ("ur", "شمال مغربی کمیونٹی ڈیولپمنٹ کونسل"), ("zh", "西北社区发展理事会")]),
+                        translations: HashMap::from([("ccp", "𑄅\u{1112a}𑄖\u{11133}𑄦\u{11127}𑄢\u{11134} 𑄛\u{11127}𑄏\u{11128}𑄟\u{11134}"), ("ceb", "North West Community Development Council"), ("de", "North West (Singapur)"), ("en", "North West"), ("es", "Consejo del Noroeste (Singapur)"), ("fr", "District du Nord-Ouest"), ("id", "Dewan Pengembangan Masyarakat Barat Laut"), ("ja", "北西地区 (シンガポール)"), ("ko", "북서부 지구 사회 발전 이사회"), ("ur", "شمال مغربی کمیونٹی ڈیولپمنٹ کونسل"), ("zh", "西北社区发展理事会")]),
                         unofficial_name_list: ["North West"].to_vec(),
                     }
                 ),
@@ -294,7 +296,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::District,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ccp", "𑄘\u{11127}𑄊\u{11128}𑄚\u{11134} 𑄛\u{1112a}𑄇\u{11134}"), ("ceb", "South East Community Development Council"), ("de", "Südost"), ("en", "South East"), ("es", "Consejo del Sudeste (Singapur)"), ("fr", "District du Sud-Est"), ("ja", "南東地区"), ("ko", "남동부 지구 사회 발전 이사회"), ("ur", "جنوب مشرقی کمیونٹی ڈیولپمنٹ کونسل"), ("zh", "东南社区发展理事会")]),
+                        translations: HashMap::from([("ccp", "𑄘\u{11127}𑄊\u{11128}𑄚\u{11134} 𑄛\u{1112a}𑄇\u{11134}"), ("ceb", "South East Community Development Council"), ("de", "Südost"), ("en", "South East"), ("es", "Consejo del Sudeste (Singapur)"), ("fr", "District du Sud-Est"), ("id", "Dewan Pengembangan Masyarakat Tenggara"), ("ja", "南東地区"), ("ko", "남동부 지구 사회 발전 이사회"), ("ur", "جنوب مشرقی کمیونٹی ڈیولپمنٹ کونسل"), ("zh", "东南社区发展理事会")]),
                         unofficial_name_list: ["South East"].to_vec(),
                     }
                 ),
@@ -309,7 +311,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::District,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ccp", "𑄘\u{11127}𑄊\u{11128}𑄚\u{11134} 𑄛\u{11127}𑄏\u{11128}𑄟\u{11134}"), ("ceb", "South West Community Development Council"), ("de", "South West Singapore District"), ("en", "South West"), ("es", "Consejo del Sudoeste (Singapur)"), ("fr", "District du Sud-Ouest"), ("ja", "南西地区 (シンガポール)"), ("ko", "남서부 지구 사회 발전 이사회"), ("ur", "جنوب مغربی کمیونٹی ڈیولپمنٹ کونسل"), ("zh", "西南社区发展理事会")]),
+                        translations: HashMap::from([("ccp", "𑄘\u{11127}𑄊\u{11128}𑄚\u{11134} 𑄛\u{11127}𑄏\u{11128}𑄟\u{11134}"), ("ceb", "South West Community Development Council"), ("de", "South West Singapore District"), ("en", "South West"), ("es", "Consejo del Sudoeste (Singapur)"), ("fr", "District du Sud-Ouest"), ("id", "Dewan Pengembangan Masyarakat Barat Daya"), ("ja", "南西地区 (シンガポール)"), ("ko", "남서부 지구 사회 발전 이사회"), ("ur", "جنوب مغربی کمیونٹی ڈیولپمنٹ کونسل"), ("zh", "西南社区发展理事会")]),
                         unofficial_name_list: ["South West"].to_vec(),
                     }
                 ),
@@ -498,5 +500,7 @@ pub fn new() -> Country {
         ]),
         #[cfg(feature = "subdivisions")]
         subdivisions: subdivisions::new(),
+        g7_member: false,
+        g20_member: false,
     }
 }

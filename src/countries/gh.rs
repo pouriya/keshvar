@@ -38,6 +38,8 @@ pub mod consts {
     pub const UN_LOCODE: &str = "GH";
     pub const UNOFFICIAL_NAME_LIST: &[&str] = &["Ghana", "ガーナ"];
     pub const WORLD_REGION: WorldRegion = WorldRegion::EMEA;
+    pub const G7_MEMBER: bool = false;
+    pub const G20_MEMBER: bool = false;
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇬🇭";
     #[cfg(feature = "translations")]
@@ -269,7 +271,9 @@ pub mod subdivisions {
                         ("gu", "ગ\u{acd}ર\u{ac7}ટર એક\u{acd}રા પ\u{acd}રદ\u{ac7}શ"),
                         ("ha", "Yankin Greater Accra"),
                         ("ha_NE", "Yankin Greater Accra"),
+                        ("he", "אזור אקרה רבתי"),
                         ("hi", "ब\u{943}हत\u{94d}तर एकरा प\u{94d}रद\u{947}श"),
+                        ("hy", "Մեծ Աքրա"),
                         ("id", "Region Greater Accra"),
                         ("it", "regione della Grande Accra"),
                         ("ja", "グレーター・アクラ州"),
@@ -288,6 +292,7 @@ pub mod subdivisions {
                         ("ru", "Большая Аккра"),
                         ("si", "මහ\u{dcf} අක\u{dca}ර\u{dcf} කල\u{dcf}පය"),
                         ("sv", "Storaccra"),
+                        ("sw", "Mkoa wa Greater Accra"),
                         ("ta", "கிரேட\u{bcd}டர\u{bcd} ஆசிர\u{bbe} பகுதி"),
                         (
                             "te",
@@ -321,7 +326,17 @@ pub mod subdivisions {
                     comments: None,
                     subdivision_type: SubdivisionType::Region,
                     #[cfg(feature = "translations")]
-                    translations: HashMap::from([("en", "Ahafo")]),
+                    translations: HashMap::from([
+                        ("de", "Ahafo Region"),
+                        ("en", "Ahafo"),
+                        ("es", "Región Ahafo"),
+                        ("fa", "ناحیه آهافو"),
+                        ("it", "Regione di Ahafo"),
+                        ("ja", "アハフォ州"),
+                        ("pl", "Region Ahafo"),
+                        ("ru", "Ахафо"),
+                        ("sw", "Mkoa wa Ahafo"),
+                    ]),
                     unofficial_name_list: [].to_vec(),
                 },
             ),
@@ -344,6 +359,7 @@ pub mod subdivisions {
                     subdivision_type: SubdivisionType::Region,
                     #[cfg(feature = "translations")]
                     translations: HashMap::from([
+                        ("af", "Asjanti (streek)"),
                         ("ar", "منطقة أشانتي"),
                         ("be", "рэгіён Ашанці"),
                         ("bg", "Ашанти"),
@@ -362,6 +378,7 @@ pub mod subdivisions {
                         ("gu", "અશા\u{a82}તિ પ\u{acd}રદ\u{ac7}શ"),
                         ("ha", "Yankin Ashanti"),
                         ("ha_NE", "Yankin Ashanti"),
+                        ("he", "חבל אשנטי"),
                         ("hi", "अश\u{94d}\u{902}ती क\u{94d}ष\u{947}त\u{94d}र"),
                         ("id", "Region Ashanti"),
                         ("it", "regione di Ashanti"),
@@ -383,6 +400,7 @@ pub mod subdivisions {
                         ("ru", "Ашанти"),
                         ("si", "ආශ\u{dcf}න\u{dca}ට\u{dd2} කල\u{dcf}පය"),
                         ("sv", "Ashantiregionen"),
+                        ("sw", "Mkoa wa Ashanti"),
                         ("ta", "அஷ\u{bbe}ந\u{bcd}தி பகுதி"),
                         ("te", "అశ\u{c3e}ంత\u{c3f} ప\u{c4d}ర\u{c3e}ంతం"),
                         ("th", "อาชานต\u{e34}"),
@@ -415,7 +433,18 @@ pub mod subdivisions {
                     comments: None,
                     subdivision_type: SubdivisionType::Region,
                     #[cfg(feature = "translations")]
-                    translations: HashMap::from([("en", "Bono East")]),
+                    translations: HashMap::from([
+                        ("ar", "إقليم شرق بونو"),
+                        ("de", "Bono East Region"),
+                        ("en", "Bono East"),
+                        ("es", "Región de Bono Oriental"),
+                        ("fa", "ناحیه بونو شرقی"),
+                        ("it", "Regione di Bono Est"),
+                        ("ja", "ボノ・イースト州"),
+                        ("pl", "Region Bono Wschodnie"),
+                        ("ru", "Боно-Ист"),
+                        ("sw", "Mkoa wa Bono Mashariki"),
+                    ]),
                     unofficial_name_list: [].to_vec(),
                 },
             ),
@@ -437,7 +466,20 @@ pub mod subdivisions {
                     comments: None,
                     subdivision_type: SubdivisionType::Region,
                     #[cfg(feature = "translations")]
-                    translations: HashMap::from([("en", "Bono")]),
+                    translations: HashMap::from([
+                        ("ar", "إقليم بونو"),
+                        ("de", "Bono Region"),
+                        ("en", "Bono"),
+                        ("es", "Región de Bono"),
+                        ("fa", "ناحیه بونو"),
+                        ("ha", "Yankin Bono"),
+                        ("ha_NE", "Yankin Bono"),
+                        ("it", "Regione di Bono"),
+                        ("ja", "ボノ州"),
+                        ("pl", "Region Bono"),
+                        ("ru", "Боно"),
+                        ("sw", "Mkoa wa Bono"),
+                    ]),
                     unofficial_name_list: [].to_vec(),
                 },
             ),
@@ -478,6 +520,7 @@ pub mod subdivisions {
                         ("gu", "સ\u{ac7}ન\u{acd}ટ\u{acd}રલ પ\u{acd}રદ\u{ac7}શ"),
                         ("ha", "Yankin Tsakiya (Ghana)"),
                         ("ha_NE", "Yankin Tsakiya (Ghana)"),
+                        ("he", "מחוז המרכז"),
                         (
                             "hi",
                             "क\u{947}न\u{94d}द\u{94d}रीय क\u{94d}ष\u{947}त\u{94d}र",
@@ -501,6 +544,7 @@ pub mod subdivisions {
                         ("ru", "Центральный регион"),
                         ("si", "මධ\u{dca}\u{200d}යම කල\u{dcf}පය"),
                         ("sv", "Centralregionen"),
+                        ("sw", "Mkoa wa Kati, Ghana"),
                         ("ta", "சென\u{bcd}ட\u{bcd}ரல\u{bcd} பகுதி"),
                         ("te", "స\u{c46}ంట\u{c4d}రల\u{c4d} ప\u{c4d}ర\u{c3e}ంతం"),
                         ("th", "เซ\u{e47}นทร\u{e31}ล ร\u{e35}เจ\u{e35}\u{e49}ยน"),
@@ -569,6 +613,7 @@ pub mod subdivisions {
                         ("ru", "Восточный регион"),
                         ("si", "නැගෙනහ\u{dd2}ර කල\u{dcf}පය"),
                         ("sv", "Östra regionen (region i Ghana)"),
+                        ("sw", "Mkoa wa Mashariki, Ghana"),
                         ("ta", "கிழக\u{bcd}கு பகுதி"),
                         ("te", "తూర\u{c4d}పు ప\u{c4d}ర\u{c3e}ంతం"),
                         (
@@ -602,7 +647,16 @@ pub mod subdivisions {
                     comments: None,
                     subdivision_type: SubdivisionType::Region,
                     #[cfg(feature = "translations")]
-                    translations: HashMap::from([("en", "North East")]),
+                    translations: HashMap::from([
+                        ("de", "North East Region"),
+                        ("en", "North East"),
+                        ("es", "Región Norte Oriental"),
+                        ("fa", "ناحیه شمال شرقی (غنا)"),
+                        ("it", "Regione Nord Est"),
+                        ("ja", "ノース・イースト州"),
+                        ("pl", "Region Północno–Wschodni"),
+                        ("ru", "Северо-Восточная область"),
+                    ]),
                     unofficial_name_list: [].to_vec(),
                 },
             ),
@@ -635,6 +689,7 @@ pub mod subdivisions {
                             "𑄅\u{1112a}𑄖\u{11133}𑄦\u{11127}𑄢\u{11134}𑄟𑄬𑄇\u{11134}𑄈𑄬",
                         ),
                         ("ceb", "Northern Region"),
+                        ("cs", "Northern Region (Ghana)"),
                         ("da", "Northern"),
                         ("de", "Northern Region"),
                         ("el", "Βόρεια Περιφέρεια, Γκανά"),
@@ -665,6 +720,7 @@ pub mod subdivisions {
                         ("ru", "Северный регион"),
                         ("si", "උත\u{dd4}ර\u{dd4} කල\u{dcf}පය"),
                         ("sv", "Norra regionen (region i Ghana)"),
+                        ("sw", "Mkoa wa Kaskazini, Ghana"),
                         ("ta", "வடக\u{bcd}கு பகுதி"),
                         ("te", "ఉత\u{c4d}తర ప\u{c4d}ర\u{c3e}ంతం"),
                         (
@@ -691,7 +747,17 @@ pub mod subdivisions {
                     comments: None,
                     subdivision_type: SubdivisionType::Region,
                     #[cfg(feature = "translations")]
-                    translations: HashMap::from([("en", "Oti")]),
+                    translations: HashMap::from([
+                        ("de", "Oti Region"),
+                        ("en", "Oti"),
+                        ("es", "Región Oti"),
+                        ("fa", "ناحیه اوتی"),
+                        ("it", "Regione di Oti"),
+                        ("ja", "オティ州"),
+                        ("pl", "Region Oti"),
+                        ("ru", "Оти"),
+                        ("sw", "Mkoa wa Oti"),
+                    ]),
                     unofficial_name_list: [].to_vec(),
                 },
             ),
@@ -713,7 +779,20 @@ pub mod subdivisions {
                     comments: None,
                     subdivision_type: SubdivisionType::Region,
                     #[cfg(feature = "translations")]
-                    translations: HashMap::from([("en", "Savannah")]),
+                    translations: HashMap::from([
+                        ("ar", "منطقة السفانا"),
+                        ("de", "Savannah Region"),
+                        ("en", "Savannah"),
+                        ("es", "Región de Sabana"),
+                        ("fa", "ناحیه ساوانا"),
+                        ("ha", "Yankin Savannah"),
+                        ("ha_NE", "Yankin Savannah"),
+                        ("it", "Regione di Savannah"),
+                        ("ja", "サバンナ州"),
+                        ("pl", "Region Savannah"),
+                        ("ru", "Саванна"),
+                        ("sw", "Mkoa wa Savannah"),
+                    ]),
                     unofficial_name_list: [].to_vec(),
                 },
             ),
@@ -774,6 +853,7 @@ pub mod subdivisions {
                         ("ru", "Вольта"),
                         ("si", "වොල\u{dca}ට\u{dcf} කල\u{dcf}පය"),
                         ("sv", "Voltaregionen"),
+                        ("sw", "Mkoa wa Volta"),
                         ("ta", "வோல\u{bcd}ட\u{bcd}ட\u{bbe} பகுதி"),
                         ("te", "వ\u{c4b}ల\u{c4d}ట\u{c3e} ప\u{c4d}ర\u{c3e}ంతం"),
                         ("th", "วอลตา"),
@@ -820,6 +900,7 @@ pub mod subdivisions {
                         ("fa", "منطقه شرق علیا"),
                         ("fi", "Upper East Ghana"),
                         ("fr", "Région du Haut Ghana oriental"),
+                        ("gl", "rexión Superior Oriental"),
                         ("gu", "અપર પ\u{ac2}ર\u{acd}વ પ\u{acd}રદ\u{ac7}શ"),
                         ("ha", "Yankin Upper East"),
                         ("ha_NE", "Yankin Upper East"),
@@ -842,6 +923,7 @@ pub mod subdivisions {
                         ("ru", "Верхний Восточный регион"),
                         ("si", "ඉහල නැගෙනහ\u{dd2}ර පළ\u{dcf}ත"),
                         ("sv", "Övre östra regionen"),
+                        ("sw", "Mkoa wa Mashariki ya Juu"),
                         ("ta", "அப\u{bcd}பர\u{bcd} கிழக\u{bcd}கு பகுதி"),
                         (
                             "te",
@@ -916,6 +998,7 @@ pub mod subdivisions {
                         ("ru", "Верхний Западный регион"),
                         ("si", "ඉහල බටහ\u{dd2}ර කල\u{dcf}පය"),
                         ("sv", "Övre västra regionen"),
+                        ("sw", "Mkoa wa Magharibi ya Juu"),
                         ("ta", "அப\u{bcd}பர\u{bcd} மேற\u{bcd}கு பகுதி"),
                         (
                             "te",
@@ -949,7 +1032,17 @@ pub mod subdivisions {
                     comments: None,
                     subdivision_type: SubdivisionType::Region,
                     #[cfg(feature = "translations")]
-                    translations: HashMap::from([("en", "Western North")]),
+                    translations: HashMap::from([
+                        ("de", "Western North Region"),
+                        ("en", "Western North"),
+                        ("es", "Región Norte Occidental"),
+                        ("fa", "ناحیه شمال غربی"),
+                        ("it", "Regione Nordoccidentale"),
+                        ("ja", "ウェスタン・ノース州"),
+                        ("pl", "Region Zachodnio-Północny"),
+                        ("ru", "Северо-Западная область (Гана)"),
+                        ("sw", "Mkoa wa Kaskazini Magharibi"),
+                    ]),
                     unofficial_name_list: [].to_vec(),
                 },
             ),
@@ -990,6 +1083,7 @@ pub mod subdivisions {
                         ("gu", "પશ\u{acd}ચિમી પ\u{acd}રદ\u{ac7}શ"),
                         ("ha", "Yankin Yammaci, Ghana"),
                         ("ha_NE", "Yankin Yammaci, Ghana"),
+                        ("he", "מחוז המערב"),
                         ("hi", "पश\u{94d}चिमी क\u{94d}ष\u{947}त\u{94d}र"),
                         ("id", "Region Barat"),
                         ("it", "regione Occidentale"),
@@ -1009,6 +1103,7 @@ pub mod subdivisions {
                         ("ru", "Западный Регион"),
                         ("si", "බස\u{dca}න\u{dcf}හ\u{dd2}ර කල\u{dcf}පය"),
                         ("sv", "Västra regionen (region i Ghana)"),
+                        ("sw", "Mkoa wa Magharibi, Ghana"),
                         ("ta", "மேற\u{bcd}கு பகுதி"),
                         ("te", "పశ\u{c4d}చ\u{c3f}మ ప\u{c4d}ర\u{c3e}ంతం"),
                         ("th", "เวสเท\u{e34}ร\u{e4c}น ร\u{e35}เจ\u{e35}\u{e49}ยน"),
@@ -1201,5 +1296,7 @@ pub fn new() -> Country {
         ]),
         #[cfg(feature = "subdivisions")]
         subdivisions: subdivisions::new(),
+        g7_member: false,
+        g20_member: false,
     }
 }

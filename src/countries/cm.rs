@@ -45,6 +45,8 @@ pub mod consts {
         "Kameroen",
     ];
     pub const WORLD_REGION: WorldRegion = WorldRegion::EMEA;
+    pub const G7_MEMBER: bool = false;
+    pub const G20_MEMBER: bool = false;
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇨🇲";
     #[cfg(feature = "translations")]
@@ -273,6 +275,7 @@ pub mod subdivisions {
                         ("en", "Adamawa"),
                         ("es", "Región Adamawa"),
                         ("et", "Adamaoua piirkond"),
+                        ("eu", "Adamawa (Kamerungo probintzia)"),
                         ("fa", "استان آداماوا"),
                         ("fi", "Adamawa"),
                         ("fr", "Région de l’Adamaoua"),
@@ -299,6 +302,7 @@ pub mod subdivisions {
                         ("ru", "Адамава (регион Камеруна)"),
                         ("si", "අඩමව\u{dcf}"),
                         ("sv", "Adamaouaregionen"),
+                        ("sw", "Mkoa wa Adamawa"),
                         ("ta", "அடம\u{bbe}வ\u{bbe}"),
                         ("te", "ఆడమ\u{c3e}వ\u{c3e}"),
                         ("th", "ร\u{e31}ฐอดามาวา"),
@@ -343,6 +347,7 @@ pub mod subdivisions {
                         ("en", "Centre"),
                         ("es", "Región del Centro"),
                         ("et", "Keskpiirkond"),
+                        ("eu", "Erdialdea (Kamerun)"),
                         ("fa", "منطقه مرکز"),
                         ("fi", "Centre"),
                         ("fr", "Région du Centre"),
@@ -368,6 +373,7 @@ pub mod subdivisions {
                         ("ru", "Центральный регион"),
                         ("si", "සෙන\u{dca}ටර\u{dca}"),
                         ("sv", "Centrumregionen"),
+                        ("sw", "Mkoa wa Kati, Kamerun"),
                         ("ta", "சென\u{bcd}டர\u{bcd}"),
                         ("te", "స\u{c46}ంటర\u{c4d}"),
                         ("th", "จ\u{e31}งหว\u{e31}ดโอต-โซน"),
@@ -414,6 +420,7 @@ pub mod subdivisions {
                         ("en", "Far North"),
                         ("es", "Región del Extremo Norte"),
                         ("et", "Kaug-Põhjapiirkond"),
+                        ("eu", "Iparralde Urruna (Kamerun)"),
                         ("fa", "منطقه شمال دور"),
                         ("fi", "Extrême-Nord"),
                         ("fr", "Région de l’Extrême-Nord"),
@@ -439,6 +446,7 @@ pub mod subdivisions {
                         ("ru", "Крайнесеверный регион"),
                         ("si", "ෆ\u{dcf}ර\u{dca} නොර\u{dca}ත\u{dca}"),
                         ("sv", "Nordligaste regionen"),
+                        ("sw", "Mkoa wa Kaskazini ya Mbali, Kamerun"),
                         ("ta", "ப\u{bbe}ர\u{bcd} வடக\u{bcd}கு"),
                         ("te", "ఫ\u{c3e}ర\u{c4d} న\u{c3e}ర\u{c4d}త\u{c4d}"),
                         ("th", "ฟาร\u{e4c} น\u{e47}อท"),
@@ -483,6 +491,7 @@ pub mod subdivisions {
                         ("en", "East"),
                         ("es", "Región del Este"),
                         ("et", "Idapiirkond"),
+                        ("eu", "Ekialdea (Kamerun)"),
                         ("fa", "منطقه شرق"),
                         ("fi", "East"),
                         ("fr", "Région de l’Est"),
@@ -509,6 +518,7 @@ pub mod subdivisions {
                         ("ru", "Восточный регион"),
                         ("si", "නැගෙනහ\u{dd2}ර"),
                         ("sv", "Östra regionen (region i Kamerun)"),
+                        ("sw", "Mkoa wa Mashariki, Kamerun"),
                         ("ta", "ஈஸ\u{bcd}ட\u{bcd}"),
                         ("te", "తూర\u{c4d}పు"),
                         ("th", "อ\u{e35}ส"),
@@ -555,6 +565,7 @@ pub mod subdivisions {
                         ("en", "Littoral"),
                         ("es", "Región del Litoral"),
                         ("et", "Rannikupiirkond"),
+                        ("eu", "Kostaldea (Kamerun)"),
                         ("fa", "منطقه لیتورال"),
                         ("fi", "Littoral"),
                         ("fr", "Région du Littoral"),
@@ -581,6 +592,7 @@ pub mod subdivisions {
                         ("ru", "Прибрежный регион"),
                         ("si", "ල\u{dd2}ට\u{dca}ටොරල\u{dca}"),
                         ("sv", "Kustregionen"),
+                        ("sw", "Mkoa wa Pwani, Kamerun"),
                         ("ta", "லிட\u{bcd}டோர\u{bbe}ல\u{bcd}"),
                         ("te", "ల\u{c3f}ట\u{c4b}రల\u{c4d}"),
                         ("th", "ล\u{e34}ทโทรอล"),
@@ -625,6 +637,7 @@ pub mod subdivisions {
                         ("en", "North"),
                         ("es", "Región del Norte"),
                         ("et", "Põhjapiirkond"),
+                        ("eu", "Iparraldea (Kamerun)"),
                         ("fa", "منطقه شمال"),
                         ("fi", "North"),
                         ("fr", "Région du Nord"),
@@ -650,6 +663,7 @@ pub mod subdivisions {
                         ("ru", "Северный регион"),
                         ("si", "උත\u{dd4}ර\u{dd4}"),
                         ("sv", "Norra regionen (region i Kamerun)"),
+                        ("sw", "Mkoa wa Kaskazini, Kamerun"),
                         ("ta", "நோர\u{bcd}த\u{bcd}"),
                         ("te", "ఉత\u{c4d}తర"),
                         ("th", "แถบทางเหน\u{e37}อแคเมอร\u{e39}น"),
@@ -696,6 +710,7 @@ pub mod subdivisions {
                         ("en", "Northwest"),
                         ("es", "Región del Noroeste"),
                         ("et", "Loodepiirkond"),
+                        ("eu", "Ipar-mendebaldea (Kamerun)"),
                         ("fa", "منطقه شمال غربی"),
                         ("fi", "Luoteisalue"),
                         ("fr", "Région du Nord-Ouest"),
@@ -724,6 +739,7 @@ pub mod subdivisions {
                         ("ru", "Северо-Западный регион"),
                         ("si", "වයඹ"),
                         ("sv", "Nordvästra regionen"),
+                        ("sw", "Mkoa wa Kaskazini-Magharibi, Kamerun"),
                         ("ta", "நர\u{bcd}தவ\u{bcd}ஸ\u{bcd}ட\u{bcd}"),
                         ("te", "వ\u{c3e}యవ\u{c4d}యం"),
                         ("th", "นอร\u{e4c}ทเวสต\u{e4c}"),
@@ -767,6 +783,7 @@ pub mod subdivisions {
                         ("en", "West"),
                         ("es", "Región del Oeste"),
                         ("et", "Läänepiirkond"),
+                        ("eu", "Mendebaldea (Kamerun)"),
                         ("fa", "منطقه غرب"),
                         ("fi", "West"),
                         ("fr", "Région de l’Ouest"),
@@ -793,6 +810,7 @@ pub mod subdivisions {
                         ("ru", "Западный регион"),
                         ("si", "බස\u{dca}න\u{dcf}හ\u{dd2}ර"),
                         ("sv", "Västra regionen"),
+                        ("sw", "Mkoa wa Magharibi, Kamerun"),
                         ("ta", "வெஸ\u{bcd}ட\u{bcd}"),
                         ("te", "పశ\u{c4d}చ\u{c3f}మ"),
                         ("th", "เวส"),
@@ -827,6 +845,7 @@ pub mod subdivisions {
                     #[cfg(feature = "translations")]
                     translations: HashMap::from([
                         ("ar", "جنوب"),
+                        ("az", "Cənub bölgəsi"),
                         ("be", "Паўднёвы рэгіён"),
                         ("bn", "দক\u{9cd}ষিন/স\u{9be}উথ"),
                         ("ca", "Regió del Sud"),
@@ -838,6 +857,7 @@ pub mod subdivisions {
                         ("en", "South"),
                         ("es", "Región del Sur"),
                         ("et", "Lõunapiirkond"),
+                        ("eu", "Hegoaldea (Kamerun)"),
                         ("fa", "منطقه جنوب"),
                         ("fi", "South"),
                         ("fr", "Région du Sud"),
@@ -863,6 +883,7 @@ pub mod subdivisions {
                         ("ru", "Южный регион"),
                         ("si", "දක\u{dd4}ණ"),
                         ("sv", "Södra regionen (region i Kamerun)"),
+                        ("sw", "Mkoa wa Kusini, Kamerun"),
                         ("ta", "சவுத\u{bcd}"),
                         ("te", "దక\u{c4d}ష\u{c3f}ణ"),
                         ("th", "เซาท\u{e4c}"),
@@ -897,6 +918,7 @@ pub mod subdivisions {
                     #[cfg(feature = "translations")]
                     translations: HashMap::from([
                         ("ar", "جنوب غرب"),
+                        ("az", "Cənub-qərb bölgəsi"),
                         ("be", "Паўднёва-Заходні рэгіён, Камерун"),
                         ("bn", "স\u{9be}উথওয\u{9bc}েস\u{9cd}ট"),
                         ("ca", "Regió del Sud-oest"),
@@ -908,6 +930,7 @@ pub mod subdivisions {
                         ("en", "Southwest"),
                         ("es", "Región del Sudoeste"),
                         ("et", "Edelapiirkond"),
+                        ("eu", "Hego-mendebaldea (Kamerun)"),
                         ("fa", "منطقه جنوب غربی"),
                         ("fi", "Southwest"),
                         ("fr", "Région du Sud-Ouest"),
@@ -934,6 +957,7 @@ pub mod subdivisions {
                         ("ru", "Юго-Западный регион"),
                         ("si", "දක\u{dd4}ණ\u{dd4} බටහ\u{dd2}ර"),
                         ("sv", "Sydvästra regionen (region i Kamerun)"),
+                        ("sw", "Mkoa wa Kusini-Magharibi, Kamerun"),
                         ("ta", "சௌதவெஸ\u{bcd}ட\u{bcd}"),
                         ("te", "వ\u{c3e}యవ\u{c4d}య"),
                         ("th", "เซาร\u{e4c}ทเวส"),
@@ -1137,5 +1161,7 @@ pub fn new() -> Country {
         ]),
         #[cfg(feature = "subdivisions")]
         subdivisions: subdivisions::new(),
+        g7_member: false,
+        g20_member: false,
     }
 }

@@ -38,6 +38,8 @@ pub mod consts {
     pub const UN_LOCODE: &str = "NE";
     pub const UNOFFICIAL_NAME_LIST: &[&str] = &["Niger", "Níger", "ニジェール"];
     pub const WORLD_REGION: WorldRegion = WorldRegion::EMEA;
+    pub const G7_MEMBER: bool = false;
+    pub const G20_MEMBER: bool = false;
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇳🇪";
     #[cfg(feature = "translations")]
@@ -263,6 +265,7 @@ pub mod subdivisions {
                         ("el", "Αγκαντέζ"),
                         ("en", "Agadez"),
                         ("es", "Región de Agadez"),
+                        ("fa", "منطقه آگادز"),
                         ("fi", "Agadez (alue)"),
                         ("fr", "Agadez"),
                         ("gu", "અગાડ\u{ac7}ઝ પ\u{acd}રદ\u{ac7}શ"),
@@ -330,6 +333,7 @@ pub mod subdivisions {
                         ("el", "Ντίφα"),
                         ("en", "Diffa"),
                         ("es", "Región de Diffa"),
+                        ("fa", "ناحیه دیفا"),
                         ("fi", "Diffa"),
                         ("fr", "Diffa"),
                         ("gu", "ડિફા પ\u{acd}રદ\u{ac7}શ"),
@@ -398,6 +402,7 @@ pub mod subdivisions {
                         ("el", "Ντόσσο"),
                         ("en", "Dosso"),
                         ("es", "Región de Dosso"),
+                        ("fa", "ناحیه دوسو"),
                         ("fi", "Dosso"),
                         ("fr", "Dosso"),
                         ("gu", "ડોસો પ\u{acd}રદ\u{ac7}શ"),
@@ -465,6 +470,7 @@ pub mod subdivisions {
                         ("el", "Μαραντί"),
                         ("en", "Maradi"),
                         ("es", "Región de Maradi"),
+                        ("fa", "ناحیه مارادی"),
                         ("fi", "Maradi"),
                         ("fr", "Maradi"),
                         ("gu", "મારાડી પ\u{acd}રદ\u{ac7}શ"),
@@ -532,6 +538,7 @@ pub mod subdivisions {
                         ("el", "Ταχούα"),
                         ("en", "Tahoua"),
                         ("es", "Región de Tahoua"),
+                        ("fa", "ناحیه تاهوآ"),
                         ("fi", "Tahoua"),
                         ("fr", "Tahoua"),
                         ("gu", "તાહૌઆ પ\u{acd}રદ\u{ac7}શ"),
@@ -599,6 +606,7 @@ pub mod subdivisions {
                         ("el", "Τιλαμπέρι"),
                         ("en", "Tillabéri"),
                         ("es", "Región de Tillabéri"),
+                        ("fa", "ناحیه تیلابری"),
                         ("fi", "Tillabéri"),
                         ("fr", "Tillabéri"),
                         ("gu", "ટિલાબ\u{ac7}રી પ\u{acd}રદ\u{ac7}શ"),
@@ -661,6 +669,7 @@ pub mod subdivisions {
                     translations: HashMap::from([
                         ("ar", "منطقة زيندر"),
                         ("bn", "জিন\u{9cd}ড\u{9be}র অঞ\u{9cd}চল"),
+                        ("ca", "Zinder"),
                         ("ccp", "𑄎\u{11128}𑄚\u{11134}𑄓𑄢\u{11134}"),
                         ("ceb", "Zinder"),
                         ("da", "Zinder"),
@@ -770,6 +779,7 @@ pub mod subdivisions {
                         ("lt", "Niamėjus"),
                         ("lv", "Niameja"),
                         ("mk", "Нијамеј"),
+                        ("ml", "നയ\u{d3e}മെ"),
                         ("mn", "Ниамей"),
                         ("mr", "नियाम\u{947}"),
                         ("ms", "Niamey"),
@@ -778,6 +788,7 @@ pub mod subdivisions {
                         ("no", "Niamey"),
                         ("pa", "ਨਿਆਮੀ"),
                         ("pl", "Niamey"),
+                        ("ps", "نیامی"),
                         ("pt", "Niamey"),
                         ("ro", "Niamey"),
                         ("ru", "Ниамей"),
@@ -991,5 +1002,7 @@ pub fn new() -> Country {
         ]),
         #[cfg(feature = "subdivisions")]
         subdivisions: subdivisions::new(),
+        g7_member: false,
+        g20_member: false,
     }
 }

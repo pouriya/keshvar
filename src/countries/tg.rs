@@ -38,6 +38,8 @@ pub mod consts {
     pub const UN_LOCODE: &str = "TG";
     pub const UNOFFICIAL_NAME_LIST: &[&str] = &["Togo", "トーゴ"];
     pub const WORLD_REGION: WorldRegion = WorldRegion::EMEA;
+    pub const G7_MEMBER: bool = false;
+    pub const G20_MEMBER: bool = false;
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇹🇬";
     #[cfg(feature = "translations")]
@@ -264,9 +266,11 @@ pub mod subdivisions {
                         ("el", "Κεντρική Περιφέρεια"),
                         ("en", "Centrale"),
                         ("es", "Central"),
+                        ("fa", "منطقه مرکزی، توگو"),
                         ("fi", "Centrale"),
                         ("fr", "Région centrale"),
                         ("gu", "સ\u{ac7}ન\u{acd}ટ\u{acd}રલ પ\u{acd}રદ\u{ac7}શ"),
+                        ("he", "אזור המרכז"),
                         ("hi", "स\u{947}\u{902}ट\u{94d}रल क\u{94d}ष\u{947}त\u{94d}र"),
                         ("id", "Region Centrale"),
                         ("it", "regione Centrale"),
@@ -286,6 +290,7 @@ pub mod subdivisions {
                         ("ru", "Центральная область"),
                         ("si", "සෙන\u{dca}ට\u{dca}\u{200d}රලේ කල\u{dcf}පය"),
                         ("sv", "Centrale (region)"),
+                        ("sw", "Mkoa wa Kati, Togo"),
                         ("ta", "சென\u{bcd}ற\u{bbe}லே பகுதி"),
                         (
                             "te",
@@ -335,6 +340,7 @@ pub mod subdivisions {
                         ("fi", "Kara"),
                         ("fr", "Région de la Kara"),
                         ("gu", "કારા પ\u{acd}રદ\u{ac7}શ"),
+                        ("he", "קארה (מחוז)"),
                         ("hi", "कारा प\u{94d}रद\u{947}श"),
                         ("id", "Region Kara"),
                         ("it", "regione di Kara"),
@@ -355,6 +361,7 @@ pub mod subdivisions {
                         ("si", "කර\u{dcf} කල\u{dcf}පය"),
                         ("sq", "Kara"),
                         ("sv", "Kara (region)"),
+                        ("sw", "Mkoa wa Kara, Togo"),
                         ("ta", "க\u{bbe}ர\u{bbe} பகுதி"),
                         ("te", "క\u{c3e}ర\u{c3e} ప\u{c4d}ర\u{c3e}ంతం"),
                         (
@@ -406,6 +413,7 @@ pub mod subdivisions {
                         ("fi", "Maritime"),
                         ("fr", "Région maritime"),
                         ("gu", "મ\u{ac7}રીટાઈમ પ\u{acd}રદ\u{ac7}શ"),
+                        ("he", "מאריטים"),
                         ("hi", "म\u{947}रीटाइम प\u{94d}रा\u{902}त"),
                         ("id", "Region Maritime"),
                         ("it", "regione Marittima"),
@@ -425,6 +433,7 @@ pub mod subdivisions {
                         ("ru", "Приморская область"),
                         ("si", "මර\u{dd2}ටය\u{dd2}ම\u{dca} කල\u{dcf}පය"),
                         ("sv", "Maritime"),
+                        ("sw", "Mkoa wa Maritime, Togo"),
                         ("ta", "ம\u{bbe}ரிடைம\u{bcd} பகுதி"),
                         ("te", "మ\u{c3e}ర\u{c3f}ట\u{c48}మ\u{c4d} ప\u{c4d}ర\u{c3e}ంతం"),
                         ("th", "มาร\u{e34}ไทม\u{e4c}"),
@@ -467,9 +476,11 @@ pub mod subdivisions {
                         ("el", "Πλατώ"),
                         ("en", "Plateaux"),
                         ("es", "Altiplano"),
+                        ("fa", "ناحیه پلاتیوکس (توگو)"),
                         ("fi", "Plateaux"),
                         ("fr", "Région des plateaux"),
                         ("gu", "પ\u{acd}લ\u{ac7}ટોક\u{acd}સ પ\u{acd}રદ\u{ac7}શ"),
+                        ("he", "פלאטו (מחוז)"),
                         ("hi", "प\u{94d}ल\u{947}टो क\u{94d}ष\u{947}त\u{94d}र"),
                         ("id", "Region Plateaux"),
                         ("it", "regione degli Altopiani"),
@@ -488,6 +499,7 @@ pub mod subdivisions {
                         ("ru", "Плато"),
                         ("si", "ප\u{dca}ලටෙක\u{dca}ස\u{dca} කල\u{dcf}පය"),
                         ("sv", "Plateaux"),
+                        ("sw", "Mkoa wa Plateaux, Togo"),
                         ("ta", "பிலேட\u{bc0}ஸ\u{bcd} பகுதி"),
                         (
                             "te",
@@ -533,9 +545,11 @@ pub mod subdivisions {
                         ("el", "Σαβάν"),
                         ("en", "Savanes"),
                         ("es", "Sabana"),
+                        ("fa", "ناحیه ساوانس (توگو)"),
                         ("fi", "Savanes"),
                         ("fr", "Région des Savanes"),
                         ("gu", "સાવાન\u{ac7}સ પ\u{acd}રદ\u{ac7}શ"),
+                        ("he", "סאבאנס"),
                         ("hi", "साव\u{947}न\u{947}स क\u{94d}ष\u{947}त\u{94d}र, टोगो"),
                         ("id", "Region Savanes"),
                         ("it", "regione delle Savane"),
@@ -555,6 +569,7 @@ pub mod subdivisions {
                         ("ru", "Область Саванн"),
                         ("si", "සවනෙස\u{dca} කල\u{dcf}පය"),
                         ("sv", "Savanes (region)"),
+                        ("sw", "Mkoa wa Savanes, Togo"),
                         ("ta", "சவனேஸ\u{bcd} பகுதி"),
                         ("te", "సవ\u{c3e}న\u{c46}స\u{c4d} ప\u{c4d}ర\u{c3e}ంతం"),
                         ("th", "ซาว\u{e35}เน"),
@@ -750,5 +765,7 @@ pub fn new() -> Country {
         ]),
         #[cfg(feature = "subdivisions")]
         subdivisions: subdivisions::new(),
+        g7_member: false,
+        g20_member: false,
     }
 }

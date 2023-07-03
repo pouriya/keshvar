@@ -38,6 +38,8 @@ pub mod consts {
     pub const UN_LOCODE: &str = "FJ";
     pub const UNOFFICIAL_NAME_LIST: &[&str] = &["Fiji", "Fidschi", "Fidji", "フィジー"];
     pub const WORLD_REGION: WorldRegion = WorldRegion::APAC;
+    pub const G7_MEMBER: bool = false;
+    pub const G20_MEMBER: bool = false;
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇫🇯";
     #[cfg(feature = "translations")]
@@ -247,10 +249,12 @@ pub mod subdivisions {
                     #[cfg(feature = "translations")]
                     translations: HashMap::from([
                         ("ar", "با"),
+                        ("ca", "Ba"),
                         ("ccp", "𑄝"),
                         ("ceb", "Ba Province"),
                         ("de", "Ba (Provinz)"),
                         ("en", "Ba"),
+                        ("es", "Ba"),
                         ("fr", "province de Ba"),
                         ("hi", "बा प\u{94d}रा\u{902}त\u{94d}"),
                         ("it", "Provincia di Ba"),
@@ -287,6 +291,7 @@ pub mod subdivisions {
                         ("ar", "محافظة بوا"),
                         ("ccp", "𑄝\u{11131}"),
                         ("ceb", "Bua Province"),
+                        ("de", "Bua (Provinz)"),
                         ("en", "Bua"),
                         ("fr", "province de Bua"),
                         ("hi", "ब\u{941}आ प\u{94d}रन\u{94d}त\u{94d}"),
@@ -297,6 +302,7 @@ pub mod subdivisions {
                         ("nb", "Bua Province"),
                         ("nl", "Bua"),
                         ("no", "Bua Province"),
+                        ("pl", "Bua"),
                         ("pt", "Bua"),
                         ("ru", "Мбуа"),
                         ("sv", "Bua Province"),
@@ -322,9 +328,11 @@ pub mod subdivisions {
                         ("ar", "كاكاودروف"),
                         ("ccp", "𑄇𑄬𑄇𑄅\u{1112a}𑄓\u{11133}𑄢\u{1112e}𑄛\u{11134}"),
                         ("ceb", "Thakaundrove Province"),
+                        ("de", "Cakaudrove"),
                         ("en", "Cakaudrove"),
                         ("es", "Cakaudrove"),
                         ("fr", "Cakaudrove"),
+                        ("he", "קקאודרווה"),
                         ("hi", "थकाउन\u{94d}द\u{94d}रोव\u{947} प\u{94d}रान\u{94d}त"),
                         ("it", "Provincia di Cakaudrove"),
                         ("ja", "ザカウドロベ州"),
@@ -332,6 +340,7 @@ pub mod subdivisions {
                         ("nb", "Cakaudrove Province"),
                         ("nl", "Cakaudrove"),
                         ("no", "Cakaudrove Province"),
+                        ("pl", "Cakaudrove"),
                         ("pt", "Cakaudrove"),
                         ("sv", "Thakaundrove Province"),
                         (
@@ -356,7 +365,9 @@ pub mod subdivisions {
                     subdivision_type: SubdivisionType::Province,
                     #[cfg(feature = "translations")]
                     translations: HashMap::from([
+                        ("ca", "Kadavu"),
                         ("ccp", "𑄇\u{11127}𑄓𑄞\u{1112a}"),
+                        ("de", "Kadavu (Provinz)"),
                         ("en", "Kadavu"),
                         ("es", "Kadavu"),
                         ("fr", "province de Kadavu"),
@@ -368,6 +379,7 @@ pub mod subdivisions {
                         ("nb", "Kadavu Province"),
                         ("nl", "Kadavu"),
                         ("no", "Kadavu Province"),
+                        ("pl", "Kadavu (prowincja)"),
                         ("pt", "Kadavu"),
                         ("ru", "Кандаву"),
                         ("ta", "கன\u{bcd}டவு ம\u{bbe}க\u{bbe}ணம\u{bcd}"),
@@ -401,6 +413,7 @@ pub mod subdivisions {
                         ("nb", "Lau Province"),
                         ("nl", "Lau"),
                         ("no", "Lau Province"),
+                        ("pl", "Lau (prowincja)"),
                         ("ru", "Лау"),
                         ("sv", "Lau Province"),
                         ("ta", "லவு ம\u{bbe}க\u{bbe}ணம\u{bcd}"),
@@ -435,6 +448,7 @@ pub mod subdivisions {
                         ("nb", "Lomaiviti Province"),
                         ("nl", "Lomaiviti"),
                         ("no", "Lomaiviti Province"),
+                        ("pl", "Lomaiviti"),
                         ("ru", "Ломаивичи"),
                         ("sv", "Lomaiviti Province"),
                         (
@@ -462,6 +476,7 @@ pub mod subdivisions {
                     translations: HashMap::from([
                         ("ccp", "𑄟\u{11133}𑄠𑄇\u{11131}𑄑"),
                         ("ceb", "Mathuata Province"),
+                        ("de", "Macuata"),
                         ("en", "Macuata"),
                         ("es", "Macuata"),
                         ("fr", "province de Macuata"),
@@ -473,6 +488,7 @@ pub mod subdivisions {
                         ("nb", "Macuata Province"),
                         ("nl", "Macuata"),
                         ("no", "Macuata Province"),
+                        ("pl", "Macuata"),
                         ("pt", "Macuata"),
                         ("sv", "Mathuata Province"),
                         (
@@ -499,6 +515,7 @@ pub mod subdivisions {
                     translations: HashMap::from([
                         ("ccp", "𑄚𑄓\u{11133}𑄢\u{1112e}𑄉-𑄚𑄞\u{1112e}𑄥"),
                         ("ceb", "Nandronga and Navosa Province"),
+                        ("de", "Nadroga-Navosa"),
                         ("en", "Nadroga-Navosa"),
                         ("es", "Nadroga-Navosa"),
                         ("fr", "province de Nadroga et de Navosa"),
@@ -537,6 +554,7 @@ pub mod subdivisions {
                     translations: HashMap::from([
                         ("ccp", "𑄚\u{1112d}𑄑𑄥\u{11128}𑄢\u{11128}"),
                         ("ceb", "Naitasiri Province"),
+                        ("de", "Naitasiri"),
                         ("en", "Naitasiri"),
                         ("es", "Naitasiri"),
                         ("fr", "province de Naitasiri"),
@@ -549,6 +567,7 @@ pub mod subdivisions {
                         ("nb", "Naitasiri Province"),
                         ("nl", "Naitasiri"),
                         ("no", "Naitasiri Province"),
+                        ("pl", "Naitasiri"),
                         ("pt", "Naitasiri"),
                         ("sv", "Naitasiri Province"),
                         ("ta", "நைட\u{bbe}சிரி ம\u{bbe}க\u{bbe}ணம\u{bcd}"),
@@ -572,6 +591,7 @@ pub mod subdivisions {
                     translations: HashMap::from([
                         ("ccp", "𑄚𑄟\u{1112e}𑄥\u{11128}"),
                         ("ceb", "Namosi Province"),
+                        ("de", "Namosi"),
                         ("en", "Namosi"),
                         ("es", "Namosi"),
                         ("fr", "province de Namosi"),
@@ -583,6 +603,7 @@ pub mod subdivisions {
                         ("nb", "Namosi Province"),
                         ("nl", "Namosi"),
                         ("no", "Namosi Province"),
+                        ("pl", "Namosi"),
                         ("pt", "Namosi"),
                         ("sv", "Namosi Province"),
                         ("ta", "நமோசி ம\u{bbe}க\u{bbe}ணம\u{bcd}"),
@@ -606,6 +627,7 @@ pub mod subdivisions {
                     translations: HashMap::from([
                         ("ccp", "𑄢"),
                         ("ceb", "Ra Province"),
+                        ("de", "Ra (Provinz)"),
                         ("en", "Ra"),
                         ("es", "Ra"),
                         ("fr", "province de Ra"),
@@ -642,6 +664,7 @@ pub mod subdivisions {
                     translations: HashMap::from([
                         ("ccp", "𑄢𑄬𑄤"),
                         ("ceb", "Rewa Province"),
+                        ("de", "Rewa"),
                         ("en", "Rewa"),
                         ("es", "Rewa (Fiyi)"),
                         ("fr", "province de Rewa"),
@@ -654,6 +677,7 @@ pub mod subdivisions {
                         ("nb", "Rewa Province"),
                         ("nl", "Rewa"),
                         ("no", "Rewa Province"),
+                        ("pl", "Rewa (prowincja)"),
                         ("pt", "Rewa"),
                         ("sv", "Rewa Province"),
                         ("ta", "ரெவ\u{bbe} ம\u{bbe}க\u{bbe}ணம\u{bcd}"),
@@ -677,6 +701,7 @@ pub mod subdivisions {
                     translations: HashMap::from([
                         ("ccp", "𑄥𑄬𑄢\u{1112a}𑄠"),
                         ("ceb", "Serua Province"),
+                        ("de", "Serua (Fidschi)"),
                         ("en", "Serua"),
                         ("es", "Serua"),
                         ("fr", "province de Serua"),
@@ -689,6 +714,7 @@ pub mod subdivisions {
                         ("nb", "Serua Province"),
                         ("nl", "Serua"),
                         ("no", "Serua Province"),
+                        ("pl", "Serua"),
                         ("pt", "Serua"),
                         ("ru", "Серуа"),
                         ("sv", "Serua Province"),
@@ -714,6 +740,7 @@ pub mod subdivisions {
                         ("ccp", "𑄑\u{1112d}𑄣𑄬𑄞\u{1112a}"),
                         ("ceb", "Tailevu Province"),
                         ("da", "Tailevu Province"),
+                        ("de", "Tailevu"),
                         ("en", "Tailevu"),
                         ("es", "Tailevu"),
                         ("fr", "province de Tailevu"),
@@ -725,6 +752,7 @@ pub mod subdivisions {
                         ("nb", "Tailevu Province"),
                         ("nl", "Tailevu"),
                         ("no", "Tailevu Province"),
+                        ("pl", "Tailevu"),
                         ("pt", "Tailevu"),
                         ("sv", "Tailevu Province"),
                         ("ta", "தைலிவு ம\u{bbe}க\u{bbe}ணம\u{bcd}"),
@@ -848,6 +876,7 @@ pub mod subdivisions {
                         ("no", "Eastern"),
                         ("pl", "Dystrykt Wschodni"),
                         ("pt", "Divisão do Leste"),
+                        ("ro", "Diviziunea Orientală"),
                         ("ru", "Восточный округ"),
                         ("si", "නැගෙනහ\u{dd2}ර බෙද\u{dd4}ම"),
                         ("sv", "Östra divisionen"),
@@ -918,6 +947,7 @@ pub mod subdivisions {
                         ("no", "Northern"),
                         ("pl", "Dystrykt Północny"),
                         ("pt", "Divisão do Norte"),
+                        ("ro", "Diviziunea de Nord"),
                         ("ru", "Северный округ"),
                         ("si", "උත\u{dd4}ර\u{dd4} කල\u{dcf}පය"),
                         ("sv", "Norra divisionen"),
@@ -953,6 +983,7 @@ pub mod subdivisions {
                     #[cfg(feature = "translations")]
                     translations: HashMap::from([
                         ("ar", "روتوما"),
+                        ("az", "Rotuma"),
                         ("be", "Востраў Ратума"),
                         ("bg", "Ротума"),
                         ("bn", "রোত\u{9c2}ম\u{9be}"),
@@ -1059,6 +1090,7 @@ pub mod subdivisions {
                         ("no", "Western"),
                         ("pl", "Dystrykt Zachodni"),
                         ("pt", "Divisão do Oeste"),
+                        ("ro", "Diviziunea Occidentală"),
                         ("ru", "Западный округ"),
                         ("si", "බටහ\u{dd2}ර කල\u{dcf}පය"),
                         ("sv", "Västra divisionen"),
@@ -1257,5 +1289,7 @@ pub fn new() -> Country {
         ]),
         #[cfg(feature = "subdivisions")]
         subdivisions: subdivisions::new(),
+        g7_member: false,
+        g20_member: false,
     }
 }

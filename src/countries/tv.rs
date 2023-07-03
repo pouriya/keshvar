@@ -38,6 +38,8 @@ pub mod consts {
     pub const UN_LOCODE: &str = "TV";
     pub const UNOFFICIAL_NAME_LIST: &[&str] = &["Tuvalu", "ツバル"];
     pub const WORLD_REGION: WorldRegion = WorldRegion::APAC;
+    pub const G7_MEMBER: bool = false;
+    pub const G20_MEMBER: bool = false;
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇹🇻";
     #[cfg(feature = "translations")]
@@ -259,9 +261,11 @@ pub mod subdivisions {
                         ("az", "Funafuti"),
                         ("be", "Атол Фунафуці"),
                         ("bg", "Фунафути"),
+                        ("bn", "ফ\u{9c1}ন\u{9be}ফ\u{9c1}তি"),
                         ("bs", "Funafuti"),
                         ("ca", "Funafuti"),
                         ("ccp", "𑄜\u{1112a}𑄚𑄜\u{1112a}𑄑\u{11128}"),
+                        ("ceb", "Funafuti (ulohang dakbayan)"),
                         ("cs", "Funafuti"),
                         ("cy", "Funafuti"),
                         ("da", "Funafuti"),
@@ -289,6 +293,7 @@ pub mod subdivisions {
                         ("lt", "Funafutis"),
                         ("lv", "Funafuti"),
                         ("mk", "Фунафути"),
+                        ("ml", "ഫ\u{d4d}യ\u{d42}നഫ\u{d4d}യ\u{d42}ടി"),
                         ("mr", "फ\u{941}नाफ\u{941}ती"),
                         ("ms", "Funafuti"),
                         ("nb", "Funafuti"),
@@ -296,6 +301,7 @@ pub mod subdivisions {
                         ("no", "Funafuti"),
                         ("pa", "ਫ\u{a3c}\u{a41}ਨਾਫ\u{a3c}\u{a41}ਤੀ"),
                         ("pl", "Funafuti"),
+                        ("ps", "فونافوتي"),
                         ("pt", "Funafuti"),
                         ("ro", "Funafuti"),
                         ("ru", "Фунафути"),
@@ -305,6 +311,7 @@ pub mod subdivisions {
                         ("sr", "Фунафути"),
                         ("sr_Latn", "Funafuti"),
                         ("sv", "Funafuti"),
+                        ("sw", "Funafuti"),
                         ("ta", "புன\u{bbe}புட\u{bcd}டி"),
                         ("th", "ฟ\u{e39}นะฟ\u{e39}ต\u{e35}"),
                         ("tr", "Funafuti"),
@@ -338,6 +345,7 @@ pub mod subdivisions {
                     subdivision_type: SubdivisionType::IslandCouncil,
                     #[cfg(feature = "translations")]
                     translations: HashMap::from([
+                        ("az", "Niutao"),
                         ("be", "Востраў Ніўтао"),
                         ("ca", "Niutao"),
                         ("ccp", "𑄚\u{11128}𑄅\u{1112a}𑄑𑄃\u{1112e}"),
@@ -351,6 +359,7 @@ pub mod subdivisions {
                         ("fr", "Niutao"),
                         ("gl", "Niutao"),
                         ("hu", "Niutao"),
+                        ("id", "Niutao"),
                         ("it", "Niutao"),
                         ("ja", "ニウタオ島"),
                         ("ka", "ნიუტაო"),
@@ -366,6 +375,7 @@ pub mod subdivisions {
                         ("ru", "Ниутао"),
                         ("sk", "Niutao"),
                         ("sv", "Niutao"),
+                        ("tr", "Niutao"),
                         ("uk", "Ніутао"),
                         ("ur", "نیوتاو"),
                         ("zh", "紐陶島"),
@@ -392,6 +402,7 @@ pub mod subdivisions {
                     subdivision_type: SubdivisionType::IslandCouncil,
                     #[cfg(feature = "translations")]
                     translations: HashMap::from([
+                        ("az", "Nukufetau"),
                         ("be", "Атол Нукуфетау"),
                         ("ca", "Nukufetau"),
                         ("ccp", "𑄚\u{1112a}𑄇\u{1112a}𑄜𑄬𑄑𑄅\u{1112a}"),
@@ -405,6 +416,7 @@ pub mod subdivisions {
                         ("gl", "Atol Nukufetau"),
                         ("he", "נוקופטאו"),
                         ("hu", "Nukufetau"),
+                        ("id", "Nukufetau"),
                         ("it", "Nukufetau"),
                         ("ja", "ヌクフェタウ環礁"),
                         ("ka", "ნუკუფეტაუ"),
@@ -420,6 +432,7 @@ pub mod subdivisions {
                         ("ru", "Нукуфетау"),
                         ("sk", "Nukufetau"),
                         ("sv", "Nukufetau"),
+                        ("tr", "Nukufetau"),
                         ("ur", "نوکوتیتاو"),
                         ("zh", "努庫費陶環礁"),
                     ]),
@@ -460,6 +473,7 @@ pub mod subdivisions {
                         ("gl", "Atol Nukulaelae"),
                         ("he", "נוקולאלאה"),
                         ("hu", "Nukulaelae"),
+                        ("id", "Nukulaelae"),
                         ("it", "Nukulaelae"),
                         ("ja", "ヌクラエラエ環礁"),
                         ("ka", "ნუკულაელაე"),
@@ -501,11 +515,13 @@ pub mod subdivisions {
                     subdivision_type: SubdivisionType::IslandCouncil,
                     #[cfg(feature = "translations")]
                     translations: HashMap::from([
+                        ("az", "Nanumea"),
                         ("be", "Атол Нанумеа"),
                         ("bg", "Нанумеа"),
                         ("ca", "Nanumea"),
                         ("ccp", "𑄚\u{1112a}𑄚\u{1112a}𑄟\u{11128}𑄠"),
                         ("cs", "Nanumea"),
+                        ("da", "Nanumea"),
                         ("de", "Nanumea-Atoll"),
                         ("en", "Nanumea"),
                         ("es", "Nanumea"),
@@ -517,6 +533,7 @@ pub mod subdivisions {
                         ("gl", "Nanumea"),
                         ("he", "ננומאה"),
                         ("hu", "Nanumea"),
+                        ("id", "Nanumea"),
                         ("it", "Nanumea"),
                         ("ja", "ナヌメア環礁"),
                         ("ka", "ნანუმეა"),
@@ -532,6 +549,7 @@ pub mod subdivisions {
                         ("ru", "Нанумеа"),
                         ("sk", "Nanumea"),
                         ("sv", "Nanumea"),
+                        ("th", "นาน\u{e39}เมอา"),
                         ("uk", "Нанумеа"),
                         ("ur", "نانومیا"),
                         ("zh", "納努梅阿環礁"),
@@ -558,6 +576,7 @@ pub mod subdivisions {
                     subdivision_type: SubdivisionType::IslandCouncil,
                     #[cfg(feature = "translations")]
                     translations: HashMap::from([
+                        ("az", "Nanumanqa"),
                         ("be", "Востраў Нануманга"),
                         ("ca", "Nanumaga"),
                         ("ccp", "𑄚𑄚\u{1112a}𑄟𑄚\u{11134}𑄉"),
@@ -570,6 +589,7 @@ pub mod subdivisions {
                         ("fr", "Nanumaga"),
                         ("gl", "Nanumanga"),
                         ("hu", "Nanumanga"),
+                        ("id", "Nanumanga"),
                         ("it", "Nanumaga"),
                         ("ja", "ナヌマンガ島"),
                         ("ka", "ნანუმანგა"),
@@ -585,6 +605,7 @@ pub mod subdivisions {
                         ("ru", "Нануманга"),
                         ("sk", "Nanumaga"),
                         ("sv", "Nanumanga"),
+                        ("tr", "Nanumanga"),
                         ("uk", "Нануманга"),
                         ("ur", "نانومانگا"),
                         ("zh", "纳努曼加岛"),
@@ -611,6 +632,7 @@ pub mod subdivisions {
                     subdivision_type: SubdivisionType::IslandCouncil,
                     #[cfg(feature = "translations")]
                     translations: HashMap::from([
+                        ("az", "Nui"),
                         ("be", "Атол Нуі"),
                         ("ca", "Nui"),
                         ("ccp", "𑄚\u{1112d}\u{1112a}"),
@@ -623,6 +645,7 @@ pub mod subdivisions {
                         ("fr", "Nui"),
                         ("gl", "Nui"),
                         ("hu", "Nui"),
+                        ("id", "Nui (atol)"),
                         ("it", "Nui"),
                         ("ja", "ヌイ環礁"),
                         ("ka", "ნუი"),
@@ -638,6 +661,7 @@ pub mod subdivisions {
                         ("ru", "Нуи"),
                         ("sk", "Nui"),
                         ("sv", "Nui"),
+                        ("tr", "Nui"),
                         ("ur", "نوئی"),
                         ("zh", "努伊環礁"),
                     ]),
@@ -669,6 +693,7 @@ pub mod subdivisions {
                         ("ceb", "Vaitupu (distrito)"),
                         ("cs", "Vaitupu"),
                         ("de", "Vaitupu"),
+                        ("el", "Βαϊτούπου"),
                         ("en", "Vaitupu"),
                         ("es", "Vaitupu"),
                         ("fa", "وایتوپو"),
@@ -676,6 +701,7 @@ pub mod subdivisions {
                         ("fr", "Vaitupu"),
                         ("gl", "Illa Vaitupu"),
                         ("hu", "Vaitupu"),
+                        ("id", "Vaitupu"),
                         ("it", "Vaitupu"),
                         ("ja", "ヴァイツプ島"),
                         ("ka", "ვაიტუპუ"),
@@ -691,6 +717,7 @@ pub mod subdivisions {
                         ("ru", "Ваитупу"),
                         ("sk", "Vaitupu"),
                         ("sv", "Vaitupu"),
+                        ("tr", "Vaitupu"),
                         ("uk", "Ваітупу"),
                         ("ur", "وایتوپو"),
                         ("zh", "婓伊托波"),
@@ -881,5 +908,7 @@ pub fn new() -> Country {
         ]),
         #[cfg(feature = "subdivisions")]
         subdivisions: subdivisions::new(),
+        g7_member: false,
+        g20_member: false,
     }
 }

@@ -46,6 +46,8 @@ pub mod consts {
         "IJsland",
     ];
     pub const WORLD_REGION: WorldRegion = WorldRegion::EMEA;
+    pub const G7_MEMBER: bool = false;
+    pub const G20_MEMBER: bool = false;
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇮🇸";
     #[cfg(feature = "translations")]
@@ -258,7 +260,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Region,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ccp", "𑄢\u{11128}𑄠𑄎𑄞\u{11128}𑄇\u{11134}"), ("en", "Reykjavík")]),
+                        translations: HashMap::from([("ccp", "𑄢\u{11128}𑄠𑄎𑄞\u{11128}𑄇\u{11134}"), ("en", "Reykjavík"), ("ja", "レイキャヴィーク")]),
                         unofficial_name_list: ["Reykjavík"].to_vec(),
                     }
                 ),
@@ -273,7 +275,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Region,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "إقليم العاصمة"), ("az", "Hövüdborqarsvaydid"), ("be", "Хёвюдбаргарсвайдыд"), ("bn", "ক\u{9be}েপিট\u{9be}ল অঞ\u{9cd}চল"), ("ca", "Gran Reykjavik"), ("ccp", "𑄇\u{11133}𑄠𑄛\u{11128}𑄑𑄣\u{11134}"), ("ceb", "Höfuðborgarsvæði"), ("cs", "Höfuðborgarsvæðið"), ("cy", "Reykjavík Fawr"), ("da", "Höfuðborgarsvæðið"), ("de", "Höfuðborgarsvæðið"), ("el", "Περιφέρεια Πρωτεύουσας της Ισλανδίας"), ("en", "Capital"), ("es", "Höfuðborgarsvæði"), ("et", "Höfuðborgarsvæði"), ("eu", "Höfuðborgarsvæðið"), ("fa", "منطقه پایتخت ایسلند"), ("fi", "Höfuðborgarsvæðið"), ("fr", "Höfuðborgarsvæðið"), ("ga", "Höfuðborgarsvæði"), ("gl", "Höfuðborgarsvæði"), ("gu", "ક\u{ac7}પિટલ પ\u{acd}રદ\u{ac7}શ"), ("hi", "राजधानी क\u{94d}ष\u{947}त\u{94d}र"), ("hu", "Nagy-Reykjavík"), ("hy", "Հյովյուդբորգարսվայդիդ"), ("id", "Wilayah Reykjavík Raya"), ("is", "Höfuðborgarsvæðið"), ("it", "Höfuðborgarsvæðið"), ("ja", "大レイキャヴィーク"), ("ka", "ჰიოვიუდბორგარსვაიდიდი"), ("kn", "ರಾಜಧಾನ\u{cbf} ಪ\u{ccd}ರದೇಶ"), ("ko", "회뷔드보르가르스바이디"), ("lt", "Sostinės regionas"), ("lv", "Galvaspilsētas reģions"), ("mk", "Престолнински регион"), ("mr", "राजधानी प\u{94d}रद\u{947}श"), ("ms", "Capital Region"), ("nb", "Höfuðborgarsvæðið"), ("nl", "Höfuðborgarsvæðið"), ("no", "Höfuðborgarsvæðið"), ("pl", "Höfuðborgarsvæðið"), ("pt", "Höfuðborgarsvæði"), ("ru", "Хёвюдборгарсвайдид"), ("si", "ප\u{dca}\u{200d}රධ\u{dcf}න කල\u{dcf}පය"), ("sq", "Rajoni i Kryeqytetit"), ("sr", "Рејкјавик"), ("sr_Latn", "Rejkjavik"), ("sv", "Höfuðborgarsvæðið"), ("ta", "கேப\u{bcd}பிடல\u{bcd} பகுதி"), ("te", "క\u{c4d}య\u{c3e}ప\u{c3f}టల\u{c4d} ప\u{c4d}ర\u{c3e}ంతం"), ("th", "คาป\u{e34}ทอล"), ("tr", "Başkent Bölgesi"), ("uk", "Гефюдборґарсвайдід"), ("ur", "دارالحکومت علاقہ"), ("vi", "Khu vực Thủ đô"), ("zh", "大雷克雅未克区")]),
+                        translations: HashMap::from([("ar", "إقليم العاصمة"), ("az", "Hövüdborqarsvaydid"), ("be", "Хёвюдбаргарсвайдыд"), ("bn", "ক\u{9be}েপিট\u{9be}ল অঞ\u{9cd}চল"), ("ca", "Gran Reykjavik"), ("ccp", "𑄇\u{11133}𑄠𑄛\u{11128}𑄑𑄣\u{11134}"), ("ceb", "Höfuðborgarsvæði"), ("cs", "Höfuðborgarsvæðið"), ("cy", "Reykjavík Fawr"), ("da", "Höfuðborgarsvæðið"), ("de", "Höfuðborgarsvæðið"), ("el", "Περιφέρεια Πρωτεύουσας της Ισλανδίας"), ("en", "Capital"), ("es", "Höfuðborgarsvæði"), ("et", "Höfuðborgarsvæði"), ("eu", "Höfuðborgarsvæðið"), ("fa", "منطقه پایتخت ایسلند"), ("fi", "Höfuðborgarsvæðið"), ("fr", "Höfuðborgarsvæðið"), ("ga", "Höfuðborgarsvæði"), ("gl", "Höfuðborgarsvæði"), ("gu", "ક\u{ac7}પિટલ પ\u{acd}રદ\u{ac7}શ"), ("he", "רייקיאוויק"), ("hi", "राजधानी क\u{94d}ष\u{947}त\u{94d}र"), ("hu", "Nagy-Reykjavík"), ("hy", "Հյովյուդբորգարսվայդիդ"), ("id", "Wilayah Reykjavík Raya"), ("is", "Höfuðborgarsvæðið"), ("it", "Höfuðborgarsvæðið"), ("ja", "大レイキャヴィーク"), ("ka", "ჰიოვიუდბორგარსვაიდიდი"), ("kn", "ರಾಜಧಾನ\u{cbf} ಪ\u{ccd}ರದೇಶ"), ("ko", "회뷔드보르가르스바이디"), ("lt", "Sostinės regionas"), ("lv", "Galvaspilsētas reģions"), ("mk", "Престолнински регион"), ("mr", "राजधानी प\u{94d}रद\u{947}श"), ("ms", "Capital Region"), ("nb", "Höfuðborgarsvæðið"), ("nl", "Höfuðborgarsvæðið"), ("no", "Höfuðborgarsvæðið"), ("pl", "Höfuðborgarsvæðið"), ("ps", "آیسلنډ مرکزي سیمه"), ("pt", "Höfuðborgarsvæði"), ("ru", "Хёвюдборгарсвайдид"), ("si", "ප\u{dca}\u{200d}රධ\u{dcf}න කල\u{dcf}පය"), ("sq", "Rajoni i Kryeqytetit"), ("sr", "Рејкјавик"), ("sr_Latn", "Rejkjavik"), ("sv", "Höfuðborgarsvæðið"), ("ta", "கேப\u{bcd}பிடல\u{bcd} பகுதி"), ("te", "క\u{c4d}య\u{c3e}ప\u{c3f}టల\u{c4d} ప\u{c4d}ర\u{c3e}ంతం"), ("th", "คาป\u{e34}ทอล"), ("tr", "Başkent Bölgesi"), ("uk", "Гефюдборґарсвайдід"), ("ur", "دارالحکومت علاقہ"), ("vi", "Khu vực Thủ đô"), ("zh", "大雷克雅未克区")]),
                         unofficial_name_list: ["Höfuðborgarsvæði utan Reykjavíkur"].to_vec(),
                     }
                 ),
@@ -288,7 +290,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Region,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("af", "Suðurnes"), ("ar", "شبه الجزيرة الجنوبية"), ("az", "Sudurnes"), ("be", "Судурнэс"), ("bn", "স\u{9be}উদ\u{9be}র\u{9cd}ন পেনিনসোল\u{9be} অঞ\u{9cd}চল"), ("ca", "Suðurnes"), ("ccp", "𑄘\u{11127}𑄊\u{11128}𑄚\u{11134} 𑄛𑄬𑄚\u{11128}𑄚\u{11134}𑄥\u{1112a}𑄣"), ("ceb", "Suðurnes"), ("cy", "Reykjanesskagi"), ("da", "Suðurnes"), ("de", "Suðurnes"), ("el", "Νότια Χερσόνησος"), ("en", "Southern Peninsula"), ("es", "Suðurnes"), ("et", "Suðurnes"), ("eu", "Suðurnes"), ("fa", "شبه\u{200c}جزیره جنوبی ایسلند"), ("fi", "Suðurnes"), ("fr", "Suðurnes"), ("ga", "Suðurnes"), ("gl", "Suðurnes"), ("gu", "દક\u{acd}ષિણી પ\u{ac7}નિનસ\u{ac1}લા પ\u{acd}રદ\u{ac7}શ"), ("hi", "दक\u{94d}षिणी प\u{94d}रायद\u{94d}वीप क\u{94d}ष\u{947}त\u{94d}र"), ("hy", "Սուդուրնես"), ("id", "Suðurnes"), ("is", "Suðurnes"), ("it", "Suðurnes"), ("ja", "南西アイスランド"), ("ka", "სუდურნესი"), ("kn", "ದಕ\u{ccd}ಷ\u{cbf}ಣ ಪ\u{cc6}ನ\u{cbf}ನ\u{ccd}ಸುಲಾ ಪ\u{ccd}ರದೇಶ"), ("ko", "쉬뒤르네스"), ("lt", "Sudurnesas"), ("lv", "Dienvidu pussala"), ("mk", "Јужен Полуостров"), ("mr", "सौथर\u{94d}न प\u{947}नीनस\u{941}ला प\u{94d}रद\u{947}श"), ("ms", "Daerah Selatan Semenanjung, Iceland"), ("nb", "Suðurnes"), ("nl", "Suðurnes"), ("no", "Suðurnes"), ("pl", "Półwysep Reykjanes"), ("pt", "Suðurnes"), ("ru", "Судурнэс"), ("si", "දක\u{dd4}ණ\u{dd4} පෙන\u{dd2}න\u{dca}ස\u{dd4}ල\u{dcf} කල\u{dcf}පය"), ("sq", "Gadishulli Jugor"), ("sr", "Сидирнес"), ("sr_Latn", "Sidirnes"), ("sv", "Suðurnes"), ("ta", "தெற\u{bcd}கு பெனின\u{bcd}சுல\u{bbe} பகுதி"), ("te", "దక\u{c4d}ష\u{c3f}ణ ప\u{c46}న\u{c3f}న\u{c4d}సుల\u{c3e} ప\u{c4d}ర\u{c3e}ంతం"), ("th", "เขตคาบสม\u{e38}ทรเหน\u{e37}อ(ไอซ\u{e4c}แลนด\u{e4c})"), ("tr", "Güney Yarımadası"), ("uk", "Судурнес"), ("ur", "جنوبی جزیرہ نما"), ("vi", "Khu vực Phía Nam Peninsula"), ("zh", "西南區")]),
+                        translations: HashMap::from([("af", "Suðurnes"), ("ar", "شبه الجزيرة الجنوبية"), ("az", "Sudurnes"), ("be", "Судурнэс"), ("bn", "স\u{9be}উদ\u{9be}র\u{9cd}ন পেনিনসোল\u{9be} অঞ\u{9cd}চল"), ("ca", "Suðurnes"), ("ccp", "𑄘\u{11127}𑄊\u{11128}𑄚\u{11134} 𑄛𑄬𑄚\u{11128}𑄚\u{11134}𑄥\u{1112a}𑄣"), ("ceb", "Suðurnes"), ("cy", "Reykjanesskagi"), ("da", "Suðurnes"), ("de", "Suðurnes"), ("el", "Νότια Χερσόνησος"), ("en", "Southern Peninsula"), ("es", "Suðurnes"), ("et", "Suðurnes"), ("eu", "Suðurnes"), ("fa", "شبه\u{200c}جزیره جنوبی ایسلند"), ("fi", "Suðurnes"), ("fr", "Suðurnes"), ("ga", "Suðurnes"), ("gl", "Suðurnes"), ("gu", "દક\u{acd}ષિણી પ\u{ac7}નિનસ\u{ac1}લા પ\u{acd}રદ\u{ac7}શ"), ("he", "סוד׳ורנס"), ("hi", "दक\u{94d}षिणी प\u{94d}रायद\u{94d}वीप क\u{94d}ष\u{947}त\u{94d}र"), ("hu", "Déli-félszigeti régió (Izland)"), ("hy", "Սուդուրնես"), ("id", "Suðurnes"), ("is", "Suðurnes"), ("it", "Suðurnes"), ("ja", "南西アイスランド"), ("ka", "სუდურნესი"), ("kn", "ದಕ\u{ccd}ಷ\u{cbf}ಣ ಪ\u{cc6}ನ\u{cbf}ನ\u{ccd}ಸುಲಾ ಪ\u{ccd}ರದೇಶ"), ("ko", "쉬뒤르네스"), ("lt", "Sudurnesas"), ("lv", "Dienvidu pussala"), ("mk", "Јужен Полуостров"), ("mr", "सौथर\u{94d}न प\u{947}नीनस\u{941}ला प\u{94d}रद\u{947}श"), ("ms", "Daerah Selatan Semenanjung, Iceland"), ("nb", "Suðurnes"), ("nl", "Suðurnes"), ("no", "Suðurnes"), ("pl", "Półwysep Reykjanes"), ("ps", "سودورنس"), ("pt", "Suðurnes"), ("ru", "Судурнэс"), ("si", "දක\u{dd4}ණ\u{dd4} පෙන\u{dd2}න\u{dca}ස\u{dd4}ල\u{dcf} කල\u{dcf}පය"), ("sq", "Gadishulli Jugor"), ("sr", "Сидирнес"), ("sr_Latn", "Sidirnes"), ("sv", "Suðurnes"), ("ta", "தெற\u{bcd}கு பெனின\u{bcd}சுல\u{bbe} பகுதி"), ("te", "దక\u{c4d}ష\u{c3f}ణ ప\u{c46}న\u{c3f}న\u{c4d}సుల\u{c3e} ప\u{c4d}ర\u{c3e}ంతం"), ("th", "เขตคาบสม\u{e38}ทรเหน\u{e37}อ(ไอซ\u{e4c}แลนด\u{e4c})"), ("tr", "Güney Yarımadası"), ("uk", "Судурнес"), ("ur", "جنوبی جزیرہ نما"), ("vi", "Khu vực Phía Nam Peninsula"), ("zh", "西南區")]),
                         unofficial_name_list: ["Suðurnes"].to_vec(),
                     }
                 ),
@@ -303,7 +305,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Region,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "الإقليم الغربي"), ("az", "Vesturland"), ("bg", "Вестюрланд"), ("bn", "ওয\u{9bc}স\u{9cd}ট\u{9be}র\u{9cd}ন অঞ\u{9cd}চল"), ("ca", "Vesturland"), ("ccp", "𑄛\u{11127}𑄏\u{11128}𑄟\u{11134}𑄟𑄬𑄇\u{11134}𑄈𑄬"), ("ceb", "Vesturland"), ("cy", "Rhanbarth y Gorllewin"), ("da", "Vesturland"), ("de", "Vesturland"), ("el", "Δυτική Ισλανδία"), ("en", "Western"), ("es", "Vesturland"), ("et", "Vesturland"), ("eu", "Vesturland"), ("fa", "منطقه غربی ایسلند"), ("fi", "Vesturland"), ("fr", "Vesturland"), ("ga", "Vesturland"), ("gl", "Vesturland"), ("gu", "પશ\u{acd}ચિમી પ\u{acd}રદ\u{ac7}શ"), ("he", "מערב איסלנד"), ("hi", "पश\u{94d}चिमी क\u{94d}ष\u{947}त\u{94d}र"), ("hy", "Վեստուրլանդ"), ("id", "Vesturland"), ("is", "Vesturland"), ("it", "Vesturland"), ("ja", "西アイスランド"), ("ka", "ვესტურლანდი"), ("kn", "ಪಾಶ\u{ccd}ಚಾತ\u{ccd}ಯ ಪ\u{ccd}ರದೇಶ"), ("ko", "베스튀를란드"), ("lt", "Vesturlandas"), ("lv", "Rietumu reģions"), ("mk", "Западен регион"), ("mr", "पश\u{94d}चिम प\u{94d}रद\u{947}श"), ("ms", "Western Region"), ("nb", "Vesturland"), ("nl", "Vesturland"), ("no", "Vesturland"), ("pl", "Okręg Wschodni"), ("pt", "Vesturland"), ("ru", "Вестурланд"), ("si", "බටහ\u{dd2}ර කල\u{dcf}පය"), ("sq", "Rajoni Perëndimor"), ("sr", "Вестиртланд"), ("sr_Latn", "Vestirtland"), ("sv", "Vesturland"), ("ta", "மேற\u{bcd}கு பகுதி"), ("te", "పశ\u{c4d}చ\u{c3f}మ ప\u{c4d}ర\u{c3e}ంతం"), ("th", "เวอเตอร\u{e4c}แลนด\u{e4c}"), ("tr", "Western Region"), ("uk", "Вестурланд"), ("ur", "مغربی علاقہ"), ("vi", "Khu vực Phía Tây"), ("zh", "西部區")]),
+                        translations: HashMap::from([("ar", "الإقليم الغربي"), ("az", "Vesturland"), ("be", "Вестурланд"), ("bg", "Вестюрланд"), ("bn", "ওয\u{9bc}স\u{9cd}ট\u{9be}র\u{9cd}ন অঞ\u{9cd}চল"), ("ca", "Vesturland"), ("ccp", "𑄛\u{11127}𑄏\u{11128}𑄟\u{11134}𑄟𑄬𑄇\u{11134}𑄈𑄬"), ("ceb", "Vesturland"), ("cs", "Vesturland"), ("cy", "Rhanbarth y Gorllewin"), ("da", "Vesturland"), ("de", "Vesturland"), ("el", "Δυτική Ισλανδία"), ("en", "Western"), ("es", "Vesturland"), ("et", "Vesturland"), ("eu", "Vesturland"), ("fa", "منطقه غربی ایسلند"), ("fi", "Vesturland"), ("fr", "Vesturland"), ("ga", "Vesturland"), ("gl", "Vesturland"), ("gu", "પશ\u{acd}ચિમી પ\u{acd}રદ\u{ac7}શ"), ("he", "מערב איסלנד"), ("hi", "पश\u{94d}चिमी क\u{94d}ष\u{947}त\u{94d}र"), ("hu", "Nyugati régió (Izland)"), ("hy", "Վեստուրլանդ"), ("id", "Vesturland"), ("is", "Vesturland"), ("it", "Vesturland"), ("ja", "西アイスランド"), ("ka", "ვესტურლანდი"), ("kn", "ಪಾಶ\u{ccd}ಚಾತ\u{ccd}ಯ ಪ\u{ccd}ರದೇಶ"), ("ko", "베스튀를란드"), ("lt", "Vesturlandas"), ("lv", "Rietumu reģions"), ("mk", "Западен регион"), ("mr", "पश\u{94d}चिम प\u{94d}रद\u{947}श"), ("ms", "Western Region"), ("nb", "Vesturland"), ("nl", "Vesturland"), ("no", "Vesturland"), ("pl", "Okręg Wschodni"), ("ps", "وستورلنډ"), ("pt", "Vesturland"), ("ru", "Вестурланд"), ("si", "බටහ\u{dd2}ර කල\u{dcf}පය"), ("sq", "Rajoni Perëndimor"), ("sr", "Вестиртланд"), ("sr_Latn", "Vestirtland"), ("sv", "Vesturland"), ("ta", "மேற\u{bcd}கு பகுதி"), ("te", "పశ\u{c4d}చ\u{c3f}మ ప\u{c4d}ర\u{c3e}ంతం"), ("th", "เวอเตอร\u{e4c}แลนด\u{e4c}"), ("tr", "Western Region"), ("uk", "Вестурланд"), ("ur", "مغربی علاقہ"), ("vi", "Khu vực Phía Tây"), ("zh", "西部區")]),
                         unofficial_name_list: ["Vesturland"].to_vec(),
                     }
                 ),
@@ -318,7 +320,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Region,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "إقليم المضايق"), ("az", "Vestfirdir"), ("be", "Вестфірдзір"), ("bn", "ওয\u{9bc}েস\u{9cd}টফোর\u{9cd}ডস অঞ\u{9cd}চল"), ("ca", "Vestfirðir"), ("ccp", "𑄃\u{1112e}𑄠𑄬𑄌\u{11134}𑄎\u{1112e}𑄢\u{11134}𑄓\u{11134}𑄥\u{11134}"), ("cs", "Vestfirðir"), ("cy", "Vestfirðir"), ("da", "Vestfirðir"), ("de", "Vestfirðir"), ("el", "Δυτικά Φιόρδ"), ("en", "Westfjords"), ("es", "Vestfirðir"), ("et", "Vestfirðir"), ("eu", "Vestfirðir"), ("fa", "وستفیوردز"), ("fi", "Länsivuonot"), ("fr", "Vestfirðir"), ("ga", "Vestfirðir"), ("gl", "Vestfirðir"), ("gu", "પશ\u{acd}ચિમજોર\u{acd}ડ\u{acd}સ પ\u{acd}રદ\u{ac7}શ"), ("he", "הפיורדים המערביים של איסלנד"), ("hi", "व\u{947}स\u{94d}ट फ\u{94d}योर\u{94d}ड प\u{94d}रद\u{947}श"), ("hu", "Vestfirðir"), ("hy", "Վեստֆիրդիր"), ("id", "Vestfirðir"), ("is", "Vestfirðir"), ("it", "Vestfirðir"), ("ja", "西部フィヨルド"), ("ka", "ვესტფირდირი"), ("kn", "ವ\u{cc6}ಸ\u{ccd}ಟ\u{ccd}ಫಾರ\u{ccd}ಡ\u{ccd}ಸ\u{ccd} ಪ\u{ccd}ರದೇಶ"), ("ko", "베스트피르디르"), ("lt", "Vestfirdiras"), ("lv", "Rietumfjordi"), ("mk", "Западни Фјордови"), ("mr", "व\u{947}स\u{94d}टफॉर\u{94d}दज प\u{94d}रद\u{947}श"), ("ms", "Westfjords Region"), ("nb", "Vestfirðir"), ("nl", "Vestfirðir"), ("no", "Vestfirðir"), ("pl", "Vestfirðir"), ("pt", "Vestfirðir"), ("ru", "Вестфирдир"), ("si", "වෙස\u{dca}ට\u{dca}ෆ\u{dca}ජෝර\u{dca}ඩ\u{dca}ස\u{dca} පළ\u{dcf}ත"), ("sq", "Fjordet Perëndimore"), ("sr", "Вестфирдир (регион)"), ("sr_Latn", "Vestfirdir (region)"), ("sv", "Västfjordarna"), ("ta", "வெஸ\u{bcd}டபிஜோர\u{bcd}டஸ\u{bcd} பகுதி"), ("te", "వ\u{c46}స\u{c4d}ట\u{c4d}\u{200c}ఫ\u{c3f}య\u{c3e}ర\u{c4d}డ\u{c4d}స\u{c4d} ప\u{c4d}ర\u{c3e}ంతం"), ("th", "เวสท\u{e4c}ฟยอร\u{e4c}ด"), ("tr", "Wesfjırds Bölgesi"), ("uk", "Вестфірдір"), ("ur", "ویستفجوردس ریجن"), ("vi", "Khu vực Westfjords"), ("zh", "西峽灣區")]),
+                        translations: HashMap::from([("ar", "إقليم المضايق"), ("az", "Vestfirdir"), ("be", "Вестфірдзір"), ("bg", "Северозападен полуостров"), ("bn", "ওয\u{9bc}েস\u{9cd}টফোর\u{9cd}ডস অঞ\u{9cd}চল"), ("ca", "Vestfirðir"), ("ccp", "𑄃\u{1112e}𑄠𑄬𑄌\u{11134}𑄎\u{1112e}𑄢\u{11134}𑄓\u{11134}𑄥\u{11134}"), ("ceb", "Vestfirðir (rehiyon)"), ("cs", "Vestfirðir"), ("cy", "Vestfirðir"), ("da", "Vestfirðir"), ("de", "Vestfirðir"), ("el", "Δυτικά Φιόρδ"), ("en", "Westfjords"), ("es", "Vestfirðir"), ("et", "Vestfirðir"), ("eu", "Vestfirðir"), ("fa", "وستفیوردز"), ("fi", "Länsivuonot"), ("fr", "Vestfirðir"), ("ga", "Vestfirðir"), ("gl", "Vestfirðir"), ("gu", "પશ\u{acd}ચિમજોર\u{acd}ડ\u{acd}સ પ\u{acd}રદ\u{ac7}શ"), ("he", "הפיורדים המערביים של איסלנד"), ("hi", "व\u{947}स\u{94d}ट फ\u{94d}योर\u{94d}ड प\u{94d}रद\u{947}श"), ("hu", "Vestfirðir"), ("hy", "Վեստֆիրդիր"), ("id", "Vestfirðir"), ("is", "Vestfirðir"), ("it", "Vestfirðir"), ("ja", "西部フィヨルド"), ("ka", "ვესტფირდირი"), ("kn", "ವ\u{cc6}ಸ\u{ccd}ಟ\u{ccd}ಫಾರ\u{ccd}ಡ\u{ccd}ಸ\u{ccd} ಪ\u{ccd}ರದೇಶ"), ("ko", "베스트피르디르"), ("lt", "Vestfirdiras"), ("lv", "Rietumfjordi"), ("mk", "Западни Фјордови"), ("mr", "व\u{947}स\u{94d}टफॉर\u{94d}दज प\u{94d}रद\u{947}श"), ("ms", "Westfjords Region"), ("nb", "Vestfirðir"), ("nl", "Vestfirðir"), ("no", "Vestfirðir"), ("pl", "Vestfirðir"), ("ps", "وست فیردیر"), ("pt", "Vestfirðir"), ("ru", "Вестфирдир"), ("si", "වෙස\u{dca}ට\u{dca}ෆ\u{dca}ජෝර\u{dca}ඩ\u{dca}ස\u{dca} පළ\u{dcf}ත"), ("sq", "Fjordet Perëndimore"), ("sr", "Вестфирдир (регион)"), ("sr_Latn", "Vestfirdir (region)"), ("sv", "Västfjordarna"), ("ta", "வெஸ\u{bcd}டபிஜோர\u{bcd}டஸ\u{bcd} பகுதி"), ("te", "వ\u{c46}స\u{c4d}ట\u{c4d}\u{200c}ఫ\u{c3f}య\u{c3e}ర\u{c4d}డ\u{c4d}స\u{c4d} ప\u{c4d}ర\u{c3e}ంతం"), ("th", "เวสท\u{e4c}ฟยอร\u{e4c}ด"), ("tr", "Wesfjırds Bölgesi"), ("uk", "Вестфірдір"), ("ur", "ویستفجوردس ریجن"), ("vi", "Khu vực Westfjords"), ("zh", "西峽灣區")]),
                         unofficial_name_list: ["Vestfirðir"].to_vec(),
                     }
                 ),
@@ -333,7 +335,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Region,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "الإقليم الشمالي الغربي"), ("az", "Nordurland Vestra"), ("bn", "নর\u{9cd}থ ওয\u{9bc}েস\u{9cd}ট\u{9be}র\u{9cd}ন অঞ\u{9cd}চল"), ("ca", "Norðurland vestra"), ("ccp", "𑄅\u{1112a}𑄖\u{11133}𑄦\u{11127}𑄢\u{11134}𑄛\u{11127}𑄏\u{11128}𑄟\u{11134}𑄟𑄬𑄇\u{11134}𑄈𑄬"), ("ceb", "Norðurland Vestra"), ("cy", "Norðurland vestra"), ("da", "Norðurland vestra"), ("de", "Norðurland vestra"), ("el", "Βορειοδυτική Ισλανδία"), ("en", "Northwestern"), ("es", "Norðurland Vestra"), ("et", "Norðurland vestra"), ("eu", "Norðurland vestra"), ("fa", "منطقه شمال غربی ایسلند"), ("fi", "Norðurland vestra"), ("fr", "Norðurland vestra"), ("ga", "Norðurland vestra"), ("gl", "Norðurland Vestra"), ("gu", "ઉત\u{acd}તરપશ\u{acd}ચિમી પ\u{acd}રદ\u{ac7}શ"), ("hi", "उत\u{94d}तर पश\u{94d}चिमी क\u{94d}ष\u{947}त\u{94d}र"), ("hy", "Նորդուրլանդ Վեստրա"), ("id", "Norðurland vestra"), ("is", "Norðurland vestra"), ("it", "Norðurland vestra"), ("ja", "北アイスランド西部"), ("ka", "ნორდურლენდ-ვესტრა"), ("kn", "ವಾಯುವ\u{ccd}ಯ ಪ\u{ccd}ರದೇಶ"), ("ko", "노르뒤를란드 베스트라"), ("lt", "Vakarų Nordurlandas"), ("lv", "Ziemeļrietumu reģions"), ("mk", "Северозападен регион"), ("mr", "वायव\u{94d}य प\u{94d}रद\u{947}श"), ("ms", "Northwestern Region"), ("nb", "Norðurland vestra"), ("nl", "Norðurland vestra"), ("no", "Norðurland vestra"), ("pl", "Okręg Północno-Zachodni"), ("pt", "Norðurland Vestra"), ("ru", "Нордурланд Вестра"), ("si", "උත\u{dd4}ර\u{dd4} බටහ\u{dd2}ර කල\u{dcf}පය"), ("sq", "Rajoni Veriperëndimor"), ("sr", "Нордиртланд Вестра"), ("sr_Latn", "Nordirtland Vestra"), ("sv", "Norðurland vestra"), ("ta", "நோர\u{bcd}த\u{bcd}வெஸ\u{bcd}டேர\u{bcd}ன\u{bcd} பகுதி"), ("te", "వ\u{c3e}యవ\u{c4d}య ప\u{c4d}ర\u{c3e}ంతం"), ("th", "แถบภาคตะว\u{e31}นตกเฉ\u{e35}ยงเหน\u{e37}อ"), ("tr", "Kuzey Batı Bölgesi"), ("uk", "Нордурланд-Вестра"), ("ur", "شمال مغربی علاقہ"), ("vi", "Khu vực Tây Bắc"), ("zh", "西北區")]),
+                        translations: HashMap::from([("ar", "الإقليم الشمالي الغربي"), ("az", "Nordurland Vestra"), ("be", "Нордурланд-Вестра"), ("bn", "নর\u{9cd}থ ওয\u{9bc}েস\u{9cd}ট\u{9be}র\u{9cd}ন অঞ\u{9cd}চল"), ("ca", "Norðurland vestra"), ("ccp", "𑄅\u{1112a}𑄖\u{11133}𑄦\u{11127}𑄢\u{11134}𑄛\u{11127}𑄏\u{11128}𑄟\u{11134}𑄟𑄬𑄇\u{11134}𑄈𑄬"), ("ceb", "Norðurland Vestra"), ("cy", "Norðurland vestra"), ("da", "Norðurland vestra"), ("de", "Norðurland vestra"), ("el", "Βορειοδυτική Ισλανδία"), ("en", "Northwestern"), ("es", "Norðurland Vestra"), ("et", "Norðurland vestra"), ("eu", "Norðurland vestra"), ("fa", "منطقه شمال غربی ایسلند"), ("fi", "Norðurland vestra"), ("fr", "Norðurland vestra"), ("ga", "Norðurland vestra"), ("gl", "Norðurland Vestra"), ("gu", "ઉત\u{acd}તરપશ\u{acd}ચિમી પ\u{acd}રદ\u{ac7}શ"), ("he", "נורד׳ורלנד וסטרה"), ("hi", "उत\u{94d}तर पश\u{94d}चिमी क\u{94d}ष\u{947}त\u{94d}र"), ("hu", "Északnyugati régió (Izland)"), ("hy", "Նորդուրլանդ Վեստրա"), ("id", "Norðurland vestra"), ("is", "Norðurland vestra"), ("it", "Norðurland vestra"), ("ja", "北アイスランド西部"), ("ka", "ნორდურლენდ-ვესტრა"), ("kn", "ವಾಯುವ\u{ccd}ಯ ಪ\u{ccd}ರದೇಶ"), ("ko", "노르뒤를란드 베스트라"), ("lt", "Vakarų Nordurlandas"), ("lv", "Ziemeļrietumu reģions"), ("mk", "Северозападен регион"), ("mr", "वायव\u{94d}य प\u{94d}रद\u{947}श"), ("ms", "Northwestern Region"), ("nb", "Norðurland vestra"), ("nl", "Norðurland vestra"), ("no", "Norðurland vestra"), ("pl", "Okręg Północno-Zachodni"), ("ps", "نوردورلند وسترا"), ("pt", "Norðurland Vestra"), ("ru", "Нордурланд Вестра"), ("si", "උත\u{dd4}ර\u{dd4} බටහ\u{dd2}ර කල\u{dcf}පය"), ("sq", "Rajoni Veriperëndimor"), ("sr", "Нордиртланд Вестра"), ("sr_Latn", "Nordirtland Vestra"), ("sv", "Norðurland vestra"), ("ta", "நோர\u{bcd}த\u{bcd}வெஸ\u{bcd}டேர\u{bcd}ன\u{bcd} பகுதி"), ("te", "వ\u{c3e}యవ\u{c4d}య ప\u{c4d}ర\u{c3e}ంతం"), ("th", "แถบภาคตะว\u{e31}นตกเฉ\u{e35}ยงเหน\u{e37}อ"), ("tr", "Kuzey Batı Bölgesi"), ("uk", "Нордурланд-Вестра"), ("ur", "شمال مغربی علاقہ"), ("vi", "Khu vực Tây Bắc"), ("zh", "西北區")]),
                         unofficial_name_list: ["Norðurland vestra"].to_vec(),
                     }
                 ),
@@ -348,7 +350,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Region,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "الإقليم الشمالي الشرقي"), ("az", "Nordürland Eystra"), ("be", "рэгіён Нордурланд-Эйстра"), ("bn", "নর\u{9cd}থ ইস\u{9cd}ট\u{9be}র\u{9cd}ন অঞ\u{9cd}চল"), ("ca", "Norðurland eystra"), ("ccp", "𑄅\u{1112a}𑄖\u{11133}𑄦\u{11127}𑄢\u{11134}𑄛\u{1112a}𑄇\u{11134}𑄟𑄬𑄇\u{11134}𑄈𑄬"), ("ceb", "Norðurland Eystra"), ("cy", "Norðurland eystra"), ("da", "Norðurland eystra"), ("de", "Norðurland eystra"), ("el", "Βορειοανατολική Ισλανδία"), ("en", "Northeastern"), ("es", "Norðurland Eystra"), ("et", "Norðurland eystra"), ("eu", "Norðurland eystra"), ("fa", "منطقه شمال شرقی ایسلند"), ("fi", "Norðurland eystra"), ("fr", "Norðurland eystra"), ("ga", "Norðurland eystra"), ("gl", "Norðurland Eystra"), ("gu", "ઉત\u{acd}તરપ\u{ac2}ર\u{acd}વીય પ\u{acd}રદ\u{ac7}શ"), ("he", "צפון איסלנד"), ("hi", "प\u{942}र\u{94d}वोत\u{94d}तर क\u{94d}ष\u{947}त\u{94d}र"), ("hy", "Նորդուրլանդ Էյստրա"), ("id", "Norðurland eystra"), ("is", "Norðurland eystra"), ("it", "Norðurland eystra"), ("ja", "北アイスランド東部"), ("ka", "ნორდურლანდ-ისტრა"), ("kn", "ಈಶಾನ\u{ccd}ಯ ಪ\u{ccd}ರದೇಶ"), ("ko", "노르뒤를란드 에이스트라"), ("lt", "Rytų Nordurlandas"), ("lv", "Ziemeļaustrumu reģions"), ("mk", "Североисточен регион"), ("mr", "प\u{942}र\u{94d}वोत\u{94d}तर प\u{94d}रद\u{947}श"), ("ms", "Northeastern Region"), ("nb", "Norðurland eystra"), ("nl", "Norðurland eystra"), ("no", "Norðurland eystra"), ("pl", "Okręg Północno-Wschodni"), ("pt", "Norðurland Eystra"), ("ru", "Нордюрланд-Эйстра"), ("si", "උත\u{dd4}ර\u{dd4} නැගෙනහ\u{dd2}ර කල\u{dcf}පය"), ("sq", "Rajoni Verilindor"), ("sr", "Нордиртланд Ејстра"), ("sr_Latn", "Nordirtland Ejstra"), ("sv", "Norðurland eystra"), ("ta", "வடக\u{bcd}கு கிழக\u{bcd}கு பகுதி"), ("te", "ఈశ\u{c3e}న\u{c4d}య ప\u{c4d}ర\u{c3e}ంతం"), ("th", "นอร\u{e4c}ทเทสเท\u{e34}ร\u{e4c}น"), ("tr", "Kuzeydoğu Bölgesi"), ("uk", "Нордурланд-Ейстра"), ("ur", "شمال مشرقی علاقہ"), ("vi", "Khu vực Đông Bắc"), ("zh", "東北區")]),
+                        translations: HashMap::from([("ar", "الإقليم الشمالي الشرقي"), ("az", "Nordürland Eystra"), ("be", "рэгіён Нордурланд-Эйстра"), ("bn", "নর\u{9cd}থ ইস\u{9cd}ট\u{9be}র\u{9cd}ন অঞ\u{9cd}চল"), ("ca", "Norðurland eystra"), ("ccp", "𑄅\u{1112a}𑄖\u{11133}𑄦\u{11127}𑄢\u{11134}𑄛\u{1112a}𑄇\u{11134}𑄟𑄬𑄇\u{11134}𑄈𑄬"), ("ceb", "Norðurland Eystra"), ("cy", "Norðurland eystra"), ("da", "Norðurland eystra"), ("de", "Norðurland eystra"), ("el", "Βορειοανατολική Ισλανδία"), ("en", "Northeastern"), ("es", "Norðurland Eystra"), ("et", "Norðurland eystra"), ("eu", "Norðurland eystra"), ("fa", "منطقه شمال شرقی ایسلند"), ("fi", "Norðurland eystra"), ("fr", "Norðurland eystra"), ("ga", "Norðurland eystra"), ("gl", "Norðurland Eystra"), ("gu", "ઉત\u{acd}તરપ\u{ac2}ર\u{acd}વીય પ\u{acd}રદ\u{ac7}શ"), ("he", "צפון איסלנד"), ("hi", "प\u{942}र\u{94d}वोत\u{94d}तर क\u{94d}ष\u{947}त\u{94d}र"), ("hu", "Északkeleti régió (Izland)"), ("hy", "Նորդուրլանդ Էյստրա"), ("id", "Norðurland eystra"), ("is", "Norðurland eystra"), ("it", "Norðurland eystra"), ("ja", "北アイスランド東部"), ("ka", "ნორდურლანდ-ისტრა"), ("kn", "ಈಶಾನ\u{ccd}ಯ ಪ\u{ccd}ರದೇಶ"), ("ko", "노르뒤를란드 에이스트라"), ("lt", "Rytų Nordurlandas"), ("lv", "Ziemeļaustrumu reģions"), ("mk", "Североисточен регион"), ("mr", "प\u{942}र\u{94d}वोत\u{94d}तर प\u{94d}रद\u{947}श"), ("ms", "Northeastern Region"), ("nb", "Norðurland eystra"), ("nl", "Norðurland eystra"), ("no", "Norðurland eystra"), ("pl", "Okręg Północno-Wschodni"), ("ps", "نوردورلند ایسترا"), ("pt", "Norðurland Eystra"), ("ru", "Нордюрланд-Эйстра"), ("si", "උත\u{dd4}ර\u{dd4} නැගෙනහ\u{dd2}ර කල\u{dcf}පය"), ("sq", "Rajoni Verilindor"), ("sr", "Нордиртланд Ејстра"), ("sr_Latn", "Nordirtland Ejstra"), ("sv", "Norðurland eystra"), ("ta", "வடக\u{bcd}கு கிழக\u{bcd}கு பகுதி"), ("te", "ఈశ\u{c3e}న\u{c4d}య ప\u{c4d}ర\u{c3e}ంతం"), ("th", "นอร\u{e4c}ทเทสเท\u{e34}ร\u{e4c}น"), ("tr", "Kuzeydoğu Bölgesi"), ("uk", "Нордурланд-Ейстра"), ("ur", "شمال مشرقی علاقہ"), ("vi", "Khu vực Đông Bắc"), ("zh", "東北區")]),
                         unofficial_name_list: ["Norðurland eystra"].to_vec(),
                     }
                 ),
@@ -363,7 +365,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Region,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "الإقليم الشرقي"), ("az", "Eystürland"), ("bg", "Аустурланд"), ("bn", "ইস\u{9cd}ট\u{9be}র\u{9cd}ন অঞ\u{9cd}চল"), ("ca", "Austurland"), ("ccp", "𑄛\u{1112a}𑄇\u{11134}𑄟𑄬𑄇\u{11134}𑄈𑄬"), ("ceb", "Austurland"), ("cy", "Austurland"), ("da", "Austurland"), ("de", "Austurland"), ("el", "Ανατολική Ισλανδία"), ("en", "Eastern"), ("es", "Austurland"), ("et", "Austurland"), ("eu", "Austurland"), ("fa", "منطقه شرقی ایسلند"), ("fi", "Austurland"), ("fr", "Austurland"), ("ga", "Austurland"), ("gl", "Austurland"), ("gu", "પ\u{ac2}ર\u{acd}વીય પ\u{acd}રદ\u{ac7}શ"), ("he", "מזרח איסלנד"), ("hi", "प\u{942}र\u{94d}वी क\u{94d}ष\u{947}त\u{94d}र"), ("hy", "Էյստյուրլանդ"), ("id", "Austurland"), ("is", "Austurland"), ("it", "Austurland"), ("ja", "東アイスランド"), ("ka", "აუსტურლანდი"), ("kn", "ಪ\u{cc2}ರ\u{ccd}ವ ಪ\u{ccd}ರದೇಶ"), ("ko", "외이스튀를란드"), ("lt", "Austurlandas"), ("lv", "Austrumu reģions"), ("mk", "Источен регион"), ("mr", "इस\u{94d}टर\u{94d}न प\u{94d}रद\u{947}श"), ("ms", "Eastern Region"), ("nb", "Austurland"), ("nl", "Austurland"), ("no", "Austurland"), ("pl", "Okręg Wschodni²"), ("pt", "Austurland"), ("ru", "Эйстюрланд"), ("si", "නැගෙනහ\u{dd2}ර කල\u{dcf}පය"), ("sq", "Rajoni Lindor"), ("sr", "Ејстиртланд"), ("sr_Latn", "Ejstirtland"), ("sv", "Austurland"), ("ta", "கிழக\u{bcd}கு பகுதி"), ("te", "తూర\u{c4d}పు ప\u{c4d}ర\u{c3e}ంతం"), ("th", "อ\u{e31}สเตอร\u{e4c}แลนด\u{e4c}"), ("tr", "Doğu Bölgesi"), ("uk", "Аустурланд"), ("ur", "مشرقی علاقہ"), ("vi", "Khu vực Eastern"), ("zh", "東部區")]),
+                        translations: HashMap::from([("ar", "الإقليم الشرقي"), ("az", "Eystürland"), ("bg", "Аустурланд"), ("bn", "ইস\u{9cd}ট\u{9be}র\u{9cd}ন অঞ\u{9cd}চল"), ("ca", "Austurland"), ("ccp", "𑄛\u{1112a}𑄇\u{11134}𑄟𑄬𑄇\u{11134}𑄈𑄬"), ("ceb", "Austurland"), ("cy", "Austurland"), ("da", "Austurland"), ("de", "Austurland"), ("el", "Ανατολική Ισλανδία"), ("en", "Eastern"), ("es", "Austurland"), ("et", "Austurland"), ("eu", "Austurland"), ("fa", "منطقه شرقی ایسلند"), ("fi", "Austurland"), ("fr", "Austurland"), ("ga", "Austurland"), ("gl", "Austurland"), ("gu", "પ\u{ac2}ર\u{acd}વીય પ\u{acd}રદ\u{ac7}શ"), ("he", "מזרח איסלנד"), ("hi", "प\u{942}र\u{94d}वी क\u{94d}ष\u{947}त\u{94d}र"), ("hu", "Keleti régió (Izland)"), ("hy", "Էյստյուրլանդ"), ("id", "Austurland"), ("is", "Austurland"), ("it", "Austurland"), ("ja", "東アイスランド"), ("ka", "აუსტურლანდი"), ("kn", "ಪ\u{cc2}ರ\u{ccd}ವ ಪ\u{ccd}ರದೇಶ"), ("ko", "외이스튀를란드"), ("lt", "Austurlandas"), ("lv", "Austrumu reģions"), ("mk", "Источен регион"), ("mr", "इस\u{94d}टर\u{94d}न प\u{94d}रद\u{947}श"), ("ms", "Eastern Region"), ("nb", "Austurland"), ("nl", "Austurland"), ("no", "Austurland"), ("pl", "Okręg Wschodni²"), ("ps", "استورلند"), ("pt", "Austurland"), ("ru", "Эйстюрланд"), ("si", "නැගෙනහ\u{dd2}ර කල\u{dcf}පය"), ("sq", "Rajoni Lindor"), ("sr", "Ејстиртланд"), ("sr_Latn", "Ejstirtland"), ("sv", "Austurland"), ("ta", "கிழக\u{bcd}கு பகுதி"), ("te", "తూర\u{c4d}పు ప\u{c4d}ర\u{c3e}ంతం"), ("th", "อ\u{e31}สเตอร\u{e4c}แลนด\u{e4c}"), ("tr", "Doğu Bölgesi"), ("uk", "Аустурланд"), ("ur", "مشرقی علاقہ"), ("vi", "Khu vực Eastern"), ("zh", "東部區")]),
                         unofficial_name_list: ["Austurland"].to_vec(),
                     }
                 ),
@@ -378,7 +380,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Region,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "الإقليم الجنوبي"), ("az", "Südürland"), ("be", "Судурланд"), ("bn", "স\u{9be}উদ\u{9be}র\u{9cd}ন অঞ\u{9cd}চল"), ("ca", "Suðurland"), ("ccp", "𑄘\u{11127}𑄊\u{11128}𑄚\u{11134}𑄟𑄬𑄇\u{11134}𑄈𑄬"), ("ceb", "Suðurland"), ("cy", "Suðurland"), ("da", "Suðurland"), ("de", "Suðurland"), ("el", "Νότια Ισλανδία"), ("en", "Southern"), ("es", "Suðurland"), ("et", "Suðurland"), ("eu", "Suðurland"), ("fa", "منطقه جنوبی ایسلند"), ("fi", "Suðurland"), ("fr", "Suðurland"), ("ga", "Suðurland"), ("gl", "Suðurland"), ("gu", "દક\u{acd}ષિણી પ\u{acd}રદ\u{ac7}શ"), ("he", "דרום איסלנד"), ("hi", "दक\u{94d}षिणी क\u{94d}ष\u{947}त\u{94d}र"), ("hr", "Suðurland"), ("hy", "Սյուդյուրլանդ"), ("id", "Suðurland"), ("is", "Suðurland"), ("it", "Suðurland"), ("ja", "南アイスランド"), ("ka", "სუდურლანდი"), ("kn", "ದಕ\u{ccd}ಷ\u{cbf}ಣ ವಲಯ"), ("ko", "쉬뒤를란드"), ("lt", "Sudurlandas"), ("lv", "Dienvidu reģions"), ("mk", "Јужен регион"), ("mr", "दक\u{94d}षिणी प\u{94d}रद\u{947}श"), ("ms", "Southern Region"), ("nb", "Suðurland"), ("nl", "Suðurland"), ("no", "Suðurland"), ("pl", "Okręg Południowy"), ("pt", "Suðurland"), ("ru", "Сюдюрланд"), ("si", "දක\u{dd4}ණ\u{dd4} කල\u{dcf}පය"), ("sq", "Rajoni Jugor"), ("sr", "Сидиртланд"), ("sr_Latn", "Sidirtland"), ("sv", "Suðurland"), ("ta", "தெற\u{bcd}கு பகுதி"), ("te", "దక\u{c4d}ష\u{c3f}ణ ప\u{c4d}ర\u{c3e}ంతం"), ("th", "เซ\u{e49}าท\u{e4c}เท\u{e34}ร\u{e4c}น ร\u{e35}เจ\u{e35}\u{e49}ยน"), ("tr", "Southern Bölgesi"), ("uk", "Судурланд"), ("ur", "جنوبی علاقہ"), ("vi", "Khu vực Southern"), ("zh", "南部區")]),
+                        translations: HashMap::from([("ar", "الإقليم الجنوبي"), ("az", "Südürland"), ("be", "Судурланд"), ("bn", "স\u{9be}উদ\u{9be}র\u{9cd}ন অঞ\u{9cd}চল"), ("ca", "Suðurland"), ("ccp", "𑄘\u{11127}𑄊\u{11128}𑄚\u{11134}𑄟𑄬𑄇\u{11134}𑄈𑄬"), ("ceb", "Suðurland"), ("cy", "Suðurland"), ("da", "Suðurland"), ("de", "Suðurland"), ("el", "Νότια Ισλανδία"), ("en", "Southern"), ("es", "Suðurland"), ("et", "Suðurland"), ("eu", "Suðurland"), ("fa", "منطقه جنوبی ایسلند"), ("fi", "Suðurland"), ("fr", "Suðurland"), ("ga", "Suðurland"), ("gl", "Suðurland"), ("gu", "દક\u{acd}ષિણી પ\u{acd}રદ\u{ac7}શ"), ("he", "דרום איסלנד"), ("hi", "दक\u{94d}षिणी क\u{94d}ष\u{947}त\u{94d}र"), ("hr", "Suðurland"), ("hu", "Déli régió (Izland)"), ("hy", "Սյուդյուրլանդ"), ("id", "Suðurland"), ("is", "Suðurland"), ("it", "Suðurland"), ("ja", "南アイスランド"), ("ka", "სუდურლანდი"), ("kn", "ದಕ\u{ccd}ಷ\u{cbf}ಣ ವಲಯ"), ("ko", "쉬뒤를란드"), ("lt", "Sudurlandas"), ("lv", "Dienvidu reģions"), ("mk", "Јужен регион"), ("mr", "दक\u{94d}षिणी प\u{94d}रद\u{947}श"), ("ms", "Southern Region"), ("nb", "Suðurland"), ("nl", "Suðurland"), ("no", "Suðurland"), ("pl", "Okręg Południowy"), ("ps", "سودورلند"), ("pt", "Suðurland"), ("ru", "Сюдюрланд"), ("si", "දක\u{dd4}ණ\u{dd4} කල\u{dcf}පය"), ("sq", "Rajoni Jugor"), ("sr", "Сидиртланд"), ("sr_Latn", "Sidirtland"), ("sv", "Suðurland"), ("ta", "தெற\u{bcd}கு பகுதி"), ("te", "దక\u{c4d}ష\u{c3f}ణ ప\u{c4d}ర\u{c3e}ంతం"), ("th", "เซ\u{e49}าท\u{e4c}เท\u{e34}ร\u{e4c}น ร\u{e35}เจ\u{e35}\u{e49}ยน"), ("tr", "Southern Bölgesi"), ("uk", "Судурланд"), ("ur", "جنوبی علاقہ"), ("vi", "Khu vực Southern"), ("zh", "南部區")]),
                         unofficial_name_list: ["Suðurland"].to_vec(),
                     }
                 ),
@@ -393,7 +395,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Municipality,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("en", "Akrahreppur")]),
+                        translations: HashMap::from([("bg", "Акрахрепур"), ("ceb", "Akrahreppur"), ("de", "Akrahreppur"), ("en", "Akrahreppur"), ("es", "Akrahreppur"), ("eu", "Akrahreppur"), ("fa", "اکراهرپور"), ("fr", "Akrahreppur"), ("hu", "Akrahreppur"), ("id", "Akrahreppur"), ("is", "Akrahreppur"), ("it", "Akrahreppur"), ("ja", "アークラフレップル"), ("ms", "Akrahreppur"), ("nl", "Akrahreppur"), ("pl", "Akrahreppur"), ("pt", "Akrahreppur"), ("ru", "Акрахреппюр"), ("sq", "Akrahreppur"), ("sv", "Akrahreppur")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -408,7 +410,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Municipality,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("en", "Akraneskaupstaður")]),
+                        translations: HashMap::from([("ar", "أكرانيس"), ("bg", "Акранес"), ("ca", "Akranes"), ("ceb", "Akraneskaupstaður (lalawigan sa Islandya)"), ("cs", "Akranes"), ("cy", "Akranes"), ("da", "Akraneskaupstaður"), ("de", "Akranes"), ("el", "Άκρανες"), ("en", "Akraneskaupstaður"), ("es", "Akranes"), ("et", "Akranes"), ("eu", "Akranes"), ("fa", "اکرانس"), ("fi", "Akranes"), ("fr", "Akranes"), ("ga", "Akranes"), ("gl", "Akranes"), ("he", "אקרנס"), ("hu", "Akranes"), ("id", "Akranes"), ("is", "Akraneskaupstaður"), ("it", "Akranes"), ("ja", "アクラネース"), ("ka", "აკრანესი"), ("kk", "Акранес"), ("ko", "아크라네스"), ("lt", "Akranesas"), ("mk", "Акранес"), ("ms", "Akranes"), ("nl", "Akraneskaupstaður"), ("pl", "Akraneskaupstaður"), ("pt", "Akranes"), ("ro", "Akranes"), ("ru", "Акранескёйпстадюр"), ("sq", "Akranes"), ("sr", "Акранес"), ("sr_Latn", "Akranes"), ("sv", "Akraneskaupstaður"), ("tr", "Akranes"), ("uk", "Акранес"), ("ur", "آکرانیس"), ("vi", "Akranes")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -423,7 +425,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Municipality,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("en", "Akureyrarbær")]),
+                        translations: HashMap::from([("af", "Akureyri"), ("ar", "أكوريري"), ("az", "Aküreyri"), ("be", "Акурэйры"), ("bg", "Акюрейри"), ("ca", "Akureyri"), ("cs", "Akureyri"), ("cy", "Akureyri"), ("da", "Akureyri"), ("de", "Akureyri"), ("el", "Άκουρεϋρι"), ("en", "Akureyrarbær"), ("es", "Akureyri"), ("et", "Akureyri"), ("eu", "Akureyri"), ("fa", "آکوریری"), ("fi", "Akureyri"), ("fr", "Akureyri"), ("ga", "Akureyri"), ("gl", "Akureyri"), ("he", "אקוריירי"), ("hr", "Akureyri"), ("hu", "Akureyri"), ("hy", "Աքուրեյրի"), ("id", "Akureyri"), ("is", "Akureyri"), ("it", "Akureyri"), ("ja", "アークレイリ"), ("ka", "აკურეირი"), ("kk", "Акюрейри"), ("ko", "아쿠레이리"), ("lt", "Akureiris"), ("lv", "Agireiri"), ("mk", "Акирејри"), ("ms", "Akureyri"), ("nl", "Akureyri"), ("pl", "Akureyri"), ("pt", "Akureyri"), ("ro", "Akureyri"), ("ru", "Акюрейри"), ("sk", "Akureyri"), ("sl", "Akureyri"), ("sq", "Akureyri"), ("sr", "Акирејри"), ("sr_Latn", "Akirejri"), ("sv", "Akureyri"), ("sw", "Akureyri"), ("th", "อาค\u{e37}อเรย\u{e4c}ร\u{e35}"), ("tr", "Akureyri"), ("uk", "Акурейрі"), ("ur", "آکوریرے"), ("vi", "Akureyri"), ("yue", "阿克雷里"), ("yue_Hans", "阿克雷里")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -438,7 +440,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Municipality,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("en", "Árneshreppur")]),
+                        translations: HashMap::from([("ceb", "Árneshreppur"), ("de", "Árnes"), ("en", "Árneshreppur"), ("es", "Árneshreppur"), ("eu", "Árneshreppur"), ("fi", "Árnes"), ("fr", "Árneshreppur"), ("hu", "Árneshreppur"), ("id", "Árneshreppur"), ("is", "Árneshreppur"), ("it", "Árnes"), ("ja", "アゥルネースフレップル"), ("nl", "Árneshreppur"), ("pl", "Árneshreppur"), ("pt", "Árneshreppur"), ("ru", "Аурнесхреппюр"), ("sq", "Árneshreppur"), ("sv", "Árneshreppur")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -453,7 +455,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Municipality,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("en", "Ásahreppur")]),
+                        translations: HashMap::from([("ca", "Ásahreppur"), ("ceb", "Ásahreppur"), ("de", "Ásahreppur"), ("en", "Ásahreppur"), ("es", "Ásahreppur"), ("eu", "Ásahreppur"), ("fr", "Ásahreppur"), ("hu", "Ásahreppur"), ("id", "Ásahreppur"), ("is", "Ásahreppur"), ("it", "Ásahreppur"), ("ja", "アゥサフレップル"), ("nl", "Ásahreppur"), ("pl", "Ásahreppur"), ("pt", "Ásahreppur"), ("ru", "Аусахреппюр"), ("sl", "Ásahreppur"), ("sq", "Ásahreppur"), ("sv", "Ásahreppur")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -468,7 +470,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Municipality,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("en", "Bláskógabyggð")]),
+                        translations: HashMap::from([("ca", "Bláskógabyggð"), ("ceb", "Bláskógabyggð"), ("da", "Bláskógabyggð"), ("de", "Bláskógabyggð"), ("en", "Bláskógabyggð"), ("es", "Bláskógabyggð"), ("eu", "Bláskógabyggð"), ("fi", "Bláskógabyggð"), ("fr", "Bláskógabyggð"), ("hu", "Bláskógabyggð"), ("id", "Bláskógabyggð"), ("is", "Bláskógabyggð"), ("it", "Bláskógabyggð"), ("ja", "ブラゥスコゥガビッグズ"), ("lt", "Blaskogabigas"), ("nl", "Bláskógabyggð"), ("pl", "Bláskógabyggð"), ("pt", "Bláskógabyggð"), ("ru", "Блаускоугабиггд"), ("sq", "Bláskógabyggð"), ("sv", "Bláskógabyggð")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -483,7 +485,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Municipality,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("en", "Blönduósbær")]),
+                        translations: HashMap::from([("be", "Блёндуос"), ("ceb", "Blönduósbær"), ("cs", "Blönduós"), ("cy", "Blönduós"), ("da", "Blönduós"), ("de", "Blönduós"), ("en", "Blönduósbær"), ("es", "Blönduósbær"), ("eu", "Blönduós"), ("fa", "بلوندوس"), ("fi", "Blönduós"), ("fr", "Blönduós"), ("hu", "Blönduós"), ("id", "Blönduósbær"), ("is", "Blönduósbær"), ("it", "Blönduós"), ("ja", "ブリョンドゥオゥス"), ("ka", "ბლენდუოუსი"), ("ko", "블뢴뒤오스"), ("ms", "Blönduós"), ("nl", "Blönduósbær"), ("pl", "Blönduósbær"), ("pt", "Blönduós"), ("ru", "Блёндюоусбайр"), ("sq", "Blönduós"), ("sv", "Blönduósbær"), ("uk", "Бльондюоус")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -498,7 +500,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Municipality,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("en", "Borgarbyggð")]),
+                        translations: HashMap::from([("ceb", "Borgarbyggð"), ("da", "Borgarbyggð"), ("de", "Borgarbyggð"), ("en", "Borgarbyggð"), ("es", "Borgarbyggð"), ("eu", "Borgarbyggð"), ("fi", "Borgarbyggð"), ("fr", "Borgarbyggð"), ("hu", "Borgarbyggð"), ("is", "Borgarbyggð"), ("it", "Borgarbyggð"), ("ja", "ボルガルビッグズ"), ("lt", "Borgaras"), ("nl", "Borgarbyggð"), ("pl", "Borgarbyggð"), ("pt", "Borgarbyggð"), ("ru", "Боргарбигд"), ("sq", "Borgarbyggd"), ("sv", "Borgarbyggð"), ("uk", "Боргарбігд")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -513,7 +515,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Municipality,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("en", "Bolungarvíkurkaupstaður")]),
+                        translations: HashMap::from([("ca", "Bolungarvík"), ("ceb", "Bolungarvíkurkaupstaður"), ("cs", "Bolungarvík"), ("da", "Bolungarvíkurkaupstaður"), ("de", "Bolungarvík"), ("en", "Bolungarvíkurkaupstaður"), ("es", "Bolungarvík"), ("eu", "Bolungarvík"), ("fa", "بولونگارویک"), ("fr", "Bolungarvík"), ("ga", "Bolungarvík"), ("hu", "Bolungarvík"), ("id", "Bolungarvík"), ("is", "Bolungarvíkurkaupstaður"), ("it", "Bolungarvík"), ("ja", "ボルンガルヴィーク"), ("ka", "ბოლუნგავიკი"), ("ko", "볼룽가르비크"), ("lt", "Bolungarvikas"), ("nl", "Bolungarvíkurkaupstaður"), ("pl", "Bolungarvíkurkaupstaður"), ("pt", "Bolungarvík"), ("sq", "Bolungarvík"), ("sv", "Bolungarvíkurkaupstaður"), ("tr", "Bolungarvík")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -528,7 +530,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Municipality,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("en", "Dalabyggð")]),
+                        translations: HashMap::from([("ceb", "Dalabyggð"), ("de", "Dalabyggð"), ("en", "Dalabyggð"), ("es", "Dalabyggð"), ("eu", "Dalabyggð"), ("fa", "دالابیگگی"), ("fr", "Dalabyggð"), ("hu", "Dalabyggð"), ("id", "Dalabyggð"), ("is", "Dalabyggð"), ("it", "Dalabyggð"), ("ja", "ダーラビッグズ"), ("nl", "Dalabyggð"), ("pl", "Dalabyggð"), ("pt", "Dalabyggð"), ("ru", "Далабиггд"), ("sq", "Dalabyggd"), ("sv", "Dalabyggð")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -543,7 +545,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Municipality,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("en", "Dalvíkurbyggð")]),
+                        translations: HashMap::from([("ceb", "Dalvíkurbyggð (lalawigan sa Islandya)"), ("de", "Dalvíkurbyggð"), ("en", "Dalvíkurbyggð"), ("es", "Dalvíkurbyggð"), ("eu", "Dalvíkurbyggð"), ("fa", "دالویکوربیگگی"), ("fr", "Dalvíkurbyggð"), ("hu", "Dalvíkurbyggð"), ("id", "Dalvíkurbyggð"), ("is", "Dalvíkurbyggð"), ("it", "Dalvíkurbyggð"), ("ja", "ダールヴィークルビッグズ"), ("nl", "Dalvíkurbyggð"), ("pl", "Dalvíkurbyggð"), ("pt", "Dalvíkurbyggð"), ("ru", "Дальвикюрбиггд"), ("sq", "Dalvíkurbyggd"), ("sv", "Dalvíkurbyggð")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -558,7 +560,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Municipality,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("en", "Eyja- og Miklaholtshreppur")]),
+                        translations: HashMap::from([("ceb", "Eyja- og Miklaholtshreppur"), ("de", "Eyjar og Miklaholt"), ("en", "Eyja- og Miklaholtshreppur"), ("es", "Eyja- og Miklaholtshreppur"), ("eu", "Eyja- og Miklaholtshreppur"), ("fa", "ایجا- اوگ میکلاهولتشرپور"), ("fr", "Eyja- og Miklaholtshreppur"), ("hu", "Eyja- og Miklaholtshreppur"), ("id", "Eyja- og Miklaholtshreppur"), ("is", "Eyja- og Miklaholtshreppur"), ("it", "Eyjar og Miklaholt"), ("ja", "エイヤ＝ミクラホルスフレップル"), ("nl", "Eyja- og Miklaholtshreppur"), ("pl", "Eyja- og Miklaholtshreppur"), ("pt", "Eyja- og Miklaholtshreppur"), ("ru", "Эйя-ог-Миклахольтсхреппюр"), ("sq", "Eyja- og Miklaholtshreppur"), ("sv", "Eyja- og Miklaholtshreppur")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -573,7 +575,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Municipality,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("en", "Eyjafjarðarsveit")]),
+                        translations: HashMap::from([("ceb", "Eyjafjarðarsveit"), ("de", "Eyjafjarðarsveit"), ("en", "Eyjafjarðarsveit"), ("es", "Eyjafjarðarsveit"), ("eu", "Eyjafjarðarsveit"), ("fr", "Eyjafjarðarsveit"), ("hu", "Eyjafjarðarsveit"), ("id", "Eyjafjarðarsveit"), ("is", "Eyjafjarðarsveit"), ("it", "Eyjafjarðarsveit"), ("ja", "エイヤフィヤルザルスヴェイト"), ("nl", "Eyjafjarðarsveit"), ("pl", "Eyjafjarðarsveit"), ("pt", "Eyjafjarðarsveit"), ("ru", "Эйяфьярдарсвейт"), ("sq", "Eyjafjardarsveit"), ("sv", "Eyjafjarðarsveit")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -588,7 +590,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Municipality,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("en", "Fjarðabyggð")]),
+                        translations: HashMap::from([("ar", "فياردابيغد"), ("be", "Фіёрдабігд"), ("ca", "Fjarðabyggð"), ("cy", "Fjarðabyggð"), ("da", "Fjarðabyggð"), ("de", "Fjarðabyggð"), ("el", "Φιαρδαμπίγκδ"), ("en", "Fjarðabyggð"), ("es", "Fjarðabyggð"), ("et", "Fjarðabyggð"), ("eu", "Fjarðabyggð"), ("fi", "Fjarðabyggð"), ("fr", "Fjarðabyggð"), ("hu", "Fjarðabyggð"), ("id", "Fjarðabyggð"), ("is", "Fjarðabyggð"), ("it", "Fjarðabyggð"), ("ja", "フィヤルザビッグズ"), ("lt", "Fjardabigdas"), ("ms", "Fjarðabyggð"), ("nl", "Fjarðabyggð"), ("pl", "Fjarðabyggð"), ("pt", "Fjarðabyggð"), ("ro", "Fjarðabyggð"), ("ru", "Фьярдабиггд"), ("sq", "Fjarðabyggð"), ("sv", "Fjarðabyggð"), ("uk", "Фьярдабіггд")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -603,7 +605,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Municipality,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("en", "Fjallabyggð")]),
+                        translations: HashMap::from([("ceb", "Fjallabyggð"), ("de", "Fjallabyggð"), ("en", "Fjallabyggð"), ("es", "Fjallabyggð"), ("eu", "Fjallabyggð"), ("fr", "Fjallabyggð"), ("hu", "Fjallabyggð"), ("id", "Fjallabyggð"), ("is", "Fjallabyggð"), ("it", "Fjallabyggð"), ("ja", "フィヤトラビッグズ"), ("ka", "ფიალაბიგდი"), ("nl", "Fjallabyggð"), ("pl", "Fjallabyggð"), ("pt", "Fjallabyggð"), ("sq", "Fjallabyggd"), ("sv", "Fjallabyggð")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -618,7 +620,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Municipality,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("en", "Flóahreppur")]),
+                        translations: HashMap::from([("ceb", "Flóahreppur"), ("de", "Flóahreppur"), ("en", "Flóahreppur"), ("es", "Flóahreppur"), ("eu", "Flóahreppur"), ("fr", "Flóahreppur"), ("hu", "Flóahreppur"), ("id", "Flóahreppur"), ("is", "Flóahreppur"), ("it", "Flói"), ("ja", "フロゥアフレップル"), ("nl", "Flóahreppur"), ("pl", "Flóahreppur"), ("pt", "Flóahreppur"), ("sq", "Flóahreppur"), ("sv", "Flóahreppur")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -633,7 +635,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Municipality,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("en", "Fljótsdalshreppur")]),
+                        translations: HashMap::from([("ca", "Fljótsdalshreppur"), ("ceb", "Fljótsdalshreppur"), ("da", "Fljótsdalshreppur"), ("de", "Fljótsdalur"), ("en", "Fljótsdalshreppur"), ("es", "Fljótsdalshreppur"), ("eu", "Fljótsdalshreppur"), ("fr", "Fljótsdalshreppur"), ("hu", "Fljótsdalshreppur"), ("id", "Fljótsdalshreppur"), ("is", "Fljótsdalshreppur"), ("it", "Fljótsdalur"), ("ja", "フリョゥスダールスフレップル"), ("nl", "Fljótsdalshreppur"), ("pl", "Fljótsdalshreppur"), ("pt", "Fljótsdalshreppur"), ("ru", "Фльоутсдальсхреппюр"), ("sq", "Fljótsdalshreppur"), ("sv", "Fljótsdalshreppur")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -663,7 +665,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Municipality,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("en", "Grímsnes- og Grafningshreppur")]),
+                        translations: HashMap::from([("en", "Grímsnes- og Grafningshreppur"), ("ja", "グリムスネース＝グラプニンフスフレップル")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -678,7 +680,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Municipality,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("en", "Grindavíkurbær")]),
+                        translations: HashMap::from([("ceb", "Grindavíkurbær"), ("da", "Grindavíkurbær"), ("de", "Grindavíkurbær"), ("en", "Grindavíkurbær"), ("fr", "Grindavíkurbær"), ("is", "Grindavíkurbær"), ("nl", "Grindavíkurbær"), ("pl", "Grindavíkurbær"), ("ru", "Гриндавикюрбайр"), ("sv", "Grindavíkurbær")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -693,7 +695,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Municipality,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("en", "Grundarfjarðarbær")]),
+                        translations: HashMap::from([("cs", "Grundarfjörður"), ("cy", "Grundarfjarðarbær"), ("da", "Grundarfjarðarbær"), ("de", "Grundarfjörður"), ("en", "Grundarfjarðarbær"), ("es", "Grundarfjörður"), ("et", "Grundarfjörður"), ("eu", "Grundarfjörður"), ("fr", "Grundarfjörður"), ("he", "גרונדרפיורדור"), ("hu", "Grundarfjörður"), ("id", "Grundarfjarðarbær"), ("is", "Grundarfjarðarbær"), ("it", "Grundarfjörður"), ("ja", "グルンダルフィヨルズル"), ("nl", "Grundarfjörður"), ("pl", "Grundarfjörður"), ("pt", "Grundarfjörður"), ("ro", "Grundarfjörður"), ("ru", "Грюндарфьярдарбай"), ("sq", "Grundarfjörður"), ("sv", "Grundarfjörður")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -708,7 +710,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Municipality,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("en", "Grýtubakkahreppur")]),
+                        translations: HashMap::from([("en", "Grýtubakkahreppur"), ("ja", "グリートゥバッカフレップル")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -738,7 +740,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Municipality,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("en", "Helgafellssveit")]),
+                        translations: HashMap::from([("en", "Helgafellssveit"), ("ja", "ヘルガフェルススヴェイト")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -768,7 +770,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Municipality,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("en", "Hrunamannahreppur")]),
+                        translations: HashMap::from([("en", "Hrunamannahreppur"), ("ja", "フルーナマンナフレップル")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -783,7 +785,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Municipality,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("en", "Húnavatnshreppur")]),
+                        translations: HashMap::from([("en", "Húnavatnshreppur"), ("ja", "フーナヴァスフレップル")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -798,7 +800,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Municipality,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("en", "Húnaþing vestra")]),
+                        translations: HashMap::from([("az", "Hunapinq"), ("ceb", "Húnaþing Vestra"), ("de", "Húnaþing vestra"), ("en", "Húnaþing vestra"), ("es", "Húnaþing vestra"), ("eu", "Húnaþing vestra"), ("fr", "Húnaþing vestra"), ("hu", "Húnaþing vestra"), ("id", "Húnaþing vestra"), ("is", "Húnaþing vestra"), ("it", "Húnaþing vestra"), ("ja", "フーナシンク・ヴェストラ"), ("ms", "Húnaþing vestra"), ("nl", "Húnaþing vestra"), ("pl", "Húnaþing vestra"), ("pt", "Húnaþing vestra"), ("ru", "Хунатинг-Вестра"), ("sq", "Húnaþing vestra"), ("sv", "Húnaþing vestra")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -813,7 +815,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Municipality,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("en", "Hvalfjarðarsveit")]),
+                        translations: HashMap::from([("en", "Hvalfjarðarsveit"), ("ja", "クヴァールフィヤルザルスヴェイト")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -843,7 +845,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Municipality,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("en", "Ísafjarðarbær")]),
+                        translations: HashMap::from([("en", "Ísafjarðarbær"), ("ja", "イーサフィヤルザルバイル")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -858,7 +860,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Municipality,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("en", "Kaldrananeshreppur")]),
+                        translations: HashMap::from([("en", "Kaldrananeshreppur"), ("ja", "カルドゥラナネースフレップル")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -873,7 +875,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Municipality,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("en", "Kjósarhreppur")]),
+                        translations: HashMap::from([("en", "Kjósarhreppur"), ("ja", "キョゥサルフレップル")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -903,7 +905,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Municipality,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("en", "Langanesbyggð")]),
+                        translations: HashMap::from([("en", "Langanesbyggð"), ("ja", "ラゥンガネースビッグズ")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -918,7 +920,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Municipality,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("en", "Mosfellsbær")]),
+                        translations: HashMap::from([("en", "Mosfellsbær"), ("ja", "モスフェルスバイル")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -933,7 +935,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Municipality,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("en", "Múlaþing")]),
+                        translations: HashMap::from([("ca", "Múlaþing"), ("da", "Múlaþing"), ("de", "Múlaþing"), ("en", "Múlaþing"), ("fi", "Múlaþing"), ("fr", "Múlaþing"), ("hu", "Múlaþing"), ("is", "Múlaþing"), ("pl", "Múlaþing"), ("ru", "Мулатинг"), ("sv", "Múlaþing")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -948,7 +950,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Municipality,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("en", "Mýrdalshreppur")]),
+                        translations: HashMap::from([("en", "Mýrdalshreppur"), ("ja", "ミールダルスフレップル")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -963,7 +965,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Municipality,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("en", "Norðurþing")]),
+                        translations: HashMap::from([("en", "Norðurþing"), ("ja", "ノルズルシンク")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -978,7 +980,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Municipality,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("en", "Rangárþing eystra")]),
+                        translations: HashMap::from([("en", "Rangárþing eystra"), ("ja", "ラゥングアゥルシンク・エイストラ")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -993,7 +995,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Municipality,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("en", "Rangárþing ytra")]),
+                        translations: HashMap::from([("en", "Rangárþing ytra"), ("ja", "ラゥングアゥルシンク・イートラ")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -1008,7 +1010,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Municipality,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("en", "Reykhólahreppur")]),
+                        translations: HashMap::from([("en", "Reykhólahreppur"), ("ja", "レイクホゥラフレップル")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -1023,7 +1025,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Municipality,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("en", "Reykjanesbær")]),
+                        translations: HashMap::from([("en", "Reykjanesbær"), ("ja", "レイキャネースバイル")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -1053,7 +1055,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Municipality,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("en", "Svalbarðshreppur")]),
+                        translations: HashMap::from([("en", "Svalbarðshreppur"), ("ja", "スヴァルバルズスフレップル")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -1068,7 +1070,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Municipality,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("en", "Svalbarðsstrandarhreppur")]),
+                        translations: HashMap::from([("en", "Svalbarðsstrandarhreppur"), ("ja", "スヴァルバルズスストラゥンダルフレップル")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -1098,7 +1100,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Municipality,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("en", "Súðavíkurhreppur")]),
+                        translations: HashMap::from([("ceb", "Súðavíkurhreppur"), ("da", "Súðavíkurhreppur"), ("de", "Súðavíkurhreppur"), ("en", "Súðavíkurhreppur"), ("es", "Súðavíkurhreppur"), ("eu", "Súðavíkurhreppur"), ("fr", "Súðavíkurhreppur"), ("hu", "Súðavíkurhreppur"), ("id", "Súðavíkurhreppur"), ("is", "Súðavíkurhreppur"), ("ja", "スーザヴィークルフレップル"), ("nl", "Súðavíkurhreppur"), ("pl", "Súðavíkurhreppur"), ("ru", "Судавикюрхреппюр"), ("sv", "Súðavíkurhreppur")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -1128,7 +1130,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Municipality,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("en", "Sveitarfélagið Árborg")]),
+                        translations: HashMap::from([("ar", "أربورغ"), ("cs", "Árborg"), ("cy", "Árborg"), ("da", "Árborg"), ("de", "Árborg"), ("en", "Sveitarfélagið Árborg"), ("es", "Árborg"), ("eu", "Árborg"), ("fi", "Árborg"), ("fr", "Árborg"), ("hu", "Árborg"), ("id", "Árborg"), ("is", "Sveitarfélagið Árborg"), ("it", "Árborg"), ("ja", "アゥルボルグ"), ("ms", "Árborg"), ("nl", "Árborg"), ("pl", "Árborg"), ("pt", "Árborg"), ("ro", "Árborg"), ("ru", "Аурборг"), ("sq", "Árborg"), ("sv", "Árborg"), ("uk", "Аурборг")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -1158,7 +1160,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Municipality,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("en", "Skaftárhreppur")]),
+                        translations: HashMap::from([("en", "Skaftárhreppur"), ("ja", "スカフタアゥルフレップル")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -1173,7 +1175,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Municipality,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("en", "Skagabyggð")]),
+                        translations: HashMap::from([("en", "Skagabyggð"), ("ja", "スカーガビッグズ")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -1188,7 +1190,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Municipality,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("en", "Skorradalshreppur")]),
+                        translations: HashMap::from([("en", "Skorradalshreppur"), ("ja", "スコッラダールスフレップル")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -1203,7 +1205,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Municipality,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("en", "Skútustaðahreppur")]),
+                        translations: HashMap::from([("en", "Skútustaðahreppur"), ("ja", "スクートゥスターザフレップル")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -1218,7 +1220,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Municipality,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("en", "Snæfellsbær")]),
+                        translations: HashMap::from([("en", "Snæfellsbær"), ("ja", "スナイフェルスバイル")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -1233,7 +1235,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Municipality,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("en", "Skeiða- og Gnúpverjahreppur")]),
+                        translations: HashMap::from([("en", "Skeiða- og Gnúpverjahreppur"), ("ja", "スキェイザ＝グヌープヴェーリャフレップル")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -1278,7 +1280,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Municipality,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("en", "Sveitarfélagið Skagaströnd")]),
+                        translations: HashMap::from([("af", "Sveitarfélagið Skagaströnd"), ("ca", "Sveitarfélagið Skagaströnd"), ("ceb", "Sveitarfélagið Skagaströnd"), ("cs", "Sveitarfélagið Skagaströnd"), ("cy", "Sveitarfélagið Skagaströnd"), ("da", "Sveitarfélagið Skagaströnd"), ("de", "Sveitarfélagið Skagaströnd"), ("en", "Sveitarfélagið Skagaströnd"), ("es", "Sveitarfélagið Skagaströnd"), ("et", "Sveitarfélagið Skagaströnd"), ("eu", "Sveitarfélagið Skagaströnd"), ("fi", "Sveitarfélagið Skagaströnd"), ("fr", "Sveitarfélagið Skagaströnd"), ("ga", "Sveitarfélagið Skagaströnd"), ("gl", "Sveitarfélagið Skagaströnd"), ("hr", "Sveitarfélagið Skagaströnd"), ("hu", "Sveitarfélagið Skagaströnd"), ("is", "Sveitarfélagið Skagaströnd"), ("it", "Sveitarfélagið Skagaströnd"), ("lt", "Sveitarfélagið Skagaströnd"), ("lv", "Sveitarfélagið Skagaströnd"), ("nl", "Sveitarfélagið Skagaströnd"), ("pl", "Sveitarfélagið Skagaströnd"), ("pt", "Sveitarfélagið Skagaströnd"), ("ro", "Sveitarfélagið Skagaströnd"), ("ru", "Община Скагастрёнд"), ("sk", "Sveitarfélagið Skagaströnd"), ("sl", "Sveitarfélagið Skagaströnd"), ("sq", "Sveitarfélagið Skagaströnd"), ("sv", "Sveitarfélagið Skagaströnd"), ("tr", "Sveitarfélagið Skagaströnd")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -1293,7 +1295,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Municipality,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("en", "Strandabyggð")]),
+                        translations: HashMap::from([("en", "Strandabyggð"), ("ja", "ストラゥンダビッグズ")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -1338,7 +1340,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Municipality,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("en", "Tálknafjarðarhreppur")]),
+                        translations: HashMap::from([("en", "Tálknafjarðarhreppur"), ("ja", "タゥルクナフィヤルザルフレップル")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -1353,7 +1355,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Municipality,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("en", "Þingeyjarsveit")]),
+                        translations: HashMap::from([("en", "Þingeyjarsveit"), ("ja", "シンクエイヤルスヴェイト")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -1368,7 +1370,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Municipality,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("en", "Tjörneshreppur")]),
+                        translations: HashMap::from([("en", "Tjörneshreppur"), ("ja", "チョールネースフレップル")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -1398,7 +1400,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Municipality,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("en", "Vesturbyggð")]),
+                        translations: HashMap::from([("en", "Vesturbyggð"), ("ja", "ヴェストゥルビッグズ")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -1413,7 +1415,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Municipality,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("en", "Vopnafjarðarhreppur")]),
+                        translations: HashMap::from([("en", "Vopnafjarðarhreppur"), ("ja", "ヴォプナフィヤルザルフレップル")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -1613,5 +1615,7 @@ pub fn new() -> Country {
         ]),
         #[cfg(feature = "subdivisions")]
         subdivisions: subdivisions::new(),
+        g7_member: false,
+        g20_member: false,
     }
 }

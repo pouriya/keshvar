@@ -38,6 +38,8 @@ pub mod consts {
     pub const UN_LOCODE: &str = "MC";
     pub const UNOFFICIAL_NAME_LIST: &[&str] = &["Monaco", "Mónaco", "モナコ"];
     pub const WORLD_REGION: WorldRegion = WorldRegion::EMEA;
+    pub const G7_MEMBER: bool = false;
+    pub const G20_MEMBER: bool = false;
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇲🇨";
     #[cfg(feature = "translations")]
@@ -247,7 +249,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Quarter,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ca", "La Còla"), ("ccp", "𑄣 𑄇\u{1112e}𑄣\u{11128}"), ("da", "La Colle"), ("de", "La Colle"), ("en", "La Colle"), ("es", "La Colle"), ("fr", "La Colle"), ("gl", "La Colle, Mónaco"), ("it", "La Colle"), ("ko", "라콜"), ("nl", "La Colle"), ("pt", "La Colle"), ("ru", "Ла-Колле"), ("sv", "La Colle"), ("tr", "La Colle, Monako"), ("ur", "لا کولی، موناکو"), ("zh", "拉科尔")]),
+                        translations: HashMap::from([("az", "La-Kolle"), ("ca", "La Còla"), ("ccp", "𑄣 𑄇\u{1112e}𑄣\u{11128}"), ("da", "La Colle"), ("de", "La Colle"), ("en", "La Colle"), ("es", "La Colle"), ("fa", "له کل، موناکو"), ("fr", "La Colle"), ("gl", "La Colle, Mónaco"), ("it", "La Colle"), ("ja", "ラ・コル"), ("ko", "라콜"), ("nl", "La Colle"), ("pt", "La Colle"), ("ru", "Ла-Колле"), ("sv", "La Colle"), ("tr", "La Colle, Monako"), ("ur", "لا کولی، موناکو"), ("zh", "拉科尔")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -262,7 +264,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Quarter,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("az", "La-Kondamin"), ("be", "Ла-Кандамін"), ("ca", "La Condamina"), ("ccp", "𑄣 𑄇\u{11127}𑄚\u{11134}𑄓𑄟\u{1112d}𑄚\u{11134}"), ("ceb", "La Condamine"), ("cs", "La Condamine"), ("de", "La Condamine"), ("en", "La Condamine"), ("es", "La Condamine"), ("fa", "لا کوندامین"), ("fr", "La Condamine"), ("gl", "La Condamine"), ("hu", "La Condamine"), ("hy", "Լա Կոնդամին"), ("it", "La Condamine"), ("ja", "ラ・コンダミーヌ地区"), ("ko", "라콩다민"), ("lt", "La Kondaminas"), ("nl", "La Condamine"), ("pl", "La Condamine"), ("pt", "La Condamine"), ("ru", "Ла-Кондамин"), ("sv", "La Condamine"), ("tr", "La Condamine"), ("uk", "Ла-Кондамін"), ("ur", "لا کونڈامینی"), ("zh", "拉康达明")]),
+                        translations: HashMap::from([("az", "La-Kondamin"), ("be", "Ла-Кандамін"), ("ca", "La Condamina"), ("ccp", "𑄣 𑄇\u{11127}𑄚\u{11134}𑄓𑄟\u{1112d}𑄚\u{11134}"), ("ceb", "La Condamine"), ("cs", "La Condamine"), ("de", "La Condamine"), ("el", "Λα Κονταμίν"), ("en", "La Condamine"), ("es", "La Condamine"), ("eu", "La Condamine"), ("fa", "لا کوندامین"), ("fr", "La Condamine"), ("gl", "La Condamine"), ("he", "לה קונדמין"), ("hu", "La Condamine"), ("hy", "Լա Կոնդամին"), ("id", "La Condamine"), ("it", "La Condamine"), ("ja", "ラ・コンダミーヌ地区"), ("ko", "라콩다민"), ("lt", "La Kondaminas"), ("nl", "La Condamine"), ("pl", "La Condamine"), ("pt", "La Condamine"), ("ru", "Ла-Кондамин"), ("sv", "La Condamine"), ("th", "ลากงดาม\u{e35}น"), ("tr", "La Condamine"), ("uk", "Ла-Кондамін"), ("ur", "لا کونڈامینی"), ("zh", "拉康达明")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -277,7 +279,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Quarter,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ca", "Fòntvielha"), ("ccp", "𑄜\u{11127}𑄚\u{11134}𑄑\u{11134}𑄞\u{11128}𑄣𑄬"), ("ceb", "Fontvieille"), ("de", "Fontvieille"), ("el", "Φοντβιέγ"), ("en", "Fontvieille"), ("es", "Fontvieille"), ("fa", "فونوی، موناکو"), ("fr", "Fontvieille"), ("gl", "Fontvieille, Mónaco"), ("he", "פונטוייל"), ("hu", "Fontvieille"), ("hy", "Ֆոնվյեյ"), ("it", "Fontvieille"), ("ja", "フォンヴィエイユ"), ("ko", "퐁비에유"), ("lt", "Fonvjėjus"), ("nb", "Fontvieille"), ("nl", "Fontvieille"), ("no", "Fontvieille"), ("pl", "Fontvieille"), ("pt", "Fontvieille"), ("ru", "Фонвьей"), ("sv", "Fontvieille (del av en befolkad plats)"), ("tr", "Fontvieille, Monako"), ("uk", "Фонтвілль"), ("zh", "芳特维耶")]),
+                        translations: HashMap::from([("az", "Fonvey (Monako)"), ("ca", "Fòntvielha"), ("ccp", "𑄜\u{11127}𑄚\u{11134}𑄑\u{11134}𑄞\u{11128}𑄣𑄬"), ("ceb", "Fontvieille"), ("cs", "Fontvieille"), ("da", "Fontvieille (Monaco)"), ("de", "Fontvieille"), ("el", "Φοντβιέγ"), ("en", "Fontvieille"), ("es", "Fontvieille"), ("eu", "Fontvieille (Monako)"), ("fa", "فونوی، موناکو"), ("fr", "Fontvieille"), ("gl", "Fontvieille, Mónaco"), ("he", "פונטוייל"), ("hu", "Fontvieille"), ("hy", "Ֆոնվյեյ"), ("it", "Fontvieille"), ("ja", "フォンヴィエイユ"), ("ko", "퐁비에유"), ("lt", "Fonvjėjus"), ("mk", "Фонвјеј"), ("nb", "Fontvieille"), ("nl", "Fontvieille"), ("no", "Fontvieille"), ("pl", "Fontvieille"), ("pt", "Fontvieille"), ("ru", "Фонвьей"), ("sv", "Fontvieille (del av en befolkad plats)"), ("th", "ฟงว\u{e35}แยย\u{e4c}"), ("tr", "Fontvieille, Monako"), ("uk", "Фонтвілль"), ("zh", "芳特维耶")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -292,7 +294,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Quarter,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ccp", "𑄣 𑄉𑄢𑄬"), ("en", "La Gare")]),
+                        translations: HashMap::from([("ccp", "𑄣 𑄉𑄢𑄬"), ("en", "La Gare"), ("ru", "Ла Га")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -307,7 +309,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Quarter,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ccp", "𑄎𑄢\u{11134}𑄓\u{11128}𑄚\u{11134} 𑄃𑄬𑄇\u{11134}𑄎\u{1112e}𑄑\u{11128}𑄇\u{11134} 𑄓𑄬 𑄟\u{11127}𑄚\u{11134}𑄇\u{1112e}"), ("de", "Exotischer Garten von Monaco"), ("en", "Jardin Exotique de Monaco"), ("es", "Jardín Exótico de Mónaco"), ("fr", "jardin exotique de Monaco"), ("it", "Giardino esotico di Monaco"), ("ja", "熱帯公園"), ("nl", "Jardin Exotique de Monaco"), ("pl", "Jardin exotique de Monaco"), ("uk", "Екзотичний сад Монако"), ("zh", "摩納哥熱帶公園")]),
+                        translations: HashMap::from([("ccp", "𑄎𑄢\u{11134}𑄓\u{11128}𑄚\u{11134} 𑄃𑄬𑄇\u{11134}𑄎\u{1112e}𑄑\u{11128}𑄇\u{11134} 𑄓𑄬 𑄟\u{11127}𑄚\u{11134}𑄇\u{1112e}"), ("de", "Exotischer Garten von Monaco"), ("en", "Jardin Exotique de Monaco"), ("es", "Jardín Exótico de Mónaco"), ("fr", "jardin exotique de Monaco"), ("it", "Giardino esotico di Monaco"), ("ja", "熱帯公園"), ("nl", "Jardin Exotique de Monaco"), ("pl", "Jardin exotique de Monaco"), ("ru", "Жарден-Экзотик"), ("th", "ฌาร\u{e4c}แด\u{e47}งแอกซอต\u{e34}ก"), ("uk", "Екзотичний сад Монако"), ("zh", "摩納哥熱帶公園")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -322,7 +324,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Quarter,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("az", "Larvotto"), ("ca", "Larvot e Molins Bas"), ("ccp", "𑄣𑄢\u{11134}𑄞\u{1112e}𑄑\u{1112e}"), ("de", "Larvotto"), ("en", "Larvotto"), ("es", "Larvotto"), ("fr", "Larvotto/Bas Moulins"), ("gl", "Larvotto"), ("it", "Larvotto"), ("ja", "ラルヴォット"), ("ko", "라르보토"), ("nl", "Larvotto"), ("pt", "Larvotto"), ("ru", "Ларвотто"), ("tr", "Larvotto"), ("ur", "لارووٹو"), ("zh", "拉沃托")]),
+                        translations: HashMap::from([("az", "Larvotto"), ("ca", "Larvot e Molins Bas"), ("ccp", "𑄣𑄢\u{11134}𑄞\u{1112e}𑄑\u{1112e}"), ("de", "Larvotto"), ("el", "Λαρβοττό"), ("en", "Larvotto"), ("es", "Larvotto"), ("fa", "لاروتو"), ("fr", "Larvotto/Bas Moulins"), ("gl", "Larvotto"), ("it", "Larvotto"), ("ja", "ラルヴォット"), ("ko", "라르보토"), ("nl", "Larvotto"), ("pt", "Larvotto"), ("ru", "Ларвотто"), ("sv", "Larvotto"), ("th", "ลาร\u{e4c}วอโต"), ("tr", "Larvotto"), ("ur", "لارووٹو"), ("zh", "拉沃托")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -337,7 +339,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Quarter,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ccp", "𑄟𑄣\u{11134}𑄝\u{1112f}𑄇\u{1112e}𑄠𑄬𑄖\u{11134}"), ("en", "Malbousquet")]),
+                        translations: HashMap::from([("ccp", "𑄟𑄣\u{11134}𑄝\u{1112f}𑄇\u{1112e}𑄠𑄬𑄖\u{11134}"), ("en", "Malbousquet"), ("fr", "Malbousquet"), ("ru", "Мальбуке")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -352,7 +354,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Quarter,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("af", "Monte Carlo"), ("ar", "مونت كارلو"), ("az", "Monte Karlo"), ("be", "Монтэ-Карла"), ("bg", "Монте Карло"), ("bs", "Monte Carlo"), ("ca", "Montcarles"), ("ccp", "𑄟\u{11127}𑄚\u{11134}𑄑𑄬 𑄇𑄢\u{11134}𑄣\u{1112e}"), ("ceb", "Monte-Carlo"), ("cs", "Monte Carlo"), ("cy", "Monte-Carlo"), ("da", "Monte Carlo"), ("de", "Monte-Carlo"), ("el", "Μόντε Κάρλο"), ("en", "Monte Carlo"), ("es", "Montecarlo"), ("et", "Monte Carlo"), ("eu", "Monte-Carlo"), ("fa", "مونت\u{200c}کارلو"), ("fi", "Monte Carlo"), ("fr", "Monte-Carlo"), ("ga", "Monte Carlo"), ("gl", "Monte Carlo"), ("he", "מונטה קרלו"), ("hi", "मो\u{902}टी कार\u{94d}लो"), ("hr", "Monte Carlo"), ("hu", "Monte-Carlo"), ("hy", "Մոնտե Կառլո"), ("id", "Monte Carlo"), ("is", "Monte Carlo"), ("it", "Monte Carlo"), ("ja", "モンテカルロ"), ("ka", "მონტე-კარლო"), ("kk", "Монте-Карло"), ("ko", "몬테카를로"), ("lt", "Monte Karlas"), ("lv", "Montekarlo"), ("mk", "Монте Карло"), ("ms", "Monte Carlo"), ("my", "မ\u{103d}န\u{103a}တ\u{102e}ကာလ\u{102d}\u{102f}မြ\u{102d}\u{102f}\u{1037}"), ("nb", "Monte Carlo"), ("nl", "Monte Carlo"), ("no", "Monte Carlo"), ("pl", "Monte Carlo"), ("pt", "Monte Carlo"), ("ro", "Monte Carlo"), ("ru", "Монте-Карло"), ("sk", "Monte Carlo"), ("sl", "Monte Carlo"), ("sq", "Monte Karlo"), ("sr", "Монте Карло"), ("sr_Latn", "Monte Karlo"), ("sv", "Monte Carlo"), ("ta", "ம\u{bbe}ன\u{bcd}டே க\u{bbe}ர\u{bcd}லோ"), ("tr", "Monte Carlo"), ("uk", "Монте-Карло"), ("ur", "مونٹی کارلو"), ("uz", "Montekarlo"), ("vi", "Monte Carlo"), ("yue", "蒙地卡羅"), ("yue_Hans", "蒙地卡罗"), ("zh", "蒙特卡洛")]),
+                        translations: HashMap::from([("af", "Monte Carlo"), ("ar", "مونت كارلو"), ("az", "Monte Karlo"), ("be", "Монтэ-Карла"), ("bg", "Монте Карло"), ("bs", "Monte Carlo"), ("ca", "Montcarles"), ("ccp", "𑄟\u{11127}𑄚\u{11134}𑄑𑄬 𑄇𑄢\u{11134}𑄣\u{1112e}"), ("ceb", "Monte-Carlo"), ("cs", "Monte Carlo"), ("cy", "Monte-Carlo"), ("da", "Monte Carlo"), ("de", "Monte-Carlo"), ("el", "Μόντε Κάρλο"), ("en", "Monte Carlo"), ("es", "Montecarlo"), ("et", "Monte Carlo"), ("eu", "Monte-Carlo"), ("fa", "مونت\u{200c}کارلو"), ("fi", "Monte Carlo"), ("fr", "Monte-Carlo"), ("ga", "Monte Carlo"), ("gl", "Monte Carlo"), ("he", "מונטה קרלו"), ("hi", "मो\u{902}टी कार\u{94d}लो"), ("hr", "Monte Carlo"), ("hu", "Monte-Carlo"), ("hy", "Մոնտե Կառլո"), ("id", "Monte Carlo"), ("is", "Monte Carlo"), ("it", "Monte Carlo"), ("ja", "モンテカルロ"), ("ka", "მონტე-კარლო"), ("kk", "Монте-Карло"), ("ko", "몬테카를로"), ("lt", "Monte Karlas"), ("lv", "Montekarlo"), ("mk", "Монте Карло"), ("mr", "मा\u{901}ट\u{947} कार\u{94d}लो"), ("ms", "Monte Carlo"), ("my", "မ\u{103d}န\u{103a}တ\u{102e}ကာလ\u{102d}\u{102f}မြ\u{102d}\u{102f}\u{1037}"), ("nb", "Monte Carlo"), ("nl", "Monte Carlo"), ("no", "Monte Carlo"), ("pl", "Monte Carlo"), ("ps", "مونت کارلو"), ("pt", "Monte Carlo"), ("ro", "Monte Carlo"), ("ru", "Монте-Карло"), ("sk", "Monte Carlo"), ("sl", "Monte Carlo"), ("sq", "Monte Karlo"), ("sr", "Монте Карло"), ("sr_Latn", "Monte Karlo"), ("sv", "Monte Carlo"), ("ta", "ம\u{bbe}ன\u{bcd}டே க\u{bbe}ர\u{bcd}லோ"), ("th", "มงเต-การ\u{e4c}โล"), ("tr", "Monte Carlo"), ("uk", "Монте-Карло"), ("ur", "مونٹی کارلو"), ("uz", "Montekarlo"), ("vi", "Monte Carlo"), ("yue", "蒙地卡羅"), ("yue_Hans", "蒙地卡罗"), ("zh", "蒙特卡洛")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -367,7 +369,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Quarter,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("az", "Moneqetti"), ("bg", "Монегхети"), ("ca", "Moneguet"), ("ccp", "𑄟\u{11127}𑄚𑄬𑄊𑄬𑄑\u{11128}"), ("ceb", "Moneghetti"), ("de", "Moneghetti"), ("en", "Moneghetti"), ("es", "Monegeti"), ("fr", "Moneghetti"), ("gl", "Moneghetti"), ("hu", "Moneghetti"), ("it", "Moneghetti"), ("ko", "모네게티"), ("nl", "Moneghetti"), ("pt", "Moneghetti"), ("ru", "Монегетти"), ("sv", "Moneghetti"), ("zh", "莫内盖蒂")]),
+                        translations: HashMap::from([("az", "Moneqetti"), ("bg", "Монегхети"), ("ca", "Moneguet"), ("ccp", "𑄟\u{11127}𑄚𑄬𑄊𑄬𑄑\u{11128}"), ("ceb", "Moneghetti"), ("de", "Moneghetti"), ("en", "Moneghetti"), ("es", "Monegeti"), ("fa", "له مونگتی"), ("fr", "Moneghetti"), ("gl", "Moneghetti"), ("hu", "Moneghetti"), ("it", "Moneghetti"), ("ja", "モネウッティ"), ("ko", "모네게티"), ("nl", "Moneghetti"), ("pt", "Moneghetti"), ("ru", "Монегетти"), ("sv", "Moneghetti"), ("th", "เลมอเนอแกต\u{e35}"), ("zh", "莫内盖蒂")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -382,7 +384,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Quarter,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "موناكو فيل"), ("az", "Monako Vill"), ("be", "Горад Манака"), ("ca", "Vila de Mònaco"), ("ccp", "𑄟\u{11127}𑄚𑄇\u{1112e}-𑄞\u{11128}𑄣𑄬"), ("ceb", "Commune de Monaco"), ("cs", "Monaco-Ville"), ("da", "Monaco-Ville"), ("de", "Monaco-Ville"), ("en", "Monaco-Ville"), ("es", "Mónaco"), ("et", "Monaco-Ville"), ("eu", "Monako"), ("fa", "موناکوویل"), ("fr", "Monaco-Ville"), ("gl", "Monaco-Ville"), ("he", "מונקו-ויל"), ("hu", "Monaco"), ("hy", "Մոնակո"), ("it", "Monaco Vecchia"), ("ja", "モナコ・ヴィル"), ("kk", "Монако"), ("ko", "모나코빌"), ("lt", "Monakas"), ("nl", "Monaco-Ville"), ("pl", "Monaco-Ville"), ("pt", "Monaco-Ville"), ("ru", "Монако"), ("sv", "Monaco-Ville"), ("te", "మ\u{c4a}న\u{c3e}క\u{c4b}-వ\u{c3f}ల\u{c4d}"), ("tr", "Monaco-Ville"), ("uk", "Монако"), ("ur", "موناکو شہر"), ("uz", "Monako"), ("zh", "摩纳哥城")]),
+                        translations: HashMap::from([("ar", "موناكو فيل"), ("az", "Monako Vill"), ("be", "Горад Манака"), ("ca", "Vila de Mònaco"), ("ccp", "𑄟\u{11127}𑄚𑄇\u{1112e}-𑄞\u{11128}𑄣𑄬"), ("ceb", "Commune de Monaco"), ("cs", "Monaco-Ville"), ("da", "Monaco-Ville"), ("de", "Monaco-Ville"), ("el", "Μονακό-Βιλ"), ("en", "Monaco-Ville"), ("es", "Mónaco"), ("et", "Monaco-Ville"), ("eu", "Monako"), ("fa", "موناکوویل"), ("fr", "Monaco-Ville"), ("gl", "Monaco-Ville"), ("he", "מונקו-ויל"), ("hu", "Monaco"), ("hy", "Մոնակո"), ("it", "Monaco Vecchia"), ("ja", "モナコ・ヴィル"), ("kk", "Монако"), ("ko", "모나코빌"), ("lt", "Monakas"), ("nl", "Monaco-Ville"), ("pl", "Monaco-Ville"), ("ps", "موناکو ویل"), ("pt", "Monaco-Ville"), ("ru", "Монако"), ("sv", "Monaco-Ville"), ("te", "మ\u{c4a}న\u{c3e}క\u{c4b}-వ\u{c3f}ల\u{c4d}"), ("th", "มอนาโก-ว\u{e35}ล"), ("tr", "Monaco-Ville"), ("uk", "Монако"), ("ur", "موناکو شہر"), ("uz", "Monako"), ("zh", "摩纳哥城")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -397,7 +399,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Quarter,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ccp", "𑄟\u{1112f}𑄣\u{11128}𑄚\u{11134}"), ("en", "Moulins")]),
+                        translations: HashMap::from([("ccp", "𑄟\u{1112f}𑄣\u{11128}𑄚\u{11134}"), ("en", "Moulins"), ("fr", "Moulins"), ("ja", "ムーラン"), ("ru", "Молин")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -412,7 +414,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Quarter,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ccp", "𑄛\u{1112e}𑄢\u{11134}𑄑\u{11134} 𑄦𑄢\u{11134}𑄇\u{11128}𑄅\u{1112a}𑄣𑄌\u{11134}"), ("ceb", "Port Hercule"), ("de", "Port Hercule"), ("en", "Port Hercules"), ("es", "Puerto Hércules"), ("fr", "Port Hercule"), ("it", "Port Hercule"), ("ja", "ポートエルキュール"), ("nl", "Port Hercules"), ("sv", "Port Hercule")]),
+                        translations: HashMap::from([("ccp", "𑄛\u{1112e}𑄢\u{11134}𑄑\u{11134} 𑄦𑄢\u{11134}𑄇\u{11128}𑄅\u{1112a}𑄣𑄌\u{11134}"), ("ceb", "Port Hercule"), ("de", "Port Hercule"), ("el", "Λιμάνι του Ηρακλή"), ("en", "Port Hercules"), ("es", "Puerto Hércules"), ("fr", "Port Hercule"), ("it", "Port Hercule"), ("ja", "ポートエルキュール"), ("nl", "Port Hercules"), ("ru", "Порт Геркулес"), ("sv", "Port Hercule")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -427,7 +429,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Quarter,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ccp", "𑄥𑄬𑄚\u{11134}𑄑\u{11134}-𑄓\u{11128}𑄞\u{1112e}𑄖\u{11134} 𑄇𑄛𑄬𑄣\u{11134}"), ("en", "Sainte-Dévote Chapel"), ("es", "iglesia de Santa Devota"), ("fr", "église Sainte-Dévote"), ("nl", "Église Sainte-Dévote")]),
+                        translations: HashMap::from([("ccp", "𑄥𑄬𑄚\u{11134}𑄑\u{11134}-𑄓\u{11128}𑄞\u{1112e}𑄖\u{11134} 𑄇𑄛𑄬𑄣\u{11134}"), ("de", "Ravin de Sainte-Dévote"), ("en", "Sainte-Dévote Chapel"), ("es", "iglesia de Santa Devota"), ("fr", "église Sainte-Dévote"), ("hu", "Ravin de Sainte-Dévote"), ("it", "Ravina di Santa Devota"), ("ja", "サン・デボーテ"), ("nl", "Église Sainte-Dévote"), ("ru", "Санте-Девоте")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -442,7 +444,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Quarter,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ccp", "𑄣 𑄥\u{1112e}𑄢\u{11134}𑄌\u{11134}"), ("en", "La Source")]),
+                        translations: HashMap::from([("ccp", "𑄣 𑄥\u{1112e}𑄢\u{11134}𑄌\u{11134}"), ("en", "La Source"), ("fr", "La Source")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -457,7 +459,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Quarter,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ccp", "𑄌\u{11133}𑄛𑄬𑄣\u{11128}𑄅\u{1112a}𑄉𑄌\u{11134}"), ("en", "Spélugues")]),
+                        translations: HashMap::from([("ccp", "𑄌\u{11133}𑄛𑄬𑄣\u{11128}𑄅\u{1112a}𑄉𑄌\u{11134}"), ("en", "Spélugues"), ("fr", "Spélugues"), ("ru", "Спилаге")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -487,7 +489,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Quarter,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ccp", "𑄞𑄣\u{11127}𑄚\u{11134} 𑄓𑄬 𑄣 𑄢\u{1112f}𑄌\u{11134}"), ("en", "Vallon de la Rousse"), ("nl", "La Rousse")]),
+                        translations: HashMap::from([("ccp", "𑄞𑄣\u{11127}𑄚\u{11134} 𑄓𑄬 𑄣 𑄢\u{1112f}𑄌\u{11134}"), ("en", "Vallon de la Rousse"), ("fr", "Vallon de la Rousse"), ("nl", "La Rousse"), ("ru", "Валлон де ла Роус")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -676,5 +678,7 @@ pub fn new() -> Country {
         ]),
         #[cfg(feature = "subdivisions")]
         subdivisions: subdivisions::new(),
+        g7_member: false,
+        g20_member: false,
     }
 }
