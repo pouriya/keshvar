@@ -60,6 +60,8 @@ pub struct CountryInfo {
     pub un_locode: String,
     pub unofficial_names: Vec<String>,
     pub world_region: String,
+    pub g7_member: Option<bool>,
+    pub g20_member: Option<bool>,
 }
 
 #[derive(Clone, Debug, Serialize, Deserialize)]

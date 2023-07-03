@@ -38,6 +38,8 @@ pub mod consts {
     pub const UN_LOCODE: &str = "ML";
     pub const UNOFFICIAL_NAME_LIST: &[&str] = &["Mali", "マリ"];
     pub const WORLD_REGION: WorldRegion = WorldRegion::EMEA;
+    pub const G7_MEMBER: bool = false;
+    pub const G20_MEMBER: bool = false;
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇲🇱";
     #[cfg(feature = "translations")]
@@ -251,8 +253,10 @@ pub mod subdivisions {
                     #[cfg(feature = "translations")]
                     translations: HashMap::from([
                         ("ar", "منطقة كايس"),
+                        ("az", "Kayes (bölgə)"),
                         ("bg", "Кайес"),
                         ("bn", "ক\u{9be}য\u{9bc}েস অঞ\u{9cd}চল"),
+                        ("ca", "Regió de Kayes"),
                         ("ccp", "𑄇𑄬𑄠𑄬𑄌\u{11134}"),
                         ("ceb", "Kayes Region"),
                         ("da", "Kayes"),
@@ -287,6 +291,7 @@ pub mod subdivisions {
                         ("ru", "Каес"),
                         ("si", "කේයස\u{dca} ප\u{dca}\u{200d}ර\u{dcf}න\u{dca}තය"),
                         ("sv", "Kayes"),
+                        ("sw", "Mkoa wa Kayes"),
                         ("ta", "கேஎஸ\u{bcd} பகுதி"),
                         ("te", "క\u{c47}య\u{c46}స\u{c4d} ప\u{c4d}ర\u{c3e}ంతం"),
                         ("th", "อาณาเขตคาเยส"),
@@ -318,10 +323,17 @@ pub mod subdivisions {
                     subdivision_type: SubdivisionType::Region,
                     #[cfg(feature = "translations")]
                     translations: HashMap::from([
+                        ("ar", "منطقة تودني"),
+                        ("de", "Region Taoudénit"),
+                        ("el", "Περιοχή του Ταουντενίτ"),
                         ("en", "Taoudénit"),
+                        ("fa", "استان توئودنیت"),
                         ("fi", "Taoudénitin alue"),
                         ("fr", "Région de Taoudénit"),
                         ("ja", "タウデニ州"),
+                        ("ru", "Таоденни"),
+                        ("sw", "Mkoa wa Taoudenit"),
+                        ("th", "แคว\u{e49}นตาอ\u{e39}เดน\u{e35}"),
                     ]),
                     unofficial_name_list: [].to_vec(),
                 },
@@ -383,6 +395,7 @@ pub mod subdivisions {
                         ("ru", "Куликоро"),
                         ("si", "කොව\u{dd4}ල\u{dd2}කොරෝ කල\u{dcf}පය"),
                         ("sv", "Koulikoro"),
+                        ("sw", "Mkoa wa Koulikoro"),
                         ("ta", "கோழிகோரோ பகுதி"),
                         ("te", "క\u{c4b}ల\u{c3f}క\u{c4b}ర\u{c4b} ప\u{c4d}ర\u{c3e}ంతం"),
                         ("th", "เขตก\u{e39}ล\u{e35}กอโร"),
@@ -415,8 +428,10 @@ pub mod subdivisions {
                     #[cfg(feature = "translations")]
                     translations: HashMap::from([
                         ("ar", "منطقة سيكاسو"),
+                        ("az", "Sikaso (bölgə)"),
                         ("be", "Сікасо"),
                         ("bn", "সিক\u{9be}সো অঞ\u{9cd}চল"),
+                        ("ca", "Sikasso"),
                         ("ccp", "𑄥\u{11128}𑄇𑄥\u{1112e}"),
                         ("ceb", "Sikasso Region"),
                         ("da", "Sikasso"),
@@ -451,6 +466,7 @@ pub mod subdivisions {
                         ("ru", "Сикасо"),
                         ("si", "ස\u{dd2}කස\u{dca}සෝ කල\u{dcf}පය"),
                         ("sv", "Sikasso"),
+                        ("sw", "Mkoa wa Sikasso"),
                         ("ta", "சிக\u{bbe}ஸோ பகுதி"),
                         ("te", "స\u{c3f}క\u{c3e}స\u{c4b} ప\u{c4d}ర\u{c3e}ంతం"),
                         ("th", "ซ\u{e34}คาสโซ"),
@@ -518,6 +534,7 @@ pub mod subdivisions {
                         ("ru", "Сегу"),
                         ("si", "සෙගෞ කල\u{dcf}පය"),
                         ("sv", "Ségou"),
+                        ("sw", "Mkoa wa Segou"),
                         ("ta", "செகௌ பகுதி"),
                         ("te", "స\u{c46}గ\u{c4c} ప\u{c4d}ర\u{c3e}ంతం"),
                         ("th", "เซเกา"),
@@ -556,6 +573,7 @@ pub mod subdivisions {
                         ("ca", "Regió de Mopti"),
                         ("ccp", "𑄟\u{1112e}𑄛\u{11134}𑄑\u{11128}"),
                         ("ceb", "Mopti Region"),
+                        ("cy", "rhanbarth Mopti"),
                         ("da", "Mopti"),
                         ("de", "Region Mopti"),
                         ("el", "Περιφέρεια Μοπτί"),
@@ -587,6 +605,7 @@ pub mod subdivisions {
                         ("ru", "Мопти"),
                         ("si", "මොප\u{dca}ට\u{dd2} කල\u{dcf}පය"),
                         ("sv", "Mopti"),
+                        ("sw", "Mkoa wa Mopti"),
                         ("ta", "மோப\u{bcd}டி பகுதி"),
                         ("te", "మ\u{c4b}ప\u{c4d}ట\u{c3f} ప\u{c4d}ర\u{c3e}ంతం"),
                         ("th", "เม\u{e37}องม\u{e4a}อปต\u{e34}"),
@@ -619,6 +638,7 @@ pub mod subdivisions {
                     #[cfg(feature = "translations")]
                     translations: HashMap::from([
                         ("ar", "منطقة تمبكتو"),
+                        ("az", "Tombuktu"),
                         ("bn", "তম\u{9cd}ব\u{9c1}কত\u{9c1} অঞ\u{9cd}চল"),
                         ("ca", "Regió de Tombouctou"),
                         ("ccp", "𑄑\u{1112e}𑄟\u{11134}𑄝\u{1112f}𑄇\u{11134}𑄑\u{1112f}"),
@@ -650,11 +670,13 @@ pub mod subdivisions {
                         ("nl", "Timboektoe"),
                         ("no", "Timbuktu"),
                         ("pl", "Region Timbuktu"),
+                        ("ps", "تومبوکتو"),
                         ("pt", "Tombouctou"),
                         ("ro", "Regiunea Tombouctou"),
                         ("ru", "Томбукту"),
                         ("si", "ටෝම\u{dca}බෝක\u{dca}ට\u{dd4} කල\u{dcf}පය"),
                         ("sv", "Timbuktu"),
+                        ("sw", "Mkoa wa Timbuktu"),
                         ("ta", "ட\u{bbe}ம\u{bcd}போவுக\u{bcd}டோக\u{bcd}கு பகுதி"),
                         (
                             "te",
@@ -690,8 +712,10 @@ pub mod subdivisions {
                     #[cfg(feature = "translations")]
                     translations: HashMap::from([
                         ("ar", "منطقة غاو"),
+                        ("az", "Qao (bölgə)"),
                         ("bg", "Гао"),
                         ("bn", "গ\u{9be}ও অঞ\u{9cd}চল"),
+                        ("ca", "Gao"),
                         ("ccp", "𑄉𑄃\u{1112e}"),
                         ("ceb", "Gao Region"),
                         ("da", "Gao"),
@@ -726,6 +750,7 @@ pub mod subdivisions {
                         ("ru", "Гао"),
                         ("si", "ග\u{dcf}ඕ කල\u{dcf}පය"),
                         ("sv", "Gao"),
+                        ("sw", "Mkoa wa Gao"),
                         ("ta", "க\u{bbe}வோ பகுதி"),
                         ("te", "గ\u{c3e}వ\u{c4d} ప\u{c4d}ర\u{c3e}ంతం"),
                         ("th", "เกา"),
@@ -760,6 +785,7 @@ pub mod subdivisions {
                         ("ar", "منطقة كيدال"),
                         ("bg", "Кидал"),
                         ("bn", "কিড\u{9be}ল অঞ\u{9cd}চল"),
+                        ("ca", "Regió de Kidal"),
                         ("ccp", "𑄇\u{11128}𑄓𑄣\u{11134}"),
                         ("ceb", "Kidal Region"),
                         ("da", "Kidal"),
@@ -773,6 +799,8 @@ pub mod subdivisions {
                         ("fi", "Kidalin alue"),
                         ("fr", "Région de Kidal"),
                         ("gu", "કિડલ પ\u{acd}રદ\u{ac7}શ"),
+                        ("ha", "Yankin Kidal"),
+                        ("ha_NE", "Yankin Kidal"),
                         ("hi", "किडाल प\u{94d}रद\u{947}श"),
                         ("hu", "Kidal régió"),
                         ("id", "Region Kidal"),
@@ -794,6 +822,7 @@ pub mod subdivisions {
                         ("ru", "Кидаль"),
                         ("si", "ක\u{dd2}ඩල\u{dca} කල\u{dcf}පය"),
                         ("sv", "Kidal"),
+                        ("sw", "Mkoa wa Kidal"),
                         ("ta", "கிடல\u{bcd} பகுதி"),
                         ("te", "క\u{c3f}డ\u{c3e}ల\u{c4d} ప\u{c4d}ర\u{c3e}ంతం"),
                         ("th", "ภ\u{e39}ม\u{e34}ภาคค\u{e34}ด\u{e31}ล"),
@@ -818,10 +847,15 @@ pub mod subdivisions {
                     subdivision_type: SubdivisionType::Region,
                     #[cfg(feature = "translations")]
                     translations: HashMap::from([
+                        ("de", "Region Ménaka"),
+                        ("el", "Περιοχή της Μενακά"),
                         ("en", "Ménaka"),
+                        ("fa", "استان مناکا"),
                         ("fi", "Ménakan alue"),
                         ("fr", "Région de Ménaka"),
                         ("ja", "メナカ州"),
+                        ("sw", "Mkoa wa Menaka"),
+                        ("th", "แคว\u{e49}นเมนากา"),
                     ]),
                     unofficial_name_list: [].to_vec(),
                 },
@@ -900,6 +934,7 @@ pub mod subdivisions {
                         ("no", "Bamako"),
                         ("pa", "ਬਮਾਕ\u{a4b}"),
                         ("pl", "Bamako"),
+                        ("ps", "باماکو"),
                         ("pt", "Bamako"),
                         ("ro", "Bamako"),
                         ("ru", "Бамако"),
@@ -1110,5 +1145,7 @@ pub fn new() -> Country {
         ]),
         #[cfg(feature = "subdivisions")]
         subdivisions: subdivisions::new(),
+        g7_member: false,
+        g20_member: false,
     }
 }

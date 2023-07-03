@@ -1025,6 +1025,80 @@ pub const SUPPORTED_ALPHA2_LIST: &[Alpha2] = &[
     Alpha2::ZW,
 ];
 
+/// A constant list containing all included [`Alpha2`](crate::Alpha2) codes that are members of [G7](https://en.wikipedia.org/wiki/G7).
+///
+/// This alphabeticaly sorted list will be created at compile-time based on included country features.
+/// # Example
+/// ```
+/// use keshvar::{Alpha2, SUPPORTED_G7_ALPHA2_LIST};
+/// assert!(SUPPORTED_G7_ALPHA2_LIST.contains(&Alpha2::US));
+/// ```
+pub const SUPPORTED_G7_ALPHA2_LIST: &[Alpha2] = &[
+    #[cfg(feature = "ca")] // Canada (Americas)
+    Alpha2::CA,
+    #[cfg(feature = "de")] // The Federal Republic of Germany (Europe)
+    Alpha2::DE,
+    #[cfg(feature = "fr")] // The French Republic (Europe)
+    Alpha2::FR,
+    #[cfg(feature = "gb")] // The United Kingdom of Great Britain and Northern Ireland (Europe)
+    Alpha2::GB,
+    #[cfg(feature = "it")] // The Italian Republic (Europe)
+    Alpha2::IT,
+    #[cfg(feature = "jp")] // Japan (Asia)
+    Alpha2::JP,
+    #[cfg(feature = "us")] // The United States of America (Americas)
+    Alpha2::US,
+];
+
+/// A constant list containing all included [`Alpha2`](crate::Alpha2) codes that are members of [G20](https://en.wikipedia.org/wiki/G20).
+///
+/// This alphabeticaly sorted list will be created at compile-time based on included country features.
+/// # Example
+/// ```
+/// use keshvar::{Alpha2, SUPPORTED_G20_ALPHA2_LIST};
+/// assert!(SUPPORTED_G20_ALPHA2_LIST.contains(&Alpha2::US));
+/// ```
+pub const SUPPORTED_G20_ALPHA2_LIST: &[Alpha2] = &[
+    #[cfg(feature = "ar")] // The Argentine Republic (Americas)
+    Alpha2::AR,
+    #[cfg(feature = "au")] // The Commonwealth of Australia (Oceania)
+    Alpha2::AU,
+    #[cfg(feature = "br")] // The Federative Republic of Brazil (Americas)
+    Alpha2::BR,
+    #[cfg(feature = "ca")] // Canada (Americas)
+    Alpha2::CA,
+    #[cfg(feature = "cn")] // The People's Republic of China (Asia)
+    Alpha2::CN,
+    #[cfg(feature = "de")] // The Federal Republic of Germany (Europe)
+    Alpha2::DE,
+    #[cfg(feature = "fr")] // The French Republic (Europe)
+    Alpha2::FR,
+    #[cfg(feature = "gb")] // The United Kingdom of Great Britain and Northern Ireland (Europe)
+    Alpha2::GB,
+    #[cfg(feature = "id")] // The Republic of Indonesia (Asia)
+    Alpha2::ID,
+    #[cfg(feature = "in")] // The Republic of India (Asia)
+    Alpha2::IN,
+    #[cfg(feature = "it")] // The Italian Republic (Europe)
+    Alpha2::IT,
+    #[cfg(feature = "jp")] // Japan (Asia)
+    Alpha2::JP,
+    #[cfg(feature = "kr")] // The Republic of Korea (Asia)
+    Alpha2::KR,
+    #[cfg(feature = "mx")] // The United Mexican States (Americas)
+    Alpha2::MX,
+    #[cfg(feature = "ru")] // The Russian Federation (Europe)
+    Alpha2::RU,
+    #[cfg(feature = "sa")] // The Kingdom of Saudi Arabia (Asia)
+    Alpha2::SA,
+    #[cfg(feature = "tr")] // The Republic of Türkiye (Asia)
+    Alpha2::TR,
+    #[cfg(feature = "us")] // The United States of America (Americas)
+    Alpha2::US,
+    #[cfg(feature = "za")] // The Republic of South Africa (Africa)
+    Alpha2::ZA,
+];
+
 /// A constant list containing all included [`Continent`](crate::Alpha2)s.
 ///
 /// This alphabeticaly sorted list will be created at compile-time based on included country features.

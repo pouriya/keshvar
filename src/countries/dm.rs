@@ -38,6 +38,8 @@ pub mod consts {
     pub const UN_LOCODE: &str = "DM";
     pub const UNOFFICIAL_NAME_LIST: &[&str] = &["Dominica", "ドミニカ国"];
     pub const WORLD_REGION: WorldRegion = WorldRegion::AMER;
+    pub const G7_MEMBER: bool = false;
+    pub const G20_MEMBER: bool = false;
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇩🇲";
     #[cfg(feature = "translations")]
@@ -292,7 +294,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Parish,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "أبرشية القديس جون"), ("bn", "সেন\u{9cd}ট জন প\u{9cd}য\u{9be}রিশ"), ("ca", "Parròquia de Saint John"), ("ccp", "𑄥𑄬𑄚\u{11133}𑄑\u{11134} 𑄎\u{11127}𑄚\u{11134}"), ("ceb", "Saint John"), ("da", "Saint John Parish"), ("de", "Saint John"), ("el", "Άγιος Ιωάννης"), ("en", "Saint John"), ("es", "Parroquia de Saint John"), ("fa", "پریش سنت جان، دومینیکا"), ("fi", "Saint John"), ("fr", "Saint-John"), ("gu", "સ\u{ac7}\u{a82}ટ જ\u{acd}હોન પ\u{ac5}રિશ"), ("hi", "स\u{947}\u{902}ट जॉन प\u{948}रिश"), ("id", "Paroki Saint John"), ("it", "Parrocchia di Saint John"), ("ja", "セント・ジョン郡 (ドミニカ国)"), ("kn", "ಸೇಂಟ\u{ccd} ಜಾನ\u{ccd} ಪ\u{ccd}ಯಾರ\u{cbf}ಷ\u{ccd}"), ("ko", "세인트존 교구"), ("lt", "Šv. Jono parapija"), ("lv", "Sentdžona pagasts"), ("mr", "स\u{947}\u{902}ट जॉन प\u{945}रीश"), ("ms", "Saint John Parish"), ("nb", "Saint John prestegjeld"), ("nl", "Saint John"), ("no", "Saint John prestegjeld"), ("pl", "Parafia św. Jana na Dominice"), ("pt", "Saint John"), ("ru", "Приход Сент-Джон"), ("si", "ශ\u{dcf}න\u{dca}ත ජෝන\u{dca} ප\u{dca}\u{200d}ර\u{dcf}න\u{dca}තය"), ("sv", "Saint John"), ("ta", "செயின\u{bcd}ட\u{bcd} ஜ\u{bbe}ன\u{bcd} பரிஷ\u{bcd}"), ("te", "స\u{c46}య\u{c3f}ంట\u{c4d} జ\u{c3e}న\u{c4d} ప\u{c3e}ర\u{c3f}ష\u{c4d}"), ("th", "เซนต\u{e4c} จอน แพร\u{e34}ช"), ("tr", "Saint John Parish"), ("uk", "Парафія Сент-Джон"), ("ur", "سینٹ جان پیرش، ڈومینیکا"), ("vi", "Giáo xứ Saint John"), ("zh", "聖約翰堂區")]),
+                        translations: HashMap::from([("ar", "أبرشية القديس جون"), ("az", "Sent-Con səmti"), ("bn", "সেন\u{9cd}ট জন প\u{9cd}য\u{9be}রিশ"), ("ca", "Parròquia de Saint John"), ("ccp", "𑄥𑄬𑄚\u{11133}𑄑\u{11134} 𑄎\u{11127}𑄚\u{11134}"), ("ceb", "Saint John"), ("da", "Saint John Parish"), ("de", "Saint John"), ("el", "Άγιος Ιωάννης"), ("en", "Saint John"), ("es", "Parroquia de Saint John"), ("fa", "پریش سنت جان، دومینیکا"), ("fi", "Saint John"), ("fr", "Saint-John"), ("gu", "સ\u{ac7}\u{a82}ટ જ\u{acd}હોન પ\u{ac5}રિશ"), ("hi", "स\u{947}\u{902}ट जॉन प\u{948}रिश"), ("id", "Paroki Saint John"), ("it", "Parrocchia di Saint John"), ("ja", "セント・ジョン郡 (ドミニカ国)"), ("kn", "ಸೇಂಟ\u{ccd} ಜಾನ\u{ccd} ಪ\u{ccd}ಯಾರ\u{cbf}ಷ\u{ccd}"), ("ko", "세인트존 교구"), ("lt", "Šv. Jono parapija"), ("lv", "Sentdžona pagasts"), ("mr", "स\u{947}\u{902}ट जॉन प\u{945}रीश"), ("ms", "Saint John Parish"), ("nb", "Saint John prestegjeld"), ("nl", "Saint John"), ("no", "Saint John prestegjeld"), ("pl", "Parafia św. Jana na Dominice"), ("pt", "Saint John"), ("ru", "Приход Сент-Джон"), ("si", "ශ\u{dcf}න\u{dca}ත ජෝන\u{dca} ප\u{dca}\u{200d}ර\u{dcf}න\u{dca}තය"), ("sv", "Saint John"), ("ta", "செயின\u{bcd}ட\u{bcd} ஜ\u{bbe}ன\u{bcd} பரிஷ\u{bcd}"), ("te", "స\u{c46}య\u{c3f}ంట\u{c4d} జ\u{c3e}న\u{c4d} ప\u{c3e}ర\u{c3f}ష\u{c4d}"), ("th", "เซนต\u{e4c} จอน แพร\u{e34}ช"), ("tr", "Saint John Parish"), ("uk", "Парафія Сент-Джон"), ("ur", "سینٹ جان پیرش، ڈومینیکا"), ("vi", "Giáo xứ Saint John"), ("zh", "聖約翰堂區")]),
                         unofficial_name_list: ["Saint John"].to_vec(),
                     }
                 ),
@@ -571,5 +573,7 @@ pub fn new() -> Country {
         ]),
         #[cfg(feature = "subdivisions")]
         subdivisions: subdivisions::new(),
+        g7_member: false,
+        g20_member: false,
     }
 }

@@ -56,6 +56,10 @@ pub struct Country {
     #[cfg(feature = "subdivisions")]
     #[cfg_attr(feature = "serde-derive", serde(default))]
     pub(crate) subdivisions: HashMap<&'static str, Subdivision>,
+    #[cfg_attr(feature = "serde-derive", serde(default))]
+    pub(crate) g7_member: bool,
+    #[cfg_attr(feature = "serde-derive", serde(default))]
+    pub(crate) g20_member: bool,
 }
 
 impl Country {
@@ -188,6 +192,16 @@ impl Country {
     /// Enabled if `subdivisions` feature is enabled.
     pub fn subdivisions(&self) -> &HashMap<&str, Subdivision> {
         &self.subdivisions
+    }
+
+    /// Is this country a member of [G7](https://en.wikipedia.org/wiki/G7)?.
+    pub fn g7_member(&self) -> bool {
+        self.g7_member
+    }
+
+    /// Is this country a member of [G20](https://en.wikipedia.org/wiki/G7)?.
+    pub fn g20_member(&self) -> bool {
+        self.g20_member
     }
 }
 

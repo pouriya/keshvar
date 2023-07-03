@@ -38,6 +38,8 @@ pub mod consts {
     pub const UN_LOCODE: &str = "EE";
     pub const UNOFFICIAL_NAME_LIST: &[&str] = &["Estonia", "Estland", "Estonie", "エストニア"];
     pub const WORLD_REGION: WorldRegion = WorldRegion::EMEA;
+    pub const G7_MEMBER: bool = false;
+    pub const G20_MEMBER: bool = false;
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇪🇪";
     #[cfg(feature = "translations")]
@@ -626,6 +628,7 @@ pub mod subdivisions {
                     #[cfg(feature = "translations")]
                     translations: HashMap::from([
                         ("ar", "مقاطعة هاريو"),
+                        ("az", "Haryumaa"),
                         ("bg", "Харю"),
                         ("bn", "হ\u{9be}র\u{9cd}জ\u{9c1} ক\u{9be}উন\u{9cd}টি"),
                         ("bs", "Okrug Harjumaa"),
@@ -633,6 +636,7 @@ pub mod subdivisions {
                         ("ccp", "𑄦𑄢\u{11134}𑄎\u{1112a}"),
                         ("ceb", "Harjumaa"),
                         ("cs", "Harjumaa"),
+                        ("cy", "Sir Harju"),
                         ("da", "Harjumaa"),
                         ("de", "Kreis Harju"),
                         ("el", "Επαρχία Χάργιου"),
@@ -714,6 +718,7 @@ pub mod subdivisions {
                         ("ccp", "𑄦\u{11128}𑄅\u{1112a}"),
                         ("ceb", "Hiiumaa"),
                         ("cs", "Hiiumaa"),
+                        ("cy", "Sir Hiiu"),
                         ("da", "Hiiu County"),
                         ("de", "Kreis Hiiu"),
                         ("el", "Επαρχία Χιίου"),
@@ -1973,6 +1978,7 @@ pub mod subdivisions {
                     subdivision_type: SubdivisionType::County,
                     #[cfg(feature = "translations")]
                     translations: HashMap::from([
+                        ("ar", "مقاطعة سار"),
                         ("be", "Павет Саарэ"),
                         ("bg", "Сааре"),
                         ("bs", "Okrug Saaremaa"),
@@ -1980,6 +1986,7 @@ pub mod subdivisions {
                         ("ccp", "𑄥𑄢𑄬"),
                         ("ceb", "Saaremaa"),
                         ("cs", "Saaremaa"),
+                        ("cy", "Sir Saare"),
                         ("da", "Saare maakond"),
                         ("de", "Kreis Saare"),
                         ("el", "Επαρχία Σάαρε"),
@@ -2330,6 +2337,7 @@ pub mod subdivisions {
                         ("ccp", "𑄞\u{11128}𑄣\u{11134}𑄎𑄚\u{11134}𑄓\u{11128}"),
                         ("ceb", "Viljandimaa"),
                         ("cs", "Viljandimaa"),
+                        ("cy", "Sir Viljandi"),
                         ("da", "Viljandimaa"),
                         ("de", "Kreis Viljandi"),
                         ("el", "Επαρχία Βιλγιάντι"),
@@ -2794,5 +2802,7 @@ pub fn new() -> Country {
         ]),
         #[cfg(feature = "subdivisions")]
         subdivisions: subdivisions::new(),
+        g7_member: false,
+        g20_member: false,
     }
 }

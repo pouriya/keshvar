@@ -18,6 +18,7 @@ assert_eq!(country.country_code(), 1);
 assert_eq!(country.region(), Some(Region::Americas));
 assert!(country.unofficial_name_list().contains(&"United States"));
 assert!(country.spoken_language_list().contains(&"en"));
+assert!(country.g7_member() && country.g20_member());
 
 let geo = country.geo();
 assert_eq!(

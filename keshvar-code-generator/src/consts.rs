@@ -95,6 +95,52 @@ lazy_static! { pub static ref UNSUPPORTED_COUNTRIES_COUNT: usize = ALL_COUNTRIES
     }
     consts_rs_file.write_all(b"];\n")?;
 
+    consts_rs_file.write_all(
+        r#"
+/// A constant list containing all included [`Alpha2`](crate::Alpha2) codes that are members of [G7](https://en.wikipedia.org/wiki/G7).
+///
+/// This alphabeticaly sorted list will be created at compile-time based on included country features.
+/// # Example
+/// ```
+/// use keshvar::{Alpha2, SUPPORTED_G7_ALPHA2_LIST};
+/// assert!(SUPPORTED_G7_ALPHA2_LIST.contains(&Alpha2::US));
+/// ```
+"#
+            .as_bytes(),
+    )?;
+    consts_rs_file.write_all(b"pub const SUPPORTED_G7_ALPHA2_LIST: &[Alpha2] = &[\n")?;
+    for (_, info) in countries_info_list.iter() {
+        if info.g7_member.unwrap_or(false) {
+            consts_rs_file
+                .write_all(utils::country_cfg_feature_and_commented_name(info, 1).as_bytes())?;
+            consts_rs_file.write_all(format!("    Alpha2::{},\n", info.alpha2_upper).as_bytes())?;
+        }
+    }
+    consts_rs_file.write_all(b"];\n")?;
+
+    consts_rs_file.write_all(
+        r#"
+/// A constant list containing all included [`Alpha2`](crate::Alpha2) codes that are members of [G20](https://en.wikipedia.org/wiki/G20).
+///
+/// This alphabeticaly sorted list will be created at compile-time based on included country features.
+/// # Example
+/// ```
+/// use keshvar::{Alpha2, SUPPORTED_G20_ALPHA2_LIST};
+/// assert!(SUPPORTED_G20_ALPHA2_LIST.contains(&Alpha2::US));
+/// ```
+"#
+            .as_bytes(),
+    )?;
+    consts_rs_file.write_all(b"pub const SUPPORTED_G20_ALPHA2_LIST: &[Alpha2] = &[\n")?;
+    for (_, info) in countries_info_list.iter() {
+        if info.g20_member.unwrap_or(false) {
+            consts_rs_file
+                .write_all(utils::country_cfg_feature_and_commented_name(info, 1).as_bytes())?;
+            consts_rs_file.write_all(format!("    Alpha2::{},\n", info.alpha2_upper).as_bytes())?;
+        }
+    }
+    consts_rs_file.write_all(b"];\n")?;
+
     // consts_rs_file.write_all(
     //     b"lazy_static! { pub static ref UNSUPPORTED_ALPHA2_LIST: &'static [&'static str] = &[\n",
     // )?;

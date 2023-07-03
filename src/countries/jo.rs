@@ -47,6 +47,8 @@ pub mod consts {
         "Jordanië",
     ];
     pub const WORLD_REGION: WorldRegion = WorldRegion::EMEA;
+    pub const G7_MEMBER: bool = false;
+    pub const G20_MEMBER: bool = false;
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇯🇴";
     #[cfg(feature = "translations")]
@@ -266,6 +268,8 @@ pub mod subdivisions {
                         ("bn", "আজল\u{9c1}ন গভর\u{9cd}নোরেট"),
                         ("ca", "Governació d’Ajlun"),
                         ("ccp", "𑄃𑄌\u{11134}𑄣𑄅\u{1112a}𑄚\u{11134}"),
+                        ("ceb", "Ajloun (lalawigan sa Hordan)"),
+                        ("cy", "Ardal Lywodraethol Ajlwn"),
                         ("da", "Ajloun Governorate"),
                         ("de", "Gouvernement Adschlun"),
                         ("el", "Ατζλούν Γκοβερνοράτε"),
@@ -338,6 +342,7 @@ pub mod subdivisions {
                         ("bn", "আম\u{9cd}ম\u{9be}ন গভর\u{9cd}নোরেট"),
                         ("ca", "Governació d’Amman"),
                         ("ccp", "𑄃𑄟\u{11127}𑄚\u{11134}"),
+                        ("cy", "Ardal Lywodraethol Amman"),
                         ("da", "Amman Governorate"),
                         ("de", "Gouvernement Amman"),
                         ("el", "Αμάν"),
@@ -368,6 +373,7 @@ pub mod subdivisions {
                         ("pt", "Amã (província)"),
                         ("ro", "Guvernoratul Amman"),
                         ("ru", "Амман"),
+                        ("sd", "امان گورنري"),
                         ("si", "අම\u{dca}ම\u{dcf}න\u{dca} පළ\u{dcf}ත"),
                         ("sv", "Amman (guvernement)"),
                         ("ta", "அம\u{bcd}மன\u{bcd} கோவெர\u{bcd}னோர\u{bbe}ட\u{bcd}"),
@@ -405,6 +411,7 @@ pub mod subdivisions {
                         ("bn", "আক\u{9be}ব\u{9be} গভর\u{9cd}নোরেট"),
                         ("ccp", "𑄃𑄇\u{1112a}𑄝"),
                         ("ceb", "Aqaba"),
+                        ("cy", "Ardal Lywodraethol Aqaba"),
                         ("da", "Aqaba Governorate"),
                         ("de", "Aqaba"),
                         ("el", "Ακάμπα Γκοβερνοράτε"),
@@ -413,6 +420,7 @@ pub mod subdivisions {
                         ("eu", "Aqaba Gobernazioa"),
                         ("fa", "استان عقبه"),
                         ("fr", "subdivision d’Aqaba"),
+                        ("ga", "Gobharnóireacht Aqaba"),
                         ("gu", "ઍકાબા ગવર\u{acd}નર\u{ac7}ટ"),
                         ("he", "עקבה"),
                         ("hi", "अकाबा गवर\u{94d}नर\u{947}ट"),
@@ -537,6 +545,8 @@ pub mod subdivisions {
                         ("bn", "জ\u{9be}রক\u{9be} গভর\u{9cd}নোরেট"),
                         ("ca", "Governació de Zarqa"),
                         ("ccp", "𑄎𑄢\u{11134}𑄇"),
+                        ("cs", "Zarká (guvernorát)"),
+                        ("cy", "Ardal Lywodraethol Zarqa"),
                         ("da", "Zarqa Governorate"),
                         ("de", "Gouvernement Zarqa"),
                         ("el", "Ζάρκα"),
@@ -550,6 +560,7 @@ pub mod subdivisions {
                         ("he", "מחוז זרקא"),
                         ("hi", "ज\u{93c}ारका गवर\u{94d}नर\u{947}ट"),
                         ("hu", "Zarká kormányzóság"),
+                        ("hy", "Զարքայի մարզ"),
                         ("id", "Kegubernuran Zarqa"),
                         ("it", "governatorato di al-Zarqa"),
                         ("ja", "ザルカ県"),
@@ -674,6 +685,7 @@ pub mod subdivisions {
                         ("ca", "Governació d’Irbid"),
                         ("ccp", "𑄃\u{11128}𑄢\u{11134}𑄝\u{11128}𑄖\u{11134}"),
                         ("ceb", "Irbid"),
+                        ("cy", "Ardal Lywodraethol Irbid"),
                         ("da", "Irbid Governorate"),
                         ("de", "Gouvernement Irbid"),
                         ("el", "Ιρμπίντ Γκοβερνοράτε"),
@@ -814,6 +826,7 @@ pub mod subdivisions {
                         ("ca", "Governació de Karak"),
                         ("ccp", "𑄇𑄬𑄢\u{11127}𑄇\u{11134}"),
                         ("ceb", "Al Karak"),
+                        ("cy", "Ardal Lywodraethol Karak"),
                         ("da", "Kerak"),
                         ("de", "Gouvernement Karak"),
                         ("el", "Καράκ Γκοβερνοράτε"),
@@ -827,6 +840,7 @@ pub mod subdivisions {
                         ("he", "מחוז כרכ"),
                         ("hi", "करक गवर\u{94d}नर\u{947}ट"),
                         ("hu", "Karak kormányzóság"),
+                        ("hy", "Քարաքի մարզ"),
                         ("id", "Karak Governorate"),
                         ("it", "governatorato di al-Karak"),
                         ("ja", "カラク県"),
@@ -883,6 +897,7 @@ pub mod subdivisions {
                         ("bn", "ম\u{9be}ফ\u{9cd}র\u{9be}ক গভর\u{9cd}নোরেট"),
                         ("ccp", "𑄟𑄜\u{11133}𑄢𑄇\u{11134}"),
                         ("ceb", "Al Mafraq"),
+                        ("cs", "Mafrak (guvernorát)"),
                         ("da", "Mafraq Governorate"),
                         ("de", "Gouvernement Mafraq"),
                         ("el", "Μάφρακ"),
@@ -957,6 +972,7 @@ pub mod subdivisions {
                         ("bn", "ম\u{9be}দ\u{9be}ব\u{9be} গভর\u{9cd}নোরেট"),
                         ("ca", "Governació de Madaba"),
                         ("ccp", "𑄟𑄓𑄝"),
+                        ("cy", "Ardal Lywodraethol Madaba"),
                         ("da", "Madaba Governorate"),
                         ("de", "Gouvernement Madaba"),
                         ("el", "Μαντάμπα Γκοβερνοράτε"),
@@ -1022,7 +1038,9 @@ pub mod subdivisions {
                     translations: HashMap::from([
                         ("ar", "معان"),
                         ("bn", "ম\u{9be}‘আন গভ\u{9be}র\u{9cd}নোরেট"),
+                        ("ca", "Governació de Maan"),
                         ("ccp", "𑄟\u{11133}𑄃𑄚\u{11134}"),
+                        ("cy", "Ardal Lywodraethol Ma’an"),
                         ("da", "Ma’in Governorate"),
                         ("de", "Ma’an Governorate"),
                         ("el", "Μαάν Γκοβερνοράτε"),
@@ -1259,5 +1277,7 @@ pub fn new() -> Country {
         ]),
         #[cfg(feature = "subdivisions")]
         subdivisions: subdivisions::new(),
+        g7_member: false,
+        g20_member: false,
     }
 }

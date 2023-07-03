@@ -45,6 +45,8 @@ pub mod consts {
         "モロッコ",
     ];
     pub const WORLD_REGION: WorldRegion = WorldRegion::EMEA;
+    pub const G7_MEMBER: bool = false;
+    pub const G20_MEMBER: bool = false;
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇲🇦";
     #[cfg(feature = "translations")]
@@ -257,7 +259,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Region,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "طنجة - تطوان - الحسيمة")]),
+                        translations: HashMap::from([("ar", "طنجة تطوان"), ("bg", "Танжер - Тетуан"), ("bn", "ট\u{9be}ঙ\u{9cd}গিয\u{9bc}ের-টেট\u{9c1}য\u{9bc}\u{9be}ং"), ("ca", "Tànger-Tetuan"), ("ccp", "𑄑𑄚\u{11134}𑄉\u{11128}𑄠𑄢\u{11134}-𑄑𑄬𑄑\u{1112a}𑄠𑄚\u{11134}"), ("da", "Tanger-Tétouan"), ("de", "Tanger-Tétouan"), ("el", "Τάνγκιερ-Τετούαν"), ("en", "Tangier-Tétouan"), ("es", "Tánger-Tetuán"), ("eu", "Tanger-Tetuan"), ("fa", "طنجه تطوان"), ("fi", "Tangier-Tetouan"), ("fr", "Tanger-Tétouan"), ("gu", "ટ\u{ac5}\u{a82}જિયર-ટ\u{ac7}તૌઆન"), ("hi", "ट\u{948}नजिअर-टीट\u{942}अन"), ("hr", "Tangier-Tetouan"), ("id", "Tangier-Tétouan"), ("it", "Tangeri-Tétouan"), ("ja", "タンジェ＝テトゥアン＝アル・ホセイマ地方"), ("kn", "ಟ\u{ccd}ಯಾಂಜ\u{cbf}ಯರ\u{ccd}-ಟ\u{cc6}ಟ\u{ccc}ನ\u{ccd}"), ("ko", "탕헤르테투안 지방"), ("lt", "Tanžero-Tetuano regionas"), ("lv", "Tanžera-Tetuāna"), ("mr", "ट\u{945}न\u{94d}जियर-ट\u{947}टौऑन"), ("ms", "Tangier-Tetouan"), ("nl", "Tanger-Tétouan"), ("no", "Tanger-Tétouan"), ("pl", "Tanger-Tetuan"), ("pt", "Tânger-Tetuão"), ("ro", "Regiunea Tanger-Tétouan"), ("ru", "Танжер-Тетуан"), ("si", "ටැන\u{dca}ජ\u{dd2}යර\u{dca}-ටෙටොඋව\u{dcf}න\u{dca}"), ("sv", "Tanger-Tétouan"), ("ta", "டஞ\u{bcd}சியேர\u{bcd}-டெடௌவ\u{bbe}ன\u{bcd}"), ("te", "ట\u{c3e}ంగ\u{c3f}యర\u{c4d}-ట\u{c46}ట\u{c4b}వ\u{c3e}న\u{c4d}"), ("th", "แทนเจ\u{e35}ยร\u{e4c} เทโตอ\u{e31}น"), ("tr", "Tangier-Tétouan"), ("uk", "Танжер-Тетуан"), ("ur", "طنجہ تطوان"), ("vi", "Tangier-Tetouan"), ("zh", "丹吉爾-得土安大區")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -272,7 +274,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Region,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "الشرق")]),
+                        translations: HashMap::from([("ar", "الغرب شراردة بني حسين"), ("be", "Вобласць Гарб-Шрарда-Бені-Хсен"), ("bg", "Гарб - Шрарда - Бени Хсен"), ("bn", "ঘ\u{9be}\u{9be}রব-ছ\u{9be}রদ\u{9be}-বেনি হসেন"), ("bs", "Gharb-Chrarda-Béni Hssen"), ("ca", "Gharb-Chrarda-Béni Hssen"), ("ccp", "𑄊𑄢\u{11134}𑄛\u{11134}-𑄌\u{11133}𑄢𑄢\u{11134}𑄓-𑄝𑄬𑄚\u{11128} 𑄥𑄬𑄚\u{11134}"), ("ceb", "Gharb-Chrarda-Beni Hssen"), ("cy", "Gharb-Chrarda-Beni Hssen"), ("da", "Gharb-Chrarda-Béni Hssen"), ("de", "Gharb-Chrarda-Béni Hsen"), ("el", "Γκαρμπ-Κχράρντα-Μπένι Χσεν"), ("en", "Gharb-Chrarda-Béni Hssen"), ("es", "Garb-Chrarda-Beni Hsen"), ("eu", "Gharb-Chrarda-Beni Hssen"), ("fa", "غرب شرارده بنی حسین"), ("fi", "Gharb-Chrarda-Béni Hssen"), ("fr", "Gharb-Chrarda-Beni Hssen"), ("ga", "Oriental"), ("gu", "ઘર\u{acd}બ-ચરારદા-બ\u{ac7}ની હસ\u{acd}સ\u{ac7}ન"), ("he", "אוריינטל"), ("hi", "गर\u{94d}ब-श\u{94d}रार\u{94d}दा-बिन\u{947}-हस\u{947}न"), ("hr", "Gharb-Chrarda-Béni Hssen"), ("id", "Gharb-Chrarda-Béni Hssen"), ("it", "Gharb-Chrarda-Béni Hssen"), ("ja", "オリアンタル地方²"), ("jv", "Gharb-Chrarda-Béni Hssen"), ("kk", "Гарб-Шрарда-Бени-Хсен"), ("kn", "ಘರ\u{ccd}ಬ\u{ccd}-ಕ\u{ccd}ರ\u{cbf}ರ\u{ccd}ಡಾ-ಬ\u{cc6}ನ\u{cbf} ಹಸ\u{ccd}ಸ\u{cc6}ನ\u{ccd}"), ("ko", "가르브슈라르다베니흐센 지방"), ("lt", "Garb-Šrarda-Beni Chseno regionas"), ("lv", "Garba-Šrarda-Beni-Hsena"), ("mr", "घरब-चर\u{94d}दा-ब\u{947}नी हस\u{94d}स\u{947}न"), ("ms", "Gharb-Chrarda-Beni Hssen"), ("nl", "Gharb-Chrarda-Béni Hsen"), ("no", "Gharb Chrarda Beni Hssen"), ("pl", "Al-Gharb-Szararda-Bani Ahsin"), ("pt", "Gharb-Chrarda-Beni Hssen"), ("ro", "Regiunea Gharb-Chrarda-Béni Hssen"), ("ru", "Гарб-Шрарда-Бени-Хсен"), ("si", "ඝර\u{dca}බ\u{dca} -ච\u{dca}රර\u{dca}ද\u{dcf} -බේන\u{dd2} හ\u{dca}ස\u{dca}සෙන\u{dca}"), ("sv", "Gharb-Chrarda-Béni Hssen"), ("ta", "க\u{bbe}ர\u{bcd}ப\u{bcd} -ச\u{bcd}ரர\u{bcd}ட\u{bbe}-பெனி ஹஸ\u{bcd}ஸன\u{bcd}"), ("te", "ఘ\u{c3e}\u{c3e}\u{c3e}ర\u{c4d}బ\u{c4d}-చర\u{c3e}ర\u{c4d}డ\u{c3e}-బ\u{c47}న\u{c3f} హస\u{c46}న\u{c4d}"), ("th", "การ\u{e4c}บ ชรารดา เบน\u{e34} ฮ\u{e31}สเซน"), ("tr", "Gharb-Chrarda-Béni Hssen"), ("uk", "Гарб-Шрарда-Бені-Хсен"), ("ur", "غرب شراردہ بنی حسین"), ("vi", "Gharb-Chrarda-Béni Hssen")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -287,7 +289,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Region,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "فاس-مكناس")]),
+                        translations: HashMap::from([("ar", "جهة تازة الحسيمة تاونات"), ("bg", "Таза - Ал-Хосейма - Таунат"), ("bn", "ত\u{9be}জ\u{9be}-আল হোসেইম\u{9be} ত\u{9be}উন\u{9be}ত"), ("bs", "Taza-Al Hoceima-Taounate"), ("ca", "Taza-Al Hoceima-Taounate"), ("ccp", "𑄑𑄎-𑄃𑄣\u{11134} 𑄝𑄥𑄬𑄟-𑄑\u{1112f}𑄚𑄖\u{11134}"), ("ceb", "Taza-Al Hoceima-Taounate"), ("cy", "Taza-Al Hoceima-Taounate"), ("da", "Taza-Al Hoceïma-Taounate"), ("de", "Taza-Al Hoceïma-Taounate"), ("el", "Τάζα-Αλ Χοκέιμα-Ταουνάτε"), ("en", "Taza-Al Hoceima-Taounate"), ("es", "Taza-Alhucemas-Taunat"), ("eu", "Taza-Al-Hoceima-Taounate"), ("fa", "تازه الحسیمه تاونات"), ("fi", "Taza-Al Hoceima-Taounate"), ("fr", "Taza-Al Hoceïma-Taounate"), ("gu", "તાઝા-અલ હોસીમા-તૌન\u{ac7}ટ\u{ac7}"), ("hi", "तजा-अल होसीमा-त\u{947}उन\u{947}ट"), ("hr", "Taza-Al Hoceima-Taounate"), ("id", "Taza-Al Hoceima-Taounate"), ("it", "Taza-Al Hoceima-Taounate"), ("ja", "フェズ＝メクネス地方"), ("jv", "Taza-Al Hoceima-Taounate"), ("kk", "Таза-Әл-Хосейма-Таунат"), ("kn", "ತಾಝಾ-ಅಲ\u{ccd} ಹೋಸ\u{cbf}ಮಾ-ಟ\u{ccc}ನ\u{cc6}ಟ\u{ccd}"), ("ko", "타자알호세이마타우나트 지방"), ("lt", "Tazo-Alhoseimo-Taunato regionas"), ("lv", "Taza-Al-Hoseima-Taunata"), ("mr", "ताजा-अल होसीमा-त\u{947}उन\u{947}ट"), ("ms", "Taza-Al Hoceima-Taounate"), ("nl", "Taza-Al Hoceïma-Taounate"), ("no", "Taza-Al Hoceima-Taounate"), ("pl", "Taza-Al-Husajma-Taunat"), ("pt", "Taza-Al Hoceima-Taounate"), ("ro", "Regiunea Taza-Al Hoceima-Taounate"), ("ru", "Таза-Эль-Хосейма-Таунат"), ("si", "ටස\u{dcf}-අල\u{dca} හොස\u{dd2}ම\u{dcf} ටඋනෙට\u{dca}"), ("sv", "Taza-Al Hoceïma-Taounate"), ("ta", "தச\u{bbe} -அல\u{bcd} ஹோஸிம\u{bbe} -நகரம\u{bcd}டே"), ("te", "ట\u{c3e}జ\u{c3e}-అల\u{c4d} హ\u{c4b}స\u{c40}మ\u{c3e}-ట\u{c3e}వ\u{c4b}న\u{c47}ట\u{c4d}"), ("th", "ทาซา อ\u{e31}ล โฮเซยมา เทาเนท"), ("tr", "Taza-Al Hoceima-Taounate"), ("uk", "Таза-ель-Хосейма-Таунат"), ("ur", "تازہ الحسیمہ تاونات"), ("vi", "Taza-Al Hoceima-Taounate")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -302,7 +304,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Region,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "الرباط-سلا-القنيطرة")]),
+                        translations: HashMap::from([("ar", "الجهة الشرقية"), ("bg", "Източен регион"), ("bn", "ওরিয\u{9bc}েন\u{9cd}ট\u{9be}ল"), ("bs", "Oriental"), ("ca", "L’Oriental"), ("ccp", "𑄃\u{11127}𑄢\u{11128}𑄠𑄬𑄚\u{11134}𑄑𑄣\u{11134}"), ("ceb", "Oriental Region"), ("cy", "L’Oriental"), ("da", "Oriental"), ("de", "Oriental"), ("el", "Οριένταλ"), ("en", "Oriental"), ("es", "La Oriental"), ("eu", "Ekialdea"), ("fa", "رباط سلا قنیطره"), ("fi", "Oriental"), ("fr", "Oriental"), ("gu", "ઓરિએન\u{acd}ટલ"), ("hi", "ओरिए\u{902}टल"), ("hr", "Oriental"), ("id", "Oriental Region"), ("it", "Regione Orientale"), ("ja", "オリアンタル地方"), ("jv", "Oriental Region"), ("kn", "ಓರ\u{cbf}ಯಂಟಲ\u{ccd}"), ("ko", "오리앙탈 지방"), ("lt", "Rytų regionas"), ("lv", "Austrumu reģions"), ("mr", "ओरिएन\u{94d}टल"), ("ms", "Oriental"), ("nl", "Oriental"), ("no", "Oriental"), ("pl", "Region Wschodni"), ("pt", "Região Oriental"), ("ro", "Regiunea Oriental"), ("ru", "Восточная область"), ("si", "ඔර\u{dd2}යන\u{dca}ටල\u{dca}"), ("sv", "Oriental"), ("ta", "ஒரிஎண\u{bcd}டல\u{bcd}"), ("te", "ఓర\u{c3f}యంటల\u{c4d}"), ("th", "โอเร\u{e35}ยนทอล"), ("tr", "Oriental"), ("uk", "Східна область"), ("ur", "جھہ شرقیہ"), ("vi", "Oriental")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -317,7 +319,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Region,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "بني ملال - خنيفرة")]),
+                        translations: HashMap::from([("ar", "جهة فاس بولمان"), ("bg", "Фес - Булман"), ("bn", "ফ\u{9cd}রোস-ব\u{9c1}লেম\u{9be}ন"), ("bs", "Fès-Boulemane"), ("ca", "Fès-Boulemane"), ("ccp", "𑄜𑄬𑄌\u{11134}-𑄝\u{1112f}𑄣𑄬𑄟\u{11133}𑄠𑄚\u{11134}"), ("ceb", "Région de Fès-Boulemane"), ("cy", "Fès-Boulemane"), ("da", "Fès-Boulemane"), ("de", "Fès-Boulemane"), ("el", "Φες-Μπουλεμάνε"), ("en", "Fès-Boulemane"), ("es", "Fez-Bulmán"), ("eu", "Fez-Bulemane"), ("fa", "فاس بولمان"), ("fi", "Fès-Boulemane"), ("fr", "Fès-Boulemane"), ("gl", "Béni Mellal-Khénifra"), ("gu", "ફ\u{ac7}સ-બોલ\u{ac7}મ\u{ac7}ન"), ("hi", "फ\u{93c}\u{947}श-ब\u{941}लम\u{947}न"), ("hr", "Fès-Boulemane"), ("hy", "Ֆես-Բուլման"), ("id", "Fès-Boulemane"), ("it", "Fes-Boulemane"), ("ja", "フェズ・ブルマーヌ地方"), ("jv", "Fès-Boulemane"), ("kk", "Фес-Бульман"), ("kn", "ಫ\u{cc6}ಸ\u{ccd}-ಬ\u{ccc}ಲ\u{cc6}ಮ\u{cc6}ನ\u{ccd}"), ("ko", "페스불만 지방"), ("lt", "Feso-Bulmano regionas"), ("lv", "Fes-Bulmane"), ("mr", "फास-ब\u{941}लम\u{947}न"), ("ms", "Fes-Boulemane"), ("nl", "Fez-Boulmane"), ("no", "Fes-Boulemane"), ("pl", "Fez-Bulman"), ("pt", "Fez-Boulemane"), ("ro", "Regiunea Fès-Boulemane"), ("ru", "Фес-Бульман"), ("si", "ෆෙස\u{dca} බොලෙමනේ"), ("sv", "Fès-Boulemane"), ("ta", "பஸ\u{bcd} -பௌலோமன\u{bcd}"), ("te", "ఫ\u{c46}స\u{c4d}-బ\u{c4c}ల\u{c46}మ\u{c47}న\u{c4d}"), ("th", "เฟส โบวเลเมน"), ("tr", "Fès-Boulemane"), ("uk", "Фес-Бульман"), ("ur", "فاس بولمان"), ("vi", "Fès-Boulemane")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -332,7 +334,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Region,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "الدار البيضاء - سطات")]),
+                        translations: HashMap::from([("ar", "مكناس تافيلالت"), ("bg", "Мекнес - Тафилалет"), ("bn", "মেকনেস-ট\u{9be}ফিল\u{9be}লেট"), ("bs", "Meknès-Tafilalet"), ("ca", "Meknès-Tafilalet"), ("ccp", "𑄟𑄬𑄇\u{11134}𑄚𑄬𑄌\u{11134}-𑄑𑄜\u{11128}𑄣𑄣𑄬𑄖\u{11134}"), ("ceb", "Région de Meknès-Tafilalet"), ("cy", "Meknès-Tafilalet"), ("da", "Meknès-Tafilalet"), ("de", "Meknès-Tafilalet"), ("el", "Μεκνές-Ταφιλαλέτ"), ("en", "Meknès-Tafilalet"), ("es", "Mequinez-Tafilalet"), ("eu", "Meknes-Tafilalet"), ("fa", "مکناس تافیلالت"), ("fi", "Meknès-Tafilalet"), ("fr", "Meknès-Tafilalet"), ("gu", "મ\u{ac7}ક\u{acd}ન\u{ac7}સ-તફિલાલ\u{ac7}ટ"), ("hi", "म\u{947}क\u{94d}न\u{947}स-तफिलाल\u{947}ट"), ("hr", "Meknès-Tafilalet"), ("hy", "Կասաբլանկա Սետատ"), ("id", "Meknès-Tafilalet"), ("it", "Meknès-Tafilalet"), ("ja", "カサブランカ＝セタット地方"), ("jv", "Meknès-Tafilalet"), ("kk", "Мекнес-Тафилалет"), ("kn", "ಮ\u{cc6}ಕ\u{ccd}ನ\u{cc6}ಸ\u{ccd}-ಟಫ\u{cbf}ಲಾಲ\u{cc6}ಟ\u{ccd}"), ("ko", "메크네스타필랄레트 지방"), ("lt", "Mekneso-Tafilaleto regionas"), ("lv", "Miknēsa-Tafilaleta"), ("mr", "म\u{947}क\u{947}न\u{947}स-तफिलाल\u{947}ट"), ("ms", "Meknes-Tafilalet"), ("nl", "Meknès-Tafilalet"), ("no", "Meknes Tafilalet"), ("pl", "Meknes-Tafilalt"), ("pt", "Meknès-Tafilalet"), ("ro", "Regiunea Meknès-Tafilalet"), ("ru", "Мекнес-Тафилалет"), ("si", "මෙක\u{dca}න\u{dd2}ස\u{dca}-ටෆ\u{dd2}ල\u{dcf}ලෙට\u{dca}"), ("sv", "Meknès-Tafilalet"), ("ta", "மேக\u{bcd}னெஸ\u{bcd} -டேபிள\u{bcd}லேட\u{bcd}"), ("te", "మ\u{c46}క\u{c4d}న\u{c46}స\u{c4d}-టఫ\u{c3f}ల\u{c3e}ల\u{c46}ట\u{c4d}"), ("th", "กาม\u{e39}ล\u{e34}"), ("tr", "Meknès-Tafilalet"), ("uk", "Мекнес-Тафілалет"), ("ur", "مکناس تافیلالت"), ("vi", "Meknès-Tafilalet")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -347,7 +349,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Region,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "مراكش آسفي")]),
+                        translations: HashMap::from([("ar", "الرباط سلا زمور زعير"), ("be", "Рабат-Сале-Замур-Заер"), ("bg", "Рабат - Сале - Замур - Заер"), ("bn", "র\u{9be}ব\u{9be}ত স\u{9be}লি জেম\u{9c1}র জ\u{9be}য\u{9bc}ে"), ("bs", "Rabat-Salé-Zemmour-Zaer"), ("ca", "Rabat-Salé-Zemmour-Zaer"), ("ccp", "𑄢\u{11127}𑄝\u{11127}𑄖\u{11134}-𑄥𑄣𑄬-𑄎𑄬𑄟\u{1112f}𑄢\u{11134}-𑄎\u{11128}𑄠𑄢\u{11134}"), ("ceb", "Région de Rabat-Salé-Zemmour-Zaër"), ("cy", "Rabat-Salé-Zemmour-Zaer"), ("da", "Rabat-Salé-Zemmour-Zaēr"), ("de", "Rabat-Salé-Zemmour-Zaer"), ("el", "Ραμπάτ-Σαλέ-Ζεμμούρ-Ζαέρ"), ("en", "Rabat-Salé-Zemmour-Zaer"), ("es", "Rabat-Salé-Zemur-Zaer"), ("eu", "Rabat-Sale-Zemmour-Zaer"), ("fa", "رباط سلا زمور زعیر"), ("fi", "Rabat-Salé-Zemmour-Zaer"), ("fr", "Rabat-Salé-Zemmour-Zaër"), ("gu", "રબાત-સાલ\u{ac7}-, ઝ\u{ac7}મૌર-ઝાએર"), ("hi", "रबात-सल\u{947}-ज\u{93c}मोर-ज\u{93c}\u{948}र"), ("hr", "Rabat-Salé-Zemmour-Zaer"), ("id", "Rabat-Salé-Zemmour-Zaer"), ("it", "Rabat-Salé-Zemmour-Zaer"), ("ja", "マラケシュ＝サフィ地方"), ("jv", "Rabat-Salé-Zemmour-Zaer"), ("kk", "Рабат-Сале-Заммур-Заер"), ("kn", "ರಬತ\u{ccd}-ಸಲ\u{cc6}-ಝ\u{cc6}ಮ\u{ccc}ರ\u{ccd}-ಝಾಯರ\u{ccd}"), ("ko", "라바트살레젬무르자에르 지방"), ("lt", "Rabato-Sale-Zamuro-Zearo regionas"), ("lv", "Rabāta-Salē-Zammura-Zaera"), ("mr", "रबात-स\u{947}ल-झिमॉर-झार"), ("ms", "Rabat-Sale-Zemmour-Zaer"), ("nl", "Rabat-Salé-Zemmour-Zaer"), ("no", "Rabat Sale Zemmer Zaer"), ("pl", "Rabat-Sala-Zammur-Za’ir"), ("pt", "Rabat-Salé-Zemmour-Zaer"), ("ro", "Regiunea Rabat-Salé-Zemmour-Zaer"), ("ru", "Рабат-Сале-Заммур-Заер"), ("si", "රැබට\u{dca}-ස\u{dcf}ලේ සෙමොර\u{dca} සය\u{dd2}ර\u{dca}"), ("sv", "Rabat-Salé-Zemmour-Zaēr"), ("ta", "ரோப\u{bbe}ட\u{bcd} -சலே -ஸிமமெர\u{bcd}-ச\u{bbe}ர\u{bcd}"), ("te", "ర\u{c3e}బట\u{c4d}-స\u{c47}ల\u{c46}-జ\u{c46}మ\u{c4d}మ\u{c4b}ర\u{c4d}-జ\u{c3e}యర\u{c4d}"), ("th", "ราบ\u{e31}ต-เซล-เซมม\u{e31}ว-เซ\u{e35}ย"), ("tr", "Rabat-Salé-Zemmour-Zaer"), ("uk", "Рабат-Сале-Заммур-Заер"), ("ur", "رباط سلا زمور زعیر"), ("vi", "Rabat-Salé-Zemmour-Zaer")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -362,7 +364,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Region,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "درعة - تافيلالت")]),
+                        translations: HashMap::from([("ar", "جهة الدار البيضاء الكبرى"), ("bg", "Голяма Казабланка"), ("bn", "গ\u{9cd}র\u{9be}ন\u{9cd}ড ক\u{9be}স\u{9be}ব\u{9cd}ল\u{9be}ঙ\u{9cd}ক\u{9be}"), ("bs", "Grand Casablanca"), ("ca", "Gran Casablanca"), ("ccp", "𑄉\u{11133}𑄢𑄚\u{11133}𑄓\u{11134} 𑄇𑄥𑄝\u{11133}𑄣\u{11101}𑄇"), ("ceb", "Région du Grand Casablanca"), ("cy", "Grand Casablanca"), ("da", "Grand Casablanca"), ("de", "Grand Casablanca"), ("el", "Γκραντ Καζαμπλάνκα"), ("en", "Grand Casablanca"), ("es", "Gran Casablanca"), ("eu", "Casablanca Handia"), ("fa", "کازابلانکای بزرگ"), ("fi", "Grand Casablanca"), ("fr", "Grand Casablanca"), ("gu", "ગ\u{acd}રાન\u{acd}ડ ક\u{ac7}સાબ\u{acd}લાન\u{acd}કા"), ("he", "גראנד קזבלנקה"), ("hi", "ग\u{94d}र\u{948}\u{902}ड क\u{948}साब\u{94d}ला\u{902}का"), ("hr", "Grand Casablanca"), ("id", "Grand Casablanca"), ("it", "Grande Casablanca"), ("ja", "グラン・カサブランカ地方"), ("jv", "Grand Casablanca"), ("kn", "ಗ\u{ccd}ರ\u{ccd}ಯಾಂಡ\u{ccd} ಕಾಸಾಬ\u{ccd}ಲಾಂಕಾ"), ("ko", "대카사블랑카 지방"), ("lt", "Didžioji Kasablanka"), ("lv", "Grand-Kasablanka"), ("mr", "ग\u{94d}र\u{901}ड क\u{945}सब\u{94d}लान\u{94d}का"), ("ms", "Grand Casablanca"), ("nl", "Grand Casablanca"), ("no", "Grand Casablanca"), ("pl", "Wielka Casablanca"), ("pt", "Grande Casablanca"), ("ro", "Regiunea Grand Casablanca"), ("ru", "Большая Касабланка"), ("si", "ග\u{dca}\u{200d}රෑන\u{dca}ඩ\u{dca} කසබ\u{dca}ලන\u{dca}ස\u{dcf}"), ("sv", "Grand Casablanca"), ("ta", "கிர\u{bbe}ண\u{bcd}ட\u{bcd} கேசப\u{bcd}ள\u{bbe}ன\u{bcd}க\u{bcd}க\u{bbe}"), ("te", "గ\u{c4d}ర\u{c3e}ండ\u{c4d} క\u{c3e}సబ\u{c4d}ల\u{c3e}ంక\u{c3e}"), ("th", "แกรนด\u{e4c} คาซาบล\u{e31}งก\u{e49}า"), ("tr", "Grand Casablanca"), ("uk", "Велика Касабланка"), ("ur", "دار البیضاء الکبری"), ("vi", "Grand Casablanca")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -377,7 +379,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Region,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "سوس ماسة")]),
+                        translations: HashMap::from([("ar", "الشاوية ورديغة"), ("bg", "Шауя - Уардига"), ("bn", "চ\u{9be}\u{981}ওউইয\u{9bc}\u{9be} ওয\u{9bc}\u{9be}রডিগ\u{9be}"), ("bs", "Chaouia-Ouardigha"), ("ca", "Chaouia-Ouardigha"), ("ccp", "𑄇𑄃\u{1112f}𑄃\u{11128}-𑄃\u{1112e}𑄢\u{11134}𑄓\u{11128}𑄊"), ("ceb", "Chaouia-Ouardigha"), ("cy", "Chaouia-Ouardigha"), ("da", "Chaouia-Ouardigha"), ("de", "Chaouia-Ouardigha"), ("el", "Τσαουία-Ουαρντίγκα"), ("en", "Chaouia-Ouardigha"), ("es", "Chauía-Uardiga"), ("eu", "Chaoia-Oardigha"), ("fa", "شاویه وردیغه"), ("fi", "Chaouia-Ouardigha"), ("fr", "Chaouia-Ouardigha"), ("gu", "ચાઓઇઆ-ઔર\u{acd}ડીઘા"), ("hi", "क\u{948}उइया-आउरदिघा"), ("hr", "Chaouia-Ouardigha"), ("id", "Chaouia-Ouardigha"), ("it", "Chaouia-Ouardigha"), ("ja", "スース＝マサ地方"), ("jv", "Chaouia-Ouardigha"), ("kk", "Шавия-Уардига"), ("kn", "ಚ\u{ccc}ಯ\u{cbf}ಯ-ಓವಾರ\u{ccd}ಡ\u{cbf}ಘಾ"), ("ko", "샤위야와르디가 지방"), ("lt", "Šauijos-Urdigo regionas"), ("lv", "Šaoija Uardigna"), ("mr", "चाऊईआ-औअर\u{94d}डीघा"), ("ms", "Chaouia-Ouardigha"), ("nl", "Chaouia-Ouardigha"), ("no", "Chaouia-Ouardigha"), ("pl", "Asz-Szawija-Wardigha"), ("pt", "Chaouia-Ouardigha"), ("ro", "Regiunea Chaouia-Ouardigha"), ("ru", "Шавия-Уардига"), ("si", "ච\u{dcf}ඖඉය\u{dcf}-ඖඅර\u{dca}ඩ\u{dd2}ඝ\u{dcf}"), ("sv", "Chaouia-Ouardigha"), ("ta", "சவுஇஆ -ஓவர\u{bcd}டிஜிஹ\u{bbe}"), ("te", "చ\u{c47}వ\u{c4b}-ఆర\u{c4d}డ\u{c3f}హ\u{c3e}"), ("th", "เช\u{e35}ยวเอ\u{e35}ย อ\u{e31}วด\u{e34}กฮา"), ("tr", "Chaouia-Ouardigha"), ("uk", "Регіон Шавія-Уардіга"), ("ur", "شاویہ وردیغہ"), ("vi", "Chaouia-Ouardigha")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -392,7 +394,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Region,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "ڭلميم-وادي نون")]),
+                        translations: HashMap::from([("ar", "دكالة عبدة"), ("be", "Вобласць Дукала-Абда"), ("bg", "Дукала - Абда"), ("bn", "দৌক\u{9cd}ক\u{9be}ল\u{9be}-আব\u{9cd}দ\u{9be}"), ("bs", "Doukkala-Abda"), ("ca", "Doukkala-Abda"), ("ccp", "𑄓\u{1112f}𑄇\u{11133}𑄦\u{11134}𑄣 𑄃𑄛\u{11134}𑄓"), ("ceb", "Doukkala-Abda"), ("cy", "Doukhala-Abda"), ("da", "Doukala-Abda"), ("de", "Doukkala-Abda"), ("el", "Ντουκάλα-Άμπντα"), ("en", "Doukkala-Abda"), ("es", "Dukala-Abda"), ("eu", "Dukala-Abda"), ("fa", "دکاله عبده"), ("fi", "Doukkala-Abda"), ("fr", "Doukkala-Abda"), ("gu", "ડોકકાલા-અબડા"), ("he", "גואלמים-אוהד נון"), ("hi", "ड\u{941}काला-एब\u{94d}डा"), ("hr", "Doukkala-Abda"), ("id", "Doukkala-Abda"), ("it", "Doukkala-Abda"), ("ja", "ゲルミン＝オウィド・ノウン地方"), ("jv", "Doukkala-Abda"), ("kk", "Дуккала-Абда"), ("kn", "ಡ\u{ccc}ಕಲಾ-ಅಬ\u{ccd}ಡಾ"), ("ko", "두칼라압다 지방"), ("lt", "Dukalo-Abdo regionas"), ("lv", "Dukkala-Abda"), ("mr", "डोगक\u{947}ला-अबदा"), ("ms", "Doukkala-Abda"), ("nl", "Doukala-Abda"), ("no", "Doukkala-Abda"), ("pl", "Dukkala-Abda"), ("pt", "Doukkala-Abda"), ("ro", "Regiunea Doukkala-Abda"), ("ru", "Дуккала-Абда"), ("si", "ඩ\u{dd4}ක\u{dca}කල\u{dcf}-ඇබ\u{dca}ඩ\u{dcf}"), ("sv", "Doukala-Abda"), ("ta", "டௌக\u{bcd}கல\u{bbe}-அப\u{bcd}ட\u{bbe}"), ("te", "డ\u{c4c}క\u{c3e}ల\u{c3e}-అబ\u{c4d}డ\u{c3e}"), ("th", "เดาค\u{e4c}คาลา อ\u{e31}บดา"), ("tr", "Doukkala-Abda"), ("uk", "Дукала-Абда"), ("ur", "دکالہ عبدہ"), ("vi", "Doukkala-Abda")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -407,7 +409,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Region,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "العيون - الساقية الحمراء")]),
+                        translations: HashMap::from([("ar", "جهة مراكش تانسيفت الحوز"), ("bg", "Маракеш - Тенсифт - Ел-Ауз"), ("bn", "ম\u{9be}র\u{9be}কেশ টেন\u{9cd}সিফট এল হ\u{9be}ঊজ"), ("bs", "Marrakech-Tensift-El Haouz"), ("ca", "Marràqueix-Tensift-El-Haouz"), ("ccp", "𑄟𑄢𑄇𑄬𑄌\u{11134}-𑄑𑄚\u{11134}𑄥\u{11128}𑄛\u{11134}𑄑\u{11134}-𑄃𑄬𑄣\u{11134} 𑄦𑄅\u{1112a}𑄌\u{11134}"), ("ceb", "Marrakech-Tensift-Al Haouz"), ("cy", "Marrakech-Tensift-El Haouz"), ("da", "Marrakech-Tensift-Al Haouz"), ("de", "Marrakesch-Tensift-Al Haouz"), ("el", "Μαρακές-Τενσίφτ-Ελ Χαούζ"), ("en", "Marrakesh-Tensift-El Haouz"), ("es", "Marrakech-Tensift-Al Hauz"), ("eu", "Marrakex-Tensift-El Haouz"), ("fa", "مراکش تانسیفت الحوز"), ("fi", "Marrakech-Tensift-Al Haouz"), ("fr", "Marrakech-Tensift-Al Haouz"), ("gu", "મર\u{acd}રાક\u{ac7}શ-ટ\u{ac7}ન\u{acd}સિફ\u{acd}ટ-અલ હૌઝ"), ("hi", "मारक\u{947}श-त\u{947}\u{902}सिफ\u{94d}ट-एल हाओज\u{93c}"), ("hr", "Marrakesh-Tensift-El Haouz"), ("id", "Marrakech-Tensift-El Haouz"), ("it", "Marrakech-Tensift-El Haouz"), ("ja", "ラユーン＝サキア・エル・ハムラ地方"), ("jv", "Marrakech-Tensift-El Haouz"), ("kn", "ಮಾರಕ\u{cc6}ಶ\u{ccd}-ಟ\u{cc6}ನ\u{ccd}ಶ\u{cbf}ಫ\u{ccd}ಟ\u{ccd}-ಎಲ\u{ccd} ಹಾವ\u{ccd}ಜ\u{ccd}"), ("ko", "마라케시텐시프트엘하우즈 지방"), ("lt", "Marakešo-Tensifto-Alhauzo regionas"), ("lv", "Marrākeša-Tensifta-Elhauza"), ("mr", "मारक\u{947}श-त\u{947}\u{902}सिस\u{94d}ट-अल हौझ"), ("ms", "Marrakesh-Tensift-El Haouz"), ("nl", "Marrakech-Tensift-Al Haouz"), ("no", "Marrakech-Tensift-El Haouz"), ("pl", "Marrakesz-Tansift-Al-Hauz"), ("pt", "Marraquexe-Tensift-Al Haouz"), ("ro", "Regiunea Marrakech-Tensift-Al Haouz"), ("ru", "Марракеш-Тенсифт-Эль-Хауз"), ("si", "මර\u{dca}රකෙෂ\u{dca} -ටෙන\u{dca}ස\u{dd2}ෆ\u{dca}ට\u{dca} -එල\u{dca} හඋස\u{dca}"), ("sv", "Marrakech-Tensift-Al Haouz"), ("ta", "மரர\u{bbe}கேஷ\u{bcd} -டென\u{bcd}சிப\u{bcd}ட\u{bcd} -எல\u{bcd} ஹொயூஸ\u{bcd}"), ("te", "మర\u{c3e}క\u{c47}శ\u{c4d}-ట\u{c46}న\u{c4d}స\u{c3f}ఫ\u{c4d}ట\u{c4d}-ఎల\u{c4d} హ\u{c3e}వుజ\u{c4d}"), ("th", "มากาเรท-เทนซ\u{e34}ฟ-อ\u{e31}ลหาว"), ("tr", "Marrakech-Tensift-El Haouz"), ("uk", "Регіон Марракеш-Тенсіфт-Ель-Хауз"), ("ur", "مراکش تانسیف الحوز"), ("vi", "Marrakesh-Tensift-El Haouz")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -422,7 +424,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Region,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "الداخلة - وادي الذهب")]),
+                        translations: HashMap::from([("ar", "جهة تادلة أزيلال"), ("bg", "Тадла - Азилал"), ("bn", "ত\u{9be}ডল\u{9be}-আজিল\u{9be}ল"), ("bs", "Tadla-Azilal"), ("ca", "Tadla-Azilal"), ("ccp", "𑄑𑄖\u{11134}𑄣-𑄃𑄎\u{11128}𑄣𑄣\u{11134}"), ("ceb", "Tadla-Azilal"), ("cy", "Tadla-Azilal"), ("da", "Tadla-Azilal"), ("de", "Tadla-Azilal"), ("el", "Τάντλα-Αζίλαλ"), ("en", "Tadla-Azilal"), ("es", "Tadla-Azilal"), ("eu", "Tadla-Azilal"), ("fa", "تادله ازیلال"), ("fi", "Tadla-Azilal"), ("fr", "Tadla-Azilal"), ("gu", "ટ\u{ac5}ડલા-એઝાઈલાલ"), ("hi", "तद\u{94d}ला-एज\u{93c}लल"), ("hr", "Tadla-Azilal"), ("id", "Tadla-Azilal"), ("it", "Tadla-Azilal"), ("ja", "ダフラ＝オウィド・エッ＝ダハブ地方"), ("jv", "Tadla-Azilal"), ("kk", "Тадла-Азилаль"), ("kn", "ತದ\u{ccd}ಲಾ-ಅಝ\u{cbf}ಲಾಲ\u{ccd}"), ("ko", "타들라아질랄 지방"), ("lt", "Tadlo-Azilalo regionas"), ("lv", "Tadla-Azilalas reģions"), ("mr", "ताडा-अझलल"), ("ms", "Tadla-Azilal"), ("nl", "Tadla-Azilal"), ("no", "Tadla-Azilal"), ("pl", "Tadila-Azilal"), ("pt", "Tadla-Azilal"), ("ro", "Regiunea Tadla-Azilal"), ("ru", "Тадла-Азилаль"), ("si", "ටඩ\u{dca}ල\u{dcf}-අස\u{dd2}ල\u{dcf}ල\u{dca}"), ("sv", "Tadla-Azilal"), ("ta", "டேட\u{bcd}ல-ஷ\u{bc0}ல\u{bbe}ல\u{bcd}"), ("te", "ట\u{c3e}డ\u{c4d}ల\u{c3e}-అజ\u{c3f}ల\u{c3e}ల\u{c4d}"), ("th", "ท\u{e31}ดลา-อซ\u{e34}ล\u{e31}ล"), ("tr", "Tadla-Azilal"), ("uk", "Регіон Тадла-Азілаль"), ("ur", "تادلہ ازیال"), ("vi", "Tadla-Azilal")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -452,7 +454,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Province,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "إقليم أوسرد"), ("ca", "Província d’Auserd"), ("ccp", "𑄃𑄃\u{1112f}𑄥𑄬𑄢\u{11134}𑄓\u{11134}"), ("ceb", "Aousserd (lalawigan)"), ("de", "Aousserd"), ("en", "Aousserd"), ("es", "Prefectura de Auserd"), ("fr", "province d’Aousserd"), ("it", "Prefettura di Aousserd"), ("ja", "アウサード州"), ("nl", "Aousserd"), ("sv", "Aousserd (provins)"), ("zh", "奧塞爾德省")]),
+                        translations: HashMap::from([("ar", "إقليم أوسرد"), ("ca", "Província d’Auserd"), ("ccp", "𑄃𑄃\u{1112f}𑄥𑄬𑄢\u{11134}𑄓\u{11134}"), ("ceb", "Aousserd (lalawigan)"), ("cy", "Talaith Aousserd"), ("de", "Aousserd"), ("en", "Aousserd"), ("es", "Prefectura de Auserd"), ("fr", "province d’Aousserd"), ("it", "Prefettura di Aousserd"), ("ja", "アウサード州"), ("nl", "Aousserd"), ("pl", "Ausard (prowincja)"), ("sv", "Aousserd (provins)"), ("zh", "奧塞爾德省")]),
                         unofficial_name_list: ["Aousserd"].to_vec(),
                     }
                 ),
@@ -467,7 +469,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Province,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "إقليم آسا الزاك"), ("ca", "Província d’Assa-Zag"), ("ccp", "𑄃𑄌\u{11133}𑄦\u{11134}-𑄎𑄇\u{11134}"), ("ceb", "Assa-Zag"), ("de", "Assa-Zag"), ("en", "Assa-Zag"), ("es", "Provincia de Assa-Zag"), ("fr", "province d’Assa-Zag"), ("hu", "Assa-Zag"), ("it", "Provincia di Assa-Zag"), ("ja", "アサ・ザグ州"), ("nl", "Assa-Zag"), ("pt", "Assa-Zag"), ("sv", "Assa-Zag"), ("zh", "阿薩-扎格省")]),
+                        translations: HashMap::from([("ar", "إقليم آسا الزاك"), ("ca", "Província d’Assa-Zag"), ("ccp", "𑄃𑄌\u{11133}𑄦\u{11134}-𑄎𑄇\u{11134}"), ("ceb", "Assa-Zag"), ("cy", "Talaith Assa-Zag"), ("de", "Assa-Zag"), ("en", "Assa-Zag"), ("es", "Provincia de Assa-Zag"), ("fr", "province d’Assa-Zag"), ("hu", "Assa-Zag"), ("it", "Provincia di Assa-Zag"), ("ja", "アサ・ザグ州"), ("nl", "Assa-Zag"), ("pt", "Assa-Zag"), ("sv", "Assa-Zag"), ("zh", "阿薩-扎格省")]),
                         unofficial_name_list: ["Assa-Zag"].to_vec(),
                     }
                 ),
@@ -482,7 +484,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Province,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "إقليم أزيلال"), ("ca", "Província d’Azilal"), ("ccp", "𑄃𑄎\u{11128}𑄣𑄣\u{11134}"), ("ceb", "Azilal Province"), ("de", "Azilal"), ("en", "Azilal"), ("es", "Provincia de Azilal"), ("fr", "province d’Azilal"), ("it", "Provincia di Azilal"), ("ja", "アジラル州"), ("nl", "Azilal"), ("pt", "Azilal (província)"), ("sv", "Azilal Province"), ("zh", "艾濟拉勒省")]),
+                        translations: HashMap::from([("ar", "إقليم أزيلال"), ("ca", "Província d’Azilal"), ("ccp", "𑄃𑄎\u{11128}𑄣𑄣\u{11134}"), ("ceb", "Azilal Province"), ("cy", "Talaith Azilal"), ("da", "Azilal (provins)"), ("de", "Azilal"), ("en", "Azilal"), ("es", "Provincia de Azilal"), ("fr", "province d’Azilal"), ("it", "Provincia di Azilal"), ("ja", "アジラル州"), ("nl", "Azilal"), ("pt", "Azilal (província)"), ("sv", "Azilal Province"), ("zh", "艾濟拉勒省")]),
                         unofficial_name_list: ["Azilal"].to_vec(),
                     }
                 ),
@@ -497,7 +499,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Province,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("en", "Aït Baha")]),
+                        translations: HashMap::from([("en", "Aït Baha"), ("ja", "アイト・バハ州")]),
                         unofficial_name_list: ["Aït Baha"].to_vec(),
                     }
                 ),
@@ -512,7 +514,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Province,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "إقليم بني ملال"), ("ca", "Província de Béni Mellal"), ("ccp", "𑄝𑄬𑄚\u{11128}-𑄟𑄬𑄣𑄣\u{11134}"), ("ceb", "Beni-Mellal"), ("de", "Béni Mellal (Provinz)"), ("en", "Béni-Mellal"), ("es", "Provincia de Beni Melal"), ("fr", "province de Béni-Mellal"), ("it", "Provincia di Béni-Mellal"), ("ja", "ベニ・メラル州"), ("nl", "Béni-Mellal"), ("pt", "Beni Mellal (província)"), ("sv", "Beni-Mellal"), ("zh", "貝尼邁拉勒省")]),
+                        translations: HashMap::from([("ar", "إقليم بني ملال"), ("ca", "Província de Béni Mellal"), ("ccp", "𑄝𑄬𑄚\u{11128}-𑄟𑄬𑄣𑄣\u{11134}"), ("ceb", "Beni-Mellal"), ("cy", "Talaith Béni-Mellal"), ("da", "Béni-Mellal (provins)"), ("de", "Béni Mellal (Provinz)"), ("en", "Béni-Mellal"), ("es", "Provincia de Beni Melal"), ("fr", "province de Béni-Mellal"), ("it", "Provincia di Béni-Mellal"), ("ja", "ベニ・メラル州"), ("nl", "Béni-Mellal"), ("pt", "Beni Mellal (província)"), ("sv", "Beni-Mellal"), ("zh", "貝尼邁拉勒省")]),
                         unofficial_name_list: ["Beni Mellal"].to_vec(),
                     }
                 ),
@@ -527,7 +529,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Province,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "إقليم بركان"), ("ca", "Província de Berkane"), ("ccp", "𑄝𑄬𑄢\u{11134}𑄇𑄚\u{11134}"), ("ceb", "Berkane-Taourirt"), ("de", "Berkane (Provinz)"), ("en", "Berkane"), ("es", "Provincia de Berkan"), ("fa", "استان برکان"), ("fr", "province de Berkane"), ("it", "Provincia di Berkane"), ("ja", "ベルカンヌ州"), ("nl", "Berkane"), ("sv", "Berkane-Taourirt"), ("ur", "برکان صوبہ"), ("zh", "貝爾坎省")]),
+                        translations: HashMap::from([("ar", "إقليم بركان"), ("ca", "Província de Berkane"), ("ccp", "𑄝𑄬𑄢\u{11134}𑄇𑄚\u{11134}"), ("ceb", "Berkane-Taourirt"), ("cy", "Talaith Berkane"), ("de", "Berkane (Provinz)"), ("en", "Berkane"), ("es", "Provincia de Berkan"), ("fa", "استان برکان"), ("fr", "province de Berkane"), ("it", "Provincia di Berkane"), ("ja", "ベルカンヌ州"), ("nl", "Berkane"), ("sv", "Berkane-Taourirt"), ("ur", "برکان صوبہ"), ("zh", "貝爾坎省")]),
                         unofficial_name_list: ["Berkane"].to_vec(),
                     }
                 ),
@@ -542,7 +544,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Province,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "إقليم بنسليمان"), ("ca", "Província de Benslimane"), ("ccp", "𑄝𑄬𑄚\u{11134} 𑄥\u{11133}𑄣\u{11128}𑄟𑄚\u{11134}"), ("ceb", "Benslimane (lalawigan)"), ("de", "Ben Slimane"), ("en", "Ben Slimane"), ("es", "Provincia de Benslimane"), ("fr", "province de Benslimane"), ("it", "Provincia di Ben Slimane"), ("ja", "ベン・スリマン州"), ("nl", "Ben Slimane"), ("ru", "Бен-Слиман"), ("sv", "Benslimane (provins)"), ("zh", "本蘇萊曼省")]),
+                        translations: HashMap::from([("ar", "إقليم بنسليمان"), ("ca", "Província de Benslimane"), ("ccp", "𑄝𑄬𑄚\u{11134} 𑄥\u{11133}𑄣\u{11128}𑄟𑄚\u{11134}"), ("ceb", "Benslimane (lalawigan)"), ("cy", "Talaith Ben Slimane"), ("de", "Ben Slimane"), ("en", "Ben Slimane"), ("es", "Provincia de Benslimane"), ("fr", "province de Benslimane"), ("it", "Provincia di Ben Slimane"), ("ja", "ベン・スリマン州"), ("nl", "Ben Slimane"), ("pt", "Benslimane (província)"), ("ru", "Бен-Слиман"), ("sv", "Benslimane (provins)"), ("zh", "本蘇萊曼省")]),
                         unofficial_name_list: ["Ben Slimane"].to_vec(),
                     }
                 ),
@@ -557,7 +559,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Province,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "إقليم بوجدور"), ("ca", "Bojador"), ("ccp", "𑄝\u{1112f}𑄌\u{11134}𑄓\u{1112f}𑄢\u{11134}"), ("ceb", "Boujdour (lalawigan)"), ("de", "Boujdour (Provinz)"), ("en", "Boujdour"), ("es", "Provincia de Bojador"), ("fr", "province de Boujdour"), ("it", "Provincia di Boujdour"), ("ja", "ブジュール州"), ("nl", "Boujdour"), ("sv", "Boujdour (provins)"), ("zh", "布支杜爾省")]),
+                        translations: HashMap::from([("ar", "إقليم بوجدور"), ("ca", "Bojador"), ("ccp", "𑄝\u{1112f}𑄌\u{11134}𑄓\u{1112f}𑄢\u{11134}"), ("ceb", "Boujdour (lalawigan)"), ("cy", "Talaith Boujdour"), ("de", "Boujdour (Provinz)"), ("en", "Boujdour"), ("es", "Provincia de Bojador"), ("fr", "province de Boujdour"), ("it", "Provincia di Boujdour"), ("ja", "ブジュール州"), ("nl", "Boujdour"), ("ru", "Буждур"), ("sv", "Boujdour (provins)"), ("zh", "布支杜爾省")]),
                         unofficial_name_list: ["Boujdour (EH)"].to_vec(),
                     }
                 ),
@@ -572,7 +574,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Province,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "إقليم بولمان"), ("ca", "Província de Boulemane"), ("ccp", "𑄝\u{1112f}𑄣𑄬𑄟𑄚\u{11134}"), ("ceb", "Boulemane (lalawigan)"), ("de", "Boulemane (Provinz)"), ("en", "Boulemane"), ("es", "Provincia de Bulmán"), ("fr", "province de Boulemane"), ("it", "Provincia di Boulemane"), ("ja", "ブルマーヌ州"), ("nl", "Boulmane"), ("sv", "Boulemane (provins)"), ("zh", "布勒曼省")]),
+                        translations: HashMap::from([("ar", "إقليم بولمان"), ("ca", "Província de Boulemane"), ("ccp", "𑄝\u{1112f}𑄣𑄬𑄟𑄚\u{11134}"), ("ceb", "Boulemane (lalawigan)"), ("cy", "Talaith Boulemane"), ("de", "Boulemane (Provinz)"), ("en", "Boulemane"), ("es", "Provincia de Bulmán"), ("fa", "استان بولمان"), ("fr", "province de Boulemane"), ("it", "Provincia di Boulemane"), ("ja", "ブルマーヌ州"), ("nl", "Boulmane"), ("sv", "Boulemane (provins)"), ("zh", "布勒曼省")]),
                         unofficial_name_list: ["Boulemane"].to_vec(),
                     }
                 ),
@@ -587,7 +589,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Province,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("en", "Berrechid")]),
+                        translations: HashMap::from([("ar", "إقليم برشيد"), ("ca", "província de Berrechid"), ("cy", "Talaith Berrechid"), ("de", "Berrechid"), ("en", "Berrechid"), ("es", "Provincia de Berrechid"), ("fa", "استان برشید"), ("fr", "Berrechid"), ("it", "Provincia di Berrechid"), ("ja", "ベレチド州"), ("nl", "Berrechid"), ("pt", "Berrechid (província)"), ("ur", "برشید صوبہ")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -602,7 +604,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Prefecture,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("af", "Casablanca"), ("am", "ካሳብላንካ"), ("ar", "الدار البيضاء"), ("az", "Kasablanka"), ("be", "Касабланка"), ("bg", "Казабланка"), ("bn", "ক\u{9be}স\u{9be}ব\u{9cd}ল\u{9be}ংক\u{9be}"), ("bs", "Casablanca"), ("ca", "Casablanca"), ("ccp", "𑄇𑄥𑄝\u{11133}𑄣\u{11101}𑄇"), ("cs", "Casablanca"), ("cy", "Casablanca"), ("da", "Casablanca"), ("de", "Casablanca"), ("el", "Καζαμπλάνκα"), ("en", "Casablanca"), ("es", "Casablanca"), ("et", "Casablanca"), ("eu", "Casablanca"), ("fa", "کازابلانکا"), ("fi", "Casablanca"), ("fr", "Casablanca"), ("gl", "Casablanca"), ("gu", "ક\u{ac8}સાબ\u{acd}લાન\u{acd}કા"), ("ha", "Casablanca"), ("ha_NE", "Casablanca"), ("he", "קזבלנקה"), ("hi", "कासाब\u{94d}ला\u{902}का"), ("hr", "Casablanca"), ("hu", "Casablanca"), ("hy", "Կասաբլանկա"), ("id", "Casablanca"), ("is", "Casablanca"), ("it", "Casablanca"), ("ja", "カサブランカ"), ("ka", "კასაბლანკა"), ("kk", "Касабланка"), ("kn", "ಕಾಸಾಬ\u{ccd}ಲಾಂಕಾ"), ("ko", "카사블랑카"), ("ky", "Касабланка"), ("lo", "ກາຊາບ\u{eb1}ງກາ"), ("lt", "Kasablanka"), ("lv", "Kasablanka"), ("mk", "Казабланка"), ("ml", "ക\u{d3e}സബ\u{d4d}ലങ\u{d4d}ക"), ("mn", "Касабланка"), ("mr", "कासाब\u{94d}ला\u{902}का"), ("ms", "Casablanca"), ("my", "ကာဆာဘလန\u{103a}ကာမြ\u{102d}\u{102f}\u{1037}"), ("nb", "Casablanca"), ("nl", "Casablanca"), ("no", "Casablanca"), ("pa", "ਕਾਸਾਬਲਾ\u{a02}ਕਾ"), ("pl", "Casablanca"), ("pt", "Casablanca"), ("ro", "Casablanca"), ("ru", "Касабланка"), ("si", "කැසබ\u{dca}ලැන\u{dca}ක\u{dcf}"), ("sk", "Casablanca"), ("sl", "Casablanca"), ("sq", "Kasablanka"), ("sr", "Казабланка"), ("sr_Latn", "Kazablanka"), ("sv", "Casablanca"), ("sw", "Casablanca"), ("ta", "க\u{bbe}ச\u{bbe}பிள\u{bbe}ங\u{bcd}க\u{bbe}"), ("te", "క\u{c3e}స\u{c3e}బ\u{c4d}ల\u{c3e}ంక\u{c3e}"), ("th", "กาซาบล\u{e47}องกา"), ("tk", "Kasablanka"), ("tr", "Kazablanka"), ("uk", "Касабланка"), ("ur", "دار البیضاء"), ("uz", "Kasablanka"), ("vi", "Casablanca"), ("yo", "Casablanca"), ("yo_BJ", "Casablanca"), ("yue", "卡薩布蘭卡"), ("yue_Hans", "卡萨布兰卡"), ("zh", "卡萨布兰卡")]),
+                        translations: HashMap::from([("af", "Casablanca"), ("am", "ካሳብላንካ"), ("ar", "الدار البيضاء"), ("az", "Kasablanka"), ("be", "Касабланка"), ("bg", "Казабланка"), ("bn", "ক\u{9be}স\u{9be}ব\u{9cd}ল\u{9be}ংক\u{9be}"), ("bs", "Casablanca"), ("ca", "Casablanca"), ("ccp", "𑄇𑄥𑄝\u{11133}𑄣\u{11101}𑄇"), ("ceb", "Casablanca"), ("cs", "Casablanca"), ("cy", "Casablanca"), ("da", "Casablanca"), ("de", "Casablanca"), ("el", "Καζαμπλάνκα"), ("en", "Casablanca"), ("es", "Casablanca"), ("et", "Casablanca"), ("eu", "Casablanca"), ("fa", "کازابلانکا"), ("fi", "Casablanca"), ("fr", "Casablanca"), ("ga", "Casablanca"), ("gl", "Casablanca"), ("gu", "ક\u{ac8}સાબ\u{acd}લાન\u{acd}કા"), ("ha", "Casablanca"), ("ha_NE", "Casablanca"), ("he", "קזבלנקה"), ("hi", "कासाब\u{94d}ला\u{902}का"), ("hr", "Casablanca"), ("hu", "Casablanca"), ("hy", "Կասաբլանկա"), ("id", "Casablanca"), ("is", "Casablanca"), ("it", "Casablanca"), ("ja", "カサブランカ"), ("ka", "კასაბლანკა"), ("kk", "Касабланка"), ("kn", "ಕಾಸಾಬ\u{ccd}ಲಾಂಕಾ"), ("ko", "카사블랑카"), ("ky", "Касабланка"), ("lo", "ກາຊາບ\u{eb1}ງກາ"), ("lt", "Kasablanka"), ("lv", "Kasablanka"), ("mk", "Казабланка"), ("ml", "ക\u{d3e}സബ\u{d4d}ലങ\u{d4d}ക"), ("mn", "Касабланка"), ("mr", "कासाब\u{94d}ला\u{902}का"), ("ms", "Casablanca"), ("my", "ကာဆာဘလန\u{103a}ကာမြ\u{102d}\u{102f}\u{1037}"), ("nb", "Casablanca"), ("nl", "Casablanca"), ("no", "Casablanca"), ("pa", "ਕਾਸਾਬਲਾ\u{a02}ਕਾ"), ("pl", "Casablanca"), ("pt", "Casablanca"), ("ro", "Casablanca"), ("ru", "Касабланка"), ("si", "කැසබ\u{dca}ලැන\u{dca}ක\u{dcf}"), ("sk", "Casablanca"), ("sl", "Casablanca"), ("sq", "Kasablanka"), ("sr", "Казабланка"), ("sr_Latn", "Kazablanka"), ("sv", "Casablanca"), ("sw", "Casablanca"), ("ta", "க\u{bbe}ச\u{bbe}பிள\u{bbe}ங\u{bcd}க\u{bbe}"), ("te", "క\u{c3e}స\u{c3e}బ\u{c4d}ల\u{c3e}ంక\u{c3e}"), ("th", "กาซาบล\u{e47}องกา"), ("tk", "Kasablanka"), ("tr", "Kazablanka"), ("uk", "Касабланка"), ("ur", "دار البیضاء"), ("uz", "Kasablanka"), ("vi", "Casablanca"), ("yo", "Casablanca"), ("yo_BJ", "Casablanca"), ("yue", "卡薩布蘭卡"), ("yue_Hans", "卡萨布兰卡"), ("zh", "卡萨布兰卡")]),
                         unofficial_name_list: ["Casablanca [Dar el Beïda]"].to_vec(),
                     }
                 ),
@@ -617,7 +619,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Province,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "إقليم شفشاون"), ("ca", "Província de Xauen"), ("ccp", "𑄌𑄬𑄛\u{11134}𑄌𑄬𑄠\u{1112f}𑄠𑄬𑄚\u{11134}"), ("ceb", "Chefchaouen Province"), ("de", "Chefchaouen (Provinz)"), ("en", "Chefchaouen"), ("es", "Provincia de Chauen"), ("fr", "province de Chefchaouen"), ("it", "Provincia di Chefchaouen"), ("ja", "シャウエン州"), ("nl", "Chefchaouen"), ("sv", "Chefchaouen Province"), ("ur", "شفشاون صوبہ"), ("zh", "謝夫沙萬省")]),
+                        translations: HashMap::from([("ar", "إقليم شفشاون"), ("ca", "Província de Xauen"), ("ccp", "𑄌𑄬𑄛\u{11134}𑄌𑄬𑄠\u{1112f}𑄠𑄬𑄚\u{11134}"), ("ceb", "Chefchaouen Province"), ("cy", "Talaith Chefchaouen"), ("de", "Chefchaouen (Provinz)"), ("en", "Chefchaouen"), ("es", "Provincia de Chauen"), ("fr", "province de Chefchaouen"), ("it", "Provincia di Chefchaouen"), ("ja", "シャウエン州"), ("nl", "Chefchaouen"), ("pt", "Xexuão (província)"), ("sv", "Chefchaouen Province"), ("uk", "Шафшаван (провінція)"), ("ur", "شفشاون صوبہ"), ("zh", "謝夫沙萬省")]),
                         unofficial_name_list: ["Chefchaouene"].to_vec(),
                     }
                 ),
@@ -632,7 +634,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Province,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "إقليم شيشاوة"), ("ca", "Província de Chichaoua"), ("ccp", "𑄌\u{11128}𑄌\u{1112f}𑄤"), ("ceb", "Chichaoua"), ("de", "Chichaoua (Provinz)"), ("en", "Chichaoua"), ("es", "Provincia de Chichaoua"), ("fa", "استان شیشاوه"), ("fr", "province de Chichaoua"), ("it", "Provincia di Chichaoua"), ("ja", "シカウア州"), ("nl", "Chichaoua"), ("pt", "Chichaoua (província)"), ("sv", "Chichaoua (provins)"), ("ur", "شیشاوہ صوبہ"), ("zh", "希沙瓦省")]),
+                        translations: HashMap::from([("ar", "إقليم شيشاوة"), ("ca", "Província de Chichaoua"), ("ccp", "𑄌\u{11128}𑄌\u{1112f}𑄤"), ("ceb", "Chichaoua"), ("cy", "Talaith Chichaoua"), ("de", "Chichaoua (Provinz)"), ("en", "Chichaoua"), ("es", "Provincia de Chichaoua"), ("fa", "استان شیشاوه"), ("fr", "province de Chichaoua"), ("it", "Provincia di Chichaoua"), ("ja", "シカウア州"), ("nl", "Chichaoua"), ("pt", "Chichaoua (província)"), ("sv", "Chichaoua (provins)"), ("ur", "شیشاوہ صوبہ"), ("zh", "希沙瓦省")]),
                         unofficial_name_list: ["Chichaoua"].to_vec(),
                     }
                 ),
@@ -647,7 +649,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Province,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "إقليم شتوكة آيت باها"), ("ca", "Província de Chtouka-Aït Baha"), ("ccp", "𑄑\u{1112e}𑄇 𑄃𑄃\u{11128}𑄖\u{11134} 𑄝𑄦"), ("ceb", "Chtouka-Ait-Baha"), ("de", "Chtouka-Aït Baha"), ("en", "Chtouka Aït Baha"), ("es", "Provincia de Chtouka-Aït Baha"), ("eu", "Chtouka Aït Baha probintzia"), ("fr", "province de Chtouka-Aït Baha"), ("it", "Provincia di Chtouka-Aït Baha"), ("ja", "チュトウカ・アイト・バハ州"), ("nl", "Chtouka-Aït Baha"), ("pt", "Chtouka-Aït Baha"), ("sv", "Chtouka-Ait-Baha"), ("zh", "希圖卡阿伊特巴哈省")]),
+                        translations: HashMap::from([("ar", "إقليم شتوكة آيت باها"), ("ca", "Província de Chtouka-Aït Baha"), ("ccp", "𑄑\u{1112e}𑄇 𑄃𑄃\u{11128}𑄖\u{11134} 𑄝𑄦"), ("ceb", "Chtouka-Ait-Baha"), ("cy", "Talaith Shtouka Ait Baha"), ("de", "Chtouka-Aït Baha"), ("en", "Chtouka Aït Baha"), ("es", "Provincia de Chtouka-Aït Baha"), ("eu", "Chtouka Aït Baha probintzia"), ("fr", "province de Chtouka-Aït Baha"), ("it", "Provincia di Chtouka-Aït Baha"), ("ja", "チュトウカ・アイト・バハ州"), ("nl", "Chtouka-Aït Baha"), ("pt", "Chtouka-Aït Baha"), ("sv", "Chtouka-Ait-Baha"), ("zh", "希圖卡阿伊特巴哈省")]),
                         unofficial_name_list: ["Chtouka-Ait Baha"].to_vec(),
                     }
                 ),
@@ -662,7 +664,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Province,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("en", "Driouch")]),
+                        translations: HashMap::from([("ar", "إقليم الدريوش"), ("ca", "província de Driouch"), ("cy", "Talaith Driouch"), ("de", "Driouch"), ("en", "Driouch"), ("es", "Provincia de Driouch"), ("fa", "استان دریوش"), ("fr", "Driouch"), ("it", "Provincia di Driouch"), ("ja", "ドリオウチュ州"), ("nl", "Driouch"), ("ur", "دریوش صوبہ")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -677,7 +679,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Province,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "إقليم الرشيدية"), ("ca", "Província d’Errachidia"), ("ccp", "𑄃\u{11129}𑄢𑄌\u{11128}𑄘\u{11128}𑄠"), ("ceb", "Errachidia"), ("de", "Errachidia (Provinz)"), ("en", "Errachidia"), ("es", "Provincia de Errachidia"), ("fa", "استان رشیدیه"), ("fr", "province d’Errachidia"), ("it", "Provincia di al-Rashidiyya"), ("ja", "エルラシディア州"), ("nl", "Errachidia"), ("sv", "Errachidia"), ("zh", "拉希迪耶省")]),
+                        translations: HashMap::from([("ar", "إقليم الرشيدية"), ("ca", "Província d’Errachidia"), ("ccp", "𑄃\u{11129}𑄢𑄌\u{11128}𑄘\u{11128}𑄠"), ("ceb", "Errachidia"), ("cy", "Talaith Errachidia"), ("de", "Errachidia (Provinz)"), ("en", "Errachidia"), ("es", "Provincia de Errachidia"), ("fa", "استان رشیدیه"), ("fr", "province d’Errachidia"), ("it", "Provincia di al-Rashidiyya"), ("ja", "エルラシディア州"), ("nl", "Errachidia"), ("ro", "Errachidia"), ("sv", "Errachidia"), ("zh", "拉希迪耶省")]),
                         unofficial_name_list: ["Errachidia"].to_vec(),
                     }
                 ),
@@ -692,7 +694,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Province,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "إقليم الصويرة"), ("ca", "Província d’Essaouira"), ("ccp", "𑄃\u{11128}𑄥\u{1112f}𑄃\u{11128}𑄢"), ("ceb", "Essaouira"), ("de", "Essaouira (Provinz)"), ("en", "Essaouira"), ("es", "Provincia de Esauira"), ("fa", "استان صویره"), ("fi", "Essaouiran provinssi"), ("fr", "province d’Essaouira"), ("it", "Provincia di Essaouira"), ("ja", "エッサウィラ州"), ("nl", "Essaouira"), ("pt", "Essaouira (província)"), ("ur", "صویرہ صوبہ"), ("zh", "索維拉省")]),
+                        translations: HashMap::from([("ar", "إقليم الصويرة"), ("ca", "Província d’Essaouira"), ("ccp", "𑄃\u{11128}𑄥\u{1112f}𑄃\u{11128}𑄢"), ("ceb", "Essaouira"), ("cy", "Talaith Essaouira"), ("de", "Essaouira (Provinz)"), ("en", "Essaouira"), ("es", "Provincia de Esauira"), ("fa", "استان صویره"), ("fi", "Essaouiran provinssi"), ("fr", "province d’Essaouira"), ("it", "Provincia di Essaouira"), ("ja", "エッサウィラ州"), ("nl", "Essaouira"), ("pt", "Essaouira (província)"), ("ur", "صویرہ صوبہ"), ("zh", "索維拉省")]),
                         unofficial_name_list: ["Essaouira"].to_vec(),
                     }
                 ),
@@ -707,7 +709,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Province,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "إقليم السمارة"), ("ca", "Província d’Es-Semara"), ("ccp", "𑄃\u{11128}𑄌\u{11134} 𑄥𑄬𑄟𑄢"), ("ceb", "Es-Semara (lalawigan)"), ("de", "Es Semara (Provinz)"), ("en", "Es Semara"), ("es", "Provincia de Esmara"), ("fr", "province d’Es-Semara"), ("it", "Provincia di Smara"), ("ja", "スマラ州"), ("nl", "Es-Semara"), ("sv", "Es-Semara (provins)"), ("zh", "塞馬拉省")]),
+                        translations: HashMap::from([("ar", "إقليم السمارة"), ("ca", "Província d’Es-Semara"), ("ccp", "𑄃\u{11128}𑄌\u{11134} 𑄥𑄬𑄟𑄢"), ("ceb", "Es-Semara (lalawigan)"), ("cy", "Talaith Es Semara"), ("de", "Es Semara (Provinz)"), ("en", "Es Semara"), ("es", "Provincia de Esmara"), ("fr", "province d’Es-Semara"), ("it", "Provincia di Smara"), ("ja", "スマラ州"), ("nl", "Es-Semara"), ("ru", "Эс-Семара"), ("sv", "Es-Semara (provins)"), ("zh", "塞馬拉省")]),
                         unofficial_name_list: ["Es Smara (EH)"].to_vec(),
                     }
                 ),
@@ -722,7 +724,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Province,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "إقليم فحص أنجرة"), ("ca", "Província de Fahs-Anjra"), ("ccp", "𑄜𑄦\u{11134}𑄥\u{11134}-𑄝𑄬𑄚\u{11128} 𑄟𑄖𑄓"), ("ceb", "Fahs-Anjra"), ("de", "Fahs-Anjra"), ("en", "Fahs-Beni Makada"), ("es", "Prefectura de Fahs Anjra"), ("fa", "استان فحص انجره"), ("fr", "province de Fahs-Anjra"), ("it", "Prefettura di Fahs Anjra"), ("ja", "ファフス・アンジュラ州"), ("nl", "Fahs-Bni Mkada"), ("pl", "prowincja Fahs Anjra"), ("sv", "Fahs-Anjra"), ("ur", "فاہس انجرا"), ("zh", "法斯-安傑拉省")]),
+                        translations: HashMap::from([("ar", "إقليم فحص أنجرة"), ("ca", "Província de Fahs-Anjra"), ("ccp", "𑄜𑄦\u{11134}𑄥\u{11134}-𑄝𑄬𑄚\u{11128} 𑄟𑄖𑄓"), ("ceb", "Fahs-Anjra"), ("cy", "Talaith Fahs Anjra"), ("de", "Fahs-Anjra"), ("en", "Fahs-Beni Makada"), ("es", "Prefectura de Fahs Anjra"), ("fa", "استان فحص انجره"), ("fr", "province de Fahs-Anjra"), ("it", "Prefettura di Fahs Anjra"), ("ja", "ファフス・アンジュラ州"), ("nl", "Fahs-Bni Mkada"), ("pl", "prowincja Fahs Anjra"), ("pt", "Fahs-Anjra"), ("sv", "Fahs-Anjra"), ("ur", "فاہس انجرا"), ("zh", "法斯-安傑拉省")]),
                         unofficial_name_list: ["Fahs-Beni Makada"].to_vec(),
                     }
                 ),
@@ -737,7 +739,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Prefecture,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("af", "Fes"), ("ar", "فاس"), ("az", "Fəs"), ("be", "Горад Фес"), ("bg", "Фес"), ("bs", "Fes"), ("ca", "Fes"), ("ccp", "𑄜𑄬𑄌\u{11134}-𑄓𑄢\u{11134}-𑄝\u{11128}𑄝𑄬𑄇\u{11134}"), ("ceb", "Fès"), ("cs", "Fás"), ("cy", "Fès"), ("da", "Fez"), ("de", "Fès"), ("el", "Φεζ"), ("en", "Fès-Dar-Dbibegh"), ("es", "Fez"), ("et", "Fès"), ("eu", "Fez"), ("fa", "فاس"), ("fi", "Fès"), ("fr", "Fès"), ("gl", "Fez"), ("he", "פס"), ("hi", "फ\u{947}ज\u{93c}"), ("hr", "Fes"), ("hu", "Fez"), ("hy", "Ֆես"), ("id", "Fez"), ("is", "Fez"), ("it", "Fes"), ("ja", "フェズ"), ("ka", "ფესი"), ("kk", "Фес (Фез) қаласы"), ("ko", "페스"), ("ky", "Фес"), ("lt", "Fesas"), ("lv", "Fēsa"), ("mk", "Фес"), ("ml", "ഫെസ\u{d4d}, മൊറോക\u{d4d}കോ"), ("ms", "Fes"), ("nb", "Fès"), ("ne", "फ\u{947}स एल बाली"), ("nl", "Fez"), ("no", "Fès"), ("pa", "ਫ\u{a3c}ਾਸ"), ("pl", "Fez"), ("pt", "Fez"), ("ro", "Fès"), ("ru", "Фес"), ("sl", "Fes"), ("sr", "Фес"), ("sr_Latn", "Fes"), ("sv", "Fès"), ("sw", "Fes"), ("th", "แฟ\u{e47}ส"), ("tr", "Fes"), ("uk", "Фес"), ("ur", "فاس"), ("vi", "Fes"), ("zh", "非斯")]),
+                        translations: HashMap::from([("af", "Fes"), ("ar", "فاس"), ("az", "Fəs"), ("be", "Горад Фес"), ("bg", "Фес"), ("bn", "ফেজ"), ("bs", "Fes"), ("ca", "Fes"), ("ccp", "𑄜𑄬𑄌\u{11134}-𑄓𑄢\u{11134}-𑄝\u{11128}𑄝𑄬𑄇\u{11134}"), ("ceb", "Fès"), ("cs", "Fás"), ("cy", "Fès"), ("da", "Fez"), ("de", "Fès"), ("el", "Φεζ"), ("en", "Fès-Dar-Dbibegh"), ("es", "Fez"), ("et", "Fès"), ("eu", "Fez"), ("fa", "فاس"), ("fi", "Fès"), ("fr", "Fès"), ("ga", "Fez"), ("gl", "Fez"), ("gu", "ફ\u{ac7}જ (પ\u{acd}રીફ\u{ac7}ક\u{acd}ચર)"), ("ha", "Fas"), ("ha_NE", "Fas"), ("he", "פס"), ("hi", "फ\u{947}ज\u{93c}"), ("hr", "Fes"), ("hu", "Fez"), ("hy", "Ֆես"), ("id", "Fez"), ("is", "Fez"), ("it", "Fes"), ("ja", "フェズ"), ("ka", "ფესი"), ("kk", "Фес (Фез) қаласы"), ("kn", "ಫ\u{cc6}ಜ\u{ccd} (ಪ\u{ccd}ರ\u{cbf}ಫ\u{cc6}ಕ\u{ccd}ಚರ\u{ccd})"), ("ko", "페스"), ("ky", "Фес"), ("lt", "Fesas"), ("lv", "Fēsa"), ("mk", "Фес"), ("ml", "ഫെസ\u{d4d}, മൊറോക\u{d4d}കോ"), ("mr", "फ\u{947}ज (प\u{94d}रीफ\u{947}क\u{94d}चर)"), ("ms", "Fes"), ("nb", "Fès"), ("ne", "फ\u{947}स एल बाली"), ("nl", "Fez"), ("no", "Fès"), ("pa", "ਫ\u{a3c}ਾਸ"), ("pl", "Fez"), ("pt", "Fez"), ("ro", "Fès"), ("ru", "Фес"), ("si", "ෆේස\u{dca}"), ("sl", "Fes"), ("sq", "Fes (Marok)"), ("sr", "Фес"), ("sr_Latn", "Fes"), ("sv", "Fès"), ("sw", "Fes"), ("ta", "பெஸ\u{bcd} (ப\u{bcd}ர\u{bc0}பெக\u{bcd}ட\u{bcd}டுறே)"), ("te", "ఫ\u{c46}జ\u{c4d}"), ("th", "แฟ\u{e47}ส"), ("tr", "Fes"), ("uk", "Фес"), ("ur", "فاس"), ("uz", "Fos"), ("vi", "Fes"), ("yue", "非斯"), ("yue_Hans", "非斯"), ("zh", "非斯")]),
                         unofficial_name_list: ["Fès"].to_vec(),
                     }
                 ),
@@ -752,7 +754,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Province,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "إقليم فكيك"), ("ca", "Província de Figuig"), ("ccp", "𑄜\u{11128}𑄉\u{1112a}𑄃\u{11128}𑄇\u{11134}"), ("ceb", "Figuig (lalawigan)"), ("de", "Figuig"), ("en", "Figuig"), ("es", "Provincia de Figuig"), ("fa", "استان فکیک"), ("fr", "province de Figuig"), ("it", "Provincia di Figuig"), ("ja", "フィギグ州"), ("nl", "Figuig"), ("sv", "Figuig"), ("ur", "فکیک صوبہ"), ("zh", "菲吉格省")]),
+                        translations: HashMap::from([("ar", "إقليم فكيك"), ("ca", "Província de Figuig"), ("ccp", "𑄜\u{11128}𑄉\u{1112a}𑄃\u{11128}𑄇\u{11134}"), ("ceb", "Figuig (lalawigan)"), ("cy", "Talaith Figuig"), ("de", "Figuig"), ("en", "Figuig"), ("es", "Provincia de Figuig"), ("fa", "استان فکیک"), ("fr", "province de Figuig"), ("it", "Provincia di Figuig"), ("ja", "フィギグ州"), ("nl", "Figuig"), ("ru", "Фигиг"), ("sv", "Figuig"), ("ur", "فکیک صوبہ"), ("zh", "菲吉格省")]),
                         unofficial_name_list: ["Figuig"].to_vec(),
                     }
                 ),
@@ -767,7 +769,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Province,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("en", "Fquih Ben Salah")]),
+                        translations: HashMap::from([("ar", "إقليم الفقيه بن صالح"), ("ca", "província de Fquih Ben Salah"), ("de", "Fquih Ben Salah"), ("en", "Fquih Ben Salah"), ("es", "Provincia de Fquih Ben Salah"), ("fa", "استان فقیه بن صالح"), ("fr", "Fquih Ben Salah"), ("it", "Provincia di Fquih Ben Salah"), ("ja", "フキレ・ベンヌ・サラ州")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -782,7 +784,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Province,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "إقليم كلميم"), ("bn", "গ\u{9c1}য\u{9bc}েল\u{9cd}মিম প\u{9cd}রদেশ"), ("ca", "Província de Guelmim"), ("ccp", "𑄉\u{1112a}𑄠𑄬𑄣\u{11134}𑄟\u{11128}𑄟\u{11134}"), ("ceb", "Guelmim (lalawigan)"), ("da", "Guelmim"), ("de", "Guelmim"), ("el", "Γκουελμίμ"), ("en", "Guelmim"), ("es", "Provincia de Guelmim"), ("fi", "Guelmim Province"), ("fr", "province de Guelmim"), ("gu", "ગ\u{ac7}લમીમ પ\u{acd}રા\u{a82}ત"), ("hi", "ग\u{941}लमीम प\u{94d}रोवि\u{902}स"), ("id", "Guelmim Province"), ("it", "Provincia di Guelmim"), ("ja", "ゲルミン州"), ("kn", "ಗುಲ\u{ccd}ಮ\u{cbf}ಮ\u{ccd} ಪ\u{ccd}ರಾಂತ\u{ccd}ಯ"), ("ko", "구엘밈 프로빈스"), ("lt", "Guelmimo provincija"), ("lv", "Guelmimas province"), ("mr", "ग\u{947}लमिक प\u{94d}रा\u{902}त"), ("ms", "Guelmim Province"), ("nb", "Guelmim Kommune"), ("nl", "Guelmim"), ("no", "Guelmim Kommune"), ("pl", "Prowincja Guelmim"), ("pt", "Província de Guelmim"), ("ru", "Гельмим"), ("si", "ග\u{dd4}ලෙම\u{dd2}ම\u{dca} පළ\u{dcf}ත"), ("sv", "Guelmim"), ("ta", "குயல\u{bcd}ம\u{bc0}ன\u{bcd} ம\u{bbe}க\u{bbe}ணம\u{bcd}"), ("te", "గ\u{c4d}యుల\u{c4d}మ\u{c3f}మ\u{c4d} ర\u{c3e}ష\u{c4d}ట\u{c4d}రభ\u{c3e}గం"), ("th", "จ\u{e31}งหว\u{e31}ดก\u{e39}ลม\u{e34}ม"), ("tr", "Guelmim Province"), ("uk", "Гельмім"), ("ur", "جویلمیم صوبہ"), ("vi", "Tỉnh Guelmim"), ("zh", "蓋勒敏省")]),
+                        translations: HashMap::from([("ar", "إقليم كلميم"), ("bn", "গ\u{9c1}য\u{9bc}েল\u{9cd}মিম প\u{9cd}রদেশ"), ("ca", "Província de Guelmim"), ("ccp", "𑄉\u{1112a}𑄠𑄬𑄣\u{11134}𑄟\u{11128}𑄟\u{11134}"), ("ceb", "Guelmim (lalawigan)"), ("cy", "Talaith Guelmim"), ("da", "Guelmim"), ("de", "Guelmim"), ("el", "Γκουελμίμ"), ("en", "Guelmim"), ("es", "Provincia de Guelmim"), ("fi", "Guelmim Province"), ("fr", "province de Guelmim"), ("gu", "ગ\u{ac7}લમીમ પ\u{acd}રા\u{a82}ત"), ("hi", "ग\u{941}लमीम प\u{94d}रोवि\u{902}स"), ("id", "Guelmim Province"), ("it", "Provincia di Guelmim"), ("ja", "ゲルミン州"), ("kn", "ಗುಲ\u{ccd}ಮ\u{cbf}ಮ\u{ccd} ಪ\u{ccd}ರಾಂತ\u{ccd}ಯ"), ("ko", "구엘밈 프로빈스"), ("lt", "Guelmimo provincija"), ("lv", "Guelmimas province"), ("mr", "ग\u{947}लमिक प\u{94d}रा\u{902}त"), ("ms", "Guelmim Province"), ("nb", "Guelmim Kommune"), ("nl", "Guelmim"), ("no", "Guelmim Kommune"), ("pl", "Prowincja Guelmim"), ("pt", "Província de Guelmim"), ("ru", "Гельмим"), ("si", "ග\u{dd4}ලෙම\u{dd2}ම\u{dca} පළ\u{dcf}ත"), ("sv", "Guelmim"), ("ta", "குயல\u{bcd}ம\u{bc0}ன\u{bcd} ம\u{bbe}க\u{bbe}ணம\u{bcd}"), ("te", "గ\u{c4d}యుల\u{c4d}మ\u{c3f}మ\u{c4d} ర\u{c3e}ష\u{c4d}ట\u{c4d}రభ\u{c3e}గం"), ("th", "จ\u{e31}งหว\u{e31}ดก\u{e39}ลม\u{e34}ม"), ("tr", "Guelmim Province"), ("uk", "Гельмім"), ("ur", "جویلمیم صوبہ"), ("vi", "Tỉnh Guelmim"), ("zh", "蓋勒敏省")]),
                         unofficial_name_list: ["Guelmim"].to_vec(),
                     }
                 ),
@@ -797,7 +799,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Province,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("en", "Guercif")]),
+                        translations: HashMap::from([("ar", "إقليم جرسيف"), ("ca", "província de Guercif"), ("de", "Guercif"), ("en", "Guercif"), ("es", "Provincia de Guercif"), ("fa", "استان جرسیف"), ("fr", "Guercif"), ("it", "Provincia di Guercif"), ("ja", "ゲルシフ州"), ("nl", "Guercif"), ("ur", "جرسیف صوبہ")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -812,7 +814,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Province,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "إقليم الحاجب"), ("ca", "Província d’El Hajeb"), ("ccp", "𑄃𑄬𑄣\u{11134} 𑄝𑄎\u{11128}𑄛\u{11134}"), ("ceb", "El-Hajeb"), ("de", "El Hajeb"), ("en", "El Hajeb"), ("es", "Provincia de El Hayeb"), ("fr", "province d’El Hajeb"), ("it", "Provincia di El Hajeb"), ("ja", "ハジェブ州"), ("nl", "El Hajeb"), ("zh", "哈傑卜省")]),
+                        translations: HashMap::from([("ar", "إقليم الحاجب"), ("ca", "Província d’El Hajeb"), ("ccp", "𑄃𑄬𑄣\u{11134} 𑄝𑄎\u{11128}𑄛\u{11134}"), ("ceb", "El-Hajeb"), ("cy", "Talaith El Hajeb"), ("de", "El Hajeb"), ("en", "El Hajeb"), ("es", "Provincia de El Hayeb"), ("fr", "province d’El Hajeb"), ("it", "Provincia di El Hajeb"), ("ja", "ハジェブ州"), ("nl", "El Hajeb"), ("zh", "哈傑卜省")]),
                         unofficial_name_list: ["El Hajeb"].to_vec(),
                     }
                 ),
@@ -827,7 +829,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Province,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "إقليم الحوز"), ("ca", "Província d’Al Haouz"), ("ccp", "𑄃𑄣\u{11134} 𑄦𑄅\u{1112a}𑄌\u{11134}"), ("ceb", "Al-Haouz"), ("de", "Al Haouz"), ("en", "Al Haouz"), ("es", "Provincia de Al Hauz"), ("fa", "اقلیم الحوز"), ("fr", "province d’Al Haouz"), ("it", "Provincia di Al Haouz"), ("ja", "ハオウズ"), ("nl", "Al Haouz"), ("pl", "prowincja Al Haouz"), ("pt", "Al Haouz"), ("sv", "Al-Haouz"), ("ur", "الحوز صوبہ"), ("zh", "豪茲省")]),
+                        translations: HashMap::from([("ar", "إقليم الحوز"), ("ca", "Província d’Al Haouz"), ("ccp", "𑄃𑄣\u{11134} 𑄦𑄅\u{1112a}𑄌\u{11134}"), ("ceb", "Al-Haouz"), ("cy", "Talaith Al Haouz"), ("de", "Al Haouz"), ("en", "Al Haouz"), ("es", "Provincia de Al Hauz"), ("fa", "اقلیم الحوز"), ("fr", "province d’Al Haouz"), ("it", "Provincia di Al Haouz"), ("ja", "ハオウズ"), ("nl", "Al Haouz"), ("pl", "prowincja Al Haouz"), ("pt", "Al Haouz"), ("ru", "Эль-Хауз (провинция)"), ("sv", "Al-Haouz"), ("uk", "Провінція Аль-Хауз"), ("ur", "الحوز صوبہ"), ("zh", "豪茲省")]),
                         unofficial_name_list: ["Al Haouz"].to_vec(),
                     }
                 ),
@@ -842,7 +844,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Province,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "إقليم الحسيمة"), ("ca", "Província d’Al Hoceima"), ("ccp", "𑄃𑄣\u{11134} 𑄦\u{1112e}𑄥𑄬\u{1112d}𑄟"), ("ceb", "Al-Hoceima"), ("de", "Al Hoceïma"), ("en", "Al Hoceïma"), ("es", "Provincia de Alhucemas"), ("fr", "province d’Al Hoceïma"), ("gl", "Provincia de Al-Hoceima"), ("it", "Provincia di Al-Hoseyma"), ("ja", "アル・ホセイマ州"), ("nl", "Al Hoceima"), ("ru", "Эль-Хосейма (провинция)"), ("sv", "Al-Hoceima (provins i Marocko)"), ("ur", "الحسیمہ صوبہ"), ("zh", "胡塞馬省")]),
+                        translations: HashMap::from([("ar", "إقليم الحسيمة"), ("ca", "Província d’Al Hoceima"), ("ccp", "𑄃𑄣\u{11134} 𑄦\u{1112e}𑄥𑄬\u{1112d}𑄟"), ("ceb", "Al-Hoceima"), ("cy", "Talaith Al Hoceïma"), ("de", "Al Hoceïma"), ("en", "Al Hoceïma"), ("es", "Provincia de Alhucemas"), ("fr", "province d’Al Hoceïma"), ("gl", "Provincia de Al-Hoceima"), ("it", "Provincia di Al-Hoseyma"), ("ja", "アル・ホセイマ州"), ("nl", "Al Hoceima"), ("pt", "Al Hoceima (província)"), ("ru", "Эль-Хосейма (провинция)"), ("sv", "Al-Hoceima (provins i Marocko)"), ("ur", "الحسیمہ صوبہ"), ("zh", "胡塞馬省")]),
                         unofficial_name_list: ["Al Hoceïma"].to_vec(),
                     }
                 ),
@@ -857,7 +859,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Province,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "إقليم إفران"), ("ca", "Província d’Ifrane"), ("ccp", "𑄃\u{11128}𑄜\u{11133}𑄢\u{1112d}𑄚\u{11134}"), ("ceb", "Ifrane (lalawigan)"), ("de", "Ifrane"), ("en", "Ifrane"), ("es", "Provincia de Ifrane"), ("fr", "province d’Ifrane"), ("it", "Provincia di Ifrane"), ("ja", "イフレン州"), ("nl", "Ifrane"), ("ru", "Ифран (провинция)"), ("sv", "Ifrane"), ("zh", "伊夫蘭省")]),
+                        translations: HashMap::from([("ar", "إقليم إفران"), ("ca", "Província d’Ifrane"), ("ccp", "𑄃\u{11128}𑄜\u{11133}𑄢\u{1112d}𑄚\u{11134}"), ("ceb", "Ifrane (lalawigan)"), ("cy", "Talaith Ifrane"), ("de", "Ifrane"), ("en", "Ifrane"), ("es", "Provincia de Ifrane"), ("fr", "province d’Ifrane"), ("it", "Provincia di Ifrane"), ("ja", "イフレン州"), ("nl", "Ifrane"), ("ru", "Ифран (провинция)"), ("sv", "Ifrane"), ("uk", "Іфран (провінція)"), ("zh", "伊夫蘭省")]),
                         unofficial_name_list: ["Ifrane"].to_vec(),
                     }
                 ),
@@ -887,7 +889,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Province,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "إقليم الجديدة"), ("ca", "Província d’El Jadida"), ("ccp", "𑄃𑄬𑄣\u{11134} 𑄎𑄓\u{11128}𑄘"), ("ceb", "El-Jadida (lalawigan)"), ("de", "El Jadida"), ("en", "El Jadida"), ("es", "Provincia de El Yadida"), ("fr", "province d’El Jadida"), ("it", "Provincia di El Jadida"), ("ja", "アル・ジャディーダ州"), ("nl", "El Jadida"), ("sv", "El-Jadida"), ("zh", "傑迪代省")]),
+                        translations: HashMap::from([("ar", "إقليم الجديدة"), ("ca", "Província d’El Jadida"), ("ccp", "𑄃𑄬𑄣\u{11134} 𑄎𑄓\u{11128}𑄘"), ("ceb", "El-Jadida (lalawigan)"), ("cy", "Talaith El Jadida"), ("de", "El Jadida"), ("en", "El Jadida"), ("es", "Provincia de El Yadida"), ("fr", "province d’El Jadida"), ("it", "Provincia di El Jadida"), ("ja", "アル・ジャディーダ州"), ("nl", "El Jadida"), ("pt", "El Jadida (província)"), ("sv", "El-Jadida"), ("zh", "傑迪代省")]),
                         unofficial_name_list: ["El Jadida"].to_vec(),
                     }
                 ),
@@ -902,7 +904,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Province,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "إقليم جرادة"), ("ca", "Província de Jerada"), ("ccp", "𑄎𑄬𑄢𑄓"), ("ceb", "Jerada (lalawigan)"), ("de", "Jerada (Provinz)"), ("en", "Jerada"), ("es", "Provincia de Yerada"), ("fa", "استان جراده"), ("fr", "province de Jerada"), ("it", "Provincia di Jerada"), ("ja", "ジェラダ州"), ("nl", "Jerada"), ("sv", "Jerada (provins)"), ("ur", "جرادہ صوبہ"), ("zh", "傑拉達省")]),
+                        translations: HashMap::from([("ar", "إقليم جرادة"), ("ca", "Província de Jerada"), ("ccp", "𑄎𑄬𑄢𑄓"), ("ceb", "Jerada (lalawigan)"), ("cy", "Talaith Jerada"), ("de", "Jerada (Provinz)"), ("en", "Jerada"), ("es", "Provincia de Yerada"), ("fa", "استان جراده"), ("fr", "province de Jerada"), ("it", "Provincia di Jerada"), ("ja", "ジェラダ州"), ("nl", "Jerada"), ("sv", "Jerada (provins)"), ("ur", "جرادہ صوبہ"), ("zh", "傑拉達省")]),
                         unofficial_name_list: ["Jerada"].to_vec(),
                     }
                 ),
@@ -917,7 +919,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Province,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "إقليم القنيطرة"), ("ca", "Província de Kénitra"), ("ccp", "𑄇𑄬𑄚\u{11128}𑄑\u{11133}𑄢"), ("ceb", "Kenitra Province"), ("de", "Kénitra"), ("en", "Kénitra"), ("es", "Provincia de Kenitra"), ("fa", "استان قنیطره"), ("fr", "province de Kénitra"), ("it", "Provincia di Kenitra"), ("ja", "ケニトラ州"), ("nl", "Kénitra"), ("ru", "провинция Кенитра"), ("sv", "Kenitra Province"), ("ur", "قنیطرہ صوبہ"), ("zh", "蓋尼特拉省")]),
+                        translations: HashMap::from([("ar", "إقليم القنيطرة"), ("ca", "Província de Kénitra"), ("ccp", "𑄇𑄬𑄚\u{11128}𑄑\u{11133}𑄢"), ("ceb", "Kenitra Province"), ("cy", "Talaith Kénitra"), ("de", "Kénitra"), ("en", "Kénitra"), ("es", "Provincia de Kenitra"), ("fa", "استان قنیطره"), ("fr", "province de Kénitra"), ("it", "Provincia di Kenitra"), ("ja", "ケニトラ州"), ("nl", "Kénitra"), ("pt", "Quenitra (província)"), ("ru", "провинция Кенитра"), ("sv", "Kenitra Province"), ("ur", "قنیطرہ صوبہ"), ("zh", "蓋尼特拉省")]),
                         unofficial_name_list: ["Kénitra"].to_vec(),
                     }
                 ),
@@ -932,7 +934,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Province,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "إقليم قلعة السراغنة"), ("ca", "Província d’El Kelâa des Sraghna"), ("ccp", "𑄇𑄬𑄣𑄖\u{11134} 𑄥\u{11133}𑄢𑄇\u{11134}𑄚"), ("ceb", "Kelaa-Des-Sraghna"), ("de", "El Kelaâ des Sraghna"), ("en", "Kelaat Sraghna"), ("es", "Provincia de El Kelaa des Sraghna"), ("fa", "استان قلعه سراغنه"), ("fr", "province d’El Kelaâ des Sraghna"), ("it", "Provincia di El Kelâat Es-Sraghna"), ("ja", "エル・ケッラ・デ・スラーナ州"), ("nl", "Kelâat Es-Sraghna"), ("pt", "El Kelâat Es-Sraghna"), ("sv", "Kelaa-Des-Sraghna"), ("ur", "القعہ سراغنہ صوبہ"), ("zh", "斯拉格奈堡省")]),
+                        translations: HashMap::from([("ar", "إقليم قلعة السراغنة"), ("ca", "Província d’El Kelâa des Sraghna"), ("ccp", "𑄇𑄬𑄣𑄖\u{11134} 𑄥\u{11133}𑄢𑄇\u{11134}𑄚"), ("ceb", "Kelaa-Des-Sraghna"), ("cy", "Talaith Kelaat Sraghna"), ("de", "El Kelaâ des Sraghna"), ("en", "Kelaat Sraghna"), ("es", "Provincia de El Kelaa des Sraghna"), ("fa", "استان قلعه سراغنه"), ("fr", "province d’El Kelaâ des Sraghna"), ("it", "Provincia di El Kelâat Es-Sraghna"), ("ja", "エル・ケッラ・デ・スラーナ州"), ("nl", "Kelâat Es-Sraghna"), ("pt", "El Kelâat Es-Sraghna"), ("sv", "Kelaa-Des-Sraghna"), ("ur", "القعہ سراغنہ صوبہ"), ("zh", "斯拉格奈堡省")]),
                         unofficial_name_list: ["Kelaat Sraghna"].to_vec(),
                     }
                 ),
@@ -947,7 +949,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Province,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "إقليم الخميسات"), ("ca", "Província de Khémisset"), ("ccp", "𑄈𑄬𑄟\u{11128}𑄥𑄬𑄖\u{11134}"), ("ceb", "Khemisset (lalawigan)"), ("de", "Khémisset (Provinz)"), ("en", "Khemisset"), ("es", "Provincia de Jemisset"), ("fr", "province de Khémisset"), ("it", "Provincia di Khemisset"), ("ja", "ケミセット州"), ("nl", "Khémisset"), ("sv", "Khemisset (provins i Marocko)"), ("zh", "海米薩特省")]),
+                        translations: HashMap::from([("ar", "إقليم الخميسات"), ("ca", "Província de Khémisset"), ("ccp", "𑄈𑄬𑄟\u{11128}𑄥𑄬𑄖\u{11134}"), ("ceb", "Khemisset (lalawigan)"), ("cy", "Talaith Khémisset"), ("de", "Khémisset (Provinz)"), ("en", "Khemisset"), ("es", "Provincia de Jemisset"), ("fr", "province de Khémisset"), ("it", "Provincia di Khemisset"), ("ja", "ケミセット州"), ("nl", "Khémisset"), ("pt", "Khémisset (província)"), ("sv", "Khemisset (provins i Marocko)"), ("zh", "海米薩特省")]),
                         unofficial_name_list: ["Khemisset"].to_vec(),
                     }
                 ),
@@ -962,7 +964,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Province,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "إقليم خنيفرة"), ("ca", "Província de Khénifra"), ("ccp", "𑄈𑄬𑄚\u{11128}𑄜\u{11133}𑄢"), ("ceb", "Khenifra (lalawigan)"), ("de", "Khénifra"), ("en", "Khénifra"), ("es", "Provincia de Jenifra"), ("fr", "province de Khénifra"), ("it", "Provincia di Khenifra"), ("ja", "ヘニフラ州"), ("nl", "Khénifra"), ("zh", "海尼夫拉省")]),
+                        translations: HashMap::from([("ar", "إقليم خنيفرة"), ("ca", "Província de Khénifra"), ("ccp", "𑄈𑄬𑄚\u{11128}𑄜\u{11133}𑄢"), ("ceb", "Khenifra (lalawigan)"), ("cy", "Talaith Khénifra"), ("de", "Khénifra"), ("en", "Khénifra"), ("es", "Provincia de Jenifra"), ("fr", "province de Khénifra"), ("it", "Provincia di Khenifra"), ("ja", "ヘニフラ州"), ("nl", "Khénifra"), ("zh", "海尼夫拉省")]),
                         unofficial_name_list: ["Khenifra"].to_vec(),
                     }
                 ),
@@ -977,7 +979,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Province,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "إقليم خريبكة"), ("ca", "Província de Khouribga"), ("ccp", "𑄈\u{1112f}𑄢\u{11128}𑄛\u{11134}𑄉"), ("ceb", "Khouribga Province"), ("de", "Khouribga (Provinz)"), ("en", "Khouribga"), ("es", "Provincia de Juribga"), ("fr", "province de Khouribga"), ("it", "Provincia di Khouribga"), ("ja", "クーリブカ州"), ("nl", "Khouribga (provincie)"), ("sv", "Khouribga Province"), ("zh", "胡里卜蓋省")]),
+                        translations: HashMap::from([("ar", "إقليم خريبكة"), ("ca", "Província de Khouribga"), ("ccp", "𑄈\u{1112f}𑄢\u{11128}𑄛\u{11134}𑄉"), ("ceb", "Khouribga Province"), ("cy", "Talaith Khouribga"), ("de", "Khouribga (Provinz)"), ("en", "Khouribga"), ("es", "Provincia de Juribga"), ("fr", "province de Khouribga"), ("it", "Provincia di Khouribga"), ("ja", "クーリブカ州"), ("nl", "Khouribga (provincie)"), ("pt", "Khouribga (província)"), ("sv", "Khouribga Province"), ("zh", "胡里卜蓋省")]),
                         unofficial_name_list: ["Khouribga"].to_vec(),
                     }
                 ),
@@ -1007,7 +1009,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Province,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "إقليم العرائش"), ("be", "Лараш"), ("ca", "Província de Larraix"), ("ccp", "𑄣𑄢\u{11134}𑄥𑄬"), ("ceb", "Larache (lalawigan)"), ("de", "Larache"), ("en", "Larache"), ("es", "Larache"), ("fr", "Larache"), ("it", "Provincia di Larache"), ("ja", "アライシュ州"), ("nl", "Larache"), ("ru", "Лараш"), ("sv", "Larache (provins)"), ("ur", "العرائش صوبہ"), ("zh", "拉臘什省")]),
+                        translations: HashMap::from([("ar", "إقليم العرائش"), ("be", "Лараш"), ("ca", "Província de Larraix"), ("ccp", "𑄣𑄢\u{11134}𑄥𑄬"), ("ceb", "Larache (lalawigan)"), ("cy", "Talaith Larache"), ("da", "Larache"), ("de", "Larache"), ("en", "Larache"), ("es", "Larache"), ("fr", "Larache"), ("it", "Provincia di Larache"), ("ja", "アライシュ州"), ("nl", "Larache"), ("pt", "Larache (província)"), ("ru", "Лараш"), ("sv", "Larache (provins)"), ("ur", "العرائش صوبہ"), ("zh", "拉臘什省")]),
                         unofficial_name_list: ["Larache"].to_vec(),
                     }
                 ),
@@ -1022,7 +1024,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Prefecture,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("en", "Marrakech")]),
+                        translations: HashMap::from([("ar", "عمالة مراكش"), ("ca", "prefectura de Marràqueix"), ("de", "Marrakesch (Präfektur)"), ("el", "Νομαρχία του Μαρακές"), ("en", "Marrakech"), ("es", "Marrakech"), ("fr", "Marrakech"), ("it", "prefettura di Marrakech"), ("ja", "マラケシュ県"), ("nl", "Marrakech (provincie)"), ("pt", "Marraquexe (prefeitura)"), ("ru", "Марракеш")]),
                         unofficial_name_list: ["Marrakech"].to_vec(),
                     }
                 ),
@@ -1037,7 +1039,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Prefecture,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("en", "M’diq-Fnideq")]),
+                        translations: HashMap::from([("ar", "عمالة المضيق الفنيدق"), ("ca", "prefectura de M’diq-Fnideq"), ("de", "M’diq-Fnideq"), ("en", "M’diq-Fnideq"), ("es", "M’Diq-Fnideq"), ("fr", "M’diq-Fnideq"), ("it", "Prefettura di M’diq-Fnideq"), ("ja", "メディック・フニデク県"), ("nl", "M’diq-Fnideq"), ("pt", "M’diq-Fnideq")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -1052,7 +1054,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Province,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "إقليم مديونة"), ("ca", "Província de Médiouna"), ("ccp", "𑄟𑄬𑄓\u{11128}𑄃\u{1112f}𑄚"), ("ceb", "Mediouna"), ("de", "Médiouna (Provinz)"), ("en", "Médiouna"), ("es", "Provincia de Mediuna"), ("fr", "province de Médiouna"), ("it", "Provincia di Mediouna"), ("ja", "メディウナ州"), ("nl", "Médiouna"), ("zh", "梅久那省")]),
+                        translations: HashMap::from([("ar", "إقليم مديونة"), ("ca", "Província de Médiouna"), ("ccp", "𑄟𑄬𑄓\u{11128}𑄃\u{1112f}𑄚"), ("ceb", "Mediouna"), ("cy", "Talaith Mediouna"), ("de", "Médiouna (Provinz)"), ("en", "Médiouna"), ("es", "Provincia de Mediuna"), ("fr", "province de Médiouna"), ("it", "Provincia di Mediouna"), ("ja", "メディウナ州"), ("nl", "Médiouna"), ("pt", "Médiouna (província)"), ("zh", "梅久那省")]),
                         unofficial_name_list: ["Médiouna"].to_vec(),
                     }
                 ),
@@ -1097,7 +1099,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Province,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("en", "Midelt")]),
+                        translations: HashMap::from([("ar", "إقليم ميدلت"), ("ca", "província de Midelt"), ("de", "Midelt (Provinz)"), ("en", "Midelt"), ("es", "Provincia de Midelt"), ("fr", "Midelt"), ("it", "provincia di Midelt"), ("ja", "ミデルト州"), ("nl", "Midelt")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -1142,7 +1144,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Prefecture,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "المحمدية"), ("az", "Məhəmmədiyyə"), ("bn", "মোহ\u{9be}ম\u{9cd}ম\u{9be}দিয\u{9bc}\u{9be}"), ("ca", "Mohammedia"), ("ccp", "𑄟\u{1112e}𑄦𑄟\u{11134}𑄟\u{11127}𑄘\u{11128}𑄠"), ("ceb", "Mohammedia"), ("cy", "Mohammédia"), ("da", "Mohammédia"), ("de", "Mohammedia"), ("el", "Μοχαμέντια"), ("en", "Mohammedia"), ("es", "Mohammédia"), ("eu", "Mohammedia"), ("fa", "محمدیه"), ("fi", "Mohammedia"), ("fr", "Mohammédia"), ("gu", "મોહમ\u{acd}મદિયા"), ("he", "מוחמדיה"), ("hi", "मोहम\u{94d}मदिया"), ("id", "Mohammedia"), ("it", "Mohammedia"), ("ja", "フェドハラ（モハメディア）"), ("kn", "ಮೊಹಮ\u{ccd}ಮದ\u{cbf}ಯಾ"), ("ko", "모하메디아"), ("lt", "Mohamedija"), ("lv", "Mohamedija"), ("mr", "मोहम\u{94d}मदिया"), ("ms", "Mohammedia"), ("nb", "Mohammedia"), ("nl", "Mohammedia"), ("no", "Mohammedia"), ("pl", "Al-Muhammadijja"), ("pt", "Mohammedia"), ("ro", "Mohammedia"), ("ru", "Мохаммедия"), ("si", "මෝහමෙද\u{dd2}ය\u{dcf}"), ("sq", "Mohammedia"), ("sv", "Mohammedia"), ("ta", "மொஹம\u{bcd}ம\u{bc0}டிய\u{bbe}"), ("te", "మ\u{c4a}హమ\u{c4d}మ\u{c46}ద\u{c3f}య\u{c3e}"), ("th", "ม\u{e39}ฮ\u{e31}มเมด\u{e34}อา"), ("tr", "Muhammediye"), ("uk", "Мохаммедія"), ("ur", "محمدیہ"), ("vi", "Mohammedia"), ("zh", "穆罕默迪耶")]),
+                        translations: HashMap::from([("ar", "المحمدية"), ("az", "Məhəmmədiyyə"), ("bn", "মোহ\u{9be}ম\u{9cd}ম\u{9be}দিয\u{9bc}\u{9be}"), ("ca", "Mohammedia"), ("ccp", "𑄟\u{1112e}𑄦𑄟\u{11134}𑄟\u{11127}𑄘\u{11128}𑄠"), ("ceb", "Mohammedia"), ("cy", "Mohammédia"), ("da", "Mohammédia"), ("de", "Mohammedia"), ("el", "Μοχαμέντια"), ("en", "Mohammedia"), ("es", "Mohammédia"), ("eu", "Mohammedia"), ("fa", "محمدیه"), ("fi", "Mohammedia"), ("fr", "Mohammédia"), ("ga", "Mohammedia"), ("gu", "મોહમ\u{acd}મદિયા"), ("he", "מוחמדיה"), ("hi", "मोहम\u{94d}मदिया"), ("id", "Mohammedia"), ("it", "Mohammedia"), ("ja", "フェドハラ（モハメディア）"), ("kn", "ಮೊಹಮ\u{ccd}ಮದ\u{cbf}ಯಾ"), ("ko", "모하메디아"), ("lt", "Mohamedija"), ("lv", "Mohamedija"), ("mr", "मोहम\u{94d}मदिया"), ("ms", "Mohammedia"), ("nb", "Mohammedia"), ("nl", "Mohammedia"), ("no", "Mohammedia"), ("pl", "Al-Muhammadijja"), ("pt", "Mohammedia"), ("ro", "Mohammedia"), ("ru", "Мохаммедия"), ("si", "මෝහමෙද\u{dd2}ය\u{dcf}"), ("sq", "Mohammedia"), ("sv", "Mohammedia"), ("sw", "Mohammedia"), ("ta", "மொஹம\u{bcd}ம\u{bc0}டிய\u{bbe}"), ("te", "మ\u{c4a}హమ\u{c4d}మ\u{c46}ద\u{c3f}య\u{c3e}"), ("th", "ม\u{e39}ฮ\u{e31}มเมด\u{e34}อา"), ("tr", "Muhammediye"), ("uk", "Мохаммедія"), ("ur", "محمدیہ"), ("vi", "Mohammedia"), ("zh", "穆罕默迪耶")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -1157,7 +1159,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Province,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "إقليم مولاي يعقوب"), ("ca", "Província de Moulay Yaâcoub"), ("ccp", "𑄟\u{1112f}𑄣𑄬 𑄃\u{11128}𑄠𑄇\u{1112a}𑄛\u{11134}"), ("ceb", "Moulay-Yacoub"), ("de", "Moulay Yacoub (Provinz)"), ("en", "Moulay Yacoub"), ("es", "Provincia de Mulay Yacub"), ("fr", "province de Moulay Yaâcoub"), ("it", "Prefettura di Moulay Yacoub"), ("ja", "ムーレイ・ヤコブ州"), ("nl", "Moulay Yacoub"), ("sv", "Moulay-Yacoub"), ("zh", "穆雷省")]),
+                        translations: HashMap::from([("ar", "إقليم مولاي يعقوب"), ("ca", "Província de Moulay Yaâcoub"), ("ccp", "𑄟\u{1112f}𑄣𑄬 𑄃\u{11128}𑄠𑄇\u{1112a}𑄛\u{11134}"), ("ceb", "Moulay-Yacoub"), ("cy", "Talaith Moulay Yacoub"), ("de", "Moulay Yacoub (Provinz)"), ("en", "Moulay Yacoub"), ("es", "Provincia de Mulay Yacub"), ("fr", "province de Moulay Yaâcoub"), ("it", "Prefettura di Moulay Yacoub"), ("ja", "ムーレイ・ヤコブ州"), ("nl", "Moulay Yacoub"), ("sv", "Moulay-Yacoub"), ("zh", "穆雷省")]),
                         unofficial_name_list: ["Moulay Yacoub"].to_vec(),
                     }
                 ),
@@ -1172,7 +1174,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Province,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("af", "Nador (provinsie)"), ("ar", "إقليم الناظور"), ("ca", "Província de Nador"), ("ccp", "𑄚𑄓\u{11127}𑄢\u{11134}"), ("ceb", "Nador (lalawigan)"), ("de", "Nador"), ("el", "Επαρχία του Ναντόρ"), ("en", "Nador"), ("es", "Provincia de Nador"), ("fa", "استان ناظور"), ("fr", "province de Nador"), ("it", "Provincia di Nador"), ("ja", "ナドール州"), ("nl", "Nador"), ("ru", "Надор"), ("sv", "Nador (provins)"), ("ur", "ناظور صوبہ"), ("zh", "納祖爾省")]),
+                        translations: HashMap::from([("af", "Nador (provinsie)"), ("ar", "إقليم الناظور"), ("ca", "Província de Nador"), ("ccp", "𑄚𑄓\u{11127}𑄢\u{11134}"), ("ceb", "Nador (lalawigan)"), ("cy", "Talaith Nador"), ("de", "Nador"), ("el", "Επαρχία του Ναντόρ"), ("en", "Nador"), ("es", "Provincia de Nador"), ("fa", "استان ناظور"), ("fr", "province de Nador"), ("it", "Provincia di Nador"), ("ja", "ナドール州"), ("ko", "나도르주"), ("nl", "Nador"), ("pt", "Nador (província)"), ("ru", "Надор"), ("sv", "Nador (provins)"), ("ur", "ناظور صوبہ"), ("zh", "納祖爾省")]),
                         unofficial_name_list: ["Nador"].to_vec(),
                     }
                 ),
@@ -1187,7 +1189,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Province,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "إقليم النواصر"), ("ca", "Província de Nouaceur"), ("ccp", "𑄚\u{1112f}𑄃𑄥𑄬𑄅\u{1112a}𑄢\u{11134}"), ("ceb", "Nouaceur (lalawigan)"), ("de", "Nouaceur"), ("en", "Nouaceur"), ("es", "Provincia de Nouaceur"), ("fr", "province de Nouaceur"), ("it", "Provincia di Nouaceur"), ("ja", "ノウアセウル州"), ("nl", "Nouaceur"), ("ur", "صوبہ نواصر"), ("zh", "諾瓦瑟爾省")]),
+                        translations: HashMap::from([("ar", "إقليم النواصر"), ("ca", "Província de Nouaceur"), ("ccp", "𑄚\u{1112f}𑄃𑄥𑄬𑄅\u{1112a}𑄢\u{11134}"), ("ceb", "Nouaceur (lalawigan)"), ("cy", "Talaith Nouaceur"), ("de", "Nouaceur"), ("en", "Nouaceur"), ("es", "Provincia de Nouaceur"), ("fr", "province de Nouaceur"), ("it", "Provincia di Nouaceur"), ("ja", "ノウアセウル州"), ("nl", "Nouaceur"), ("pt", "Nouaceur (província)"), ("ur", "صوبہ نواصر"), ("zh", "諾瓦瑟爾省")]),
                         unofficial_name_list: ["Nouaceur"].to_vec(),
                     }
                 ),
@@ -1202,7 +1204,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Province,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "إقليم ورززات"), ("ca", "Província de Ouarzazate"), ("ccp", "𑄇\u{1112f}𑄢\u{11134}𑄎𑄎𑄖\u{11134}"), ("ceb", "Ouarzazate"), ("de", "Ouarzazate"), ("en", "Ouarzazate"), ("es", "Provincia de Uarzazate"), ("fa", "استان ورززات"), ("fr", "province de Ouarzazate"), ("it", "Provincia di Ouarzazate"), ("ja", "ワルザザート州"), ("nl", "Ouarzazate"), ("pl", "prowincja Ouarzazate"), ("pt", "Ouarzazate"), ("zh", "瓦爾扎扎特省")]),
+                        translations: HashMap::from([("ar", "إقليم ورززات"), ("ca", "Província de Ouarzazate"), ("ccp", "𑄇\u{1112f}𑄢\u{11134}𑄎𑄎𑄖\u{11134}"), ("ceb", "Ouarzazate"), ("cy", "Talaith Ouarzazate"), ("de", "Ouarzazate"), ("en", "Ouarzazate"), ("es", "Provincia de Uarzazate"), ("fa", "استان ورززات"), ("fr", "province de Ouarzazate"), ("it", "Provincia di Ouarzazate"), ("ja", "ワルザザート州"), ("nl", "Ouarzazate"), ("pl", "prowincja Ouarzazate"), ("pt", "Ouarzazate"), ("zh", "瓦爾扎扎特省")]),
                         unofficial_name_list: ["Ouarzazate"].to_vec(),
                     }
                 ),
@@ -1217,7 +1219,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Province,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "إقليم وادي الذهب"), ("bn", "ওউড এড-ড\u{9be}হ\u{9be}ব প\u{9cd}রদেশ"), ("ca", "Província d’Oued Ed-Dahab"), ("ccp", "𑄇\u{1112a}𑄠𑄬𑄖\u{11134} 𑄃\u{11128}𑄖\u{11134}-𑄓𑄦𑄛\u{11134}"), ("ceb", "Oued Ed-Dahab-Lagouira"), ("da", "Oued Ed-Dahab Province"), ("de", "Oued ed Dahab"), ("el", "Ουέντ Εντ-Νταχάμπ"), ("en", "Oued Ed-Dahab"), ("es", "Provincia de Río de Oro-Dajla"), ("fi", "Oued Ed-Dahabn lääni"), ("fr", "province d’Oued Ed-Dahab"), ("gu", "ઓઉડ એડ-દાહાબ પ\u{acd}રા\u{a82}ત"), ("hi", "ओयड एड-दाहब प\u{94d}रा\u{902}त"), ("id", "Provinsi Oued Ed-Dahab"), ("it", "Provincia di Oued Ed-Dahab"), ("kn", "ಓಯಡ\u{ccd} ಎಡ\u{ccd}-ದಹಾಬ\u{ccd} ಪ\u{ccd}ರಾಂತ\u{ccd}ಯ"), ("ko", "우에드 에드 다합 주"), ("lt", "Ued Ed-Dahabas"), ("lv", "Oued Ed-Dahabas province"), ("mr", "ओएड एड-दाहाब प\u{94d}रा\u{902}त"), ("ms", "Oued Ed-Dahab Province"), ("nb", "Oued ed-Dahab provins"), ("nl", "Oued ed Dahab"), ("no", "Oued ed-Dahab provins"), ("pl", "Prowincja Oued Ed-Dahab"), ("pt", "Oued ed-Dahab provins"), ("ru", "Уэд Эд-Дахаб"), ("si", "ඖඑඩ\u{dca}-ඩහබ\u{dca} පළ\u{dcf}ත"), ("sv", "Oued ed-Dahab (provins)"), ("ta", "யத\u{bcd} எட\u{bcd} -டஹ\u{bbe}ப\u{bcd} ம\u{bbe}க\u{bbe}ணம\u{bcd}"), ("te", "క\u{c4d}వ\u{c46}డ\u{c4d} ఎడ\u{c4d}-ద\u{c3e}హబ\u{c4d} ప\u{c4d}ర\u{c3e}వ\u{c3f}న\u{c4d}స\u{c4d}"), ("th", "จ\u{e31}งหว\u{e31}ดเกด เอด ดาอ\u{e31}บ"), ("tr", "Oued Ed-Dahab Province"), ("uk", "Провінція Уед-Ед-Дахаб"), ("ur", "ووید ید-داحاب صوبہ"), ("vi", "Oued Ed-Dahab Tỉnh"), ("zh", "黃金谷地省")]),
+                        translations: HashMap::from([("ar", "إقليم وادي الذهب"), ("bn", "ওউড এড-ড\u{9be}হ\u{9be}ব প\u{9cd}রদেশ"), ("ca", "Província d’Oued Ed-Dahab"), ("ccp", "𑄇\u{1112a}𑄠𑄬𑄖\u{11134} 𑄃\u{11128}𑄖\u{11134}-𑄓𑄦𑄛\u{11134}"), ("ceb", "Oued Ed-Dahab-Lagouira"), ("cy", "Talaith Oued Ed-Dahab"), ("da", "Oued Ed-Dahab Province"), ("de", "Oued ed Dahab"), ("el", "Ουέντ Εντ-Νταχάμπ"), ("en", "Oued Ed-Dahab"), ("es", "Provincia de Río de Oro-Dajla"), ("fi", "Oued Ed-Dahabn lääni"), ("fr", "province d’Oued Ed-Dahab"), ("gu", "ઓઉડ એડ-દાહાબ પ\u{acd}રા\u{a82}ત"), ("hi", "ओयड एड-दाहब प\u{94d}रा\u{902}त"), ("id", "Provinsi Oued Ed-Dahab"), ("it", "Provincia di Oued Ed-Dahab"), ("ja", "オウィド・エッ＝ダハブ州"), ("kn", "ಓಯಡ\u{ccd} ಎಡ\u{ccd}-ದಹಾಬ\u{ccd} ಪ\u{ccd}ರಾಂತ\u{ccd}ಯ"), ("ko", "우에드 에드 다합 주"), ("lt", "Ued Ed-Dahabas"), ("lv", "Oued Ed-Dahabas province"), ("mr", "ओएड एड-दाहाब प\u{94d}रा\u{902}त"), ("ms", "Oued Ed-Dahab Province"), ("nb", "Oued ed-Dahab provins"), ("nl", "Oued ed Dahab"), ("no", "Oued ed-Dahab provins"), ("pl", "Prowincja Oued Ed-Dahab"), ("pt", "Oued ed-Dahab provins"), ("ru", "Уэд Эд-Дахаб"), ("si", "ඖඑඩ\u{dca}-ඩහබ\u{dca} පළ\u{dcf}ත"), ("sv", "Oued ed-Dahab (provins)"), ("ta", "யத\u{bcd} எட\u{bcd} -டஹ\u{bbe}ப\u{bcd} ம\u{bbe}க\u{bbe}ணம\u{bcd}"), ("te", "క\u{c4d}వ\u{c46}డ\u{c4d} ఎడ\u{c4d}-ద\u{c3e}హబ\u{c4d} ప\u{c4d}ర\u{c3e}వ\u{c3f}న\u{c4d}స\u{c4d}"), ("th", "จ\u{e31}งหว\u{e31}ดเกด เอด ดาอ\u{e31}บ"), ("tr", "Oued Ed-Dahab Province"), ("uk", "Провінція Уед-Ед-Дахаб"), ("ur", "ووید ید-داحاب صوبہ"), ("vi", "Oued Ed-Dahab Tỉnh"), ("zh", "黃金谷地省")]),
                         unofficial_name_list: ["Oued ed Dahab (EH)"].to_vec(),
                     }
                 ),
@@ -1232,7 +1234,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Prefecture,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "وجدة"), ("be", "Горад Уджда"), ("bg", "Уджда"), ("bn", "ওজদ\u{9be}"), ("ca", "Oujda"), ("ccp", "𑄃\u{1112f}𑄌\u{11134}𑄓-𑄃𑄚\u{11134}𑄉𑄖\u{11134}"), ("ceb", "Oujda (kapital sa rehiyon)"), ("cs", "Oujda"), ("cy", "Oujda"), ("da", "Oujda"), ("de", "Oujda"), ("el", "Ούζντα"), ("en", "Oujda-Angad"), ("es", "Uchda"), ("eu", "Ujda"), ("fa", "وجده"), ("fi", "Oujda"), ("fr", "Oujda"), ("gl", "Oujda"), ("gu", "ઔજદા"), ("he", "אוג׳דה"), ("hi", "उजडा"), ("hr", "Oujda"), ("hu", "Oujda"), ("id", "Oujda"), ("it", "Oujda"), ("ja", "ウジダ"), ("kk", "Уджда қаласы"), ("kn", "ಔಜದ"), ("ko", "우지다"), ("lt", "Udžda"), ("lv", "Udždza"), ("mk", "Уџда"), ("mr", "औजदा"), ("ms", "Oujda"), ("nb", "Oujda"), ("nl", "Oujda"), ("no", "Oujda"), ("pl", "Wadżda"), ("pt", "Oujda"), ("ro", "Oujda"), ("ru", "Уджда"), ("si", "ඖජ\u{dcf}"), ("sl", "Oujda"), ("sq", "Oujda"), ("sv", "Oujda"), ("ta", "அவுஜ\u{bcd}த\u{bbe}"), ("te", "ఊజ\u{c4d}డ\u{c3e}"), ("th", "อ\u{e38}จดา"), ("tr", "Ucda"), ("uk", "Уджда"), ("ur", "وجدہ"), ("vi", "Oujda"), ("zh", "乌季达")]),
+                        translations: HashMap::from([("ar", "وجدة"), ("az", "Ucda"), ("be", "Горад Уджда"), ("bg", "Уджда"), ("bn", "ওজদ\u{9be}"), ("ca", "Oujda"), ("ccp", "𑄃\u{1112f}𑄌\u{11134}𑄓-𑄃𑄚\u{11134}𑄉𑄖\u{11134}"), ("ceb", "Oujda (kapital sa rehiyon)"), ("cs", "Oujda"), ("cy", "Oujda"), ("da", "Oujda"), ("de", "Oujda"), ("el", "Ούζντα"), ("en", "Oujda-Angad"), ("es", "Uchda"), ("et", "Oujda"), ("eu", "Ujda"), ("fa", "وجده"), ("fi", "Oujda"), ("fr", "Oujda"), ("ga", "Oujda"), ("gl", "Oujda"), ("gu", "ઔજદા"), ("he", "אוג׳דה"), ("hi", "उजडा"), ("hr", "Oujda"), ("hu", "Oujda"), ("hy", "Ուջա"), ("id", "Oujda"), ("it", "Oujda"), ("ja", "ウジダ"), ("kk", "Уджда қаласы"), ("kn", "ಔಜದ"), ("ko", "우지다"), ("lt", "Udžda"), ("lv", "Udždza"), ("mk", "Уџда"), ("mr", "औजदा"), ("ms", "Oujda"), ("nb", "Oujda"), ("nl", "Oujda"), ("no", "Oujda"), ("pl", "Wadżda"), ("pt", "Oujda"), ("ro", "Oujda"), ("ru", "Уджда"), ("si", "ඖජ\u{dcf}"), ("sl", "Oujda"), ("sq", "Oujda"), ("sv", "Oujda"), ("sw", "Oujda"), ("ta", "அவுஜ\u{bcd}த\u{bbe}"), ("te", "ఊజ\u{c4d}డ\u{c3e}"), ("th", "อ\u{e38}จดา"), ("tr", "Ucda"), ("uk", "Уджда"), ("ur", "وجدہ"), ("vi", "Oujda"), ("zh", "乌季达")]),
                         unofficial_name_list: ["Oujda"].to_vec(),
                     }
                 ),
@@ -1247,7 +1249,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Province,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("en", "Ouezzane")]),
+                        translations: HashMap::from([("ar", "إقليم وزان"), ("ca", "província d’Ouezzane"), ("cy", "Talaith Ouezzane"), ("de", "Ouezzane"), ("en", "Ouezzane"), ("es", "Provincia de Uezán"), ("fr", "Ouezzane"), ("it", "Provincia di Ouezzane"), ("ja", "ウェザーン州"), ("pt", "Ouezzane (província)"), ("ur", "وزان صوبہ")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -1277,7 +1279,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Province,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("en", "Rehamna")]),
+                        translations: HashMap::from([("ar", "إقليم الرحامنة"), ("ca", "província de Rehamna"), ("de", "Rehamna"), ("en", "Rehamna"), ("es", "Provincia de Rehamna"), ("fa", "استان رحامنه"), ("fr", "Rehamna"), ("it", "provincia di Rehamna"), ("ja", "レハムナ州"), ("nl", "Rehamna"), ("pt", "Rehamna (província)"), ("ur", "رحامنہ صوبہ")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -1292,7 +1294,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Province,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "إقليم آسفي"), ("ca", "Província de Safi"), ("ccp", "𑄥𑄜\u{11128}"), ("ceb", "Safi (lalawigan)"), ("de", "Safi"), ("el", "επαρχία Σάφι"), ("en", "Safi"), ("es", "Provincia de Safí"), ("fr", "province de Safi"), ("it", "Provincia di Safi"), ("ja", "サフィ州"), ("nl", "Safi"), ("sv", "Safi (provins)"), ("zh", "薩非省")]),
+                        translations: HashMap::from([("ar", "إقليم آسفي"), ("ca", "Província de Safi"), ("ccp", "𑄥𑄜\u{11128}"), ("ceb", "Safi (lalawigan)"), ("cy", "Talaith Safi"), ("de", "Safi"), ("el", "επαρχία Σάφι"), ("en", "Safi"), ("es", "Provincia de Safí"), ("fr", "province de Safi"), ("it", "Provincia di Safi"), ("ja", "サフィ州"), ("nl", "Safi"), ("pt", "Safim (província)"), ("sv", "Safi (provins)"), ("zh", "薩非省")]),
                         unofficial_name_list: ["Safi"].to_vec(),
                     }
                 ),
@@ -1307,7 +1309,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Prefecture,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "سلا"), ("be", "Горад Сале"), ("bg", "Сале"), ("bn", "স\u{9be}লে"), ("ca", "Salé"), ("ccp", "𑄥𑄣𑄬"), ("ceb", "Sale"), ("cs", "Salé"), ("cy", "Salé"), ("da", "Salé"), ("de", "Salé"), ("el", "Σαλέ"), ("en", "Salé"), ("es", "Salé"), ("eu", "Sale"), ("fa", "سلا"), ("fi", "Salé"), ("fr", "Salé"), ("gu", "સ\u{ac7}લ\u{ac7}"), ("he", "סלא"), ("hi", "साल\u{947}"), ("hr", "Salé"), ("hu", "Szale"), ("id", "Salé"), ("it", "Salé"), ("ja", "サレ"), ("kk", "Сале"), ("kn", "ಸಲ\u{cc6}"), ("ko", "살레"), ("lt", "Salė"), ("lv", "Sale"), ("mk", "Сале"), ("mr", "स\u{947}ल"), ("ms", "Sale"), ("nb", "Sale"), ("nl", "Salé"), ("no", "Sale"), ("pl", "Sala"), ("pt", "Salé"), ("ro", "Salé"), ("ru", "Сале"), ("si", "ස\u{dcf}ලේ"), ("sr", "Сале"), ("sr_Latn", "Sale"), ("sv", "Salé"), ("sw", "Sale"), ("ta", "சேல\u{bcd}"), ("te", "స\u{c3e}ల\u{c47}"), ("th", "ซาเล\u{e47}ม"), ("tr", "Salé"), ("uk", "Сале"), ("ur", "سلا"), ("vi", "Salé"), ("zh", "塞拉")]),
+                        translations: HashMap::from([("ar", "سلا"), ("be", "Горад Сале"), ("bg", "Сале"), ("bn", "স\u{9be}লে"), ("ca", "Salé"), ("ccp", "𑄥𑄣𑄬"), ("ceb", "Sale"), ("cs", "Salé"), ("cy", "Salé"), ("da", "Salé"), ("de", "Salé"), ("el", "Σαλέ"), ("en", "Salé"), ("es", "Salé"), ("eu", "Sale"), ("fa", "سلا"), ("fi", "Salé"), ("fr", "Salé"), ("ga", "Salé"), ("gu", "સ\u{ac7}લ\u{ac7}"), ("ha", "Salé"), ("ha_NE", "Salé"), ("he", "סלא"), ("hi", "साल\u{947}"), ("hr", "Salé"), ("hu", "Szale"), ("id", "Salé"), ("it", "Salé"), ("ja", "サレ"), ("kk", "Сале"), ("kn", "ಸಲ\u{cc6}"), ("ko", "살레"), ("lt", "Salė"), ("lv", "Sale"), ("mk", "Сале"), ("mr", "स\u{947}ल"), ("ms", "Sale"), ("nb", "Sale"), ("nl", "Salé"), ("no", "Sale"), ("pl", "Sala"), ("pt", "Salé"), ("ro", "Salé"), ("ru", "Сале"), ("si", "ස\u{dcf}ලේ"), ("sr", "Сале"), ("sr_Latn", "Sale"), ("sv", "Salé"), ("sw", "Sale"), ("ta", "சேல\u{bcd}"), ("te", "స\u{c3e}ల\u{c47}"), ("th", "ซาเล\u{e47}ม"), ("tr", "Salé"), ("uk", "Сале"), ("ur", "سلا"), ("vi", "Salé"), ("zh", "塞拉")]),
                         unofficial_name_list: ["Salé"].to_vec(),
                     }
                 ),
@@ -1322,7 +1324,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Province,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "إقليم صفرو"), ("ca", "Província de Sufruy"), ("ccp", "𑄥𑄬𑄜\u{11133}𑄢\u{11127}\u{1112e}"), ("ceb", "Sefrou (lalawigan)"), ("de", "Sefrou"), ("en", "Sefrou"), ("es", "Provincia de Sefrú"), ("fr", "province de Séfrou"), ("it", "Provincia di Sefrou"), ("ja", "セフル州"), ("nl", "Sefrou"), ("sv", "Sefrou (provins)"), ("zh", "塞夫勞省")]),
+                        translations: HashMap::from([("ar", "إقليم صفرو"), ("ca", "Província de Sufruy"), ("ccp", "𑄥𑄬𑄜\u{11133}𑄢\u{11127}\u{1112e}"), ("ceb", "Sefrou (lalawigan)"), ("cy", "Talaith Sefrou"), ("de", "Sefrou"), ("en", "Sefrou"), ("es", "Provincia de Sefrú"), ("fr", "province de Séfrou"), ("it", "Provincia di Sefrou"), ("ja", "セフル州"), ("nl", "Sefrou"), ("sv", "Sefrou (provins)"), ("zh", "塞夫勞省")]),
                         unofficial_name_list: ["Sefrou"].to_vec(),
                     }
                 ),
@@ -1337,7 +1339,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Province,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "إقليم سطات"), ("ca", "Província de Settat"), ("ccp", "𑄥𑄬𑄖\u{11134}𑄑𑄖\u{11134}"), ("ceb", "Settat Province"), ("de", "Settat"), ("en", "Settat"), ("es", "Provincia de Settat"), ("fr", "province de Settat"), ("it", "Provincia di Settat"), ("ja", "セタト州"), ("nl", "Settat"), ("sv", "Settat Province"), ("zh", "塞塔特省")]),
+                        translations: HashMap::from([("ar", "إقليم سطات"), ("ca", "Província de Settat"), ("ccp", "𑄥𑄬𑄖\u{11134}𑄑𑄖\u{11134}"), ("ceb", "Settat Province"), ("cy", "Talaith Settat"), ("de", "Settat"), ("en", "Settat"), ("es", "Provincia de Settat"), ("fr", "province de Settat"), ("it", "Provincia di Settat"), ("ja", "セタト州"), ("nl", "Settat"), ("pt", "Settat (província)"), ("sv", "Settat Province"), ("zh", "塞塔特省")]),
                         unofficial_name_list: ["Settat"].to_vec(),
                     }
                 ),
@@ -1352,7 +1354,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Province,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("en", "Sidi Bennour")]),
+                        translations: HashMap::from([("ar", "إقليم سيدي بنور"), ("ca", "província de Sidi Bennour"), ("ceb", "Sidi Bennour (kapital sa munisipyo)"), ("cy", "Talaith Sidi Bennour"), ("de", "Provinz Sidi Bennour"), ("en", "Sidi Bennour"), ("es", "provincia Sidi Bennour"), ("fa", "استان سیدی بنور"), ("fr", "province de Sidi Bennour"), ("it", "provincia di Sidi Bennour"), ("ja", "シディベヌール州"), ("pt", "Sidi Bennour (província)"), ("ru", "Провинция Сиди Беннур"), ("sv", "Sidi Bennour (provins)"), ("ur", "صوبہ سیدی بنور")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -1367,7 +1369,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Province,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("en", "Sidi Ifni")]),
+                        translations: HashMap::from([("ar", "إقليم سيدي إفني"), ("ca", "província de Sidi Ifni"), ("cy", "Talaith Sidi Ifni"), ("de", "Sidi Ifni"), ("en", "Sidi Ifni"), ("es", "Provincia de Sidi Ifni"), ("fr", "Sidi Ifni"), ("it", "provincia di Sidi Ifni"), ("ja", "シディ・イフニー州"), ("nl", "Sidi Ifni"), ("pt", "Sidi Ifni"), ("ru", "Сиди-Ифни")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -1382,7 +1384,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Province,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "إقليم سيدي قاسم"), ("ca", "Província de Sidi Kacem"), ("ccp", "𑄥\u{11128}𑄓\u{11128} 𑄇𑄥𑄬𑄟\u{11134}"), ("ceb", "Sidi-Kacem (lalawigan)"), ("de", "Sidi Kacem"), ("en", "Sidi Kacem"), ("es", "Provincia de Sidi Kacem"), ("fa", "استان سیدی قاسم"), ("fr", "province de Sidi Kacem"), ("it", "Provincia di Sidi Kacem"), ("ja", "シディ・カセム州"), ("nl", "Sidi Kacem"), ("sv", "Sidi-Kacem (provins i Marocko)"), ("ur", "سیدی قاسم صوبہ"), ("zh", "西迪卡塞姆省")]),
+                        translations: HashMap::from([("ar", "إقليم سيدي قاسم"), ("ca", "Província de Sidi Kacem"), ("ccp", "𑄥\u{11128}𑄓\u{11128} 𑄇𑄥𑄬𑄟\u{11134}"), ("ceb", "Sidi-Kacem (lalawigan)"), ("cy", "Talaith Sidi Kacem"), ("de", "Sidi Kacem"), ("en", "Sidi Kacem"), ("es", "Provincia de Sidi Kacem"), ("fa", "استان سیدی قاسم"), ("fr", "province de Sidi Kacem"), ("it", "Provincia di Sidi Kacem"), ("ja", "シディ・カセム州"), ("nl", "Sidi Kacem"), ("pt", "Sidi Kacem (província)"), ("sv", "Sidi-Kacem (provins i Marocko)"), ("ur", "سیدی قاسم صوبہ"), ("zh", "西迪卡塞姆省")]),
                         unofficial_name_list: ["Sidi Kacem"].to_vec(),
                     }
                 ),
@@ -1397,7 +1399,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Province,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("en", "Sidi Slimane")]),
+                        translations: HashMap::from([("ar", "إقليم سيدي سليمان"), ("ca", "província de Sidi Slimane"), ("de", "Sidi Slimane"), ("en", "Sidi Slimane"), ("es", "Provincia de Sidi Slimane"), ("fa", "استان سیدی سلیمان"), ("fr", "Sidi Slimane"), ("it", "provincia di Sidi Slimane"), ("ja", "シーディ スリマネ州"), ("pt", "Sidi Slimane (província)"), ("ur", "سیدی سلیمان صوبہ")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -1412,7 +1414,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Prefecture,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "تمارة"), ("bn", "তেম\u{9be}র\u{9be}"), ("ca", "Témara"), ("ccp", "𑄈\u{11128}𑄢𑄖\u{11134}-𑄑𑄬𑄟𑄢"), ("ceb", "Temara (kapital sa munisipyo)"), ("cs", "Temara"), ("da", "Témara"), ("de", "Témara"), ("el", "Τεμάρα"), ("en", "Skhirat-Témara"), ("es", "Temara"), ("fa", "تماره"), ("fi", "Temara"), ("fr", "Témara"), ("gu", "ત\u{ac7}મારા"), ("hi", "त\u{948}मारा"), ("id", "Temara"), ("it", "Temara"), ("ja", "テマラ"), ("kn", "ತ\u{cc6}ಮಾರಾ"), ("ko", "테마라"), ("lt", "Temara"), ("lv", "Temara"), ("mr", "त\u{947}मारा"), ("ms", "Temara"), ("nb", "Témara"), ("nl", "Témara"), ("no", "Témara"), ("pl", "Temara"), ("pt", "Temara"), ("ru", "Темара"), ("si", "ටෙම\u{dcf}ර\u{dcf}"), ("sv", "Témara"), ("ta", "டெம\u{bbe}ர"), ("te", "త\u{c47}మ\u{c3e}ర"), ("th", "เตมารา"), ("tr", "Temara"), ("uk", "Темара"), ("ur", "تمارہ"), ("vi", "Temara"), ("zh", "特马拉")]),
+                        translations: HashMap::from([("ar", "تمارة"), ("bn", "তেম\u{9be}র\u{9be}"), ("ca", "Témara"), ("ccp", "𑄈\u{11128}𑄢𑄖\u{11134}-𑄑𑄬𑄟𑄢"), ("ceb", "Temara (kapital sa munisipyo)"), ("cs", "Temara"), ("da", "Témara"), ("de", "Témara"), ("el", "Τεμάρα"), ("en", "Skhirat-Témara"), ("es", "Temara"), ("eu", "Temara"), ("fa", "تماره"), ("fi", "Temara"), ("fr", "Témara"), ("ga", "Temara"), ("gu", "ત\u{ac7}મારા"), ("hi", "त\u{948}मारा"), ("id", "Temara"), ("it", "Temara"), ("ja", "テマラ"), ("kn", "ತ\u{cc6}ಮಾರಾ"), ("ko", "테마라"), ("lt", "Temara"), ("lv", "Temara"), ("mr", "त\u{947}मारा"), ("ms", "Temara"), ("nb", "Témara"), ("nl", "Témara"), ("no", "Témara"), ("pl", "Temara"), ("pt", "Temara"), ("ru", "Темара"), ("si", "ටෙම\u{dcf}ර\u{dcf}"), ("sv", "Témara"), ("ta", "டெம\u{bbe}ர"), ("te", "త\u{c47}మ\u{c3e}ర"), ("th", "เตมารา"), ("tr", "Temara"), ("uk", "Темара"), ("ur", "تمارہ"), ("vi", "Temara"), ("zh", "特马拉")]),
                         unofficial_name_list: ["Skhirate-Témara"].to_vec(),
                     }
                 ),
@@ -1442,7 +1444,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Province,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("en", "Tarfaya (EH-partial)")]),
+                        translations: HashMap::from([("ar", "إقليم طرفاية"), ("ca", "província de Tarfaya"), ("cy", "Talaith Tarfaya"), ("de", "Tarfaya"), ("en", "Tarfaya (EH-partial)"), ("es", "Tarfaya"), ("fr", "Tarfaya"), ("it", "provincia di Tarfaya"), ("ja", "タルファヤ州")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -1457,7 +1459,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Province,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "إقليم تاوريرت"), ("ca", "Província de Taourirt"), ("ccp", "𑄑\u{1112f}𑄢\u{11128}𑄢\u{11134}𑄑\u{11134}"), ("de", "Taourirt"), ("en", "Taourirt"), ("es", "Provincia de Taurirt"), ("fa", "استان تاوریرت"), ("fr", "province de Taourirt"), ("it", "Provincia di Taourirt"), ("ja", "タウリル州"), ("nl", "Taourirt"), ("pl", "Taurirt"), ("ur", "تاوریرت صوبہ"), ("zh", "陶里爾特省")]),
+                        translations: HashMap::from([("ar", "إقليم تاوريرت"), ("ca", "Província de Taourirt"), ("ccp", "𑄑\u{1112f}𑄢\u{11128}𑄢\u{11134}𑄑\u{11134}"), ("cy", "Talaith Taourirt"), ("de", "Taourirt"), ("en", "Taourirt"), ("es", "Provincia de Taurirt"), ("fa", "استان تاوریرت"), ("fr", "province de Taourirt"), ("it", "Provincia di Taourirt"), ("ja", "タウリル州"), ("nl", "Taourirt"), ("pl", "Taurirt"), ("ru", "Таурирт"), ("ur", "تاوریرت صوبہ"), ("zh", "陶里爾特省")]),
                         unofficial_name_list: ["Taourirt"].to_vec(),
                     }
                 ),
@@ -1472,7 +1474,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Province,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "إقليم تاونات"), ("ca", "Província de Taounate"), ("ccp", "𑄑\u{1112f}𑄚𑄖\u{11134}"), ("ceb", "Taounate"), ("de", "Taounate"), ("en", "Taounate"), ("es", "Provincia de Taunat"), ("fr", "province de Taounate"), ("it", "Provincia di Taounate"), ("ja", "タウナト州"), ("nl", "Taounate"), ("sv", "Taounate (provins)"), ("zh", "陶納特省")]),
+                        translations: HashMap::from([("ar", "إقليم تاونات"), ("ca", "Província de Taounate"), ("ccp", "𑄑\u{1112f}𑄚𑄖\u{11134}"), ("ceb", "Taounate"), ("cy", "Talaith Taounate"), ("de", "Taounate"), ("en", "Taounate"), ("es", "Provincia de Taunat"), ("fr", "province de Taounate"), ("it", "Provincia di Taounate"), ("ja", "タウナト州"), ("nl", "Taounate"), ("pt", "Taounate (província)"), ("sv", "Taounate (provins)"), ("zh", "陶納特省")]),
                         unofficial_name_list: ["Taounate"].to_vec(),
                     }
                 ),
@@ -1487,7 +1489,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Province,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "إقليم تارودانت"), ("bg", "Тароудант"), ("ca", "Província de Taroudant"), ("ccp", "𑄑𑄢\u{1112f}𑄓𑄚\u{11134}𑄑\u{11134}"), ("ceb", "Taroudannt"), ("de", "Taroudant"), ("en", "Taroudant"), ("es", "Provincia de Tarudant"), ("fr", "province de Taroudannt"), ("it", "Provincia di Taroudant"), ("ja", "タルーダント州"), ("nl", "Taroudant"), ("pt", "Tarudante"), ("sv", "Taroudannt (provins)"), ("zh", "塔魯丹特省")]),
+                        translations: HashMap::from([("ar", "إقليم تارودانت"), ("bg", "Тароудант"), ("ca", "Província de Taroudant"), ("ccp", "𑄑𑄢\u{1112f}𑄓𑄚\u{11134}𑄑\u{11134}"), ("ceb", "Taroudannt"), ("cy", "Talaith Taroudant"), ("de", "Taroudant"), ("en", "Taroudant"), ("es", "Provincia de Tarudant"), ("fr", "province de Taroudannt"), ("it", "Provincia di Taroudant"), ("ja", "タルーダント州"), ("nl", "Taroudant"), ("pt", "Tarudante"), ("sv", "Taroudannt (provins)"), ("zh", "塔魯丹特省")]),
                         unofficial_name_list: ["Taroudannt"].to_vec(),
                     }
                 ),
@@ -1502,7 +1504,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Province,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "إقليم طاطا"), ("ca", "Província de Tata"), ("ccp", "𑄑𑄑"), ("ceb", "Tata"), ("de", "Tata"), ("en", "Tata"), ("es", "Provincia de Tata"), ("fr", "province de Tata"), ("it", "Provincia di Tata"), ("ja", "タタ州"), ("nl", "Tata"), ("sv", "Tata (provins)"), ("zh", "塔塔省")]),
+                        translations: HashMap::from([("ar", "إقليم طاطا"), ("ca", "Província de Tata"), ("ccp", "𑄑𑄑"), ("ceb", "Tata"), ("cy", "Talaith Tata"), ("de", "Tata"), ("en", "Tata"), ("es", "Provincia de Tata"), ("fr", "province de Tata"), ("it", "Provincia di Tata"), ("ja", "タタ州"), ("nl", "Tata"), ("sv", "Tata (provins)"), ("zh", "塔塔省")]),
                         unofficial_name_list: ["Tata"].to_vec(),
                     }
                 ),
@@ -1517,7 +1519,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Province,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "إقليم تازة"), ("ca", "Província de Taza"), ("ccp", "𑄑𑄎"), ("ceb", "Taza (lalawigan)"), ("de", "Taza"), ("en", "Taza"), ("es", "Provincia de Taza"), ("fr", "province de Taza"), ("it", "Provincia di Taza"), ("ja", "ターザ州"), ("nl", "Taza"), ("sv", "Taza (provins)"), ("zh", "塔扎省")]),
+                        translations: HashMap::from([("ar", "إقليم تازة"), ("ca", "Província de Taza"), ("ccp", "𑄑𑄎"), ("ceb", "Taza (lalawigan)"), ("cy", "Talaith Taza"), ("de", "Taza"), ("en", "Taza"), ("es", "Provincia de Taza"), ("fr", "province de Taza"), ("it", "Provincia di Taza"), ("ja", "ターザ州"), ("nl", "Taza"), ("pt", "Taza (província)"), ("sv", "Taza (provins)"), ("zh", "塔扎省")]),
                         unofficial_name_list: ["Taza"].to_vec(),
                     }
                 ),
@@ -1532,7 +1534,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Province,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "إقليم تطوان"), ("ca", "Província de Tetuan"), ("ccp", "𑄑𑄬𑄑\u{1112f}𑄠𑄚\u{11134}"), ("ceb", "Tetouan"), ("de", "Tétouan"), ("en", "Tétouan"), ("es", "Prefectura de Tetuán"), ("fr", "province de Tétouan"), ("it", "Prefettura di Tétouan"), ("ja", "テトゥアン州"), ("nl", "Tétouan"), ("sv", "Tetouan (provins i Marocko)"), ("ur", "تطوان صوبہ"), ("zh", "得土安省")]),
+                        translations: HashMap::from([("ar", "إقليم تطوان"), ("ca", "Província de Tetuan"), ("ccp", "𑄑𑄬𑄑\u{1112f}𑄠𑄚\u{11134}"), ("ceb", "Tetouan"), ("cy", "Talaith Tétouan"), ("de", "Tétouan"), ("en", "Tétouan"), ("es", "Prefectura de Tetuán"), ("fr", "province de Tétouan"), ("it", "Prefettura di Tétouan"), ("ja", "テトゥアン州"), ("nl", "Tétouan"), ("pt", "Tetuão (província)"), ("sv", "Tetouan (provins i Marocko)"), ("ur", "تطوان صوبہ"), ("zh", "得土安省")]),
                         unofficial_name_list: ["Tétouan*"].to_vec(),
                     }
                 ),
@@ -1547,7 +1549,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Province,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("en", "Tinghir")]),
+                        translations: HashMap::from([("ar", "إقليم تنغير"), ("ca", "província de Tinghir"), ("de", "Tinghir"), ("en", "Tinghir"), ("es", "Provincia de Tinerhir"), ("fa", "استان تنغیر"), ("fr", "Tinghir"), ("it", "provincia di Tinghir"), ("ja", "ティンジル州"), ("pt", "Tinghir (província)"), ("ur", "تنغیر صوبہ")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -1562,7 +1564,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Province,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "إقليم تيزنيت"), ("ca", "Província de Tiznit"), ("ccp", "𑄑\u{11128}𑄌\u{11134}𑄚\u{11128}𑄖\u{11134}"), ("ceb", "Tiznit (lalawigan)"), ("de", "Tiznit"), ("en", "Tiznit"), ("es", "Provincia de Tiznit"), ("fr", "province de Tiznit"), ("it", "Provincia di Tiznit"), ("ja", "ティーズニート州"), ("nl", "Tiznit"), ("pt", "Tiznit"), ("ru", "Тизнит"), ("sv", "Tiznit (provins)"), ("zh", "提茲尼特省")]),
+                        translations: HashMap::from([("ar", "إقليم تيزنيت"), ("ca", "Província de Tiznit"), ("ccp", "𑄑\u{11128}𑄌\u{11134}𑄚\u{11128}𑄖\u{11134}"), ("ceb", "Tiznit (lalawigan)"), ("cy", "Talaith Tiznit"), ("de", "Tiznit"), ("en", "Tiznit"), ("es", "Provincia de Tiznit"), ("fr", "province de Tiznit"), ("it", "Provincia di Tiznit"), ("ja", "ティーズニート州"), ("nl", "Tiznit"), ("pt", "Tiznit"), ("ru", "Тизнит"), ("sv", "Tiznit (provins)"), ("zh", "提茲尼特省")]),
                         unofficial_name_list: ["Tiznit"].to_vec(),
                     }
                 ),
@@ -1577,7 +1579,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Prefecture,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("af", "Tangier"), ("ar", "طنجة"), ("az", "Tanjer"), ("be", "Танжэр"), ("bg", "Танжер"), ("bn", "ত\u{9be}নজ\u{9be}হ"), ("bs", "Tanger"), ("ca", "Tànger"), ("ccp", "𑄑𑄚\u{11134}𑄉\u{11128}𑄠𑄢\u{11134}-𑄃𑄥\u{11128}𑄣𑄦\u{11134}"), ("ceb", "Tanger-Assilah"), ("cs", "Tanger"), ("cy", "Tanger"), ("da", "Tanger"), ("de", "Tanger"), ("el", "Ταγγέρη"), ("en", "Tangier-Assilah"), ("es", "Tánger"), ("et", "Tanger"), ("eu", "Tanger"), ("fa", "تانگیر"), ("fi", "Tanger"), ("fr", "Tanger"), ("gl", "Tánxer"), ("gu", "ટ\u{ac7}\u{a82}જિયર"), ("he", "טנג׳יר"), ("hi", "ट\u{902}ग\u{947}र"), ("hr", "Tanger"), ("hu", "Tanger"), ("hy", "Տանժեր"), ("id", "Tangier"), ("it", "Tangeri"), ("ja", "タンジェ"), ("ka", "ტანჟერი"), ("kk", "Танжер қаласы"), ("kn", "ಟ\u{ccd}ಯಾಂಜ\u{cbf}ಯರ\u{ccd}"), ("ko", "탕헤르"), ("lt", "Tanžeras"), ("lv", "Tanžera"), ("mk", "Тангер"), ("ml", "ട\u{d3e}ൻജീർ"), ("mn", "Танжер"), ("mr", "ट\u{901}जियर"), ("ms", "Tangier"), ("my", "တန\u{103a}ဂျ\u{102e}းယားမြ\u{102d}\u{102f}\u{1037}"), ("nb", "Tanger"), ("nl", "Tanger"), ("no", "Tanger"), ("pl", "Tanger"), ("pt", "Tânger"), ("ro", "Tanger"), ("ru", "Танжер"), ("si", "ටැන\u{dca}ජයර\u{dca}"), ("sl", "Tanger"), ("sr", "Тангер"), ("sr_Latn", "Tanger"), ("sv", "Tanger"), ("ta", "டன\u{bcd}கிஏர\u{bcd}"), ("te", "ట\u{c4d}య\u{c3e}ంజ\u{c3f}యర\u{c4d}"), ("th", "แทนเก\u{e35}ยร\u{e4c}"), ("tr", "Tanca"), ("uk", "Танжер"), ("ur", "طنجہ"), ("vi", "Tangier"), ("yue", "丹吉爾"), ("yue_Hans", "丹吉尔"), ("zh", "丹吉尔")]),
+                        translations: HashMap::from([("af", "Tangier"), ("ar", "طنجة"), ("az", "Tanjer"), ("be", "Танжэр"), ("bg", "Танжер"), ("bn", "ত\u{9be}নজ\u{9be}হ"), ("bs", "Tanger"), ("ca", "Tànger"), ("ccp", "𑄑𑄚\u{11134}𑄉\u{11128}𑄠𑄢\u{11134}-𑄃𑄥\u{11128}𑄣𑄦\u{11134}"), ("ceb", "Tanger-Assilah"), ("cs", "Tanger"), ("cy", "Tanger"), ("da", "Tanger"), ("de", "Tanger"), ("el", "Ταγγέρη"), ("en", "Tangier-Assilah"), ("es", "Tánger"), ("et", "Tanger"), ("eu", "Tanger"), ("fa", "تانگیر"), ("fi", "Tanger"), ("fr", "Tanger"), ("ga", "Tangier"), ("gl", "Tánxer"), ("gu", "ટ\u{ac7}\u{a82}જિયર"), ("ha", "Tanja"), ("ha_NE", "Tanja"), ("he", "טנג׳יר"), ("hi", "ट\u{902}ग\u{947}र"), ("hr", "Tanger"), ("hu", "Tanger"), ("hy", "Տանժեր"), ("id", "Tangier"), ("it", "Tangeri"), ("ja", "タンジェ"), ("ka", "ტანჟერი"), ("kk", "Танжер қаласы"), ("kn", "ಟ\u{ccd}ಯಾಂಜ\u{cbf}ಯರ\u{ccd}"), ("ko", "탕헤르"), ("lt", "Tanžeras"), ("lv", "Tanžera"), ("mk", "Тангер"), ("ml", "ട\u{d3e}ൻജീർ"), ("mn", "Танжер"), ("mr", "ट\u{901}जियर"), ("ms", "Tangier"), ("my", "တန\u{103a}ဂျ\u{102e}းယားမြ\u{102d}\u{102f}\u{1037}"), ("nb", "Tanger"), ("nl", "Tanger"), ("no", "Tanger"), ("pl", "Tanger"), ("pt", "Tânger"), ("ro", "Tanger"), ("ru", "Танжер"), ("si", "ටැන\u{dca}ජයර\u{dca}"), ("sl", "Tanger"), ("sr", "Тангер"), ("sr_Latn", "Tanger"), ("sv", "Tanger"), ("sw", "Tanger"), ("ta", "டன\u{bcd}கிஏர\u{bcd}"), ("te", "ట\u{c4d}య\u{c3e}ంజ\u{c3f}యర\u{c4d}"), ("th", "แทนเก\u{e35}ยร\u{e4c}"), ("tr", "Tanca"), ("uk", "Танжер"), ("ur", "طنجہ"), ("uz", "Tanjer"), ("vi", "Tangier"), ("yue", "丹吉爾"), ("yue_Hans", "丹吉尔"), ("zh", "丹吉尔")]),
                         unofficial_name_list: ["Tanger"].to_vec(),
                     }
                 ),
@@ -1592,7 +1594,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Province,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "إقليم طانطان"), ("ca", "Província de Tan-Tan"), ("ccp", "𑄑𑄚\u{11134}-𑄑𑄚\u{11134}"), ("ceb", "Tan-Tan (lalawigan)"), ("de", "Tan-Tan"), ("en", "Tan-Tan"), ("es", "Provincia de Tan-Tan"), ("fr", "province de Tan-Tan"), ("it", "Provincia di Tan-Tan"), ("ja", "タンタン州"), ("nl", "Tan-Tan"), ("ru", "Тан-Тан"), ("sv", "Tan-Tan (provins)"), ("zh", "坦坦省")]),
+                        translations: HashMap::from([("ar", "إقليم طانطان"), ("ca", "Província de Tan-Tan"), ("ccp", "𑄑𑄚\u{11134}-𑄑𑄚\u{11134}"), ("ceb", "Tan-Tan (lalawigan)"), ("cy", "Talaith Tan-Tan"), ("de", "Tan-Tan"), ("en", "Tan-Tan"), ("es", "Provincia de Tan-Tan"), ("fr", "province de Tan-Tan"), ("it", "Provincia di Tan-Tan"), ("ja", "タンタン州"), ("nl", "Tan-Tan"), ("ru", "Тан-Тан"), ("sv", "Tan-Tan (provins)"), ("zh", "坦坦省")]),
                         unofficial_name_list: ["Tan-Tan"].to_vec(),
                     }
                 ),
@@ -1622,7 +1624,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Province,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("en", "Youssoufia")]),
+                        translations: HashMap::from([("ar", "إقليم اليوسفية"), ("ca", "província de Youssoufia"), ("de", "Youssoufia"), ("en", "Youssoufia"), ("es", "Provincia de Youssoufia"), ("fa", "استان یوسفیه"), ("fr", "Youssoufia"), ("it", "provincia di Youssoufia"), ("ja", "ユスーフィーア州"), ("ur", "یوسفیہ صوبہ")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -1637,7 +1639,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Province,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "إقليم زاكورة"), ("ca", "Província de Zagora"), ("ccp", "𑄎𑄉\u{1112e}𑄢"), ("ceb", "Zagora (lalawigan)"), ("de", "Zagora"), ("en", "Zagora"), ("es", "Provincia de Zagora"), ("fr", "province de Zagora"), ("it", "Provincia di Zagora"), ("ja", "ザゴラ州"), ("nl", "Zagora"), ("pt", "Zagora"), ("zh", "扎古拉省")]),
+                        translations: HashMap::from([("ar", "إقليم زاكورة"), ("ca", "Província de Zagora"), ("ccp", "𑄎𑄉\u{1112e}𑄢"), ("ceb", "Zagora (lalawigan)"), ("cy", "Talaith Zagora"), ("de", "Zagora"), ("en", "Zagora"), ("es", "Provincia de Zagora"), ("fa", "استان زاکوره"), ("fr", "province de Zagora"), ("it", "Provincia di Zagora"), ("ja", "ザゴラ州"), ("nl", "Zagora"), ("pt", "Zagora"), ("ru", "Загора"), ("zh", "扎古拉省")]),
                         unofficial_name_list: ["Zagora"].to_vec(),
                     }
                 ),
@@ -1837,5 +1839,7 @@ pub fn new() -> Country {
         ]),
         #[cfg(feature = "subdivisions")]
         subdivisions: subdivisions::new(),
+        g7_member: false,
+        g20_member: false,
     }
 }

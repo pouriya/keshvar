@@ -38,6 +38,8 @@ pub mod consts {
     pub const UN_LOCODE: &str = "RW";
     pub const UNOFFICIAL_NAME_LIST: &[&str] = &["Rwanda", "Ruanda", "ルワンダ"];
     pub const WORLD_REGION: WorldRegion = WorldRegion::EMEA;
+    pub const G7_MEMBER: bool = false;
+    pub const G20_MEMBER: bool = false;
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇷🇼";
     #[cfg(feature = "translations")]
@@ -303,6 +305,7 @@ pub mod subdivisions {
                         ("no", "Kigali"),
                         ("pa", "ਕਿਗਾਲੀ"),
                         ("pl", "Kigali"),
+                        ("ps", "کیګالی"),
                         ("pt", "Kigali"),
                         ("ro", "Kigali"),
                         ("ru", "Кигали"),
@@ -328,6 +331,7 @@ pub mod subdivisions {
                         ("yue", "基加利"),
                         ("yue_Hans", "基加利"),
                         ("zh", "吉佳利"),
+                        ("zu", "Kigali"),
                     ]),
                     unofficial_name_list: ["Ville de Kigali"].to_vec(),
                 },
@@ -364,6 +368,7 @@ pub mod subdivisions {
                         ("en", "Eastern"),
                         ("es", "Provincia del Este"),
                         ("et", "Idaprovints"),
+                        ("eu", "Ekialdeko probintzia"),
                         ("fa", "استان شرقی"),
                         ("fi", "Itäinen provinssi"),
                         ("fr", "province de l’Est"),
@@ -442,6 +447,7 @@ pub mod subdivisions {
                         ("en", "Northern"),
                         ("es", "Provincia Norte"),
                         ("et", "Põhjaprovints"),
+                        ("eu", "Iparraldeko probintzia"),
                         ("fa", "استان شمالی"),
                         ("fi", "Pohjoinen lääni"),
                         ("fr", "province du Nord"),
@@ -513,6 +519,7 @@ pub mod subdivisions {
                         ("en", "Western"),
                         ("es", "Provincia del Oeste"),
                         ("et", "Lääneprovints"),
+                        ("eu", "Mendebaldeko probintzia"),
                         ("fa", "استان غربی"),
                         ("fi", "Western Province"),
                         ("fr", "province de l’Ouest"),
@@ -587,10 +594,12 @@ pub mod subdivisions {
                         ("en", "Southern"),
                         ("es", "Provincia Sur"),
                         ("et", "Lõunaprovints"),
+                        ("eu", "Hegoaldeko probintzia"),
                         ("fa", "استان جنوبی"),
                         ("fi", "Eteläinen provinssi"),
                         ("fr", "province du Sud"),
                         ("gu", "દક\u{acd}ષિણી પ\u{acd}રા\u{a82}ત"),
+                        ("he", "מחוז הדרום"),
                         ("hi", "दक\u{94d}षिणी प\u{94d}रा\u{902}त"),
                         ("hy", "Հարավային նահանգ"),
                         ("id", "Provinsi Selatan"),
@@ -810,5 +819,7 @@ pub fn new() -> Country {
         ]),
         #[cfg(feature = "subdivisions")]
         subdivisions: subdivisions::new(),
+        g7_member: false,
+        g20_member: false,
     }
 }

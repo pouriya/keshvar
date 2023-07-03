@@ -38,6 +38,8 @@ pub mod consts {
     pub const UN_LOCODE: &str = "VU";
     pub const UNOFFICIAL_NAME_LIST: &[&str] = &["Vanuatu", "バヌアツ"];
     pub const WORLD_REGION: WorldRegion = WorldRegion::APAC;
+    pub const G7_MEMBER: bool = false;
+    pub const G20_MEMBER: bool = false;
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇻🇺";
     #[cfg(feature = "translations")]
@@ -269,6 +271,7 @@ pub mod subdivisions {
                         ("fr", "Malampa"),
                         ("gl", "Malampa"),
                         ("gu", "માલામ\u{acd}પા પ\u{acd}રા\u{a82}ત"),
+                        ("he", "מחוז מאלאמפה"),
                         ("hi", "मलाम\u{94d}पा प\u{94d}रा\u{902}त"),
                         ("hr", "Malampa"),
                         ("id", "Provinsi Malampa"),
@@ -338,6 +341,7 @@ pub mod subdivisions {
                         ("bn", "পেন\u{9be}ম\u{9be} প\u{9cd}রদেশ"),
                         ("ccp", "𑄛𑄬𑄚𑄟\u{11134}"),
                         ("ceb", "Penama Province"),
+                        ("cs", "Penama"),
                         ("da", "Penama Province"),
                         ("de", "Penama"),
                         ("el", "Πενάμα"),
@@ -493,12 +497,14 @@ pub mod subdivisions {
                         ("el", "Σέφα"),
                         ("en", "Shefa"),
                         ("es", "Shefa"),
+                        ("et", "Shefa provints"),
                         ("fi", "Shefa"),
                         ("fr", "Shéfa"),
                         ("gl", "Shefa"),
                         ("gu", "શ\u{ac7}ફા પ\u{acd}રા\u{a82}ત"),
                         ("hi", "श\u{947}फा प\u{94d}रा\u{902}त"),
                         ("hr", "Shefa"),
+                        ("hy", "Շեֆա"),
                         ("id", "Provinsi Shefa"),
                         ("it", "Shefa"),
                         ("ja", "シェファ州"),
@@ -507,6 +513,7 @@ pub mod subdivisions {
                         ("ko", "셰파 주"),
                         ("lt", "Šefa"),
                         ("lv", "Šefas province"),
+                        ("mk", "Шефа"),
                         ("mr", "श\u{947}फा प\u{94d}रा\u{902}त"),
                         ("ms", "Shefa Province"),
                         ("nb", "Shefa"),
@@ -555,6 +562,7 @@ pub mod subdivisions {
                         ("be", "Правінцыя Тафеа"),
                         ("bg", "Тафеа"),
                         ("bn", "ট\u{9be}ফেয\u{9bc}\u{9be} প\u{9cd}রদেশ"),
+                        ("ca", "Taféa"),
                         ("ccp", "𑄑𑄜\u{11128}𑄠"),
                         ("ceb", "Tafea Province"),
                         ("da", "Tafea Province"),
@@ -576,6 +584,7 @@ pub mod subdivisions {
                         ("ko", "타페아 주"),
                         ("lt", "Tafea"),
                         ("lv", "Tafea province"),
+                        ("mk", "Тафеа"),
                         ("mr", "टफिया प\u{94d}रा\u{902}त"),
                         ("ms", "Tafea Province"),
                         ("nb", "Tafea"),
@@ -646,6 +655,7 @@ pub mod subdivisions {
                         ("ko", "토르바 주"),
                         ("lt", "Torba"),
                         ("lv", "Torbas province"),
+                        ("mk", "Торба (покраина)"),
                         ("mr", "टोरबा प\u{94d}रा\u{902}त"),
                         ("ms", "Torba Province"),
                         ("nb", "Torba"),
@@ -854,5 +864,7 @@ pub fn new() -> Country {
         ]),
         #[cfg(feature = "subdivisions")]
         subdivisions: subdivisions::new(),
+        g7_member: false,
+        g20_member: false,
     }
 }

@@ -40,6 +40,8 @@ pub mod consts {
     pub const UNOFFICIAL_NAME_LIST: &[&str] =
         &["Bahrain", "البحرين", "Bahreïn", "Bahrein", "バーレーン"];
     pub const WORLD_REGION: WorldRegion = WorldRegion::EMEA;
+    pub const G7_MEMBER: bool = false;
+    pub const G20_MEMBER: bool = false;
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇧🇭";
     #[cfg(feature = "translations")]
@@ -261,11 +263,13 @@ pub mod subdivisions {
                         ("ccp", "𑄇\u{11133}𑄠𑄛\u{11128}𑄑𑄣\u{11134}"),
                         ("ceb", "Capital Governorate"),
                         ("de", "Hauptstadt-Gouvernement"),
+                        ("el", "Κυβερνείο της Πρωτεύουσας"),
                         ("en", "Capital"),
                         ("es", "Capital"),
                         ("eu", "Hiriburuaren eskualdea"),
                         ("fa", "استان عاصمه"),
                         ("fr", "Gouvernorat de la capitale"),
+                        ("he", "מחוז הבירה"),
                         ("hu", "Főváros kormányzóság"),
                         ("id", "Kegubernuran Ibu Kota"),
                         ("it", "Governatorato della Capitale"),
@@ -280,6 +284,8 @@ pub mod subdivisions {
                         ("pt", "Província da Capital"),
                         ("ru", "Столичная мухафаза"),
                         ("sv", "Capital Governorate"),
+                        ("ta", "தலைநகர ஆளுநரகம\u{bcd}"),
+                        ("tr", "Başkent (il, Bahreyn)"),
                         ("uk", "Столична мухафаза"),
                         ("ur", "محافظہ دارالحکومت، بحرین"),
                         ("zh", "首都省"),
@@ -308,15 +314,19 @@ pub mod subdivisions {
                     #[cfg(feature = "translations")]
                     translations: HashMap::from([
                         ("ar", "جنوبية"),
+                        ("az", "Cənub qubernatorluğu"),
                         ("bg", "Южна провинция"),
                         ("ca", "Governació del Sud"),
                         ("ccp", "𑄥𑄅\u{1112a}𑄘𑄢\u{11133}𑄚\u{11134}"),
                         ("ceb", "Southern Governorate"),
+                        ("da", "Sydlige Guvernement"),
+                        ("de", "Südliches Gouvernement"),
                         ("en", "Southern"),
                         ("es", "Sur"),
                         ("eu", "Hegoaldeko eskualdea"),
                         ("fa", "جنوبیه"),
                         ("fr", "Gouvernorat méridional"),
+                        ("he", "מחוז הדרום"),
                         ("hu", "Déli kormányzóság"),
                         ("hy", "Հարավային մուհաֆազա"),
                         ("id", "Kegubernuran Selatan"),
@@ -332,6 +342,7 @@ pub mod subdivisions {
                         ("pt", "Província do Sul"),
                         ("ru", "Южная мухафаза"),
                         ("sv", "Southern Governorate"),
+                        ("ta", "தெற\u{bcd}கு ஆளுநரகம\u{bcd}"),
                         ("tr", "Güney Valiliği"),
                         ("ur", "محافظہ جنوبیہ"),
                         ("zh", "南方省"),
@@ -441,11 +452,14 @@ pub mod subdivisions {
                         ("ca", "Governació del Nord"),
                         ("ccp", "𑄚\u{11127}𑄢\u{11134}𑄘𑄢\u{11133}𑄚\u{11134}"),
                         ("ceb", "Northern Governorate"),
+                        ("de", "Nördliches Gouvernement"),
+                        ("el", "Βόρειο Κυβερνείο"),
                         ("en", "Northern"),
                         ("es", "Norte"),
                         ("eu", "Iparraldeko eskualdea"),
                         ("fa", "شمالیه"),
                         ("fr", "Gouvernorat septentrional"),
+                        ("he", "מחוז הצפון"),
                         ("hu", "Északi kormányzóság"),
                         ("id", "Kegubernuran Utara"),
                         ("it", "Governatorato Settentrionale"),
@@ -460,6 +474,7 @@ pub mod subdivisions {
                         ("pt", "Província do Norte"),
                         ("ru", "Северная мухафаза"),
                         ("sv", "Northern Governorate"),
+                        ("ta", "வடக\u{bcd}கு ஆளுநரகம\u{bcd}"),
                         ("tr", "Kuzey Valiliği"),
                         ("ur", "محافظہ شمالیہ"),
                         ("zh", "北方省"),
@@ -655,5 +670,7 @@ pub fn new() -> Country {
         ]),
         #[cfg(feature = "subdivisions")]
         subdivisions: subdivisions::new(),
+        g7_member: false,
+        g20_member: false,
     }
 }

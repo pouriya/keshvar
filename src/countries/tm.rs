@@ -44,6 +44,8 @@ pub mod consts {
         "Turkmenia",
     ];
     pub const WORLD_REGION: WorldRegion = WorldRegion::EMEA;
+    pub const G7_MEMBER: bool = false;
+    pub const G20_MEMBER: bool = false;
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇹🇲";
     #[cfg(feature = "translations")]
@@ -286,6 +288,7 @@ pub mod subdivisions {
                         ("fi", "Ahalin maakunta"),
                         ("fr", "Ahal"),
                         ("gu", "અહાલ પ\u{acd}રા\u{a82}ત"),
+                        ("he", "מחוז אהאל"),
                         ("hi", "आख\u{93c}ाल प\u{94d}रान\u{94d}त"),
                         ("hy", "Ահալի վելայաթ"),
                         ("id", "Provinsi Ahal"),
@@ -365,6 +368,7 @@ pub mod subdivisions {
                         ("fr", "Balkan"),
                         ("gl", "Provincia de Balkan"),
                         ("gu", "બાલ\u{acd}કન પ\u{acd}રા\u{a82}ત"),
+                        ("he", "מחוז בלקן"),
                         ("hi", "बलक\u{93c}ान प\u{94d}रान\u{94d}त"),
                         ("hr", "Balkan welaýaty"),
                         ("hu", "Balkan"),
@@ -430,7 +434,9 @@ pub mod subdivisions {
                     translations: HashMap::from([
                         ("ar", "ولاية داشوغوز"),
                         ("az", "Daşoğuz vilayəti"),
+                        ("be", "Дашагузскі велаят"),
                         ("bg", "Дашховуз"),
+                        ("bn", "দ\u{9be}সোগ\u{9c1}জ প\u{9cd}রদেশ"),
                         ("ca", "Província de Daşoguz"),
                         ("ccp", "𑄓𑄥\u{1112e}𑄉\u{1112a}𑄌\u{11134}"),
                         ("ceb", "Daşoguz Welaýaty"),
@@ -441,6 +447,7 @@ pub mod subdivisions {
                         ("fa", "استان داش\u{200c}اغوز"),
                         ("fi", "Daşoguzin maakunta"),
                         ("fr", "Province de Daşoguz"),
+                        ("he", "מחוז דשחובוז"),
                         ("hi", "दाशोग\u{93c}\u{941}ज\u{93c} प\u{94d}रान\u{94d}त"),
                         ("hy", "Դաշողուզի վելայաթ"),
                         ("id", "Provinsi Dashhowuz"),
@@ -461,6 +468,8 @@ pub mod subdivisions {
                         ("sr", "Покрајина Дашогуз"),
                         ("sr_Latn", "Pokrajina Dašoguz"),
                         ("sv", "Daşoguz"),
+                        ("ta", "தகோகுஸ\u{bcd} ம\u{bbe}க\u{bbe}ணம\u{bcd}"),
+                        ("th", "จ\u{e31}งหว\u{e31}ดดาโชก\u{e38}ซ"),
                         ("tk", "Daşoguz welaýaty"),
                         ("tr", "Daşoğuz vilayeti"),
                         ("uk", "Дашогузький велаят"),
@@ -502,9 +511,11 @@ pub mod subdivisions {
                     subdivision_type: SubdivisionType::Region,
                     #[cfg(feature = "translations")]
                     translations: HashMap::from([
+                        ("ar", "ولاية لباب"),
                         ("az", "Lebap vilayəti"),
                         ("be", "Лябапскі велаят"),
                         ("bg", "Лебап"),
+                        ("bn", "লেব\u{9be}প প\u{9cd}রদেশ"),
                         ("ca", "Província de Lebap"),
                         ("ccp", "𑄣𑄬𑄝𑄛\u{11134}"),
                         ("ceb", "Lebap"),
@@ -515,6 +526,7 @@ pub mod subdivisions {
                         ("fa", "استان لباب"),
                         ("fi", "Lebapin maakunta"),
                         ("fr", "Lebap"),
+                        ("he", "מחוז לבפ"),
                         ("hi", "ल\u{947}बाप प\u{94d}रान\u{94d}त"),
                         ("hy", "Լեբապի վելայաթ"),
                         ("id", "Provinsi Lebap"),
@@ -534,6 +546,8 @@ pub mod subdivisions {
                         ("sr", "Покрајина Лебап"),
                         ("sr_Latn", "Pokrajina Lebap"),
                         ("sv", "Lebap"),
+                        ("ta", "லெப\u{bbe}ப\u{bcd} ம\u{bbe}க\u{bbe}ணம\u{bcd}"),
+                        ("th", "จ\u{e31}งหว\u{e31}ดเลบ\u{e31}ป"),
                         ("tk", "Lebap welaýaty"),
                         ("tr", "Lebap vilayeti"),
                         ("uk", "Лебапський велаят"),
@@ -582,6 +596,7 @@ pub mod subdivisions {
                         ("fi", "Maryn maakunta"),
                         ("fr", "Mary"),
                         ("gu", "મ\u{ac7}રી પ\u{acd}રા\u{a82}ત"),
+                        ("he", "מחוז מרי"),
                         ("hi", "मरी प\u{94d}रान\u{94d}त"),
                         ("hy", "Մարիի վելայաթ"),
                         ("id", "Provinsi Mary"),
@@ -647,6 +662,7 @@ pub mod subdivisions {
                         ("bs", "Ashgabat"),
                         ("ca", "Aixkhabad"),
                         ("ccp", "𑄃𑄌\u{11134}𑄉𑄝𑄖\u{11134}"),
+                        ("ceb", "Aşgabat Şäheri"),
                         ("cs", "Ašchabad"),
                         ("cy", "Ashgabat"),
                         ("da", "Asjkhabad"),
@@ -683,6 +699,10 @@ pub mod subdivisions {
                         ("mn", "Ашгабат"),
                         ("mr", "अश\u{94d}गाबाद"),
                         ("ms", "Ashgabat"),
+                        (
+                            "my",
+                            "အက\u{103a}ရ\u{103e}\u{103a}ဂါဘတ\u{103a}မြ\u{102d}\u{102f}\u{1037}",
+                        ),
                         ("nb", "Asjkhabad"),
                         ("ne", "अस\u{94d}गाबत"),
                         ("nl", "Asjchabad"),
@@ -767,5 +787,7 @@ pub fn new() -> Country {
         translations: HashMap::from([("ab", "Turkmenistan"), ("af", "Toerkmenië"), ("ak", "Turkmenistan"), ("am", "ቱርክመኒስታን"), ("an", "Turkmenistan"), ("ar", "تركمانستان"), ("as", "ত\u{9c1}ৰ\u{9cd}কমেনিস\u{9cd}ত\u{9be}ন"), ("ay", "Turkmenistan"), ("az", "Türkmənistan"), ("ba", "Turkmenistan"), ("be", "Туркменістан"), ("bg", "Туркменистан"), ("bi", "Turkmenistan"), ("bn", "ত\u{9c1}র\u{9cd}কমেনিস\u{9cd}ত\u{9be}ন"), ("bn_IN", "ত\u{9c1}র\u{9cd}কমেনিস\u{9cd}ত\u{9be}ন"), ("br", "Turkmenistan"), ("bs", "Turkmenistan"), ("ca", "Turkmenistan"), ("ce", "Туркмени"), ("ch", "Turkmenistan"), ("cs", "Turkmenistán"), ("cv", "Туркмени"), ("cy", "Turkmenistan"), ("da", "Turkmenistan"), ("de", "Turkmenistan"), ("dv", "ތ\u{7aa}ރ\u{7aa}ކ\u{7aa}މ\u{7ac}ނ\u{7a8}ސ\u{7b0}ތ\u{7a7}ނ\u{7b0}"), ("dz", "ཊརཀ་མ\u{f72}་ན\u{f72}ས\u{f72}་ཏ\u{f71}ན།"), ("ee", "Turkmenistan"), ("el", "Τουρκμενιστάν"), ("en", "Turkmenistan"), ("eo", "Turkmenio"), ("es", "Turkmenistán"), ("et", "Türkmenistan"), ("eu", "Turkmenistan"), ("fa", "ترکمنستان"), ("ff", "Turkmenistan"), ("fi", "Turkmenistan"), ("fo", "Turkmenistan"), ("fr", "Turkménistan"), ("fy", "Turkmenistan"), ("ga", "An Tuircméanastáin"), ("gl", "Turkmenistán"), ("gn", "Turkmenistan"), ("gu", "ત\u{ac1}ર\u{acd}કમ\u{ac7}નિસ\u{acd}તાન"), ("gv", "Yn Turkmenistaan"), ("ha", "Turkmenistan"), ("he", "טורקמניסטן"), ("hi", "त\u{941}र\u{94d}कम\u{947}निस\u{94d}तान"), ("hr", "Turkmenistan"), ("ht", "Tirkmenistan"), ("hu", "Türkmenisztán"), ("hy", "Թուրքմենստան"), ("ia", "Turkmenistan"), ("id", "Turkmenistan"), ("io", "Turkmenistan"), ("is", "Túrkmenistan"), ("it", "Turkmenistan"), ("iu", "Turkmenistan"), ("ja", "トルクメニスタン"), ("ka", "თურქმენეთი"), ("ki", "Turkmenistan"), ("kk", "Түрікменстан"), ("kl", "Turkmenistan"), ("km", "ទ\u{17bd}គមេន\u{17b8}ស\u{17d2}តង\u{17cb}"), ("kn", "ತುರ\u{ccd}ಕ\u{ccd}ಮ\u{cc6}ನ\u{ccd}\u{200d}ಸ\u{ccd}ತಾನ\u{ccd}"), ("ko", "투르크메니스탄"), ("ku", "Tirkmenîstan"), ("kv", "Туркменистан"), ("kw", "Pow Turkmen"), ("ky", "Түркмөнстан"), ("lo", "Turkmenistan"), ("lt", "Turkmėnistanas"), ("lv", "Turkmenistāna"), ("mi", "Turkmenistan"), ("mk", "Туркменистан"), ("ml", "ത\u{d41}ര\u{d4d}\u{200d}ക\u{d4d}\u{200c}മെനിസ\u{d4d}ത\u{d3e}ന\u{d4d}\u{200d}"), ("mn", "Туркменстан"), ("mr", "त\u{941}र\u{94d}कम\u{947}निस\u{94d}तान"), ("ms", "Turkmenistan"), ("mt", "Turkmenistan"), ("my", "တာ\u{1037}ခ\u{103a}မင\u{103a}နစ\u{1039}စတန\u{103a}န\u{102d}\u{102f}င\u{103a}င\u{1036}"), ("na", "Turkmenistan"), ("nb", "Turkmenistan"), ("ne", "ट\u{941}र\u{94d}कम\u{947}निस\u{94d}तान"), ("nl", "Turkmenistan"), ("nn", "Turkmenistan"), ("nv", "Tʼóokmen Bikéyah"), ("oc", "Turcmenistan"), ("or", "ତ\u{b41}ର\u{b4d}କମେନ\u{b3f}ସ\u{b4d}ତ\u{b3e}ନ"), ("pa", "ਤ\u{a41}ਰਕਮਸਤਾਨ"), ("pi", "त\u{941}र\u{94d}कमिनिस\u{94d}थान"), ("pl", "Turkmenistan"), ("ps", "ترکمنستان"), ("pt", "Turquemenistão"), ("pt_BR", "Turcomenistão"), ("ro", "Turkmenistan"), ("ru", "Туркменистан"), ("rw", "Turikimenisitani"), ("sc", "Turkmènistan"), ("sd", "ترڪمانستان"), ("si", "ත\u{dd4}ර\u{dca}ක\u{dd2}මෙන\u{dd2}ස\u{dca}ත\u{dcf}නය"), ("sk", "Turkménsko"), ("sl", "Turkmenistan"), ("so", "Turkmenistan"), ("sq", "Turkmenistan"), ("sr", "Туркменистан"), ("sv", "Turkmenistan"), ("sw", "Turkmenistan"), ("ta", "துர\u{bcd}க\u{bcd}மெனிஸ\u{bcd}த\u{bbe}ன\u{bcd}"), ("te", "టర\u{c4d}కమ\u{c46}న\u{c3f}స\u{c4d}త\u{c3e}న\u{c4d}"), ("tg", "Туркманистон"), ("th", "เต\u{e34}ร\u{e4c}กเมน\u{e34}สถาน"), ("ti", "Turkmenistan"), ("tk", "Türkmenistan"), ("tl", "Turkmenistan"), ("tr", "Türkmenistan"), ("tt", "Төркмәнстан"), ("ug", "تۈركمەنىستان"), ("uk", "Туркменістан"), ("ur", "ترکمانستان"), ("uz", "Turkmaniston"), ("ve", "Turkmenistan"), ("vi", "Tuốc-mê-ni-xtanh"), ("wa", "Turcmenistan"), ("wo", "Turkumenistaan"), ("xh", "Turkmenistan"), ("yo", "Turkmẹ\u{301}nìstán"), ("zh_CN", "土库曼斯坦"), ("zh_HK", "土庫曼"), ("zh_TW", "土庫曼"), ("zu", "Turkmenistan")]),
         #[cfg(feature = "subdivisions")]
         subdivisions: subdivisions::new(),
+        g7_member: false,
+        g20_member: false,
     }
 }

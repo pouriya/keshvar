@@ -38,6 +38,8 @@ pub mod consts {
     pub const UN_LOCODE: &str = "HT";
     pub const UNOFFICIAL_NAME_LIST: &[&str] = &["Haiti", "ハイチ", "Haïti"];
     pub const WORLD_REGION: WorldRegion = WorldRegion::AMER;
+    pub const G7_MEMBER: bool = false;
+    pub const G20_MEMBER: bool = false;
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇭🇹";
     #[cfg(feature = "translations")]
@@ -251,6 +253,7 @@ pub mod subdivisions {
                     #[cfg(feature = "translations")]
                     translations: HashMap::from([
                         ("ar", "إدارة أرتيبونيت"),
+                        ("az", "Artibonit"),
                         ("bn", "আর\u{9cd}টিবোন\u{9be}ইট"),
                         ("ca", "Artibonite"),
                         ("ccp", "𑄃𑄢\u{11134}𑄑\u{11128}𑄝\u{1112e}𑄚\u{1112d}𑄖\u{11134}"),
@@ -315,6 +318,7 @@ pub mod subdivisions {
                     #[cfg(feature = "translations")]
                     translations: HashMap::from([
                         ("ar", "الإدارة الوسطى"),
+                        ("az", "Haitinin Mərkəzi departamenti"),
                         ("bn", "সেন\u{9cd}ট\u{9be}র"),
                         ("bs", "Centre"),
                         ("ca", "Centre"),
@@ -380,6 +384,7 @@ pub mod subdivisions {
                     #[cfg(feature = "translations")]
                     translations: HashMap::from([
                         ("ar", "إدارة آنس الكبرى"),
+                        ("az", "Qrand-Ans"),
                         ("bg", "Гранданс"),
                         ("bn", "গ\u{9cd}র\u{9be}ন\u{9cd}ড’আন\u{9cd}সে"),
                         ("ca", "Grand’Anse"),
@@ -445,6 +450,7 @@ pub mod subdivisions {
                     #[cfg(feature = "translations")]
                     translations: HashMap::from([
                         ("ar", "الإدارة الشمالية"),
+                        ("az", "Haitinin Şimal departamenti"),
                         ("bn", "নর\u{9cd}ড"),
                         ("ca", "Nord"),
                         ("ccp", "𑄚\u{11127}𑄢\u{11134}𑄓\u{11134}"),
@@ -460,6 +466,7 @@ pub mod subdivisions {
                         ("gu", "નોર\u{acd}ડ"),
                         ("hi", "नोर\u{94d}ड"),
                         ("hr", "Nord, Haiti"),
+                        ("hy", "Նորդ"),
                         ("id", "Nord"),
                         ("it", "dipartimento del Nord"),
                         ("ja", "北県"),
@@ -509,6 +516,7 @@ pub mod subdivisions {
                     #[cfg(feature = "translations")]
                     translations: HashMap::from([
                         ("ar", "الإدارة الشمال شرقية"),
+                        ("az", "Haitinin Şimal-Şərq departamenti"),
                         ("bn", "নর\u{9cd}ড-এস\u{9cd}ট"),
                         ("ca", "Nord-Est"),
                         (
@@ -569,6 +577,7 @@ pub mod subdivisions {
                     #[cfg(feature = "translations")]
                     translations: HashMap::from([
                         ("ar", "إدارة نيبيس"),
+                        ("az", "Nip"),
                         ("bn", "নিপেস"),
                         ("ca", "Nippes"),
                         ("ccp", "𑄚\u{11128}𑄛𑄬𑄌\u{11134}"),
@@ -582,6 +591,7 @@ pub mod subdivisions {
                         ("fi", "Nippes"),
                         ("fr", "Nippes"),
                         ("gu", "નિપ\u{acd}પ\u{acd}સ"),
+                        ("he", "ניפס"),
                         ("hi", "निप\u{947}स"),
                         ("hr", "Nippes"),
                         ("id", "Nippes"),
@@ -633,6 +643,7 @@ pub mod subdivisions {
                     #[cfg(feature = "translations")]
                     translations: HashMap::from([
                         ("ar", "الإدارة الشمال غربية"),
+                        ("az", "Haitinin Şimal-Qərb departamenti"),
                         ("bn", "নর\u{9cd}ড-ক\u{9c1}য\u{9bc}েস\u{9cd}ট"),
                         ("ca", "Nord-Ouest"),
                         (
@@ -700,6 +711,7 @@ pub mod subdivisions {
                     #[cfg(feature = "translations")]
                     translations: HashMap::from([
                         ("ar", "الإدارة الغربية"),
+                        ("az", "Haitinin Qərb departamenti"),
                         ("be", "Заходні дэпартамент Гаіці"),
                         ("bn", "আউয\u{9bc}েস\u{9cd}ট"),
                         ("ca", "Ouest"),
@@ -716,6 +728,7 @@ pub mod subdivisions {
                         ("gu", "ઔએસ\u{acd}ટ"),
                         ("hi", "ऊएस\u{94d}ट"),
                         ("hr", "Ouest, Haiti"),
+                        ("hy", "Քուեսթ"),
                         ("id", "Ouest"),
                         ("it", "dipartimento dell’Ovest"),
                         ("ja", "西県"),
@@ -765,6 +778,8 @@ pub mod subdivisions {
                     #[cfg(feature = "translations")]
                     translations: HashMap::from([
                         ("ar", "الإدارة الجنوبية"),
+                        ("az", "Haitinin Cənub departamenti"),
+                        ("be", "Паўднёвы дэпартамент"),
                         ("bn", "স\u{9c1}দ"),
                         ("ca", "Sud"),
                         ("ccp", "𑄥𑄖\u{11134}"),
@@ -829,6 +844,7 @@ pub mod subdivisions {
                     #[cfg(feature = "translations")]
                     translations: HashMap::from([
                         ("ar", "الإدارة الجنوب شرقية"),
+                        ("az", "Haitinin Cənub-Şərq departamenti"),
                         ("bn", "স\u{9be}দ- ইস\u{9cd}ট"),
                         ("ca", "Sud-Est"),
                         ("ccp", "𑄥𑄖\u{11134}-𑄃\u{11128}𑄌\u{11134}𑄑\u{11134}"),
@@ -1053,5 +1069,7 @@ pub fn new() -> Country {
         ]),
         #[cfg(feature = "subdivisions")]
         subdivisions: subdivisions::new(),
+        g7_member: false,
+        g20_member: false,
     }
 }

@@ -38,6 +38,8 @@ pub mod consts {
     pub const UN_LOCODE: &str = "SL";
     pub const UNOFFICIAL_NAME_LIST: &[&str] = &["Sierra Leone", "シエラレオネ"];
     pub const WORLD_REGION: WorldRegion = WorldRegion::EMEA;
+    pub const G7_MEMBER: bool = false;
+    pub const G20_MEMBER: bool = false;
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇸🇱";
     #[cfg(feature = "translations")]
@@ -257,6 +259,7 @@ pub mod subdivisions {
                         ("be", "Усходняя правінцыя, Сьера-Леонэ"),
                         ("bg", "Източна провинция"),
                         ("bn", "ইস\u{9cd}ট\u{9be}র\u{9cd}ন প\u{9cd}রদেশ"),
+                        ("ca", "Província Oriental (Sierra Leone)"),
                         ("ccp", "𑄛\u{1112a}𑄇\u{11134}𑄟𑄬𑄇\u{11134}𑄈𑄬"),
                         ("ceb", "Eastern Province (lalawigan sa Sierra Leone)"),
                         ("da", "Eastern Province"),
@@ -390,7 +393,13 @@ pub mod subdivisions {
                     comments: None,
                     subdivision_type: SubdivisionType::Province,
                     #[cfg(feature = "translations")]
-                    translations: HashMap::from([("en", "North Western")]),
+                    translations: HashMap::from([
+                        ("de", "North West"),
+                        ("en", "North Western"),
+                        ("fr", "Province du Nord-Ouest"),
+                        ("ja", "北西部州"),
+                        ("pt", "Província do Noroeste (Serra Leoa)"),
+                    ]),
                     unofficial_name_list: [].to_vec(),
                 },
             ),
@@ -489,6 +498,7 @@ pub mod subdivisions {
                             "bn",
                             "পশ\u{9cd}চিম\u{9be}ঞ\u{9cd}চল, সিয\u{9bc}ের\u{9be} লিওন",
                         ),
+                        ("ca", "Western Area"),
                         ("ccp", "𑄛\u{11127}𑄏\u{11128}𑄟\u{11134}𑄟𑄬𑄇\u{11134}𑄈𑄬 𑄎𑄉"),
                         ("ceb", "Western Area"),
                         ("da", "Western Area"),
@@ -497,6 +507,7 @@ pub mod subdivisions {
                         ("en", "Western Area"),
                         ("es", "Área Occidental"),
                         ("et", "Läänepiirkond"),
+                        ("fa", "ناحیه غربی"),
                         ("fi", "Läntinen alue"),
                         ("fr", "Zone de l’Ouest"),
                         ("gu", "વ\u{ac7}સ\u{acd}ટર\u{acd}ન એરિયા"),
@@ -715,5 +726,7 @@ pub fn new() -> Country {
         ]),
         #[cfg(feature = "subdivisions")]
         subdivisions: subdivisions::new(),
+        g7_member: false,
+        g20_member: false,
     }
 }

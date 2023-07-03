@@ -45,6 +45,8 @@ pub mod consts {
         "Marshalleilanden",
     ];
     pub const WORLD_REGION: WorldRegion = WorldRegion::APAC;
+    pub const G7_MEMBER: bool = false;
+    pub const G20_MEMBER: bool = false;
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇲🇭";
     #[cfg(feature = "translations")]
@@ -263,7 +265,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Municipality,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ca", "Ailuk"), ("ccp", "𑄃\u{1112d}𑄣\u{1112a}𑄇\u{11134} 𑄃𑄑\u{1112e}𑄣\u{11134}"), ("ceb", "Ailuk Atoll (munisipyo)"), ("de", "Ailuk"), ("en", "Ailuk Atoll"), ("es", "Ailuk"), ("fa", "آب\u{200c}سنگ حلقوی آئیلوک"), ("fi", "Ailuk"), ("fr", "Ailuk"), ("gl", "Atol Ailuk"), ("hu", "Ailuk Atoll"), ("it", "Ailuk"), ("ja", "アイルック環礁"), ("ko", "아일루크 환초"), ("lt", "Ailukas"), ("mk", "Ајлук"), ("nl", "Ailuk Atoll"), ("pl", "Ailuk"), ("pt", "Ailuk"), ("ru", "Аилук"), ("sv", "Ailuk"), ("vi", "Đảo san hô vòng Ailuk"), ("zh", "艾盧克環礁")]),
+                        translations: HashMap::from([("ca", "Ailuk"), ("ccp", "𑄃\u{1112d}𑄣\u{1112a}𑄇\u{11134} 𑄃𑄑\u{1112e}𑄣\u{11134}"), ("ceb", "Ailuk Atoll (munisipyo)"), ("de", "Ailuk"), ("en", "Ailuk Atoll"), ("es", "Ailuk"), ("fa", "آب\u{200c}سنگ حلقوی آئیلوک"), ("fi", "Ailuk"), ("fr", "Ailuk"), ("gl", "Atol Ailuk"), ("hu", "Ailuk Atoll"), ("id", "Atol Ailuk"), ("it", "Ailuk"), ("ja", "アイルック環礁"), ("ko", "아일루크 환초"), ("lt", "Ailukas"), ("mk", "Ајлук"), ("nl", "Ailuk Atoll"), ("pl", "Ailuk"), ("pt", "Ailuk"), ("ru", "Аилук"), ("sv", "Ailuk"), ("ur", "آئلوک جزیرہ مرجانی"), ("vi", "Đảo san hô vòng Ailuk"), ("zh", "艾盧克環礁")]),
                         unofficial_name_list: ["Ailuk"].to_vec(),
                     }
                 ),
@@ -278,7 +280,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Municipality,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ccp", "𑄃\u{1112d}𑄣\u{11128}\u{11101}𑄣𑄛\u{11134}𑄣𑄛\u{11134} 𑄃𑄑\u{1112e}𑄣\u{11134}"), ("ceb", "Ailinglaplap Atoll"), ("da", "Ailinglaplap"), ("de", "Ailinglapalap"), ("el", "Αϊλινγκλάπλαπ"), ("en", "Ailinglaplap Atoll"), ("es", "Ailinglaplap"), ("fi", "Ailinglaplap"), ("fr", "Ailinglaplap"), ("gl", "Atol Ailinglaplap"), ("he", "איילינגלאפלאפ"), ("hr", "Ailinglaplap"), ("it", "Ailinglaplap"), ("ja", "アイリングラップ環礁"), ("ko", "아일링글라플라프 환초"), ("lt", "Ailinglaplapas"), ("mk", "Ајлинглаплап"), ("nb", "Ailinglaplap"), ("nl", "Ailinglaplap Atoll"), ("no", "Ailinglaplap"), ("pl", "Ailinglaplap"), ("pt", "Ailinglaplap"), ("ru", "Аилинглапалап"), ("sv", "Ailinglapalap"), ("vi", "Đảo san hô vòng Ailinglaplap"), ("zh", "埃林拉普拉普環礁")]),
+                        translations: HashMap::from([("ccp", "𑄃\u{1112d}𑄣\u{11128}\u{11101}𑄣𑄛\u{11134}𑄣𑄛\u{11134} 𑄃𑄑\u{1112e}𑄣\u{11134}"), ("ceb", "Ailinglaplap Atoll"), ("da", "Ailinglaplap"), ("de", "Ailinglapalap"), ("el", "Αϊλινγκλάπλαπ"), ("en", "Ailinglaplap Atoll"), ("es", "Ailinglaplap"), ("fa", "آتل آیلینگلاپلاپ"), ("fi", "Ailinglaplap"), ("fr", "Ailinglaplap"), ("gl", "Atol Ailinglaplap"), ("he", "איילינגלאפלאפ"), ("hr", "Ailinglaplap"), ("id", "Atol Ailinglaplap"), ("it", "Ailinglaplap"), ("ja", "アイリングラップ環礁"), ("ko", "아일링글라플라프 환초"), ("lt", "Ailinglaplapas"), ("mk", "Ајлинглаплап"), ("nb", "Ailinglaplap"), ("nl", "Ailinglaplap Atoll"), ("no", "Ailinglaplap"), ("pl", "Ailinglaplap"), ("pt", "Ailinglaplap"), ("ru", "Аилинглапалап"), ("sv", "Ailinglapalap"), ("ur", "آئلینگ لاپ لاپ جزیرہ مرجانی"), ("vi", "Đảo san hô vòng Ailinglaplap"), ("zh", "埃林拉普拉普環礁")]),
                         unofficial_name_list: ["Ailinglaplap"].to_vec(),
                     }
                 ),
@@ -293,7 +295,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Municipality,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ccp", "𑄃𑄢\u{11134}𑄚\u{1112e}"), ("ceb", "Arno Atoll (munisipyo)"), ("de", "Arno-Atoll"), ("en", "Arno"), ("es", "Arno (isla)"), ("et", "Arno"), ("fa", "آب\u{200c}سنگ حلقوی آرنو"), ("fi", "Arno (atolli)"), ("fr", "Arno"), ("gl", "Atol Arno"), ("he", "ארנו"), ("it", "Arno"), ("ja", "アルノ環礁"), ("ko", "아르노 환초"), ("lt", "Arnas"), ("mk", "Арно (атол)"), ("nl", "Arno"), ("pl", "Arno"), ("ru", "Арно (атолл)"), ("sv", "Arnoatollen"), ("vi", "Đảo san hô vòng Arno"), ("zh", "阿爾諾環礁")]),
+                        translations: HashMap::from([("ccp", "𑄃𑄢\u{11134}𑄚\u{1112e}"), ("ceb", "Arno Atoll (munisipyo)"), ("de", "Arno-Atoll"), ("en", "Arno"), ("es", "Arno (isla)"), ("et", "Arno"), ("fa", "آب\u{200c}سنگ حلقوی آرنو"), ("fi", "Arno (atolli)"), ("fr", "Arno"), ("gl", "Atol Arno"), ("he", "ארנו"), ("id", "Atol Arno"), ("it", "Arno"), ("ja", "アルノ環礁"), ("ko", "아르노 환초"), ("lt", "Arnas"), ("mk", "Арно (атол)"), ("nl", "Arno"), ("pl", "Arno"), ("ru", "Арно (атолл)"), ("sv", "Arnoatollen"), ("ur", "آرنو جزیرہ مرجانی"), ("vi", "Đảo san hô vòng Arno"), ("zh", "阿爾諾環礁")]),
                         unofficial_name_list: ["Arno"].to_vec(),
                     }
                 ),
@@ -308,7 +310,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Municipality,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ccp", "𑄃𑄅\u{1112a}𑄢\u{11134} 𑄃𑄑\u{1112e}𑄣\u{11134}"), ("ceb", "Aur Atoll"), ("de", "Aur"), ("en", "Aur Atoll"), ("es", "Aur"), ("fa", "آب\u{200c}سنگ حلقوی آئور"), ("fi", "Aur"), ("fr", "Aur"), ("gl", "Atol Aur"), ("hu", "Aur Atoll"), ("id", "Atol Aur"), ("it", "Aur"), ("ja", "オール環礁"), ("ko", "아우르 환초"), ("lt", "Auras"), ("mk", "Аур"), ("nl", "Aur Atoll"), ("pl", "Aur"), ("pt", "Aur"), ("ru", "Аур"), ("sv", "Aur"), ("zh", "奧爾環礁")]),
+                        translations: HashMap::from([("ca", "Aur"), ("ccp", "𑄃𑄅\u{1112a}𑄢\u{11134} 𑄃𑄑\u{1112e}𑄣\u{11134}"), ("ceb", "Aur Atoll"), ("de", "Aur"), ("en", "Aur Atoll"), ("es", "Aur"), ("fa", "آب\u{200c}سنگ حلقوی آئور"), ("fi", "Aur"), ("fr", "Aur"), ("gl", "Atol Aur"), ("hu", "Aur Atoll"), ("id", "Atol Aur"), ("it", "Aur"), ("ja", "オール環礁"), ("ko", "아우르 환초"), ("lt", "Auras"), ("mk", "Аур"), ("nl", "Aur Atoll"), ("pl", "Aur"), ("pt", "Aur"), ("ru", "Аур"), ("sv", "Aur"), ("ur", "آور جزیرہ مرجانی"), ("zh", "奧爾環礁")]),
                         unofficial_name_list: ["Aur"].to_vec(),
                     }
                 ),
@@ -323,7 +325,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Municipality,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("be", "Атол Эбон"), ("ccp", "𑄃𑄬𑄝\u{11127}𑄚\u{11134} 𑄃𑄑\u{1112e}𑄣\u{11134}"), ("ceb", "Ebon"), ("da", "Ebon"), ("de", "Ebon-Atoll"), ("en", "Ebon Atoll"), ("es", "Ebon"), ("et", "Ebon"), ("fa", "آب\u{200c}سنگ حلقوی ابون"), ("fi", "Ebon"), ("fr", "Ebon"), ("gl", "Atol Ebon"), ("hr", "Ebon"), ("hu", "Ebon Atoll"), ("it", "Ebon"), ("ja", "エボン環礁"), ("ko", "에본 환초"), ("lt", "Ebonas"), ("mk", "Ебон"), ("nl", "Ebon Atoll"), ("pl", "Ebon"), ("ru", "Эбон"), ("sv", "Ebon"), ("zh", "埃崩環礁")]),
+                        translations: HashMap::from([("be", "Атол Эбон"), ("ccp", "𑄃𑄬𑄝\u{11127}𑄚\u{11134} 𑄃𑄑\u{1112e}𑄣\u{11134}"), ("ceb", "Ebon"), ("da", "Ebon"), ("de", "Ebon-Atoll"), ("en", "Ebon Atoll"), ("es", "Ebon"), ("et", "Ebon"), ("fa", "آب\u{200c}سنگ حلقوی ابون"), ("fi", "Ebon"), ("fr", "Ebon"), ("gl", "Atol Ebon"), ("hr", "Ebon"), ("hu", "Ebon Atoll"), ("id", "Atol Ebon"), ("it", "Ebon"), ("ja", "エボン環礁"), ("ko", "에본 환초"), ("lt", "Ebonas"), ("mk", "Ебон"), ("nl", "Ebon Atoll"), ("pl", "Ebon"), ("ru", "Эбон"), ("sv", "Ebon"), ("ur", "ایبون جزیرہ مرجانی"), ("zh", "埃崩環礁")]),
                         unofficial_name_list: ["Epoon"].to_vec(),
                     }
                 ),
@@ -338,7 +340,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Municipality,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ca", "Enewetak"), ("ccp", "𑄃𑄬𑄚\u{11128}𑄃\u{1112e}𑄠𑄬𑄑𑄇\u{11134} 𑄃𑄑\u{1112e}𑄣\u{11134}"), ("ceb", "Enewetak Atoll"), ("cs", "Eniwetok"), ("de", "Eniwetok"), ("en", "Enewetak Atoll"), ("es", "Enewetak"), ("et", "Enewetak"), ("fa", "انوتاک"), ("fi", "Enewetak"), ("fr", "Eniwetok"), ("gl", "Atol Enewetak"), ("he", "אנווטאק"), ("hr", "Enewetak"), ("id", "Atol Enewetak"), ("it", "Enewetak"), ("ja", "エニウェトク環礁"), ("ko", "에네웨타크 환초"), ("lt", "Enivetokas"), ("mk", "Еневетак"), ("nb", "Enewetakatollen"), ("nl", "Enewetak"), ("no", "Enewetakatollen"), ("pl", "Atol Eniwetok"), ("pt", "Enewetak"), ("ru", "Эниветок"), ("sk", "Eniwetok"), ("sl", "Eniwetok"), ("sv", "Enewetak"), ("tr", "Enewetak Mercan Adaları"), ("uk", "Еніветок"), ("vi", "Đảo san hô vòng Enewetak"), ("zh", "埃內韋塔克環礁")]),
+                        translations: HashMap::from([("ar", "آتول إنيويتوك"), ("ca", "Enewetak"), ("ccp", "𑄃𑄬𑄚\u{11128}𑄃\u{1112e}𑄠𑄬𑄑𑄇\u{11134} 𑄃𑄑\u{1112e}𑄣\u{11134}"), ("ceb", "Enewetak Atoll"), ("cs", "Eniwetok"), ("de", "Eniwetok"), ("en", "Enewetak Atoll"), ("es", "Enewetak"), ("et", "Enewetak"), ("eu", "Enewetak"), ("fa", "انوتاک"), ("fi", "Enewetak"), ("fr", "Eniwetok"), ("gl", "Atol Enewetak"), ("he", "אנווטאק"), ("hr", "Enewetak"), ("id", "Atol Enewetak"), ("it", "Enewetak"), ("ja", "エニウェトク環礁"), ("ko", "에네웨타크 환초"), ("lt", "Enivetokas"), ("mk", "Еневетак"), ("nb", "Enewetakatollen"), ("nl", "Enewetak"), ("no", "Enewetakatollen"), ("pl", "Atol Eniwetok"), ("pt", "Enewetak"), ("ru", "Эниветок"), ("sk", "Eniwetok"), ("sl", "Eniwetok"), ("sv", "Enewetak"), ("tr", "Enewetak Mercan Adaları"), ("uk", "Еніветок"), ("ur", "اینیویٹک جزیرہ مرجانی"), ("vi", "Đảo san hô vòng Enewetak"), ("zh", "埃內韋塔克環礁")]),
                         unofficial_name_list: ["Eniwetok"].to_vec(),
                     }
                 ),
@@ -353,7 +355,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Municipality,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ccp", "𑄎𑄝\u{11127}𑄖\u{11134} 𑄃\u{11128}𑄌\u{11134}𑄣\u{11133}𑄠𑄚\u{11133}𑄓\u{11134}"), ("ceb", "Jabat Island (munisipyo)"), ("cs", "Jabat"), ("de", "Jabwot"), ("en", "Jabat Island"), ("es", "Jabat"), ("fa", "جزیره جابات"), ("fi", "Jabat"), ("fr", "Jabat"), ("gl", "Illa Jabat"), ("hr", "Jabwat"), ("it", "Jabat"), ("ja", "ジャボット島"), ("ko", "자바트 섬"), ("lt", "Džabatas"), ("mk", "Џабат"), ("nl", "Jabat Island"), ("pl", "Jabwot"), ("ru", "Джабат"), ("sv", "Jabwot"), ("zh", "賈普坦島")]),
+                        translations: HashMap::from([("ccp", "𑄎𑄝\u{11127}𑄖\u{11134} 𑄃\u{11128}𑄌\u{11134}𑄣\u{11133}𑄠𑄚\u{11133}𑄓\u{11134}"), ("ceb", "Jabat Island (munisipyo)"), ("cs", "Jabat"), ("de", "Jabwot"), ("en", "Jabat Island"), ("es", "Jabat"), ("fa", "جزیره جابات"), ("fi", "Jabat"), ("fr", "Jabat"), ("gl", "Illa Jabat"), ("hr", "Jabwat"), ("id", "Pulau Jabat"), ("it", "Jabat"), ("ja", "ジャボット島"), ("ko", "자바트 섬"), ("lt", "Džabatas"), ("mk", "Џабат"), ("nl", "Jabat Island"), ("pl", "Jabwot"), ("ru", "Джабат"), ("sv", "Jabwot"), ("ur", "جزیرہ جابات"), ("zh", "賈普坦島")]),
                         unofficial_name_list: ["Jabat"].to_vec(),
                     }
                 ),
@@ -368,7 +370,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Municipality,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "جالويت"), ("be", "Атол Джалуіт"), ("ccp", "𑄎𑄣\u{11128}𑄠𑄬𑄖\u{11134} 𑄃𑄑\u{1112e}𑄣\u{11134}"), ("ceb", "Jaluit Atoll (munisipyo)"), ("de", "Jaluit"), ("en", "Jaluit Atoll"), ("es", "Jaluit"), ("fa", "آب\u{200c}سنگ حلقوی جالوئیت"), ("fi", "Jaluit"), ("fr", "Jaluit"), ("gl", "Atol Jaluit"), ("he", "ג׳לואיט"), ("hr", "Jaluit"), ("hu", "Jaluit Atoll"), ("hy", "Ջալուիտ"), ("it", "Jaluit"), ("ja", "ジャルート環礁"), ("ko", "잘루이트 환초"), ("lt", "Džaluitas"), ("mk", "Џалуит"), ("nl", "Jaluit"), ("pl", "Jaluit"), ("ru", "Джалуит"), ("sv", "Jaluit"), ("vi", "Đảo san hô vòng Jaluit"), ("zh", "賈盧伊特環礁")]),
+                        translations: HashMap::from([("ar", "جالويت"), ("be", "Атол Джалуіт"), ("ccp", "𑄎𑄣\u{11128}𑄠𑄬𑄖\u{11134} 𑄃𑄑\u{1112e}𑄣\u{11134}"), ("ceb", "Jaluit Atoll (munisipyo)"), ("cs", "Jaluit"), ("de", "Jaluit"), ("en", "Jaluit Atoll"), ("es", "Jaluit"), ("fa", "آب\u{200c}سنگ حلقوی جالوئیت"), ("fi", "Jaluit"), ("fr", "Jaluit"), ("gl", "Atol Jaluit"), ("he", "ג׳לואיט"), ("hr", "Jaluit"), ("hu", "Jaluit Atoll"), ("hy", "Ջալուիտ"), ("id", "Atol Jaluit"), ("it", "Jaluit"), ("ja", "ジャルート環礁"), ("ko", "잘루이트 환초"), ("lt", "Džaluitas"), ("mk", "Џалуит"), ("nl", "Jaluit"), ("pl", "Jaluit"), ("ru", "Джалуит"), ("sv", "Jaluit"), ("ur", "جالویت جزیرہ مرجانی"), ("vi", "Đảo san hô vòng Jaluit"), ("zh", "賈盧伊特環礁")]),
                         unofficial_name_list: ["Jālwōj"].to_vec(),
                     }
                 ),
@@ -383,7 +385,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Municipality,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("be", "Востраў Кілі"), ("ccp", "𑄇\u{11128}𑄣\u{11128} 𑄃\u{11128}𑄌\u{11134}𑄣\u{11133}𑄠𑄚\u{11133}𑄓\u{11134}"), ("de", "Kili-Insel"), ("en", "Kili Island"), ("es", "Kili"), ("fa", "جزیره کیلی"), ("fi", "Kili"), ("fr", "Kili"), ("gl", "Atol Kili"), ("hr", "Kili"), ("hu", "Kili"), ("it", "Kili"), ("ja", "キリ島"), ("ko", "킬리 섬"), ("lt", "Kilis"), ("mk", "Кили"), ("nl", "Kili Island"), ("pl", "Kili"), ("ru", "Кили"), ("zh", "吉利島")]),
+                        translations: HashMap::from([("be", "Востраў Кілі"), ("ccp", "𑄇\u{11128}𑄣\u{11128} 𑄃\u{11128}𑄌\u{11134}𑄣\u{11133}𑄠𑄚\u{11133}𑄓\u{11134}"), ("ceb", "Kili Island (munisipyo)"), ("de", "Kili-Insel"), ("en", "Kili Island"), ("es", "Kili"), ("fa", "جزیره کیلی"), ("fi", "Kili"), ("fr", "Kili"), ("gl", "Atol Kili"), ("hr", "Kili"), ("hu", "Kili"), ("id", "Pulau Kili"), ("it", "Kili"), ("ja", "キリ島"), ("ko", "킬리 섬"), ("lt", "Kilis"), ("mk", "Кили"), ("nl", "Kili Island"), ("pl", "Kili"), ("ru", "Кили"), ("sv", "Kiliön"), ("ur", "جزیرہ کیکی"), ("zh", "吉利島")]),
                         unofficial_name_list: ["Kōle"].to_vec(),
                     }
                 ),
@@ -398,7 +400,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Municipality,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("be", "Атол Кваджалейн"), ("bg", "Куаджалин"), ("ccp", "𑄇\u{11133}𑄦\u{11127}𑄎𑄣𑄬\u{1112d}𑄚\u{11134}"), ("ceb", "Kwajalein"), ("cs", "Kwajalein"), ("da", "Kwajalein"), ("de", "Kwajalein"), ("en", "Kwajalein"), ("es", "Kwajalein"), ("fa", "کواجالین"), ("fi", "Kwajalein"), ("fr", "Kwajalein"), ("gl", "Atol Kwajalein"), ("he", "קווג׳לין"), ("hr", "Kwajalein"), ("it", "Kwajalein"), ("ja", "クェゼリン環礁"), ("ka", "კვაჯალეინი"), ("ko", "콰잘레인 환초"), ("lt", "Kvadžaleinas"), ("mk", "Кваџалејн"), ("ms", "Kwajalein"), ("nb", "Kwajalein"), ("nl", "Kwajalein"), ("no", "Kwajalein"), ("pl", "Kwajalein"), ("pt", "Kwajalein"), ("ro", "Atolul Kwajalein"), ("ru", "Кваджалейн"), ("sk", "Kwajalein"), ("sv", "Kwajalein"), ("uk", "Кваджалейн"), ("vi", "Kwajalein"), ("zh", "瓜加林環礁")]),
+                        translations: HashMap::from([("ar", "جزيرة كواجالين"), ("be", "Атол Кваджалейн"), ("bg", "Куаджалин"), ("ca", "Kwajalein"), ("ccp", "𑄇\u{11133}𑄦\u{11127}𑄎𑄣𑄬\u{1112d}𑄚\u{11134}"), ("ceb", "Kwajalein"), ("cs", "Kwajalein"), ("da", "Kwajalein"), ("de", "Kwajalein"), ("en", "Kwajalein"), ("es", "Kwajalein"), ("eu", "Kwajalein atoloia"), ("fa", "کواجالین"), ("fi", "Kwajalein"), ("fr", "Kwajalein"), ("gl", "Atol Kwajalein"), ("he", "קווג׳לין"), ("hr", "Kwajalein"), ("id", "Atol Kwajalein"), ("it", "Kwajalein"), ("ja", "クェゼリン環礁"), ("ka", "კვაჯალეინი"), ("ko", "콰잘레인 환초"), ("lt", "Kvadžaleinas"), ("mk", "Кваџалејн"), ("ms", "Kwajalein"), ("nb", "Kwajalein"), ("nl", "Kwajalein"), ("no", "Kwajalein"), ("pl", "Kwajalein"), ("pt", "Kwajalein"), ("ro", "Atolul Kwajalein"), ("ru", "Кваджалейн"), ("sk", "Kwajalein"), ("sv", "Kwajalein"), ("uk", "Кваджалейн"), ("ur", "کواجالئین جزیرہ مرجانی"), ("vi", "Kwajalein"), ("zh", "瓜加林環礁")]),
                         unofficial_name_list: ["Kuwajleen"].to_vec(),
                     }
                 ),
@@ -428,7 +430,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Municipality,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ccp", "𑄣 𑄃𑄑\u{1112e}𑄣\u{11134}"), ("ceb", "Lae"), ("de", "Lae-Atoll"), ("en", "Lae Atoll"), ("es", "Lae (atolón)"), ("fa", "آب\u{200c}سنگ حلقوی لائه"), ("fi", "Lae"), ("fr", "Lae"), ("gl", "Atol Lae"), ("hr", "Lae"), ("it", "Lae"), ("ja", "ラエー環礁"), ("ko", "라에 환초"), ("lt", "Laė"), ("mk", "Лае"), ("nl", "Lae Atoll"), ("pl", "Lea"), ("pt", "Atol Lae"), ("ru", "Лаэ"), ("sv", "Lae"), ("zh", "拉埃環礁")]),
+                        translations: HashMap::from([("ca", "Atol Lae"), ("ccp", "𑄣 𑄃𑄑\u{1112e}𑄣\u{11134}"), ("ceb", "Lae"), ("de", "Lae-Atoll"), ("en", "Lae Atoll"), ("es", "Lae (atolón)"), ("fa", "آب\u{200c}سنگ حلقوی لائه"), ("fi", "Lae"), ("fr", "Lae"), ("gl", "Atol Lae"), ("hr", "Lae"), ("id", "Atol Lae"), ("it", "Lae"), ("ja", "ラエー環礁"), ("ko", "라에 환초"), ("lt", "Laė"), ("mk", "Лае"), ("nl", "Lae Atoll"), ("pl", "Lea"), ("pt", "Atol Lae"), ("ru", "Лаэ"), ("sv", "Lae"), ("ur", "لاے جزیرہ مرجانی"), ("zh", "拉埃環礁")]),
                         unofficial_name_list: ["Lae"].to_vec(),
                     }
                 ),
@@ -443,7 +445,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Municipality,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ccp", "𑄢\u{11128}𑄛\u{11134} 𑄃\u{11128}𑄌\u{11134}𑄣\u{11133}𑄠𑄚\u{11133}𑄓\u{11134}"), ("ceb", "Lib Island (munisipyo)"), ("de", "Lib"), ("en", "Lib Island"), ("es", "Lib"), ("fa", "جزیره لیب"), ("fi", "Lib"), ("fr", "Lib"), ("gl", "Lib"), ("hr", "Lib"), ("it", "Lib"), ("ja", "リブ島"), ("ko", "리브 섬"), ("lt", "Libas"), ("mk", "Либ"), ("nl", "Lib Island"), ("pl", "Lib"), ("ru", "Либ"), ("sv", "Lib"), ("zh", "里布島")]),
+                        translations: HashMap::from([("ccp", "𑄢\u{11128}𑄛\u{11134} 𑄃\u{11128}𑄌\u{11134}𑄣\u{11133}𑄠𑄚\u{11133}𑄓\u{11134}"), ("ceb", "Lib Island (munisipyo)"), ("de", "Lib"), ("en", "Lib Island"), ("es", "Lib"), ("fa", "جزیره لیب"), ("fi", "Lib"), ("fr", "Lib"), ("gl", "Lib"), ("hr", "Lib"), ("id", "Pulau Lib"), ("it", "Lib"), ("ja", "リブ島"), ("ko", "리브 섬"), ("lt", "Libas"), ("mk", "Либ"), ("nl", "Lib Island"), ("pl", "Lib"), ("ru", "Либ"), ("sv", "Lib"), ("ur", "جزیرہ لب"), ("zh", "里布島")]),
                         unofficial_name_list: ["Ellep"].to_vec(),
                     }
                 ),
@@ -458,7 +460,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Municipality,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ccp", "𑄣\u{11128}𑄇\u{11128}𑄠𑄬𑄛\u{11134} 𑄃𑄑\u{1112e}𑄣\u{11134}"), ("ceb", "Likiep Atoll (munisipyo)"), ("de", "Likiep"), ("en", "Likiep Atoll"), ("es", "Likiep"), ("fi", "Likiep"), ("fr", "Likiep"), ("gl", "Atol Likiep"), ("it", "Likiep"), ("ja", "リキエップ環礁"), ("ko", "리키에프 환초"), ("lt", "Likiepas"), ("mk", "Ликиеп"), ("nl", "Likiep Atoll"), ("pl", "Likiep"), ("ru", "Ликиеп"), ("sv", "Likiep"), ("zh", "利基埃普環礁")]),
+                        translations: HashMap::from([("ar", "ليكييب"), ("ca", "Likiep"), ("ccp", "𑄣\u{11128}𑄇\u{11128}𑄠𑄬𑄛\u{11134} 𑄃𑄑\u{1112e}𑄣\u{11134}"), ("ceb", "Likiep Atoll (munisipyo)"), ("de", "Likiep"), ("en", "Likiep Atoll"), ("es", "Likiep"), ("fa", "آبسنگ حلقوی لیکیپ"), ("fi", "Likiep"), ("fr", "Likiep"), ("gl", "Atol Likiep"), ("id", "Atol Likiep"), ("it", "Likiep"), ("ja", "リキエップ環礁"), ("ko", "리키에프 환초"), ("lt", "Likiepas"), ("mk", "Ликиеп"), ("nl", "Likiep Atoll"), ("pl", "Likiep"), ("pt", "Likiep"), ("ru", "Ликиеп"), ("sv", "Likiep"), ("ur", "لیکئپ جزیرہ مرجانی"), ("zh", "利基埃普環礁")]),
                         unofficial_name_list: ["Likiep"].to_vec(),
                     }
                 ),
@@ -473,7 +475,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Municipality,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("af", "Majuro"), ("am", "ማጁሮ"), ("ar", "ماجورو"), ("az", "Macuro"), ("be", "Горад Маджура"), ("bg", "Маджуро"), ("bn", "ম\u{9be}জ\u{9c1}রো"), ("bs", "Majuro"), ("ca", "Majuro"), ("ccp", "𑄟𑄎\u{1112a}𑄢\u{1112e}"), ("ceb", "Majuro Atoll (munisipyo)"), ("cs", "Majuro"), ("cy", "Majuro"), ("da", "Majuro"), ("de", "Majuro-Atoll"), ("el", "Ματζούρο"), ("en", "Majuro"), ("es", "Majuro"), ("et", "Majuro atoll"), ("eu", "Majuro"), ("fa", "ماجورو"), ("fi", "Majuro"), ("fr", "Majuro"), ("gl", "Majuro"), ("gu", "માજ\u{ac1}રો"), ("he", "מג׳ורו"), ("hi", "माज\u{941}रो"), ("hr", "Majuro"), ("hu", "Majuro"), ("hy", "Մաջուրո"), ("id", "Majuro"), ("is", "Majúró"), ("it", "Majuro"), ("ja", "マジュロ"), ("ka", "მაჯურო"), ("kn", "ಮಜುರೊ"), ("ko", "마주로"), ("lt", "Madžūras"), ("lv", "Madžuro"), ("mk", "Маџуро"), ("mr", "माज\u{941}रो"), ("ms", "Majuro"), ("nb", "Majuro"), ("nl", "Majuro"), ("no", "Majuro"), ("pa", "ਮਾਜ\u{a41}ਰ\u{a4b}"), ("pl", "Majuro"), ("pt", "Majuro"), ("ro", "Majuro"), ("ru", "Маджуро"), ("si", "මජ\u{dd4}රෝ"), ("sk", "Dalap-Uliga-Darrit"), ("sl", "Majuro"), ("sq", "Majuro"), ("sr", "Маџуро"), ("sr_Latn", "Madžuro"), ("sv", "Majuro"), ("sw", "Majuro"), ("ta", "ம\u{bbe}சூரோ"), ("te", "మ\u{c3e}జుర\u{c4b}"), ("th", "มาจ\u{e39}โร"), ("tr", "Majuro"), ("uk", "Маджуро"), ("ur", "ماجورو"), ("uz", "Majuro"), ("vi", "Majuro"), ("yue", "馬祖盧"), ("yue_Hans", "马祖卢"), ("zh", "馬久羅")]),
+                        translations: HashMap::from([("af", "Majuro"), ("am", "ማጁሮ"), ("ar", "ماجورو"), ("az", "Macuro"), ("be", "Горад Маджура"), ("bg", "Маджуро"), ("bn", "ম\u{9be}জ\u{9c1}রো"), ("bs", "Majuro"), ("ca", "Majuro"), ("ccp", "𑄟𑄎\u{1112a}𑄢\u{1112e}"), ("ceb", "Majuro Atoll (munisipyo)"), ("cs", "Majuro"), ("cy", "Majuro"), ("da", "Majuro"), ("de", "Majuro-Atoll"), ("el", "Ματζούρο"), ("en", "Majuro"), ("es", "Majuro"), ("et", "Majuro atoll"), ("eu", "Majuro"), ("fa", "ماجورو"), ("fi", "Majuro"), ("fr", "Majuro"), ("gl", "Majuro"), ("gu", "માજ\u{ac1}રો"), ("he", "מג׳ורו"), ("hi", "माज\u{941}रो"), ("hr", "Majuro"), ("hu", "Majuro"), ("hy", "Մաջուրո"), ("id", "Majuro"), ("is", "Majúró"), ("it", "Majuro"), ("ja", "マジュロ"), ("ka", "მაჯურო"), ("kk", "Маджуро"), ("kn", "ಮಜುರೊ"), ("ko", "마주로"), ("lt", "Madžūras"), ("lv", "Madžuro"), ("mk", "Маџуро"), ("ml", "മ\u{d3e}ജ\u{d41}റോ"), ("mr", "माज\u{941}रो"), ("ms", "Majuro"), ("nb", "Majuro"), ("nl", "Majuro"), ("no", "Majuro"), ("pa", "ਮਾਜ\u{a41}ਰ\u{a4b}"), ("pl", "Majuro"), ("ps", "ماجورو"), ("pt", "Majuro"), ("ro", "Majuro"), ("ru", "Маджуро"), ("si", "මජ\u{dd4}රෝ"), ("sk", "Dalap-Uliga-Darrit"), ("sl", "Majuro"), ("sq", "Majuro"), ("sr", "Маџуро"), ("sr_Latn", "Madžuro"), ("sv", "Majuro"), ("sw", "Majuro"), ("ta", "ம\u{bbe}சூரோ"), ("te", "మ\u{c3e}జుర\u{c4b}"), ("th", "มาจ\u{e39}โร"), ("tr", "Majuro"), ("uk", "Маджуро"), ("ur", "ماجورو"), ("uz", "Majuro"), ("vi", "Majuro"), ("yue", "馬祖盧"), ("yue_Hans", "马祖卢"), ("zh", "馬久羅")]),
                         unofficial_name_list: ["Mājro"].to_vec(),
                     }
                 ),
@@ -488,7 +490,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Municipality,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ccp", "𑄟𑄣\u{1112e}𑄠𑄬𑄣𑄛\u{11134} 𑄃𑄑\u{1112e}𑄣\u{11134}"), ("ceb", "Maloelap Atoll"), ("de", "Maloelap"), ("en", "Maloelap Atoll"), ("es", "Maloelap"), ("fa", "آب\u{200c}سنگ حلقوی ماولاپ"), ("fi", "Maloelap"), ("fr", "Maloelap"), ("gl", "Atol Maloelap"), ("hu", "Maloelap Atoll"), ("it", "Maloelap"), ("ja", "マロエラップ環礁"), ("ko", "말로엘라프 환초"), ("lt", "Maloelapas"), ("mk", "Малоелап"), ("nl", "Maloelap Atoll"), ("pl", "Maloelap"), ("pt", "Atol Maloelap"), ("ru", "Малоэлап"), ("sv", "Maloelap"), ("tr", "maloelap atoll"), ("vi", "Maloelap"), ("zh", "馬洛埃拉普環礁")]),
+                        translations: HashMap::from([("ca", "Maloelap"), ("ccp", "𑄟𑄣\u{1112e}𑄠𑄬𑄣𑄛\u{11134} 𑄃𑄑\u{1112e}𑄣\u{11134}"), ("ceb", "Maloelap Atoll"), ("de", "Maloelap"), ("en", "Maloelap Atoll"), ("es", "Maloelap"), ("fa", "آب\u{200c}سنگ حلقوی ماولاپ"), ("fi", "Maloelap"), ("fr", "Maloelap"), ("gl", "Atol Maloelap"), ("hu", "Maloelap Atoll"), ("id", "Atol Maloelap"), ("it", "Maloelap"), ("ja", "マロエラップ環礁"), ("ko", "말로엘라프 환초"), ("lt", "Maloelapas"), ("mk", "Малоелап"), ("nl", "Maloelap Atoll"), ("pl", "Maloelap"), ("pt", "Atol Maloelap"), ("ru", "Малоэлап"), ("sv", "Maloelap"), ("tr", "maloelap atoll"), ("uk", "Малоелап"), ("ur", "مالوئلاپ جزیرہ مرجانی"), ("vi", "Maloelap"), ("zh", "馬洛埃拉普環礁")]),
                         unofficial_name_list: ["Maloelap"].to_vec(),
                     }
                 ),
@@ -503,7 +505,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Municipality,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ca", "Mejit"), ("ccp", "𑄟𑄬𑄎\u{11128}𑄖\u{11134} 𑄃\u{11128}𑄌\u{11134}𑄣\u{11133}𑄠𑄚\u{11133}𑄓\u{11134}"), ("ceb", "Mejit Island"), ("de", "Mejit"), ("en", "Mejit Island"), ("es", "Mejit"), ("fa", "آب\u{200c}سنگ حلقوی میجیت"), ("fi", "Mejit"), ("fr", "Mejit"), ("gl", "Illa Mejit"), ("it", "Mejit"), ("ja", "メジット島"), ("ko", "메지트 섬"), ("lt", "Medžitas"), ("mk", "Меџит"), ("nl", "Mejit Island"), ("pl", "Mejit"), ("ru", "Меджит"), ("sv", "Mejit"), ("zh", "梅吉特島")]),
+                        translations: HashMap::from([("ca", "Mejit"), ("ccp", "𑄟𑄬𑄎\u{11128}𑄖\u{11134} 𑄃\u{11128}𑄌\u{11134}𑄣\u{11133}𑄠𑄚\u{11133}𑄓\u{11134}"), ("ceb", "Mejit Island"), ("de", "Mejit"), ("en", "Mejit Island"), ("es", "Mejit"), ("fa", "آب\u{200c}سنگ حلقوی میجیت"), ("fi", "Mejit"), ("fr", "Mejit"), ("gl", "Illa Mejit"), ("id", "Pulau Mejit"), ("it", "Mejit"), ("ja", "メジット島"), ("ko", "메지트 섬"), ("lt", "Medžitas"), ("mk", "Меџит"), ("nl", "Mejit Island"), ("pl", "Mejit"), ("ru", "Меджит"), ("sv", "Mejit"), ("ur", "جزیرہ میجیت"), ("zh", "梅吉特島")]),
                         unofficial_name_list: ["Mājeej"].to_vec(),
                     }
                 ),
@@ -518,7 +520,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Municipality,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ccp", "𑄟\u{11128}𑄢\u{11128} 𑄃𑄑\u{1112e}𑄣\u{11134}"), ("ceb", "Mili Atoll (pulong kagaangan)"), ("de", "Mili"), ("en", "Mili Atoll"), ("es", "Mili"), ("eu", "Mili atoloia"), ("fa", "آب\u{200c}سنگ حلقوی میلی"), ("fi", "Mili"), ("fr", "Mili"), ("gl", "Atol Mili"), ("he", "מילי"), ("it", "Mili"), ("ja", "ミリ環礁"), ("ko", "밀리 환초"), ("lt", "Milis"), ("mk", "Мили"), ("nl", "Mili Atoll"), ("pl", "Mili"), ("ru", "Мили"), ("sv", "Mili"), ("zh", "米利環礁")]),
+                        translations: HashMap::from([("ccp", "𑄟\u{11128}𑄢\u{11128} 𑄃𑄑\u{1112e}𑄣\u{11134}"), ("ceb", "Mili Atoll (pulong kagaangan)"), ("da", "Mili Atoll"), ("de", "Mili"), ("en", "Mili Atoll"), ("es", "Mili"), ("eu", "Mili atoloia"), ("fa", "آب\u{200c}سنگ حلقوی میلی"), ("fi", "Mili"), ("fr", "Mili"), ("gl", "Atol Mili"), ("he", "מילי"), ("id", "Atol Mili"), ("it", "Mili"), ("ja", "ミリ環礁"), ("ko", "밀리 환초"), ("lt", "Milis"), ("mk", "Мили"), ("nl", "Mili Atoll"), ("pl", "Mili"), ("ru", "Мили"), ("sv", "Mili"), ("ur", "میلی جزیرہ مرجانی"), ("zh", "米利環礁")]),
                         unofficial_name_list: ["Mili"].to_vec(),
                     }
                 ),
@@ -533,7 +535,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Municipality,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ccp", "𑄚𑄟\u{11134}𑄓\u{11133}𑄢\u{11128}𑄇\u{11134} 𑄃𑄑\u{1112e}𑄣\u{11134}"), ("ceb", "Namdrik"), ("de", "Namorik"), ("en", "Namdrik Atoll"), ("es", "Namorik"), ("fa", "آب\u{200c}سنگ حلقوی نامداریک"), ("fi", "Namorik"), ("fr", "Namdrik"), ("gl", "Atol Namorik"), ("hr", "Namorik"), ("it", "Namorik"), ("ja", "ナモリック環礁"), ("ko", "나모리크 환초"), ("lt", "Namdrikas"), ("mk", "Намдрик"), ("nl", "Namdrik Atoll"), ("pl", "Namorik"), ("pt", "Namorik"), ("ru", "Наморик"), ("sv", "Namorik"), ("zh", "納莫里克環礁")]),
+                        translations: HashMap::from([("ar", "حلقة نامدريك"), ("ccp", "𑄚𑄟\u{11134}𑄓\u{11133}𑄢\u{11128}𑄇\u{11134} 𑄃𑄑\u{1112e}𑄣\u{11134}"), ("ceb", "Namdrik"), ("de", "Namorik"), ("en", "Namdrik Atoll"), ("es", "Namorik"), ("fa", "آب\u{200c}سنگ حلقوی نامداریک"), ("fi", "Namorik"), ("fr", "Namdrik"), ("gl", "Atol Namorik"), ("hr", "Namorik"), ("id", "Atol Namorik"), ("it", "Namorik"), ("ja", "ナモリック環礁"), ("ko", "나모리크 환초"), ("lt", "Namdrikas"), ("mk", "Намдрик"), ("nl", "Namdrik Atoll"), ("pl", "Namorik"), ("pt", "Namorik"), ("ru", "Наморик"), ("sv", "Namorik"), ("ur", "نامدریک جزیرہ مرجانی"), ("zh", "納莫里克環礁")]),
                         unofficial_name_list: ["Namorik"].to_vec(),
                     }
                 ),
@@ -548,7 +550,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Municipality,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ccp", "𑄚𑄟\u{1112a} 𑄃𑄑\u{1112e}𑄣\u{11134}"), ("ceb", "Namu Atoll (munisipyo)"), ("cs", "Namu"), ("de", "Namu"), ("en", "Namu Atoll"), ("es", "Namu (atolón)"), ("eu", "Namu atoloia"), ("fa", "آب\u{200c}سنگ حلقوی نامو"), ("fi", "Namu"), ("fr", "Namu"), ("gl", "Atol Namu"), ("hr", "Namu"), ("it", "Namu"), ("ja", "ナムー環礁"), ("ko", "나무 환초"), ("lt", "Namu"), ("mk", "Наму"), ("nl", "Namu Atoll"), ("pl", "Namu"), ("pt", "Atol Namu"), ("ru", "Наму"), ("sv", "Namu"), ("zh", "納木環礁")]),
+                        translations: HashMap::from([("ccp", "𑄚𑄟\u{1112a} 𑄃𑄑\u{1112e}𑄣\u{11134}"), ("ceb", "Namu Atoll (munisipyo)"), ("cs", "Namu"), ("de", "Namu"), ("en", "Namu Atoll"), ("es", "Namu (atolón)"), ("eu", "Namu atoloia"), ("fa", "آب\u{200c}سنگ حلقوی نامو"), ("fi", "Namu"), ("fr", "Namu"), ("gl", "Atol Namu"), ("hr", "Namu"), ("id", "Atol Namu"), ("it", "Namu"), ("ja", "ナムー環礁"), ("ko", "나무 환초"), ("lt", "Namu"), ("mk", "Наму"), ("nl", "Namu Atoll"), ("pl", "Namu"), ("pt", "Atol Namu"), ("ru", "Наму"), ("sv", "Namu"), ("ur", "نامو جزیرہ مرجانی"), ("zh", "納木環礁")]),
                         unofficial_name_list: ["Namo"].to_vec(),
                     }
                 ),
@@ -563,7 +565,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Municipality,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("be", "Атол Рангелап"), ("ccp", "𑄢\u{11127}𑄚\u{11134}𑄉𑄬𑄣𑄛\u{11134} 𑄃𑄑\u{1112e}𑄣\u{11134}"), ("ceb", "Rongelap Atoll (munisipyo)"), ("de", "Rongelap-Atoll"), ("en", "Rongelap Atoll"), ("es", "Rongelap"), ("fi", "Rongelap"), ("fr", "Rongelap"), ("gl", "Atol Rongelap"), ("hr", "Rongelap"), ("it", "Rongelap"), ("ja", "ロンゲラップ環礁"), ("ko", "롱겔라프 환초"), ("lt", "Rongelapas"), ("lv", "Rongelapa"), ("mk", "Ронгелап"), ("nb", "Rongelap"), ("nl", "Rongelap"), ("no", "Rongelap"), ("pl", "Rongelap"), ("pt", "Atol Rongelap"), ("ru", "Ронгелап"), ("sv", "Rongelap"), ("uk", "Атол Ронгелап"), ("vi", "Rongelap"), ("zh", "朗格拉普環礁")]),
+                        translations: HashMap::from([("be", "Атол Рангелап"), ("ccp", "𑄢\u{11127}𑄚\u{11134}𑄉𑄬𑄣𑄛\u{11134} 𑄃𑄑\u{1112e}𑄣\u{11134}"), ("ceb", "Rongelap Atoll (munisipyo)"), ("de", "Rongelap-Atoll"), ("en", "Rongelap Atoll"), ("es", "Rongelap"), ("fa", "جزیره مرجانی رانگلپ"), ("fi", "Rongelap"), ("fr", "Rongelap"), ("gl", "Atol Rongelap"), ("he", "אטול רונגלפ"), ("hr", "Rongelap"), ("id", "Atol Rongelap"), ("it", "Rongelap"), ("ja", "ロンゲラップ環礁"), ("ko", "롱겔라프 환초"), ("lt", "Rongelapas"), ("lv", "Rongelapa"), ("mk", "Ронгелап"), ("nb", "Rongelap"), ("nl", "Rongelap"), ("no", "Rongelap"), ("pl", "Rongelap"), ("pt", "Atol Rongelap"), ("ru", "Ронгелап"), ("sv", "Rongelap"), ("uk", "Атол Ронгелап"), ("ur", "رونگیلاپ جزیرہ مرجانی"), ("vi", "Rongelap"), ("zh", "朗格拉普環礁")]),
                         unofficial_name_list: ["Rongelap"].to_vec(),
                     }
                 ),
@@ -593,7 +595,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Municipality,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ccp", "𑄅\u{1112a}𑄎𑄬 𑄃𑄑\u{1112e}𑄣\u{11134}"), ("ceb", "Ujae Atoll (munisipyo)"), ("de", "Ujae"), ("en", "Ujae Atoll"), ("es", "Ujae"), ("fa", "آب\u{200c}سنگ حلقوی اوجائه"), ("fi", "Ujae"), ("fr", "Ujae"), ("gl", "Atol Ujae"), ("hr", "Ujae"), ("id", "Atol Ujae"), ("it", "Ujae"), ("ja", "ウジャエ環礁"), ("ko", "우자에 환초"), ("lt", "Udžaė"), ("mk", "Уџае"), ("nl", "Ujae Atoll"), ("pl", "Ujae"), ("ru", "Уджаэ"), ("sv", "Ujae"), ("zh", "烏賈環礁")]),
+                        translations: HashMap::from([("ca", "Ujae"), ("ccp", "𑄅\u{1112a}𑄎𑄬 𑄃𑄑\u{1112e}𑄣\u{11134}"), ("ceb", "Ujae Atoll (munisipyo)"), ("de", "Ujae"), ("en", "Ujae Atoll"), ("es", "Ujae"), ("fa", "آب\u{200c}سنگ حلقوی اوجائه"), ("fi", "Ujae"), ("fr", "Ujae"), ("gl", "Atol Ujae"), ("hr", "Ujae"), ("id", "Atol Ujae"), ("it", "Ujae"), ("ja", "ウジャエ環礁"), ("ko", "우자에 환초"), ("lt", "Udžaė"), ("mk", "Уџае"), ("nl", "Ujae Atoll"), ("pl", "Ujae"), ("ru", "Уджаэ"), ("sv", "Ujae"), ("ur", "اوجئے جزیرہ مرجانی"), ("zh", "烏賈環礁")]),
                         unofficial_name_list: ["Ujae"].to_vec(),
                     }
                 ),
@@ -623,7 +625,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Municipality,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("be", "Атол Утырык"), ("ca", "Utirik"), ("ccp", "𑄅\u{1112a}𑄑\u{11128}𑄢\u{11128}𑄇\u{11134} 𑄃𑄑\u{1112e}𑄣\u{11134}"), ("ceb", "Utrik"), ("de", "Utirik"), ("en", "Utirik Atoll"), ("es", "Utirik"), ("eu", "Utirik"), ("fa", "آب\u{200c}سنگ حلقوی اوتیریک"), ("fi", "Utirik"), ("fr", "Utirik"), ("gl", "Atol Utirik"), ("it", "Utirik"), ("ja", "ウチリック環礁"), ("ko", "우티리크 환초"), ("lt", "Utirikas"), ("mk", "Утирик"), ("nl", "Utirik Atoll"), ("pl", "Utirik"), ("pt", "Atol Utirik"), ("ru", "Утирик"), ("sv", "Utirik"), ("zh", "烏蒂里克環礁")]),
+                        translations: HashMap::from([("be", "Атол Утырык"), ("ca", "Utirik"), ("ccp", "𑄅\u{1112a}𑄑\u{11128}𑄢\u{11128}𑄇\u{11134} 𑄃𑄑\u{1112e}𑄣\u{11134}"), ("ceb", "Utrik"), ("cy", "Atol Wtiric"), ("de", "Utirik"), ("en", "Utirik Atoll"), ("es", "Utirik"), ("eu", "Utirik"), ("fa", "آب\u{200c}سنگ حلقوی اوتیریک"), ("fi", "Utirik"), ("fr", "Utirik"), ("gl", "Atol Utirik"), ("id", "Atol Utirik"), ("it", "Utirik"), ("ja", "ウチリック環礁"), ("ko", "우티리크 환초"), ("lt", "Utirikas"), ("mk", "Утирик"), ("nl", "Utirik Atoll"), ("pl", "Utirik"), ("pt", "Atol Utirik"), ("ru", "Утирик"), ("sv", "Utirik"), ("ur", "اوتیریک جزیرہ مرجانی"), ("zh", "烏蒂里克環礁")]),
                         unofficial_name_list: ["Utirik", "Utrōk", "Utrōnk"].to_vec(),
                     }
                 ),
@@ -638,7 +640,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Municipality,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ccp", "𑄤𑄗\u{1112e} 𑄃𑄑\u{1112e}𑄣\u{11134}"), ("ceb", "Wotho"), ("de", "Wotho"), ("en", "Wotho Atoll"), ("es", "Wotho"), ("fi", "Wotho"), ("fr", "Wotho"), ("gl", "Atol Wotho"), ("hr", "Wotho"), ("id", "Atol Wotho"), ("it", "Wotho"), ("ja", "オトー環礁"), ("ko", "워토 환초"), ("lt", "Votas"), ("mk", "Вото"), ("nl", "Wotho Atoll"), ("pl", "Wotho"), ("ru", "Вото"), ("sv", "Wotho"), ("zh", "沃特環礁")]),
+                        translations: HashMap::from([("ca", "Wotho"), ("ccp", "𑄤𑄗\u{1112e} 𑄃𑄑\u{1112e}𑄣\u{11134}"), ("ceb", "Wotho"), ("de", "Wotho"), ("en", "Wotho Atoll"), ("es", "Wotho"), ("fi", "Wotho"), ("fr", "Wotho"), ("gl", "Atol Wotho"), ("hr", "Wotho"), ("id", "Atol Wotho"), ("it", "Wotho"), ("ja", "オトー環礁"), ("ko", "워토 환초"), ("lt", "Votas"), ("mk", "Вото"), ("nl", "Wotho Atoll"), ("pl", "Wotho"), ("ru", "Вото"), ("sv", "Wotho"), ("ur", "ووتھو جزیرہ مرجانی"), ("zh", "沃特環礁")]),
                         unofficial_name_list: ["Wōtto"].to_vec(),
                     }
                 ),
@@ -653,7 +655,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Municipality,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ccp", "𑄤𑄖\u{11134}𑄎𑄬 𑄃𑄑\u{1112e}𑄣\u{11134}"), ("ceb", "Wotje Atoll"), ("de", "Wotje"), ("en", "Wotje Atoll"), ("es", "Wotje"), ("fi", "Wotje"), ("fr", "Wotje"), ("gl", "Atol Wotje"), ("it", "Wotje"), ("ja", "ウォッジェ環礁"), ("ko", "웟제 환초"), ("lt", "Votjė"), ("mk", "Вотје"), ("nl", "Wotje Atoll"), ("pl", "Wotje"), ("pt", "Atol Wotje"), ("ru", "Вотье"), ("sv", "Wotje"), ("uk", "Вотьє"), ("zh", "沃特傑環礁")]),
+                        translations: HashMap::from([("ca", "Wotje"), ("ccp", "𑄤𑄖\u{11134}𑄎𑄬 𑄃𑄑\u{1112e}𑄣\u{11134}"), ("ceb", "Wotje Atoll"), ("de", "Wotje"), ("en", "Wotje Atoll"), ("es", "Wotje"), ("fi", "Wotje"), ("fr", "Wotje"), ("gl", "Atol Wotje"), ("id", "Atol Wotje"), ("it", "Wotje"), ("ja", "ウォッジェ環礁"), ("ko", "웟제 환초"), ("lt", "Votjė"), ("mk", "Вотје"), ("nl", "Wotje Atoll"), ("pl", "Wotje"), ("pt", "Atol Wotje"), ("ru", "Вотье"), ("sv", "Wotje"), ("uk", "Вотьє"), ("ur", "واتجے جزیرہ مرجانی"), ("zh", "沃特傑環礁")]),
                         unofficial_name_list: ["Wotje"].to_vec(),
                     }
                 ),
@@ -859,5 +861,7 @@ pub fn new() -> Country {
         ]),
         #[cfg(feature = "subdivisions")]
         subdivisions: subdivisions::new(),
+        g7_member: false,
+        g20_member: false,
     }
 }
