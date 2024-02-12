@@ -46,6 +46,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = Some(4268873);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇰🇼";
     #[cfg(feature = "translations")]
@@ -358,11 +359,11 @@ pub fn new() -> Country {
         continent: Continent::Asia,
         country_code: 965,
         currency_code: CurrencyCode::KWD,
-        gec: Some(GEC::KU),
+        maybe_gec: Some(GEC::KU),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: Some(IOC::KUW),
+        maybe_ioc: Some(IOC::KUW),
         iso_long_name: "The State of Kuwait",
         iso_short_name: "Kuwait",
         official_language_list: ["ar"].to_vec(),
@@ -370,13 +371,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [7].to_vec(),
         national_prefix: "None",
-        nationality: Some("Kuwaiti"),
+        maybe_nationality: Some("Kuwaiti"),
         number: "414",
         postal_code: true,
         postal_code_format: Some("\\d{5}"),
-        region: Some(Region::Asia),
+        maybe_region: Some(Region::Asia),
         start_of_week: WeekDay::Sunday,
-        subregion: Some(SubRegion::WesternAsia),
+        maybe_subregion: Some(SubRegion::WesternAsia),
         un_locode: "KW",
         unofficial_name_list: ["Kuwait", "الكويت", "Koweït", "クウェート", "Koeweit"].to_vec(),
         world_region: WorldRegion::EMEA,
@@ -525,7 +526,8 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: false,
-        vat_rates: None,
+        maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,
+        maybe_population: Some(4268873),
     }
 }

@@ -52,6 +52,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = Some(9228071);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇧🇾";
     #[cfg(feature = "translations")]
@@ -377,11 +378,11 @@ pub fn new() -> Country {
         continent: Continent::Europe,
         country_code: 375,
         currency_code: CurrencyCode::BYN,
-        gec: Some(GEC::BO),
+        maybe_gec: Some(GEC::BO),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "810",
-        ioc: Some(IOC::BLR),
+        maybe_ioc: Some(IOC::BLR),
         iso_long_name: "The Republic of Belarus",
         iso_short_name: "Belarus",
         official_language_list: ["be", "ru"].to_vec(),
@@ -389,13 +390,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [9].to_vec(),
         national_prefix: "8",
-        nationality: Some("Belarusian"),
+        maybe_nationality: Some("Belarusian"),
         number: "112",
         postal_code: true,
         postal_code_format: Some("\\d{6}"),
-        region: Some(Region::Europe),
+        maybe_region: Some(Region::Europe),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::EasternEurope),
+        maybe_subregion: Some(SubRegion::EasternEurope),
         un_locode: "BY",
         unofficial_name_list: [
             "Belarus",
@@ -553,7 +554,8 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: false,
-        vat_rates: None,
+        maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,
+        maybe_population: Some(9228071),
     }
 }

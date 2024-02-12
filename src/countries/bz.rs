@@ -44,6 +44,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Mi;
+    pub const POPULATION: Option<u64> = Some(405272);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇧🇿";
     #[cfg(feature = "translations")]
@@ -354,11 +355,11 @@ pub fn new() -> Country {
         continent: Continent::NorthAmerica,
         country_code: 501,
         currency_code: CurrencyCode::BZD,
-        gec: Some(GEC::BH),
+        maybe_gec: Some(GEC::BH),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: Some(IOC::BIZ),
+        maybe_ioc: Some(IOC::BIZ),
         iso_long_name: "Belize",
         iso_short_name: "Belize",
         official_language_list: ["en", "es"].to_vec(),
@@ -366,13 +367,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [7].to_vec(),
         national_prefix: "0",
-        nationality: Some("Belizean"),
+        maybe_nationality: Some("Belizean"),
         number: "084",
         postal_code: false,
         postal_code_format: None,
-        region: Some(Region::Americas),
+        maybe_region: Some(Region::Americas),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::CentralAmerica),
+        maybe_subregion: Some(SubRegion::CentralAmerica),
         un_locode: "BZ",
         unofficial_name_list: ["Belize", "Belice", "ベリーズ"].to_vec(),
         world_region: WorldRegion::AMER,
@@ -521,7 +522,8 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: false,
-        vat_rates: None,
+        maybe_vat_rates: None,
         distance_unit: DistanceUnit::Mi,
+        maybe_population: Some(405272),
     }
 }

@@ -54,6 +54,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = Some(22125249);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇸🇾";
     #[cfg(feature = "translations")]
@@ -481,11 +482,11 @@ pub fn new() -> Country {
         continent: Continent::Asia,
         country_code: 963,
         currency_code: CurrencyCode::SYP,
-        gec: Some(GEC::SY),
+        maybe_gec: Some(GEC::SY),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: Some(IOC::SYR),
+        maybe_ioc: Some(IOC::SYR),
         iso_long_name: "The Syrian Arab Republic",
         iso_short_name: "Syrian Arab Republic",
         official_language_list: ["ar"].to_vec(),
@@ -493,13 +494,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [7, 8].to_vec(),
         national_prefix: "0",
-        nationality: Some("Syrian"),
+        maybe_nationality: Some("Syrian"),
         number: "760",
         postal_code: false,
         postal_code_format: None,
-        region: Some(Region::Asia),
+        maybe_region: Some(Region::Asia),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::WesternAsia),
+        maybe_subregion: Some(SubRegion::WesternAsia),
         un_locode: "SY",
         unofficial_name_list: ["Syria", "سوريا", "سورية", "Syrien", "Syrie", "Siria", "シリア・アラブ共和国", "Syrië"].to_vec(),
         world_region: WorldRegion::EMEA,
@@ -513,7 +514,8 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: false,
-        vat_rates: None,
+        maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,
+        maybe_population: Some(22125249),
     }
 }

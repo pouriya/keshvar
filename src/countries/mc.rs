@@ -44,6 +44,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = Some(36469);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇲🇨";
     #[cfg(feature = "translations")]
@@ -519,11 +520,11 @@ pub fn new() -> Country {
         continent: Continent::Europe,
         country_code: 377,
         currency_code: CurrencyCode::EUR,
-        gec: Some(GEC::MN),
+        maybe_gec: Some(GEC::MN),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: Some(IOC::MON),
+        maybe_ioc: Some(IOC::MON),
         iso_long_name: "The Principality of Monaco",
         iso_short_name: "Monaco",
         official_language_list: ["fr"].to_vec(),
@@ -531,13 +532,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [8, 9].to_vec(),
         national_prefix: "0",
-        nationality: Some("Monegasque"),
+        maybe_nationality: Some("Monegasque"),
         number: "492",
         postal_code: true,
         postal_code_format: Some("980\\d{2}"),
-        region: Some(Region::Europe),
+        maybe_region: Some(Region::Europe),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::WesternEurope),
+        maybe_subregion: Some(SubRegion::WesternEurope),
         un_locode: "MC",
         unofficial_name_list: ["Monaco", "Mónaco", "モナコ"].to_vec(),
         world_region: WorldRegion::EMEA,
@@ -686,7 +687,8 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: false,
-        vat_rates: None,
+        maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,
+        maybe_population: Some(36469),
     }
 }

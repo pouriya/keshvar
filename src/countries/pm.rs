@@ -51,6 +51,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = None;
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇵🇲";
     #[cfg(feature = "translations")]
@@ -263,11 +264,11 @@ pub fn new() -> Country {
         continent: Continent::NorthAmerica,
         country_code: 508,
         currency_code: CurrencyCode::EUR,
-        gec: Some(GEC::SB),
+        maybe_gec: Some(GEC::SB),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: None,
+        maybe_ioc: None,
         iso_long_name: "The Overseas Collectivity of Saint-Pierre and Miquelon",
         iso_short_name: "Saint Pierre and Miquelon",
         official_language_list: ["fr"].to_vec(),
@@ -275,13 +276,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [6].to_vec(),
         national_prefix: "0",
-        nationality: Some("French"),
+        maybe_nationality: Some("French"),
         number: "666",
         postal_code: true,
         postal_code_format: Some("9[78]5\\d{2}"),
-        region: Some(Region::Americas),
+        maybe_region: Some(Region::Americas),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::NorthernAmerica),
+        maybe_subregion: Some(SubRegion::NorthernAmerica),
         un_locode: "PM",
         unofficial_name_list: ["Saint Pierre and Miquelon", "Saint-Pierre und Miquelon", "Saint-Pierre-et-Miquelon", "San Pedro y Miquelón", "サンピエール島・ミクロン島", "Saint Pierre en Miquelon"].to_vec(),
         world_region: WorldRegion::AMER,
@@ -295,7 +296,8 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: false,
-        vat_rates: None,
+        maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,
+        maybe_population: None,
     }
 }

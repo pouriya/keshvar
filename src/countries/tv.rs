@@ -44,6 +44,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = Some(11312);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇹🇻";
     #[cfg(feature = "translations")]
@@ -749,11 +750,11 @@ pub fn new() -> Country {
         continent: Continent::Australia,
         country_code: 688,
         currency_code: CurrencyCode::AUD,
-        gec: Some(GEC::TV),
+        maybe_gec: Some(GEC::TV),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: Some(IOC::TUV),
+        maybe_ioc: Some(IOC::TUV),
         iso_long_name: "Tuvalu",
         iso_short_name: "Tuvalu",
         official_language_list: ["en"].to_vec(),
@@ -761,13 +762,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [5].to_vec(),
         national_prefix: "None",
-        nationality: Some("Tuvaluan"),
+        maybe_nationality: Some("Tuvaluan"),
         number: "798",
         postal_code: false,
         postal_code_format: None,
-        region: Some(Region::Oceania),
+        maybe_region: Some(Region::Oceania),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::Polynesia),
+        maybe_subregion: Some(SubRegion::Polynesia),
         un_locode: "TV",
         unofficial_name_list: ["Tuvalu", "ツバル"].to_vec(),
         world_region: WorldRegion::APAC,
@@ -916,7 +917,8 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: false,
-        vat_rates: None,
+        maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,
+        maybe_population: Some(11312),
     }
 }

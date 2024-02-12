@@ -44,6 +44,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Mi;
+    pub const POPULATION: Option<u64> = Some(222382);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇼🇸";
     #[cfg(feature = "translations")]
@@ -997,11 +998,11 @@ pub fn new() -> Country {
         continent: Continent::Australia,
         country_code: 685,
         currency_code: CurrencyCode::WST,
-        gec: Some(GEC::WS),
+        maybe_gec: Some(GEC::WS),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: Some(IOC::SAM),
+        maybe_ioc: Some(IOC::SAM),
         iso_long_name: "The Independent State of Samoa",
         iso_short_name: "Samoa",
         official_language_list: ["en", "sm"].to_vec(),
@@ -1009,13 +1010,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [6, 7].to_vec(),
         national_prefix: "None",
-        nationality: Some("Samoan"),
+        maybe_nationality: Some("Samoan"),
         number: "882",
         postal_code: false,
         postal_code_format: None,
-        region: Some(Region::Oceania),
+        maybe_region: Some(Region::Oceania),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::Polynesia),
+        maybe_subregion: Some(SubRegion::Polynesia),
         un_locode: "WS",
         unofficial_name_list: ["Samoa", "サモア"].to_vec(),
         world_region: WorldRegion::APAC,
@@ -1164,7 +1165,8 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: false,
-        vat_rates: None,
+        maybe_vat_rates: None,
         distance_unit: DistanceUnit::Mi,
+        maybe_population: Some(222382),
     }
 }

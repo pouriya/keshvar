@@ -44,6 +44,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = Some(119878);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇸🇨";
     #[cfg(feature = "translations")]
@@ -669,11 +670,11 @@ pub fn new() -> Country {
         continent: Continent::Africa,
         country_code: 248,
         currency_code: CurrencyCode::SCR,
-        gec: Some(GEC::SE),
+        maybe_gec: Some(GEC::SE),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: Some(IOC::SEY),
+        maybe_ioc: Some(IOC::SEY),
         iso_long_name: "The Republic of Seychelles",
         iso_short_name: "Seychelles",
         official_language_list: ["en", "fr"].to_vec(),
@@ -681,13 +682,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [6].to_vec(),
         national_prefix: "None",
-        nationality: Some("Seychellois"),
+        maybe_nationality: Some("Seychellois"),
         number: "690",
         postal_code: false,
         postal_code_format: None,
-        region: Some(Region::Africa),
+        maybe_region: Some(Region::Africa),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::EasternAfrica),
+        maybe_subregion: Some(SubRegion::EasternAfrica),
         un_locode: "SC",
         unofficial_name_list: ["Seychelles", "Seychellen", "セーシェル"].to_vec(),
         world_region: WorldRegion::EMEA,
@@ -836,7 +837,8 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: false,
-        vat_rates: None,
+        maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,
+        maybe_population: Some(119878),
     }
 }

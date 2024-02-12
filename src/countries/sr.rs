@@ -44,6 +44,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = Some(618040);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇸🇷";
     #[cfg(feature = "translations")]
@@ -414,11 +415,11 @@ pub fn new() -> Country {
         continent: Continent::SouthAmerica,
         country_code: 597,
         currency_code: CurrencyCode::SRD,
-        gec: Some(GEC::NS),
+        maybe_gec: Some(GEC::NS),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: Some(IOC::SUR),
+        maybe_ioc: Some(IOC::SUR),
         iso_long_name: "The Republic of Suriname",
         iso_short_name: "Suriname",
         official_language_list: ["nl"].to_vec(),
@@ -426,13 +427,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [6].to_vec(),
         national_prefix: "0",
-        nationality: Some("Surinamer"),
+        maybe_nationality: Some("Surinamer"),
         number: "740",
         postal_code: false,
         postal_code_format: None,
-        region: Some(Region::Americas),
+        maybe_region: Some(Region::Americas),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::SouthAmerica),
+        maybe_subregion: Some(SubRegion::SouthAmerica),
         un_locode: "SR",
         unofficial_name_list: ["Suriname", "Surinam", "スリナム"].to_vec(),
         world_region: WorldRegion::AMER,
@@ -581,7 +582,8 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: false,
-        vat_rates: None,
+        maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,
+        maybe_population: Some(618040),
     }
 }

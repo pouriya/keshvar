@@ -44,6 +44,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = Some(2630296);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇧🇼";
     #[cfg(feature = "translations")]
@@ -504,11 +505,11 @@ pub fn new() -> Country {
         continent: Continent::Africa,
         country_code: 267,
         currency_code: CurrencyCode::BWP,
-        gec: Some(GEC::BC),
+        maybe_gec: Some(GEC::BC),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: Some(IOC::BOT),
+        maybe_ioc: Some(IOC::BOT),
         iso_long_name: "The Republic of Botswana",
         iso_short_name: "Botswana",
         official_language_list: ["en", "tn"].to_vec(),
@@ -516,13 +517,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [7].to_vec(),
         national_prefix: "None",
-        nationality: Some("Motswana"),
+        maybe_nationality: Some("Motswana"),
         number: "072",
         postal_code: false,
         postal_code_format: None,
-        region: Some(Region::Africa),
+        maybe_region: Some(Region::Africa),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::SouthernAfrica),
+        maybe_subregion: Some(SubRegion::SouthernAfrica),
         un_locode: "BW",
         unofficial_name_list: ["Botswana", "ボツワナ"].to_vec(),
         world_region: WorldRegion::EMEA,
@@ -671,7 +672,8 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: false,
-        vat_rates: None,
+        maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,
+        maybe_population: Some(2630296),
     }
 }

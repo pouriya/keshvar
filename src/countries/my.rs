@@ -45,6 +45,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = Some(33938221);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇲🇾";
     #[cfg(feature = "translations")]
@@ -1552,11 +1553,11 @@ pub fn new() -> Country {
         continent: Continent::Asia,
         country_code: 60,
         currency_code: CurrencyCode::MYR,
-        gec: Some(GEC::MY),
+        maybe_gec: Some(GEC::MY),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: Some(IOC::MAS),
+        maybe_ioc: Some(IOC::MAS),
         iso_long_name: "Malaysia",
         iso_short_name: "Malaysia",
         official_language_list: ["en", "ms"].to_vec(),
@@ -1564,13 +1565,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [9, 10].to_vec(),
         national_prefix: "0",
-        nationality: Some("Malaysian"),
+        maybe_nationality: Some("Malaysian"),
         number: "458",
         postal_code: true,
         postal_code_format: Some("\\d{5}"),
-        region: Some(Region::Asia),
+        maybe_region: Some(Region::Asia),
         start_of_week: WeekDay::Sunday,
-        subregion: Some(SubRegion::SouthEasternAsia),
+        maybe_subregion: Some(SubRegion::SouthEasternAsia),
         un_locode: "MY",
         unofficial_name_list: ["Malaysia", "Malaisie", "Malasia", "マレーシア", "Maleisië"]
             .to_vec(),
@@ -1717,7 +1718,8 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: false,
-        vat_rates: None,
+        maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,
+        maybe_population: Some(33938221),
     }
 }

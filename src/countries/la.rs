@@ -48,6 +48,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = Some(7529475);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇱🇦";
     #[cfg(feature = "translations")]
@@ -535,11 +536,11 @@ pub fn new() -> Country {
         continent: Continent::Asia,
         country_code: 856,
         currency_code: CurrencyCode::LAK,
-        gec: Some(GEC::LA),
+        maybe_gec: Some(GEC::LA),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: Some(IOC::LAO),
+        maybe_ioc: Some(IOC::LAO),
         iso_long_name: "The Lao People's Democratic Republic",
         iso_short_name: "Lao People's Democratic Republic",
         official_language_list: ["lo"].to_vec(),
@@ -547,13 +548,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [8].to_vec(),
         national_prefix: "0",
-        nationality: Some("Laotian"),
+        maybe_nationality: Some("Laotian"),
         number: "418",
         postal_code: true,
         postal_code_format: Some("\\d{5}"),
-        region: Some(Region::Asia),
+        maybe_region: Some(Region::Asia),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::SouthEasternAsia),
+        maybe_subregion: Some(SubRegion::SouthEasternAsia),
         un_locode: "LA",
         unofficial_name_list: ["Laos", "ラオス人民民主共和国", "Lao People s Democratic Republic"].to_vec(),
         world_region: WorldRegion::APAC,
@@ -567,7 +568,8 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: false,
-        vat_rates: None,
+        maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,
+        maybe_population: Some(7529475),
     }
 }

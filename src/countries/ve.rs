@@ -44,6 +44,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = Some(28301696);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇻🇪";
     #[cfg(feature = "translations")]
@@ -639,11 +640,11 @@ pub fn new() -> Country {
         continent: Continent::SouthAmerica,
         country_code: 58,
         currency_code: CurrencyCode::VES,
-        gec: Some(GEC::VE),
+        maybe_gec: Some(GEC::VE),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: Some(IOC::VEN),
+        maybe_ioc: Some(IOC::VEN),
         iso_long_name: "The Bolivarian Republic of Venezuela",
         iso_short_name: "Venezuela (Bolivarian Republic of)",
         official_language_list: ["es"].to_vec(),
@@ -651,13 +652,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [10].to_vec(),
         national_prefix: "0",
-        nationality: Some("Venezuelan"),
+        maybe_nationality: Some("Venezuelan"),
         number: "862",
         postal_code: true,
         postal_code_format: Some("\\d{4}"),
-        region: Some(Region::Americas),
+        maybe_region: Some(Region::Americas),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::SouthAmerica),
+        maybe_subregion: Some(SubRegion::SouthAmerica),
         un_locode: "VE",
         unofficial_name_list: ["Venezuela", "ベネズエラ・ボリバル共和国"].to_vec(),
         world_region: WorldRegion::AMER,
@@ -806,7 +807,8 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: false,
-        vat_rates: None,
+        maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,
+        maybe_population: Some(28301696),
     }
 }

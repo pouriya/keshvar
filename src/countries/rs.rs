@@ -45,6 +45,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = Some(6664449);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇷🇸";
     #[cfg(feature = "translations")]
@@ -742,11 +743,11 @@ pub fn new() -> Country {
         continent: Continent::Europe,
         country_code: 381,
         currency_code: CurrencyCode::RSD,
-        gec: Some(GEC::RI),
+        maybe_gec: Some(GEC::RI),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "99",
-        ioc: Some(IOC::SRB),
+        maybe_ioc: Some(IOC::SRB),
         iso_long_name: "The Republic of Serbia",
         iso_short_name: "Serbia",
         official_language_list: ["sr"].to_vec(),
@@ -754,13 +755,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [9].to_vec(),
         national_prefix: "0",
-        nationality: Some("Serbian"),
+        maybe_nationality: Some("Serbian"),
         number: "688",
         postal_code: true,
         postal_code_format: Some("\\d{5,6}"),
-        region: Some(Region::Europe),
+        maybe_region: Some(Region::Europe),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::SouthernEurope),
+        maybe_subregion: Some(SubRegion::SouthernEurope),
         un_locode: "RS",
         unofficial_name_list: ["Serbia", "Serbien", "Serbie", "セルビア", "Servië"].to_vec(),
         world_region: WorldRegion::EMEA,
@@ -906,7 +907,8 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: false,
-        vat_rates: None,
+        maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,
+        maybe_population: Some(6664449),
     }
 }

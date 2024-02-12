@@ -44,6 +44,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = Some(35588987);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇦🇴";
     #[cfg(feature = "translations")]
@@ -534,11 +535,11 @@ pub fn new() -> Country {
         continent: Continent::Africa,
         country_code: 244,
         currency_code: CurrencyCode::AOA,
-        gec: Some(GEC::AO),
+        maybe_gec: Some(GEC::AO),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: Some(IOC::ANG),
+        maybe_ioc: Some(IOC::ANG),
         iso_long_name: "The Republic of Angola",
         iso_short_name: "Angola",
         official_language_list: ["pt"].to_vec(),
@@ -546,13 +547,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [9].to_vec(),
         national_prefix: "0",
-        nationality: Some("Angolan"),
+        maybe_nationality: Some("Angolan"),
         number: "024",
         postal_code: false,
         postal_code_format: None,
-        region: Some(Region::Africa),
+        maybe_region: Some(Region::Africa),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::MiddleAfrica),
+        maybe_subregion: Some(SubRegion::MiddleAfrica),
         un_locode: "AO",
         unofficial_name_list: ["Angola", "アンゴラ"].to_vec(),
         world_region: WorldRegion::EMEA,
@@ -701,7 +702,8 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: false,
-        vat_rates: None,
+        maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,
+        maybe_population: Some(35588987),
     }
 }

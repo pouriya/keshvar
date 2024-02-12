@@ -52,6 +52,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Mi;
+    pub const POPULATION: Option<u64> = None;
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇸🇭";
     #[cfg(feature = "translations")]
@@ -314,11 +315,11 @@ pub fn new() -> Country {
         continent: Continent::Africa,
         country_code: 290,
         currency_code: CurrencyCode::SHP,
-        gec: Some(GEC::SH),
+        maybe_gec: Some(GEC::SH),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: None,
+        maybe_ioc: None,
         iso_long_name: "Saint Helena, Ascension and Tristan da Cunha",
         iso_short_name: "Saint Helena, Ascension and Tristan da Cunha",
         official_language_list: ["en"].to_vec(),
@@ -326,13 +327,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [4].to_vec(),
         national_prefix: "None",
-        nationality: Some("Saint Helenian"),
+        maybe_nationality: Some("Saint Helenian"),
         number: "654",
         postal_code: true,
         postal_code_format: Some("(?:ASCN|STHL) 1ZZ"),
-        region: Some(Region::Africa),
+        maybe_region: Some(Region::Africa),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::WesternAfrica),
+        maybe_subregion: Some(SubRegion::WesternAfrica),
         un_locode: "SH",
         unofficial_name_list: ["Saint Helena", "Sankt Helena", "Sainte Hélène", "Santa Helena", "セントヘレナ・アセンションおよびトリスタンダクーニャ", "Sint-Helena", "Saint Helena, Ascension and Tristan da Cunha"].to_vec(),
         world_region: WorldRegion::APAC,
@@ -346,7 +347,8 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: false,
-        vat_rates: None,
+        maybe_vat_rates: None,
         distance_unit: DistanceUnit::Mi,
+        maybe_population: None,
     }
 }

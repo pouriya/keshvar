@@ -46,6 +46,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = true;
     pub const EEA_MEMBER: bool = true;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = Some(36821749);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇵🇱";
     #[cfg(feature = "translations")]
@@ -508,11 +509,11 @@ pub fn new() -> Country {
         continent: Continent::Europe,
         country_code: 48,
         currency_code: CurrencyCode::PLN,
-        gec: Some(GEC::PL),
+        maybe_gec: Some(GEC::PL),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: Some(IOC::POL),
+        maybe_ioc: Some(IOC::POL),
         iso_long_name: "The Republic of Poland",
         iso_short_name: "Poland",
         official_language_list: ["pl"].to_vec(),
@@ -520,13 +521,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [9].to_vec(),
         national_prefix: "0",
-        nationality: Some("Polish"),
+        maybe_nationality: Some("Polish"),
         number: "616",
         postal_code: true,
         postal_code_format: Some("\\d{2}-\\d{3}"),
-        region: Some(Region::Europe),
+        maybe_region: Some(Region::Europe),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::EasternEurope),
+        maybe_subregion: Some(SubRegion::EasternEurope),
         un_locode: "PL",
         unofficial_name_list: ["Poland", "Polen", "Pologne", "Polonia", "ポーランド"].to_vec(),
         world_region: WorldRegion::EMEA,
@@ -675,12 +676,13 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: true,
         eea_member: true,
-        vat_rates: Some(VatRates {
+        maybe_vat_rates: Some(VatRates {
             standard: 23.0,
             reduced: Vec::from([5.0, 8.0]),
             super_reduced: None,
             parking: None,
         }),
         distance_unit: DistanceUnit::Km,
+        maybe_population: Some(36821749),
     }
 }

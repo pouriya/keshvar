@@ -45,6 +45,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = Some(2780469);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇦🇲";
     #[cfg(feature = "translations")]
@@ -430,11 +431,11 @@ pub fn new() -> Country {
         continent: Continent::Asia,
         country_code: 374,
         currency_code: CurrencyCode::AMD,
-        gec: Some(GEC::AM),
+        maybe_gec: Some(GEC::AM),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: Some(IOC::ARM),
+        maybe_ioc: Some(IOC::ARM),
         iso_long_name: "The Republic of Armenia",
         iso_short_name: "Armenia",
         official_language_list: ["hy", "ru"].to_vec(),
@@ -442,13 +443,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [8].to_vec(),
         national_prefix: "8",
-        nationality: Some("Armenian"),
+        maybe_nationality: Some("Armenian"),
         number: "051",
         postal_code: true,
         postal_code_format: Some("(?:37)?\\d{4}"),
-        region: Some(Region::Asia),
+        maybe_region: Some(Region::Asia),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::WesternAsia),
+        maybe_subregion: Some(SubRegion::WesternAsia),
         un_locode: "AM",
         unofficial_name_list: ["Armenia", "Armenien", "Arménie", "アルメニア", "Armenië"].to_vec(),
         world_region: WorldRegion::EMEA,
@@ -597,7 +598,8 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: false,
-        vat_rates: None,
+        maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,
+        maybe_population: Some(2780469),
     }
 }

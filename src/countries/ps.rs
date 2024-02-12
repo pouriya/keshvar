@@ -54,6 +54,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = Some(5043612);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇵🇸";
     #[cfg(feature = "translations")]
@@ -514,11 +515,11 @@ pub fn new() -> Country {
         continent: Continent::Asia,
         country_code: 970,
         currency_code: CurrencyCode::ILS,
-        gec: Some(GEC::WE),
+        maybe_gec: Some(GEC::WE),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: Some(IOC::PLE),
+        maybe_ioc: Some(IOC::PLE),
         iso_long_name: "The State of Palestine",
         iso_short_name: "Palestine, State of",
         official_language_list: ["ar", "en", "he"].to_vec(),
@@ -526,13 +527,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [7, 8, 9].to_vec(),
         national_prefix: "0",
-        nationality: Some("Palestinian"),
+        maybe_nationality: Some("Palestinian"),
         number: "275",
         postal_code: false,
         postal_code_format: None,
-        region: Some(Region::Asia),
+        maybe_region: Some(Region::Asia),
         start_of_week: WeekDay::Sunday,
-        subregion: Some(SubRegion::WesternAsia),
+        maybe_subregion: Some(SubRegion::WesternAsia),
         un_locode: "PS",
         unofficial_name_list: [
             "Palestine",
@@ -692,7 +693,8 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: false,
-        vat_rates: None,
+        maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,
+        maybe_population: Some(5043612),
     }
 }

@@ -50,6 +50,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = Some(114164);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇫🇲";
     #[cfg(feature = "translations")]
@@ -527,11 +528,11 @@ pub fn new() -> Country {
         continent: Continent::Australia,
         country_code: 691,
         currency_code: CurrencyCode::USD,
-        gec: Some(GEC::FM),
+        maybe_gec: Some(GEC::FM),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "011",
-        ioc: Some(IOC::FSM),
+        maybe_ioc: Some(IOC::FSM),
         iso_long_name: "The Federated States of Micronesia",
         iso_short_name: "Micronesia (Federated States of)",
         official_language_list: ["en"].to_vec(),
@@ -539,13 +540,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [7].to_vec(),
         national_prefix: "1",
-        nationality: Some("Micronesian"),
+        maybe_nationality: Some("Micronesian"),
         number: "583",
         postal_code: true,
         postal_code_format: Some("(9694[1-4])(?:[ \\-](\\d{4}))?"),
-        region: Some(Region::Oceania),
+        maybe_region: Some(Region::Oceania),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::Micronesia),
+        maybe_subregion: Some(SubRegion::Micronesia),
         un_locode: "FM",
         unofficial_name_list: ["Micronesia", "Mikronesien", "Micronésie", "ミクロネシア連邦", "Micronesië"].to_vec(),
         world_region: WorldRegion::APAC,
@@ -559,7 +560,8 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: false,
-        vat_rates: None,
+        maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,
+        maybe_population: Some(114164),
     }
 }

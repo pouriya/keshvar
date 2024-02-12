@@ -44,6 +44,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = Some(171186372);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇧🇩";
     #[cfg(feature = "translations")]
@@ -1341,11 +1342,11 @@ pub fn new() -> Country {
         continent: Continent::Asia,
         country_code: 880,
         currency_code: CurrencyCode::BDT,
-        gec: Some(GEC::BG),
+        maybe_gec: Some(GEC::BG),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: Some(IOC::BAN),
+        maybe_ioc: Some(IOC::BAN),
         iso_long_name: "The People's Republic of Bangladesh",
         iso_short_name: "Bangladesh",
         official_language_list: ["bn"].to_vec(),
@@ -1353,13 +1354,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [10].to_vec(),
         national_prefix: "0",
-        nationality: Some("Bangladeshi"),
+        maybe_nationality: Some("Bangladeshi"),
         number: "050",
         postal_code: true,
         postal_code_format: Some("\\d{4}"),
-        region: Some(Region::Asia),
+        maybe_region: Some(Region::Asia),
         start_of_week: WeekDay::Sunday,
-        subregion: Some(SubRegion::SouthernAsia),
+        maybe_subregion: Some(SubRegion::SouthernAsia),
         un_locode: "BD",
         unofficial_name_list: ["Bangladesh", "Bangladesch", "バングラデシュ"].to_vec(),
         world_region: WorldRegion::APAC,
@@ -1373,7 +1374,8 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: false,
-        vat_rates: None,
+        maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,
+        maybe_population: Some(171186372),
     }
 }

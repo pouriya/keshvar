@@ -44,6 +44,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Mi;
+    pub const POPULATION: Option<u64> = Some(5302681);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇱🇷";
     #[cfg(feature = "translations")]
@@ -519,11 +520,11 @@ pub fn new() -> Country {
         continent: Continent::Africa,
         country_code: 231,
         currency_code: CurrencyCode::LRD,
-        gec: Some(GEC::LI),
+        maybe_gec: Some(GEC::LI),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: Some(IOC::LBR),
+        maybe_ioc: Some(IOC::LBR),
         iso_long_name: "The Republic of Liberia",
         iso_short_name: "Liberia",
         official_language_list: ["en"].to_vec(),
@@ -531,13 +532,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [6, 7, 8].to_vec(),
         national_prefix: "22",
-        nationality: Some("Liberian"),
+        maybe_nationality: Some("Liberian"),
         number: "430",
         postal_code: true,
         postal_code_format: Some("\\d{4}"),
-        region: Some(Region::Africa),
+        maybe_region: Some(Region::Africa),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::WesternAfrica),
+        maybe_subregion: Some(SubRegion::WesternAfrica),
         un_locode: "LR",
         unofficial_name_list: ["Liberia", "リベリア"].to_vec(),
         world_region: WorldRegion::EMEA,
@@ -686,7 +687,8 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: false,
-        vat_rates: None,
+        maybe_vat_rates: None,
         distance_unit: DistanceUnit::Mi,
+        maybe_population: Some(5302681),
     }
 }

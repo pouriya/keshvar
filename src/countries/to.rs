@@ -44,6 +44,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = Some(106858);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇹🇴";
     #[cfg(feature = "translations")]
@@ -580,11 +581,11 @@ pub fn new() -> Country {
         continent: Continent::Australia,
         country_code: 676,
         currency_code: CurrencyCode::TOP,
-        gec: Some(GEC::TN),
+        maybe_gec: Some(GEC::TN),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: Some(IOC::TGA),
+        maybe_ioc: Some(IOC::TGA),
         iso_long_name: "The Kingdom of Tonga",
         iso_short_name: "Tonga",
         official_language_list: ["en", "to"].to_vec(),
@@ -592,13 +593,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [5, 6, 7].to_vec(),
         national_prefix: "None",
-        nationality: Some("Tongan"),
+        maybe_nationality: Some("Tongan"),
         number: "776",
         postal_code: false,
         postal_code_format: None,
-        region: Some(Region::Oceania),
+        maybe_region: Some(Region::Oceania),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::Polynesia),
+        maybe_subregion: Some(SubRegion::Polynesia),
         un_locode: "TO",
         unofficial_name_list: ["Tonga", "トンガ"].to_vec(),
         world_region: WorldRegion::APAC,
@@ -747,7 +748,8 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: false,
-        vat_rates: None,
+        maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,
+        maybe_population: Some(106858),
     }
 }

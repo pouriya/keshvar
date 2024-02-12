@@ -52,6 +52,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = Some(382003);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇮🇸";
     #[cfg(feature = "translations")]
@@ -1445,11 +1446,11 @@ pub fn new() -> Country {
         continent: Continent::Europe,
         country_code: 354,
         currency_code: CurrencyCode::ISK,
-        gec: Some(GEC::IC),
+        maybe_gec: Some(GEC::IC),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: Some(IOC::ISL),
+        maybe_ioc: Some(IOC::ISL),
         iso_long_name: "Iceland",
         iso_short_name: "Iceland",
         official_language_list: ["is"].to_vec(),
@@ -1457,13 +1458,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [7, 8, 9].to_vec(),
         national_prefix: "0",
-        nationality: Some("Icelander"),
+        maybe_nationality: Some("Icelander"),
         number: "352",
         postal_code: true,
         postal_code_format: Some("\\d{3}"),
-        region: Some(Region::Europe),
+        maybe_region: Some(Region::Europe),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::NorthernEurope),
+        maybe_subregion: Some(SubRegion::NorthernEurope),
         un_locode: "IS",
         unofficial_name_list: [
             "Iceland",
@@ -1623,12 +1624,13 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: true,
-        vat_rates: Some(VatRates {
+        maybe_vat_rates: Some(VatRates {
             standard: 24.0,
             reduced: Vec::from([11.0]),
             super_reduced: None,
             parking: None,
         }),
         distance_unit: DistanceUnit::Km,
+        maybe_population: Some(382003),
     }
 }

@@ -49,6 +49,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = None;
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇨🇽";
     #[cfg(feature = "translations")]
@@ -282,11 +283,11 @@ pub fn new() -> Country {
         continent: Continent::Asia,
         country_code: 61,
         currency_code: CurrencyCode::AUD,
-        gec: Some(GEC::KT),
+        maybe_gec: Some(GEC::KT),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "0011",
-        ioc: None,
+        maybe_ioc: None,
         iso_long_name: "The Territory of Christmas Island",
         iso_short_name: "Christmas Island",
         official_language_list: ["en", "ms", "zh"].to_vec(),
@@ -294,13 +295,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [].to_vec(),
         national_number_length_list: [].to_vec(),
         national_prefix: "0",
-        nationality: Some("Christmas Island"),
+        maybe_nationality: Some("Christmas Island"),
         number: "162",
         postal_code: true,
         postal_code_format: Some("6798"),
-        region: Some(Region::Oceania),
+        maybe_region: Some(Region::Oceania),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::AustraliaAndNewZealand),
+        maybe_subregion: Some(SubRegion::AustraliaAndNewZealand),
         un_locode: "CX",
         unofficial_name_list: [
             "Christmas Island",
@@ -473,7 +474,8 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: false,
-        vat_rates: None,
+        maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,
+        maybe_population: None,
     }
 }

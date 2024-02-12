@@ -44,6 +44,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = Some(808726);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇬🇾";
     #[cfg(feature = "translations")]
@@ -414,11 +415,11 @@ pub fn new() -> Country {
         continent: Continent::SouthAmerica,
         country_code: 592,
         currency_code: CurrencyCode::GYD,
-        gec: Some(GEC::GY),
+        maybe_gec: Some(GEC::GY),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: Some(IOC::GUY),
+        maybe_ioc: Some(IOC::GUY),
         iso_long_name: "The Co-operative Republic of Guyana",
         iso_short_name: "Guyana",
         official_language_list: ["en"].to_vec(),
@@ -426,13 +427,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [6, 7].to_vec(),
         national_prefix: "None",
-        nationality: Some("Guyanese"),
+        maybe_nationality: Some("Guyanese"),
         number: "328",
         postal_code: false,
         postal_code_format: None,
-        region: Some(Region::Americas),
+        maybe_region: Some(Region::Americas),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::SouthAmerica),
+        maybe_subregion: Some(SubRegion::SouthAmerica),
         un_locode: "GY",
         unofficial_name_list: ["Guyana", "ガイアナ"].to_vec(),
         world_region: WorldRegion::AMER,
@@ -581,7 +582,8 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: false,
-        vat_rates: None,
+        maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,
+        maybe_population: Some(808726),
     }
 }

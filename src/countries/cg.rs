@@ -50,6 +50,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = Some(5970424);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇨🇬";
     #[cfg(feature = "translations")]
@@ -447,11 +448,11 @@ pub fn new() -> Country {
         continent: Continent::Africa,
         country_code: 242,
         currency_code: CurrencyCode::XAF,
-        gec: Some(GEC::CF),
+        maybe_gec: Some(GEC::CF),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: Some(IOC::CGO),
+        maybe_ioc: Some(IOC::CGO),
         iso_long_name: "The Republic of the Congo",
         iso_short_name: "Congo",
         official_language_list: ["fr", "ln"].to_vec(),
@@ -459,13 +460,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [7].to_vec(),
         national_prefix: "None",
-        nationality: Some("Congolese"),
+        maybe_nationality: Some("Congolese"),
         number: "178",
         postal_code: false,
         postal_code_format: None,
-        region: Some(Region::Africa),
+        maybe_region: Some(Region::Africa),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::MiddleAfrica),
+        maybe_subregion: Some(SubRegion::MiddleAfrica),
         un_locode: "CG",
         unofficial_name_list: [
             "Congo",
@@ -618,7 +619,8 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: false,
-        vat_rates: None,
+        maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,
+        maybe_population: Some(5970424),
     }
 }

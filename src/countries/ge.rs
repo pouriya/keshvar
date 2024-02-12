@@ -45,6 +45,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = Some(3712502);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇬🇪";
     #[cfg(feature = "translations")]
@@ -445,11 +446,11 @@ pub fn new() -> Country {
         continent: Continent::Asia,
         country_code: 995,
         currency_code: CurrencyCode::GEL,
-        gec: Some(GEC::GG),
+        maybe_gec: Some(GEC::GG),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "810",
-        ioc: Some(IOC::GEO),
+        maybe_ioc: Some(IOC::GEO),
         iso_long_name: "Georgia",
         iso_short_name: "Georgia",
         official_language_list: ["ka"].to_vec(),
@@ -457,13 +458,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [9].to_vec(),
         national_prefix: "8*",
-        nationality: Some("Georgian"),
+        maybe_nationality: Some("Georgian"),
         number: "268",
         postal_code: true,
         postal_code_format: Some("\\d{4}"),
-        region: Some(Region::Asia),
+        maybe_region: Some(Region::Asia),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::WesternAsia),
+        maybe_subregion: Some(SubRegion::WesternAsia),
         un_locode: "GE",
         unofficial_name_list: ["Georgia", "Georgien", "Géorgie", "グルジア", "Georgië"].to_vec(),
         world_region: WorldRegion::EMEA,
@@ -612,7 +613,8 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: false,
-        vat_rates: None,
+        maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,
+        maybe_population: Some(3712502),
     }
 }

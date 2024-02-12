@@ -44,6 +44,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = Some(131232);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇰🇮";
     #[cfg(feature = "translations")]
@@ -309,11 +310,11 @@ pub fn new() -> Country {
         continent: Continent::Australia,
         country_code: 686,
         currency_code: CurrencyCode::AUD,
-        gec: Some(GEC::KR),
+        maybe_gec: Some(GEC::KR),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: Some(IOC::KIR),
+        maybe_ioc: Some(IOC::KIR),
         iso_long_name: "The Republic of Kiribati",
         iso_short_name: "Kiribati",
         official_language_list: ["en"].to_vec(),
@@ -321,13 +322,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [5].to_vec(),
         national_prefix: "None",
-        nationality: Some("I-Kiribati"),
+        maybe_nationality: Some("I-Kiribati"),
         number: "296",
         postal_code: false,
         postal_code_format: None,
-        region: Some(Region::Oceania),
+        maybe_region: Some(Region::Oceania),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::Micronesia),
+        maybe_subregion: Some(SubRegion::Micronesia),
         un_locode: "KI",
         unofficial_name_list: ["Kiribati", "キリバス"].to_vec(),
         world_region: WorldRegion::APAC,
@@ -476,7 +477,8 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: false,
-        vat_rates: None,
+        maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,
+        maybe_population: Some(131232),
     }
 }

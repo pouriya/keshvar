@@ -44,6 +44,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = true;
     pub const EEA_MEMBER: bool = true;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = None;
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇷🇪";
     #[cfg(feature = "translations")]
@@ -256,11 +257,11 @@ pub fn new() -> Country {
         continent: Continent::Africa,
         country_code: 262,
         currency_code: CurrencyCode::EUR,
-        gec: Some(GEC::RE),
+        maybe_gec: Some(GEC::RE),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: None,
+        maybe_ioc: None,
         iso_long_name: "Réunion",
         iso_short_name: "Réunion",
         official_language_list: ["fr"].to_vec(),
@@ -268,13 +269,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [10].to_vec(),
         national_prefix: "None",
-        nationality: Some("French"),
+        maybe_nationality: Some("French"),
         number: "638",
         postal_code: true,
         postal_code_format: Some("9[78]4\\d{2}"),
-        region: Some(Region::Africa),
+        maybe_region: Some(Region::Africa),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::EasternAfrica),
+        maybe_subregion: Some(SubRegion::EasternAfrica),
         un_locode: "RE",
         unofficial_name_list: ["Réunion", "Reunión", "Reunion", "レユニオン"].to_vec(),
         world_region: WorldRegion::EMEA,
@@ -420,7 +421,8 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: true,
         eea_member: false,
-        vat_rates: None,
+        maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,
+        maybe_population: None,
     }
 }

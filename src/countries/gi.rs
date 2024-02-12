@@ -44,6 +44,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = Some(32649);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇬🇮";
     #[cfg(feature = "translations")]
@@ -259,11 +260,11 @@ pub fn new() -> Country {
         continent: Continent::Europe,
         country_code: 350,
         currency_code: CurrencyCode::GIP,
-        gec: Some(GEC::GI),
+        maybe_gec: Some(GEC::GI),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: None,
+        maybe_ioc: None,
         iso_long_name: "Gibraltar",
         iso_short_name: "Gibraltar",
         official_language_list: ["en"].to_vec(),
@@ -271,13 +272,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [8].to_vec(),
         national_prefix: "None",
-        nationality: Some("Gibraltar"),
+        maybe_nationality: Some("Gibraltar"),
         number: "292",
         postal_code: true,
         postal_code_format: Some("GX11 1AA"),
-        region: Some(Region::Europe),
+        maybe_region: Some(Region::Europe),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::SouthernEurope),
+        maybe_subregion: Some(SubRegion::SouthernEurope),
         un_locode: "GI",
         unofficial_name_list: ["Gibraltar", "ジブラルタル"].to_vec(),
         world_region: WorldRegion::EMEA,
@@ -426,7 +427,8 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: false,
-        vat_rates: None,
+        maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,
+        maybe_population: Some(32649),
     }
 }

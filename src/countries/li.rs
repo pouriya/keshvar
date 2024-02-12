@@ -44,6 +44,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = Some(39327);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇱🇮";
     #[cfg(feature = "translations")]
@@ -990,11 +991,11 @@ pub fn new() -> Country {
         continent: Continent::Europe,
         country_code: 423,
         currency_code: CurrencyCode::CHF,
-        gec: Some(GEC::LS),
+        maybe_gec: Some(GEC::LS),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: Some(IOC::LIE),
+        maybe_ioc: Some(IOC::LIE),
         iso_long_name: "The Principality of Liechtenstein",
         iso_short_name: "Liechtenstein",
         official_language_list: ["de"].to_vec(),
@@ -1002,13 +1003,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [7].to_vec(),
         national_prefix: "None",
-        nationality: Some("Liechtensteiner"),
+        maybe_nationality: Some("Liechtensteiner"),
         number: "438",
         postal_code: true,
         postal_code_format: Some("948[5-9]|949[0-8]"),
-        region: Some(Region::Europe),
+        maybe_region: Some(Region::Europe),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::WesternEurope),
+        maybe_subregion: Some(SubRegion::WesternEurope),
         un_locode: "LI",
         unofficial_name_list: ["Liechtenstein", "リヒテンシュタイン"].to_vec(),
         world_region: WorldRegion::EMEA,
@@ -1160,7 +1161,8 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: true,
-        vat_rates: None,
+        maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,
+        maybe_population: Some(39327),
     }
 }

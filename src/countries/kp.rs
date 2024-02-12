@@ -54,6 +54,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = Some(26069416);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇰🇵";
     #[cfg(feature = "translations")]
@@ -451,11 +452,11 @@ pub fn new() -> Country {
         continent: Continent::Asia,
         country_code: 850,
         currency_code: CurrencyCode::KPW,
-        gec: Some(GEC::KN),
+        maybe_gec: Some(GEC::KN),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: Some(IOC::PRK),
+        maybe_ioc: Some(IOC::PRK),
         iso_long_name: "The Democratic People's Republic of Korea",
         iso_short_name: "Korea (Democratic People's Republic of)",
         official_language_list: ["ko"].to_vec(),
@@ -463,13 +464,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [8, 9].to_vec(),
         national_prefix: "0",
-        nationality: Some("North Korean"),
+        maybe_nationality: Some("North Korean"),
         number: "408",
         postal_code: false,
         postal_code_format: None,
-        region: Some(Region::Asia),
+        maybe_region: Some(Region::Asia),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::EasternAsia),
+        maybe_subregion: Some(SubRegion::EasternAsia),
         un_locode: "KP",
         unofficial_name_list: ["Korea (North)", "North Korea", "Nordkorea", "Corée du Nord", "Corea del Norte", "朝鮮民主主義人民共和国", "Noord-Korea", "Korea Democratic People's Republic", "Korea (Democratic People s Republic of)"].to_vec(),
         world_region: WorldRegion::APAC,
@@ -483,7 +484,8 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: false,
-        vat_rates: None,
+        maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,
+        maybe_population: Some(26069416),
     }
 }

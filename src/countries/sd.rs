@@ -45,6 +45,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = Some(46874204);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇸🇩";
     #[cfg(feature = "translations")]
@@ -535,11 +536,11 @@ pub fn new() -> Country {
         continent: Continent::Africa,
         country_code: 249,
         currency_code: CurrencyCode::SDG,
-        gec: Some(GEC::SU),
+        maybe_gec: Some(GEC::SU),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: Some(IOC::SUD),
+        maybe_ioc: Some(IOC::SUD),
         iso_long_name: "The Republic of the Sudan",
         iso_short_name: "Sudan",
         official_language_list: ["ar", "en"].to_vec(),
@@ -547,13 +548,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [9].to_vec(),
         national_prefix: "0",
-        nationality: Some("Sudanese"),
+        maybe_nationality: Some("Sudanese"),
         number: "729",
         postal_code: true,
         postal_code_format: Some("\\d{5}"),
-        region: Some(Region::Africa),
+        maybe_region: Some(Region::Africa),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::NorthernAfrica),
+        maybe_subregion: Some(SubRegion::NorthernAfrica),
         un_locode: "SD",
         unofficial_name_list: ["Sudan", "السودان", "Soudan", "Sudán", "スーダン", "Soedan"]
             .to_vec(),
@@ -703,7 +704,8 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: false,
-        vat_rates: None,
+        maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,
+        maybe_population: Some(46874204),
     }
 }

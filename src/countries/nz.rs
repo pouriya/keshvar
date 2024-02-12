@@ -52,6 +52,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = Some(5124100);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇳🇿";
     #[cfg(feature = "translations")]
@@ -529,11 +530,11 @@ pub fn new() -> Country {
         continent: Continent::Australia,
         country_code: 64,
         currency_code: CurrencyCode::NZD,
-        gec: Some(GEC::NZ),
+        maybe_gec: Some(GEC::NZ),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: Some(IOC::NZL),
+        maybe_ioc: Some(IOC::NZL),
         iso_long_name: "New Zealand",
         iso_short_name: "New Zealand",
         official_language_list: ["en"].to_vec(),
@@ -541,13 +542,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [1].to_vec(),
         national_number_length_list: [8, 9].to_vec(),
         national_prefix: "0",
-        nationality: Some("New Zealander"),
+        maybe_nationality: Some("New Zealander"),
         number: "554",
         postal_code: true,
         postal_code_format: Some("\\d{4}"),
-        region: Some(Region::Oceania),
+        maybe_region: Some(Region::Oceania),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::AustraliaAndNewZealand),
+        maybe_subregion: Some(SubRegion::AustraliaAndNewZealand),
         un_locode: "NZ",
         unofficial_name_list: [
             "New Zealand",
@@ -704,12 +705,13 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: false,
-        vat_rates: Some(VatRates {
+        maybe_vat_rates: Some(VatRates {
             standard: 15.0,
             reduced: Vec::from([9.0]),
             super_reduced: None,
             parking: None,
         }),
         distance_unit: DistanceUnit::Km,
+        maybe_population: Some(5124100),
     }
 }

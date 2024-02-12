@@ -10,12 +10,13 @@ use keshvar::{CurrencyCode, WeekDay, Region, SubdivisionType, find_by_name};
 let country_name_in_any_language = "estados unidos"; // The US in spanish!
 let country = find_by_name(country_name_in_any_language).unwrap();
 assert_eq!(country.iso_long_name(), "The United States of America");
-assert_eq!(country.nationality(), Some("American"));
+assert_eq!(country.maybe_nationality(), Some("American"));
 assert_eq!(country.currency_code(), CurrencyCode::USD);
 assert_eq!(country.start_of_week(), WeekDay::Sunday);
 assert_eq!(country.emoji(), "🇺🇸");
 assert_eq!(country.country_code(), 1);
-assert_eq!(country.region(), Some(Region::Americas));
+assert!(country.maybe_population().unwrap() > 330_000_000);
+assert_eq!(country.maybe_region(), Some(Region::Americas));
 assert!(country.unofficial_name_list().contains(&"United States"));
 assert!(country.spoken_language_list().contains(&"en"));
 assert!(country.distance_unit().is_mi()); // KM/MI
@@ -288,11 +289,11 @@ use keshvar::{
 };
 
 let country = find_by_iso_short_name("united states of america").unwrap();
-assert_eq!(Some("American"), country.nationality());
+assert_eq!(Some("American"), country.maybe_nationality());
 
 let country = find_by_iso_long_name("ukraine").unwrap();
 assert_eq!(Alpha2::UA, country.alpha2());
-assert_eq!(Some(SubRegion::EasternEurope), country.subregion());
+assert_eq!(Some(SubRegion::EasternEurope), country.maybe_subregion());
 
 let country = find_by_code(971).unwrap(); // The United Arab Emirates (Asia)
 assert_eq!(Alpha3::ARE, country.alpha3());
@@ -306,4 +307,4 @@ keshvar (/keʃvar/ or کِشوَر) simply means `country` in [persian/farsi lan
 See [**CONTRIBUTING.md** file](https://github.com/pouriya/keshvar/blob/master/CONTRIBUTING.md).
 
 # License
-`keshvar` source-code generator and the generated source are distributed under BSD-3-Clause license (See `LICENSE` file) but the data that is used to feed the generator is distributed under MIT License (See [`countries` license file](https://github.com/countries/countries/blob/master/LICENSE)).  
+`keshvar` source-code generator and the generated source are distributed under BSD-3-Clause license (See `LICENSE` file) but the data that is used to feed the generator is distributed under MIT License (See [`countries` license file](https://github.com/countries/countries/blob/master/LICENSE)). Additionally, The population data which is from [World Bank dataset](http://data.worldbank.org/indicator/SP.POP.TOTL) is licensed by its maintainers under the [Public Domain Dedication and License (PDDL)](http://opendatacommons.org/licenses/pddl/1.0/).  

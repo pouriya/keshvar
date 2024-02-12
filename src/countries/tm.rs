@@ -50,6 +50,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = Some(6430770);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇹🇲";
     #[cfg(feature = "translations")]
@@ -763,11 +764,11 @@ pub fn new() -> Country {
         continent: Continent::Asia,
         country_code: 993,
         currency_code: CurrencyCode::TMT,
-        gec: Some(GEC::TX),
+        maybe_gec: Some(GEC::TX),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "810",
-        ioc: Some(IOC::TKM),
+        maybe_ioc: Some(IOC::TKM),
         iso_long_name: "Turkmenistan",
         iso_short_name: "Turkmenistan",
         official_language_list: ["tk"].to_vec(),
@@ -775,13 +776,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [8].to_vec(),
         national_prefix: "8",
-        nationality: Some("Turkmen"),
+        maybe_nationality: Some("Turkmen"),
         number: "795",
         postal_code: true,
         postal_code_format: Some("\\d{6}"),
-        region: Some(Region::Asia),
+        maybe_region: Some(Region::Asia),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::CentralAsia),
+        maybe_subregion: Some(SubRegion::CentralAsia),
         un_locode: "TM",
         unofficial_name_list: ["Turkmenistan", "Turkménistan", "Turkmenistán", "トルクメニスタン", "Turkmenia"].to_vec(),
         world_region: WorldRegion::EMEA,
@@ -795,7 +796,8 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: false,
-        vat_rates: None,
+        maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,
+        maybe_population: Some(6430770),
     }
 }

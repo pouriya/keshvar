@@ -46,6 +46,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = true;
     pub const EEA_MEMBER: bool = true;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = Some(58940425);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇮🇹";
     #[cfg(feature = "translations")]
@@ -2158,11 +2159,11 @@ pub fn new() -> Country {
         continent: Continent::Europe,
         country_code: 39,
         currency_code: CurrencyCode::EUR,
-        gec: Some(GEC::IT),
+        maybe_gec: Some(GEC::IT),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: Some(IOC::ITA),
+        maybe_ioc: Some(IOC::ITA),
         iso_long_name: "The Italian Republic",
         iso_short_name: "Italy",
         official_language_list: ["it"].to_vec(),
@@ -2170,13 +2171,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [3].to_vec(),
         national_number_length_list: [9, 11].to_vec(),
         national_prefix: "None",
-        nationality: Some("Italian"),
+        maybe_nationality: Some("Italian"),
         number: "380",
         postal_code: true,
         postal_code_format: Some("\\d{5}"),
-        region: Some(Region::Europe),
+        maybe_region: Some(Region::Europe),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::SouthernEurope),
+        maybe_subregion: Some(SubRegion::SouthernEurope),
         un_locode: "IT",
         unofficial_name_list: ["Italy", "Italien", "Italie", "Italia", "イタリア", "Italië"]
             .to_vec(),
@@ -2326,12 +2327,13 @@ pub fn new() -> Country {
         g20_member: true,
         eu_member: true,
         eea_member: true,
-        vat_rates: Some(VatRates {
+        maybe_vat_rates: Some(VatRates {
             standard: 22.0,
             reduced: Vec::from([10.0]),
             super_reduced: Some(4.0),
             parking: None,
         }),
         distance_unit: DistanceUnit::Km,
+        maybe_population: Some(58940425),
     }
 }

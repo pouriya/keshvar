@@ -49,6 +49,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = Some(29611714);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇲🇬";
     #[cfg(feature = "translations")]
@@ -611,11 +612,11 @@ pub fn new() -> Country {
         continent: Continent::Africa,
         country_code: 261,
         currency_code: CurrencyCode::MGA,
-        gec: Some(GEC::MA),
+        maybe_gec: Some(GEC::MA),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: Some(IOC::MAD),
+        maybe_ioc: Some(IOC::MAD),
         iso_long_name: "The Republic of Madagascar",
         iso_short_name: "Madagascar",
         official_language_list: ["fr", "mg"].to_vec(),
@@ -623,13 +624,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [9].to_vec(),
         national_prefix: "None",
-        nationality: Some("Malagasy"),
+        maybe_nationality: Some("Malagasy"),
         number: "450",
         postal_code: true,
         postal_code_format: Some("\\d{3}"),
-        region: Some(Region::Africa),
+        maybe_region: Some(Region::Africa),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::EasternAfrica),
+        maybe_subregion: Some(SubRegion::EasternAfrica),
         un_locode: "MG",
         unofficial_name_list: [
             "Madagascar",
@@ -781,7 +782,8 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: false,
-        vat_rates: None,
+        maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,
+        maybe_population: Some(29611714),
     }
 }

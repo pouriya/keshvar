@@ -53,6 +53,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = Some(110990103);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇪🇬";
     #[cfg(feature = "translations")]
@@ -678,11 +679,11 @@ pub fn new() -> Country {
         continent: Continent::Africa,
         country_code: 20,
         currency_code: CurrencyCode::EGP,
-        gec: Some(GEC::EG),
+        maybe_gec: Some(GEC::EG),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: Some(IOC::EGY),
+        maybe_ioc: Some(IOC::EGY),
         iso_long_name: "The Arab Republic of Egypt",
         iso_short_name: "Egypt",
         official_language_list: ["ar"].to_vec(),
@@ -690,13 +691,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [9].to_vec(),
         national_prefix: "0",
-        nationality: Some("Egyptian"),
+        maybe_nationality: Some("Egyptian"),
         number: "818",
         postal_code: true,
         postal_code_format: Some("\\d{5}"),
-        region: Some(Region::Africa),
+        maybe_region: Some(Region::Africa),
         start_of_week: WeekDay::Sunday,
-        subregion: Some(SubRegion::NorthernAfrica),
+        maybe_subregion: Some(SubRegion::NorthernAfrica),
         un_locode: "EG",
         unofficial_name_list: [
             "Egypt",
@@ -854,7 +855,8 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: false,
-        vat_rates: None,
+        maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,
+        maybe_population: Some(110990103),
     }
 }

@@ -51,6 +51,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = Some(115559009);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇵🇭";
     #[cfg(feature = "translations")]
@@ -1743,11 +1744,11 @@ pub fn new() -> Country {
         continent: Continent::Asia,
         country_code: 63,
         currency_code: CurrencyCode::PHP,
-        gec: Some(GEC::RP),
+        maybe_gec: Some(GEC::RP),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: Some(IOC::PHI),
+        maybe_ioc: Some(IOC::PHI),
         iso_long_name: "The Republic of the Philippines",
         iso_short_name: "Philippines",
         official_language_list: ["en", "tl"].to_vec(),
@@ -1755,13 +1756,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [8, 9, 10].to_vec(),
         national_prefix: "0",
-        nationality: Some("Filipino"),
+        maybe_nationality: Some("Filipino"),
         number: "608",
         postal_code: true,
         postal_code_format: Some("\\d{4}"),
-        region: Some(Region::Asia),
+        maybe_region: Some(Region::Asia),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::SouthEasternAsia),
+        maybe_subregion: Some(SubRegion::SouthEasternAsia),
         un_locode: "PH",
         unofficial_name_list: [
             "Philippines",
@@ -1917,12 +1918,13 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: false,
-        vat_rates: Some(VatRates {
+        maybe_vat_rates: Some(VatRates {
             standard: 12.0,
             reduced: Vec::from([]),
             super_reduced: None,
             parking: None,
         }),
         distance_unit: DistanceUnit::Km,
+        maybe_population: Some(115559009),
     }
 }

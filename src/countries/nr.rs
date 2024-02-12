@@ -44,6 +44,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = Some(12668);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇳🇷";
     #[cfg(feature = "translations")]
@@ -474,11 +475,11 @@ pub fn new() -> Country {
         continent: Continent::Australia,
         country_code: 674,
         currency_code: CurrencyCode::AUD,
-        gec: Some(GEC::NR),
+        maybe_gec: Some(GEC::NR),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: Some(IOC::NRU),
+        maybe_ioc: Some(IOC::NRU),
         iso_long_name: "The Republic of Nauru",
         iso_short_name: "Nauru",
         official_language_list: ["en", "na"].to_vec(),
@@ -486,13 +487,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [7].to_vec(),
         national_prefix: "0",
-        nationality: Some("Nauruan"),
+        maybe_nationality: Some("Nauruan"),
         number: "520",
         postal_code: false,
         postal_code_format: None,
-        region: Some(Region::Oceania),
+        maybe_region: Some(Region::Oceania),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::Micronesia),
+        maybe_subregion: Some(SubRegion::Micronesia),
         un_locode: "NR",
         unofficial_name_list: ["Nauru", "ナウル"].to_vec(),
         world_region: WorldRegion::APAC,
@@ -641,7 +642,8 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: false,
-        vat_rates: None,
+        maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,
+        maybe_population: Some(12668),
     }
 }

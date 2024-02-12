@@ -44,6 +44,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = Some(929766);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇫🇯";
     #[cfg(feature = "translations")]
@@ -1130,11 +1131,11 @@ pub fn new() -> Country {
         continent: Continent::Australia,
         country_code: 679,
         currency_code: CurrencyCode::FJD,
-        gec: Some(GEC::FJ),
+        maybe_gec: Some(GEC::FJ),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: Some(IOC::FIJ),
+        maybe_ioc: Some(IOC::FIJ),
         iso_long_name: "The Republic of Fiji",
         iso_short_name: "Fiji",
         official_language_list: ["en", "fj", "hi", "ur"].to_vec(),
@@ -1142,13 +1143,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [7].to_vec(),
         national_prefix: "None",
-        nationality: Some("Fijian"),
+        maybe_nationality: Some("Fijian"),
         number: "242",
         postal_code: false,
         postal_code_format: None,
-        region: Some(Region::Oceania),
+        maybe_region: Some(Region::Oceania),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::Melanesia),
+        maybe_subregion: Some(SubRegion::Melanesia),
         un_locode: "FJ",
         unofficial_name_list: ["Fiji", "Fidschi", "Fidji", "フィジー"].to_vec(),
         world_region: WorldRegion::APAC,
@@ -1297,7 +1298,8 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: false,
-        vat_rates: None,
+        maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,
+        maybe_population: Some(929766),
     }
 }

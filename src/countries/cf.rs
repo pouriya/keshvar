@@ -51,6 +51,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = Some(5579144);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇨🇫";
     #[cfg(feature = "translations")]
@@ -523,11 +524,11 @@ pub fn new() -> Country {
         continent: Continent::Africa,
         country_code: 236,
         currency_code: CurrencyCode::XAF,
-        gec: Some(GEC::CT),
+        maybe_gec: Some(GEC::CT),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: Some(IOC::CAF),
+        maybe_ioc: Some(IOC::CAF),
         iso_long_name: "The Central African Republic",
         iso_short_name: "Central African Republic",
         official_language_list: ["fr", "sg"].to_vec(),
@@ -535,13 +536,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [8].to_vec(),
         national_prefix: "None",
-        nationality: Some("Central African"),
+        maybe_nationality: Some("Central African"),
         number: "140",
         postal_code: false,
         postal_code_format: None,
-        region: Some(Region::Africa),
+        maybe_region: Some(Region::Africa),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::MiddleAfrica),
+        maybe_subregion: Some(SubRegion::MiddleAfrica),
         un_locode: "CF",
         unofficial_name_list: ["Central African Republic", "Zentralafrikanische Republik", "République Centrafricaine", "República Centroafricana", "中央アフリカ共和国", "Centraal-Afrikaanse Republiek"].to_vec(),
         world_region: WorldRegion::EMEA,
@@ -555,7 +556,8 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: false,
-        vat_rates: None,
+        maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,
+        maybe_population: Some(5579144),
     }
 }

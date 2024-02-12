@@ -44,6 +44,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = Some(32969518);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇲🇿";
     #[cfg(feature = "translations")]
@@ -432,11 +433,11 @@ pub fn new() -> Country {
         continent: Continent::Africa,
         country_code: 258,
         currency_code: CurrencyCode::MZN,
-        gec: Some(GEC::MZ),
+        maybe_gec: Some(GEC::MZ),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: Some(IOC::MOZ),
+        maybe_ioc: Some(IOC::MOZ),
         iso_long_name: "The Republic of Mozambique",
         iso_short_name: "Mozambique",
         official_language_list: ["pt"].to_vec(),
@@ -444,13 +445,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [8, 9].to_vec(),
         national_prefix: "0",
-        nationality: Some("Mozambican"),
+        maybe_nationality: Some("Mozambican"),
         number: "508",
         postal_code: true,
         postal_code_format: Some("\\d{4}"),
-        region: Some(Region::Africa),
+        maybe_region: Some(Region::Africa),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::EasternAfrica),
+        maybe_subregion: Some(SubRegion::EasternAfrica),
         un_locode: "MZ",
         unofficial_name_list: ["Mozambique", "Mosambik", "モザンビーク"].to_vec(),
         world_region: WorldRegion::EMEA,
@@ -602,7 +603,8 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: false,
-        vat_rates: None,
+        maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,
+        maybe_population: Some(32969518),
     }
 }

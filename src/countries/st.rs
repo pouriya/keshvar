@@ -51,6 +51,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = Some(227380);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇸🇹";
     #[cfg(feature = "translations")]
@@ -529,11 +530,11 @@ pub fn new() -> Country {
         continent: Continent::Africa,
         country_code: 239,
         currency_code: CurrencyCode::STD,
-        gec: Some(GEC::TP),
+        maybe_gec: Some(GEC::TP),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: Some(IOC::STP),
+        maybe_ioc: Some(IOC::STP),
         iso_long_name: "The Democratic Republic of São Tomé and Príncipe",
         iso_short_name: "Sao Tome and Principe",
         official_language_list: ["pt"].to_vec(),
@@ -541,13 +542,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [6, 7].to_vec(),
         national_prefix: "0",
-        nationality: Some("Sao Tomean"),
+        maybe_nationality: Some("Sao Tomean"),
         number: "678",
         postal_code: false,
         postal_code_format: None,
-        region: Some(Region::Africa),
+        maybe_region: Some(Region::Africa),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::MiddleAfrica),
+        maybe_subregion: Some(SubRegion::MiddleAfrica),
         un_locode: "ST",
         unofficial_name_list: ["São Tomé and Príncipe", "São Tomé und Príncipe", "São Tomé et Príncipe", "Santo Tomé y Príncipe", "サントメ・プリンシペ", "Sao Tomé en Principe"].to_vec(),
         world_region: WorldRegion::EMEA,
@@ -561,7 +562,8 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: false,
-        vat_rates: None,
+        maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,
+        maybe_population: Some(227380),
     }
 }

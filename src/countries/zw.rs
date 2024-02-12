@@ -44,6 +44,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = Some(16320537);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇿🇼";
     #[cfg(feature = "translations")]
@@ -414,11 +415,11 @@ pub fn new() -> Country {
         continent: Continent::Africa,
         country_code: 263,
         currency_code: CurrencyCode::USD,
-        gec: Some(GEC::ZI),
+        maybe_gec: Some(GEC::ZI),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: Some(IOC::ZIM),
+        maybe_ioc: Some(IOC::ZIM),
         iso_long_name: "The Republic of Zimbabwe",
         iso_short_name: "Zimbabwe",
         official_language_list: ["en", "nd", "sn"].to_vec(),
@@ -426,13 +427,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [8, 9, 10, 11].to_vec(),
         national_prefix: "0",
-        nationality: Some("Zimbabwean"),
+        maybe_nationality: Some("Zimbabwean"),
         number: "716",
         postal_code: false,
         postal_code_format: None,
-        region: Some(Region::Africa),
+        maybe_region: Some(Region::Africa),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::EasternAfrica),
+        maybe_subregion: Some(SubRegion::EasternAfrica),
         un_locode: "ZW",
         unofficial_name_list: ["Zimbabwe", "Simbabwe", "Zimbabue", "ジンバブエ"].to_vec(),
         world_region: WorldRegion::EMEA,
@@ -581,7 +582,8 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: false,
-        vat_rates: None,
+        maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,
+        maybe_population: Some(16320537),
     }
 }

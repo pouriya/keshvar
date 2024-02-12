@@ -45,6 +45,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = Some(71697030);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇹🇭";
     #[cfg(feature = "translations")]
@@ -1435,11 +1436,11 @@ pub fn new() -> Country {
         continent: Continent::Asia,
         country_code: 66,
         currency_code: CurrencyCode::THB,
-        gec: Some(GEC::TH),
+        maybe_gec: Some(GEC::TH),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "001",
-        ioc: Some(IOC::THA),
+        maybe_ioc: Some(IOC::THA),
         iso_long_name: "The Kingdom of Thailand",
         iso_short_name: "Thailand",
         official_language_list: ["th"].to_vec(),
@@ -1447,13 +1448,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [9, 10].to_vec(),
         national_prefix: "0",
-        nationality: Some("Thai"),
+        maybe_nationality: Some("Thai"),
         number: "764",
         postal_code: true,
         postal_code_format: Some("\\d{5}"),
-        region: Some(Region::Asia),
+        maybe_region: Some(Region::Asia),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::SouthEasternAsia),
+        maybe_subregion: Some(SubRegion::SouthEasternAsia),
         un_locode: "TH",
         unofficial_name_list: ["Thailand", "Thaïlande", "Tailandia", "タイ", "ประเทศไทย"].to_vec(),
         world_region: WorldRegion::APAC,
@@ -1602,12 +1603,13 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: false,
-        vat_rates: Some(VatRates {
+        maybe_vat_rates: Some(VatRates {
             standard: 7.0,
             reduced: Vec::from([0.0]),
             super_reduced: None,
             parking: None,
         }),
         distance_unit: DistanceUnit::Km,
+        maybe_population: Some(71697030),
     }
 }

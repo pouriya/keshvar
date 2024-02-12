@@ -44,6 +44,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = Some(235824862);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇵🇰";
     #[cfg(feature = "translations")]
@@ -369,11 +370,11 @@ pub fn new() -> Country {
         continent: Continent::Asia,
         country_code: 92,
         currency_code: CurrencyCode::PKR,
-        gec: Some(GEC::PK),
+        maybe_gec: Some(GEC::PK),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: Some(IOC::PAK),
+        maybe_ioc: Some(IOC::PAK),
         iso_long_name: "The Islamic Republic of Pakistan",
         iso_short_name: "Pakistan",
         official_language_list: ["en", "ur"].to_vec(),
@@ -381,13 +382,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [9, 10].to_vec(),
         national_prefix: "0",
-        nationality: Some("Pakistani"),
+        maybe_nationality: Some("Pakistani"),
         number: "586",
         postal_code: true,
         postal_code_format: Some("\\d{5}"),
-        region: Some(Region::Asia),
+        maybe_region: Some(Region::Asia),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::SouthernAsia),
+        maybe_subregion: Some(SubRegion::SouthernAsia),
         un_locode: "PK",
         unofficial_name_list: ["Pakistan", "Paquistán", "パキスタン"].to_vec(),
         world_region: WorldRegion::APAC,
@@ -536,7 +537,8 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: false,
-        vat_rates: None,
+        maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,
+        maybe_population: Some(235824862),
     }
 }

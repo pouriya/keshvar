@@ -48,6 +48,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = true;
     pub const EEA_MEMBER: bool = true;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = Some(31791);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇲🇫";
     #[cfg(feature = "translations")]
@@ -260,11 +261,11 @@ pub fn new() -> Country {
         continent: Continent::NorthAmerica,
         country_code: 590,
         currency_code: CurrencyCode::EUR,
-        gec: Some(GEC::RN),
+        maybe_gec: Some(GEC::RN),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "",
-        ioc: None,
+        maybe_ioc: None,
         iso_long_name: "The Collectivity of Saint-Martin",
         iso_short_name: "Saint Martin (French part)",
         official_language_list: ["en", "fr", "nl"].to_vec(),
@@ -272,13 +273,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [].to_vec(),
         national_number_length_list: [].to_vec(),
         national_prefix: "",
-        nationality: Some("French"),
+        maybe_nationality: Some("French"),
         number: "663",
         postal_code: true,
         postal_code_format: Some("9[78][01]\\d{2}"),
-        region: Some(Region::Americas),
+        maybe_region: Some(Region::Americas),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::Caribbean),
+        maybe_subregion: Some(SubRegion::Caribbean),
         un_locode: "MF",
         unofficial_name_list: ["Saint Martin", "サン・マルタン（フランス領）", "Saint-Martin"].to_vec(),
         world_region: WorldRegion::AMER,
@@ -292,7 +293,8 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: true,
         eea_member: false,
-        vat_rates: None,
+        maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,
+        maybe_population: Some(31791),
     }
 }

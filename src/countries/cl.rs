@@ -44,6 +44,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = Some(19603733);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇨🇱";
     #[cfg(feature = "translations")]
@@ -501,11 +502,11 @@ pub fn new() -> Country {
         continent: Continent::SouthAmerica,
         country_code: 56,
         currency_code: CurrencyCode::CLP,
-        gec: Some(GEC::CI),
+        maybe_gec: Some(GEC::CI),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: Some(IOC::CHI),
+        maybe_ioc: Some(IOC::CHI),
         iso_long_name: "The Republic of Chile",
         iso_short_name: "Chile",
         official_language_list: ["es"].to_vec(),
@@ -513,13 +514,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [8, 9].to_vec(),
         national_prefix: "0",
-        nationality: Some("Chilean"),
+        maybe_nationality: Some("Chilean"),
         number: "152",
         postal_code: true,
         postal_code_format: Some("\\d{7}"),
-        region: Some(Region::Americas),
+        maybe_region: Some(Region::Americas),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::SouthAmerica),
+        maybe_subregion: Some(SubRegion::SouthAmerica),
         un_locode: "CL",
         unofficial_name_list: ["Chile", "チリ", "Chili"].to_vec(),
         world_region: WorldRegion::AMER,
@@ -533,7 +534,8 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: false,
-        vat_rates: Some(VatRates{standard: 19.0, reduced: Vec::from([]), super_reduced: None, parking: None}),
+        maybe_vat_rates: Some(VatRates{standard: 19.0, reduced: Vec::from([]), super_reduced: None, parking: None}),
         distance_unit: DistanceUnit::Km,
+        maybe_population: Some(19603733),
     }
 }

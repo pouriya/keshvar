@@ -44,6 +44,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = Some(1120849);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇩🇯";
     #[cfg(feature = "translations")]
@@ -729,11 +730,11 @@ pub fn new() -> Country {
         continent: Continent::Africa,
         country_code: 253,
         currency_code: CurrencyCode::DJF,
-        gec: Some(GEC::DJ),
+        maybe_gec: Some(GEC::DJ),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: Some(IOC::DJI),
+        maybe_ioc: Some(IOC::DJI),
         iso_long_name: "The Republic of Djibouti",
         iso_short_name: "Djibouti",
         official_language_list: ["ar", "fr"].to_vec(),
@@ -741,13 +742,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [6].to_vec(),
         national_prefix: "None",
-        nationality: Some("Djibouti"),
+        maybe_nationality: Some("Djibouti"),
         number: "262",
         postal_code: false,
         postal_code_format: None,
-        region: Some(Region::Africa),
+        maybe_region: Some(Region::Africa),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::EasternAfrica),
+        maybe_subregion: Some(SubRegion::EasternAfrica),
         un_locode: "DJ",
         unofficial_name_list: ["Djibouti", "جيبوتي", "Dschibuti", "ジブチ"].to_vec(),
         world_region: WorldRegion::EMEA,
@@ -896,7 +897,8 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: false,
-        vat_rates: None,
+        maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,
+        maybe_population: Some(1120849),
     }
 }

@@ -230,6 +230,15 @@ pub fn generate_country(destination_file: &PathBuf, info: &CountryInfo) -> Resul
             "DistanceUnit",
             format!("DistanceUnit::{:?}", info.distance_unit),
         ),
+        (
+            "const POPULATION",
+            "Option<u64>",
+            if info.population != 0 {
+                format!("Some({})", info.population)
+            } else {
+                "None".to_string()
+            },
+        ),
     ] {
         file.write_all(format!("    pub {}: {} = {};\n", name, _type, value).as_bytes())?;
     }
@@ -423,11 +432,11 @@ pub fn new() -> Country {{
         continent: Continent::{},
         country_code: {},
         currency_code: CurrencyCode::{},
-        gec: {},
+        maybe_gec: {},
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: {:?},
-        ioc: {},
+        maybe_ioc: {},
         iso_long_name: {:?},
         iso_short_name: {:?},
         official_language_list: {:?}.to_vec(),
@@ -435,13 +444,13 @@ pub fn new() -> Country {{
         national_destination_code_length_list: {:?}.to_vec(),
         national_number_length_list: {:?}.to_vec(),
         national_prefix: {:?},
-        nationality: {},
+        maybe_nationality: {},
         number: {:?},
         postal_code: {:?},
         postal_code_format: {},
-        region: {},
+        maybe_region: {},
         start_of_week: WeekDay::{},
-        subregion: {},
+        maybe_subregion: {},
         un_locode: {:?},
         unofficial_name_list: {:?}.to_vec(),
         world_region: WorldRegion::{},
@@ -455,8 +464,9 @@ pub fn new() -> Country {{
         g20_member: {},
         eu_member: {},
         eea_member: {},
-        vat_rates: {},
+        maybe_vat_rates: {},
         distance_unit: {},
+        maybe_population: {},
     }}
 }}
             "#,
@@ -520,6 +530,11 @@ pub fn new() -> Country {{
                 "None".to_string()
             },
             format!("DistanceUnit::{:?}", info.distance_unit),
+            if info.population != 0 {
+                format!("Some({})", info.population)
+            } else {
+                "None".to_string()
+            },
         )
         .as_bytes(),
     )?;

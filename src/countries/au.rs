@@ -52,6 +52,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = Some(26005540);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇦🇺";
     #[cfg(feature = "translations")]
@@ -391,11 +392,11 @@ pub fn new() -> Country {
         continent: Continent::Australia,
         country_code: 61,
         currency_code: CurrencyCode::AUD,
-        gec: Some(GEC::AS),
+        maybe_gec: Some(GEC::AS),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "0011",
-        ioc: Some(IOC::AUS),
+        maybe_ioc: Some(IOC::AUS),
         iso_long_name: "The Commonwealth of Australia",
         iso_short_name: "Australia",
         official_language_list: ["en"].to_vec(),
@@ -403,13 +404,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [9].to_vec(),
         national_prefix: "0",
-        nationality: Some("Australian"),
+        maybe_nationality: Some("Australian"),
         number: "036",
         postal_code: true,
         postal_code_format: Some("\\d{4}"),
-        region: Some(Region::Oceania),
+        maybe_region: Some(Region::Oceania),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::AustraliaAndNewZealand),
+        maybe_subregion: Some(SubRegion::AustraliaAndNewZealand),
         un_locode: "AU",
         unofficial_name_list: [
             "Australia",
@@ -563,12 +564,13 @@ pub fn new() -> Country {
         g20_member: true,
         eu_member: false,
         eea_member: false,
-        vat_rates: Some(VatRates {
+        maybe_vat_rates: Some(VatRates {
             standard: 10.0,
             reduced: Vec::from([]),
             super_reduced: None,
             parking: None,
         }),
         distance_unit: DistanceUnit::Km,
+        maybe_population: Some(26005540),
     }
 }

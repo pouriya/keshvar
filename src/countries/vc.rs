@@ -53,6 +53,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Mi;
+    pub const POPULATION: Option<u64> = Some(103948);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇻🇨";
     #[cfg(feature = "translations")]
@@ -360,11 +361,11 @@ pub fn new() -> Country {
         continent: Continent::NorthAmerica,
         country_code: 1,
         currency_code: CurrencyCode::XCD,
-        gec: Some(GEC::VC),
+        maybe_gec: Some(GEC::VC),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "011",
-        ioc: Some(IOC::VIN),
+        maybe_ioc: Some(IOC::VIN),
         iso_long_name: "Saint Vincent and the Grenadines",
         iso_short_name: "Saint Vincent and the Grenadines",
         official_language_list: ["en"].to_vec(),
@@ -372,13 +373,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [3].to_vec(),
         national_number_length_list: [10].to_vec(),
         national_prefix: "1",
-        nationality: Some("Saint Vincentian"),
+        maybe_nationality: Some("Saint Vincentian"),
         number: "670",
         postal_code: true,
         postal_code_format: Some("VC\\d{4}"),
-        region: Some(Region::Americas),
+        maybe_region: Some(Region::Americas),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::Caribbean),
+        maybe_subregion: Some(SubRegion::Caribbean),
         un_locode: "VC",
         unofficial_name_list: ["Saint Vincent and the Grenadines", "Saint Vincent und die Grenadinen", "Saint-Vincent et les Grenadines", "San Vicente y Granadinas", "セントビンセントおよびグレナディーン諸島", "Saint Vincent en de Grenadines", "St. Vincent Grenadines", "St Vincent Grenadines"].to_vec(),
         world_region: WorldRegion::AMER,
@@ -392,7 +393,8 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: false,
-        vat_rates: None,
+        maybe_vat_rates: None,
         distance_unit: DistanceUnit::Mi,
+        maybe_population: Some(103948),
     }
 }

@@ -51,6 +51,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Mi;
+    pub const POPULATION: Option<u64> = Some(179857);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇱🇨";
     #[cfg(feature = "translations")]
@@ -421,11 +422,11 @@ pub fn new() -> Country {
         continent: Continent::NorthAmerica,
         country_code: 1,
         currency_code: CurrencyCode::XCD,
-        gec: Some(GEC::ST),
+        maybe_gec: Some(GEC::ST),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "011",
-        ioc: Some(IOC::LCA),
+        maybe_ioc: Some(IOC::LCA),
         iso_long_name: "Saint Lucia",
         iso_short_name: "Saint Lucia",
         official_language_list: ["en"].to_vec(),
@@ -433,13 +434,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [3].to_vec(),
         national_number_length_list: [10].to_vec(),
         national_prefix: "1",
-        nationality: Some("Saint Lucian"),
+        maybe_nationality: Some("Saint Lucian"),
         number: "662",
         postal_code: false,
         postal_code_format: None,
-        region: Some(Region::Americas),
+        maybe_region: Some(Region::Americas),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::Caribbean),
+        maybe_subregion: Some(SubRegion::Caribbean),
         un_locode: "LC",
         unofficial_name_list: [
             "Saint Lucia",
@@ -596,7 +597,8 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: false,
-        vat_rates: None,
+        maybe_vat_rates: None,
         distance_unit: DistanceUnit::Mi,
+        maybe_population: Some(179857),
     }
 }

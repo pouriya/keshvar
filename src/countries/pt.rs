@@ -45,6 +45,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = true;
     pub const EEA_MEMBER: bool = true;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = Some(10409704);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇵🇹";
     #[cfg(feature = "translations")]
@@ -567,11 +568,11 @@ pub fn new() -> Country {
         continent: Continent::Europe,
         country_code: 351,
         currency_code: CurrencyCode::EUR,
-        gec: Some(GEC::PO),
+        maybe_gec: Some(GEC::PO),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: Some(IOC::POR),
+        maybe_ioc: Some(IOC::POR),
         iso_long_name: "The Portuguese Republic",
         iso_short_name: "Portugal",
         official_language_list: ["pt"].to_vec(),
@@ -579,13 +580,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [9].to_vec(),
         national_prefix: "None",
-        nationality: Some("Portuguese"),
+        maybe_nationality: Some("Portuguese"),
         number: "620",
         postal_code: true,
         postal_code_format: Some("\\d{4}-\\d{3}"),
-        region: Some(Region::Europe),
+        maybe_region: Some(Region::Europe),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::SouthernEurope),
+        maybe_subregion: Some(SubRegion::SouthernEurope),
         un_locode: "PT",
         unofficial_name_list: ["Portugal", "ポルトガル"].to_vec(),
         world_region: WorldRegion::EMEA,
@@ -734,12 +735,13 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: true,
         eea_member: true,
-        vat_rates: Some(VatRates {
+        maybe_vat_rates: Some(VatRates {
             standard: 23.0,
             reduced: Vec::from([6.0, 13.0]),
             super_reduced: None,
             parking: Some(13.0),
         }),
         distance_unit: DistanceUnit::Km,
+        maybe_population: Some(10409704),
     }
 }

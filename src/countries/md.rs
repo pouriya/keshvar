@@ -52,6 +52,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = Some(2538894);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇲🇩";
     #[cfg(feature = "translations")]
@@ -827,11 +828,11 @@ pub fn new() -> Country {
         continent: Continent::Europe,
         country_code: 373,
         currency_code: CurrencyCode::MDL,
-        gec: Some(GEC::MD),
+        maybe_gec: Some(GEC::MD),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: Some(IOC::MDA),
+        maybe_ioc: Some(IOC::MDA),
         iso_long_name: "The Republic of Moldova",
         iso_short_name: "Moldova (Republic of)",
         official_language_list: ["ro"].to_vec(),
@@ -839,13 +840,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [8].to_vec(),
         national_prefix: "0",
-        nationality: Some("Moldovan"),
+        maybe_nationality: Some("Moldovan"),
         number: "498",
         postal_code: true,
         postal_code_format: Some("\\d{4}"),
-        region: Some(Region::Europe),
+        maybe_region: Some(Region::Europe),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::EasternEurope),
+        maybe_subregion: Some(SubRegion::EasternEurope),
         un_locode: "MD",
         unofficial_name_list: [
             "Moldova",
@@ -1003,7 +1004,8 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: false,
-        vat_rates: None,
+        maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,
+        maybe_population: Some(2538894),
     }
 }

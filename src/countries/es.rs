@@ -52,6 +52,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = true;
     pub const EEA_MEMBER: bool = true;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = Some(47778340);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇪🇸";
     #[cfg(feature = "translations")]
@@ -1309,11 +1310,11 @@ pub fn new() -> Country {
         continent: Continent::Europe,
         country_code: 34,
         currency_code: CurrencyCode::EUR,
-        gec: Some(GEC::SP),
+        maybe_gec: Some(GEC::SP),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: Some(IOC::ESP),
+        maybe_ioc: Some(IOC::ESP),
         iso_long_name: "The Kingdom of Spain",
         iso_short_name: "Spain",
         official_language_list: ["es"].to_vec(),
@@ -1321,13 +1322,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [9].to_vec(),
         national_prefix: "None",
-        nationality: Some("Spanish"),
+        maybe_nationality: Some("Spanish"),
         number: "724",
         postal_code: true,
         postal_code_format: Some("\\d{5}"),
-        region: Some(Region::Europe),
+        maybe_region: Some(Region::Europe),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::SouthernEurope),
+        maybe_subregion: Some(SubRegion::SouthernEurope),
         un_locode: "ES",
         unofficial_name_list: [
             "Spain",
@@ -1484,12 +1485,13 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: true,
         eea_member: true,
-        vat_rates: Some(VatRates {
+        maybe_vat_rates: Some(VatRates {
             standard: 21.0,
             reduced: Vec::from([10.0]),
             super_reduced: Some(4.0),
             parking: None,
         }),
         distance_unit: DistanceUnit::Km,
+        maybe_population: Some(47778340),
     }
 }
