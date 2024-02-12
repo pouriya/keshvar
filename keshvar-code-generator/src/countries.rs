@@ -16,6 +16,7 @@ pub fn generate_mod(
         .open(destination_file.clone())
         .context(format!("Could not open {:?}", destination_file))?;
     utils::write_first_comments(&mut mod_rs_file, file!())?;
+    mod_rs_file.write_all(b"//! Contains separate modules for every country.\n\n")?;
     // `filename_list` is sorted so we iterate over it and lookup info from `countries_info`:
     for (_, info) in countries_info_list {
         mod_rs_file.write_all(utils::country_cfg_feature_and_commented_name(info, 0).as_bytes())?;

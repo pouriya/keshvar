@@ -13,6 +13,7 @@ macro_rules! log {
         {$crate::utils::append_to_log_file(format!("{}:{} | {}\n", file!(), line!(), format!($text, $($parameters),+))); true}
     }
 }
+#[allow(unused_imports)]
 pub use log;
 
 pub fn remove_log_file() {
