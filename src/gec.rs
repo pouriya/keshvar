@@ -692,7 +692,7 @@ pub enum GEC {
     /// Tuvalu (Oceania)
     TV,
     #[cfg(feature = "tw")]
-    /// The Republic of China (Asia)
+    /// Taiwan, Province of China (Asia)
     TW,
     #[cfg(feature = "tz")]
     /// The United Republic of Tanzania (Africa)
@@ -1463,7 +1463,7 @@ mod impls {
                 GEC::TD => Alpha2::TT,
                 #[cfg(feature = "tv")] // Tuvalu (Oceania)
                 GEC::TV => Alpha2::TV,
-                #[cfg(feature = "tw")] // The Republic of China (Asia)
+                #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
                 GEC::TW => Alpha2::TW,
                 #[cfg(feature = "tz")] // The United Republic of Tanzania (Africa)
                 GEC::TZ => Alpha2::TZ,
@@ -1969,7 +1969,7 @@ mod impls {
                 GEC::TD => "TD",
                 #[cfg(feature = "tv")] // Tuvalu (Oceania)
                 GEC::TV => "TV",
-                #[cfg(feature = "tw")] // The Republic of China (Asia)
+                #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
                 GEC::TW => "TW",
                 #[cfg(feature = "tz")] // The United Republic of Tanzania (Africa)
                 GEC::TZ => "TZ",
@@ -2479,7 +2479,7 @@ mod impls {
                 "TD" => Ok(GEC::TD),
                 #[cfg(feature = "tv")] // Tuvalu (Oceania)
                 "TV" => Ok(GEC::TV),
-                #[cfg(feature = "tw")] // The Republic of China (Asia)
+                #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
                 "TW" => Ok(GEC::TW),
                 #[cfg(feature = "tz")] // The United Republic of Tanzania (Africa)
                 "TZ" => Ok(GEC::TZ),

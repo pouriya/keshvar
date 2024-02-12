@@ -136,7 +136,7 @@ pub enum Continent {
     /// * The Republic of Tajikistan (Asia)
     /// * The Democratic Republic of Timor-Leste (Asia)
     /// * Turkmenistan (Asia)
-    /// * The Republic of China (Asia)
+    /// * Taiwan, Province of China (Asia)
     /// * The Republic of Uzbekistan (Asia)
     /// * The Socialist Republic of Viet Nam (Asia)
     /// * The Republic of Yemen (Asia)
@@ -537,7 +537,7 @@ pub enum Region {
     /// * The Democratic Republic of Timor-Leste
     /// * Turkmenistan
     /// * The Republic of Türkiye
-    /// * The Republic of China
+    /// * Taiwan, Province of China
     /// * The Republic of Uzbekistan
     /// * The Socialist Republic of Viet Nam
     /// * The Republic of Yemen
@@ -789,7 +789,7 @@ pub enum SubRegion {
     /// * The Republic of Korea
     /// * Mongolia
     /// * The Macao Special Administrative Region of China
-    /// * The Republic of China
+    /// * Taiwan, Province of China
     EasternAsia,
     /// * The Republic of Bulgaria
     /// * The Republic of Belarus
@@ -1222,7 +1222,7 @@ pub enum WorldRegion {
     /// * The Democratic Republic of Timor-Leste (Asia)
     /// * The Kingdom of Tonga (Oceania)
     /// * Tuvalu (Oceania)
-    /// * The Republic of China (Asia)
+    /// * Taiwan, Province of China (Asia)
     /// * The Socialist Republic of Viet Nam (Asia)
     /// * The Republic of Vanuatu (Oceania)
     /// * The Territory of the Wallis and Futuna Islands (Oceania)

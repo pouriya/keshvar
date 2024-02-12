@@ -979,7 +979,7 @@ pub const SUPPORTED_ALPHA2_LIST: &[Alpha2] = &[
     Alpha2::TT,
     #[cfg(feature = "tv")] // Tuvalu (Oceania)
     Alpha2::TV,
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     Alpha2::TW,
     #[cfg(feature = "tz")] // The United Republic of Tanzania (Africa)
     Alpha2::TZ,

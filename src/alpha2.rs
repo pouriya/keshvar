@@ -738,7 +738,7 @@ pub enum Alpha2 {
     /// Tuvalu (Oceania)
     TV,
     #[cfg(feature = "tw")]
-    /// The Republic of China (Asia)
+    /// Taiwan, Province of China (Asia)
     TW,
     #[cfg(feature = "tz")]
     /// The United Republic of Tanzania (Africa)
@@ -1538,7 +1538,7 @@ mod impls {
                 "TT" => Ok(Self::TT),
                 #[cfg(feature = "tv")] // Tuvalu (Oceania)
                 "TV" => Ok(Self::TV),
-                #[cfg(feature = "tw")] // The Republic of China (Asia)
+                #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
                 "TW" => Ok(Self::TW),
                 #[cfg(feature = "tz")] // The United Republic of Tanzania (Africa)
                 "TZ" => Ok(Self::TZ),
@@ -3063,7 +3063,7 @@ mod impls {
                 Alpha2::TT => crate::countries::tt::new(),
                 #[cfg(feature = "tv")] // Tuvalu (Oceania)
                 Alpha2::TV => crate::countries::tv::new(),
-                #[cfg(feature = "tw")] // The Republic of China (Asia)
+                #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
                 Alpha2::TW => crate::countries::tw::new(),
                 #[cfg(feature = "tz")] // The United Republic of Tanzania (Africa)
                 Alpha2::TZ => crate::countries::tz::new(),
@@ -3571,7 +3571,7 @@ mod impls {
                 Alpha2::TT => Alpha3::TTO,
                 #[cfg(feature = "tv")] // Tuvalu (Oceania)
                 Alpha2::TV => Alpha3::TUV,
-                #[cfg(feature = "tw")] // The Republic of China (Asia)
+                #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
                 Alpha2::TW => Alpha3::TWN,
                 #[cfg(feature = "tz")] // The United Republic of Tanzania (Africa)
                 Alpha2::TZ => Alpha3::TZA,

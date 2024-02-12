@@ -462,7 +462,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_CODE: HashMap<usize, Alpha2> = H
     (1, Alpha2::TT),
     #[cfg(feature = "tv")] // Tuvalu (Oceania)
     (688, Alpha2::TV),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     (886, Alpha2::TW),
     #[cfg(feature = "tz")] // The United Republic of Tanzania (Africa)
     (255, Alpha2::TZ),
