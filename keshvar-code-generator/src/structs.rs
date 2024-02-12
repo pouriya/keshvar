@@ -65,6 +65,14 @@ pub struct CountryInfo {
     pub eea_member: Option<bool>,
     pub eu_member: Option<bool>,
     pub vat_rates: Option<VatRates>,
+    pub distance_unit: DistanceUnit,
+}
+
+#[derive(Clone, Debug, Copy, Serialize, Deserialize)]
+#[serde(rename_all = "UPPERCASE")]
+pub enum DistanceUnit {
+    Km,
+    Mi,
 }
 
 #[derive(Clone, Debug, Serialize, Deserialize)]

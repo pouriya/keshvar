@@ -65,6 +65,7 @@ pub struct Country {
     #[cfg_attr(feature = "serde-derive", serde(default))]
     pub(crate) eea_member: bool,
     pub(crate) vat_rates: Option<VatRates>,
+    pub(crate) distance_unit: DistanceUnit,
 }
 
 impl Country {
@@ -227,6 +228,11 @@ impl Country {
     /// [Value-added Tax](https://en.wikipedia.org/wiki/Value-added_tax) for this country.
     pub fn vat_rates(&self) -> Option<&VatRates> {
         self.vat_rates.as_ref()
+    }
+
+    /// `Km` or `Mi`.
+    pub fn distance_unit(&self) -> DistanceUnit {
+        self.distance_unit
     }
 }
 
@@ -547,6 +553,24 @@ impl VatRates {
 
     pub fn parking(&self) -> Option<f64> {
         self.parking
+    }
+}
+
+#[cfg_attr(feature = "serde-derive", derive(Serialize, Deserialize))]
+#[cfg_attr(feature = "serde-derive", serde(rename_all = "UPPERCASE"))]
+#[derive(Clone, Debug, Copy)]
+pub enum DistanceUnit {
+    Km,
+    Mi,
+}
+
+impl DistanceUnit {
+    pub fn is_km(&self) -> bool {
+        matches!(self, Self::Km)
+    }
+
+    pub fn is_mi(&self) -> bool {
+        matches!(self, Self::Mi)
     }
 }
 

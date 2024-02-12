@@ -9,7 +9,8 @@
 pub mod consts {
     #[allow(unused_imports)]
     use crate::{
-        Alpha2, Alpha3, Continent, CurrencyCode, Region, SubRegion, WeekDay, WorldRegion, GEC, IOC,
+        Alpha2, Alpha3, Continent, CurrencyCode, DistanceUnit, Region, SubRegion, WeekDay,
+        WorldRegion, GEC, IOC,
     };
 
     pub const ADDRESS_FORMAT: Option<&str> =
@@ -49,6 +50,7 @@ pub mod consts {
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = true;
     pub const EEA_MEMBER: bool = true;
+    pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇦🇹";
     #[cfg(feature = "translations")]
@@ -386,8 +388,8 @@ pub mod subdivisions {
 }
 #[allow(unused_imports)]
 use crate::{
-    Alpha2, Alpha3, Continent, Country, CurrencyCode, Region, SubRegion, VatRates, WeekDay,
-    WorldRegion, GEC, IOC,
+    Alpha2, Alpha3, Continent, Country, CurrencyCode, DistanceUnit, Region, SubRegion, VatRates,
+    WeekDay, WorldRegion, GEC, IOC,
 };
 #[allow(unused_imports)]
 use std::collections::HashMap;
@@ -578,5 +580,6 @@ pub fn new() -> Country {
             super_reduced: None,
             parking: Some(12.0),
         }),
+        distance_unit: DistanceUnit::Km,
     }
 }
