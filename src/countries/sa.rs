@@ -54,6 +54,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = Some(36408820);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇸🇦";
     #[cfg(feature = "translations")]
@@ -475,11 +476,11 @@ pub fn new() -> Country {
         continent: Continent::Asia,
         country_code: 966,
         currency_code: CurrencyCode::SAR,
-        gec: Some(GEC::SA),
+        maybe_gec: Some(GEC::SA),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: Some(IOC::KSA),
+        maybe_ioc: Some(IOC::KSA),
         iso_long_name: "The Kingdom of Saudi Arabia",
         iso_short_name: "Saudi Arabia",
         official_language_list: ["ar"].to_vec(),
@@ -487,13 +488,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [8, 9].to_vec(),
         national_prefix: "0",
-        nationality: Some("Saudi Arabian"),
+        maybe_nationality: Some("Saudi Arabian"),
         number: "682",
         postal_code: true,
         postal_code_format: Some("\\d{5}"),
-        region: Some(Region::Asia),
+        maybe_region: Some(Region::Asia),
         start_of_week: WeekDay::Sunday,
-        subregion: Some(SubRegion::WesternAsia),
+        maybe_subregion: Some(SubRegion::WesternAsia),
         un_locode: "SA",
         unofficial_name_list: [
             "Saudi Arabia",
@@ -658,12 +659,13 @@ pub fn new() -> Country {
         g20_member: true,
         eu_member: false,
         eea_member: false,
-        vat_rates: Some(VatRates {
+        maybe_vat_rates: Some(VatRates {
             standard: 15.0,
             reduced: Vec::from([]),
             super_reduced: None,
             parking: None,
         }),
         distance_unit: DistanceUnit::Km,
+        maybe_population: Some(36408820),
     }
 }

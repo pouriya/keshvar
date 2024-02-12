@@ -49,6 +49,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = None;
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇮🇴";
     #[cfg(feature = "translations")]
@@ -261,11 +262,11 @@ pub fn new() -> Country {
         continent: Continent::Asia,
         country_code: 246,
         currency_code: CurrencyCode::USD,
-        gec: Some(GEC::IO),
+        maybe_gec: Some(GEC::IO),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "",
-        ioc: None,
+        maybe_ioc: None,
         iso_long_name: "The British Indian Ocean Territory",
         iso_short_name: "British Indian Ocean Territory",
         official_language_list: ["en"].to_vec(),
@@ -273,13 +274,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [].to_vec(),
         national_number_length_list: [].to_vec(),
         national_prefix: "",
-        nationality: Some("Indian"),
+        maybe_nationality: Some("Indian"),
         number: "086",
         postal_code: true,
         postal_code_format: Some("BBND 1ZZ"),
-        region: Some(Region::Africa),
+        maybe_region: Some(Region::Africa),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::EasternAfrica),
+        maybe_subregion: Some(SubRegion::EasternAfrica),
         un_locode: "IO",
         unofficial_name_list: ["British Indian Ocean Territory", "Britisches Territorium im Indischen Ozean", "イギリス領インド洋地域", "Britse Gebieden in de Indische Oceaan"].to_vec(),
         world_region: WorldRegion::APAC,
@@ -293,7 +294,8 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: false,
-        vat_rates: None,
+        maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,
+        maybe_population: None,
     }
 }

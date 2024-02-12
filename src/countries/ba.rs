@@ -53,6 +53,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = Some(3233526);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇧🇦";
     #[cfg(feature = "translations")]
@@ -315,11 +316,11 @@ pub fn new() -> Country {
         continent: Continent::Europe,
         country_code: 387,
         currency_code: CurrencyCode::BAM,
-        gec: Some(GEC::BK),
+        maybe_gec: Some(GEC::BK),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: Some(IOC::BIH),
+        maybe_ioc: Some(IOC::BIH),
         iso_long_name: "Bosnia and Herzegovina",
         iso_short_name: "Bosnia and Herzegovina",
         official_language_list: ["bs", "hr", "sr"].to_vec(),
@@ -327,13 +328,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [8].to_vec(),
         national_prefix: "0",
-        nationality: Some("Bosnian, Herzegovinian"),
+        maybe_nationality: Some("Bosnian, Herzegovinian"),
         number: "070",
         postal_code: true,
         postal_code_format: Some("\\d{5}"),
-        region: Some(Region::Europe),
+        maybe_region: Some(Region::Europe),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::SouthernEurope),
+        maybe_subregion: Some(SubRegion::SouthernEurope),
         un_locode: "BA",
         unofficial_name_list: ["Bosnia and Herzegovina", "Bosnien und Herzegowina", "Bosnie et Herzégovine", "Bosnia y Herzegovina", "ボスニア・ヘルツェゴビナ", "Bosnië en Herzegovina", "Bosnia Herzegovina"].to_vec(),
         world_region: WorldRegion::EMEA,
@@ -347,7 +348,8 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: false,
-        vat_rates: None,
+        maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,
+        maybe_population: Some(3233526),
     }
 }

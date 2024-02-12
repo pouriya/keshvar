@@ -49,6 +49,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = None;
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇧🇶";
     #[cfg(feature = "translations")]
@@ -311,11 +312,11 @@ pub fn new() -> Country {
         continent: Continent::NorthAmerica,
         country_code: 599,
         currency_code: CurrencyCode::USD,
-        gec: None,
+        maybe_gec: None,
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: None,
+        maybe_ioc: None,
         iso_long_name: "Bonaire, Sint Eustatius and Saba",
         iso_short_name: "Bonaire, Sint Eustatius and Saba",
         official_language_list: ["en", "nl"].to_vec(),
@@ -323,13 +324,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [7].to_vec(),
         national_prefix: "0",
-        nationality: Some("Dutch"),
+        maybe_nationality: Some("Dutch"),
         number: "535",
         postal_code: false,
         postal_code_format: None,
-        region: Some(Region::Americas),
+        maybe_region: Some(Region::Americas),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::Caribbean),
+        maybe_subregion: Some(SubRegion::Caribbean),
         un_locode: "BQ",
         unofficial_name_list: ["Bonaire, Sint Eustatius and Saba", "Caribbean Netherlands", "Caribisch Nederland", "ボネール、シント・ユースタティウスおよびサバ"].to_vec(),
         world_region: WorldRegion::APAC,
@@ -343,7 +344,8 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: false,
-        vat_rates: None,
+        maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,
+        maybe_population: None,
     }
 }

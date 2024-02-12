@@ -44,6 +44,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Mi;
+    pub const POPULATION: Option<u64> = Some(54179306);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇲🇲";
     #[cfg(feature = "translations")]
@@ -486,11 +487,11 @@ pub fn new() -> Country {
         continent: Continent::Asia,
         country_code: 95,
         currency_code: CurrencyCode::MMK,
-        gec: Some(GEC::BM),
+        maybe_gec: Some(GEC::BM),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: Some(IOC::MYA),
+        maybe_ioc: Some(IOC::MYA),
         iso_long_name: "The Republic of the Union of Myanmar",
         iso_short_name: "Myanmar",
         official_language_list: ["my"].to_vec(),
@@ -498,13 +499,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [7, 8].to_vec(),
         national_prefix: "None",
-        nationality: Some("Myanmarian"),
+        maybe_nationality: Some("Myanmarian"),
         number: "104",
         postal_code: true,
         postal_code_format: Some("\\d{5}"),
-        region: Some(Region::Asia),
+        maybe_region: Some(Region::Asia),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::SouthEasternAsia),
+        maybe_subregion: Some(SubRegion::SouthEasternAsia),
         un_locode: "MM",
         unofficial_name_list: ["Myanmar (Burma)", "ミャンマー"].to_vec(),
         world_region: WorldRegion::APAC,
@@ -650,7 +651,8 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: false,
-        vat_rates: None,
+        maybe_vat_rates: None,
         distance_unit: DistanceUnit::Mi,
+        maybe_population: Some(54179306),
     }
 }

@@ -53,6 +53,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Mi;
+    pub const POPULATION: Option<u64> = Some(47657);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇰🇳";
     #[cfg(feature = "translations")]
@@ -510,11 +511,11 @@ pub fn new() -> Country {
         continent: Continent::NorthAmerica,
         country_code: 1,
         currency_code: CurrencyCode::XCD,
-        gec: Some(GEC::SC),
+        maybe_gec: Some(GEC::SC),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "011",
-        ioc: Some(IOC::SKN),
+        maybe_ioc: Some(IOC::SKN),
         iso_long_name: "Saint Kitts and Nevis",
         iso_short_name: "Saint Kitts and Nevis",
         official_language_list: ["en"].to_vec(),
@@ -522,13 +523,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [3].to_vec(),
         national_number_length_list: [10].to_vec(),
         national_prefix: "1",
-        nationality: Some("Kittian and Nevisian"),
+        maybe_nationality: Some("Kittian and Nevisian"),
         number: "659",
         postal_code: false,
         postal_code_format: None,
-        region: Some(Region::Americas),
+        maybe_region: Some(Region::Americas),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::Caribbean),
+        maybe_subregion: Some(SubRegion::Caribbean),
         un_locode: "KN",
         unofficial_name_list: ["Saint Kitts and Nevis", "Föderation St. Kitts und Nevis", "Saint Kitts et Nevis", "Saint Kitts y Nevis", "セントクリストファー・ネイビス", "Saint Kitts en Nevis", "St. Kitts and Nevis", "St Kitts and Nevis"].to_vec(),
         world_region: WorldRegion::AMER,
@@ -542,7 +543,8 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: false,
-        vat_rates: None,
+        maybe_vat_rates: None,
         distance_unit: DistanceUnit::Mi,
+        maybe_population: Some(47657),
     }
 }

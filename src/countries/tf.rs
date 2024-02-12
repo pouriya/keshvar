@@ -52,6 +52,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = None;
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇹🇫";
     #[cfg(feature = "translations")]
@@ -264,11 +265,11 @@ pub fn new() -> Country {
         continent: Continent::Africa,
         country_code: 262,
         currency_code: CurrencyCode::EUR,
-        gec: Some(GEC::FS),
+        maybe_gec: Some(GEC::FS),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "",
-        ioc: None,
+        maybe_ioc: None,
         iso_long_name: "The French Southern and Antarctic Lands",
         iso_short_name: "French Southern Territories",
         official_language_list: ["fr"].to_vec(),
@@ -276,13 +277,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [].to_vec(),
         national_number_length_list: [].to_vec(),
         national_prefix: "",
-        nationality: Some("French"),
+        maybe_nationality: Some("French"),
         number: "260",
         postal_code: false,
         postal_code_format: None,
-        region: Some(Region::Africa),
+        maybe_region: Some(Region::Africa),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::EasternAfrica),
+        maybe_subregion: Some(SubRegion::EasternAfrica),
         un_locode: "TF",
         unofficial_name_list: ["French Southern Territories", "Französische Süd- und Antarktisgebiete", "Terres Australes Françaises", "Territorios Franceses del Sur", "フランス領南方・南極地域", "Franse Gebieden in de zuidelijke Indische Oceaan", "French Southern and Antarctic Lands"].to_vec(),
         world_region: WorldRegion::EMEA,
@@ -296,7 +297,8 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: false,
-        vat_rates: None,
+        maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,
+        maybe_population: None,
     }
 }

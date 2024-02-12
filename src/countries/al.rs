@@ -45,6 +45,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = Some(2777689);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇦🇱";
     #[cfg(feature = "translations")]
@@ -445,11 +446,11 @@ pub fn new() -> Country {
         continent: Continent::Europe,
         country_code: 355,
         currency_code: CurrencyCode::ALL,
-        gec: Some(GEC::AL),
+        maybe_gec: Some(GEC::AL),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: Some(IOC::ALB),
+        maybe_ioc: Some(IOC::ALB),
         iso_long_name: "The Republic of Albania",
         iso_short_name: "Albania",
         official_language_list: ["sq"].to_vec(),
@@ -457,13 +458,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [7, 8, 9].to_vec(),
         national_prefix: "0",
-        nationality: Some("Albanian"),
+        maybe_nationality: Some("Albanian"),
         number: "008",
         postal_code: true,
         postal_code_format: Some("\\d{4}"),
-        region: Some(Region::Europe),
+        maybe_region: Some(Region::Europe),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::SouthernEurope),
+        maybe_subregion: Some(SubRegion::SouthernEurope),
         un_locode: "AL",
         unofficial_name_list: ["Albania", "Albanien", "Albanie", "アルバニア", "Albanië"].to_vec(),
         world_region: WorldRegion::EMEA,
@@ -612,7 +613,8 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: false,
-        vat_rates: None,
+        maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,
+        maybe_population: Some(2777689),
     }
 }

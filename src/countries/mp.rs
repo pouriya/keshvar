@@ -51,6 +51,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Mi;
+    pub const POPULATION: Option<u64> = Some(49551);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇲🇵";
     #[cfg(feature = "translations")]
@@ -287,11 +288,11 @@ pub fn new() -> Country {
         continent: Continent::Australia,
         country_code: 1,
         currency_code: CurrencyCode::USD,
-        gec: Some(GEC::CQ),
+        maybe_gec: Some(GEC::CQ),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "011",
-        ioc: None,
+        maybe_ioc: None,
         iso_long_name: "The Commonwealth of the Northern Mariana Islands",
         iso_short_name: "Northern Mariana Islands",
         official_language_list: ["ch", "en"].to_vec(),
@@ -299,13 +300,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [3].to_vec(),
         national_number_length_list: [10].to_vec(),
         national_prefix: "1",
-        nationality: Some("American"),
+        maybe_nationality: Some("American"),
         number: "580",
         postal_code: true,
         postal_code_format: Some("(9695[012])(?:[ \\-](\\d{4}))?"),
-        region: Some(Region::Oceania),
+        maybe_region: Some(Region::Oceania),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::Micronesia),
+        maybe_subregion: Some(SubRegion::Micronesia),
         un_locode: "MP",
         unofficial_name_list: ["Northern Mariana Islands", "Nördliche Marianen", "Mariannes du Nord", "Islas Marianas del Norte", "北マリアナ諸島", "Noordelijke Marianeneilanden"].to_vec(),
         world_region: WorldRegion::APAC,
@@ -319,7 +320,8 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: false,
-        vat_rates: None,
+        maybe_vat_rates: None,
         distance_unit: DistanceUnit::Mi,
+        maybe_population: Some(49551),
     }
 }

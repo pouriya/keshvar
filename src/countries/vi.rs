@@ -55,6 +55,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Mi;
+    pub const POPULATION: Option<u64> = Some(105413);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇻🇮";
     #[cfg(feature = "translations")]
@@ -267,11 +268,11 @@ pub fn new() -> Country {
         continent: Continent::NorthAmerica,
         country_code: 1,
         currency_code: CurrencyCode::USD,
-        gec: Some(GEC::VQ),
+        maybe_gec: Some(GEC::VQ),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "011",
-        ioc: Some(IOC::ISV),
+        maybe_ioc: Some(IOC::ISV),
         iso_long_name: "The Virgin Islands of the United States",
         iso_short_name: "Virgin Islands (U.S.)",
         official_language_list: ["en"].to_vec(),
@@ -279,13 +280,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [3].to_vec(),
         national_number_length_list: [10].to_vec(),
         national_prefix: "1",
-        nationality: Some("Virgin Islander"),
+        maybe_nationality: Some("Virgin Islander"),
         number: "850",
         postal_code: true,
         postal_code_format: Some("(008(?:(?:[0-4]\\d)|(?:5[01])))(?:[ \\-](\\d{4}))?"),
-        region: Some(Region::Americas),
+        maybe_region: Some(Region::Americas),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::Caribbean),
+        maybe_subregion: Some(SubRegion::Caribbean),
         un_locode: "VI",
         unofficial_name_list: ["Virgin Islands of the United States", "Amerikanische Jungferninseln", "Îles Vierges américaines", "Islas Vírgenes de los Estados Unidos", "アメリカ領ヴァージン諸島", "Amerikaanse Maagdeneilanden", "Virgin Islands (U.S.)", "United States Virgin Islands", "U.S. Virgin Islands"].to_vec(),
         world_region: WorldRegion::AMER,
@@ -299,7 +300,8 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: false,
-        vat_rates: None,
+        maybe_vat_rates: None,
         distance_unit: DistanceUnit::Mi,
+        maybe_population: Some(105413),
     }
 }

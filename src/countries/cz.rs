@@ -54,6 +54,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = true;
     pub const EEA_MEMBER: bool = true;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = Some(10672118);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇨🇿";
     #[cfg(feature = "translations")]
@@ -1621,11 +1622,11 @@ pub fn new() -> Country {
         continent: Continent::Europe,
         country_code: 420,
         currency_code: CurrencyCode::CZK,
-        gec: Some(GEC::EZ),
+        maybe_gec: Some(GEC::EZ),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: Some(IOC::CZE),
+        maybe_ioc: Some(IOC::CZE),
         iso_long_name: "The Czech Republic",
         iso_short_name: "Czechia",
         official_language_list: ["cs", "sk"].to_vec(),
@@ -1633,13 +1634,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [9].to_vec(),
         national_prefix: "None",
-        nationality: Some("Czech"),
+        maybe_nationality: Some("Czech"),
         number: "203",
         postal_code: true,
         postal_code_format: Some("\\d{3} ?\\d{2}"),
-        region: Some(Region::Europe),
+        maybe_region: Some(Region::Europe),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::EasternEurope),
+        maybe_subregion: Some(SubRegion::EasternEurope),
         un_locode: "CZ",
         unofficial_name_list: [
             "Czech Republic",
@@ -1795,12 +1796,13 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: true,
         eea_member: true,
-        vat_rates: Some(VatRates {
+        maybe_vat_rates: Some(VatRates {
             standard: 21.0,
             reduced: Vec::from([15.0]),
             super_reduced: None,
             parking: None,
         }),
         distance_unit: DistanceUnit::Km,
+        maybe_population: Some(10672118),
     }
 }

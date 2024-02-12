@@ -51,6 +51,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Mi;
+    pub const POPULATION: Option<u64> = Some(68706);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇰🇾";
     #[cfg(feature = "translations")]
@@ -269,11 +270,11 @@ pub fn new() -> Country {
         continent: Continent::NorthAmerica,
         country_code: 1,
         currency_code: CurrencyCode::KYD,
-        gec: Some(GEC::CJ),
+        maybe_gec: Some(GEC::CJ),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "011",
-        ioc: Some(IOC::CAY),
+        maybe_ioc: Some(IOC::CAY),
         iso_long_name: "The Cayman Islands",
         iso_short_name: "Cayman Islands",
         official_language_list: ["en"].to_vec(),
@@ -281,13 +282,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [3].to_vec(),
         national_number_length_list: [10].to_vec(),
         national_prefix: "1",
-        nationality: Some("Caymanian"),
+        maybe_nationality: Some("Caymanian"),
         number: "136",
         postal_code: true,
         postal_code_format: Some("KY\\d-\\d{4}"),
-        region: Some(Region::Americas),
+        maybe_region: Some(Region::Americas),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::Caribbean),
+        maybe_subregion: Some(SubRegion::Caribbean),
         un_locode: "KY",
         unofficial_name_list: [
             "Cayman Islands",
@@ -447,7 +448,8 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: false,
-        vat_rates: None,
+        maybe_vat_rates: None,
         distance_unit: DistanceUnit::Mi,
+        maybe_population: Some(68706),
     }
 }

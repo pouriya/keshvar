@@ -53,6 +53,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = true;
     pub const EEA_MEMBER: bool = true;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = Some(3855600);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇭🇷";
     #[cfg(feature = "translations")]
@@ -588,11 +589,11 @@ pub fn new() -> Country {
         continent: Continent::Europe,
         country_code: 385,
         currency_code: CurrencyCode::EUR,
-        gec: Some(GEC::HR),
+        maybe_gec: Some(GEC::HR),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: Some(IOC::CRO),
+        maybe_ioc: Some(IOC::CRO),
         iso_long_name: "The Republic of Croatia",
         iso_short_name: "Croatia",
         official_language_list: ["hr"].to_vec(),
@@ -600,13 +601,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [8].to_vec(),
         national_prefix: "0",
-        nationality: Some("Croatian"),
+        maybe_nationality: Some("Croatian"),
         number: "191",
         postal_code: true,
         postal_code_format: Some("\\d{5}"),
-        region: Some(Region::Europe),
+        maybe_region: Some(Region::Europe),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::SouthernEurope),
+        maybe_subregion: Some(SubRegion::SouthernEurope),
         un_locode: "HR",
         unofficial_name_list: [
             "Croatia",
@@ -764,12 +765,13 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: true,
         eea_member: true,
-        vat_rates: Some(VatRates {
+        maybe_vat_rates: Some(VatRates {
             standard: 25.0,
             reduced: Vec::from([5.0, 13.0]),
             super_reduced: None,
             parking: None,
         }),
         distance_unit: DistanceUnit::Km,
+        maybe_population: Some(3855600),
     }
 }

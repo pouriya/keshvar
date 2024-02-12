@@ -66,6 +66,8 @@ pub struct CountryInfo {
     pub eu_member: Option<bool>,
     pub vat_rates: Option<VatRates>,
     pub distance_unit: DistanceUnit,
+    #[serde(default)]
+    pub population: u64,
 }
 
 #[derive(Clone, Debug, Copy, Serialize, Deserialize)]

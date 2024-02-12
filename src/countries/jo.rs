@@ -53,6 +53,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = Some(11285869);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇯🇴";
     #[cfg(feature = "translations")]
@@ -1109,11 +1110,11 @@ pub fn new() -> Country {
         continent: Continent::Asia,
         country_code: 962,
         currency_code: CurrencyCode::JOD,
-        gec: Some(GEC::JO),
+        maybe_gec: Some(GEC::JO),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: Some(IOC::JOR),
+        maybe_ioc: Some(IOC::JOR),
         iso_long_name: "The Hashemite Kingdom of Jordan",
         iso_short_name: "Jordan",
         official_language_list: ["ar"].to_vec(),
@@ -1121,13 +1122,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [8, 9].to_vec(),
         national_prefix: "0",
-        nationality: Some("Jordanian"),
+        maybe_nationality: Some("Jordanian"),
         number: "400",
         postal_code: true,
         postal_code_format: Some("\\d{5}"),
-        region: Some(Region::Asia),
+        maybe_region: Some(Region::Asia),
         start_of_week: WeekDay::Sunday,
-        subregion: Some(SubRegion::WesternAsia),
+        maybe_subregion: Some(SubRegion::WesternAsia),
         un_locode: "JO",
         unofficial_name_list: [
             "Jordan",
@@ -1285,7 +1286,8 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: false,
-        vat_rates: None,
+        maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,
+        maybe_population: Some(11285869),
     }
 }

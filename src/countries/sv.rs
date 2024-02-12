@@ -44,6 +44,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = Some(6336392);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇸🇻";
     #[cfg(feature = "translations")]
@@ -480,11 +481,11 @@ pub fn new() -> Country {
         continent: Continent::NorthAmerica,
         country_code: 503,
         currency_code: CurrencyCode::USD,
-        gec: Some(GEC::ES),
+        maybe_gec: Some(GEC::ES),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: Some(IOC::ESA),
+        maybe_ioc: Some(IOC::ESA),
         iso_long_name: "The Republic of El Salvador",
         iso_short_name: "El Salvador",
         official_language_list: ["es"].to_vec(),
@@ -492,13 +493,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [8].to_vec(),
         national_prefix: "None",
-        nationality: Some("Salvadoran"),
+        maybe_nationality: Some("Salvadoran"),
         number: "222",
         postal_code: true,
         postal_code_format: Some("CP [1-3][1-7][0-2]\\d"),
-        region: Some(Region::Americas),
+        maybe_region: Some(Region::Americas),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::CentralAmerica),
+        maybe_subregion: Some(SubRegion::CentralAmerica),
         un_locode: "SV",
         unofficial_name_list: ["El Salvador", "Salvador", "エルサルバドル"].to_vec(),
         world_region: WorldRegion::AMER,
@@ -653,7 +654,8 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: false,
-        vat_rates: None,
+        maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,
+        maybe_population: Some(6336392),
     }
 }

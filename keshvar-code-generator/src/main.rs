@@ -6,6 +6,7 @@ mod countries;
 mod currency_code;
 mod gec;
 mod ioc;
+mod population;
 mod region;
 mod search;
 mod structs;
@@ -226,6 +227,7 @@ fn code_gen_countries(data_directory: PathBuf, output_directory: PathBuf) -> Res
             }
         }
     }
+    population::read_from_file("population.csv", &mut countries_info_list)?;
     log!("Region features: {:?}", region_features);
     log!("Continent features: {:?}", continent_features);
     log!("SubRegion features: {:?}", subregion_features);

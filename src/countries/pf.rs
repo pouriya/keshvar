@@ -51,6 +51,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = Some(306279);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇵🇫";
     #[cfg(feature = "translations")]
@@ -278,11 +279,11 @@ pub fn new() -> Country {
         continent: Continent::Australia,
         country_code: 689,
         currency_code: CurrencyCode::XPF,
-        gec: Some(GEC::FP),
+        maybe_gec: Some(GEC::FP),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: None,
+        maybe_ioc: None,
         iso_long_name: "French Polynesia",
         iso_short_name: "French Polynesia",
         official_language_list: ["fr"].to_vec(),
@@ -290,13 +291,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [6].to_vec(),
         national_prefix: "None",
-        nationality: Some("French Polynesian"),
+        maybe_nationality: Some("French Polynesian"),
         number: "258",
         postal_code: true,
         postal_code_format: Some("987\\d{2}"),
-        region: Some(Region::Oceania),
+        maybe_region: Some(Region::Oceania),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::Polynesia),
+        maybe_subregion: Some(SubRegion::Polynesia),
         un_locode: "PF",
         unofficial_name_list: [
             "French Polynesia",
@@ -465,7 +466,8 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: false,
-        vat_rates: None,
+        maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,
+        maybe_population: Some(306279),
     }
 }

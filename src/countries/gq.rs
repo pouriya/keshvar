@@ -51,6 +51,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = Some(1674908);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇬🇶";
     #[cfg(feature = "translations")]
@@ -430,11 +431,11 @@ pub fn new() -> Country {
         continent: Continent::Africa,
         country_code: 240,
         currency_code: CurrencyCode::XAF,
-        gec: Some(GEC::EK),
+        maybe_gec: Some(GEC::EK),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: Some(IOC::GEQ),
+        maybe_ioc: Some(IOC::GEQ),
         iso_long_name: "The Republic of Equatorial Guinea",
         iso_short_name: "Equatorial Guinea",
         official_language_list: ["es", "fr"].to_vec(),
@@ -442,13 +443,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [6].to_vec(),
         national_prefix: "None",
-        nationality: Some("Equatorial Guinean"),
+        maybe_nationality: Some("Equatorial Guinean"),
         number: "226",
         postal_code: false,
         postal_code_format: None,
-        region: Some(Region::Africa),
+        maybe_region: Some(Region::Africa),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::MiddleAfrica),
+        maybe_subregion: Some(SubRegion::MiddleAfrica),
         un_locode: "GQ",
         unofficial_name_list: [
             "Equatorial Guinea",
@@ -614,7 +615,8 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: false,
-        vat_rates: None,
+        maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,
+        maybe_population: Some(1674908),
     }
 }

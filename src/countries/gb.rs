@@ -61,6 +61,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Mi;
+    pub const POPULATION: Option<u64> = Some(66971395);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇬🇧";
     #[cfg(feature = "translations")]
@@ -3587,11 +3588,11 @@ pub fn new() -> Country {
         continent: Continent::Europe,
         country_code: 44,
         currency_code: CurrencyCode::GBP,
-        gec: Some(GEC::UK),
+        maybe_gec: Some(GEC::UK),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: Some(IOC::GBR),
+        maybe_ioc: Some(IOC::GBR),
         iso_long_name: "The United Kingdom of Great Britain and Northern Ireland",
         iso_short_name: "United Kingdom of Great Britain and Northern Ireland",
         official_language_list: ["en"].to_vec(),
@@ -3599,13 +3600,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [10, 11].to_vec(),
         national_prefix: "0",
-        nationality: Some("British"),
+        maybe_nationality: Some("British"),
         number: "826",
         postal_code: true,
         postal_code_format: Some("GIR ?0AA|(?:(?:AB|AL|B|BA|BB|BD|BF|BH|BL|BN|BR|BS|BT|BX|CA|CB|CF|CH|CM|CO|CR|CT|CV|CW|DA|DD|DE|DG|DH|DL|DN|DT|DY|E|EC|EH|EN|EX|FK|FY|G|GL|GY|GU|HA|HD|HG|HP|HR|HS|HU|HX|IG|IM|IP|IV|JE|KA|KT|KW|KY|L|LA|LD|LE|LL|LN|LS|LU|M|ME|MK|ML|N|NE|NG|NN|NP|NR|NW|OL|OX|PA|PE|PH|PL|PO|PR|RG|RH|RM|S|SA|SE|SG|SK|SL|SM|SN|SO|SP|SR|SS|ST|SW|SY|TA|TD|TF|TN|TQ|TR|TS|TW|UB|W|WA|WC|WD|WF|WN|WR|WS|WV|YO|ZE)(?:\\d[\\dA-Z]? ?\\d[ABD-HJLN-UW-Z]{2}))|BFPO ?\\d{1,4}"),
-        region: Some(Region::Europe),
+        maybe_region: Some(Region::Europe),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::NorthernEurope),
+        maybe_subregion: Some(SubRegion::NorthernEurope),
         un_locode: "GB",
         unofficial_name_list: ["United Kingdom", "The United Kingdom", "England", "Großbritannien", "Vereinigtes Königreich", "Royaume-Uni", "Reino Unido", "イギリス", "Verenigd Koninkrijk", "Great Britain (UK)", "UK", "Великобритания", "Velká Británie", "İngiltere", "Великобританія"].to_vec(),
         world_region: WorldRegion::EMEA,
@@ -3619,7 +3620,8 @@ pub fn new() -> Country {
         g20_member: true,
         eu_member: false,
         eea_member: false,
-        vat_rates: Some(VatRates{standard: 20.0, reduced: Vec::from([5.0]), super_reduced: None, parking: None}),
+        maybe_vat_rates: Some(VatRates{standard: 20.0, reduced: Vec::from([5.0]), super_reduced: None, parking: None}),
         distance_unit: DistanceUnit::Mi,
+        maybe_population: Some(66971395),
     }
 }

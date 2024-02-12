@@ -44,6 +44,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = Some(47249585);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇺🇬";
     #[cfg(feature = "translations")]
@@ -2349,11 +2350,11 @@ pub fn new() -> Country {
         continent: Continent::Africa,
         country_code: 256,
         currency_code: CurrencyCode::UGX,
-        gec: Some(GEC::UG),
+        maybe_gec: Some(GEC::UG),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "000",
-        ioc: Some(IOC::UGA),
+        maybe_ioc: Some(IOC::UGA),
         iso_long_name: "The Republic of Uganda",
         iso_short_name: "Uganda",
         official_language_list: ["en", "sw"].to_vec(),
@@ -2361,13 +2362,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [9].to_vec(),
         national_prefix: "0",
-        nationality: Some("Ugandan"),
+        maybe_nationality: Some("Ugandan"),
         number: "800",
         postal_code: false,
         postal_code_format: None,
-        region: Some(Region::Africa),
+        maybe_region: Some(Region::Africa),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::EasternAfrica),
+        maybe_subregion: Some(SubRegion::EasternAfrica),
         un_locode: "UG",
         unofficial_name_list: ["Uganda", "ウガンダ", "Oeganda"].to_vec(),
         world_region: WorldRegion::EMEA,
@@ -2516,7 +2517,8 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: false,
-        vat_rates: None,
+        maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,
+        maybe_population: Some(47249585),
     }
 }

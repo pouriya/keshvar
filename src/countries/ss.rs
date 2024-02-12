@@ -45,6 +45,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = Some(10913164);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇸🇸";
     #[cfg(feature = "translations")]
@@ -418,11 +419,11 @@ pub fn new() -> Country {
         continent: Continent::Africa,
         country_code: 211,
         currency_code: CurrencyCode::SSP,
-        gec: Some(GEC::OD),
+        maybe_gec: Some(GEC::OD),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "0",
-        ioc: None,
+        maybe_ioc: None,
         iso_long_name: "The Republic of South Sudan",
         iso_short_name: "South Sudan",
         official_language_list: ["ar", "en"].to_vec(),
@@ -430,13 +431,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [9].to_vec(),
         national_prefix: "0",
-        nationality: Some("South Sudanese"),
+        maybe_nationality: Some("South Sudanese"),
         number: "728",
         postal_code: false,
         postal_code_format: None,
-        region: Some(Region::Africa),
+        maybe_region: Some(Region::Africa),
         start_of_week: WeekDay::Sunday,
-        subregion: Some(SubRegion::NorthernAfrica),
+        maybe_subregion: Some(SubRegion::NorthernAfrica),
         un_locode: "SS",
         unofficial_name_list: ["South Sudan", "Südsudan", "南スーダン", "Zuid-Soedan"].to_vec(),
         world_region: WorldRegion::EMEA,
@@ -588,7 +589,8 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: false,
-        vat_rates: None,
+        maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,
+        maybe_population: Some(10913164),
     }
 }

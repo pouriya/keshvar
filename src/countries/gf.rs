@@ -50,6 +50,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = true;
     pub const EEA_MEMBER: bool = true;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = None;
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇬🇫";
     #[cfg(feature = "translations")]
@@ -268,11 +269,11 @@ pub fn new() -> Country {
         continent: Continent::SouthAmerica,
         country_code: 594,
         currency_code: CurrencyCode::EUR,
-        gec: Some(GEC::FG),
+        maybe_gec: Some(GEC::FG),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: None,
+        maybe_ioc: None,
         iso_long_name: "Guyane",
         iso_short_name: "French Guiana",
         official_language_list: ["fr"].to_vec(),
@@ -280,13 +281,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [3].to_vec(),
         national_number_length_list: [10].to_vec(),
         national_prefix: "None",
-        nationality: Some("French Guianan"),
+        maybe_nationality: Some("French Guianan"),
         number: "254",
         postal_code: true,
         postal_code_format: Some("9[78]3\\d{2}"),
-        region: Some(Region::Americas),
+        maybe_region: Some(Region::Americas),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::SouthAmerica),
+        maybe_subregion: Some(SubRegion::SouthAmerica),
         un_locode: "GF",
         unofficial_name_list: [
             "French Guiana",
@@ -445,7 +446,8 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: true,
         eea_member: false,
-        vat_rates: None,
+        maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,
+        maybe_population: None,
     }
 }

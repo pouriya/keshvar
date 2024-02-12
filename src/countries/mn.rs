@@ -45,6 +45,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = Some(3398366);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇲🇳";
     #[cfg(feature = "translations")]
@@ -595,11 +596,11 @@ pub fn new() -> Country {
         continent: Continent::Asia,
         country_code: 976,
         currency_code: CurrencyCode::MNT,
-        gec: Some(GEC::MG),
+        maybe_gec: Some(GEC::MG),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "001",
-        ioc: Some(IOC::MGL),
+        maybe_ioc: Some(IOC::MGL),
         iso_long_name: "Mongolia",
         iso_short_name: "Mongolia",
         official_language_list: ["mn"].to_vec(),
@@ -607,13 +608,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [7, 8, 9, 10].to_vec(),
         national_prefix: "0",
-        nationality: Some("Mongolian"),
+        maybe_nationality: Some("Mongolian"),
         number: "496",
         postal_code: true,
         postal_code_format: Some("\\d{5}"),
-        region: Some(Region::Asia),
+        maybe_region: Some(Region::Asia),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::EasternAsia),
+        maybe_subregion: Some(SubRegion::EasternAsia),
         un_locode: "MN",
         unofficial_name_list: ["Mongolia", "Mongolei", "Mongolie", "モンゴル", "Mongolië"].to_vec(),
         world_region: WorldRegion::APAC,
@@ -627,7 +628,8 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: false,
-        vat_rates: None,
+        maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,
+        maybe_population: Some(3398366),
     }
 }

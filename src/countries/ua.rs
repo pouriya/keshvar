@@ -53,6 +53,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = Some(38000000);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇺🇦";
     #[cfg(feature = "translations")]
@@ -680,11 +681,11 @@ pub fn new() -> Country {
         continent: Continent::Europe,
         country_code: 380,
         currency_code: CurrencyCode::UAH,
-        gec: Some(GEC::UP),
+        maybe_gec: Some(GEC::UP),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "810",
-        ioc: Some(IOC::UKR),
+        maybe_ioc: Some(IOC::UKR),
         iso_long_name: "Ukraine",
         iso_short_name: "Ukraine",
         official_language_list: ["uk"].to_vec(),
@@ -692,13 +693,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [8, 9].to_vec(),
         national_prefix: "8",
-        nationality: Some("Ukrainian"),
+        maybe_nationality: Some("Ukrainian"),
         number: "804",
         postal_code: true,
         postal_code_format: Some("\\d{5}"),
-        region: Some(Region::Europe),
+        maybe_region: Some(Region::Europe),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::EasternEurope),
+        maybe_subregion: Some(SubRegion::EasternEurope),
         un_locode: "UA",
         unofficial_name_list: [
             "Ukraine",
@@ -856,12 +857,13 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: false,
-        vat_rates: Some(VatRates {
+        maybe_vat_rates: Some(VatRates {
             standard: 20.0,
             reduced: Vec::from([7.0]),
             super_reduced: None,
             parking: None,
         }),
         distance_unit: DistanceUnit::Km,
+        maybe_population: Some(38000000),
     }
 }

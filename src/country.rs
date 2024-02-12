@@ -21,11 +21,13 @@ pub struct Country {
     pub(crate) continent: Continent,
     pub(crate) currency_code: CurrencyCode,
     pub(crate) address_format: Option<&'static str>,
-    pub(crate) gec: Option<GEC>,
+    #[cfg_attr(feature = "serde-derive", serde(rename = "gec"))]
+    pub(crate) maybe_gec: Option<GEC>,
     #[cfg(feature = "geo")]
     pub(crate) geo: CountryGeo,
     pub(crate) international_prefix: &'static str,
-    pub(crate) ioc: Option<IOC>,
+    #[cfg_attr(feature = "serde-derive", serde(rename = "ioc"))]
+    pub(crate) maybe_ioc: Option<IOC>,
     pub(crate) iso_long_name: &'static str,
     pub(crate) iso_short_name: &'static str,
     #[cfg_attr(feature = "serde-derive", serde(default))]
@@ -37,13 +39,16 @@ pub struct Country {
     #[cfg_attr(feature = "serde-derive", serde(default))]
     pub(crate) national_number_length_list: Vec<u8>,
     pub(crate) national_prefix: &'static str,
-    pub(crate) nationality: Option<&'static str>,
+    #[cfg_attr(feature = "serde-derive", serde(rename = "nationality"))]
+    pub(crate) maybe_nationality: Option<&'static str>,
     pub(crate) number: &'static str,
     pub(crate) postal_code: bool,
     pub(crate) postal_code_format: Option<&'static str>,
-    pub(crate) region: Option<Region>,
+    #[cfg_attr(feature = "serde-derive", serde(rename = "region"))]
+    pub(crate) maybe_region: Option<Region>,
     pub(crate) start_of_week: WeekDay,
-    pub(crate) subregion: Option<SubRegion>,
+    #[cfg_attr(feature = "serde-derive", serde(rename = "subregion"))]
+    pub(crate) maybe_subregion: Option<SubRegion>,
     pub(crate) un_locode: &'static str,
     #[cfg_attr(feature = "serde-derive", serde(default))]
     pub(crate) unofficial_name_list: Vec<&'static str>,
@@ -64,8 +69,11 @@ pub struct Country {
     pub(crate) eu_member: bool,
     #[cfg_attr(feature = "serde-derive", serde(default))]
     pub(crate) eea_member: bool,
-    pub(crate) vat_rates: Option<VatRates>,
+    #[cfg_attr(feature = "serde-derive", serde(rename = "vat_rates"))]
+    pub(crate) maybe_vat_rates: Option<VatRates>,
     pub(crate) distance_unit: DistanceUnit,
+    #[cfg_attr(feature = "serde-derive", serde(rename = "population"))]
+    pub(crate) maybe_population: Option<u64>,
 }
 
 impl Country {
@@ -95,8 +103,8 @@ impl Country {
     }
 
     /// GEC (Geopolitical Entities and Codes) for this country.
-    pub fn gec(&self) -> Option<GEC> {
-        self.gec
+    pub fn maybe_gec(&self) -> Option<GEC> {
+        self.maybe_gec
     }
 
     #[cfg(feature = "geo")]
@@ -110,8 +118,8 @@ impl Country {
     }
 
     /// IOC (International Olympic Committee) for this country.
-    pub fn ioc(&self) -> Option<IOC> {
-        self.ioc
+    pub fn maybe_ioc(&self) -> Option<IOC> {
+        self.maybe_ioc
     }
 
     pub fn iso_long_name(&self) -> &str {
@@ -142,8 +150,8 @@ impl Country {
         self.national_prefix
     }
 
-    pub fn nationality(&self) -> Option<&str> {
-        self.nationality
+    pub fn maybe_nationality(&self) -> Option<&str> {
+        self.maybe_nationality
     }
 
     pub fn number(&self) -> &str {
@@ -158,16 +166,16 @@ impl Country {
         self.postal_code_format
     }
 
-    pub fn region(&self) -> Option<Region> {
-        self.region
+    pub fn maybe_region(&self) -> Option<Region> {
+        self.maybe_region
     }
 
     pub fn start_of_week(&self) -> WeekDay {
         self.start_of_week
     }
 
-    pub fn subregion(&self) -> Option<SubRegion> {
-        self.subregion
+    pub fn maybe_subregion(&self) -> Option<SubRegion> {
+        self.maybe_subregion
     }
 
     pub fn un_locode(&self) -> &str {
@@ -226,13 +234,20 @@ impl Country {
     }
 
     /// [Value-added Tax](https://en.wikipedia.org/wiki/Value-added_tax) for this country.
-    pub fn vat_rates(&self) -> Option<&VatRates> {
-        self.vat_rates.as_ref()
+    pub fn maybe_vat_rates(&self) -> Option<&VatRates> {
+        self.maybe_vat_rates.as_ref()
     }
 
     /// `Km` or `Mi`.
     pub fn distance_unit(&self) -> DistanceUnit {
         self.distance_unit
+    }
+
+    /// Total population.
+    ///
+    /// From [data.worldbank.org](https://data.worldbank.org/indicator/SP.POP.TOTL).
+    pub fn maybe_population(&self) -> Option<u64> {
+        self.maybe_population
     }
 }
 

@@ -51,6 +51,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Mi;
+    pub const POPULATION: Option<u64> = Some(44273);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇦🇸";
     #[cfg(feature = "translations")]
@@ -266,11 +267,11 @@ pub fn new() -> Country {
         continent: Continent::Australia,
         country_code: 1,
         currency_code: CurrencyCode::USD,
-        gec: Some(GEC::AQ),
+        maybe_gec: Some(GEC::AQ),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "011",
-        ioc: Some(IOC::ASA),
+        maybe_ioc: Some(IOC::ASA),
         iso_long_name: "The Territory of American Samoa",
         iso_short_name: "American Samoa",
         official_language_list: ["en", "sm"].to_vec(),
@@ -278,13 +279,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [3].to_vec(),
         national_number_length_list: [10].to_vec(),
         national_prefix: "1",
-        nationality: Some("American Samoan"),
+        maybe_nationality: Some("American Samoan"),
         number: "016",
         postal_code: true,
         postal_code_format: Some("(96799)(?:[ \\-](\\d{4}))?"),
-        region: Some(Region::Oceania),
+        maybe_region: Some(Region::Oceania),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::Polynesia),
+        maybe_subregion: Some(SubRegion::Polynesia),
         un_locode: "AS",
         unofficial_name_list: [
             "American Samoa",
@@ -441,7 +442,8 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: false,
-        vat_rates: None,
+        maybe_vat_rates: None,
         distance_unit: DistanceUnit::Mi,
+        maybe_population: Some(44273),
     }
 }

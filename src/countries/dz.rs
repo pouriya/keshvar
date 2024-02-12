@@ -52,6 +52,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = Some(44903225);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇩🇿";
     #[cfg(feature = "translations")]
@@ -995,11 +996,11 @@ pub fn new() -> Country {
         continent: Continent::Africa,
         country_code: 213,
         currency_code: CurrencyCode::DZD,
-        gec: Some(GEC::AG),
+        maybe_gec: Some(GEC::AG),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: Some(IOC::ALG),
+        maybe_ioc: Some(IOC::ALG),
         iso_long_name: "The People's Democratic Republic of Algeria",
         iso_short_name: "Algeria",
         official_language_list: ["ar"].to_vec(),
@@ -1007,13 +1008,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [8].to_vec(),
         national_prefix: "7",
-        nationality: Some("Algerian"),
+        maybe_nationality: Some("Algerian"),
         number: "012",
         postal_code: true,
         postal_code_format: Some("\\d{5}"),
-        region: Some(Region::Africa),
+        maybe_region: Some(Region::Africa),
         start_of_week: WeekDay::Sunday,
-        subregion: Some(SubRegion::NorthernAfrica),
+        maybe_subregion: Some(SubRegion::NorthernAfrica),
         un_locode: "DZ",
         unofficial_name_list: [
             "Algeria",
@@ -1174,7 +1175,8 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: false,
-        vat_rates: None,
+        maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,
+        maybe_population: Some(44903225),
     }
 }

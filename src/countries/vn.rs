@@ -45,6 +45,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = Some(98186856);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇻🇳";
     #[cfg(feature = "translations")]
@@ -1210,11 +1211,11 @@ pub fn new() -> Country {
         continent: Continent::Asia,
         country_code: 84,
         currency_code: CurrencyCode::VND,
-        gec: Some(GEC::VM),
+        maybe_gec: Some(GEC::VM),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: Some(IOC::VIE),
+        maybe_ioc: Some(IOC::VIE),
         iso_long_name: "The Socialist Republic of Viet Nam",
         iso_short_name: "Viet Nam",
         official_language_list: ["vi"].to_vec(),
@@ -1222,13 +1223,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [7, 8, 9, 10].to_vec(),
         national_prefix: "0",
-        nationality: Some("Vietnamese"),
+        maybe_nationality: Some("Vietnamese"),
         number: "704",
         postal_code: true,
         postal_code_format: Some("\\d{5}\\d?"),
-        region: Some(Region::Asia),
+        maybe_region: Some(Region::Asia),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::SouthEasternAsia),
+        maybe_subregion: Some(SubRegion::SouthEasternAsia),
         un_locode: "VN",
         unofficial_name_list: ["Vietnam", "ベトナム", "Viet Nam"].to_vec(),
         world_region: WorldRegion::APAC,
@@ -1377,7 +1378,8 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: false,
-        vat_rates: None,
+        maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,
+        maybe_population: Some(98186856),
     }
 }

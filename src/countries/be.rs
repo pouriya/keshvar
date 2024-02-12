@@ -52,6 +52,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = true;
     pub const EEA_MEMBER: bool = true;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = Some(11685814);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇧🇪";
     #[cfg(feature = "translations")]
@@ -467,11 +468,11 @@ pub fn new() -> Country {
         continent: Continent::Europe,
         country_code: 32,
         currency_code: CurrencyCode::EUR,
-        gec: Some(GEC::BE),
+        maybe_gec: Some(GEC::BE),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: Some(IOC::BEL),
+        maybe_ioc: Some(IOC::BEL),
         iso_long_name: "The Kingdom of Belgium",
         iso_short_name: "Belgium",
         official_language_list: ["de", "fr", "nl"].to_vec(),
@@ -479,13 +480,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [8, 9].to_vec(),
         national_prefix: "0",
-        nationality: Some("Belgian"),
+        maybe_nationality: Some("Belgian"),
         number: "056",
         postal_code: true,
         postal_code_format: Some("\\d{4}"),
-        region: Some(Region::Europe),
+        maybe_region: Some(Region::Europe),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::WesternEurope),
+        maybe_subregion: Some(SubRegion::WesternEurope),
         un_locode: "BE",
         unofficial_name_list: [
             "Belgium",
@@ -642,12 +643,13 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: true,
         eea_member: true,
-        vat_rates: Some(VatRates {
+        maybe_vat_rates: Some(VatRates {
             standard: 21.0,
             reduced: Vec::from([6.0, 12.0]),
             super_reduced: None,
             parking: Some(12.0),
         }),
         distance_unit: DistanceUnit::Km,
+        maybe_population: Some(11685814),
     }
 }

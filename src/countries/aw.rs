@@ -44,6 +44,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = Some(106445);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇦🇼";
     #[cfg(feature = "translations")]
@@ -256,11 +257,11 @@ pub fn new() -> Country {
         continent: Continent::NorthAmerica,
         country_code: 297,
         currency_code: CurrencyCode::AWG,
-        gec: Some(GEC::AA),
+        maybe_gec: Some(GEC::AA),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: Some(IOC::ARU),
+        maybe_ioc: Some(IOC::ARU),
         iso_long_name: "Aruba",
         iso_short_name: "Aruba",
         official_language_list: ["nl"].to_vec(),
@@ -268,13 +269,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [7].to_vec(),
         national_prefix: "None",
-        nationality: Some("Aruban"),
+        maybe_nationality: Some("Aruban"),
         number: "533",
         postal_code: false,
         postal_code_format: None,
-        region: Some(Region::Americas),
+        maybe_region: Some(Region::Americas),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::Caribbean),
+        maybe_subregion: Some(SubRegion::Caribbean),
         un_locode: "AW",
         unofficial_name_list: ["Aruba", "アルバ"].to_vec(),
         world_region: WorldRegion::AMER,
@@ -420,7 +421,8 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: false,
-        vat_rates: None,
+        maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,
+        maybe_population: Some(106445),
     }
 }

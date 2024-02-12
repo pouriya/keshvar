@@ -50,6 +50,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = None;
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇬🇸";
     #[cfg(feature = "translations")]
@@ -262,11 +263,11 @@ pub fn new() -> Country {
         continent: Continent::Antarctica,
         country_code: 500,
         currency_code: CurrencyCode::GBP,
-        gec: Some(GEC::SX),
+        maybe_gec: Some(GEC::SX),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "",
-        ioc: None,
+        maybe_ioc: None,
         iso_long_name: "South Georgia and the South Sandwich Islands",
         iso_short_name: "South Georgia and the South Sandwich Islands",
         official_language_list: ["en"].to_vec(),
@@ -274,13 +275,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [].to_vec(),
         national_number_length_list: [].to_vec(),
         national_prefix: "",
-        nationality: Some("South Georgia and the South Sandwich Islander"),
+        maybe_nationality: Some("South Georgia and the South Sandwich Islander"),
         number: "239",
         postal_code: true,
         postal_code_format: Some("SIQQ 1ZZ"),
-        region: Some(Region::Americas),
+        maybe_region: Some(Region::Americas),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::SouthAmerica),
+        maybe_subregion: Some(SubRegion::SouthAmerica),
         un_locode: "GS",
         unofficial_name_list: ["South Georgia", "South Georgia and the South Sandwich Islands", "Südgeorgien und die Südlichen Sandwichinseln", "サウスジョージア・サウスサンドウィッチ諸島", "Zuid-Georgia en Zuidelijke Sandwicheilanden"].to_vec(),
         world_region: WorldRegion::AMER,
@@ -294,7 +295,8 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: false,
-        vat_rates: None,
+        maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,
+        maybe_population: None,
     }
 }

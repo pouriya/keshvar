@@ -45,6 +45,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = None;
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇧🇻";
     #[cfg(feature = "translations")]
@@ -260,11 +261,11 @@ pub fn new() -> Country {
         continent: Continent::Antarctica,
         country_code: 47,
         currency_code: CurrencyCode::NOK,
-        gec: Some(GEC::BV),
+        maybe_gec: Some(GEC::BV),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "",
-        ioc: None,
+        maybe_ioc: None,
         iso_long_name: "Bouvet Island",
         iso_short_name: "Bouvet Island",
         official_language_list: [].to_vec(),
@@ -272,13 +273,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [].to_vec(),
         national_number_length_list: [].to_vec(),
         national_prefix: "",
-        nationality: None,
+        maybe_nationality: None,
         number: "074",
         postal_code: false,
         postal_code_format: None,
-        region: None,
+        maybe_region: None,
         start_of_week: WeekDay::Monday,
-        subregion: None,
+        maybe_subregion: None,
         un_locode: "BV",
         unofficial_name_list: ["Bouvet Island", "Bouvetinsel", "ブーベ島", "Bouveteiland"].to_vec(),
         world_region: WorldRegion::APAC,
@@ -427,7 +428,8 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: false,
-        vat_rates: None,
+        maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,
+        maybe_population: None,
     }
 }

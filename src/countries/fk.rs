@@ -51,6 +51,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Mi;
+    pub const POPULATION: Option<u64> = None;
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇫🇰";
     #[cfg(feature = "translations")]
@@ -263,11 +264,11 @@ pub fn new() -> Country {
         continent: Continent::SouthAmerica,
         country_code: 500,
         currency_code: CurrencyCode::FKP,
-        gec: Some(GEC::FK),
+        maybe_gec: Some(GEC::FK),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: None,
+        maybe_ioc: None,
         iso_long_name: "The Falkland Islands",
         iso_short_name: "Falkland Islands (Malvinas)",
         official_language_list: ["en"].to_vec(),
@@ -275,13 +276,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [5].to_vec(),
         national_prefix: "None",
-        nationality: Some("Falkland Islander"),
+        maybe_nationality: Some("Falkland Islander"),
         number: "238",
         postal_code: true,
         postal_code_format: Some("FIQQ 1ZZ"),
-        region: Some(Region::Americas),
+        maybe_region: Some(Region::Americas),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::SouthAmerica),
+        maybe_subregion: Some(SubRegion::SouthAmerica),
         un_locode: "FK",
         unofficial_name_list: ["Falkland Islands", "Falklandinseln", "Îles Malouines", "Islas Malvinas", "フォークランド（マルビナス）諸島", "Falklandeilanden [Islas Malvinas]"].to_vec(),
         world_region: WorldRegion::AMER,
@@ -295,7 +296,8 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: false,
-        vat_rates: None,
+        maybe_vat_rates: None,
         distance_unit: DistanceUnit::Mi,
+        maybe_population: None,
     }
 }

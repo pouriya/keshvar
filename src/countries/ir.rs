@@ -50,6 +50,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = Some(88550570);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇮🇷";
     #[cfg(feature = "translations")]
@@ -732,11 +733,11 @@ pub fn new() -> Country {
         continent: Continent::Asia,
         country_code: 98,
         currency_code: CurrencyCode::IRR,
-        gec: Some(GEC::IR),
+        maybe_gec: Some(GEC::IR),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: Some(IOC::IRI),
+        maybe_ioc: Some(IOC::IRI),
         iso_long_name: "The Islamic Republic of Iran",
         iso_short_name: "Iran (Islamic Republic of)",
         official_language_list: ["fa"].to_vec(),
@@ -744,13 +745,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [10].to_vec(),
         national_prefix: "0",
-        nationality: Some("Iranian"),
+        maybe_nationality: Some("Iranian"),
         number: "364",
         postal_code: true,
         postal_code_format: Some("\\d{5}-?\\d{5}"),
-        region: Some(Region::Asia),
+        maybe_region: Some(Region::Asia),
         start_of_week: WeekDay::Saturday,
-        subregion: Some(SubRegion::SouthernAsia),
+        maybe_subregion: Some(SubRegion::SouthernAsia),
         un_locode: "IR",
         unofficial_name_list: ["Iran", "Irán", "Iran (Islamic Republic Of)", "イラン・イスラム共和国", "Islamic Republic of Iran"].to_vec(),
         world_region: WorldRegion::EMEA,
@@ -764,7 +765,8 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: false,
-        vat_rates: None,
+        maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,
+        maybe_population: Some(88550570),
     }
 }

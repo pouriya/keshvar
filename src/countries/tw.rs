@@ -45,6 +45,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = None;
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇹🇼";
     #[cfg(feature = "translations")]
@@ -600,11 +601,11 @@ pub fn new() -> Country {
         continent: Continent::Asia,
         country_code: 886,
         currency_code: CurrencyCode::TWD,
-        gec: Some(GEC::TW),
+        maybe_gec: Some(GEC::TW),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "002",
-        ioc: Some(IOC::TPE),
+        maybe_ioc: Some(IOC::TPE),
         iso_long_name: "Taiwan, Province of China",
         iso_short_name: "Taiwan, Province of China",
         official_language_list: ["zh"].to_vec(),
@@ -612,13 +613,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [7, 8].to_vec(),
         national_prefix: "0",
-        nationality: Some("Taiwanese"),
+        maybe_nationality: Some("Taiwanese"),
         number: "158",
         postal_code: true,
         postal_code_format: Some("\\d{3}(?:\\d{2,3})?"),
-        region: Some(Region::Asia),
+        maybe_region: Some(Region::Asia),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::EasternAsia),
+        maybe_subregion: Some(SubRegion::EasternAsia),
         un_locode: "TW",
         unofficial_name_list: ["Taiwan", "Taiwán", "台灣", "臺灣", "台湾"].to_vec(),
         world_region: WorldRegion::APAC,
@@ -770,7 +771,8 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: false,
-        vat_rates: None,
+        maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,
+        maybe_population: None,
     }
 }

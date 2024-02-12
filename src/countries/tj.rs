@@ -51,6 +51,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = Some(9952787);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇹🇯";
     #[cfg(feature = "translations")]
@@ -349,11 +350,11 @@ pub fn new() -> Country {
         continent: Continent::Asia,
         country_code: 992,
         currency_code: CurrencyCode::TJS,
-        gec: Some(GEC::TI),
+        maybe_gec: Some(GEC::TI),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "810",
-        ioc: Some(IOC::TJK),
+        maybe_ioc: Some(IOC::TJK),
         iso_long_name: "The Republic of Tajikistan",
         iso_short_name: "Tajikistan",
         official_language_list: ["ru", "tg"].to_vec(),
@@ -361,13 +362,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [9].to_vec(),
         national_prefix: "8",
-        nationality: Some("Tadzhik"),
+        maybe_nationality: Some("Tadzhik"),
         number: "762",
         postal_code: true,
         postal_code_format: Some("\\d{6}"),
-        region: Some(Region::Asia),
+        maybe_region: Some(Region::Asia),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::CentralAsia),
+        maybe_subregion: Some(SubRegion::CentralAsia),
         un_locode: "TJ",
         unofficial_name_list: [
             "Tajikistan",
@@ -527,7 +528,8 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: false,
-        vat_rates: None,
+        maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,
+        maybe_population: Some(9952787),
     }
 }

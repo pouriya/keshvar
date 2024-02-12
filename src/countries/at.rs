@@ -51,6 +51,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = true;
     pub const EEA_MEMBER: bool = true;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = Some(9041851);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇦🇹";
     #[cfg(feature = "translations")]
@@ -403,11 +404,11 @@ pub fn new() -> Country {
         continent: Continent::Europe,
         country_code: 43,
         currency_code: CurrencyCode::EUR,
-        gec: Some(GEC::AU),
+        maybe_gec: Some(GEC::AU),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: Some(IOC::AUT),
+        maybe_ioc: Some(IOC::AUT),
         iso_long_name: "The Republic of Austria",
         iso_short_name: "Austria",
         official_language_list: ["de"].to_vec(),
@@ -415,13 +416,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [1, 2, 3].to_vec(),
         national_number_length_list: [7, 8, 9, 10, 11, 12, 13].to_vec(),
         national_prefix: "0",
-        nationality: Some("Austrian"),
+        maybe_nationality: Some("Austrian"),
         number: "040",
         postal_code: true,
         postal_code_format: Some("\\d{4}"),
-        region: Some(Region::Europe),
+        maybe_region: Some(Region::Europe),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::WesternEurope),
+        maybe_subregion: Some(SubRegion::WesternEurope),
         un_locode: "AT",
         unofficial_name_list: [
             "Austria",
@@ -574,12 +575,13 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: true,
         eea_member: true,
-        vat_rates: Some(VatRates {
+        maybe_vat_rates: Some(VatRates {
             standard: 20.0,
             reduced: Vec::from([10.0]),
             super_reduced: None,
             parking: Some(12.0),
         }),
         distance_unit: DistanceUnit::Km,
+        maybe_population: Some(9041851),
     }
 }

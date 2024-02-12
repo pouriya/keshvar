@@ -52,6 +52,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = Some(215313498);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇧🇷";
     #[cfg(feature = "translations")]
@@ -676,11 +677,11 @@ pub fn new() -> Country {
         continent: Continent::SouthAmerica,
         country_code: 55,
         currency_code: CurrencyCode::BRL,
-        gec: Some(GEC::BR),
+        maybe_gec: Some(GEC::BR),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "0014",
-        ioc: Some(IOC::BRA),
+        maybe_ioc: Some(IOC::BRA),
         iso_long_name: "The Federative Republic of Brazil",
         iso_short_name: "Brazil",
         official_language_list: ["pt"].to_vec(),
@@ -688,13 +689,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [10, 11].to_vec(),
         national_prefix: "014",
-        nationality: Some("Brazilian"),
+        maybe_nationality: Some("Brazilian"),
         number: "076",
         postal_code: true,
         postal_code_format: Some("\\d{5}-?\\d{3}"),
-        region: Some(Region::Americas),
+        maybe_region: Some(Region::Americas),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::SouthAmerica),
+        maybe_subregion: Some(SubRegion::SouthAmerica),
         un_locode: "BR",
         unofficial_name_list: [
             "Brazil",
@@ -848,12 +849,13 @@ pub fn new() -> Country {
         g20_member: true,
         eu_member: false,
         eea_member: false,
-        vat_rates: Some(VatRates {
+        maybe_vat_rates: Some(VatRates {
             standard: 17.0,
             reduced: Vec::from([12.0, 7.0]),
             super_reduced: None,
             parking: None,
         }),
         distance_unit: DistanceUnit::Km,
+        maybe_population: Some(215313498),
     }
 }

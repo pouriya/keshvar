@@ -51,6 +51,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = Some(27914536);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇨🇲";
     #[cfg(feature = "translations")]
@@ -994,11 +995,11 @@ pub fn new() -> Country {
         continent: Continent::Africa,
         country_code: 237,
         currency_code: CurrencyCode::XAF,
-        gec: Some(GEC::CM),
+        maybe_gec: Some(GEC::CM),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: Some(IOC::CMR),
+        maybe_ioc: Some(IOC::CMR),
         iso_long_name: "The Republic of Cameroon",
         iso_short_name: "Cameroon",
         official_language_list: ["en", "fr"].to_vec(),
@@ -1006,13 +1007,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [8].to_vec(),
         national_prefix: "None",
-        nationality: Some("Cameroonian"),
+        maybe_nationality: Some("Cameroonian"),
         number: "120",
         postal_code: false,
         postal_code_format: None,
-        region: Some(Region::Africa),
+        maybe_region: Some(Region::Africa),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::MiddleAfrica),
+        maybe_subregion: Some(SubRegion::MiddleAfrica),
         un_locode: "CM",
         unofficial_name_list: [
             "Cameroon",
@@ -1169,7 +1170,8 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: false,
-        vat_rates: None,
+        maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,
+        maybe_population: Some(27914536),
     }
 }

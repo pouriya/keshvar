@@ -45,6 +45,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = Some(1417173173);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇮🇳";
     #[cfg(feature = "translations")]
@@ -810,11 +811,11 @@ pub fn new() -> Country {
         continent: Continent::Asia,
         country_code: 91,
         currency_code: CurrencyCode::INR,
-        gec: Some(GEC::IN),
+        maybe_gec: Some(GEC::IN),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: Some(IOC::IND),
+        maybe_ioc: Some(IOC::IND),
         iso_long_name: "The Republic of India",
         iso_short_name: "India",
         official_language_list: ["en", "hi"].to_vec(),
@@ -822,13 +823,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [10].to_vec(),
         national_prefix: "0",
-        nationality: Some("Indian"),
+        maybe_nationality: Some("Indian"),
         number: "356",
         postal_code: true,
         postal_code_format: Some("\\d{6}"),
-        region: Some(Region::Asia),
+        maybe_region: Some(Region::Asia),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::SouthernAsia),
+        maybe_subregion: Some(SubRegion::SouthernAsia),
         un_locode: "IN",
         unofficial_name_list: ["India", "Indien", "Inde", "インド"].to_vec(),
         world_region: WorldRegion::APAC,
@@ -980,7 +981,8 @@ pub fn new() -> Country {
         g20_member: true,
         eu_member: false,
         eea_member: false,
-        vat_rates: None,
+        maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,
+        maybe_population: Some(1417173173),
     }
 }

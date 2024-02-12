@@ -44,6 +44,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = Some(33660);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇸🇲";
     #[cfg(feature = "translations")]
@@ -399,11 +400,11 @@ pub fn new() -> Country {
         continent: Continent::Europe,
         country_code: 378,
         currency_code: CurrencyCode::EUR,
-        gec: Some(GEC::SM),
+        maybe_gec: Some(GEC::SM),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: Some(IOC::SMR),
+        maybe_ioc: Some(IOC::SMR),
         iso_long_name: "The Republic of San Marino",
         iso_short_name: "San Marino",
         official_language_list: ["it"].to_vec(),
@@ -411,13 +412,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [9, 10, 11, 12].to_vec(),
         national_prefix: "None",
-        nationality: Some("Sammarinese"),
+        maybe_nationality: Some("Sammarinese"),
         number: "674",
         postal_code: true,
         postal_code_format: Some("4789\\d"),
-        region: Some(Region::Europe),
+        maybe_region: Some(Region::Europe),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::SouthernEurope),
+        maybe_subregion: Some(SubRegion::SouthernEurope),
         un_locode: "SM",
         unofficial_name_list: ["San Marino", "Saint-Marin", "サンマリノ"].to_vec(),
         world_region: WorldRegion::EMEA,
@@ -566,7 +567,8 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: false,
-        vat_rates: None,
+        maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,
+        maybe_population: Some(33660),
     }
 }

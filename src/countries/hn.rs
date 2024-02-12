@@ -44,6 +44,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = Some(10432860);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇭🇳";
     #[cfg(feature = "translations")]
@@ -534,11 +535,11 @@ pub fn new() -> Country {
         continent: Continent::NorthAmerica,
         country_code: 504,
         currency_code: CurrencyCode::HNL,
-        gec: Some(GEC::HO),
+        maybe_gec: Some(GEC::HO),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: Some(IOC::HON),
+        maybe_ioc: Some(IOC::HON),
         iso_long_name: "The Republic of Honduras",
         iso_short_name: "Honduras",
         official_language_list: ["es"].to_vec(),
@@ -546,13 +547,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [7, 8].to_vec(),
         national_prefix: "None",
-        nationality: Some("Honduran"),
+        maybe_nationality: Some("Honduran"),
         number: "340",
         postal_code: true,
         postal_code_format: Some("\\d{5}"),
-        region: Some(Region::Americas),
+        maybe_region: Some(Region::Americas),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::CentralAmerica),
+        maybe_subregion: Some(SubRegion::CentralAmerica),
         un_locode: "HN",
         unofficial_name_list: ["Honduras", "ホンジュラス"].to_vec(),
         world_region: WorldRegion::AMER,
@@ -566,7 +567,8 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: false,
-        vat_rates: None,
+        maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,
+        maybe_population: Some(10432860),
     }
 }

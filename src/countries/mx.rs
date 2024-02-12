@@ -46,6 +46,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = Some(127504125);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇲🇽";
     #[cfg(feature = "translations")]
@@ -748,11 +749,11 @@ pub fn new() -> Country {
         continent: Continent::NorthAmerica,
         country_code: 52,
         currency_code: CurrencyCode::MXN,
-        gec: Some(GEC::MX),
+        maybe_gec: Some(GEC::MX),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: Some(IOC::MEX),
+        maybe_ioc: Some(IOC::MEX),
         iso_long_name: "The United Mexican States",
         iso_short_name: "Mexico",
         official_language_list: ["es"].to_vec(),
@@ -760,13 +761,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [8, 9, 10].to_vec(),
         national_prefix: "01",
-        nationality: Some("Mexican"),
+        maybe_nationality: Some("Mexican"),
         number: "484",
         postal_code: true,
         postal_code_format: Some("\\d{5}"),
-        region: Some(Region::Americas),
+        maybe_region: Some(Region::Americas),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::CentralAmerica),
+        maybe_subregion: Some(SubRegion::CentralAmerica),
         un_locode: "MX",
         unofficial_name_list: ["Mexico", "Mexiko", "Mexique", "México", "メキシコ"].to_vec(),
         world_region: WorldRegion::AMER,
@@ -915,12 +916,13 @@ pub fn new() -> Country {
         g20_member: true,
         eu_member: false,
         eea_member: false,
-        vat_rates: Some(VatRates {
+        maybe_vat_rates: Some(VatRates {
             standard: 16.0,
             reduced: Vec::from([]),
             super_reduced: None,
             parking: None,
         }),
         distance_unit: DistanceUnit::Km,
+        maybe_population: Some(127504125),
     }
 }

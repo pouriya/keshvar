@@ -44,6 +44,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = Some(4408581);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇵🇦";
     #[cfg(feature = "translations")]
@@ -456,11 +457,11 @@ pub fn new() -> Country {
         continent: Continent::NorthAmerica,
         country_code: 507,
         currency_code: CurrencyCode::PAB,
-        gec: Some(GEC::PM),
+        maybe_gec: Some(GEC::PM),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: Some(IOC::PAN),
+        maybe_ioc: Some(IOC::PAN),
         iso_long_name: "The Republic of Panamá",
         iso_short_name: "Panama",
         official_language_list: ["es"].to_vec(),
@@ -468,13 +469,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [7].to_vec(),
         national_prefix: "None",
-        nationality: Some("Panamanian"),
+        maybe_nationality: Some("Panamanian"),
         number: "591",
         postal_code: false,
         postal_code_format: None,
-        region: Some(Region::Americas),
+        maybe_region: Some(Region::Americas),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::CentralAmerica),
+        maybe_subregion: Some(SubRegion::CentralAmerica),
         un_locode: "PA",
         unofficial_name_list: ["Panama", "Panamá", "パナマ"].to_vec(),
         world_region: WorldRegion::AMER,
@@ -620,7 +621,8 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: false,
-        vat_rates: None,
+        maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,
+        maybe_population: Some(4408581),
     }
 }

@@ -44,6 +44,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = Some(782455);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇧🇹";
     #[cfg(feature = "translations")]
@@ -564,11 +565,11 @@ pub fn new() -> Country {
         continent: Continent::Asia,
         country_code: 975,
         currency_code: CurrencyCode::BTN,
-        gec: Some(GEC::BT),
+        maybe_gec: Some(GEC::BT),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: Some(IOC::BHU),
+        maybe_ioc: Some(IOC::BHU),
         iso_long_name: "The Kingdom of Bhutan",
         iso_short_name: "Bhutan",
         official_language_list: ["dz"].to_vec(),
@@ -576,13 +577,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [7, 8].to_vec(),
         national_prefix: "None",
-        nationality: Some("Bhutanese"),
+        maybe_nationality: Some("Bhutanese"),
         number: "064",
         postal_code: true,
         postal_code_format: Some("\\d{5}"),
-        region: Some(Region::Asia),
+        maybe_region: Some(Region::Asia),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::SouthernAsia),
+        maybe_subregion: Some(SubRegion::SouthernAsia),
         un_locode: "BT",
         unofficial_name_list: ["Bhutan", "Bhoutan", "Bután", "ブータン"].to_vec(),
         world_region: WorldRegion::APAC,
@@ -731,7 +732,8 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: false,
-        vat_rates: None,
+        maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,
+        maybe_population: Some(782455),
     }
 }

@@ -51,6 +51,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = Some(35648100);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇺🇿";
     #[cfg(feature = "translations")]
@@ -490,11 +491,11 @@ pub fn new() -> Country {
         continent: Continent::Asia,
         country_code: 998,
         currency_code: CurrencyCode::UZS,
-        gec: Some(GEC::UZ),
+        maybe_gec: Some(GEC::UZ),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "810",
-        ioc: Some(IOC::UZB),
+        maybe_ioc: Some(IOC::UZB),
         iso_long_name: "The Republic of Uzbekistan",
         iso_short_name: "Uzbekistan",
         official_language_list: ["ru", "uz"].to_vec(),
@@ -502,13 +503,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [9].to_vec(),
         national_prefix: "8",
-        nationality: Some("Uzbekistani"),
+        maybe_nationality: Some("Uzbekistani"),
         number: "860",
         postal_code: true,
         postal_code_format: Some("\\d{6}"),
-        region: Some(Region::Asia),
+        maybe_region: Some(Region::Asia),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::CentralAsia),
+        maybe_subregion: Some(SubRegion::CentralAsia),
         un_locode: "UZ",
         unofficial_name_list: [
             "Uzbekistan",
@@ -674,7 +675,8 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: false,
-        vat_rates: None,
+        maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,
+        maybe_population: Some(35648100),
     }
 }

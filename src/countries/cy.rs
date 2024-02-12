@@ -44,6 +44,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = true;
     pub const EEA_MEMBER: bool = true;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = Some(1251488);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇨🇾";
     #[cfg(feature = "translations")]
@@ -354,11 +355,11 @@ pub fn new() -> Country {
         continent: Continent::Asia,
         country_code: 357,
         currency_code: CurrencyCode::EUR,
-        gec: Some(GEC::CY),
+        maybe_gec: Some(GEC::CY),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: Some(IOC::CYP),
+        maybe_ioc: Some(IOC::CYP),
         iso_long_name: "The Republic of Cyprus",
         iso_short_name: "Cyprus",
         official_language_list: ["el", "hy", "tr"].to_vec(),
@@ -366,13 +367,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [8].to_vec(),
         national_prefix: "None",
-        nationality: Some("Cypriot"),
+        maybe_nationality: Some("Cypriot"),
         number: "196",
         postal_code: true,
         postal_code_format: Some("\\d{4}"),
-        region: Some(Region::Asia),
+        maybe_region: Some(Region::Asia),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::WesternAsia),
+        maybe_subregion: Some(SubRegion::WesternAsia),
         un_locode: "CY",
         unofficial_name_list: ["Cyprus", "Zypern", "Chypre", "Chipre", "キプロス"].to_vec(),
         world_region: WorldRegion::EMEA,
@@ -521,12 +522,13 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: true,
         eea_member: true,
-        vat_rates: Some(VatRates {
+        maybe_vat_rates: Some(VatRates {
             standard: 19.0,
             reduced: Vec::from([5.0, 9.0]),
             super_reduced: None,
             parking: None,
         }),
         distance_unit: DistanceUnit::Km,
+        maybe_population: Some(1251488),
     }
 }

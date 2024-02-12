@@ -50,6 +50,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = Some(30547580);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇳🇵";
     #[cfg(feature = "translations")]
@@ -659,11 +660,11 @@ pub fn new() -> Country {
         continent: Continent::Asia,
         country_code: 977,
         currency_code: CurrencyCode::NPR,
-        gec: Some(GEC::NP),
+        maybe_gec: Some(GEC::NP),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: Some(IOC::NEP),
+        maybe_ioc: Some(IOC::NEP),
         iso_long_name: "The Federal Democratic Republic of Nepal",
         iso_short_name: "Nepal",
         official_language_list: ["ne"].to_vec(),
@@ -671,13 +672,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [7, 8].to_vec(),
         national_prefix: "0",
-        nationality: Some("Nepalese"),
+        maybe_nationality: Some("Nepalese"),
         number: "524",
         postal_code: true,
         postal_code_format: Some("\\d{5}"),
-        region: Some(Region::Asia),
+        maybe_region: Some(Region::Asia),
         start_of_week: WeekDay::Sunday,
-        subregion: Some(SubRegion::SouthernAsia),
+        maybe_subregion: Some(SubRegion::SouthernAsia),
         un_locode: "NP",
         unofficial_name_list: [
             "Nepal",
@@ -829,7 +830,8 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: false,
-        vat_rates: None,
+        maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,
+        maybe_population: Some(30547580),
     }
 }

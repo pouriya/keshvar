@@ -52,6 +52,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = true;
     pub const EEA_MEMBER: bool = true;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = Some(10426919);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇬🇷";
     #[cfg(feature = "translations")]
@@ -479,11 +480,11 @@ pub fn new() -> Country {
         continent: Continent::Europe,
         country_code: 30,
         currency_code: CurrencyCode::EUR,
-        gec: Some(GEC::GR),
+        maybe_gec: Some(GEC::GR),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: Some(IOC::GRE),
+        maybe_ioc: Some(IOC::GRE),
         iso_long_name: "The Hellenic Republic",
         iso_short_name: "Greece",
         official_language_list: ["el"].to_vec(),
@@ -491,13 +492,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [10].to_vec(),
         national_prefix: "None",
-        nationality: Some("Greek"),
+        maybe_nationality: Some("Greek"),
         number: "300",
         postal_code: true,
         postal_code_format: Some("\\d{3} ?\\d{2}"),
-        region: Some(Region::Europe),
+        maybe_region: Some(Region::Europe),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::SouthernEurope),
+        maybe_subregion: Some(SubRegion::SouthernEurope),
         un_locode: "GR",
         unofficial_name_list: [
             "Greece",
@@ -651,12 +652,13 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: true,
         eea_member: true,
-        vat_rates: Some(VatRates {
+        maybe_vat_rates: Some(VatRates {
             standard: 24.0,
             reduced: Vec::from([6.0, 13.0]),
             super_reduced: None,
             parking: None,
         }),
         distance_unit: DistanceUnit::Km,
+        maybe_population: Some(10426919),
     }
 }

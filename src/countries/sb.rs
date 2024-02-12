@@ -51,6 +51,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = Some(724273);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇸🇧";
     #[cfg(feature = "translations")]
@@ -418,11 +419,11 @@ pub fn new() -> Country {
         continent: Continent::Australia,
         country_code: 677,
         currency_code: CurrencyCode::SBD,
-        gec: Some(GEC::BP),
+        maybe_gec: Some(GEC::BP),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: Some(IOC::SOL),
+        maybe_ioc: Some(IOC::SOL),
         iso_long_name: "The Solomon Islands",
         iso_short_name: "Solomon Islands",
         official_language_list: ["en"].to_vec(),
@@ -430,13 +431,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [5].to_vec(),
         national_prefix: "None",
-        nationality: Some("Solomon Islander"),
+        maybe_nationality: Some("Solomon Islander"),
         number: "090",
         postal_code: false,
         postal_code_format: None,
-        region: Some(Region::Oceania),
+        maybe_region: Some(Region::Oceania),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::Melanesia),
+        maybe_subregion: Some(SubRegion::Melanesia),
         un_locode: "SB",
         unofficial_name_list: ["Solomon Islands", "Salomonen", "Îles Salomon", "Islas Salomón", "ソロモン諸島", "Salomonseilanden"].to_vec(),
         world_region: WorldRegion::APAC,
@@ -450,7 +451,8 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: false,
-        vat_rates: None,
+        maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,
+        maybe_population: Some(724273),
     }
 }

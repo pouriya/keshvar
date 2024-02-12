@@ -44,6 +44,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = None;
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇦🇮";
     #[cfg(feature = "translations")]
@@ -256,11 +257,11 @@ pub fn new() -> Country {
         continent: Continent::NorthAmerica,
         country_code: 1,
         currency_code: CurrencyCode::XCD,
-        gec: Some(GEC::AV),
+        maybe_gec: Some(GEC::AV),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "011",
-        ioc: None,
+        maybe_ioc: None,
         iso_long_name: "Anguilla",
         iso_short_name: "Anguilla",
         official_language_list: ["en"].to_vec(),
@@ -268,13 +269,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [3].to_vec(),
         national_number_length_list: [10].to_vec(),
         national_prefix: "1",
-        nationality: Some("Anguillian"),
+        maybe_nationality: Some("Anguillian"),
         number: "660",
         postal_code: true,
         postal_code_format: Some("(?:AI-)?2640"),
-        region: Some(Region::Americas),
+        maybe_region: Some(Region::Americas),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::Caribbean),
+        maybe_subregion: Some(SubRegion::Caribbean),
         un_locode: "AI",
         unofficial_name_list: ["Anguilla", "アンギラ"].to_vec(),
         world_region: WorldRegion::AMER,
@@ -420,7 +421,8 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: false,
-        vat_rates: None,
+        maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,
+        maybe_population: None,
     }
 }

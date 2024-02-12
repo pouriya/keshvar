@@ -51,6 +51,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = true;
     pub const EEA_MEMBER: bool = true;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = Some(5556106);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇫🇮";
     #[cfg(feature = "translations")]
@@ -556,11 +557,11 @@ pub fn new() -> Country {
         continent: Continent::Europe,
         country_code: 358,
         currency_code: CurrencyCode::EUR,
-        gec: Some(GEC::FI),
+        maybe_gec: Some(GEC::FI),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: Some(IOC::FIN),
+        maybe_ioc: Some(IOC::FIN),
         iso_long_name: "The Republic of Finland",
         iso_short_name: "Finland",
         official_language_list: ["fi", "sv"].to_vec(),
@@ -568,13 +569,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [9].to_vec(),
         national_prefix: "0",
-        nationality: Some("Finnish"),
+        maybe_nationality: Some("Finnish"),
         number: "246",
         postal_code: true,
         postal_code_format: Some("\\d{5}"),
-        region: Some(Region::Europe),
+        maybe_region: Some(Region::Europe),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::NorthernEurope),
+        maybe_subregion: Some(SubRegion::NorthernEurope),
         un_locode: "FI",
         unofficial_name_list: [
             "Finland",
@@ -730,12 +731,13 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: true,
         eea_member: true,
-        vat_rates: Some(VatRates {
+        maybe_vat_rates: Some(VatRates {
             standard: 24.0,
             reduced: Vec::from([10.0, 14.0]),
             super_reduced: None,
             parking: None,
         }),
         distance_unit: DistanceUnit::Km,
+        maybe_population: Some(5556106),
     }
 }

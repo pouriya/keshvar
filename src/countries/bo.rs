@@ -45,6 +45,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = Some(12224110);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇧🇴";
     #[cfg(feature = "translations")]
@@ -400,11 +401,11 @@ pub fn new() -> Country {
         continent: Continent::SouthAmerica,
         country_code: 591,
         currency_code: CurrencyCode::BOB,
-        gec: Some(GEC::BL),
+        maybe_gec: Some(GEC::BL),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "0010",
-        ioc: Some(IOC::BOL),
+        maybe_ioc: Some(IOC::BOL),
         iso_long_name: "The Plurinational State of Bolivia",
         iso_short_name: "Bolivia (Plurinational State of)",
         official_language_list: ["ay", "es", "qu"].to_vec(),
@@ -412,13 +413,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [8].to_vec(),
         national_prefix: "010",
-        nationality: Some("Bolivian"),
+        maybe_nationality: Some("Bolivian"),
         number: "068",
         postal_code: false,
         postal_code_format: None,
-        region: Some(Region::Americas),
+        maybe_region: Some(Region::Americas),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::SouthAmerica),
+        maybe_subregion: Some(SubRegion::SouthAmerica),
         un_locode: "BO",
         unofficial_name_list: ["Bolivia", "Bolivien", "Bolivie", "ボリビア多民族国"].to_vec(),
         world_region: WorldRegion::AMER,
@@ -567,7 +568,8 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: false,
-        vat_rates: None,
+        maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,
+        maybe_population: Some(12224110),
     }
 }

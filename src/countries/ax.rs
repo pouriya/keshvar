@@ -45,6 +45,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = true;
     pub const EEA_MEMBER: bool = true;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = None;
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇦🇽";
     #[cfg(feature = "translations")]
@@ -269,11 +270,11 @@ pub fn new() -> Country {
         continent: Continent::Europe,
         country_code: 358,
         currency_code: CurrencyCode::EUR,
-        gec: None,
+        maybe_gec: None,
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "",
-        ioc: None,
+        maybe_ioc: None,
         iso_long_name: "Åland",
         iso_short_name: "Åland Islands",
         official_language_list: ["sv"].to_vec(),
@@ -281,13 +282,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [].to_vec(),
         national_number_length_list: [].to_vec(),
         national_prefix: "",
-        nationality: Some("Swedish"),
+        maybe_nationality: Some("Swedish"),
         number: "248",
         postal_code: true,
         postal_code_format: Some("22\\d{3}"),
-        region: Some(Region::Europe),
+        maybe_region: Some(Region::Europe),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::NorthernEurope),
+        maybe_subregion: Some(SubRegion::NorthernEurope),
         un_locode: "AX",
         unofficial_name_list: ["Åland Islands", "Åland", "オーランド諸島", "Ålandeilanden"]
             .to_vec(),
@@ -446,7 +447,8 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: true,
         eea_member: false,
-        vat_rates: None,
+        maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,
+        maybe_population: None,
     }
 }

@@ -52,6 +52,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = Some(8775760);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇨🇭";
     #[cfg(feature = "translations")]
@@ -665,11 +666,11 @@ pub fn new() -> Country {
         continent: Continent::Europe,
         country_code: 41,
         currency_code: CurrencyCode::CHF,
-        gec: Some(GEC::SZ),
+        maybe_gec: Some(GEC::SZ),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "00",
-        ioc: Some(IOC::SUI),
+        maybe_ioc: Some(IOC::SUI),
         iso_long_name: "The Swiss Confederation",
         iso_short_name: "Switzerland",
         official_language_list: ["de", "fr", "it"].to_vec(),
@@ -677,13 +678,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [9, 10].to_vec(),
         national_prefix: "0",
-        nationality: Some("Swiss"),
+        maybe_nationality: Some("Swiss"),
         number: "756",
         postal_code: true,
         postal_code_format: Some("\\d{4}"),
-        region: Some(Region::Europe),
+        maybe_region: Some(Region::Europe),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::WesternEurope),
+        maybe_subregion: Some(SubRegion::WesternEurope),
         un_locode: "CH",
         unofficial_name_list: [
             "Switzerland",
@@ -843,12 +844,13 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: false,
-        vat_rates: Some(VatRates {
+        maybe_vat_rates: Some(VatRates {
             standard: 7.7,
             reduced: Vec::from([2.5, 3.7]),
             super_reduced: None,
             parking: None,
         }),
         distance_unit: DistanceUnit::Km,
+        maybe_population: Some(8775760),
     }
 }

@@ -51,6 +51,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = Some(10142619);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇵🇬";
     #[cfg(feature = "translations")]
@@ -607,11 +608,11 @@ pub fn new() -> Country {
         continent: Continent::Australia,
         country_code: 675,
         currency_code: CurrencyCode::PGK,
-        gec: Some(GEC::PP),
+        maybe_gec: Some(GEC::PP),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "05",
-        ioc: Some(IOC::PNG),
+        maybe_ioc: Some(IOC::PNG),
         iso_long_name: "The Independent State of Papua New Guinea",
         iso_short_name: "Papua New Guinea",
         official_language_list: ["en"].to_vec(),
@@ -619,13 +620,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [7].to_vec(),
         national_prefix: "None",
-        nationality: Some("Papua New Guinean"),
+        maybe_nationality: Some("Papua New Guinean"),
         number: "598",
         postal_code: true,
         postal_code_format: Some("\\d{3}"),
-        region: Some(Region::Oceania),
+        maybe_region: Some(Region::Oceania),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::Melanesia),
+        maybe_subregion: Some(SubRegion::Melanesia),
         un_locode: "PG",
         unofficial_name_list: [
             "Papua New Guinea",
@@ -788,7 +789,8 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: false,
-        vat_rates: None,
+        maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,
+        maybe_population: Some(10142619),
     }
 }

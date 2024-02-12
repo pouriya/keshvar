@@ -44,6 +44,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = Some(54027487);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇰🇪";
     #[cfg(feature = "translations")]
@@ -2164,11 +2165,11 @@ pub fn new() -> Country {
         continent: Continent::Africa,
         country_code: 254,
         currency_code: CurrencyCode::KES,
-        gec: Some(GEC::KE),
+        maybe_gec: Some(GEC::KE),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "000",
-        ioc: Some(IOC::KEN),
+        maybe_ioc: Some(IOC::KEN),
         iso_long_name: "The Republic of Kenya",
         iso_short_name: "Kenya",
         official_language_list: ["en", "sw"].to_vec(),
@@ -2176,13 +2177,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [9].to_vec(),
         national_prefix: "0",
-        nationality: Some("Kenyan"),
+        maybe_nationality: Some("Kenyan"),
         number: "404",
         postal_code: true,
         postal_code_format: Some("\\d{5}"),
-        region: Some(Region::Africa),
+        maybe_region: Some(Region::Africa),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::EasternAfrica),
+        maybe_subregion: Some(SubRegion::EasternAfrica),
         un_locode: "KE",
         unofficial_name_list: ["Kenya", "Kenia", "ケニア"].to_vec(),
         world_region: WorldRegion::EMEA,
@@ -2328,7 +2329,8 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: false,
-        vat_rates: None,
+        maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,
+        maybe_population: Some(54027487),
     }
 }

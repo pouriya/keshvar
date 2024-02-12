@@ -52,6 +52,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Mi;
+    pub const POPULATION: Option<u64> = Some(45703);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇹🇨";
     #[cfg(feature = "translations")]
@@ -264,11 +265,11 @@ pub fn new() -> Country {
         continent: Continent::NorthAmerica,
         country_code: 1,
         currency_code: CurrencyCode::USD,
-        gec: Some(GEC::TK),
+        maybe_gec: Some(GEC::TK),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "011",
-        ioc: None,
+        maybe_ioc: None,
         iso_long_name: "The Turks and Caicos Islands",
         iso_short_name: "Turks and Caicos Islands",
         official_language_list: ["en"].to_vec(),
@@ -276,13 +277,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [3].to_vec(),
         national_number_length_list: [10].to_vec(),
         national_prefix: "1",
-        nationality: Some("Turks and Caicos Islander"),
+        maybe_nationality: Some("Turks and Caicos Islander"),
         number: "796",
         postal_code: true,
         postal_code_format: Some("TKCA 1ZZ"),
-        region: Some(Region::Americas),
+        maybe_region: Some(Region::Americas),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::Caribbean),
+        maybe_subregion: Some(SubRegion::Caribbean),
         un_locode: "TC",
         unofficial_name_list: ["Turks and Caicos Islands", "Turks- und Caicosinseln", "Îles Turks et Caïcos", "Islas Turks y Caicos", "タークス・カイコス諸島", "Turks- en Caicoseilanden", "Turks and Caicos"].to_vec(),
         world_region: WorldRegion::APAC,
@@ -296,7 +297,8 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: false,
-        vat_rates: None,
+        maybe_vat_rates: None,
         distance_unit: DistanceUnit::Mi,
+        maybe_population: Some(45703),
     }
 }

@@ -51,6 +51,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = Some(56661);
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇬🇱";
     #[cfg(feature = "translations")]
@@ -553,11 +554,11 @@ pub fn new() -> Country {
         continent: Continent::NorthAmerica,
         country_code: 299,
         currency_code: CurrencyCode::DKK,
-        gec: Some(GEC::GL),
+        maybe_gec: Some(GEC::GL),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "009",
-        ioc: None,
+        maybe_ioc: None,
         iso_long_name: "Kalaallit Nunaat",
         iso_short_name: "Greenland",
         official_language_list: ["kl"].to_vec(),
@@ -565,13 +566,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [6].to_vec(),
         national_prefix: "None",
-        nationality: Some("Greenlandic"),
+        maybe_nationality: Some("Greenlandic"),
         number: "304",
         postal_code: true,
         postal_code_format: Some("39\\d{2}"),
-        region: Some(Region::Americas),
+        maybe_region: Some(Region::Americas),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::NorthernAmerica),
+        maybe_subregion: Some(SubRegion::NorthernAmerica),
         un_locode: "GL",
         unofficial_name_list: [
             "Greenland",
@@ -727,7 +728,8 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: false,
-        vat_rates: None,
+        maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,
+        maybe_population: Some(56661),
     }
 }

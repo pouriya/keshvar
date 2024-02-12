@@ -51,6 +51,7 @@ pub mod consts {
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
+    pub const POPULATION: Option<u64> = None;
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇬🇬";
     #[cfg(feature = "translations")]
@@ -263,11 +264,11 @@ pub fn new() -> Country {
         continent: Continent::Europe,
         country_code: 44,
         currency_code: CurrencyCode::GBP,
-        gec: Some(GEC::GK),
+        maybe_gec: Some(GEC::GK),
         #[cfg(feature = "geo")]
         geo: geo::new(),
         international_prefix: "",
-        ioc: None,
+        maybe_ioc: None,
         iso_long_name: "The Bailiwick of Guernsey",
         iso_short_name: "Guernsey",
         official_language_list: ["en", "fr"].to_vec(),
@@ -275,13 +276,13 @@ pub fn new() -> Country {
         national_destination_code_length_list: [].to_vec(),
         national_number_length_list: [].to_vec(),
         national_prefix: "",
-        nationality: Some("Channel Islander"),
+        maybe_nationality: Some("Channel Islander"),
         number: "831",
         postal_code: true,
         postal_code_format: Some("GY\\d[\\dA-Z]? ?\\d[ABD-HJLN-UW-Z]{2}"),
-        region: Some(Region::Europe),
+        maybe_region: Some(Region::Europe),
         start_of_week: WeekDay::Monday,
-        subregion: Some(SubRegion::NorthernEurope),
+        maybe_subregion: Some(SubRegion::NorthernEurope),
         un_locode: "GG",
         unofficial_name_list: [
             "Guernsey and Alderney",
@@ -435,7 +436,8 @@ pub fn new() -> Country {
         g20_member: false,
         eu_member: false,
         eea_member: false,
-        vat_rates: None,
+        maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,
+        maybe_population: None,
     }
 }
