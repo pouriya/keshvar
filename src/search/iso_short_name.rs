@@ -462,7 +462,7 @@ lazy_static! { pub static ref SUPPORTED_ISO_SHORT_NAMES: HashMap<&'static str, A
     ("trinidad and tobago", Alpha2::TT),
     #[cfg(feature = "tv")] // Tuvalu (Oceania)
     ("tuvalu", Alpha2::TV),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("taiwan, province of china", Alpha2::TW),
     #[cfg(feature = "tz")] // The United Republic of Tanzania (Africa)
     ("tanzania, united republic of", Alpha2::TZ),

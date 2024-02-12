@@ -18,6 +18,7 @@ assert_eq!(country.country_code(), 1);
 assert_eq!(country.region(), Some(Region::Americas));
 assert!(country.unofficial_name_list().contains(&"United States"));
 assert!(country.spoken_language_list().contains(&"en"));
+assert!(country.distance_unit().is_mi()); // KM/MI
 assert!(country.g7_member() && country.g20_member());
 assert!(!country.eu_member() && !country.eea_member()); // Not in `European Union` and `European Economic Area` 
 assert!(!country.gdpr_compliant()); // It's not GDPR compliant too!
@@ -62,9 +63,10 @@ assert_eq!(
   * Phone number (E.164)
   * GDPR compliance
   * VAT (Value-added Tax) rate
+  * Distance unit
   * ...
 * Country Subdivisions. (Optional)
-* GEO locations for countries and their subdivisions (Optional)
+* Geolocations for countries and their subdivisions (Optional)
 * Translations for countries and subdivisions (Optional)
 * [`serde`](https://docs.rs/serde) integration (Optional)
 * [`chrono`](https://docs.rs/chrono) integration (Optional)
@@ -254,7 +256,7 @@ let country = CountryIterator::new()
 assert_eq!("Israel", country.iso_short_name());
 ```
 
-### GEO
+### Geo
 Enable `geo` feature inside `Cargo.toml` file:
 ```toml
 [dependencies]

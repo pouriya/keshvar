@@ -64,7 +64,7 @@ pub fn generate_country(destination_file: &PathBuf, info: &CountryInfo) -> Resul
     file.write_all(b"pub mod consts {\n")?;
     file.write_all(b"    #[allow(unused_imports)]\n")?;
     file.write_all(
-        b"    use crate::{Alpha2, Alpha3, GEC, IOC, CurrencyCode, Continent, Region, SubRegion, WorldRegion, WeekDay};\n\n",
+        b"    use crate::{Alpha2, Alpha3, DistanceUnit, GEC, IOC, CurrencyCode, Continent, Region, SubRegion, WorldRegion, WeekDay};\n\n",
     )?;
     for (name, _type, value) in [
         (
@@ -223,6 +223,11 @@ pub fn generate_country(destination_file: &PathBuf, info: &CountryInfo) -> Resul
             "const EEA_MEMBER",
             "bool",
             info.eu_member.unwrap_or(false).to_string(),
+        ),
+        (
+            "const DISTANCE_UNIT",
+            "DistanceUnit",
+            format!("DistanceUnit::{:?}", info.distance_unit),
         ),
     ] {
         file.write_all(format!("    pub {}: {} = {};\n", name, _type, value).as_bytes())?;
@@ -400,7 +405,7 @@ pub fn generate_country(destination_file: &PathBuf, info: &CountryInfo) -> Resul
     file.write_all(b"}\n")?;
     file.write_all(b"#[allow(unused_imports)]\n")?;
     file.write_all(
-        b"use crate::{Alpha2, Alpha3, GEC, IOC, Country, CurrencyCode, Continent, Region, SubRegion, WorldRegion, WeekDay, VatRates};\n",
+        b"use crate::{Alpha2, Alpha3, DistanceUnit, GEC, IOC, Country, CurrencyCode, Continent, Region, SubRegion, WorldRegion, WeekDay, VatRates};\n",
     )?;
     file.write_all(b"#[allow(unused_imports)]\n")?;
     file.write_all(b"use std::collections::HashMap;\n")?;
@@ -450,6 +455,7 @@ pub fn new() -> Country {{
         eu_member: {},
         eea_member: {},
         vat_rates: {},
+        distance_unit: {},
     }}
 }}
             "#,
@@ -512,6 +518,7 @@ pub fn new() -> Country {{
             } else {
                 "None".to_string()
             },
+            format!("DistanceUnit::{:?}", info.distance_unit),
         )
         .as_bytes(),
     )?;

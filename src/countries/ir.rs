@@ -9,7 +9,8 @@
 pub mod consts {
     #[allow(unused_imports)]
     use crate::{
-        Alpha2, Alpha3, Continent, CurrencyCode, Region, SubRegion, WeekDay, WorldRegion, GEC, IOC,
+        Alpha2, Alpha3, Continent, CurrencyCode, DistanceUnit, Region, SubRegion, WeekDay,
+        WorldRegion, GEC, IOC,
     };
 
     pub const ADDRESS_FORMAT: Option<&str> = None;
@@ -48,6 +49,7 @@ pub mod consts {
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
+    pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇮🇷";
     #[cfg(feature = "translations")]
@@ -379,11 +381,11 @@ pub mod subdivisions {
                     }
                 ),
                 (
-                    "30",
+                    "09",
                     Subdivision{
                         name: "Khorasan-e Razavi",
                         country_alpha2: Alpha2::IR,
-                        code: "30",
+                        code: "09",
                         #[cfg(feature = "geo")]
                         geo: Some(SubdivisionGeo{latitude: Some(35.1020253), longitude: Some(59.1041758), max_latitude: Some(37.7905918), min_latitude: Some(33.4001927), max_longitude: Some(61.282579), min_longitude: Some(56.4763309)}),
                         comments: None,
@@ -715,8 +717,8 @@ pub mod subdivisions {
 }
 #[allow(unused_imports)]
 use crate::{
-    Alpha2, Alpha3, Continent, Country, CurrencyCode, Region, SubRegion, VatRates, WeekDay,
-    WorldRegion, GEC, IOC,
+    Alpha2, Alpha3, Continent, Country, CurrencyCode, DistanceUnit, Region, SubRegion, VatRates,
+    WeekDay, WorldRegion, GEC, IOC,
 };
 #[allow(unused_imports)]
 use std::collections::HashMap;
@@ -763,5 +765,6 @@ pub fn new() -> Country {
         eu_member: false,
         eea_member: false,
         vat_rates: None,
+        distance_unit: DistanceUnit::Km,
     }
 }

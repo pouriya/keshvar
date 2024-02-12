@@ -9,7 +9,8 @@
 pub mod consts {
     #[allow(unused_imports)]
     use crate::{
-        Alpha2, Alpha3, Continent, CurrencyCode, Region, SubRegion, WeekDay, WorldRegion, GEC, IOC,
+        Alpha2, Alpha3, Continent, CurrencyCode, DistanceUnit, Region, SubRegion, WeekDay,
+        WorldRegion, GEC, IOC,
     };
 
     pub const ADDRESS_FORMAT: Option<&str> = None;
@@ -26,7 +27,7 @@ pub mod consts {
     pub const OFFICIAL_LANGUAGE_LIST: &[&str] = &["ar", "en", "he"];
     pub const SPOKEN_LANGUAGE_LIST: &[&str] = &["ar", "en", "he"];
     pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: &[usize] = &[2];
-    pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[8];
+    pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[7, 8, 9];
     pub const NATIONAL_PREFIX: &str = "0";
     pub const NATIONALITY: Option<&str> = Some("Palestinian");
     pub const NUMBER: &str = "275";
@@ -52,6 +53,7 @@ pub mod consts {
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
+    pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
     #[cfg(feature = "emojis")]
     pub const EMOJI: &str = "🇵🇸";
     #[cfg(feature = "translations")]
@@ -497,8 +499,8 @@ pub mod subdivisions {
 }
 #[allow(unused_imports)]
 use crate::{
-    Alpha2, Alpha3, Continent, Country, CurrencyCode, Region, SubRegion, VatRates, WeekDay,
-    WorldRegion, GEC, IOC,
+    Alpha2, Alpha3, Continent, Country, CurrencyCode, DistanceUnit, Region, SubRegion, VatRates,
+    WeekDay, WorldRegion, GEC, IOC,
 };
 #[allow(unused_imports)]
 use std::collections::HashMap;
@@ -522,7 +524,7 @@ pub fn new() -> Country {
         official_language_list: ["ar", "en", "he"].to_vec(),
         spoken_language_list: ["ar", "en", "he"].to_vec(),
         national_destination_code_length_list: [2].to_vec(),
-        national_number_length_list: [8].to_vec(),
+        national_number_length_list: [7, 8, 9].to_vec(),
         national_prefix: "0",
         nationality: Some("Palestinian"),
         number: "275",
@@ -691,5 +693,6 @@ pub fn new() -> Country {
         eu_member: false,
         eea_member: false,
         vat_rates: None,
+        distance_unit: DistanceUnit::Km,
     }
 }

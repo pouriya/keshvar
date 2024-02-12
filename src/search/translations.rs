@@ -928,7 +928,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("an táidsíceastáin", Alpha2::TJ),
     #[cfg(feature = "th")] // The Kingdom of Thailand (Asia)
     ("an téalainn", Alpha2::TH),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("an téaváin", Alpha2::TW),
     #[cfg(feature = "tn")] // The Republic of Tunisia (Africa)
     ("an túinéis", Alpha2::TN),
@@ -2661,8 +2661,6 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     #[cfg(feature = "az")] // The Republic of Azerbaijan (Asia)
     ("azerbaidjan", Alpha2::AZ),
     #[cfg(feature = "az")] // The Republic of Azerbaijan (Asia)
-    ("azerbaidjão", Alpha2::AZ),
-    #[cfg(feature = "az")] // The Republic of Azerbaijan (Asia)
     ("azerbaidžan", Alpha2::AZ),
     #[cfg(feature = "az")] // The Republic of Azerbaijan (Asia)
     ("azerbaidžanas", Alpha2::AZ),
@@ -2730,6 +2728,8 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("azerbaijan", Alpha2::AZ),
     #[cfg(feature = "az")] // The Republic of Azerbaijan (Asia)
     ("azerbaijan", Alpha2::AZ),
+    #[cfg(feature = "az")] // The Republic of Azerbaijan (Asia)
+    ("azerbaijão", Alpha2::AZ),
     #[cfg(feature = "az")] // The Republic of Azerbaijan (Asia)
     ("azerbaijão", Alpha2::AZ),
     #[cfg(feature = "az")] // The Republic of Azerbaijan (Asia)
@@ -15626,7 +15626,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("herêma îngîlîz a deryaya hindî", Alpha2::IO),
     #[cfg(feature = "cn")] // The People's Republic of China (Asia)
     ("hiina", Alpha2::CN),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("hiina vabariik", Alpha2::TW),
     #[cfg(feature = "io")] // The British Indian Ocean Territory (Africa)
     ("hindi ummanynyň britan territoriýasy", Alpha2::IO),
@@ -16320,7 +16320,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("i-rắc", Alpha2::IQ),
     #[cfg(feature = "ch")] // The Swiss Confederation (Europe)
     ("i-switzerland", Alpha2::CH),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("i-tayiwani", Alpha2::TW),
     #[cfg(feature = "th")] // The Kingdom of Thailand (Asia)
     ("i-thayilandi", Alpha2::TH),
@@ -28530,8 +28530,6 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("north macedonia", Alpha2::MK),
     #[cfg(feature = "mk")] // The Republic of North Macedonia (Europe)
     ("north macedonia", Alpha2::MK),
-    #[cfg(feature = "mk")] // The Republic of North Macedonia (Europe)
-    ("north macedonia", Alpha2::MK),
     #[cfg(feature = "mp")] // The Commonwealth of the Northern Mariana Islands (Oceania)
     ("northern mariana islands", Alpha2::MP),
     #[cfg(feature = "mp")] // The Commonwealth of the Northern Mariana Islands (Oceania)
@@ -29210,7 +29208,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("orosz föderáció", Alpha2::RU),
     #[cfg(feature = "cf")] // The Central African Republic (Africa)
     ("orta afrika cumhuriyeti", Alpha2::CF),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("orílẹ\u{300}-èdè olómìnira ilẹ\u{300} ṣáínà", Alpha2::TW),
     #[cfg(feature = "cf")] // The Central African Republic (Africa)
     ("orílẹ\u{300}-èdè olómìnira àrin áfríkà", Alpha2::CF),
@@ -30792,7 +30790,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("poalen", Alpha2::PL),
     #[cfg(feature = "ie")] // Ireland (Europe)
     ("pobblaght nerin", Alpha2::IE),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("pobblaght ny sheen", Alpha2::TW),
     #[cfg(feature = "cf")] // The Central African Republic (Africa)
     ("pobblaght yn affrick veanagh", Alpha2::CF),
@@ -31760,7 +31758,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("republik popileer demokaraatik bu laawos", Alpha2::LA),
     #[cfg(feature = "za")] // The Republic of South Africa (Africa)
     ("republik südafrika", Alpha2::ZA),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("republik tsiene", Alpha2::TW),
     #[cfg(feature = "sy")] // The Syrian Arab Republic (Asia)
     ("republika arabe e sirisë", Alpha2::SY),
@@ -31782,7 +31780,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("republikang panggitnang aprika", Alpha2::CF),
     #[cfg(feature = "do")] // The Dominican Republic (Americas)
     ("republike dominikinne", Alpha2::DO),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("republiko di chinia", Alpha2::TW),
     #[cfg(feature = "ie")] // Ireland (Europe)
     ("republiko di irlando", Alpha2::IE),
@@ -38008,7 +38006,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("taani", Alpha2::DK),
     #[cfg(feature = "th")] // The Kingdom of Thailand (Asia)
     ("taaylaand", Alpha2::TH),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("taaywaan", Alpha2::TW),
     #[cfg(feature = "tj")] // The Republic of Tajikistan (Asia)
     ("tacikistan", Alpha2::TJ),
@@ -38110,115 +38108,117 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("tailândia", Alpha2::TH),
     #[cfg(feature = "cy")] // The Republic of Cyprus (Asia)
     ("taiprus", Alpha2::CY),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("taivanas", Alpha2::TW),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("taivāna", Alpha2::TW),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("taiwan", Alpha2::TW),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("taiwan", Alpha2::TW),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("taiwan", Alpha2::TW),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("taiwan", Alpha2::TW),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("taiwan", Alpha2::TW),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("taiwan", Alpha2::TW),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("taiwan", Alpha2::TW),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("taiwan", Alpha2::TW),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("taiwan", Alpha2::TW),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("taiwan", Alpha2::TW),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("taiwan", Alpha2::TW),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("taiwan", Alpha2::TW),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("taiwan", Alpha2::TW),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("taiwan", Alpha2::TW),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("taiwan", Alpha2::TW),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("taiwan", Alpha2::TW),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("taiwan", Alpha2::TW),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("taiwan", Alpha2::TW),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("taiwan", Alpha2::TW),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("taiwan", Alpha2::TW),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("taiwan", Alpha2::TW),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("taiwan", Alpha2::TW),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("taiwan", Alpha2::TW),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("taiwan", Alpha2::TW),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("taiwan", Alpha2::TW),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("taiwan", Alpha2::TW),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("taiwan", Alpha2::TW),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("taiwan", Alpha2::TW),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("taiwan", Alpha2::TW),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("taiwan", Alpha2::TW),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("taiwan", Alpha2::TW),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("taiwan", Alpha2::TW),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("taiwan", Alpha2::TW),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("taiwan", Alpha2::TW),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("taiwan", Alpha2::TW),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("taiwan", Alpha2::TW),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("taiwan", Alpha2::TW),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("taiwan", Alpha2::TW),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("taiwan", Alpha2::TW),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("taiwan", Alpha2::TW),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("taiwan", Alpha2::TW),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("taiwan", Alpha2::TW),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("taiwan", Alpha2::TW),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("taiwan", Alpha2::TW),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("taiwan", Alpha2::TW),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("taiwan", Alpha2::TW),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("taiwan", Alpha2::TW),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("taiwan", Alpha2::TW),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("taiwan, province of china", Alpha2::TW),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
+    ("taiwan, province of china", Alpha2::TW),
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("taiwana", Alpha2::TW),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("taiwán", Alpha2::TW),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("taiwán", Alpha2::TW),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("taiwán", Alpha2::TW),
     #[cfg(feature = "th")] // The Kingdom of Thailand (Asia)
     ("taizeme", Alpha2::TH),
@@ -38308,21 +38308,21 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("tajlandë", Alpha2::TH),
     #[cfg(feature = "th")] // The Kingdom of Thailand (Asia)
     ("tajska", Alpha2::TH),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("tajvan", Alpha2::TW),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("tajvan", Alpha2::TW),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("tajvan", Alpha2::TW),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("tajvan", Alpha2::TW),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("tajvan", Alpha2::TW),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("tajvano", Alpha2::TW),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("tajwan", Alpha2::TW),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("tajwan", Alpha2::TW),
     #[cfg(feature = "va")] // The Holy See (Europe)
     ("takhta suci vatican (negara kota)", Alpha2::VA),
@@ -38548,7 +38548,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("tayilande", Alpha2::TH),
     #[cfg(feature = "th")] // The Kingdom of Thailand (Asia)
     ("tayilann", Alpha2::TH),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("tayiwani", Alpha2::TW),
     #[cfg(feature = "th")] // The Kingdom of Thailand (Asia)
     ("taylaand", Alpha2::TH),
@@ -38560,21 +38560,21 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("tayland", Alpha2::TH),
     #[cfg(feature = "th")] // The Kingdom of Thailand (Asia)
     ("taylande", Alpha2::TH),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("tayvan", Alpha2::TW),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("tayvan", Alpha2::TW),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("taywan", Alpha2::TW),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("taywan", Alpha2::TW),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("taywann", Alpha2::TW),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("taïwan", Alpha2::TW),
     #[cfg(feature = "th")] // The Kingdom of Thailand (Asia)
     ("taýland", Alpha2::TH),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("taýwan", Alpha2::TW),
     #[cfg(feature = "tj")] // The Republic of Tajikistan (Asia)
     ("taĝikio", Alpha2::TJ),
@@ -38594,7 +38594,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("tchad", Alpha2::TD),
     #[cfg(feature = "td")] // The Republic of Chad (Africa)
     ("tchad", Alpha2::TD),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("tchaj-wan", Alpha2::TW),
     #[cfg(feature = "cl")] // The Republic of Chile (Americas)
     ("tchili", Alpha2::CL),
@@ -38604,7 +38604,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("tchéquie", Alpha2::CZ),
     #[cfg(feature = "sl")] // The Republic of Sierra Leone (Africa)
     ("te araone", Alpha2::SL),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("teivan", Alpha2::TW),
     #[cfg(feature = "dk")] // The Kingdom of Denmark (Europe)
     ("tenemāka", Alpha2::DK),
@@ -38978,8 +38978,6 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("the republic of chad", Alpha2::TD),
     #[cfg(feature = "cl")] // The Republic of Chile (Americas)
     ("the republic of chile", Alpha2::CL),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
-    ("the republic of china", Alpha2::TW),
     #[cfg(feature = "co")] // The Republic of Colombia (Americas)
     ("the republic of colombia", Alpha2::CO),
     #[cfg(feature = "cr")] // The Republic of Costa Rica (Americas)
@@ -40872,7 +40870,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("táłkááʼ bighan dineʼé bikéyah", Alpha2::VE),
     #[cfg(feature = "cm")] // The Republic of Cameroon (Africa)
     ("táłtłʼááh chʼosh daadánígíí bitooh", Alpha2::CM),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("tâi-oân", Alpha2::TW),
     #[cfg(feature = "es")] // The Kingdom of Spain (Europe)
     ("tây ban nha", Alpha2::ES),
@@ -40886,7 +40884,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("täze zelandiýa", Alpha2::NZ),
     #[cfg(feature = "th")] // The Kingdom of Thailand (Asia)
     ("tæland", Alpha2::TH),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("tævan", Alpha2::TW),
     #[cfg(feature = "tf")] // The French Southern and Antarctic Lands (Africa)
     ("tèrras australas francesas", Alpha2::TF),
@@ -43210,7 +43208,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("xina", Alpha2::CN),
     #[cfg(feature = "cy")] // The Republic of Cyprus (Asia)
     ("xipre", Alpha2::CY),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("xitoy respublikasi", Alpha2::TW),
     #[cfg(feature = "si")] // The Republic of Slovenia (Europe)
     ("xlô-ven", Alpha2::SI),
@@ -44628,7 +44626,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("čīle", Alpha2::CL),
     #[cfg(feature = "dk")] // The Kingdom of Denmark (Europe)
     ("đan mạch", Alpha2::DK),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("đài loan", Alpha2::TW),
     #[cfg(feature = "dm")] // The Commonwealth of Dominica (Americas)
     ("đô-mi-ni-cạ", Alpha2::DM),
@@ -44710,6 +44708,8 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("šalamounovy ostrovy", Alpha2::SB),
     #[cfg(feature = "sb")] // The Solomon Islands (Oceania)
     ("šalamúnove ostrovy", Alpha2::SB),
+    #[cfg(feature = "mk")] // The Republic of North Macedonia (Europe)
+    ("šiaurės makedonija", Alpha2::MK),
     #[cfg(feature = "es")] // The Kingdom of Spain (Europe)
     ("španielsko", Alpha2::ES),
     #[cfg(feature = "es")] // The Kingdom of Spain (Europe)
@@ -45226,7 +45226,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("τανζανία", Alpha2::TZ),
     #[cfg(feature = "tj")] // The Republic of Tajikistan (Asia)
     ("τατζικιστάν", Alpha2::TJ),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("ταϊβάν", Alpha2::TW),
     #[cfg(feature = "th")] // The Kingdom of Thailand (Asia)
     ("ταϊλάνδη", Alpha2::TH),
@@ -50204,27 +50204,27 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("таиланд", Alpha2::TH),
     #[cfg(feature = "th")] // The Kingdom of Thailand (Asia)
     ("таиланд", Alpha2::TH),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("тайван", Alpha2::TW),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("тайван", Alpha2::TW),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("тайван", Alpha2::TW),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("тайван", Alpha2::TW),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("тайвань", Alpha2::TW),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("тайвань", Alpha2::TW),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("тайвань", Alpha2::TW),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("тайвань", Alpha2::TW),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("тайвань", Alpha2::TW),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("тайвань", Alpha2::TW),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("тайвань аралы", Alpha2::TW),
     #[cfg(feature = "th")] // The Kingdom of Thailand (Asia)
     ("тайланд", Alpha2::TH),
@@ -50262,9 +50262,9 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("танзанія", Alpha2::TZ),
     #[cfg(feature = "th")] // The Kingdom of Thailand (Asia)
     ("таїланд", Alpha2::TH),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("тајван", Alpha2::TW),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("тајван", Alpha2::TW),
     #[cfg(feature = "th")] // The Kingdom of Thailand (Asia)
     ("тајланд", Alpha2::TH),
@@ -51634,7 +51634,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("էրիտրեա", Alpha2::ER),
     #[cfg(feature = "th")] // The Kingdom of Thailand (Asia)
     ("թաիլանդ", Alpha2::TH),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("թայվան", Alpha2::TW),
     #[cfg(feature = "tl")] // The Democratic Republic of Timor-Leste (Asia)
     ("թիմոր - լեստե", Alpha2::TL),
@@ -52226,7 +52226,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("זמביה", Alpha2::ZM),
     #[cfg(feature = "ci")] // The Republic of Côte d'Ivoire (Africa)
     ("חוף השנהב", Alpha2::CI),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("טאיוואן", Alpha2::TW),
     #[cfg(feature = "tj")] // The Republic of Tajikistan (Asia)
     ("טג׳יקיסטן", Alpha2::TJ),
@@ -53188,11 +53188,11 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("تايلاند", Alpha2::TH),
     #[cfg(feature = "th")] // The Kingdom of Thailand (Asia)
     ("تايلنډ", Alpha2::TH),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("تايوان", Alpha2::TW),
     #[cfg(feature = "th")] // The Kingdom of Thailand (Asia)
     ("تایلند", Alpha2::TH),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("تایوان", Alpha2::TW),
     #[cfg(feature = "tm")] // Turkmenistan (Asia)
     ("تركمانستان", Alpha2::TM),
@@ -53276,7 +53276,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("تۈركىيە", Alpha2::TR),
     #[cfg(feature = "tl")] // The Democratic Republic of Timor-Leste (Asia)
     ("تیمور شرقی", Alpha2::TL),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("تەيۋەن", Alpha2::TW),
     #[cfg(feature = "ge")] // Georgia (Asia)
     ("جارجیا", Alpha2::GE),
@@ -53432,7 +53432,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("جمہوریہ ڈومینیکن", Alpha2::DO),
     #[cfg(feature = "gn")] // The Republic of Guinea (Africa)
     ("جمہوریہ گنی", Alpha2::GN),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("جمہوریۂ چین", Alpha2::TW),
     #[cfg(feature = "jm")] // Jamaica (Americas)
     ("جمیکا", Alpha2::JM),
@@ -53492,7 +53492,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("د آيرلېنډ جمهوريت", Alpha2::IE),
     #[cfg(feature = "cf")] // The Central African Republic (Africa)
     ("د منځنی افريقا ولسمشريزه", Alpha2::CF),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("د چین جمهوریت", Alpha2::TW),
     #[cfg(feature = "dk")] // The Kingdom of Denmark (Europe)
     ("دانمارک", Alpha2::DK),
@@ -55268,7 +55268,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("ޖ\u{7a7}ސ\u{7ad}", Alpha2::JE),
     #[cfg(feature = "dj")] // The Republic of Djibouti (Africa)
     ("ޖ\u{7a8}ބ\u{7aa}ތ\u{7a9}", Alpha2::DJ),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("ޖ\u{7aa}މ\u{7b0}ހ\u{7ab}ރ\u{7a9} ޗ\u{7a6}އ\u{7a8}ނ\u{7a7}", Alpha2::TW),
     #[cfg(feature = "km")] // The Union of the Comoros (Africa)
     ("ޖ\u{7aa}ޒ\u{7aa}ރ\u{7aa}ޤ\u{7a6}މ\u{7a6}ރ\u{7aa}", Alpha2::KM),
@@ -55990,9 +55990,9 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("डोमोनिका", Alpha2::DM),
     #[cfg(feature = "tz")] // The United Republic of Tanzania (Africa)
     ("त\u{902}ज\u{93c}ानिया", Alpha2::TZ),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("ताइवान", Alpha2::TW),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("ताइवान", Alpha2::TW),
     #[cfg(feature = "tj")] // The Republic of Tajikistan (Asia)
     ("ताजिकिस\u{94d}तान", Alpha2::TJ),
@@ -56026,9 +56026,9 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("त\u{941}व\u{94d}हाल\u{941}", Alpha2::TV),
     #[cfg(feature = "tv")] // Tuvalu (Oceania)
     ("त\u{941}व\u{94d}हाल\u{941}", Alpha2::TV),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("त\u{948}वान", Alpha2::TW),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("त\u{948}वान", Alpha2::TW),
     #[cfg(feature = "tg")] // The Togolese Republic (Africa)
     ("तोगो", Alpha2::TG),
@@ -57748,11 +57748,11 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("ডোমিনিক\u{9be}ন প\u{9cd}রজ\u{9be}ন\u{9cd}ত\u{9cd}র", Alpha2::DO),
     #[cfg(feature = "do")] // The Dominican Republic (Americas)
     ("ডোমিনিক\u{9be}ন প\u{9cd}ৰজ\u{9be}ন\u{9cd}ত\u{9cd}ৰ\u{9cd}ৰ", Alpha2::DO),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("ত\u{9be}ইওয়\u{9be}ন", Alpha2::TW),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("ত\u{9be}ইওয়\u{9be}ন", Alpha2::TW),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("ত\u{9be}ইৱ\u{9be}ন", Alpha2::TW),
     #[cfg(feature = "tj")] // The Republic of Tajikistan (Asia)
     ("ত\u{9be}জিকিস\u{9cd}ত\u{9be}ন", Alpha2::TJ),
@@ -58766,7 +58766,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("ਡ\u{a4b}ਮੀਨੀਆਨ ਗਣਰਾਜ", Alpha2::DO),
     #[cfg(feature = "tz")] // The United Republic of Tanzania (Africa)
     ("ਤਨਜ\u{a3c}ਾਨੀਆ", Alpha2::TZ),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("ਤਾਈਵਾਨ", Alpha2::TW),
     #[cfg(feature = "tm")] // Turkmenistan (Asia)
     ("ਤ\u{a41}ਰਕਮਸਤਾਨ", Alpha2::TM),
@@ -59254,7 +59254,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("ડોમિનિકન રીપબ\u{acd}લિક", Alpha2::DO),
     #[cfg(feature = "dm")] // The Commonwealth of Dominica (Americas)
     ("ડોમિનિકા", Alpha2::DM),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("તાઇવાન", Alpha2::TW),
     #[cfg(feature = "tj")] // The Republic of Tajikistan (Asia)
     ("તાજીકિસ\u{acd}તાન", Alpha2::TJ),
@@ -59752,7 +59752,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("ଡୋମ\u{b3f}ନୀକ\u{b3e}", Alpha2::DM),
     #[cfg(feature = "do")] // The Dominican Republic (Americas)
     ("ଡୋମ\u{b3f}ନୀକ\u{b3e}ନ ଗଣର\u{b3e}ଜ\u{b4d}ଯ", Alpha2::DO),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("ତ\u{b3e}ଇଓ\u{b4d}ବ\u{b3e}ନ", Alpha2::TW),
     #[cfg(feature = "tj")] // The Republic of Tajikistan (Asia)
     ("ତ\u{b3e}ଜୀକ\u{b3f}ସ\u{b4d}ତ\u{b3e}ନ", Alpha2::TJ),
@@ -60320,7 +60320,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("தசிக\u{bcd}கிசுத\u{bbe}ன\u{bcd}", Alpha2::TJ),
     #[cfg(feature = "th")] // The Kingdom of Thailand (Asia)
     ("த\u{bbe}ய\u{bcd}ல\u{bbe}ந\u{bcd}து", Alpha2::TH),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("த\u{bbe}ய\u{bcd}வ\u{bbe}ன\u{bcd}", Alpha2::TW),
     #[cfg(feature = "tl")] // The Democratic Republic of Timor-Leste (Asia)
     ("திமோர\u{bcd}-லெஸ\u{bcd}டி", Alpha2::TL),
@@ -60720,7 +60720,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("త\u{c3f}మ\u{c4b}ర\u{c4d}-ల\u{c47}స\u{c4d}త\u{c47}", Alpha2::TL),
     #[cfg(feature = "tn")] // The Republic of Tunisia (Africa)
     ("తున\u{c3f}శ\u{c3f}య\u{c3e}", Alpha2::TN),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("త\u{c48}వ\u{c3e}న\u{c4d}", Alpha2::TW),
     #[cfg(feature = "tg")] // The Togolese Republic (Africa)
     ("త\u{c4b}గ\u{c4b}", Alpha2::TG),
@@ -61168,7 +61168,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("ಝ\u{cbf}ಂಬಾಬ\u{ccd}ವ\u{cc6}", Alpha2::ZW),
     #[cfg(feature = "tr")] // The Republic of Türkiye (Asia)
     ("ಟರ\u{ccd}ಕ\u{cbf}", Alpha2::TR),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("ಟೈವಾನ\u{ccd}", Alpha2::TW),
     #[cfg(feature = "to")] // The Kingdom of Tonga (Oceania)
     ("ಟೋಂಗಾ", Alpha2::TO),
@@ -61618,7 +61618,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("ത\u{d3e}ജികിസ\u{d4d}ത\u{d3e}ന\u{d4d}\u{200d}", Alpha2::TJ),
     #[cfg(feature = "th")] // The Kingdom of Thailand (Asia)
     ("ത\u{d3e}യ\u{d4d}\u{200c}ലന\u{d4d}\u{200d}ഡ\u{d4d}", Alpha2::TH),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("ത\u{d3e}യ\u{d4d}\u{200c}വ\u{d3e}ന\u{d4d}\u{200d}", Alpha2::TW),
     #[cfg(feature = "tl")] // The Democratic Republic of Timor-Leste (Asia)
     ("തിമ\u{d42}ര\u{d4d}\u{200d}-ലെസ\u{d4d}തെ", Alpha2::TL),
@@ -62096,7 +62096,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("ඩොම\u{dd2}න\u{dd2}ක\u{dcf}ව", Alpha2::DM),
     #[cfg(feature = "th")] // The Kingdom of Thailand (Asia)
     ("ත\u{dcf}ය\u{dd2}ලන\u{dca}තය", Alpha2::TH),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("ත\u{dcf}ය\u{dd2}ව\u{dcf}නය", Alpha2::TW),
     #[cfg(feature = "tc")] // The Turks and Caicos Islands (Americas)
     ("ත\u{dd4}ර\u{dca}ක\u{dd2} හ\u{dcf} ක\u{dcf}ය\u{dd2}කෝස\u{dca} ද\u{dd6}පත\u{dca}", Alpha2::TC),
@@ -62868,7 +62868,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("โอมาน", Alpha2::OM),
     #[cfg(feature = "cy")] // The Republic of Cyprus (Asia)
     ("ไซปร\u{e31}ส", Alpha2::CY),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("ไต\u{e49}หว\u{e31}น", Alpha2::TW),
     #[cfg(feature = "th")] // The Kingdom of Thailand (Asia)
     ("ไทย", Alpha2::TH),
@@ -63154,7 +63154,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("ཌ\u{f7c}་མ\u{f72}་ན\u{f72}་ཀ\u{f71}ན་ ར\u{f72}་པཔ་ལ\u{f72}ཀ།", Alpha2::DO),
     #[cfg(feature = "tj")] // The Republic of Tajikistan (Asia)
     ("ཏ་ཇ\u{f72}་ཀ\u{f72}ས\u{f72}་ཏ\u{f71}ན།", Alpha2::TJ),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("ཏ་ཡ\u{f7a}་ཝ\u{f71}ན།", Alpha2::TW),
     #[cfg(feature = "th")] // The Kingdom of Thailand (Asia)
     ("ཐ\u{f71}འ\u{f72}་ལ\u{f7a}ནཌ\u{f72}།", Alpha2::TH),
@@ -63632,7 +63632,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("ဇမ\u{103a}ဘ\u{102e}ယာန\u{102d}\u{102f}င\u{103a}င\u{1036}", Alpha2::ZM),
     #[cfg(feature = "tz")] // The United Republic of Tanzania (Africa)
     ("တန\u{103a}ဇေးန\u{102e}းယားန\u{102d}\u{102f}င\u{103a}င\u{1036}", Alpha2::TZ),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("တရ\u{102f}တ\u{103a}သမ\u{1039}မတန\u{102d}\u{102f}င\u{103a}င\u{1036}", Alpha2::TW),
     #[cfg(feature = "tj")] // The Republic of Tajikistan (Asia)
     ("တာဂျစ\u{103a}ကစ\u{1039}စတန\u{103a}န\u{102d}\u{102f}င\u{103a}င\u{1036}", Alpha2::TJ),
@@ -64254,7 +64254,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("სუდანი", Alpha2::SD),
     #[cfg(feature = "sr")] // The Republic of Suriname (Americas)
     ("სურინამი", Alpha2::SR),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("ტაივანი", Alpha2::TW),
     #[cfg(feature = "th")] // The Kingdom of Thailand (Asia)
     ("ტაილანდი", Alpha2::TH),
@@ -64634,7 +64634,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("ታንፉፃሒ", Alpha2::VE),
     #[cfg(feature = "th")] // The Kingdom of Thailand (Asia)
     ("ታይላንድ", Alpha2::TH),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("ታይዋን", Alpha2::TW),
     #[cfg(feature = "tj")] // The Republic of Tajikistan (Asia)
     ("ታጃኪስታን", Alpha2::TJ),
@@ -64642,7 +64642,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("ታጃጡስታን", Alpha2::TJ),
     #[cfg(feature = "th")] // The Kingdom of Thailand (Asia)
     ("ታ፤ሒን፥", Alpha2::TH),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("ታ፤ሒን፥", Alpha2::TW),
     #[cfg(feature = "tt")] // The Republic of Trinidad and Tobago (Americas)
     ("ትሪኒዳድን ቶባጎን", Alpha2::TT),
@@ -65168,7 +65168,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("ត\u{17bc}កេឡាអ\u{17ca}\u{17bc}", Alpha2::TK),
     #[cfg(feature = "tg")] // The Togolese Republic (Africa)
     ("ត\u{17bc}ហ\u{17d2}គោ", Alpha2::TG),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("តៃវ\u{17c9}ាន\u{17cb}", Alpha2::TW),
     #[cfg(feature = "th")] // The Kingdom of Thailand (Asia)
     ("ថៃ", Alpha2::TH),
@@ -65781,7 +65781,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     #[cfg(feature = "kg")] // The Kyrgyz Republic (Asia)
     ("キルギス", Alpha2::KG),
     #[cfg(feature = "kg")] // The Kyrgyz Republic (Asia)
-    ("キルギスタン", Alpha2::KG),
+    ("キルギス共和国", Alpha2::KG),
     #[cfg(feature = "gn")] // The Republic of Guinea (Africa)
     ("ギニア", Alpha2::GN),
     #[cfg(feature = "gn")] // The Republic of Guinea (Africa)
@@ -66762,15 +66762,15 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("古拉索", Alpha2::CW),
     #[cfg(feature = "cc")] // The Territory of Cocos (Keeling) Islands (Oceania)
     ("可可斯羣島", Alpha2::CC),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("台湾", Alpha2::TW),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("台湾", Alpha2::TW),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("台湾", Alpha2::TW),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("台灣", Alpha2::TW),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("台灣", Alpha2::TW),
     #[cfg(feature = "sz")] // The Kingdom of Eswatini (Africa)
     ("史瓦帝尼", Alpha2::SZ),
@@ -67736,9 +67736,9 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("肯尼亚", Alpha2::KE),
     #[cfg(feature = "ke")] // The Republic of Kenya (Africa)
     ("肯雅", Alpha2::KE),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("臺灣", Alpha2::TW),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("臺灣", Alpha2::TW),
     #[cfg(feature = "fi")] // The Republic of Finland (Europe)
     ("芬兰", Alpha2::FI),
@@ -68478,7 +68478,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("키리바시", Alpha2::KI),
     #[cfg(feature = "cy")] // The Republic of Cyprus (Asia)
     ("키프로스", Alpha2::CY),
-    #[cfg(feature = "tw")] // The Republic of China (Asia)
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("타이완", Alpha2::TW),
     #[cfg(feature = "tj")] // The Republic of Tajikistan (Asia)
     ("타지키스탄", Alpha2::TJ),

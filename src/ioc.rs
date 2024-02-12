@@ -578,7 +578,7 @@ pub enum IOC {
     /// Tuvalu (Oceania)
     TUV,
     #[cfg(feature = "tw")]
-    /// The Republic of China (Asia)
+    /// Taiwan, Province of China (Asia)
     TPE,
     #[cfg(feature = "tz")]
     /// The United Republic of Tanzania (Africa)
@@ -1222,7 +1222,7 @@ mod impls {
                 IOC::TRI => Alpha2::TT,
                 #[cfg(feature = "tv")] // Tuvalu (Oceania)
                 IOC::TUV => Alpha2::TV,
-                #[cfg(feature = "tw")] // The Republic of China (Asia)
+                #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
                 IOC::TPE => Alpha2::TW,
                 #[cfg(feature = "tz")] // The United Republic of Tanzania (Africa)
                 IOC::TAN => Alpha2::TZ,
@@ -1645,7 +1645,7 @@ mod impls {
                 IOC::TRI => "TRI",
                 #[cfg(feature = "tv")] // Tuvalu (Oceania)
                 IOC::TUV => "TUV",
-                #[cfg(feature = "tw")] // The Republic of China (Asia)
+                #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
                 IOC::TPE => "TPE",
                 #[cfg(feature = "tz")] // The United Republic of Tanzania (Africa)
                 IOC::TAN => "TAN",
@@ -2072,7 +2072,7 @@ mod impls {
                 "TRI" => Ok(IOC::TRI),
                 #[cfg(feature = "tv")] // Tuvalu (Oceania)
                 "TUV" => Ok(IOC::TUV),
-                #[cfg(feature = "tw")] // The Republic of China (Asia)
+                #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
                 "TPE" => Ok(IOC::TPE),
                 #[cfg(feature = "tz")] // The United Republic of Tanzania (Africa)
                 "TAN" => Ok(IOC::TAN),

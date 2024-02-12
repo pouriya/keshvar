@@ -738,7 +738,7 @@ pub enum Alpha3 {
     /// Tuvalu (Oceania)
     TUV,
     #[cfg(feature = "tw")]
-    /// The Republic of China (Asia)
+    /// Taiwan, Province of China (Asia)
     TWN,
     #[cfg(feature = "tz")]
     /// The United Republic of Tanzania (Africa)
@@ -1555,7 +1555,7 @@ mod impls {
                 "TTO" => Ok(Self::TTO),
                 #[cfg(feature = "tv")] // Tuvalu (Oceania)
                 "TUV" => Ok(Self::TUV),
-                #[cfg(feature = "tw")] // The Republic of China (Asia)
+                #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
                 "TWN" => Ok(Self::TWN),
                 #[cfg(feature = "tz")] // The United Republic of Tanzania (Africa)
                 "TZA" => Ok(Self::TZA),
@@ -2064,7 +2064,7 @@ mod impls {
                 Alpha3::TTO => "TTO",
                 #[cfg(feature = "tv")] // Tuvalu (Oceania)
                 Alpha3::TUV => "TUV",
-                #[cfg(feature = "tw")] // The Republic of China (Asia)
+                #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
                 Alpha3::TWN => "TWN",
                 #[cfg(feature = "tz")] // The United Republic of Tanzania (Africa)
                 Alpha3::TZA => "TZA",
@@ -2573,7 +2573,7 @@ mod impls {
                 Alpha3::TTO => Alpha2::TT,
                 #[cfg(feature = "tv")] // Tuvalu (Oceania)
                 Alpha3::TUV => Alpha2::TV,
-                #[cfg(feature = "tw")] // The Republic of China (Asia)
+                #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
                 Alpha3::TWN => Alpha2::TW,
                 #[cfg(feature = "tz")] // The United Republic of Tanzania (Africa)
                 Alpha3::TZA => Alpha2::TZ,

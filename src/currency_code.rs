@@ -351,7 +351,7 @@ pub enum CurrencyCode {
     TRY,
     /// * The Republic of Trinidad and Tobago (Americas)
     TTD,
-    /// * The Republic of China (Asia)
+    /// * Taiwan, Province of China (Asia)
     TWD,
     /// * The United Republic of Tanzania (Africa)
     TZS,

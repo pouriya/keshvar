@@ -454,7 +454,7 @@ pub mod tr;
 pub mod tt;
 #[cfg(feature = "tv")] // Tuvalu (Oceania)
 pub mod tv;
-#[cfg(feature = "tw")] // The Republic of China (Asia)
+#[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
 pub mod tw;
 #[cfg(feature = "tz")] // The United Republic of Tanzania (Africa)
 pub mod tz;
