@@ -98,7 +98,7 @@ impl Country {
     }
 
     /// A regex that helps you validate address format of this country.
-    pub fn address_format(&self) -> Option<&str> {
+    pub fn address_format(&self) -> Option<&'static str> {
         self.address_format
     }
 
@@ -113,7 +113,7 @@ impl Country {
         self.geo
     }
 
-    pub fn international_prefix(&self) -> &str {
+    pub fn international_prefix(&self) -> &'static str {
         self.international_prefix
     }
 
@@ -122,19 +122,19 @@ impl Country {
         self.maybe_ioc
     }
 
-    pub fn iso_long_name(&self) -> &str {
+    pub fn iso_long_name(&self) -> &'static str {
         self.iso_long_name
     }
 
-    pub fn iso_short_name(&self) -> &str {
+    pub fn iso_short_name(&self) -> &'static str {
         self.iso_short_name
     }
 
-    pub fn official_language_list(&self) -> &[&str] {
+    pub fn official_language_list(&self) -> &[&'static str] {
         &self.official_language_list
     }
 
-    pub fn spoken_language_list(&self) -> &[&str] {
+    pub fn spoken_language_list(&self) -> &[&'static str] {
         &self.spoken_language_list
     }
 
@@ -146,15 +146,15 @@ impl Country {
         &self.national_number_length_list
     }
 
-    pub fn national_prefix(&self) -> &str {
+    pub fn national_prefix(&self) -> &'static str {
         self.national_prefix
     }
 
-    pub fn maybe_nationality(&self) -> Option<&str> {
+    pub fn maybe_nationality(&self) -> Option<&'static str> {
         self.maybe_nationality
     }
 
-    pub fn number(&self) -> &str {
+    pub fn number(&self) -> &'static str {
         self.number
     }
 
@@ -162,7 +162,7 @@ impl Country {
         self.postal_code
     }
 
-    pub fn postal_code_format(&self) -> Option<&str> {
+    pub fn postal_code_format(&self) -> Option<&'static str> {
         self.postal_code_format
     }
 
@@ -178,11 +178,11 @@ impl Country {
         self.maybe_subregion
     }
 
-    pub fn un_locode(&self) -> &str {
+    pub fn un_locode(&self) -> &'static str {
         self.un_locode
     }
 
-    pub fn unofficial_name_list(&self) -> &[&str] {
+    pub fn unofficial_name_list(&self) -> &[&'static str] {
         &self.unofficial_name_list
     }
 
@@ -191,20 +191,20 @@ impl Country {
     }
 
     #[cfg(feature = "emojis")]
-    pub fn emoji(&self) -> &str {
+    pub fn emoji(&self) -> &'static str {
         self.emoji
     }
 
     #[cfg(feature = "translations")]
     /// A hashmap containing languages as keys and translations as values.
     /// Enabled if `translations` feature is enabled.
-    pub fn translations(&self) -> &HashMap<&str, &str> {
+    pub fn translations(&self) -> &HashMap<&'static str, &'static str> {
         &self.translations
     }
 
     #[cfg(feature = "subdivisions")]
     /// Enabled if `subdivisions` feature is enabled.
-    pub fn subdivisions(&self) -> &HashMap<&str, Subdivision> {
+    pub fn subdivisions(&self) -> &HashMap<&'static str, Subdivision> {
         &self.subdivisions
     }
 
@@ -394,7 +394,7 @@ pub struct Subdivision {
 #[cfg(feature = "subdivisions")]
 impl Subdivision {
     /// A unique code for this subdivision in its country.
-    pub fn code(&self) -> &str {
+    pub fn code(&self) -> &'static str {
         self.code
     }
 
@@ -403,7 +403,7 @@ impl Subdivision {
     }
 
     /// Name of this subdivision.
-    pub fn name(&self) -> &str {
+    pub fn name(&self) -> &'static str {
         self.name
     }
 
@@ -413,7 +413,7 @@ impl Subdivision {
         self.geo
     }
 
-    pub fn comments(&self) -> Option<&str> {
+    pub fn comments(&self) -> Option<&'static str> {
         self.comments
     }
 
@@ -423,11 +423,11 @@ impl Subdivision {
 
     #[cfg(feature = "translations")]
     /// Enabled if `translations` feature is enabled.
-    pub fn translations(&self) -> &HashMap<&str, &str> {
+    pub fn translations(&self) -> &HashMap<&'static str, &'static str> {
         &self.translations
     }
 
-    pub fn unofficial_name_list(&self) -> &[&str] {
+    pub fn unofficial_name_list(&self) -> &[&'static str] {
         &self.unofficial_name_list
     }
 }

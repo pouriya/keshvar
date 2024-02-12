@@ -207,7 +207,7 @@ use keshvar::{GEC, Country, Subdivision, SubdivisionType, SubdivisionGeo};
 // Load from GEC (Geopolitical Entities and Codes)
 let country: Country = GEC::UK.to_country(); // England
 // A hashmap containing string subdivision codes as keys and `Subdivision` structs as values:
-let subdivisions: &HashMap<&str, Subdivision> = country.subdivisions();
+let subdivisions: &HashMap<_, Subdivision> = country.subdivisions();
 let london = subdivisions.get("LND").unwrap();
 assert_eq!("London, City of", london.name());
 assert_eq!(SubdivisionType::CityCorporation, london.subdivision_type());
@@ -235,7 +235,7 @@ use keshvar::{Alpha2, CountryIterator};
 // Load from alpha2 code
 let country = Alpha2::CN.to_country(); // China
 // A hashmap containing languages as keys and translations as values:
-let translations: &HashMap<&str, &str> = country.translations();
+let translations = country.translations();
 assert_eq!(Some(&"Chine"), translations.get("fr")); // French
 assert_eq!(Some(&"Китай"), translations.get("ru")); // Russian
 
