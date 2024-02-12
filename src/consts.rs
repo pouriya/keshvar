@@ -1509,7 +1509,6 @@ pub const SUPPORTED_REGION_LIST: &[Region] = &[
         feature = "vi"
     ))]
     Region::Americas,
-    #[cfg(all())]
     Region::Antarctica,
     #[cfg(all(
         feature = "ae",

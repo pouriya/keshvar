@@ -210,16 +210,22 @@ lazy_static! { pub static ref UNSUPPORTED_COUNTRIES_COUNT: usize = ALL_COUNTRIES
     sorted_region_features.sort();
     for region in sorted_region_features {
         let feature_list = region_features.get(region).unwrap();
-        consts_rs_file.write_all(b"    #[\n        cfg(\n            all(\n")?;
-        consts_rs_file.write_all(
-            feature_list
-                .iter()
-                .map(|x| format!("                feature = {:?}", x))
-                .collect::<Vec<_>>()
-                .join(",\n")
-                .as_bytes(),
-        )?;
-        consts_rs_file.write_all(b"\n            \n)        )\n     ]\n")?;
+        // ...
+        //     #[cfg(all())]
+        //     Region::Antarctica,
+        // ...
+        if !feature_list.is_empty() {
+            consts_rs_file.write_all(b"    #[\n        cfg(\n            all(\n")?;
+            consts_rs_file.write_all(
+                feature_list
+                    .iter()
+                    .map(|x| format!("                feature = {:?}", x))
+                    .collect::<Vec<_>>()
+                    .join(",\n")
+                    .as_bytes(),
+            )?;
+            consts_rs_file.write_all(b"\n            \n)        )\n     ]\n")?;
+        }
         consts_rs_file
             .write_all(format!("    Region::{},\n", utils::capitalize(region)).as_bytes())?;
     }
