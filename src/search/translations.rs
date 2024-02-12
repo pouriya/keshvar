@@ -2661,8 +2661,6 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     #[cfg(feature = "az")] // The Republic of Azerbaijan (Asia)
     ("azerbaidjan", Alpha2::AZ),
     #[cfg(feature = "az")] // The Republic of Azerbaijan (Asia)
-    ("azerbaidjão", Alpha2::AZ),
-    #[cfg(feature = "az")] // The Republic of Azerbaijan (Asia)
     ("azerbaidžan", Alpha2::AZ),
     #[cfg(feature = "az")] // The Republic of Azerbaijan (Asia)
     ("azerbaidžanas", Alpha2::AZ),
@@ -2730,6 +2728,8 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("azerbaijan", Alpha2::AZ),
     #[cfg(feature = "az")] // The Republic of Azerbaijan (Asia)
     ("azerbaijan", Alpha2::AZ),
+    #[cfg(feature = "az")] // The Republic of Azerbaijan (Asia)
+    ("azerbaijão", Alpha2::AZ),
     #[cfg(feature = "az")] // The Republic of Azerbaijan (Asia)
     ("azerbaijão", Alpha2::AZ),
     #[cfg(feature = "az")] // The Republic of Azerbaijan (Asia)
@@ -28530,8 +28530,6 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("north macedonia", Alpha2::MK),
     #[cfg(feature = "mk")] // The Republic of North Macedonia (Europe)
     ("north macedonia", Alpha2::MK),
-    #[cfg(feature = "mk")] // The Republic of North Macedonia (Europe)
-    ("north macedonia", Alpha2::MK),
     #[cfg(feature = "mp")] // The Commonwealth of the Northern Mariana Islands (Oceania)
     ("northern mariana islands", Alpha2::MP),
     #[cfg(feature = "mp")] // The Commonwealth of the Northern Mariana Islands (Oceania)
@@ -44710,6 +44708,8 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("šalamounovy ostrovy", Alpha2::SB),
     #[cfg(feature = "sb")] // The Solomon Islands (Oceania)
     ("šalamúnove ostrovy", Alpha2::SB),
+    #[cfg(feature = "mk")] // The Republic of North Macedonia (Europe)
+    ("šiaurės makedonija", Alpha2::MK),
     #[cfg(feature = "es")] // The Kingdom of Spain (Europe)
     ("španielsko", Alpha2::ES),
     #[cfg(feature = "es")] // The Kingdom of Spain (Europe)
@@ -65781,7 +65781,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     #[cfg(feature = "kg")] // The Kyrgyz Republic (Asia)
     ("キルギス", Alpha2::KG),
     #[cfg(feature = "kg")] // The Kyrgyz Republic (Asia)
-    ("キルギスタン", Alpha2::KG),
+    ("キルギス共和国", Alpha2::KG),
     #[cfg(feature = "gn")] // The Republic of Guinea (Africa)
     ("ギニア", Alpha2::GN),
     #[cfg(feature = "gn")] // The Republic of Guinea (Africa)

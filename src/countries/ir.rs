@@ -379,11 +379,11 @@ pub mod subdivisions {
                     }
                 ),
                 (
-                    "30",
+                    "09",
                     Subdivision{
                         name: "Khorasan-e Razavi",
                         country_alpha2: Alpha2::IR,
-                        code: "30",
+                        code: "09",
                         #[cfg(feature = "geo")]
                         geo: Some(SubdivisionGeo{latitude: Some(35.1020253), longitude: Some(59.1041758), max_latitude: Some(37.7905918), min_latitude: Some(33.4001927), max_longitude: Some(61.282579), min_longitude: Some(56.4763309)}),
                         comments: None,

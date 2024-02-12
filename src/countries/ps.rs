@@ -26,7 +26,7 @@ pub mod consts {
     pub const OFFICIAL_LANGUAGE_LIST: &[&str] = &["ar", "en", "he"];
     pub const SPOKEN_LANGUAGE_LIST: &[&str] = &["ar", "en", "he"];
     pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: &[usize] = &[2];
-    pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[8];
+    pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[7, 8, 9];
     pub const NATIONAL_PREFIX: &str = "0";
     pub const NATIONALITY: Option<&str> = Some("Palestinian");
     pub const NUMBER: &str = "275";
@@ -522,7 +522,7 @@ pub fn new() -> Country {
         official_language_list: ["ar", "en", "he"].to_vec(),
         spoken_language_list: ["ar", "en", "he"].to_vec(),
         national_destination_code_length_list: [2].to_vec(),
-        national_number_length_list: [8].to_vec(),
+        national_number_length_list: [7, 8, 9].to_vec(),
         national_prefix: "0",
         nationality: Some("Palestinian"),
         number: "275",
