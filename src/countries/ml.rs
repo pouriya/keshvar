@@ -20,15 +20,15 @@ pub mod consts {
     pub const COUNTRY_CODE: usize = 223;
     pub const CURRENCY_CODE: CurrencyCode = CurrencyCode::XOF;
     pub const GEC: Option<GEC> = Some(GEC::ML);
-    pub const INTERNATIONAL_PREFIX: &str = "00";
+    pub const INTERNATIONAL_PREFIX: Option<&str> = Some("00");
     pub const IOC: Option<IOC> = Some(IOC::MLI);
     pub const ISO_SHORT_NAME: &str = "Mali";
     pub const ISO_LONG_NAME: &str = "The Republic of Mali";
-    pub const OFFICIAL_LANGUAGE_LIST: &[&str] = &["fr"];
-    pub const SPOKEN_LANGUAGE_LIST: &[&str] = &["fr"];
-    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: &[usize] = &[2];
-    pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[8];
-    pub const NATIONAL_PREFIX: &str = "0";
+    pub const OFFICIAL_LANGUAGE_LIST: Option<&[&str]> = Some(&["fr"]);
+    pub const SPOKEN_LANGUAGE_LIST: Option<&[&str]> = Some(&["fr"]);
+    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: Option<&[usize]> = Some(&[2]);
+    pub const NATIONAL_NUMBER_LENGTH_LIST: Option<&[usize]> = Some(&[8]);
+    pub const NATIONAL_PREFIX: Option<&str> = Some("0");
     pub const NATIONALITY: Option<&str> = Some("Malian");
     pub const NUMBER: &str = "466";
     pub const POSTAL_CODE: bool = false;
@@ -37,12 +37,15 @@ pub mod consts {
     pub const START_DAY_OF_WEEK: WeekDay = WeekDay::Monday;
     pub const SUBREGION: Option<SubRegion> = Some(SubRegion::WesternAfrica);
     pub const UN_LOCODE: &str = "ML";
+    pub const UN_MEMBER: bool = true;
     pub const UNOFFICIAL_NAME_LIST: &[&str] = &["Mali", "マリ"];
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = Some("RMM");
     pub const WORLD_REGION: WorldRegion = WorldRegion::EMEA;
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
+    pub const NANP_PREFIX: Option<&str> = None;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
     pub const POPULATION: Option<u64> = Some(22593590);
     #[cfg(feature = "emojis")]
@@ -993,16 +996,17 @@ pub fn new() -> Country {
         maybe_gec: Some(GEC::ML),
         #[cfg(feature = "geo")]
         geo: geo::new(),
-        international_prefix: "00",
+        maybe_international_prefix: Some("00"),
         maybe_ioc: Some(IOC::MLI),
         iso_long_name: "The Republic of Mali",
         iso_short_name: "Mali",
-        official_language_list: ["fr"].to_vec(),
-        spoken_language_list: ["fr"].to_vec(),
-        national_destination_code_length_list: [2].to_vec(),
-        national_number_length_list: [8].to_vec(),
-        national_prefix: "0",
+        maybe_official_language_list: Some(["fr"].to_vec()),
+        maybe_spoken_language_list: Some(["fr"].to_vec()),
+        maybe_national_destination_code_length_list: Some([2].to_vec()),
+        maybe_national_number_length_list: Some([8].to_vec()),
+        maybe_national_prefix: Some("0"),
         maybe_nationality: Some("Malian"),
+        maybe_nanp_prefix: None,
         number: "466",
         postal_code: false,
         postal_code_format: None,
@@ -1010,7 +1014,9 @@ pub fn new() -> Country {
         start_of_week: WeekDay::Monday,
         maybe_subregion: Some(SubRegion::WesternAfrica),
         un_locode: "ML",
+        un_member: true,
         unofficial_name_list: ["Mali", "マリ"].to_vec(),
+        maybe_vehicle_registration_code: Some("RMM"),
         world_region: WorldRegion::EMEA,
         #[cfg(feature = "emojis")]
         emoji: "🇲🇱",

@@ -20,15 +20,15 @@ pub mod consts {
     pub const COUNTRY_CODE: usize = 212;
     pub const CURRENCY_CODE: CurrencyCode = CurrencyCode::MAD;
     pub const GEC: Option<GEC> = Some(GEC::WI);
-    pub const INTERNATIONAL_PREFIX: &str = "";
+    pub const INTERNATIONAL_PREFIX: Option<&str> = None;
     pub const IOC: Option<IOC> = None;
     pub const ISO_SHORT_NAME: &str = "Western Sahara";
     pub const ISO_LONG_NAME: &str = "The Sahrawi Arab Democratic Republic";
-    pub const OFFICIAL_LANGUAGE_LIST: &[&str] = &["es", "fr"];
-    pub const SPOKEN_LANGUAGE_LIST: &[&str] = &["es", "fr"];
-    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: &[usize] = &[];
-    pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[];
-    pub const NATIONAL_PREFIX: &str = "";
+    pub const OFFICIAL_LANGUAGE_LIST: Option<&[&str]> = Some(&["es", "fr"]);
+    pub const SPOKEN_LANGUAGE_LIST: Option<&[&str]> = Some(&["es", "fr"]);
+    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: Option<&[usize]> = None;
+    pub const NATIONAL_NUMBER_LENGTH_LIST: Option<&[usize]> = None;
+    pub const NATIONAL_PREFIX: Option<&str> = None;
     pub const NATIONALITY: Option<&str> = Some("Sahrawi");
     pub const NUMBER: &str = "732";
     pub const POSTAL_CODE: bool = true;
@@ -37,6 +37,7 @@ pub mod consts {
     pub const START_DAY_OF_WEEK: WeekDay = WeekDay::Monday;
     pub const SUBREGION: Option<SubRegion> = Some(SubRegion::NorthernAfrica);
     pub const UN_LOCODE: &str = "EH";
+    pub const UN_MEMBER: bool = false;
     pub const UNOFFICIAL_NAME_LIST: &[&str] = &[
         "Western Sahara",
         "الصحراء الغربية",
@@ -45,11 +46,13 @@ pub mod consts {
         "西サハラ",
         "Westelijke Sahara",
     ];
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = Some("WSA");
     pub const WORLD_REGION: WorldRegion = WorldRegion::EMEA;
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
+    pub const NANP_PREFIX: Option<&str> = None;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
     pub const POPULATION: Option<u64> = None;
     #[cfg(feature = "emojis")]
@@ -267,16 +270,17 @@ pub fn new() -> Country {
         maybe_gec: Some(GEC::WI),
         #[cfg(feature = "geo")]
         geo: geo::new(),
-        international_prefix: "",
+        maybe_international_prefix: None,
         maybe_ioc: None,
         iso_long_name: "The Sahrawi Arab Democratic Republic",
         iso_short_name: "Western Sahara",
-        official_language_list: ["es", "fr"].to_vec(),
-        spoken_language_list: ["es", "fr"].to_vec(),
-        national_destination_code_length_list: [].to_vec(),
-        national_number_length_list: [].to_vec(),
-        national_prefix: "",
+        maybe_official_language_list: Some(["es", "fr"].to_vec()),
+        maybe_spoken_language_list: Some(["es", "fr"].to_vec()),
+        maybe_national_destination_code_length_list: None,
+        maybe_national_number_length_list: None,
+        maybe_national_prefix: None,
         maybe_nationality: Some("Sahrawi"),
+        maybe_nanp_prefix: None,
         number: "732",
         postal_code: true,
         postal_code_format: Some("\\d{5}"),
@@ -284,6 +288,7 @@ pub fn new() -> Country {
         start_of_week: WeekDay::Monday,
         maybe_subregion: Some(SubRegion::NorthernAfrica),
         un_locode: "EH",
+        un_member: false,
         unofficial_name_list: [
             "Western Sahara",
             "الصحراء الغربية",
@@ -293,6 +298,7 @@ pub fn new() -> Country {
             "Westelijke Sahara",
         ]
         .to_vec(),
+        maybe_vehicle_registration_code: Some("WSA"),
         world_region: WorldRegion::EMEA,
         #[cfg(feature = "emojis")]
         emoji: "🇪🇭",

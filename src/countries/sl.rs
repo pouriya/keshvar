@@ -18,17 +18,17 @@ pub mod consts {
     pub const ALPHA3: Alpha3 = Alpha3::SLE;
     pub const CONTINENT: Continent = Continent::Africa;
     pub const COUNTRY_CODE: usize = 232;
-    pub const CURRENCY_CODE: CurrencyCode = CurrencyCode::SLL;
+    pub const CURRENCY_CODE: CurrencyCode = CurrencyCode::SLE;
     pub const GEC: Option<GEC> = Some(GEC::SL);
-    pub const INTERNATIONAL_PREFIX: &str = "00";
+    pub const INTERNATIONAL_PREFIX: Option<&str> = Some("00");
     pub const IOC: Option<IOC> = Some(IOC::SLE);
     pub const ISO_SHORT_NAME: &str = "Sierra Leone";
     pub const ISO_LONG_NAME: &str = "The Republic of Sierra Leone";
-    pub const OFFICIAL_LANGUAGE_LIST: &[&str] = &["en"];
-    pub const SPOKEN_LANGUAGE_LIST: &[&str] = &["en"];
-    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: &[usize] = &[2];
-    pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[8];
-    pub const NATIONAL_PREFIX: &str = "0";
+    pub const OFFICIAL_LANGUAGE_LIST: Option<&[&str]> = Some(&["en"]);
+    pub const SPOKEN_LANGUAGE_LIST: Option<&[&str]> = Some(&["en"]);
+    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: Option<&[usize]> = Some(&[2]);
+    pub const NATIONAL_NUMBER_LENGTH_LIST: Option<&[usize]> = Some(&[8]);
+    pub const NATIONAL_PREFIX: Option<&str> = Some("0");
     pub const NATIONALITY: Option<&str> = Some("Sierra Leonean");
     pub const NUMBER: &str = "694";
     pub const POSTAL_CODE: bool = false;
@@ -37,12 +37,15 @@ pub mod consts {
     pub const START_DAY_OF_WEEK: WeekDay = WeekDay::Monday;
     pub const SUBREGION: Option<SubRegion> = Some(SubRegion::WesternAfrica);
     pub const UN_LOCODE: &str = "SL";
+    pub const UN_MEMBER: bool = true;
     pub const UNOFFICIAL_NAME_LIST: &[&str] = &["Sierra Leone", "シエラレオネ"];
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = Some("SLE");
     pub const WORLD_REGION: WorldRegion = WorldRegion::EMEA;
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
+    pub const NANP_PREFIX: Option<&str> = None;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
     pub const POPULATION: Option<u64> = Some(8605718);
     #[cfg(feature = "emojis")]
@@ -567,20 +570,21 @@ pub fn new() -> Country {
         address_format: None,
         continent: Continent::Africa,
         country_code: 232,
-        currency_code: CurrencyCode::SLL,
+        currency_code: CurrencyCode::SLE,
         maybe_gec: Some(GEC::SL),
         #[cfg(feature = "geo")]
         geo: geo::new(),
-        international_prefix: "00",
+        maybe_international_prefix: Some("00"),
         maybe_ioc: Some(IOC::SLE),
         iso_long_name: "The Republic of Sierra Leone",
         iso_short_name: "Sierra Leone",
-        official_language_list: ["en"].to_vec(),
-        spoken_language_list: ["en"].to_vec(),
-        national_destination_code_length_list: [2].to_vec(),
-        national_number_length_list: [8].to_vec(),
-        national_prefix: "0",
+        maybe_official_language_list: Some(["en"].to_vec()),
+        maybe_spoken_language_list: Some(["en"].to_vec()),
+        maybe_national_destination_code_length_list: Some([2].to_vec()),
+        maybe_national_number_length_list: Some([8].to_vec()),
+        maybe_national_prefix: Some("0"),
         maybe_nationality: Some("Sierra Leonean"),
+        maybe_nanp_prefix: None,
         number: "694",
         postal_code: false,
         postal_code_format: None,
@@ -588,7 +592,9 @@ pub fn new() -> Country {
         start_of_week: WeekDay::Monday,
         maybe_subregion: Some(SubRegion::WesternAfrica),
         un_locode: "SL",
+        un_member: true,
         unofficial_name_list: ["Sierra Leone", "シエラレオネ"].to_vec(),
+        maybe_vehicle_registration_code: Some("SLE"),
         world_region: WorldRegion::EMEA,
         #[cfg(feature = "emojis")]
         emoji: "🇸🇱",

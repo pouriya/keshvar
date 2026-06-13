@@ -20,15 +20,15 @@ pub mod consts {
     pub const COUNTRY_CODE: usize = 686;
     pub const CURRENCY_CODE: CurrencyCode = CurrencyCode::AUD;
     pub const GEC: Option<GEC> = Some(GEC::KR);
-    pub const INTERNATIONAL_PREFIX: &str = "00";
+    pub const INTERNATIONAL_PREFIX: Option<&str> = Some("00");
     pub const IOC: Option<IOC> = Some(IOC::KIR);
     pub const ISO_SHORT_NAME: &str = "Kiribati";
     pub const ISO_LONG_NAME: &str = "The Republic of Kiribati";
-    pub const OFFICIAL_LANGUAGE_LIST: &[&str] = &["en"];
-    pub const SPOKEN_LANGUAGE_LIST: &[&str] = &["en"];
-    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: &[usize] = &[2];
-    pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[5];
-    pub const NATIONAL_PREFIX: &str = "None";
+    pub const OFFICIAL_LANGUAGE_LIST: Option<&[&str]> = Some(&["en"]);
+    pub const SPOKEN_LANGUAGE_LIST: Option<&[&str]> = Some(&["en"]);
+    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: Option<&[usize]> = Some(&[2]);
+    pub const NATIONAL_NUMBER_LENGTH_LIST: Option<&[usize]> = Some(&[5]);
+    pub const NATIONAL_PREFIX: Option<&str> = Some("None");
     pub const NATIONALITY: Option<&str> = Some("I-Kiribati");
     pub const NUMBER: &str = "296";
     pub const POSTAL_CODE: bool = false;
@@ -37,12 +37,15 @@ pub mod consts {
     pub const START_DAY_OF_WEEK: WeekDay = WeekDay::Monday;
     pub const SUBREGION: Option<SubRegion> = Some(SubRegion::Micronesia);
     pub const UN_LOCODE: &str = "KI";
+    pub const UN_MEMBER: bool = true;
     pub const UNOFFICIAL_NAME_LIST: &[&str] = &["Kiribati", "キリバス"];
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = Some("KIR");
     pub const WORLD_REGION: WorldRegion = WorldRegion::APAC;
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
+    pub const NANP_PREFIX: Option<&str> = None;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
     pub const POPULATION: Option<u64> = Some(131232);
     #[cfg(feature = "emojis")]
@@ -313,16 +316,17 @@ pub fn new() -> Country {
         maybe_gec: Some(GEC::KR),
         #[cfg(feature = "geo")]
         geo: geo::new(),
-        international_prefix: "00",
+        maybe_international_prefix: Some("00"),
         maybe_ioc: Some(IOC::KIR),
         iso_long_name: "The Republic of Kiribati",
         iso_short_name: "Kiribati",
-        official_language_list: ["en"].to_vec(),
-        spoken_language_list: ["en"].to_vec(),
-        national_destination_code_length_list: [2].to_vec(),
-        national_number_length_list: [5].to_vec(),
-        national_prefix: "None",
+        maybe_official_language_list: Some(["en"].to_vec()),
+        maybe_spoken_language_list: Some(["en"].to_vec()),
+        maybe_national_destination_code_length_list: Some([2].to_vec()),
+        maybe_national_number_length_list: Some([5].to_vec()),
+        maybe_national_prefix: Some("None"),
         maybe_nationality: Some("I-Kiribati"),
+        maybe_nanp_prefix: None,
         number: "296",
         postal_code: false,
         postal_code_format: None,
@@ -330,7 +334,9 @@ pub fn new() -> Country {
         start_of_week: WeekDay::Monday,
         maybe_subregion: Some(SubRegion::Micronesia),
         un_locode: "KI",
+        un_member: true,
         unofficial_name_list: ["Kiribati", "キリバス"].to_vec(),
+        maybe_vehicle_registration_code: Some("KIR"),
         world_region: WorldRegion::APAC,
         #[cfg(feature = "emojis")]
         emoji: "🇰🇮",

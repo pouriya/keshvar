@@ -21,15 +21,15 @@ pub mod consts {
     pub const COUNTRY_CODE: usize = 44;
     pub const CURRENCY_CODE: CurrencyCode = CurrencyCode::GBP;
     pub const GEC: Option<GEC> = Some(GEC::UK);
-    pub const INTERNATIONAL_PREFIX: &str = "00";
+    pub const INTERNATIONAL_PREFIX: Option<&str> = Some("00");
     pub const IOC: Option<IOC> = Some(IOC::GBR);
     pub const ISO_SHORT_NAME: &str = "United Kingdom of Great Britain and Northern Ireland";
     pub const ISO_LONG_NAME: &str = "The United Kingdom of Great Britain and Northern Ireland";
-    pub const OFFICIAL_LANGUAGE_LIST: &[&str] = &["en"];
-    pub const SPOKEN_LANGUAGE_LIST: &[&str] = &["en"];
-    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: &[usize] = &[2];
-    pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[10, 11];
-    pub const NATIONAL_PREFIX: &str = "0";
+    pub const OFFICIAL_LANGUAGE_LIST: Option<&[&str]> = Some(&["en"]);
+    pub const SPOKEN_LANGUAGE_LIST: Option<&[&str]> = Some(&["en"]);
+    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: Option<&[usize]> = Some(&[2]);
+    pub const NATIONAL_NUMBER_LENGTH_LIST: Option<&[usize]> = Some(&[10, 11]);
+    pub const NATIONAL_PREFIX: Option<&str> = Some("0");
     pub const NATIONALITY: Option<&str> = Some("British");
     pub const NUMBER: &str = "826";
     pub const POSTAL_CODE: bool = true;
@@ -38,6 +38,7 @@ pub mod consts {
     pub const START_DAY_OF_WEEK: WeekDay = WeekDay::Monday;
     pub const SUBREGION: Option<SubRegion> = Some(SubRegion::NorthernEurope);
     pub const UN_LOCODE: &str = "GB";
+    pub const UN_MEMBER: bool = true;
     pub const UNOFFICIAL_NAME_LIST: &[&str] = &[
         "United Kingdom",
         "The United Kingdom",
@@ -56,11 +57,13 @@ pub mod consts {
         "Великобританія",
         "Great Britain",
     ];
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = Some("UK");
     pub const WORLD_REGION: WorldRegion = WorldRegion::EMEA;
     pub const G7_MEMBER: bool = true;
     pub const G20_MEMBER: bool = true;
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
+    pub const NANP_PREFIX: Option<&str> = None;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Mi;
     pub const POPULATION: Option<u64> = Some(66971395);
     #[cfg(feature = "emojis")]
@@ -3595,16 +3598,17 @@ pub fn new() -> Country {
         maybe_gec: Some(GEC::UK),
         #[cfg(feature = "geo")]
         geo: geo::new(),
-        international_prefix: "00",
+        maybe_international_prefix: Some("00"),
         maybe_ioc: Some(IOC::GBR),
         iso_long_name: "The United Kingdom of Great Britain and Northern Ireland",
         iso_short_name: "United Kingdom of Great Britain and Northern Ireland",
-        official_language_list: ["en"].to_vec(),
-        spoken_language_list: ["en"].to_vec(),
-        national_destination_code_length_list: [2].to_vec(),
-        national_number_length_list: [10, 11].to_vec(),
-        national_prefix: "0",
+        maybe_official_language_list: Some(["en"].to_vec()),
+        maybe_spoken_language_list: Some(["en"].to_vec()),
+        maybe_national_destination_code_length_list: Some([2].to_vec()),
+        maybe_national_number_length_list: Some([10, 11].to_vec()),
+        maybe_national_prefix: Some("0"),
         maybe_nationality: Some("British"),
+        maybe_nanp_prefix: None,
         number: "826",
         postal_code: true,
         postal_code_format: Some("GIR ?0AA|(?:(?:AB|AL|B|BA|BB|BD|BF|BH|BL|BN|BR|BS|BT|BX|CA|CB|CF|CH|CM|CO|CR|CT|CV|CW|DA|DD|DE|DG|DH|DL|DN|DT|DY|E|EC|EH|EN|EX|FK|FY|G|GL|GY|GU|HA|HD|HG|HP|HR|HS|HU|HX|IG|IM|IP|IV|JE|KA|KT|KW|KY|L|LA|LD|LE|LL|LN|LS|LU|M|ME|MK|ML|N|NE|NG|NN|NP|NR|NW|OL|OX|PA|PE|PH|PL|PO|PR|RG|RH|RM|S|SA|SE|SG|SK|SL|SM|SN|SO|SP|SR|SS|ST|SW|SY|TA|TD|TF|TN|TQ|TR|TS|TW|UB|W|WA|WC|WD|WF|WN|WR|WS|WV|YO|ZE)(?:\\d[\\dA-Z]? ?\\d[ABD-HJLN-UW-Z]{2}))|BFPO ?\\d{1,4}"),
@@ -3612,7 +3616,9 @@ pub fn new() -> Country {
         start_of_week: WeekDay::Monday,
         maybe_subregion: Some(SubRegion::NorthernEurope),
         un_locode: "GB",
+        un_member: true,
         unofficial_name_list: ["United Kingdom", "The United Kingdom", "England", "Großbritannien", "Vereinigtes Königreich", "Royaume-Uni", "Reino Unido", "イギリス", "Verenigd Koninkrijk", "Great Britain (UK)", "UK", "Великобритания", "Velká Británie", "İngiltere", "Великобританія", "Great Britain"].to_vec(),
+        maybe_vehicle_registration_code: Some("UK"),
         world_region: WorldRegion::EMEA,
         #[cfg(feature = "emojis")]
         emoji: "🇬🇧",

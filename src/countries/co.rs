@@ -20,15 +20,15 @@ pub mod consts {
     pub const COUNTRY_CODE: usize = 57;
     pub const CURRENCY_CODE: CurrencyCode = CurrencyCode::COP;
     pub const GEC: Option<GEC> = Some(GEC::CO);
-    pub const INTERNATIONAL_PREFIX: &str = "005";
+    pub const INTERNATIONAL_PREFIX: Option<&str> = Some("005");
     pub const IOC: Option<IOC> = Some(IOC::COL);
     pub const ISO_SHORT_NAME: &str = "Colombia";
     pub const ISO_LONG_NAME: &str = "The Republic of Colombia";
-    pub const OFFICIAL_LANGUAGE_LIST: &[&str] = &["es"];
-    pub const SPOKEN_LANGUAGE_LIST: &[&str] = &["es"];
-    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: &[usize] = &[2];
-    pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[9, 10];
-    pub const NATIONAL_PREFIX: &str = "05";
+    pub const OFFICIAL_LANGUAGE_LIST: Option<&[&str]> = Some(&["es"]);
+    pub const SPOKEN_LANGUAGE_LIST: Option<&[&str]> = Some(&["es"]);
+    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: Option<&[usize]> = Some(&[2]);
+    pub const NATIONAL_NUMBER_LENGTH_LIST: Option<&[usize]> = Some(&[9, 10]);
+    pub const NATIONAL_PREFIX: Option<&str> = Some("05");
     pub const NATIONALITY: Option<&str> = Some("Colombian");
     pub const NUMBER: &str = "170";
     pub const POSTAL_CODE: bool = true;
@@ -37,12 +37,15 @@ pub mod consts {
     pub const START_DAY_OF_WEEK: WeekDay = WeekDay::Monday;
     pub const SUBREGION: Option<SubRegion> = Some(SubRegion::SouthAmerica);
     pub const UN_LOCODE: &str = "CO";
+    pub const UN_MEMBER: bool = true;
     pub const UNOFFICIAL_NAME_LIST: &[&str] = &["Colombia", "Kolumbien", "Colombie", "コロンビア"];
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = Some("CO");
     pub const WORLD_REGION: WorldRegion = WorldRegion::AMER;
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
+    pub const NANP_PREFIX: Option<&str> = None;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
     pub const POPULATION: Option<u64> = Some(51874024);
     #[cfg(feature = "emojis")]
@@ -763,16 +766,17 @@ pub fn new() -> Country {
         maybe_gec: Some(GEC::CO),
         #[cfg(feature = "geo")]
         geo: geo::new(),
-        international_prefix: "005",
+        maybe_international_prefix: Some("005"),
         maybe_ioc: Some(IOC::COL),
         iso_long_name: "The Republic of Colombia",
         iso_short_name: "Colombia",
-        official_language_list: ["es"].to_vec(),
-        spoken_language_list: ["es"].to_vec(),
-        national_destination_code_length_list: [2].to_vec(),
-        national_number_length_list: [9, 10].to_vec(),
-        national_prefix: "05",
+        maybe_official_language_list: Some(["es"].to_vec()),
+        maybe_spoken_language_list: Some(["es"].to_vec()),
+        maybe_national_destination_code_length_list: Some([2].to_vec()),
+        maybe_national_number_length_list: Some([9, 10].to_vec()),
+        maybe_national_prefix: Some("05"),
         maybe_nationality: Some("Colombian"),
+        maybe_nanp_prefix: None,
         number: "170",
         postal_code: true,
         postal_code_format: Some("\\d{6}"),
@@ -780,7 +784,9 @@ pub fn new() -> Country {
         start_of_week: WeekDay::Monday,
         maybe_subregion: Some(SubRegion::SouthAmerica),
         un_locode: "CO",
+        un_member: true,
         unofficial_name_list: ["Colombia", "Kolumbien", "Colombie", "コロンビア"].to_vec(),
+        maybe_vehicle_registration_code: Some("CO"),
         world_region: WorldRegion::AMER,
         #[cfg(feature = "emojis")]
         emoji: "🇨🇴",

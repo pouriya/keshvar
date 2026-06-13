@@ -25,22 +25,32 @@ pub struct Country {
     pub(crate) maybe_gec: Option<GEC>,
     #[cfg(feature = "geo")]
     pub(crate) geo: CountryGeo,
-    pub(crate) international_prefix: &'static str,
+    #[cfg_attr(feature = "serde-derive", serde(rename = "international_prefix"))]
+    pub(crate) maybe_international_prefix: Option<&'static str>,
     #[cfg_attr(feature = "serde-derive", serde(rename = "ioc"))]
     pub(crate) maybe_ioc: Option<IOC>,
     pub(crate) iso_long_name: &'static str,
     pub(crate) iso_short_name: &'static str,
-    #[cfg_attr(feature = "serde-derive", serde(default))]
-    pub(crate) official_language_list: Vec<&'static str>,
-    #[cfg_attr(feature = "serde-derive", serde(default))]
-    pub(crate) spoken_language_list: Vec<&'static str>,
-    #[cfg_attr(feature = "serde-derive", serde(default))]
-    pub(crate) national_destination_code_length_list: Vec<usize>,
-    #[cfg_attr(feature = "serde-derive", serde(default))]
-    pub(crate) national_number_length_list: Vec<u8>,
-    pub(crate) national_prefix: &'static str,
+    #[cfg_attr(feature = "serde-derive", serde(rename = "official_language_list"))]
+    pub(crate) maybe_official_language_list: Option<Vec<&'static str>>,
+    #[cfg_attr(feature = "serde-derive", serde(rename = "spoken_language_list"))]
+    pub(crate) maybe_spoken_language_list: Option<Vec<&'static str>>,
+    #[cfg_attr(
+        feature = "serde-derive",
+        serde(rename = "national_destination_code_length_list")
+    )]
+    pub(crate) maybe_national_destination_code_length_list: Option<Vec<usize>>,
+    #[cfg_attr(
+        feature = "serde-derive",
+        serde(rename = "national_number_length_list")
+    )]
+    pub(crate) maybe_national_number_length_list: Option<Vec<u8>>,
+    #[cfg_attr(feature = "serde-derive", serde(rename = "national_prefix"))]
+    pub(crate) maybe_national_prefix: Option<&'static str>,
     #[cfg_attr(feature = "serde-derive", serde(rename = "nationality"))]
     pub(crate) maybe_nationality: Option<&'static str>,
+    #[cfg_attr(feature = "serde-derive", serde(rename = "nanp_prefix"))]
+    pub(crate) maybe_nanp_prefix: Option<&'static str>,
     pub(crate) number: &'static str,
     pub(crate) postal_code: bool,
     pub(crate) postal_code_format: Option<&'static str>,
@@ -51,7 +61,11 @@ pub struct Country {
     pub(crate) maybe_subregion: Option<SubRegion>,
     pub(crate) un_locode: &'static str,
     #[cfg_attr(feature = "serde-derive", serde(default))]
+    pub(crate) un_member: bool,
+    #[cfg_attr(feature = "serde-derive", serde(default))]
     pub(crate) unofficial_name_list: Vec<&'static str>,
+    #[cfg_attr(feature = "serde-derive", serde(rename = "vehicle_registration_code"))]
+    pub(crate) maybe_vehicle_registration_code: Option<&'static str>,
     pub(crate) world_region: WorldRegion,
     #[cfg(feature = "emojis")]
     pub(crate) emoji: &'static str,
@@ -113,8 +127,8 @@ impl Country {
         self.geo
     }
 
-    pub fn international_prefix(&self) -> &'static str {
-        self.international_prefix
+    pub fn maybe_international_prefix(&self) -> Option<&'static str> {
+        self.maybe_international_prefix
     }
 
     /// IOC (International Olympic Committee) for this country.
@@ -130,28 +144,40 @@ impl Country {
         self.iso_short_name
     }
 
-    pub fn official_language_list(&self) -> &[&'static str] {
-        &self.official_language_list
+    pub fn maybe_official_language_list(&self) -> Option<&[&'static str]> {
+        self.maybe_official_language_list
+            .as_ref()
+            .map(|list| list.as_slice())
     }
 
-    pub fn spoken_language_list(&self) -> &[&'static str] {
-        &self.spoken_language_list
+    pub fn maybe_spoken_language_list(&self) -> Option<&[&'static str]> {
+        self.maybe_spoken_language_list
+            .as_ref()
+            .map(|list| list.as_slice())
     }
 
-    pub fn national_destination_code_length_list(&self) -> &[usize] {
-        &self.national_destination_code_length_list
+    pub fn maybe_national_destination_code_length_list(&self) -> Option<&[usize]> {
+        self.maybe_national_destination_code_length_list
+            .as_ref()
+            .map(|list| list.as_slice())
     }
 
-    pub fn national_number_length_list(&self) -> &[u8] {
-        &self.national_number_length_list
+    pub fn maybe_national_number_length_list(&self) -> Option<&[u8]> {
+        self.maybe_national_number_length_list
+            .as_ref()
+            .map(|list| list.as_slice())
     }
 
-    pub fn national_prefix(&self) -> &'static str {
-        self.national_prefix
+    pub fn maybe_national_prefix(&self) -> Option<&'static str> {
+        self.maybe_national_prefix
     }
 
     pub fn maybe_nationality(&self) -> Option<&'static str> {
         self.maybe_nationality
+    }
+
+    pub fn maybe_nanp_prefix(&self) -> Option<&'static str> {
+        self.maybe_nanp_prefix
     }
 
     pub fn number(&self) -> &'static str {
@@ -182,8 +208,17 @@ impl Country {
         self.un_locode
     }
 
+    /// Is this country a member of the [United Nations](https://en.wikipedia.org/wiki/United_Nations)?
+    pub fn un_member(&self) -> bool {
+        self.un_member
+    }
+
     pub fn unofficial_name_list(&self) -> &[&'static str] {
         &self.unofficial_name_list
+    }
+
+    pub fn maybe_vehicle_registration_code(&self) -> Option<&'static str> {
+        self.maybe_vehicle_registration_code
     }
 
     pub fn world_region(&self) -> WorldRegion {

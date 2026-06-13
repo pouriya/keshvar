@@ -18,17 +18,17 @@ pub mod consts {
     pub const ALPHA3: Alpha3 = Alpha3::SXM;
     pub const CONTINENT: Continent = Continent::NorthAmerica;
     pub const COUNTRY_CODE: usize = 1;
-    pub const CURRENCY_CODE: CurrencyCode = CurrencyCode::ANG;
+    pub const CURRENCY_CODE: CurrencyCode = CurrencyCode::XCG;
     pub const GEC: Option<GEC> = Some(GEC::NN);
-    pub const INTERNATIONAL_PREFIX: &str = "011";
+    pub const INTERNATIONAL_PREFIX: Option<&str> = Some("011");
     pub const IOC: Option<IOC> = None;
     pub const ISO_SHORT_NAME: &str = "Sint Maarten (Dutch part)";
     pub const ISO_LONG_NAME: &str = "Sint Maarten";
-    pub const OFFICIAL_LANGUAGE_LIST: &[&str] = &["en", "nl"];
-    pub const SPOKEN_LANGUAGE_LIST: &[&str] = &["en", "nl"];
-    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: &[usize] = &[3];
-    pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[10];
-    pub const NATIONAL_PREFIX: &str = "0";
+    pub const OFFICIAL_LANGUAGE_LIST: Option<&[&str]> = Some(&["en", "nl"]);
+    pub const SPOKEN_LANGUAGE_LIST: Option<&[&str]> = Some(&["en", "nl"]);
+    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: Option<&[usize]> = Some(&[3]);
+    pub const NATIONAL_NUMBER_LENGTH_LIST: Option<&[usize]> = Some(&[10]);
+    pub const NATIONAL_PREFIX: Option<&str> = Some("0");
     pub const NATIONALITY: Option<&str> = Some("Dutch");
     pub const NUMBER: &str = "534";
     pub const POSTAL_CODE: bool = false;
@@ -37,12 +37,15 @@ pub mod consts {
     pub const START_DAY_OF_WEEK: WeekDay = WeekDay::Monday;
     pub const SUBREGION: Option<SubRegion> = Some(SubRegion::Caribbean);
     pub const UN_LOCODE: &str = "SX";
+    pub const UN_MEMBER: bool = false;
     pub const UNOFFICIAL_NAME_LIST: &[&str] = &["Sint Maarten", "セント・マーチン島"];
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = None;
     pub const WORLD_REGION: WorldRegion = WorldRegion::AMER;
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
+    pub const NANP_PREFIX: Option<&str> = Some("1721");
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
     pub const POPULATION: Option<u64> = Some(42848);
     #[cfg(feature = "emojis")]
@@ -256,20 +259,21 @@ pub fn new() -> Country {
         address_format: None,
         continent: Continent::NorthAmerica,
         country_code: 1,
-        currency_code: CurrencyCode::ANG,
+        currency_code: CurrencyCode::XCG,
         maybe_gec: Some(GEC::NN),
         #[cfg(feature = "geo")]
         geo: geo::new(),
-        international_prefix: "011",
+        maybe_international_prefix: Some("011"),
         maybe_ioc: None,
         iso_long_name: "Sint Maarten",
         iso_short_name: "Sint Maarten (Dutch part)",
-        official_language_list: ["en", "nl"].to_vec(),
-        spoken_language_list: ["en", "nl"].to_vec(),
-        national_destination_code_length_list: [3].to_vec(),
-        national_number_length_list: [10].to_vec(),
-        national_prefix: "0",
+        maybe_official_language_list: Some(["en", "nl"].to_vec()),
+        maybe_spoken_language_list: Some(["en", "nl"].to_vec()),
+        maybe_national_destination_code_length_list: Some([3].to_vec()),
+        maybe_national_number_length_list: Some([10].to_vec()),
+        maybe_national_prefix: Some("0"),
         maybe_nationality: Some("Dutch"),
+        maybe_nanp_prefix: Some("1721"),
         number: "534",
         postal_code: false,
         postal_code_format: None,
@@ -277,7 +281,9 @@ pub fn new() -> Country {
         start_of_week: WeekDay::Monday,
         maybe_subregion: Some(SubRegion::Caribbean),
         un_locode: "SX",
+        un_member: false,
         unofficial_name_list: ["Sint Maarten", "セント・マーチン島"].to_vec(),
+        maybe_vehicle_registration_code: None,
         world_region: WorldRegion::AMER,
         #[cfg(feature = "emojis")]
         emoji: "🇸🇽",

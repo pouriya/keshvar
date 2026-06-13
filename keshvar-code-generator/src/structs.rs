@@ -41,16 +41,17 @@ pub struct CountryInfo {
     pub currency_code: String,
     pub gec: Option<String>,
     pub geo: CountryGeo,
-    pub international_prefix: String,
+    pub international_prefix: Option<String>,
     pub ioc: Option<String>,
     pub iso_long_name: String,
     pub iso_short_name: String,
-    pub languages_official: Vec<String>,
-    pub languages_spoken: Vec<String>,
-    pub national_destination_code_lengths: Vec<u8>,
-    pub national_number_lengths: Vec<u8>,
-    pub national_prefix: String,
+    pub languages_official: Option<Vec<String>>,
+    pub languages_spoken: Option<Vec<String>>,
+    pub national_destination_code_lengths: Option<Vec<u8>>,
+    pub national_number_lengths: Option<Vec<u8>>,
+    pub national_prefix: Option<String>,
     pub nationality: Option<String>,
+    pub nanp_prefix: Option<String>,
     pub number: String,
     pub postal_code: bool,
     pub postal_code_format: Option<String>,
@@ -58,7 +59,9 @@ pub struct CountryInfo {
     pub start_of_week: String,
     pub subregion: Option<String>,
     pub un_locode: String,
+    pub un_member: Option<bool>,
     pub unofficial_names: Vec<String>,
+    pub vehicle_registration_code: Option<String>,
     pub world_region: String,
     pub g7_member: Option<bool>,
     pub g20_member: Option<bool>,
@@ -188,17 +191,29 @@ pub fn load_country_info(filename: &PathBuf) -> Result<(String, CountryInfo)> {
     info.feature_name = info.alpha2_lower.clone();
     info.module_name = utils::to_module_name(&info.alpha2);
     info.emoji = emoji(&info.alpha2);
-    info.languages_spoken.sort();
-    info.languages_official.sort();
+    if let Some(languages_spoken) = info.languages_spoken.as_mut() {
+        languages_spoken.sort();
+    }
+    if let Some(languages_official) = info.languages_official.as_mut() {
+        languages_official.sort();
+    }
 
     // Replace `Some("\"\"")` with `None`:
     utils::set_none_if_empty_string(&mut info.address_format);
     utils::set_none_if_empty_string(&mut info.gec);
+    utils::set_none_if_empty_string(&mut info.international_prefix);
     utils::set_none_if_empty_string(&mut info.ioc);
+    utils::set_none_if_empty_string(&mut info.national_prefix);
     utils::set_none_if_empty_string(&mut info.nationality);
+    utils::set_none_if_empty_string(&mut info.nanp_prefix);
     utils::set_none_if_empty_string(&mut info.postal_code_format);
     utils::set_none_if_empty_string(&mut info.region);
     utils::set_none_if_empty_string(&mut info.subregion);
+    utils::set_none_if_empty_string(&mut info.vehicle_registration_code);
+    utils::set_none_if_empty_vec(&mut info.languages_official);
+    utils::set_none_if_empty_vec(&mut info.languages_spoken);
+    utils::set_none_if_empty_vec(&mut info.national_destination_code_lengths);
+    utils::set_none_if_empty_vec(&mut info.national_number_lengths);
     log!(
         "Loaded and decoded country information for `{}` from {:?}",
         name,

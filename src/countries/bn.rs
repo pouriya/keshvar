@@ -20,15 +20,15 @@ pub mod consts {
     pub const COUNTRY_CODE: usize = 673;
     pub const CURRENCY_CODE: CurrencyCode = CurrencyCode::BND;
     pub const GEC: Option<GEC> = Some(GEC::BX);
-    pub const INTERNATIONAL_PREFIX: &str = "00";
+    pub const INTERNATIONAL_PREFIX: Option<&str> = Some("00");
     pub const IOC: Option<IOC> = Some(IOC::BRU);
     pub const ISO_SHORT_NAME: &str = "Brunei Darussalam";
     pub const ISO_LONG_NAME: &str = "The Nation of Brunei, the Abode of Peace";
-    pub const OFFICIAL_LANGUAGE_LIST: &[&str] = &["ms"];
-    pub const SPOKEN_LANGUAGE_LIST: &[&str] = &["ms"];
-    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: &[usize] = &[2];
-    pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[7];
-    pub const NATIONAL_PREFIX: &str = "0";
+    pub const OFFICIAL_LANGUAGE_LIST: Option<&[&str]> = Some(&["ms"]);
+    pub const SPOKEN_LANGUAGE_LIST: Option<&[&str]> = Some(&["ms"]);
+    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: Option<&[usize]> = Some(&[2]);
+    pub const NATIONAL_NUMBER_LENGTH_LIST: Option<&[usize]> = Some(&[7]);
+    pub const NATIONAL_PREFIX: Option<&str> = Some("0");
     pub const NATIONALITY: Option<&str> = Some("Bruneian");
     pub const NUMBER: &str = "096";
     pub const POSTAL_CODE: bool = true;
@@ -37,12 +37,15 @@ pub mod consts {
     pub const START_DAY_OF_WEEK: WeekDay = WeekDay::Monday;
     pub const SUBREGION: Option<SubRegion> = Some(SubRegion::SouthEasternAsia);
     pub const UN_LOCODE: &str = "BN";
+    pub const UN_MEMBER: bool = true;
     pub const UNOFFICIAL_NAME_LIST: &[&str] = &["Brunei", "ブルネイ・ダルサラーム"];
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = Some("BRU");
     pub const WORLD_REGION: WorldRegion = WorldRegion::APAC;
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
+    pub const NANP_PREFIX: Option<&str> = None;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
     pub const POPULATION: Option<u64> = Some(449002);
     #[cfg(feature = "emojis")]
@@ -334,16 +337,17 @@ pub fn new() -> Country {
         maybe_gec: Some(GEC::BX),
         #[cfg(feature = "geo")]
         geo: geo::new(),
-        international_prefix: "00",
+        maybe_international_prefix: Some("00"),
         maybe_ioc: Some(IOC::BRU),
         iso_long_name: "The Nation of Brunei, the Abode of Peace",
         iso_short_name: "Brunei Darussalam",
-        official_language_list: ["ms"].to_vec(),
-        spoken_language_list: ["ms"].to_vec(),
-        national_destination_code_length_list: [2].to_vec(),
-        national_number_length_list: [7].to_vec(),
-        national_prefix: "0",
+        maybe_official_language_list: Some(["ms"].to_vec()),
+        maybe_spoken_language_list: Some(["ms"].to_vec()),
+        maybe_national_destination_code_length_list: Some([2].to_vec()),
+        maybe_national_number_length_list: Some([7].to_vec()),
+        maybe_national_prefix: Some("0"),
         maybe_nationality: Some("Bruneian"),
+        maybe_nanp_prefix: None,
         number: "096",
         postal_code: true,
         postal_code_format: Some("[A-Z]{2} ?\\d{4}"),
@@ -351,7 +355,9 @@ pub fn new() -> Country {
         start_of_week: WeekDay::Monday,
         maybe_subregion: Some(SubRegion::SouthEasternAsia),
         un_locode: "BN",
+        un_member: true,
         unofficial_name_list: ["Brunei", "ブルネイ・ダルサラーム"].to_vec(),
+        maybe_vehicle_registration_code: Some("BRU"),
         world_region: WorldRegion::APAC,
         #[cfg(feature = "emojis")]
         emoji: "🇧🇳",

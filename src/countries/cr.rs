@@ -20,15 +20,15 @@ pub mod consts {
     pub const COUNTRY_CODE: usize = 506;
     pub const CURRENCY_CODE: CurrencyCode = CurrencyCode::CRC;
     pub const GEC: Option<GEC> = Some(GEC::CS);
-    pub const INTERNATIONAL_PREFIX: &str = "00";
+    pub const INTERNATIONAL_PREFIX: Option<&str> = Some("00");
     pub const IOC: Option<IOC> = Some(IOC::CRC);
     pub const ISO_SHORT_NAME: &str = "Costa Rica";
     pub const ISO_LONG_NAME: &str = "The Republic of Costa Rica";
-    pub const OFFICIAL_LANGUAGE_LIST: &[&str] = &["es"];
-    pub const SPOKEN_LANGUAGE_LIST: &[&str] = &["es"];
-    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: &[usize] = &[2];
-    pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[8];
-    pub const NATIONAL_PREFIX: &str = "None";
+    pub const OFFICIAL_LANGUAGE_LIST: Option<&[&str]> = Some(&["es"]);
+    pub const SPOKEN_LANGUAGE_LIST: Option<&[&str]> = Some(&["es"]);
+    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: Option<&[usize]> = Some(&[2]);
+    pub const NATIONAL_NUMBER_LENGTH_LIST: Option<&[usize]> = Some(&[8]);
+    pub const NATIONAL_PREFIX: Option<&str> = Some("None");
     pub const NATIONALITY: Option<&str> = Some("Costa Rican");
     pub const NUMBER: &str = "188";
     pub const POSTAL_CODE: bool = true;
@@ -37,12 +37,15 @@ pub mod consts {
     pub const START_DAY_OF_WEEK: WeekDay = WeekDay::Monday;
     pub const SUBREGION: Option<SubRegion> = Some(SubRegion::CentralAmerica);
     pub const UN_LOCODE: &str = "CR";
+    pub const UN_MEMBER: bool = true;
     pub const UNOFFICIAL_NAME_LIST: &[&str] = &["Costa Rica", "コスタリカ"];
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = Some("CR");
     pub const WORLD_REGION: WorldRegion = WorldRegion::AMER;
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
+    pub const NANP_PREFIX: Option<&str> = None;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
     pub const POPULATION: Option<u64> = Some(5180829);
     #[cfg(feature = "emojis")]
@@ -299,7 +302,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Province,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "إيريذيا"), ("be", "Правінцыя Эрэдзія"), ("bg", "Ередия"), ("ca", "Província d’Heredia"), ("ccp", "𑄦𑄬𑄢𑄬𑄓\u{11128}𑄠"), ("ceb", "Provincia de Heredia"), ("cs", "Heredia"), ("cy", "Talaith Heredia"), ("da", "Heredia"), ("de", "Provinz Heredia"), ("el", "Επαρχία Ερέδια"), ("en", "Heredia"), ("es", "Heredia"), ("eu", "Heredia (probintzia)"), ("fa", "استان اردیا"), ("fi", "Heredian maakunta"), ("fr", "Heredia"), ("he", "ארדיה"), ("hr", "Heredia, provincija"), ("hu", "Heredia tartomány"), ("hy", "Էրեդիա"), ("id", "Provinsi Heredia"), ("it", "provincia di Heredia"), ("ja", "エレディア州"), ("ka", "ერედიის პროვინცია"), ("ko", "에레디아 주"), ("lt", "Heredijos provincija"), ("nb", "Heredia"), ("nl", "Heredia"), ("no", "Heredia"), ("pl", "Heredia"), ("pt", "Heredia"), ("ro", "Provincia Heredia"), ("ru", "Эредия"), ("sr", "Ередија"), ("sr_Latn", "Eredija"), ("sv", "Heredia"), ("th", "จ\u{e31}งหว\u{e31}ดเอเรเด\u{e35}ย"), ("tr", "Heredia ili"), ("uk", "Ередія"), ("ur", "ایریدیا صوبہ"), ("vi", "Heredia"), ("zh", "埃雷迪亚省")]),
+                        translations: HashMap::from([("ar", "إيريذيا"), ("be", "Правінцыя Эрэдзія"), ("bg", "Ередия"), ("ca", "Província d’Heredia"), ("ccp", "𑄦𑄬𑄢𑄬𑄓\u{11128}𑄠"), ("ceb", "Provincia de Heredia"), ("cs", "Heredia"), ("cy", "Talaith Heredia"), ("da", "Heredia"), ("de", "Provinz Heredia"), ("el", "Επαρχία Ερέδια"), ("en", "Heredia"), ("es", "Provincia de Heredia"), ("eu", "Heredia (probintzia)"), ("fa", "استان اردیا"), ("fi", "Heredian maakunta"), ("fr", "Heredia"), ("he", "ארדיה"), ("hr", "Heredia, provincija"), ("hu", "Heredia tartomány"), ("hy", "Էրեդիա"), ("id", "Provinsi Heredia"), ("it", "provincia di Heredia"), ("ja", "エレディア州"), ("ka", "ერედიის პროვინცია"), ("ko", "에레디아 주"), ("lt", "Heredijos provincija"), ("nb", "Heredia"), ("nl", "Heredia"), ("no", "Heredia"), ("pl", "Heredia"), ("pt", "Heredia"), ("ro", "Provincia Heredia"), ("ru", "Эредия"), ("sr", "Ередија"), ("sr_Latn", "Eredija"), ("sv", "Heredia"), ("th", "จ\u{e31}งหว\u{e31}ดเอเรเด\u{e35}ย"), ("tr", "Heredia ili"), ("uk", "Ередія"), ("ur", "ایریدیا صوبہ"), ("vi", "Heredia"), ("zh", "埃雷迪亚省")]),
                         unofficial_name_list: ["Heredia"].to_vec(),
                     }
                 ),
@@ -314,7 +317,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Province,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "ليمون"), ("bg", "Лимон"), ("ca", "Província de Limón"), ("ccp", "𑄣\u{11128}𑄟\u{11127}𑄚\u{11134}"), ("ceb", "Provincia de Limón"), ("cs", "Limón"), ("cy", "Talaith Limón"), ("da", "Limón"), ("de", "Provinz Limón"), ("el", "Επαρχία Λιμόν"), ("en", "Limón"), ("es", "Limón"), ("eu", "Limón probintzia"), ("fa", "استان لیمون"), ("fi", "Limónin maakunta"), ("fr", "Limón"), ("he", "לימון"), ("hr", "Limón, provincija"), ("hy", "Լիմոն"), ("id", "Provinsi Limón"), ("it", "provincia di Limón"), ("ja", "リモン州"), ("ka", "ლიმონის პროვინცია"), ("ko", "리몬 주"), ("lt", "Limono provincija"), ("mr", "लिमोन प\u{94d}रा\u{902}त"), ("nb", "Limón"), ("nl", "Limón"), ("no", "Limón"), ("pl", "Limón"), ("pt", "Limón"), ("ru", "Лимон"), ("sr", "Лимон"), ("sr_Latn", "Limon"), ("sv", "Limón"), ("th", "จ\u{e31}งหว\u{e31}ดล\u{e34}มอน"), ("tr", "Limón ili"), ("uk", "Лимон"), ("ur", "لیمون صوبہ"), ("vi", "Limón"), ("zh", "利蒙省")]),
+                        translations: HashMap::from([("ar", "ليمون"), ("bg", "Лимон"), ("ca", "Província de Limón"), ("ccp", "𑄣\u{11128}𑄟\u{11127}𑄚\u{11134}"), ("ceb", "Provincia de Limón"), ("cs", "Limón"), ("cy", "Talaith Limón"), ("da", "Limón"), ("de", "Provinz Limón"), ("el", "Επαρχία Λιμόν"), ("en", "Limón"), ("es", "Provincia de Limón"), ("eu", "Limón probintzia"), ("fa", "استان لیمون"), ("fi", "Limónin maakunta"), ("fr", "Limón"), ("he", "לימון"), ("hr", "Limón, provincija"), ("hy", "Լիմոն"), ("id", "Provinsi Limón"), ("it", "provincia di Limón"), ("ja", "リモン州"), ("ka", "ლიმონის პროვინცია"), ("ko", "리몬 주"), ("lt", "Limono provincija"), ("mr", "लिमोन प\u{94d}रा\u{902}त"), ("nb", "Limón"), ("nl", "Limón"), ("no", "Limón"), ("pl", "Limón"), ("pt", "Limón"), ("ru", "Лимон"), ("sr", "Лимон"), ("sr_Latn", "Limon"), ("sv", "Limón"), ("th", "จ\u{e31}งหว\u{e31}ดล\u{e34}มอน"), ("tr", "Limón ili"), ("uk", "Лимон"), ("ur", "لیمون صوبہ"), ("vi", "Limón"), ("zh", "利蒙省")]),
                         unofficial_name_list: ["Limón"].to_vec(),
                     }
                 ),
@@ -329,7 +332,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Province,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "بونتاريناس"), ("bg", "Пунтаренас"), ("bn", "প\u{9c1}ন\u{9cd}ট\u{9be}রেন\u{9be}স প\u{9cd}রদেশ"), ("ca", "Província de Puntarenas"), ("ccp", "𑄛\u{1112a}𑄚\u{11134}𑄑𑄢𑄬𑄚𑄌\u{11134}"), ("ceb", "Provincia de Puntarenas"), ("cs", "Puntarenas"), ("cy", "Talaith Puntarenas"), ("da", "Puntarenas"), ("de", "Provinz Puntarenas"), ("el", "Επαρχία Πουνταρένας"), ("en", "Puntarenas"), ("es", "Puntarenas"), ("eu", "Puntarenas (probintzia)"), ("fa", "استان پونتارناس"), ("fi", "Puntarenasin maakunta"), ("fr", "Puntarenas"), ("gu", "પન\u{acd}ટાર\u{ac7}નાસ પ\u{acd}રા\u{a82}ત"), ("he", "פונטרנס"), ("hi", "प\u{902}टार\u{947}नस प\u{94d}रा\u{902}त"), ("hr", "Puntarenas, provincija"), ("hy", "Պունտարենաս"), ("id", "Provinsi Puntarenas"), ("it", "provincia di Puntarenas"), ("ja", "プンタレナス州"), ("ka", "პუნტარენასის პროვინცია"), ("kn", "ಪಂಟರ\u{cc6}ನಾಸ\u{ccd} ಪ\u{ccd}ರಾಂತ\u{ccd}ಯ"), ("ko", "푼타레나스 주"), ("lt", "Puntarenaso provincija"), ("lv", "Puantarenasas province"), ("ml", "പ\u{d41}ണ\u{d4d}ട\u{d3e}രെന\u{d3e}സ\u{d4d} പ\u{d4d}രവിശ\u{d4d}യ"), ("mr", "प\u{902}टार\u{947}नस प\u{94d}रा\u{902}त"), ("ms", "Puntarenas Province"), ("nb", "Puntarenas"), ("nl", "Puntarenas"), ("no", "Puntarenas"), ("pl", "Puntarenas"), ("pt", "Puntarenas"), ("ru", "Пунтаренас"), ("si", "ප\u{dd4}න\u{dca}ටරෙන\u{dcf}ස\u{dca} පළ\u{dcf}ත"), ("sr", "Пунтаренас"), ("sr_Latn", "Puntarenas"), ("sv", "Puntarenas"), ("ta", "புன\u{bcd}டரேனஸ\u{bcd} ம\u{bbe}க\u{bbe}ணம\u{bcd}"), ("te", "పుంట\u{c3e}ర\u{c46}న\u{c3e}స\u{c4d} ప\u{c4d}ర\u{c3e}వ\u{c3f}న\u{c4d}స\u{c4d}"), ("th", "จ\u{e31}งหว\u{e31}ดป\u{e31}นตาเรนาส"), ("tr", "Puntaneras Province"), ("uk", "Пунтаренас"), ("ur", "پونتاریناس صوبہ"), ("vi", "Puntarenas"), ("zh", "蓬塔雷纳斯省")]),
+                        translations: HashMap::from([("ar", "بونتاريناس"), ("bg", "Пунтаренас"), ("bn", "প\u{9c1}ন\u{9cd}ট\u{9be}রেন\u{9be}স প\u{9cd}রদেশ"), ("ca", "Província de Puntarenas"), ("ccp", "𑄛\u{1112a}𑄚\u{11134}𑄑𑄢𑄬𑄚𑄌\u{11134}"), ("ceb", "Provincia de Puntarenas"), ("cs", "Puntarenas"), ("cy", "Talaith Puntarenas"), ("da", "Puntarenas"), ("de", "Provinz Puntarenas"), ("el", "Επαρχία Πουνταρένας"), ("en", "Puntarenas"), ("es", "Provincia de Puntarenas"), ("eu", "Puntarenas (probintzia)"), ("fa", "استان پونتارناس"), ("fi", "Puntarenasin maakunta"), ("fr", "Puntarenas"), ("gu", "પન\u{acd}ટાર\u{ac7}નાસ પ\u{acd}રા\u{a82}ત"), ("he", "פונטרנס"), ("hi", "प\u{902}टार\u{947}नस प\u{94d}रा\u{902}त"), ("hr", "Puntarenas, provincija"), ("hy", "Պունտարենաս"), ("id", "Provinsi Puntarenas"), ("it", "provincia di Puntarenas"), ("ja", "プンタレナス州"), ("ka", "პუნტარენასის პროვინცია"), ("kn", "ಪಂಟರ\u{cc6}ನಾಸ\u{ccd} ಪ\u{ccd}ರಾಂತ\u{ccd}ಯ"), ("ko", "푼타레나스 주"), ("lt", "Puntarenaso provincija"), ("lv", "Puantarenasas province"), ("ml", "പ\u{d41}ണ\u{d4d}ട\u{d3e}രെന\u{d3e}സ\u{d4d} പ\u{d4d}രവിശ\u{d4d}യ"), ("mr", "प\u{902}टार\u{947}नस प\u{94d}रा\u{902}त"), ("ms", "Puntarenas Province"), ("nb", "Puntarenas"), ("nl", "Puntarenas"), ("no", "Puntarenas"), ("pl", "Puntarenas"), ("pt", "Puntarenas"), ("ru", "Пунтаренас"), ("si", "ප\u{dd4}න\u{dca}ටරෙන\u{dcf}ස\u{dca} පළ\u{dcf}ත"), ("sr", "Пунтаренас"), ("sr_Latn", "Puntarenas"), ("sv", "Puntarenas"), ("ta", "புன\u{bcd}டரேனஸ\u{bcd} ம\u{bbe}க\u{bbe}ணம\u{bcd}"), ("te", "పుంట\u{c3e}ర\u{c46}న\u{c3e}స\u{c4d} ప\u{c4d}ర\u{c3e}వ\u{c3f}న\u{c4d}స\u{c4d}"), ("th", "จ\u{e31}งหว\u{e31}ดป\u{e31}นตาเรนาส"), ("tr", "Puntaneras Province"), ("uk", "Пунтаренас"), ("ur", "پونتاریناس صوبہ"), ("vi", "Puntarenas"), ("zh", "蓬塔雷纳斯省")]),
                         unofficial_name_list: ["Puntarenas"].to_vec(),
                     }
                 ),
@@ -373,16 +376,17 @@ pub fn new() -> Country {
         maybe_gec: Some(GEC::CS),
         #[cfg(feature = "geo")]
         geo: geo::new(),
-        international_prefix: "00",
+        maybe_international_prefix: Some("00"),
         maybe_ioc: Some(IOC::CRC),
         iso_long_name: "The Republic of Costa Rica",
         iso_short_name: "Costa Rica",
-        official_language_list: ["es"].to_vec(),
-        spoken_language_list: ["es"].to_vec(),
-        national_destination_code_length_list: [2].to_vec(),
-        national_number_length_list: [8].to_vec(),
-        national_prefix: "None",
+        maybe_official_language_list: Some(["es"].to_vec()),
+        maybe_spoken_language_list: Some(["es"].to_vec()),
+        maybe_national_destination_code_length_list: Some([2].to_vec()),
+        maybe_national_number_length_list: Some([8].to_vec()),
+        maybe_national_prefix: Some("None"),
         maybe_nationality: Some("Costa Rican"),
+        maybe_nanp_prefix: None,
         number: "188",
         postal_code: true,
         postal_code_format: Some("\\d{4,5}|\\d{3}-\\d{4}"),
@@ -390,7 +394,9 @@ pub fn new() -> Country {
         start_of_week: WeekDay::Monday,
         maybe_subregion: Some(SubRegion::CentralAmerica),
         un_locode: "CR",
+        un_member: true,
         unofficial_name_list: ["Costa Rica", "コスタリカ"].to_vec(),
+        maybe_vehicle_registration_code: Some("CR"),
         world_region: WorldRegion::AMER,
         #[cfg(feature = "emojis")]
         emoji: "🇨🇷",

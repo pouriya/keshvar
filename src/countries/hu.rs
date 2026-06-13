@@ -21,15 +21,15 @@ pub mod consts {
     pub const COUNTRY_CODE: usize = 36;
     pub const CURRENCY_CODE: CurrencyCode = CurrencyCode::HUF;
     pub const GEC: Option<GEC> = Some(GEC::HU);
-    pub const INTERNATIONAL_PREFIX: &str = "00";
+    pub const INTERNATIONAL_PREFIX: Option<&str> = Some("00");
     pub const IOC: Option<IOC> = Some(IOC::HUN);
     pub const ISO_SHORT_NAME: &str = "Hungary";
     pub const ISO_LONG_NAME: &str = "Hungary";
-    pub const OFFICIAL_LANGUAGE_LIST: &[&str] = &["hu"];
-    pub const SPOKEN_LANGUAGE_LIST: &[&str] = &["hu"];
-    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: &[usize] = &[2];
-    pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[8, 9];
-    pub const NATIONAL_PREFIX: &str = "06";
+    pub const OFFICIAL_LANGUAGE_LIST: Option<&[&str]> = Some(&["hu"]);
+    pub const SPOKEN_LANGUAGE_LIST: Option<&[&str]> = Some(&["hu"]);
+    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: Option<&[usize]> = Some(&[2]);
+    pub const NATIONAL_NUMBER_LENGTH_LIST: Option<&[usize]> = Some(&[8, 9]);
+    pub const NATIONAL_PREFIX: Option<&str> = Some("06");
     pub const NATIONALITY: Option<&str> = Some("Hungarian");
     pub const NUMBER: &str = "348";
     pub const POSTAL_CODE: bool = true;
@@ -38,6 +38,7 @@ pub mod consts {
     pub const START_DAY_OF_WEEK: WeekDay = WeekDay::Monday;
     pub const SUBREGION: Option<SubRegion> = Some(SubRegion::EasternEurope);
     pub const UN_LOCODE: &str = "HU";
+    pub const UN_MEMBER: bool = true;
     pub const UNOFFICIAL_NAME_LIST: &[&str] = &[
         "Hungary",
         "Ungarn",
@@ -46,11 +47,13 @@ pub mod consts {
         "ハンガリー",
         "Hongarije",
     ];
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = Some("H");
     pub const WORLD_REGION: WorldRegion = WorldRegion::EMEA;
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = true;
     pub const EEA_MEMBER: bool = true;
+    pub const NANP_PREFIX: Option<&str> = None;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
     pub const POPULATION: Option<u64> = Some(9643048);
     #[cfg(feature = "emojis")]
@@ -921,16 +924,17 @@ pub fn new() -> Country {
         maybe_gec: Some(GEC::HU),
         #[cfg(feature = "geo")]
         geo: geo::new(),
-        international_prefix: "00",
+        maybe_international_prefix: Some("00"),
         maybe_ioc: Some(IOC::HUN),
         iso_long_name: "Hungary",
         iso_short_name: "Hungary",
-        official_language_list: ["hu"].to_vec(),
-        spoken_language_list: ["hu"].to_vec(),
-        national_destination_code_length_list: [2].to_vec(),
-        national_number_length_list: [8, 9].to_vec(),
-        national_prefix: "06",
+        maybe_official_language_list: Some(["hu"].to_vec()),
+        maybe_spoken_language_list: Some(["hu"].to_vec()),
+        maybe_national_destination_code_length_list: Some([2].to_vec()),
+        maybe_national_number_length_list: Some([8, 9].to_vec()),
+        maybe_national_prefix: Some("06"),
         maybe_nationality: Some("Hungarian"),
+        maybe_nanp_prefix: None,
         number: "348",
         postal_code: true,
         postal_code_format: Some("\\d{4}"),
@@ -938,6 +942,7 @@ pub fn new() -> Country {
         start_of_week: WeekDay::Monday,
         maybe_subregion: Some(SubRegion::EasternEurope),
         un_locode: "HU",
+        un_member: true,
         unofficial_name_list: [
             "Hungary",
             "Ungarn",
@@ -947,6 +952,7 @@ pub fn new() -> Country {
             "Hongarije",
         ]
         .to_vec(),
+        maybe_vehicle_registration_code: Some("H"),
         world_region: WorldRegion::EMEA,
         #[cfg(feature = "emojis")]
         emoji: "🇭🇺",

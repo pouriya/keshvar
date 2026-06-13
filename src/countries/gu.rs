@@ -20,15 +20,15 @@ pub mod consts {
     pub const COUNTRY_CODE: usize = 1;
     pub const CURRENCY_CODE: CurrencyCode = CurrencyCode::USD;
     pub const GEC: Option<GEC> = Some(GEC::GQ);
-    pub const INTERNATIONAL_PREFIX: &str = "011";
+    pub const INTERNATIONAL_PREFIX: Option<&str> = Some("011");
     pub const IOC: Option<IOC> = Some(IOC::GUM);
     pub const ISO_SHORT_NAME: &str = "Guam";
     pub const ISO_LONG_NAME: &str = "The Territory of Guam";
-    pub const OFFICIAL_LANGUAGE_LIST: &[&str] = &["ch", "en", "es"];
-    pub const SPOKEN_LANGUAGE_LIST: &[&str] = &["ch", "en", "es"];
-    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: &[usize] = &[3];
-    pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[10];
-    pub const NATIONAL_PREFIX: &str = "1";
+    pub const OFFICIAL_LANGUAGE_LIST: Option<&[&str]> = Some(&["ch", "en", "es"]);
+    pub const SPOKEN_LANGUAGE_LIST: Option<&[&str]> = Some(&["ch", "en", "es"]);
+    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: Option<&[usize]> = Some(&[3]);
+    pub const NATIONAL_NUMBER_LENGTH_LIST: Option<&[usize]> = Some(&[10]);
+    pub const NATIONAL_PREFIX: Option<&str> = Some("1");
     pub const NATIONALITY: Option<&str> = Some("Guamanian");
     pub const NUMBER: &str = "316";
     pub const POSTAL_CODE: bool = true;
@@ -37,12 +37,15 @@ pub mod consts {
     pub const START_DAY_OF_WEEK: WeekDay = WeekDay::Monday;
     pub const SUBREGION: Option<SubRegion> = Some(SubRegion::Micronesia);
     pub const UN_LOCODE: &str = "GU";
+    pub const UN_MEMBER: bool = false;
     pub const UNOFFICIAL_NAME_LIST: &[&str] = &["Guam", "グアム"];
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = None;
     pub const WORLD_REGION: WorldRegion = WorldRegion::APAC;
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
+    pub const NANP_PREFIX: Option<&str> = Some("1671");
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Mi;
     pub const POPULATION: Option<u64> = Some(171774);
     #[cfg(feature = "emojis")]
@@ -260,16 +263,17 @@ pub fn new() -> Country {
         maybe_gec: Some(GEC::GQ),
         #[cfg(feature = "geo")]
         geo: geo::new(),
-        international_prefix: "011",
+        maybe_international_prefix: Some("011"),
         maybe_ioc: Some(IOC::GUM),
         iso_long_name: "The Territory of Guam",
         iso_short_name: "Guam",
-        official_language_list: ["ch", "en", "es"].to_vec(),
-        spoken_language_list: ["ch", "en", "es"].to_vec(),
-        national_destination_code_length_list: [3].to_vec(),
-        national_number_length_list: [10].to_vec(),
-        national_prefix: "1",
+        maybe_official_language_list: Some(["ch", "en", "es"].to_vec()),
+        maybe_spoken_language_list: Some(["ch", "en", "es"].to_vec()),
+        maybe_national_destination_code_length_list: Some([3].to_vec()),
+        maybe_national_number_length_list: Some([10].to_vec()),
+        maybe_national_prefix: Some("1"),
         maybe_nationality: Some("Guamanian"),
+        maybe_nanp_prefix: Some("1671"),
         number: "316",
         postal_code: true,
         postal_code_format: Some("(969(?:[12]\\d|3[12]))(?:[ \\-](\\d{4}))?"),
@@ -277,7 +281,9 @@ pub fn new() -> Country {
         start_of_week: WeekDay::Monday,
         maybe_subregion: Some(SubRegion::Micronesia),
         un_locode: "GU",
+        un_member: false,
         unofficial_name_list: ["Guam", "グアム"].to_vec(),
+        maybe_vehicle_registration_code: None,
         world_region: WorldRegion::APAC,
         #[cfg(feature = "emojis")]
         emoji: "🇬🇺",

@@ -20,15 +20,15 @@ pub mod consts {
     pub const COUNTRY_CODE: usize = 500;
     pub const CURRENCY_CODE: CurrencyCode = CurrencyCode::FKP;
     pub const GEC: Option<GEC> = Some(GEC::FK);
-    pub const INTERNATIONAL_PREFIX: &str = "00";
+    pub const INTERNATIONAL_PREFIX: Option<&str> = Some("00");
     pub const IOC: Option<IOC> = None;
     pub const ISO_SHORT_NAME: &str = "Falkland Islands (Malvinas)";
     pub const ISO_LONG_NAME: &str = "The Falkland Islands";
-    pub const OFFICIAL_LANGUAGE_LIST: &[&str] = &["en"];
-    pub const SPOKEN_LANGUAGE_LIST: &[&str] = &["en"];
-    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: &[usize] = &[2];
-    pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[5];
-    pub const NATIONAL_PREFIX: &str = "None";
+    pub const OFFICIAL_LANGUAGE_LIST: Option<&[&str]> = Some(&["en"]);
+    pub const SPOKEN_LANGUAGE_LIST: Option<&[&str]> = Some(&["en"]);
+    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: Option<&[usize]> = Some(&[2]);
+    pub const NATIONAL_NUMBER_LENGTH_LIST: Option<&[usize]> = Some(&[5]);
+    pub const NATIONAL_PREFIX: Option<&str> = Some("None");
     pub const NATIONALITY: Option<&str> = Some("Falkland Islander");
     pub const NUMBER: &str = "238";
     pub const POSTAL_CODE: bool = true;
@@ -37,6 +37,7 @@ pub mod consts {
     pub const START_DAY_OF_WEEK: WeekDay = WeekDay::Monday;
     pub const SUBREGION: Option<SubRegion> = Some(SubRegion::SouthAmerica);
     pub const UN_LOCODE: &str = "FK";
+    pub const UN_MEMBER: bool = false;
     pub const UNOFFICIAL_NAME_LIST: &[&str] = &[
         "Falkland Islands",
         "Falklandinseln",
@@ -45,11 +46,13 @@ pub mod consts {
         "フォークランド（マルビナス）諸島",
         "Falklandeilanden [Islas Malvinas]",
     ];
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = None;
     pub const WORLD_REGION: WorldRegion = WorldRegion::AMER;
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
+    pub const NANP_PREFIX: Option<&str> = None;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Mi;
     pub const POPULATION: Option<u64> = None;
     #[cfg(feature = "emojis")]
@@ -267,16 +270,17 @@ pub fn new() -> Country {
         maybe_gec: Some(GEC::FK),
         #[cfg(feature = "geo")]
         geo: geo::new(),
-        international_prefix: "00",
+        maybe_international_prefix: Some("00"),
         maybe_ioc: None,
         iso_long_name: "The Falkland Islands",
         iso_short_name: "Falkland Islands (Malvinas)",
-        official_language_list: ["en"].to_vec(),
-        spoken_language_list: ["en"].to_vec(),
-        national_destination_code_length_list: [2].to_vec(),
-        national_number_length_list: [5].to_vec(),
-        national_prefix: "None",
+        maybe_official_language_list: Some(["en"].to_vec()),
+        maybe_spoken_language_list: Some(["en"].to_vec()),
+        maybe_national_destination_code_length_list: Some([2].to_vec()),
+        maybe_national_number_length_list: Some([5].to_vec()),
+        maybe_national_prefix: Some("None"),
         maybe_nationality: Some("Falkland Islander"),
+        maybe_nanp_prefix: None,
         number: "238",
         postal_code: true,
         postal_code_format: Some("FIQQ 1ZZ"),
@@ -284,7 +288,9 @@ pub fn new() -> Country {
         start_of_week: WeekDay::Monday,
         maybe_subregion: Some(SubRegion::SouthAmerica),
         un_locode: "FK",
+        un_member: false,
         unofficial_name_list: ["Falkland Islands", "Falklandinseln", "Îles Malouines", "Islas Malvinas", "フォークランド（マルビナス）諸島", "Falklandeilanden [Islas Malvinas]"].to_vec(),
+        maybe_vehicle_registration_code: None,
         world_region: WorldRegion::AMER,
         #[cfg(feature = "emojis")]
         emoji: "🇫🇰",

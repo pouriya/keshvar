@@ -20,15 +20,15 @@ pub mod consts {
     pub const COUNTRY_CODE: usize = 66;
     pub const CURRENCY_CODE: CurrencyCode = CurrencyCode::THB;
     pub const GEC: Option<GEC> = Some(GEC::TH);
-    pub const INTERNATIONAL_PREFIX: &str = "001";
+    pub const INTERNATIONAL_PREFIX: Option<&str> = Some("001");
     pub const IOC: Option<IOC> = Some(IOC::THA);
     pub const ISO_SHORT_NAME: &str = "Thailand";
     pub const ISO_LONG_NAME: &str = "The Kingdom of Thailand";
-    pub const OFFICIAL_LANGUAGE_LIST: &[&str] = &["th"];
-    pub const SPOKEN_LANGUAGE_LIST: &[&str] = &["th"];
-    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: &[usize] = &[2];
-    pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[9, 10];
-    pub const NATIONAL_PREFIX: &str = "0";
+    pub const OFFICIAL_LANGUAGE_LIST: Option<&[&str]> = Some(&["th"]);
+    pub const SPOKEN_LANGUAGE_LIST: Option<&[&str]> = Some(&["th"]);
+    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: Option<&[usize]> = Some(&[2]);
+    pub const NATIONAL_NUMBER_LENGTH_LIST: Option<&[usize]> = Some(&[9, 10]);
+    pub const NATIONAL_PREFIX: Option<&str> = Some("0");
     pub const NATIONALITY: Option<&str> = Some("Thai");
     pub const NUMBER: &str = "764";
     pub const POSTAL_CODE: bool = true;
@@ -37,13 +37,16 @@ pub mod consts {
     pub const START_DAY_OF_WEEK: WeekDay = WeekDay::Monday;
     pub const SUBREGION: Option<SubRegion> = Some(SubRegion::SouthEasternAsia);
     pub const UN_LOCODE: &str = "TH";
+    pub const UN_MEMBER: bool = true;
     pub const UNOFFICIAL_NAME_LIST: &[&str] =
         &["Thailand", "Thaïlande", "Tailandia", "タイ", "ประเทศไทย"];
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = Some("T");
     pub const WORLD_REGION: WorldRegion = WorldRegion::APAC;
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
+    pub const NANP_PREFIX: Option<&str> = None;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
     pub const POPULATION: Option<u64> = Some(71697030);
     #[cfg(feature = "emojis")]
@@ -1439,16 +1442,17 @@ pub fn new() -> Country {
         maybe_gec: Some(GEC::TH),
         #[cfg(feature = "geo")]
         geo: geo::new(),
-        international_prefix: "001",
+        maybe_international_prefix: Some("001"),
         maybe_ioc: Some(IOC::THA),
         iso_long_name: "The Kingdom of Thailand",
         iso_short_name: "Thailand",
-        official_language_list: ["th"].to_vec(),
-        spoken_language_list: ["th"].to_vec(),
-        national_destination_code_length_list: [2].to_vec(),
-        national_number_length_list: [9, 10].to_vec(),
-        national_prefix: "0",
+        maybe_official_language_list: Some(["th"].to_vec()),
+        maybe_spoken_language_list: Some(["th"].to_vec()),
+        maybe_national_destination_code_length_list: Some([2].to_vec()),
+        maybe_national_number_length_list: Some([9, 10].to_vec()),
+        maybe_national_prefix: Some("0"),
         maybe_nationality: Some("Thai"),
+        maybe_nanp_prefix: None,
         number: "764",
         postal_code: true,
         postal_code_format: Some("\\d{5}"),
@@ -1456,7 +1460,9 @@ pub fn new() -> Country {
         start_of_week: WeekDay::Monday,
         maybe_subregion: Some(SubRegion::SouthEasternAsia),
         un_locode: "TH",
+        un_member: true,
         unofficial_name_list: ["Thailand", "Thaïlande", "Tailandia", "タイ", "ประเทศไทย"].to_vec(),
+        maybe_vehicle_registration_code: Some("T"),
         world_region: WorldRegion::APAC,
         #[cfg(feature = "emojis")]
         emoji: "🇹🇭",

@@ -21,15 +21,15 @@ pub mod consts {
     pub const COUNTRY_CODE: usize = 91;
     pub const CURRENCY_CODE: CurrencyCode = CurrencyCode::INR;
     pub const GEC: Option<GEC> = Some(GEC::IN);
-    pub const INTERNATIONAL_PREFIX: &str = "00";
+    pub const INTERNATIONAL_PREFIX: Option<&str> = Some("00");
     pub const IOC: Option<IOC> = Some(IOC::IND);
     pub const ISO_SHORT_NAME: &str = "India";
     pub const ISO_LONG_NAME: &str = "The Republic of India";
-    pub const OFFICIAL_LANGUAGE_LIST: &[&str] = &["en", "hi"];
-    pub const SPOKEN_LANGUAGE_LIST: &[&str] = &["en", "hi"];
-    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: &[usize] = &[2];
-    pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[10];
-    pub const NATIONAL_PREFIX: &str = "0";
+    pub const OFFICIAL_LANGUAGE_LIST: Option<&[&str]> = Some(&["en", "hi"]);
+    pub const SPOKEN_LANGUAGE_LIST: Option<&[&str]> = Some(&["en", "hi"]);
+    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: Option<&[usize]> = Some(&[2]);
+    pub const NATIONAL_NUMBER_LENGTH_LIST: Option<&[usize]> = Some(&[10]);
+    pub const NATIONAL_PREFIX: Option<&str> = Some("0");
     pub const NATIONALITY: Option<&str> = Some("Indian");
     pub const NUMBER: &str = "356";
     pub const POSTAL_CODE: bool = true;
@@ -38,12 +38,15 @@ pub mod consts {
     pub const START_DAY_OF_WEEK: WeekDay = WeekDay::Monday;
     pub const SUBREGION: Option<SubRegion> = Some(SubRegion::SouthernAsia);
     pub const UN_LOCODE: &str = "IN";
+    pub const UN_MEMBER: bool = true;
     pub const UNOFFICIAL_NAME_LIST: &[&str] = &["India", "Indien", "Inde", "インド"];
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = Some("IND");
     pub const WORLD_REGION: WorldRegion = WorldRegion::APAC;
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = true;
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
+    pub const NANP_PREFIX: Option<&str> = None;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
     pub const POPULATION: Option<u64> = Some(1417173173);
     #[cfg(feature = "emojis")]
@@ -814,16 +817,17 @@ pub fn new() -> Country {
         maybe_gec: Some(GEC::IN),
         #[cfg(feature = "geo")]
         geo: geo::new(),
-        international_prefix: "00",
+        maybe_international_prefix: Some("00"),
         maybe_ioc: Some(IOC::IND),
         iso_long_name: "The Republic of India",
         iso_short_name: "India",
-        official_language_list: ["en", "hi"].to_vec(),
-        spoken_language_list: ["en", "hi"].to_vec(),
-        national_destination_code_length_list: [2].to_vec(),
-        national_number_length_list: [10].to_vec(),
-        national_prefix: "0",
+        maybe_official_language_list: Some(["en", "hi"].to_vec()),
+        maybe_spoken_language_list: Some(["en", "hi"].to_vec()),
+        maybe_national_destination_code_length_list: Some([2].to_vec()),
+        maybe_national_number_length_list: Some([10].to_vec()),
+        maybe_national_prefix: Some("0"),
         maybe_nationality: Some("Indian"),
+        maybe_nanp_prefix: None,
         number: "356",
         postal_code: true,
         postal_code_format: Some("\\d{6}"),
@@ -831,7 +835,9 @@ pub fn new() -> Country {
         start_of_week: WeekDay::Monday,
         maybe_subregion: Some(SubRegion::SouthernAsia),
         un_locode: "IN",
+        un_member: true,
         unofficial_name_list: ["India", "Indien", "Inde", "インド"].to_vec(),
+        maybe_vehicle_registration_code: Some("IND"),
         world_region: WorldRegion::APAC,
         #[cfg(feature = "emojis")]
         emoji: "🇮🇳",

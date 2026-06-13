@@ -20,15 +20,15 @@ pub mod consts {
     pub const COUNTRY_CODE: usize = 58;
     pub const CURRENCY_CODE: CurrencyCode = CurrencyCode::VES;
     pub const GEC: Option<GEC> = Some(GEC::VE);
-    pub const INTERNATIONAL_PREFIX: &str = "00";
+    pub const INTERNATIONAL_PREFIX: Option<&str> = Some("00");
     pub const IOC: Option<IOC> = Some(IOC::VEN);
     pub const ISO_SHORT_NAME: &str = "Venezuela (Bolivarian Republic of)";
     pub const ISO_LONG_NAME: &str = "The Bolivarian Republic of Venezuela";
-    pub const OFFICIAL_LANGUAGE_LIST: &[&str] = &["es"];
-    pub const SPOKEN_LANGUAGE_LIST: &[&str] = &["es"];
-    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: &[usize] = &[2];
-    pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[10];
-    pub const NATIONAL_PREFIX: &str = "0";
+    pub const OFFICIAL_LANGUAGE_LIST: Option<&[&str]> = Some(&["es"]);
+    pub const SPOKEN_LANGUAGE_LIST: Option<&[&str]> = Some(&["es"]);
+    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: Option<&[usize]> = Some(&[2]);
+    pub const NATIONAL_NUMBER_LENGTH_LIST: Option<&[usize]> = Some(&[10]);
+    pub const NATIONAL_PREFIX: Option<&str> = Some("0");
     pub const NATIONALITY: Option<&str> = Some("Venezuelan");
     pub const NUMBER: &str = "862";
     pub const POSTAL_CODE: bool = true;
@@ -37,12 +37,15 @@ pub mod consts {
     pub const START_DAY_OF_WEEK: WeekDay = WeekDay::Monday;
     pub const SUBREGION: Option<SubRegion> = Some(SubRegion::SouthAmerica);
     pub const UN_LOCODE: &str = "VE";
+    pub const UN_MEMBER: bool = true;
     pub const UNOFFICIAL_NAME_LIST: &[&str] = &["Venezuela", "ベネズエラ・ボリバル共和国"];
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = Some("YV");
     pub const WORLD_REGION: WorldRegion = WorldRegion::AMER;
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
+    pub const NANP_PREFIX: Option<&str> = None;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
     pub const POPULATION: Option<u64> = Some(28301696);
     #[cfg(feature = "emojis")]
@@ -643,16 +646,17 @@ pub fn new() -> Country {
         maybe_gec: Some(GEC::VE),
         #[cfg(feature = "geo")]
         geo: geo::new(),
-        international_prefix: "00",
+        maybe_international_prefix: Some("00"),
         maybe_ioc: Some(IOC::VEN),
         iso_long_name: "The Bolivarian Republic of Venezuela",
         iso_short_name: "Venezuela (Bolivarian Republic of)",
-        official_language_list: ["es"].to_vec(),
-        spoken_language_list: ["es"].to_vec(),
-        national_destination_code_length_list: [2].to_vec(),
-        national_number_length_list: [10].to_vec(),
-        national_prefix: "0",
+        maybe_official_language_list: Some(["es"].to_vec()),
+        maybe_spoken_language_list: Some(["es"].to_vec()),
+        maybe_national_destination_code_length_list: Some([2].to_vec()),
+        maybe_national_number_length_list: Some([10].to_vec()),
+        maybe_national_prefix: Some("0"),
         maybe_nationality: Some("Venezuelan"),
+        maybe_nanp_prefix: None,
         number: "862",
         postal_code: true,
         postal_code_format: Some("\\d{4}"),
@@ -660,7 +664,9 @@ pub fn new() -> Country {
         start_of_week: WeekDay::Monday,
         maybe_subregion: Some(SubRegion::SouthAmerica),
         un_locode: "VE",
+        un_member: true,
         unofficial_name_list: ["Venezuela", "ベネズエラ・ボリバル共和国"].to_vec(),
+        maybe_vehicle_registration_code: Some("YV"),
         world_region: WorldRegion::AMER,
         #[cfg(feature = "emojis")]
         emoji: "🇻🇪",

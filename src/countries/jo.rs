@@ -21,15 +21,15 @@ pub mod consts {
     pub const COUNTRY_CODE: usize = 962;
     pub const CURRENCY_CODE: CurrencyCode = CurrencyCode::JOD;
     pub const GEC: Option<GEC> = Some(GEC::JO);
-    pub const INTERNATIONAL_PREFIX: &str = "00";
+    pub const INTERNATIONAL_PREFIX: Option<&str> = Some("00");
     pub const IOC: Option<IOC> = Some(IOC::JOR);
     pub const ISO_SHORT_NAME: &str = "Jordan";
     pub const ISO_LONG_NAME: &str = "The Hashemite Kingdom of Jordan";
-    pub const OFFICIAL_LANGUAGE_LIST: &[&str] = &["ar"];
-    pub const SPOKEN_LANGUAGE_LIST: &[&str] = &["ar"];
-    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: &[usize] = &[2];
-    pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[8, 9];
-    pub const NATIONAL_PREFIX: &str = "0";
+    pub const OFFICIAL_LANGUAGE_LIST: Option<&[&str]> = Some(&["ar"]);
+    pub const SPOKEN_LANGUAGE_LIST: Option<&[&str]> = Some(&["ar"]);
+    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: Option<&[usize]> = Some(&[2]);
+    pub const NATIONAL_NUMBER_LENGTH_LIST: Option<&[usize]> = Some(&[8, 9]);
+    pub const NATIONAL_PREFIX: Option<&str> = Some("0");
     pub const NATIONALITY: Option<&str> = Some("Jordanian");
     pub const NUMBER: &str = "400";
     pub const POSTAL_CODE: bool = true;
@@ -38,6 +38,7 @@ pub mod consts {
     pub const START_DAY_OF_WEEK: WeekDay = WeekDay::Sunday;
     pub const SUBREGION: Option<SubRegion> = Some(SubRegion::WesternAsia);
     pub const UN_LOCODE: &str = "JO";
+    pub const UN_MEMBER: bool = true;
     pub const UNOFFICIAL_NAME_LIST: &[&str] = &[
         "Jordan",
         "الأردن",
@@ -47,11 +48,13 @@ pub mod consts {
         "ヨルダン",
         "Jordanië",
     ];
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = Some("JOR");
     pub const WORLD_REGION: WorldRegion = WorldRegion::EMEA;
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
+    pub const NANP_PREFIX: Option<&str> = None;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
     pub const POPULATION: Option<u64> = Some(11285869);
     #[cfg(feature = "emojis")]
@@ -1113,16 +1116,17 @@ pub fn new() -> Country {
         maybe_gec: Some(GEC::JO),
         #[cfg(feature = "geo")]
         geo: geo::new(),
-        international_prefix: "00",
+        maybe_international_prefix: Some("00"),
         maybe_ioc: Some(IOC::JOR),
         iso_long_name: "The Hashemite Kingdom of Jordan",
         iso_short_name: "Jordan",
-        official_language_list: ["ar"].to_vec(),
-        spoken_language_list: ["ar"].to_vec(),
-        national_destination_code_length_list: [2].to_vec(),
-        national_number_length_list: [8, 9].to_vec(),
-        national_prefix: "0",
+        maybe_official_language_list: Some(["ar"].to_vec()),
+        maybe_spoken_language_list: Some(["ar"].to_vec()),
+        maybe_national_destination_code_length_list: Some([2].to_vec()),
+        maybe_national_number_length_list: Some([8, 9].to_vec()),
+        maybe_national_prefix: Some("0"),
         maybe_nationality: Some("Jordanian"),
+        maybe_nanp_prefix: None,
         number: "400",
         postal_code: true,
         postal_code_format: Some("\\d{5}"),
@@ -1130,6 +1134,7 @@ pub fn new() -> Country {
         start_of_week: WeekDay::Sunday,
         maybe_subregion: Some(SubRegion::WesternAsia),
         un_locode: "JO",
+        un_member: true,
         unofficial_name_list: [
             "Jordan",
             "الأردن",
@@ -1140,6 +1145,7 @@ pub fn new() -> Country {
             "Jordanië",
         ]
         .to_vec(),
+        maybe_vehicle_registration_code: Some("JOR"),
         world_region: WorldRegion::EMEA,
         #[cfg(feature = "emojis")]
         emoji: "🇯🇴",

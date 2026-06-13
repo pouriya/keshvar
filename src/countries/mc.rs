@@ -20,15 +20,15 @@ pub mod consts {
     pub const COUNTRY_CODE: usize = 377;
     pub const CURRENCY_CODE: CurrencyCode = CurrencyCode::EUR;
     pub const GEC: Option<GEC> = Some(GEC::MN);
-    pub const INTERNATIONAL_PREFIX: &str = "00";
+    pub const INTERNATIONAL_PREFIX: Option<&str> = Some("00");
     pub const IOC: Option<IOC> = Some(IOC::MON);
     pub const ISO_SHORT_NAME: &str = "Monaco";
     pub const ISO_LONG_NAME: &str = "The Principality of Monaco";
-    pub const OFFICIAL_LANGUAGE_LIST: &[&str] = &["fr"];
-    pub const SPOKEN_LANGUAGE_LIST: &[&str] = &["fr"];
-    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: &[usize] = &[2];
-    pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[8, 9];
-    pub const NATIONAL_PREFIX: &str = "0";
+    pub const OFFICIAL_LANGUAGE_LIST: Option<&[&str]> = Some(&["fr"]);
+    pub const SPOKEN_LANGUAGE_LIST: Option<&[&str]> = Some(&["fr"]);
+    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: Option<&[usize]> = Some(&[2]);
+    pub const NATIONAL_NUMBER_LENGTH_LIST: Option<&[usize]> = Some(&[8, 9]);
+    pub const NATIONAL_PREFIX: Option<&str> = Some("0");
     pub const NATIONALITY: Option<&str> = Some("Monegasque");
     pub const NUMBER: &str = "492";
     pub const POSTAL_CODE: bool = true;
@@ -37,12 +37,15 @@ pub mod consts {
     pub const START_DAY_OF_WEEK: WeekDay = WeekDay::Monday;
     pub const SUBREGION: Option<SubRegion> = Some(SubRegion::WesternEurope);
     pub const UN_LOCODE: &str = "MC";
+    pub const UN_MEMBER: bool = true;
     pub const UNOFFICIAL_NAME_LIST: &[&str] = &["Monaco", "Mónaco", "モナコ"];
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = Some("MC");
     pub const WORLD_REGION: WorldRegion = WorldRegion::EMEA;
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
+    pub const NANP_PREFIX: Option<&str> = None;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
     pub const POPULATION: Option<u64> = Some(36469);
     #[cfg(feature = "emojis")]
@@ -523,16 +526,17 @@ pub fn new() -> Country {
         maybe_gec: Some(GEC::MN),
         #[cfg(feature = "geo")]
         geo: geo::new(),
-        international_prefix: "00",
+        maybe_international_prefix: Some("00"),
         maybe_ioc: Some(IOC::MON),
         iso_long_name: "The Principality of Monaco",
         iso_short_name: "Monaco",
-        official_language_list: ["fr"].to_vec(),
-        spoken_language_list: ["fr"].to_vec(),
-        national_destination_code_length_list: [2].to_vec(),
-        national_number_length_list: [8, 9].to_vec(),
-        national_prefix: "0",
+        maybe_official_language_list: Some(["fr"].to_vec()),
+        maybe_spoken_language_list: Some(["fr"].to_vec()),
+        maybe_national_destination_code_length_list: Some([2].to_vec()),
+        maybe_national_number_length_list: Some([8, 9].to_vec()),
+        maybe_national_prefix: Some("0"),
         maybe_nationality: Some("Monegasque"),
+        maybe_nanp_prefix: None,
         number: "492",
         postal_code: true,
         postal_code_format: Some("980\\d{2}"),
@@ -540,7 +544,9 @@ pub fn new() -> Country {
         start_of_week: WeekDay::Monday,
         maybe_subregion: Some(SubRegion::WesternEurope),
         un_locode: "MC",
+        un_member: true,
         unofficial_name_list: ["Monaco", "Mónaco", "モナコ"].to_vec(),
+        maybe_vehicle_registration_code: Some("MC"),
         world_region: WorldRegion::EMEA,
         #[cfg(feature = "emojis")]
         emoji: "🇲🇨",

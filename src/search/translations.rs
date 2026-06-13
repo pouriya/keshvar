@@ -469,8 +469,6 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     #[cfg(feature = "dz")] // The People's Democratic Republic of Algeria (Africa)
     ("algeria", Alpha2::DZ),
     #[cfg(feature = "dz")] // The People's Democratic Republic of Algeria (Africa)
-    ("algeria", Alpha2::DZ),
-    #[cfg(feature = "dz")] // The People's Democratic Republic of Algeria (Africa)
     ("algerie", Alpha2::DZ),
     #[cfg(feature = "dz")] // The People's Democratic Republic of Algeria (Africa)
     ("algerie", Alpha2::DZ),
@@ -1892,6 +1890,8 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("ardjentina", Alpha2::AR),
     #[cfg(feature = "dz")] // The People's Democratic Republic of Algeria (Africa)
     ("ardjiriya", Alpha2::DZ),
+    #[cfg(feature = "dz")] // The People's Democratic Republic of Algeria (Africa)
+    ("argelia", Alpha2::DZ),
     #[cfg(feature = "dz")] // The People's Democratic Republic of Algeria (Africa)
     ("argelia", Alpha2::DZ),
     #[cfg(feature = "ar")] // The Argentine Republic (Americas)
@@ -7404,8 +7404,6 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("cina", Alpha2::CN),
     #[cfg(feature = "cn")] // The People's Republic of China (Asia)
     ("cina", Alpha2::CN),
-    #[cfg(feature = "sg")] // The Republic of Singapore (Asia)
-    ("cingapura", Alpha2::SG),
     #[cfg(feature = "cf")] // The Central African Republic (Africa)
     ("cintrafrike", Alpha2::CF),
     #[cfg(feature = "cy")] // The Republic of Cyprus (Asia)
@@ -35362,6 +35360,8 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("singapur", Alpha2::SG),
     #[cfg(feature = "sg")] // The Republic of Singapore (Asia)
     ("singapur", Alpha2::SG),
+    #[cfg(feature = "sg")] // The Republic of Singapore (Asia)
+    ("singapura", Alpha2::SG),
     #[cfg(feature = "sg")] // The Republic of Singapore (Asia)
     ("singapura", Alpha2::SG),
     #[cfg(feature = "sg")] // The Republic of Singapore (Asia)

@@ -14,22 +14,22 @@ pub mod consts {
     };
 
     pub const ADDRESS_FORMAT: Option<&str> =
-        Some("{{recipient}}\n{{street}}\n{{postalcode}} {{city}}\n{{region}}\n{{country}}");
+        Some("{{recipient}}\n{{street}}\n{{postalcode}} {{city}}\n{{country}}");
     pub const ALPHA2: Alpha2 = Alpha2::DK;
     pub const ALPHA3: Alpha3 = Alpha3::DNK;
     pub const CONTINENT: Continent = Continent::Europe;
     pub const COUNTRY_CODE: usize = 45;
     pub const CURRENCY_CODE: CurrencyCode = CurrencyCode::DKK;
     pub const GEC: Option<GEC> = Some(GEC::DA);
-    pub const INTERNATIONAL_PREFIX: &str = "00";
+    pub const INTERNATIONAL_PREFIX: Option<&str> = Some("00");
     pub const IOC: Option<IOC> = Some(IOC::DEN);
     pub const ISO_SHORT_NAME: &str = "Denmark";
     pub const ISO_LONG_NAME: &str = "The Kingdom of Denmark";
-    pub const OFFICIAL_LANGUAGE_LIST: &[&str] = &["da"];
-    pub const SPOKEN_LANGUAGE_LIST: &[&str] = &["da"];
-    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: &[usize] = &[2];
-    pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[8];
-    pub const NATIONAL_PREFIX: &str = "None";
+    pub const OFFICIAL_LANGUAGE_LIST: Option<&[&str]> = Some(&["da"]);
+    pub const SPOKEN_LANGUAGE_LIST: Option<&[&str]> = Some(&["da"]);
+    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: Option<&[usize]> = Some(&[2]);
+    pub const NATIONAL_NUMBER_LENGTH_LIST: Option<&[usize]> = Some(&[8]);
+    pub const NATIONAL_PREFIX: Option<&str> = Some("None");
     pub const NATIONALITY: Option<&str> = Some("Danish");
     pub const NUMBER: &str = "208";
     pub const POSTAL_CODE: bool = true;
@@ -38,6 +38,7 @@ pub mod consts {
     pub const START_DAY_OF_WEEK: WeekDay = WeekDay::Monday;
     pub const SUBREGION: Option<SubRegion> = Some(SubRegion::NorthernEurope);
     pub const UN_LOCODE: &str = "DK";
+    pub const UN_MEMBER: bool = true;
     pub const UNOFFICIAL_NAME_LIST: &[&str] = &[
         "Denmark",
         "Dänemark",
@@ -46,11 +47,13 @@ pub mod consts {
         "デンマーク",
         "Denemarken",
     ];
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = Some("DK");
     pub const WORLD_REGION: WorldRegion = WorldRegion::EMEA;
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = true;
     pub const EEA_MEMBER: bool = true;
+    pub const NANP_PREFIX: Option<&str> = None;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
     pub const POPULATION: Option<u64> = Some(5903037);
     #[cfg(feature = "emojis")]
@@ -344,25 +347,24 @@ pub fn new() -> Country {
     Country {
         alpha2: Alpha2::DK,
         alpha3: Alpha3::DNK,
-        address_format: Some(
-            "{{recipient}}\n{{street}}\n{{postalcode}} {{city}}\n{{region}}\n{{country}}",
-        ),
+        address_format: Some("{{recipient}}\n{{street}}\n{{postalcode}} {{city}}\n{{country}}"),
         continent: Continent::Europe,
         country_code: 45,
         currency_code: CurrencyCode::DKK,
         maybe_gec: Some(GEC::DA),
         #[cfg(feature = "geo")]
         geo: geo::new(),
-        international_prefix: "00",
+        maybe_international_prefix: Some("00"),
         maybe_ioc: Some(IOC::DEN),
         iso_long_name: "The Kingdom of Denmark",
         iso_short_name: "Denmark",
-        official_language_list: ["da"].to_vec(),
-        spoken_language_list: ["da"].to_vec(),
-        national_destination_code_length_list: [2].to_vec(),
-        national_number_length_list: [8].to_vec(),
-        national_prefix: "None",
+        maybe_official_language_list: Some(["da"].to_vec()),
+        maybe_spoken_language_list: Some(["da"].to_vec()),
+        maybe_national_destination_code_length_list: Some([2].to_vec()),
+        maybe_national_number_length_list: Some([8].to_vec()),
+        maybe_national_prefix: Some("None"),
         maybe_nationality: Some("Danish"),
+        maybe_nanp_prefix: None,
         number: "208",
         postal_code: true,
         postal_code_format: Some("\\d{4}"),
@@ -370,6 +372,7 @@ pub fn new() -> Country {
         start_of_week: WeekDay::Monday,
         maybe_subregion: Some(SubRegion::NorthernEurope),
         un_locode: "DK",
+        un_member: true,
         unofficial_name_list: [
             "Denmark",
             "Dänemark",
@@ -379,6 +382,7 @@ pub fn new() -> Country {
             "Denemarken",
         ]
         .to_vec(),
+        maybe_vehicle_registration_code: Some("DK"),
         world_region: WorldRegion::EMEA,
         #[cfg(feature = "emojis")]
         emoji: "🇩🇰",

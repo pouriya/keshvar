@@ -21,15 +21,15 @@ pub mod consts {
     pub const COUNTRY_CODE: usize = 977;
     pub const CURRENCY_CODE: CurrencyCode = CurrencyCode::NPR;
     pub const GEC: Option<GEC> = Some(GEC::NP);
-    pub const INTERNATIONAL_PREFIX: &str = "00";
+    pub const INTERNATIONAL_PREFIX: Option<&str> = Some("00");
     pub const IOC: Option<IOC> = Some(IOC::NEP);
     pub const ISO_SHORT_NAME: &str = "Nepal";
     pub const ISO_LONG_NAME: &str = "The Federal Democratic Republic of Nepal";
-    pub const OFFICIAL_LANGUAGE_LIST: &[&str] = &["ne"];
-    pub const SPOKEN_LANGUAGE_LIST: &[&str] = &["bho", "mai", "ne", "new", "urd"];
-    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: &[usize] = &[2];
-    pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[7, 8];
-    pub const NATIONAL_PREFIX: &str = "0";
+    pub const OFFICIAL_LANGUAGE_LIST: Option<&[&str]> = Some(&["ne"]);
+    pub const SPOKEN_LANGUAGE_LIST: Option<&[&str]> = Some(&["bho", "mai", "ne", "new", "urd"]);
+    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: Option<&[usize]> = Some(&[2]);
+    pub const NATIONAL_NUMBER_LENGTH_LIST: Option<&[usize]> = Some(&[7, 8]);
+    pub const NATIONAL_PREFIX: Option<&str> = Some("0");
     pub const NATIONALITY: Option<&str> = Some("Nepalese");
     pub const NUMBER: &str = "524";
     pub const POSTAL_CODE: bool = true;
@@ -38,17 +38,20 @@ pub mod consts {
     pub const START_DAY_OF_WEEK: WeekDay = WeekDay::Sunday;
     pub const SUBREGION: Option<SubRegion> = Some(SubRegion::SouthernAsia);
     pub const UN_LOCODE: &str = "NP";
+    pub const UN_MEMBER: bool = true;
     pub const UNOFFICIAL_NAME_LIST: &[&str] = &[
         "Nepal",
         "Népal",
         "the Federal Democratic Republic of Nepal",
         "ネパール",
     ];
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = Some("NEP*");
     pub const WORLD_REGION: WorldRegion = WorldRegion::APAC;
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
+    pub const NANP_PREFIX: Option<&str> = None;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
     pub const POPULATION: Option<u64> = Some(30547580);
     #[cfg(feature = "emojis")]
@@ -489,106 +492,106 @@ pub mod subdivisions {
                 (
                     "P1",
                     Subdivision{
-                        name: "Province 1",
+                        name: "Koshi Province",
                         country_alpha2: Alpha2::NP,
                         code: "P1",
                         #[cfg(feature = "geo")]
-                        geo: None,
+                        geo: Some(SubdivisionGeo{latitude: Some(27.226594), longitude: Some(87.134487), max_latitude: Some(28.346008), min_latitude: Some(26.3473741), max_longitude: Some(88.2018297), min_longitude: Some(86.5015001)}),
                         comments: None,
                         subdivision_type: SubdivisionType::Province,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("en", "Province 1")]),
-                        unofficial_name_list: [].to_vec(),
+                        translations: HashMap::from([("en", "Koshi Province"), ("ne", "कोशी प\u{94d}रद\u{947}श")]),
+                        unofficial_name_list: ["Koshi"].to_vec(),
                     }
                 ),
                 (
                     "P2",
                     Subdivision{
-                        name: "Province 2",
+                        name: "Madhesh Province",
                         country_alpha2: Alpha2::NP,
                         code: "P2",
                         #[cfg(feature = "geo")]
-                        geo: None,
+                        geo: Some(SubdivisionGeo{latitude: Some(26.726581), longitude: Some(85.878288), max_latitude: Some(27.066774), min_latitude: Some(26.33333), max_longitude: Some(86.9457), min_longitude: Some(84.646302)}),
                         comments: None,
                         subdivision_type: SubdivisionType::Province,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("en", "Province 2")]),
-                        unofficial_name_list: [].to_vec(),
+                        translations: HashMap::from([("en", "Madhesh Province"), ("ne", "मध\u{947}श प\u{94d}रद\u{947}श")]),
+                        unofficial_name_list: ["Madhesh"].to_vec(),
                     }
                 ),
                 (
                     "P3",
                     Subdivision{
-                        name: "Province 3",
+                        name: "Bagmati Province",
                         country_alpha2: Alpha2::NP,
                         code: "P3",
                         #[cfg(feature = "geo")]
-                        geo: None,
+                        geo: Some(SubdivisionGeo{latitude: Some(27.923508), longitude: Some(85.237122), max_latitude: Some(28.766666), min_latitude: Some(27.316666), max_longitude: Some(86.7), min_longitude: Some(84.45634)}),
                         comments: None,
                         subdivision_type: SubdivisionType::Province,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("en", "Province 3")]),
-                        unofficial_name_list: [].to_vec(),
+                        translations: HashMap::from([("en", "Bagmati Province"), ("ne", "बागमती प\u{94d}रद\u{947}श")]),
+                        unofficial_name_list: ["Bagmati"].to_vec(),
                     }
                 ),
                 (
                     "P4",
                     Subdivision{
-                        name: "Gandaki²",
+                        name: "Gandaki Province",
                         country_alpha2: Alpha2::NP,
                         code: "P4",
                         #[cfg(feature = "geo")]
-                        geo: Some(SubdivisionGeo{latitude: Some(28.394857), longitude: Some(84.12400799999999), max_latitude: Some(30.4473898), min_latitude: Some(26.3473741), max_longitude: Some(88.20182969999999), min_longitude: Some(80.05846980000001)}),
+                        geo: Some(SubdivisionGeo{latitude: Some(28.243426), longitude: Some(83.896532), max_latitude: Some(28.88339), min_latitude: Some(27.328852), max_longitude: Some(85.194321), min_longitude: Some(83.05629)}),
                         comments: None,
                         subdivision_type: SubdivisionType::Province,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("en", "Gandaki²")]),
-                        unofficial_name_list: [].to_vec(),
+                        translations: HashMap::from([("en", "Gandaki Province"), ("ne", "गण\u{94d}डकी प\u{94d}रद\u{947}श")]),
+                        unofficial_name_list: ["Gandaki"].to_vec(),
                     }
                 ),
                 (
                     "P5",
                     Subdivision{
-                        name: "Province 5",
+                        name: "Lumbini Province",
                         country_alpha2: Alpha2::NP,
                         code: "P5",
                         #[cfg(feature = "geo")]
-                        geo: None,
+                        geo: Some(SubdivisionGeo{latitude: Some(27.610125), longitude: Some(83.393209), max_latitude: Some(28.633333), min_latitude: Some(26.733333), max_longitude: Some(84.621499), min_longitude: Some(81.65873)}),
                         comments: None,
                         subdivision_type: SubdivisionType::Province,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("en", "Province 5")]),
-                        unofficial_name_list: [].to_vec(),
+                        translations: HashMap::from([("en", "Lumbini Province"), ("ne", "ल\u{941}म\u{94d}बिनी प\u{94d}रद\u{947}श")]),
+                        unofficial_name_list: ["Lumbini"].to_vec(),
                     }
                 ),
                 (
                     "P6",
                     Subdivision{
-                        name: "Karnali²",
+                        name: "Karnali Province",
                         country_alpha2: Alpha2::NP,
                         code: "P6",
                         #[cfg(feature = "geo")]
-                        geo: Some(SubdivisionGeo{latitude: Some(28.394857), longitude: Some(84.12400799999999), max_latitude: Some(30.4473898), min_latitude: Some(26.3473741), max_longitude: Some(88.20182969999999), min_longitude: Some(80.05846980000001)}),
+                        geo: Some(SubdivisionGeo{latitude: Some(28.820317), longitude: Some(82.200189), max_latitude: Some(30.246437), min_latitude: Some(27.856192), max_longitude: Some(83.6897499), min_longitude: Some(80.98909)}),
                         comments: None,
                         subdivision_type: SubdivisionType::Province,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("en", "Karnali²")]),
-                        unofficial_name_list: [].to_vec(),
+                        translations: HashMap::from([("en", "Karnali Province"), ("ne", "कर\u{94d}णाली प\u{94d}रद\u{947}श")]),
+                        unofficial_name_list: ["Karnali"].to_vec(),
                     }
                 ),
                 (
                     "P7",
                     Subdivision{
-                        name: "Province 7",
+                        name: "Sudurpashchim Province",
                         country_alpha2: Alpha2::NP,
                         code: "P7",
                         #[cfg(feature = "geo")]
-                        geo: None,
+                        geo: Some(SubdivisionGeo{latitude: Some(29.056774), longitude: Some(81.10252), max_latitude: Some(30.133331), min_latitude: Some(28.2037), max_longitude: Some(81.806982), min_longitude: Some(80.0584698)}),
                         comments: None,
                         subdivision_type: SubdivisionType::Province,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("en", "Province 7")]),
-                        unofficial_name_list: [].to_vec(),
+                        translations: HashMap::from([("en", "Sudurpashchim Province"), ("ne", "स\u{941}द\u{942}रपश\u{94d}चिम प\u{94d}रद\u{947}श")]),
+                        unofficial_name_list: ["Sudurpashchim"].to_vec(),
                     }
                 ),
                 (
@@ -663,16 +666,17 @@ pub fn new() -> Country {
         maybe_gec: Some(GEC::NP),
         #[cfg(feature = "geo")]
         geo: geo::new(),
-        international_prefix: "00",
+        maybe_international_prefix: Some("00"),
         maybe_ioc: Some(IOC::NEP),
         iso_long_name: "The Federal Democratic Republic of Nepal",
         iso_short_name: "Nepal",
-        official_language_list: ["ne"].to_vec(),
-        spoken_language_list: ["bho", "mai", "ne", "new", "urd"].to_vec(),
-        national_destination_code_length_list: [2].to_vec(),
-        national_number_length_list: [7, 8].to_vec(),
-        national_prefix: "0",
+        maybe_official_language_list: Some(["ne"].to_vec()),
+        maybe_spoken_language_list: Some(["bho", "mai", "ne", "new", "urd"].to_vec()),
+        maybe_national_destination_code_length_list: Some([2].to_vec()),
+        maybe_national_number_length_list: Some([7, 8].to_vec()),
+        maybe_national_prefix: Some("0"),
         maybe_nationality: Some("Nepalese"),
+        maybe_nanp_prefix: None,
         number: "524",
         postal_code: true,
         postal_code_format: Some("\\d{5}"),
@@ -680,6 +684,7 @@ pub fn new() -> Country {
         start_of_week: WeekDay::Sunday,
         maybe_subregion: Some(SubRegion::SouthernAsia),
         un_locode: "NP",
+        un_member: true,
         unofficial_name_list: [
             "Nepal",
             "Népal",
@@ -687,6 +692,7 @@ pub fn new() -> Country {
             "ネパール",
         ]
         .to_vec(),
+        maybe_vehicle_registration_code: Some("NEP*"),
         world_region: WorldRegion::APAC,
         #[cfg(feature = "emojis")]
         emoji: "🇳🇵",

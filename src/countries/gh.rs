@@ -20,15 +20,15 @@ pub mod consts {
     pub const COUNTRY_CODE: usize = 233;
     pub const CURRENCY_CODE: CurrencyCode = CurrencyCode::GHS;
     pub const GEC: Option<GEC> = Some(GEC::GH);
-    pub const INTERNATIONAL_PREFIX: &str = "00";
+    pub const INTERNATIONAL_PREFIX: Option<&str> = Some("00");
     pub const IOC: Option<IOC> = Some(IOC::GHA);
     pub const ISO_SHORT_NAME: &str = "Ghana";
     pub const ISO_LONG_NAME: &str = "The Republic of Ghana";
-    pub const OFFICIAL_LANGUAGE_LIST: &[&str] = &["en"];
-    pub const SPOKEN_LANGUAGE_LIST: &[&str] = &["en"];
-    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: &[usize] = &[2];
-    pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[5, 6, 7, 8];
-    pub const NATIONAL_PREFIX: &str = "None";
+    pub const OFFICIAL_LANGUAGE_LIST: Option<&[&str]> = Some(&["en"]);
+    pub const SPOKEN_LANGUAGE_LIST: Option<&[&str]> = Some(&["en"]);
+    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: Option<&[usize]> = Some(&[2]);
+    pub const NATIONAL_NUMBER_LENGTH_LIST: Option<&[usize]> = Some(&[5, 6, 7, 8]);
+    pub const NATIONAL_PREFIX: Option<&str> = Some("None");
     pub const NATIONALITY: Option<&str> = Some("Ghanaian");
     pub const NUMBER: &str = "288";
     pub const POSTAL_CODE: bool = false;
@@ -37,12 +37,15 @@ pub mod consts {
     pub const START_DAY_OF_WEEK: WeekDay = WeekDay::Monday;
     pub const SUBREGION: Option<SubRegion> = Some(SubRegion::WesternAfrica);
     pub const UN_LOCODE: &str = "GH";
+    pub const UN_MEMBER: bool = true;
     pub const UNOFFICIAL_NAME_LIST: &[&str] = &["Ghana", "ガーナ"];
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = Some("GH");
     pub const WORLD_REGION: WorldRegion = WorldRegion::EMEA;
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
+    pub const NANP_PREFIX: Option<&str> = None;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
     pub const POPULATION: Option<u64> = Some(33475870);
     #[cfg(feature = "emojis")]
@@ -1150,16 +1153,17 @@ pub fn new() -> Country {
         maybe_gec: Some(GEC::GH),
         #[cfg(feature = "geo")]
         geo: geo::new(),
-        international_prefix: "00",
+        maybe_international_prefix: Some("00"),
         maybe_ioc: Some(IOC::GHA),
         iso_long_name: "The Republic of Ghana",
         iso_short_name: "Ghana",
-        official_language_list: ["en"].to_vec(),
-        spoken_language_list: ["en"].to_vec(),
-        national_destination_code_length_list: [2].to_vec(),
-        national_number_length_list: [5, 6, 7, 8].to_vec(),
-        national_prefix: "None",
+        maybe_official_language_list: Some(["en"].to_vec()),
+        maybe_spoken_language_list: Some(["en"].to_vec()),
+        maybe_national_destination_code_length_list: Some([2].to_vec()),
+        maybe_national_number_length_list: Some([5, 6, 7, 8].to_vec()),
+        maybe_national_prefix: Some("None"),
         maybe_nationality: Some("Ghanaian"),
+        maybe_nanp_prefix: None,
         number: "288",
         postal_code: false,
         postal_code_format: None,
@@ -1167,7 +1171,9 @@ pub fn new() -> Country {
         start_of_week: WeekDay::Monday,
         maybe_subregion: Some(SubRegion::WesternAfrica),
         un_locode: "GH",
+        un_member: true,
         unofficial_name_list: ["Ghana", "ガーナ"].to_vec(),
+        maybe_vehicle_registration_code: Some("GH"),
         world_region: WorldRegion::EMEA,
         #[cfg(feature = "emojis")]
         emoji: "🇬🇭",

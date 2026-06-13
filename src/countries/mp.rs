@@ -20,15 +20,15 @@ pub mod consts {
     pub const COUNTRY_CODE: usize = 1;
     pub const CURRENCY_CODE: CurrencyCode = CurrencyCode::USD;
     pub const GEC: Option<GEC> = Some(GEC::CQ);
-    pub const INTERNATIONAL_PREFIX: &str = "011";
+    pub const INTERNATIONAL_PREFIX: Option<&str> = Some("011");
     pub const IOC: Option<IOC> = None;
     pub const ISO_SHORT_NAME: &str = "Northern Mariana Islands";
     pub const ISO_LONG_NAME: &str = "The Commonwealth of the Northern Mariana Islands";
-    pub const OFFICIAL_LANGUAGE_LIST: &[&str] = &["ch", "en"];
-    pub const SPOKEN_LANGUAGE_LIST: &[&str] = &["ch", "en"];
-    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: &[usize] = &[3];
-    pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[10];
-    pub const NATIONAL_PREFIX: &str = "1";
+    pub const OFFICIAL_LANGUAGE_LIST: Option<&[&str]> = Some(&["ch", "en"]);
+    pub const SPOKEN_LANGUAGE_LIST: Option<&[&str]> = Some(&["ch", "en"]);
+    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: Option<&[usize]> = Some(&[3]);
+    pub const NATIONAL_NUMBER_LENGTH_LIST: Option<&[usize]> = Some(&[10]);
+    pub const NATIONAL_PREFIX: Option<&str> = Some("1");
     pub const NATIONALITY: Option<&str> = Some("American");
     pub const NUMBER: &str = "580";
     pub const POSTAL_CODE: bool = true;
@@ -37,6 +37,7 @@ pub mod consts {
     pub const START_DAY_OF_WEEK: WeekDay = WeekDay::Monday;
     pub const SUBREGION: Option<SubRegion> = Some(SubRegion::Micronesia);
     pub const UN_LOCODE: &str = "MP";
+    pub const UN_MEMBER: bool = false;
     pub const UNOFFICIAL_NAME_LIST: &[&str] = &[
         "Northern Mariana Islands",
         "Nördliche Marianen",
@@ -45,11 +46,13 @@ pub mod consts {
         "北マリアナ諸島",
         "Noordelijke Marianeneilanden",
     ];
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = None;
     pub const WORLD_REGION: WorldRegion = WorldRegion::APAC;
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
+    pub const NANP_PREFIX: Option<&str> = Some("1670");
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Mi;
     pub const POPULATION: Option<u64> = Some(49551);
     #[cfg(feature = "emojis")]
@@ -291,16 +294,17 @@ pub fn new() -> Country {
         maybe_gec: Some(GEC::CQ),
         #[cfg(feature = "geo")]
         geo: geo::new(),
-        international_prefix: "011",
+        maybe_international_prefix: Some("011"),
         maybe_ioc: None,
         iso_long_name: "The Commonwealth of the Northern Mariana Islands",
         iso_short_name: "Northern Mariana Islands",
-        official_language_list: ["ch", "en"].to_vec(),
-        spoken_language_list: ["ch", "en"].to_vec(),
-        national_destination_code_length_list: [3].to_vec(),
-        national_number_length_list: [10].to_vec(),
-        national_prefix: "1",
+        maybe_official_language_list: Some(["ch", "en"].to_vec()),
+        maybe_spoken_language_list: Some(["ch", "en"].to_vec()),
+        maybe_national_destination_code_length_list: Some([3].to_vec()),
+        maybe_national_number_length_list: Some([10].to_vec()),
+        maybe_national_prefix: Some("1"),
         maybe_nationality: Some("American"),
+        maybe_nanp_prefix: Some("1670"),
         number: "580",
         postal_code: true,
         postal_code_format: Some("(9695[012])(?:[ \\-](\\d{4}))?"),
@@ -308,7 +312,9 @@ pub fn new() -> Country {
         start_of_week: WeekDay::Monday,
         maybe_subregion: Some(SubRegion::Micronesia),
         un_locode: "MP",
+        un_member: false,
         unofficial_name_list: ["Northern Mariana Islands", "Nördliche Marianen", "Mariannes du Nord", "Islas Marianas del Norte", "北マリアナ諸島", "Noordelijke Marianeneilanden"].to_vec(),
+        maybe_vehicle_registration_code: None,
         world_region: WorldRegion::APAC,
         #[cfg(feature = "emojis")]
         emoji: "🇲🇵",

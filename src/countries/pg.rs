@@ -20,15 +20,15 @@ pub mod consts {
     pub const COUNTRY_CODE: usize = 675;
     pub const CURRENCY_CODE: CurrencyCode = CurrencyCode::PGK;
     pub const GEC: Option<GEC> = Some(GEC::PP);
-    pub const INTERNATIONAL_PREFIX: &str = "05";
+    pub const INTERNATIONAL_PREFIX: Option<&str> = Some("05");
     pub const IOC: Option<IOC> = Some(IOC::PNG);
     pub const ISO_SHORT_NAME: &str = "Papua New Guinea";
     pub const ISO_LONG_NAME: &str = "The Independent State of Papua New Guinea";
-    pub const OFFICIAL_LANGUAGE_LIST: &[&str] = &["en"];
-    pub const SPOKEN_LANGUAGE_LIST: &[&str] = &["en"];
-    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: &[usize] = &[2];
-    pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[7];
-    pub const NATIONAL_PREFIX: &str = "None";
+    pub const OFFICIAL_LANGUAGE_LIST: Option<&[&str]> = Some(&["en"]);
+    pub const SPOKEN_LANGUAGE_LIST: Option<&[&str]> = Some(&["en"]);
+    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: Option<&[usize]> = Some(&[2]);
+    pub const NATIONAL_NUMBER_LENGTH_LIST: Option<&[usize]> = Some(&[7]);
+    pub const NATIONAL_PREFIX: Option<&str> = Some("None");
     pub const NATIONALITY: Option<&str> = Some("Papua New Guinean");
     pub const NUMBER: &str = "598";
     pub const POSTAL_CODE: bool = true;
@@ -37,6 +37,7 @@ pub mod consts {
     pub const START_DAY_OF_WEEK: WeekDay = WeekDay::Monday;
     pub const SUBREGION: Option<SubRegion> = Some(SubRegion::Melanesia);
     pub const UN_LOCODE: &str = "PG";
+    pub const UN_MEMBER: bool = true;
     pub const UNOFFICIAL_NAME_LIST: &[&str] = &[
         "Papua New Guinea",
         "Papua-Neuguinea",
@@ -45,11 +46,13 @@ pub mod consts {
         "パプアニューギニア",
         "Papoea-Nieuw-Guinea",
     ];
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = Some("PNG");
     pub const WORLD_REGION: WorldRegion = WorldRegion::APAC;
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
+    pub const NANP_PREFIX: Option<&str> = None;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
     pub const POPULATION: Option<u64> = Some(10142619);
     #[cfg(feature = "emojis")]
@@ -611,16 +614,17 @@ pub fn new() -> Country {
         maybe_gec: Some(GEC::PP),
         #[cfg(feature = "geo")]
         geo: geo::new(),
-        international_prefix: "05",
+        maybe_international_prefix: Some("05"),
         maybe_ioc: Some(IOC::PNG),
         iso_long_name: "The Independent State of Papua New Guinea",
         iso_short_name: "Papua New Guinea",
-        official_language_list: ["en"].to_vec(),
-        spoken_language_list: ["en"].to_vec(),
-        national_destination_code_length_list: [2].to_vec(),
-        national_number_length_list: [7].to_vec(),
-        national_prefix: "None",
+        maybe_official_language_list: Some(["en"].to_vec()),
+        maybe_spoken_language_list: Some(["en"].to_vec()),
+        maybe_national_destination_code_length_list: Some([2].to_vec()),
+        maybe_national_number_length_list: Some([7].to_vec()),
+        maybe_national_prefix: Some("None"),
         maybe_nationality: Some("Papua New Guinean"),
+        maybe_nanp_prefix: None,
         number: "598",
         postal_code: true,
         postal_code_format: Some("\\d{3}"),
@@ -628,6 +632,7 @@ pub fn new() -> Country {
         start_of_week: WeekDay::Monday,
         maybe_subregion: Some(SubRegion::Melanesia),
         un_locode: "PG",
+        un_member: true,
         unofficial_name_list: [
             "Papua New Guinea",
             "Papua-Neuguinea",
@@ -637,6 +642,7 @@ pub fn new() -> Country {
             "Papoea-Nieuw-Guinea",
         ]
         .to_vec(),
+        maybe_vehicle_registration_code: Some("PNG"),
         world_region: WorldRegion::APAC,
         #[cfg(feature = "emojis")]
         emoji: "🇵🇬",
