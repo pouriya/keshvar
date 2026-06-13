@@ -83,7 +83,7 @@ Run bellow command inside root directory of your Cargo project:
 cargo add keshvar 
 ```
 #### Manual
-Add `keshvar = "0.6"` under `dependencies` section inside your `Cargo.toml` file.  
+Add `keshvar = "0.7"` under `dependencies` section inside your `Cargo.toml` file.  
 
 Now you're ready to use it inside your Cargo project.
 
@@ -96,7 +96,7 @@ By default, all countries are included. Additionally, you can add `subdivisions`
 # - Translations for all country names.
 # - Geo for all countries.
 # - serde support for serializing/deserializing keshvar's structs and enums
-keshvar = {version = "0.6", features = ["translations", "geo", "serde-derive"]}
+keshvar = {version = "0.7", features = ["translations", "geo", "serde-derive"]}
 ```
 If you do not want to support all countries, You can disable default features and include what countries you want:
 ```toml
@@ -104,7 +104,7 @@ If you do not want to support all countries, You can disable default features an
 # Include:
 # - only USA and Englang.
 # - Subdivisions for included countries (here only USA and Englang).
-keshvar = {version = "0.6", default-features = false, features = ["us", "gb", "subdivisions"]}
+keshvar = {version = "0.7", default-features = false, features = ["us", "gb", "subdivisions"]}
 ```
 Additionally, You can only include countries for different continents, regions, subregions, and world regions:
 ```toml
@@ -113,7 +113,7 @@ Additionally, You can only include countries for different continents, regions, 
 # - Countries of `asia` continent.
 # - Countries of `oceania` region.
 # - Countries of `northern-africa` subregion.
-keshvar = {version = "0.6", default-features = false, features = ["asia", "oceania", "northern-africa"]}
+keshvar = {version = "0.7", default-features = false, features = ["asia", "oceania", "northern-africa"]}
 ```
 [Continent](crate::Continent) feature names: `africa` | `antarctica` | `asia` | `australia` | `europe` | `north-america` | `south-america`
 
@@ -199,7 +199,7 @@ assert_eq!(SubRegion::WesternAsia, list[0]);
 Enable `subdivisions` feature inside `Cargo.toml` file:
 ```toml
 [dependencies]
-keshvar = {version = "0.6", features = ["subdivisions"]}
+keshvar = {version = "0.7", features = ["subdivisions"]}
 ```
 ##### Example
 ```rust
@@ -227,7 +227,7 @@ assert_eq!(Some(-0.1277583), geo.longitude());
 Enable `translations` feature inside `Cargo.toml` file:
 ```toml
 [dependencies]
-keshvar = {version = "0.6", features = ["translations"]}
+keshvar = {version = "0.7", features = ["translations"]}
 ```
 ##### Example
 ```rust
@@ -263,7 +263,7 @@ assert_eq!("Israel", country.iso_short_name());
 Enable `geo` feature inside `Cargo.toml` file:
 ```toml
 [dependencies]
-keshvar = {version = "0.6", features = ["geo"]}
+keshvar = {version = "0.7", features = ["geo"]}
 ```
 ##### Example
 ```rust
