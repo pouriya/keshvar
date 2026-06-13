@@ -24,7 +24,7 @@ pub mod consts {
     pub const IOC: Option<IOC> = Some(IOC::ARM);
     pub const ISO_SHORT_NAME: &str = "Armenia";
     pub const ISO_LONG_NAME: &str = "The Republic of Armenia";
-    pub const OFFICIAL_LANGUAGE_LIST: &[&str] = &["hy", "ru"];
+    pub const OFFICIAL_LANGUAGE_LIST: &[&str] = &["hy"];
     pub const SPOKEN_LANGUAGE_LIST: &[&str] = &["hy", "ru"];
     pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: &[usize] = &[2];
     pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[8];
@@ -438,7 +438,7 @@ pub fn new() -> Country {
         maybe_ioc: Some(IOC::ARM),
         iso_long_name: "The Republic of Armenia",
         iso_short_name: "Armenia",
-        official_language_list: ["hy", "ru"].to_vec(),
+        official_language_list: ["hy"].to_vec(),
         spoken_language_list: ["hy", "ru"].to_vec(),
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [8].to_vec(),

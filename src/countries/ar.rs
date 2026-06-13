@@ -26,7 +26,7 @@ pub mod consts {
     pub const ISO_SHORT_NAME: &str = "Argentina";
     pub const ISO_LONG_NAME: &str = "The Argentine Republic";
     pub const OFFICIAL_LANGUAGE_LIST: &[&str] = &["es", "gn"];
-    pub const SPOKEN_LANGUAGE_LIST: &[&str] = &["es", "gn"];
+    pub const SPOKEN_LANGUAGE_LIST: &[&str] = &["es", "gn", "qu"];
     pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: &[usize] = &[2];
     pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[8, 9];
     pub const NATIONAL_PREFIX: &str = "0";
@@ -642,7 +642,7 @@ pub fn new() -> Country {
         iso_long_name: "The Argentine Republic",
         iso_short_name: "Argentina",
         official_language_list: ["es", "gn"].to_vec(),
-        spoken_language_list: ["es", "gn"].to_vec(),
+        spoken_language_list: ["es", "gn", "qu"].to_vec(),
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [8, 9].to_vec(),
         national_prefix: "0",

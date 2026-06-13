@@ -54,6 +54,7 @@ pub mod consts {
         "Velká Británie",
         "İngiltere",
         "Великобританія",
+        "Great Britain",
     ];
     pub const WORLD_REGION: WorldRegion = WorldRegion::EMEA;
     pub const G7_MEMBER: bool = true;
@@ -2545,7 +2546,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::UnitaryAuthority,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("af", "Peterborough"), ("ar", "بيتربرة"), ("be", "Пітэрбара"), ("bn", "পিট\u{9be}রব\u{9be}র\u{9cd}গ"), ("ca", "Peterborough"), ("ccp", "𑄛\u{11128}𑄑𑄢\u{11134}"), ("ceb", "City of Peterborough"), ("cs", "Peterborough"), ("cy", "Dinas Peterborough"), ("da", "Peterborough"), ("de", "City of Peterborough"), ("el", "Πήτερμπορο"), ("en", "Peter"), ("es", "Peterborough"), ("et", "Peterborough"), ("eu", "Peterborough"), ("fa", "پیتربورو"), ("fi", "Peterborough"), ("fr", "Peterborough"), ("gu", "પીટરબરો"), ("he", "פטרבורו"), ("hi", "पीटरबरो"), ("hu", "Peterborough"), ("hy", "Պիտերբորո"), ("id", "Peterborough"), ("is", "Peterborough"), ("it", "Peterborough"), ("ja", "ピーターバラ"), ("kn", "ಪ\u{cc0}ಟರ\u{ccd} ಬ\u{cca}ರ\u{cca}ಹ\u{ccd}"), ("ko", "피터버러"), ("lt", "Piterboras"), ("lv", "Pīterboro"), ("mr", "पीटरबॉरो"), ("ms", "Peterborough"), ("nb", "Peterborough"), ("nl", "Peterborough"), ("no", "Peterborough"), ("pl", "City of Peterborough"), ("pt", "Peterborough"), ("ro", "Peterborough"), ("ru", "Питерборо"), ("si", "ප\u{dd3}ටර\u{dca}බොරෝ"), ("sk", "Peterborough"), ("sl", "Peterborough"), ("sr", "Питерборо"), ("sr_Latn", "Piterboro"), ("sv", "Peterborough"), ("sw", "Peterborough"), ("ta", "ப\u{bc0}ட\u{bcd}டர\u{bcd}ப\u{bbe}ரோ"), ("te", "ప\u{c40}టర\u{c4d} బర\u{c4b}"), ("th", "ป\u{e35}เตอร\u{e4c}โบโร"), ("tr", "Peterborough"), ("uk", "Пітерборо"), ("ur", "پیٹربورو"), ("vi", "Peterborough"), ("zh", "彼得伯勒")]),
+                        translations: HashMap::from([("af", "Peterborough"), ("ar", "بيتربرة"), ("be", "Пітэрбара"), ("bn", "পিট\u{9be}রব\u{9be}র\u{9cd}গ"), ("ca", "Peterborough"), ("ccp", "𑄛\u{11128}𑄑𑄢\u{11134}"), ("ceb", "City of Peterborough"), ("cs", "Peterborough"), ("cy", "Dinas Peterborough"), ("da", "Peterborough"), ("de", "City of Peterborough"), ("el", "Πήτερμπορο"), ("en", "Peterborough"), ("es", "Peterborough"), ("et", "Peterborough"), ("eu", "Peterborough"), ("fa", "پیتربورو"), ("fi", "Peterborough"), ("fr", "Peterborough"), ("gu", "પીટરબરો"), ("he", "פטרבורו"), ("hi", "पीटरबरो"), ("hu", "Peterborough"), ("hy", "Պիտերբորո"), ("id", "Peterborough"), ("is", "Peterborough"), ("it", "Peterborough"), ("ja", "ピーターバラ"), ("kn", "ಪ\u{cc0}ಟರ\u{ccd} ಬ\u{cca}ರ\u{cca}ಹ\u{ccd}"), ("ko", "피터버러"), ("lt", "Piterboras"), ("lv", "Pīterboro"), ("mr", "पीटरबॉरो"), ("ms", "Peterborough"), ("nb", "Peterborough"), ("nl", "Peterborough"), ("no", "Peterborough"), ("pl", "City of Peterborough"), ("pt", "Peterborough"), ("ro", "Peterborough"), ("ru", "Питерборо"), ("si", "ප\u{dd3}ටර\u{dca}බොරෝ"), ("sk", "Peterborough"), ("sl", "Peterborough"), ("sr", "Питерборо"), ("sr_Latn", "Piterboro"), ("sv", "Peterborough"), ("sw", "Peterborough"), ("ta", "ப\u{bc0}ட\u{bcd}டர\u{bcd}ப\u{bbe}ரோ"), ("te", "ప\u{c40}టర\u{c4d} బర\u{c4b}"), ("th", "ป\u{e35}เตอร\u{e4c}โบโร"), ("tr", "Peterborough"), ("uk", "Пітерборо"), ("ur", "پیٹربورو"), ("vi", "Peterborough"), ("zh", "彼得伯勒")]),
                         unofficial_name_list: ["Peterborough"].to_vec(),
                     }
                 ),
@@ -3611,7 +3612,7 @@ pub fn new() -> Country {
         start_of_week: WeekDay::Monday,
         maybe_subregion: Some(SubRegion::NorthernEurope),
         un_locode: "GB",
-        unofficial_name_list: ["United Kingdom", "The United Kingdom", "England", "Großbritannien", "Vereinigtes Königreich", "Royaume-Uni", "Reino Unido", "イギリス", "Verenigd Koninkrijk", "Great Britain (UK)", "UK", "Великобритания", "Velká Británie", "İngiltere", "Великобританія"].to_vec(),
+        unofficial_name_list: ["United Kingdom", "The United Kingdom", "England", "Großbritannien", "Vereinigtes Königreich", "Royaume-Uni", "Reino Unido", "イギリス", "Verenigd Koninkrijk", "Great Britain (UK)", "UK", "Великобритания", "Velká Británie", "İngiltere", "Великобританія", "Great Britain"].to_vec(),
         world_region: WorldRegion::EMEA,
         #[cfg(feature = "emojis")]
         emoji: "🇬🇧",

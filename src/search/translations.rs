@@ -6006,6 +6006,8 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("burma", Alpha2::MM),
     #[cfg(feature = "mm")] // The Republic of the Union of Myanmar (Asia)
     ("burma", Alpha2::MM),
+    #[cfg(feature = "mm")] // The Republic of the Union of Myanmar (Asia)
+    ("burma", Alpha2::MM),
     #[cfg(feature = "bf")] // Burkina Faso (Africa)
     ("burquina", Alpha2::BF),
     #[cfg(feature = "bf")] // Burkina Faso (Africa)
@@ -7820,10 +7822,14 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("congo", Alpha2::CG),
     #[cfg(feature = "cg")] // The Republic of the Congo (Africa)
     ("congo", Alpha2::CG),
+    #[cfg(feature = "cg")] // The Republic of the Congo (Africa)
+    ("congo (brazzaville)", Alpha2::CG),
     #[cfg(feature = "cd")] // The Democratic Republic of the Congo (Africa)
     ("congo (dem. rep.)", Alpha2::CD),
     #[cfg(feature = "cd")] // The Democratic Republic of the Congo (Africa)
     ("congo (democratic republic of the)", Alpha2::CD),
+    #[cfg(feature = "cd")] // The Democratic Republic of the Congo (Africa)
+    ("congo (kinshasa)", Alpha2::CD),
     #[cfg(feature = "cd")] // The Democratic Republic of the Congo (Africa)
     ("congo (rep. dem.)", Alpha2::CD),
     #[cfg(feature = "cd")] // The Democratic Republic of the Congo (Africa)
@@ -13454,6 +13460,8 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("granada", Alpha2::GD),
     #[cfg(feature = "cc")] // The Territory of Cocos (Keeling) Islands (Oceania)
     ("grava kokos (kîlîng)", Alpha2::CC),
+    #[cfg(feature = "gb")] // The United Kingdom of Great Britain and Northern Ireland (Europe)
+    ("great britain", Alpha2::GB),
     #[cfg(feature = "gb")] // The United Kingdom of Great Britain and Northern Ireland (Europe)
     ("great britain (uk)", Alpha2::GB),
     #[cfg(feature = "gr")] // The Hellenic Republic (Europe)

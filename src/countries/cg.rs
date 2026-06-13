@@ -43,6 +43,7 @@ pub mod consts {
         "コンゴ共和国",
         "Congo [Republiek]",
         "Congo, Republic of",
+        "Congo (Brazzaville)",
     ];
     pub const WORLD_REGION: WorldRegion = WorldRegion::EMEA;
     pub const G7_MEMBER: bool = false;
@@ -474,6 +475,7 @@ pub fn new() -> Country {
             "コンゴ共和国",
             "Congo [Republiek]",
             "Congo, Republic of",
+            "Congo (Brazzaville)",
         ]
         .to_vec(),
         world_region: WorldRegion::EMEA,

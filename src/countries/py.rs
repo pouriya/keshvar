@@ -32,7 +32,7 @@ pub mod consts {
     pub const NATIONALITY: Option<&str> = Some("Paraguayan");
     pub const NUMBER: &str = "600";
     pub const POSTAL_CODE: bool = true;
-    pub const POSTAL_CODE_FORMAT: Option<&str> = Some("\\d{4}");
+    pub const POSTAL_CODE_FORMAT: Option<&str> = Some("\\d{6}");
     pub const REGION: Option<Region> = Some(Region::Americas);
     pub const START_DAY_OF_WEEK: WeekDay = WeekDay::Monday;
     pub const SUBREGION: Option<SubRegion> = Some(SubRegion::SouthAmerica);
@@ -547,7 +547,7 @@ pub fn new() -> Country {
         maybe_nationality: Some("Paraguayan"),
         number: "600",
         postal_code: true,
-        postal_code_format: Some("\\d{4}"),
+        postal_code_format: Some("\\d{6}"),
         maybe_region: Some(Region::Americas),
         start_of_week: WeekDay::Monday,
         maybe_subregion: Some(SubRegion::SouthAmerica),

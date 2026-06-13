@@ -24,7 +24,7 @@ pub mod consts {
     pub const IOC: Option<IOC> = Some(IOC::UZB);
     pub const ISO_SHORT_NAME: &str = "Uzbekistan";
     pub const ISO_LONG_NAME: &str = "The Republic of Uzbekistan";
-    pub const OFFICIAL_LANGUAGE_LIST: &[&str] = &["ru", "uz"];
+    pub const OFFICIAL_LANGUAGE_LIST: &[&str] = &["uz"];
     pub const SPOKEN_LANGUAGE_LIST: &[&str] = &["ru", "uz"];
     pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: &[usize] = &[2];
     pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[9];
@@ -498,7 +498,7 @@ pub fn new() -> Country {
         maybe_ioc: Some(IOC::UZB),
         iso_long_name: "The Republic of Uzbekistan",
         iso_short_name: "Uzbekistan",
-        official_language_list: ["ru", "uz"].to_vec(),
+        official_language_list: ["uz"].to_vec(),
         spoken_language_list: ["ru", "uz"].to_vec(),
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [9].to_vec(),

@@ -18,7 +18,7 @@ pub mod consts {
     pub const ALPHA3: Alpha3 = Alpha3::ERI;
     pub const CONTINENT: Continent = Continent::Africa;
     pub const COUNTRY_CODE: usize = 291;
-    pub const CURRENCY_CODE: CurrencyCode = CurrencyCode::ETB;
+    pub const CURRENCY_CODE: CurrencyCode = CurrencyCode::ERN;
     pub const GEC: Option<GEC> = Some(GEC::ER);
     pub const INTERNATIONAL_PREFIX: &str = "00";
     pub const IOC: Option<IOC> = Some(IOC::ERI);
@@ -354,7 +354,7 @@ pub fn new() -> Country {
         address_format: None,
         continent: Continent::Africa,
         country_code: 291,
-        currency_code: CurrencyCode::ETB,
+        currency_code: CurrencyCode::ERN,
         maybe_gec: Some(GEC::ER),
         #[cfg(feature = "geo")]
         geo: geo::new(),
