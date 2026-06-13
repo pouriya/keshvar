@@ -21,15 +21,15 @@ pub mod consts {
     pub const COUNTRY_CODE: usize = 52;
     pub const CURRENCY_CODE: CurrencyCode = CurrencyCode::MXN;
     pub const GEC: Option<GEC> = Some(GEC::MX);
-    pub const INTERNATIONAL_PREFIX: &str = "00";
+    pub const INTERNATIONAL_PREFIX: Option<&str> = Some("00");
     pub const IOC: Option<IOC> = Some(IOC::MEX);
     pub const ISO_SHORT_NAME: &str = "Mexico";
     pub const ISO_LONG_NAME: &str = "The United Mexican States";
-    pub const OFFICIAL_LANGUAGE_LIST: &[&str] = &["es"];
-    pub const SPOKEN_LANGUAGE_LIST: &[&str] = &["es"];
-    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: &[usize] = &[2];
-    pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[8, 9, 10];
-    pub const NATIONAL_PREFIX: &str = "01";
+    pub const OFFICIAL_LANGUAGE_LIST: Option<&[&str]> = Some(&["es"]);
+    pub const SPOKEN_LANGUAGE_LIST: Option<&[&str]> = Some(&["es"]);
+    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: Option<&[usize]> = Some(&[2]);
+    pub const NATIONAL_NUMBER_LENGTH_LIST: Option<&[usize]> = Some(&[8, 9, 10]);
+    pub const NATIONAL_PREFIX: Option<&str> = Some("01");
     pub const NATIONALITY: Option<&str> = Some("Mexican");
     pub const NUMBER: &str = "484";
     pub const POSTAL_CODE: bool = true;
@@ -38,13 +38,16 @@ pub mod consts {
     pub const START_DAY_OF_WEEK: WeekDay = WeekDay::Monday;
     pub const SUBREGION: Option<SubRegion> = Some(SubRegion::CentralAmerica);
     pub const UN_LOCODE: &str = "MX";
+    pub const UN_MEMBER: bool = true;
     pub const UNOFFICIAL_NAME_LIST: &[&str] =
         &["Mexico", "Mexiko", "Mexique", "México", "メキシコ"];
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = Some("MEX");
     pub const WORLD_REGION: WorldRegion = WorldRegion::AMER;
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = true;
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
+    pub const NANP_PREFIX: Option<&str> = None;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
     pub const POPULATION: Option<u64> = Some(127504125);
     #[cfg(feature = "emojis")]
@@ -752,16 +755,17 @@ pub fn new() -> Country {
         maybe_gec: Some(GEC::MX),
         #[cfg(feature = "geo")]
         geo: geo::new(),
-        international_prefix: "00",
+        maybe_international_prefix: Some("00"),
         maybe_ioc: Some(IOC::MEX),
         iso_long_name: "The United Mexican States",
         iso_short_name: "Mexico",
-        official_language_list: ["es"].to_vec(),
-        spoken_language_list: ["es"].to_vec(),
-        national_destination_code_length_list: [2].to_vec(),
-        national_number_length_list: [8, 9, 10].to_vec(),
-        national_prefix: "01",
+        maybe_official_language_list: Some(["es"].to_vec()),
+        maybe_spoken_language_list: Some(["es"].to_vec()),
+        maybe_national_destination_code_length_list: Some([2].to_vec()),
+        maybe_national_number_length_list: Some([8, 9, 10].to_vec()),
+        maybe_national_prefix: Some("01"),
         maybe_nationality: Some("Mexican"),
+        maybe_nanp_prefix: None,
         number: "484",
         postal_code: true,
         postal_code_format: Some("\\d{5}"),
@@ -769,7 +773,9 @@ pub fn new() -> Country {
         start_of_week: WeekDay::Monday,
         maybe_subregion: Some(SubRegion::CentralAmerica),
         un_locode: "MX",
+        un_member: true,
         unofficial_name_list: ["Mexico", "Mexiko", "Mexique", "México", "メキシコ"].to_vec(),
+        maybe_vehicle_registration_code: Some("MEX"),
         world_region: WorldRegion::AMER,
         #[cfg(feature = "emojis")]
         emoji: "🇲🇽",

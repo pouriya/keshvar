@@ -21,15 +21,15 @@ pub mod consts {
     pub const COUNTRY_CODE: usize = 963;
     pub const CURRENCY_CODE: CurrencyCode = CurrencyCode::SYP;
     pub const GEC: Option<GEC> = Some(GEC::SY);
-    pub const INTERNATIONAL_PREFIX: &str = "00";
+    pub const INTERNATIONAL_PREFIX: Option<&str> = Some("00");
     pub const IOC: Option<IOC> = Some(IOC::SYR);
     pub const ISO_SHORT_NAME: &str = "Syrian Arab Republic";
     pub const ISO_LONG_NAME: &str = "The Syrian Arab Republic";
-    pub const OFFICIAL_LANGUAGE_LIST: &[&str] = &["ar"];
-    pub const SPOKEN_LANGUAGE_LIST: &[&str] = &["ar"];
-    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: &[usize] = &[2];
-    pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[7, 8];
-    pub const NATIONAL_PREFIX: &str = "0";
+    pub const OFFICIAL_LANGUAGE_LIST: Option<&[&str]> = Some(&["ar"]);
+    pub const SPOKEN_LANGUAGE_LIST: Option<&[&str]> = Some(&["ar"]);
+    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: Option<&[usize]> = Some(&[2]);
+    pub const NATIONAL_NUMBER_LENGTH_LIST: Option<&[usize]> = Some(&[7, 8]);
+    pub const NATIONAL_PREFIX: Option<&str> = Some("0");
     pub const NATIONALITY: Option<&str> = Some("Syrian");
     pub const NUMBER: &str = "760";
     pub const POSTAL_CODE: bool = false;
@@ -38,6 +38,7 @@ pub mod consts {
     pub const START_DAY_OF_WEEK: WeekDay = WeekDay::Monday;
     pub const SUBREGION: Option<SubRegion> = Some(SubRegion::WesternAsia);
     pub const UN_LOCODE: &str = "SY";
+    pub const UN_MEMBER: bool = true;
     pub const UNOFFICIAL_NAME_LIST: &[&str] = &[
         "Syria",
         "سوريا",
@@ -48,11 +49,13 @@ pub mod consts {
         "シリア・アラブ共和国",
         "Syrië",
     ];
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = Some("SYR");
     pub const WORLD_REGION: WorldRegion = WorldRegion::EMEA;
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
+    pub const NANP_PREFIX: Option<&str> = None;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
     pub const POPULATION: Option<u64> = Some(22125249);
     #[cfg(feature = "emojis")]
@@ -485,16 +488,17 @@ pub fn new() -> Country {
         maybe_gec: Some(GEC::SY),
         #[cfg(feature = "geo")]
         geo: geo::new(),
-        international_prefix: "00",
+        maybe_international_prefix: Some("00"),
         maybe_ioc: Some(IOC::SYR),
         iso_long_name: "The Syrian Arab Republic",
         iso_short_name: "Syrian Arab Republic",
-        official_language_list: ["ar"].to_vec(),
-        spoken_language_list: ["ar"].to_vec(),
-        national_destination_code_length_list: [2].to_vec(),
-        national_number_length_list: [7, 8].to_vec(),
-        national_prefix: "0",
+        maybe_official_language_list: Some(["ar"].to_vec()),
+        maybe_spoken_language_list: Some(["ar"].to_vec()),
+        maybe_national_destination_code_length_list: Some([2].to_vec()),
+        maybe_national_number_length_list: Some([7, 8].to_vec()),
+        maybe_national_prefix: Some("0"),
         maybe_nationality: Some("Syrian"),
+        maybe_nanp_prefix: None,
         number: "760",
         postal_code: false,
         postal_code_format: None,
@@ -502,7 +506,9 @@ pub fn new() -> Country {
         start_of_week: WeekDay::Monday,
         maybe_subregion: Some(SubRegion::WesternAsia),
         un_locode: "SY",
+        un_member: true,
         unofficial_name_list: ["Syria", "سوريا", "سورية", "Syrien", "Syrie", "Siria", "シリア・アラブ共和国", "Syrië"].to_vec(),
+        maybe_vehicle_registration_code: Some("SYR"),
         world_region: WorldRegion::EMEA,
         #[cfg(feature = "emojis")]
         emoji: "🇸🇾",

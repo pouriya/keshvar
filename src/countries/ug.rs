@@ -20,15 +20,15 @@ pub mod consts {
     pub const COUNTRY_CODE: usize = 256;
     pub const CURRENCY_CODE: CurrencyCode = CurrencyCode::UGX;
     pub const GEC: Option<GEC> = Some(GEC::UG);
-    pub const INTERNATIONAL_PREFIX: &str = "000";
+    pub const INTERNATIONAL_PREFIX: Option<&str> = Some("000");
     pub const IOC: Option<IOC> = Some(IOC::UGA);
     pub const ISO_SHORT_NAME: &str = "Uganda";
     pub const ISO_LONG_NAME: &str = "The Republic of Uganda";
-    pub const OFFICIAL_LANGUAGE_LIST: &[&str] = &["en", "sw"];
-    pub const SPOKEN_LANGUAGE_LIST: &[&str] = &["en", "sw"];
-    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: &[usize] = &[2];
-    pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[9];
-    pub const NATIONAL_PREFIX: &str = "0";
+    pub const OFFICIAL_LANGUAGE_LIST: Option<&[&str]> = Some(&["en", "sw"]);
+    pub const SPOKEN_LANGUAGE_LIST: Option<&[&str]> = Some(&["en", "sw"]);
+    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: Option<&[usize]> = Some(&[2]);
+    pub const NATIONAL_NUMBER_LENGTH_LIST: Option<&[usize]> = Some(&[9]);
+    pub const NATIONAL_PREFIX: Option<&str> = Some("0");
     pub const NATIONALITY: Option<&str> = Some("Ugandan");
     pub const NUMBER: &str = "800";
     pub const POSTAL_CODE: bool = false;
@@ -37,12 +37,15 @@ pub mod consts {
     pub const START_DAY_OF_WEEK: WeekDay = WeekDay::Monday;
     pub const SUBREGION: Option<SubRegion> = Some(SubRegion::EasternAfrica);
     pub const UN_LOCODE: &str = "UG";
+    pub const UN_MEMBER: bool = true;
     pub const UNOFFICIAL_NAME_LIST: &[&str] = &["Uganda", "ウガンダ", "Oeganda"];
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = Some("EAU");
     pub const WORLD_REGION: WorldRegion = WorldRegion::EMEA;
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
+    pub const NANP_PREFIX: Option<&str> = None;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
     pub const POPULATION: Option<u64> = Some(47249585);
     #[cfg(feature = "emojis")]
@@ -2353,16 +2356,17 @@ pub fn new() -> Country {
         maybe_gec: Some(GEC::UG),
         #[cfg(feature = "geo")]
         geo: geo::new(),
-        international_prefix: "000",
+        maybe_international_prefix: Some("000"),
         maybe_ioc: Some(IOC::UGA),
         iso_long_name: "The Republic of Uganda",
         iso_short_name: "Uganda",
-        official_language_list: ["en", "sw"].to_vec(),
-        spoken_language_list: ["en", "sw"].to_vec(),
-        national_destination_code_length_list: [2].to_vec(),
-        national_number_length_list: [9].to_vec(),
-        national_prefix: "0",
+        maybe_official_language_list: Some(["en", "sw"].to_vec()),
+        maybe_spoken_language_list: Some(["en", "sw"].to_vec()),
+        maybe_national_destination_code_length_list: Some([2].to_vec()),
+        maybe_national_number_length_list: Some([9].to_vec()),
+        maybe_national_prefix: Some("0"),
         maybe_nationality: Some("Ugandan"),
+        maybe_nanp_prefix: None,
         number: "800",
         postal_code: false,
         postal_code_format: None,
@@ -2370,7 +2374,9 @@ pub fn new() -> Country {
         start_of_week: WeekDay::Monday,
         maybe_subregion: Some(SubRegion::EasternAfrica),
         un_locode: "UG",
+        un_member: true,
         unofficial_name_list: ["Uganda", "ウガンダ", "Oeganda"].to_vec(),
+        maybe_vehicle_registration_code: Some("EAU"),
         world_region: WorldRegion::EMEA,
         #[cfg(feature = "emojis")]
         emoji: "🇺🇬",

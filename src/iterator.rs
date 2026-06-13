@@ -196,7 +196,10 @@ impl_iterator!(
 /// for region in RegionIterator::new() {
 ///     for alpha2_str in region.alpha2_list() {
 ///         if let Ok(country) = Country::try_from(*alpha2_str) {
-///             if country.spoken_language_list().contains(&"en") {
+///             if country
+///                 .maybe_spoken_language_list()
+///                 .is_some_and(|list| list.contains(&"en"))
+///             {
 ///                 country_list_with_en_spoken_lang.push(country)
 ///             }
 ///         }
@@ -209,7 +212,11 @@ impl_iterator!(
 ///             .alpha2_list()
 ///             .iter()
 ///             .filter_map(|alpha2_str| Country::try_from(*alpha2_str).ok())
-///             .filter(|country| country.spoken_language_list().contains(&"en"))
+///             .filter(|country| {
+///                 country
+///                     .maybe_spoken_language_list()
+///                     .is_some_and(|list| list.contains(&"en"))
+///             })
 ///             .collect::<Vec<_>>()
 ///     })
 ///     .flatten()

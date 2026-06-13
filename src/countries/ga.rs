@@ -20,15 +20,15 @@ pub mod consts {
     pub const COUNTRY_CODE: usize = 241;
     pub const CURRENCY_CODE: CurrencyCode = CurrencyCode::XAF;
     pub const GEC: Option<GEC> = Some(GEC::GB);
-    pub const INTERNATIONAL_PREFIX: &str = "00";
+    pub const INTERNATIONAL_PREFIX: Option<&str> = Some("00");
     pub const IOC: Option<IOC> = Some(IOC::GAB);
     pub const ISO_SHORT_NAME: &str = "Gabon";
     pub const ISO_LONG_NAME: &str = "The Gabonese Republic";
-    pub const OFFICIAL_LANGUAGE_LIST: &[&str] = &["fr"];
-    pub const SPOKEN_LANGUAGE_LIST: &[&str] = &["fr"];
-    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: &[usize] = &[2];
-    pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[6, 7, 8];
-    pub const NATIONAL_PREFIX: &str = "None";
+    pub const OFFICIAL_LANGUAGE_LIST: Option<&[&str]> = Some(&["fr"]);
+    pub const SPOKEN_LANGUAGE_LIST: Option<&[&str]> = Some(&["fr"]);
+    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: Option<&[usize]> = Some(&[2]);
+    pub const NATIONAL_NUMBER_LENGTH_LIST: Option<&[usize]> = Some(&[6, 7, 8]);
+    pub const NATIONAL_PREFIX: Option<&str> = Some("None");
     pub const NATIONALITY: Option<&str> = Some("Gabonese");
     pub const NUMBER: &str = "266";
     pub const POSTAL_CODE: bool = false;
@@ -37,12 +37,15 @@ pub mod consts {
     pub const START_DAY_OF_WEEK: WeekDay = WeekDay::Monday;
     pub const SUBREGION: Option<SubRegion> = Some(SubRegion::MiddleAfrica);
     pub const UN_LOCODE: &str = "GA";
+    pub const UN_MEMBER: bool = true;
     pub const UNOFFICIAL_NAME_LIST: &[&str] = &["Gabon", "Gabun", "Gabón", "ガボン"];
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = Some("G");
     pub const WORLD_REGION: WorldRegion = WorldRegion::EMEA;
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
+    pub const NANP_PREFIX: Option<&str> = None;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
     pub const POPULATION: Option<u64> = Some(2388992);
     #[cfg(feature = "emojis")]
@@ -403,16 +406,17 @@ pub fn new() -> Country {
         maybe_gec: Some(GEC::GB),
         #[cfg(feature = "geo")]
         geo: geo::new(),
-        international_prefix: "00",
+        maybe_international_prefix: Some("00"),
         maybe_ioc: Some(IOC::GAB),
         iso_long_name: "The Gabonese Republic",
         iso_short_name: "Gabon",
-        official_language_list: ["fr"].to_vec(),
-        spoken_language_list: ["fr"].to_vec(),
-        national_destination_code_length_list: [2].to_vec(),
-        national_number_length_list: [6, 7, 8].to_vec(),
-        national_prefix: "None",
+        maybe_official_language_list: Some(["fr"].to_vec()),
+        maybe_spoken_language_list: Some(["fr"].to_vec()),
+        maybe_national_destination_code_length_list: Some([2].to_vec()),
+        maybe_national_number_length_list: Some([6, 7, 8].to_vec()),
+        maybe_national_prefix: Some("None"),
         maybe_nationality: Some("Gabonese"),
+        maybe_nanp_prefix: None,
         number: "266",
         postal_code: false,
         postal_code_format: None,
@@ -420,7 +424,9 @@ pub fn new() -> Country {
         start_of_week: WeekDay::Monday,
         maybe_subregion: Some(SubRegion::MiddleAfrica),
         un_locode: "GA",
+        un_member: true,
         unofficial_name_list: ["Gabon", "Gabun", "Gabón", "ガボン"].to_vec(),
+        maybe_vehicle_registration_code: Some("G"),
         world_region: WorldRegion::EMEA,
         #[cfg(feature = "emojis")]
         emoji: "🇬🇦",

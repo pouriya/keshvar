@@ -20,15 +20,15 @@ pub mod consts {
     pub const COUNTRY_CODE: usize = 7;
     pub const CURRENCY_CODE: CurrencyCode = CurrencyCode::KZT;
     pub const GEC: Option<GEC> = Some(GEC::KZ);
-    pub const INTERNATIONAL_PREFIX: &str = "810";
+    pub const INTERNATIONAL_PREFIX: Option<&str> = Some("810");
     pub const IOC: Option<IOC> = Some(IOC::KAZ);
     pub const ISO_SHORT_NAME: &str = "Kazakhstan";
     pub const ISO_LONG_NAME: &str = "The Republic of Kazakhstan";
-    pub const OFFICIAL_LANGUAGE_LIST: &[&str] = &["kk", "ru"];
-    pub const SPOKEN_LANGUAGE_LIST: &[&str] = &["kk", "ru"];
-    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: &[usize] = &[3];
-    pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[10];
-    pub const NATIONAL_PREFIX: &str = "8";
+    pub const OFFICIAL_LANGUAGE_LIST: Option<&[&str]> = Some(&["kk", "ru"]);
+    pub const SPOKEN_LANGUAGE_LIST: Option<&[&str]> = Some(&["kk", "ru"]);
+    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: Option<&[usize]> = Some(&[3]);
+    pub const NATIONAL_NUMBER_LENGTH_LIST: Option<&[usize]> = Some(&[10]);
+    pub const NATIONAL_PREFIX: Option<&str> = Some("8");
     pub const NATIONALITY: Option<&str> = Some("Kazakhstani");
     pub const NUMBER: &str = "398";
     pub const POSTAL_CODE: bool = true;
@@ -37,6 +37,7 @@ pub mod consts {
     pub const START_DAY_OF_WEEK: WeekDay = WeekDay::Monday;
     pub const SUBREGION: Option<SubRegion> = Some(SubRegion::CentralAsia);
     pub const UN_LOCODE: &str = "KZ";
+    pub const UN_MEMBER: bool = true;
     pub const UNOFFICIAL_NAME_LIST: &[&str] = &[
         "Kazakhstan",
         "Kasachstan",
@@ -44,11 +45,13 @@ pub mod consts {
         "カザフスタン",
         "Kazachstan",
     ];
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = Some("KZ");
     pub const WORLD_REGION: WorldRegion = WorldRegion::EMEA;
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
+    pub const NANP_PREFIX: Option<&str> = None;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
     pub const POPULATION: Option<u64> = Some(19621972);
     #[cfg(feature = "emojis")]
@@ -529,16 +532,17 @@ pub fn new() -> Country {
         maybe_gec: Some(GEC::KZ),
         #[cfg(feature = "geo")]
         geo: geo::new(),
-        international_prefix: "810",
+        maybe_international_prefix: Some("810"),
         maybe_ioc: Some(IOC::KAZ),
         iso_long_name: "The Republic of Kazakhstan",
         iso_short_name: "Kazakhstan",
-        official_language_list: ["kk", "ru"].to_vec(),
-        spoken_language_list: ["kk", "ru"].to_vec(),
-        national_destination_code_length_list: [3].to_vec(),
-        national_number_length_list: [10].to_vec(),
-        national_prefix: "8",
+        maybe_official_language_list: Some(["kk", "ru"].to_vec()),
+        maybe_spoken_language_list: Some(["kk", "ru"].to_vec()),
+        maybe_national_destination_code_length_list: Some([3].to_vec()),
+        maybe_national_number_length_list: Some([10].to_vec()),
+        maybe_national_prefix: Some("8"),
         maybe_nationality: Some("Kazakhstani"),
+        maybe_nanp_prefix: None,
         number: "398",
         postal_code: true,
         postal_code_format: Some("\\d{6}"),
@@ -546,6 +550,7 @@ pub fn new() -> Country {
         start_of_week: WeekDay::Monday,
         maybe_subregion: Some(SubRegion::CentralAsia),
         un_locode: "KZ",
+        un_member: true,
         unofficial_name_list: [
             "Kazakhstan",
             "Kasachstan",
@@ -554,6 +559,7 @@ pub fn new() -> Country {
             "Kazachstan",
         ]
         .to_vec(),
+        maybe_vehicle_registration_code: Some("KZ"),
         world_region: WorldRegion::EMEA,
         #[cfg(feature = "emojis")]
         emoji: "🇰🇿",

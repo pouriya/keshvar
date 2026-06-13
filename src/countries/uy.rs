@@ -20,15 +20,15 @@ pub mod consts {
     pub const COUNTRY_CODE: usize = 598;
     pub const CURRENCY_CODE: CurrencyCode = CurrencyCode::UYU;
     pub const GEC: Option<GEC> = Some(GEC::UY);
-    pub const INTERNATIONAL_PREFIX: &str = "00";
+    pub const INTERNATIONAL_PREFIX: Option<&str> = Some("00");
     pub const IOC: Option<IOC> = Some(IOC::URU);
     pub const ISO_SHORT_NAME: &str = "Uruguay";
     pub const ISO_LONG_NAME: &str = "The Oriental Republic of Uruguay";
-    pub const OFFICIAL_LANGUAGE_LIST: &[&str] = &["es"];
-    pub const SPOKEN_LANGUAGE_LIST: &[&str] = &["es"];
-    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: &[usize] = &[2];
-    pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[7, 8];
-    pub const NATIONAL_PREFIX: &str = "0";
+    pub const OFFICIAL_LANGUAGE_LIST: Option<&[&str]> = Some(&["es"]);
+    pub const SPOKEN_LANGUAGE_LIST: Option<&[&str]> = Some(&["es"]);
+    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: Option<&[usize]> = Some(&[2]);
+    pub const NATIONAL_NUMBER_LENGTH_LIST: Option<&[usize]> = Some(&[7, 8]);
+    pub const NATIONAL_PREFIX: Option<&str> = Some("0");
     pub const NATIONALITY: Option<&str> = Some("Uruguayan");
     pub const NUMBER: &str = "858";
     pub const POSTAL_CODE: bool = true;
@@ -37,12 +37,15 @@ pub mod consts {
     pub const START_DAY_OF_WEEK: WeekDay = WeekDay::Monday;
     pub const SUBREGION: Option<SubRegion> = Some(SubRegion::SouthAmerica);
     pub const UN_LOCODE: &str = "UY";
+    pub const UN_MEMBER: bool = true;
     pub const UNOFFICIAL_NAME_LIST: &[&str] = &["Uruguay", "ウルグアイ"];
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = Some("ROU");
     pub const WORLD_REGION: WorldRegion = WorldRegion::AMER;
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
+    pub const NANP_PREFIX: Option<&str> = None;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
     pub const POPULATION: Option<u64> = Some(3422794);
     #[cfg(feature = "emojis")]
@@ -553,16 +556,17 @@ pub fn new() -> Country {
         maybe_gec: Some(GEC::UY),
         #[cfg(feature = "geo")]
         geo: geo::new(),
-        international_prefix: "00",
+        maybe_international_prefix: Some("00"),
         maybe_ioc: Some(IOC::URU),
         iso_long_name: "The Oriental Republic of Uruguay",
         iso_short_name: "Uruguay",
-        official_language_list: ["es"].to_vec(),
-        spoken_language_list: ["es"].to_vec(),
-        national_destination_code_length_list: [2].to_vec(),
-        national_number_length_list: [7, 8].to_vec(),
-        national_prefix: "0",
+        maybe_official_language_list: Some(["es"].to_vec()),
+        maybe_spoken_language_list: Some(["es"].to_vec()),
+        maybe_national_destination_code_length_list: Some([2].to_vec()),
+        maybe_national_number_length_list: Some([7, 8].to_vec()),
+        maybe_national_prefix: Some("0"),
         maybe_nationality: Some("Uruguayan"),
+        maybe_nanp_prefix: None,
         number: "858",
         postal_code: true,
         postal_code_format: Some("\\d{5}"),
@@ -570,7 +574,9 @@ pub fn new() -> Country {
         start_of_week: WeekDay::Monday,
         maybe_subregion: Some(SubRegion::SouthAmerica),
         un_locode: "UY",
+        un_member: true,
         unofficial_name_list: ["Uruguay", "ウルグアイ"].to_vec(),
+        maybe_vehicle_registration_code: Some("ROU"),
         world_region: WorldRegion::AMER,
         #[cfg(feature = "emojis")]
         emoji: "🇺🇾",

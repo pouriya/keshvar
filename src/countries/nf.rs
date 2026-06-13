@@ -20,15 +20,15 @@ pub mod consts {
     pub const COUNTRY_CODE: usize = 672;
     pub const CURRENCY_CODE: CurrencyCode = CurrencyCode::AUD;
     pub const GEC: Option<GEC> = Some(GEC::NF);
-    pub const INTERNATIONAL_PREFIX: &str = "00";
+    pub const INTERNATIONAL_PREFIX: Option<&str> = Some("00");
     pub const IOC: Option<IOC> = None;
     pub const ISO_SHORT_NAME: &str = "Norfolk Island";
     pub const ISO_LONG_NAME: &str = "The Territory of Norfolk Island";
-    pub const OFFICIAL_LANGUAGE_LIST: &[&str] = &["en"];
-    pub const SPOKEN_LANGUAGE_LIST: &[&str] = &["en"];
-    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: &[usize] = &[2];
-    pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[6];
-    pub const NATIONAL_PREFIX: &str = "None";
+    pub const OFFICIAL_LANGUAGE_LIST: Option<&[&str]> = Some(&["en"]);
+    pub const SPOKEN_LANGUAGE_LIST: Option<&[&str]> = Some(&["en"]);
+    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: Option<&[usize]> = Some(&[2]);
+    pub const NATIONAL_NUMBER_LENGTH_LIST: Option<&[usize]> = Some(&[6]);
+    pub const NATIONAL_PREFIX: Option<&str> = Some("None");
     pub const NATIONALITY: Option<&str> = Some("Norfolk Islander");
     pub const NUMBER: &str = "574";
     pub const POSTAL_CODE: bool = true;
@@ -37,6 +37,7 @@ pub mod consts {
     pub const START_DAY_OF_WEEK: WeekDay = WeekDay::Monday;
     pub const SUBREGION: Option<SubRegion> = Some(SubRegion::AustraliaAndNewZealand);
     pub const UN_LOCODE: &str = "NF";
+    pub const UN_MEMBER: bool = false;
     pub const UNOFFICIAL_NAME_LIST: &[&str] = &[
         "Norfolk Island",
         "Norfolkinsel",
@@ -45,11 +46,13 @@ pub mod consts {
         "ノーフォーク島",
         "Norfolkeiland",
     ];
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = None;
     pub const WORLD_REGION: WorldRegion = WorldRegion::APAC;
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
+    pub const NANP_PREFIX: Option<&str> = None;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
     pub const POPULATION: Option<u64> = None;
     #[cfg(feature = "emojis")]
@@ -270,16 +273,17 @@ pub fn new() -> Country {
         maybe_gec: Some(GEC::NF),
         #[cfg(feature = "geo")]
         geo: geo::new(),
-        international_prefix: "00",
+        maybe_international_prefix: Some("00"),
         maybe_ioc: None,
         iso_long_name: "The Territory of Norfolk Island",
         iso_short_name: "Norfolk Island",
-        official_language_list: ["en"].to_vec(),
-        spoken_language_list: ["en"].to_vec(),
-        national_destination_code_length_list: [2].to_vec(),
-        national_number_length_list: [6].to_vec(),
-        national_prefix: "None",
+        maybe_official_language_list: Some(["en"].to_vec()),
+        maybe_spoken_language_list: Some(["en"].to_vec()),
+        maybe_national_destination_code_length_list: Some([2].to_vec()),
+        maybe_national_number_length_list: Some([6].to_vec()),
+        maybe_national_prefix: Some("None"),
         maybe_nationality: Some("Norfolk Islander"),
+        maybe_nanp_prefix: None,
         number: "574",
         postal_code: true,
         postal_code_format: Some("2899"),
@@ -287,6 +291,7 @@ pub fn new() -> Country {
         start_of_week: WeekDay::Monday,
         maybe_subregion: Some(SubRegion::AustraliaAndNewZealand),
         un_locode: "NF",
+        un_member: false,
         unofficial_name_list: [
             "Norfolk Island",
             "Norfolkinsel",
@@ -296,6 +301,7 @@ pub fn new() -> Country {
             "Norfolkeiland",
         ]
         .to_vec(),
+        maybe_vehicle_registration_code: None,
         world_region: WorldRegion::APAC,
         #[cfg(feature = "emojis")]
         emoji: "🇳🇫",

@@ -21,15 +21,15 @@ pub mod consts {
     pub const COUNTRY_CODE: usize = 359;
     pub const CURRENCY_CODE: CurrencyCode = CurrencyCode::BGN;
     pub const GEC: Option<GEC> = Some(GEC::BU);
-    pub const INTERNATIONAL_PREFIX: &str = "00";
+    pub const INTERNATIONAL_PREFIX: Option<&str> = Some("00");
     pub const IOC: Option<IOC> = Some(IOC::BUL);
     pub const ISO_SHORT_NAME: &str = "Bulgaria";
     pub const ISO_LONG_NAME: &str = "The Republic of Bulgaria";
-    pub const OFFICIAL_LANGUAGE_LIST: &[&str] = &["bg"];
-    pub const SPOKEN_LANGUAGE_LIST: &[&str] = &["bg"];
-    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: &[usize] = &[2];
-    pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[8, 9, 10];
-    pub const NATIONAL_PREFIX: &str = "0";
+    pub const OFFICIAL_LANGUAGE_LIST: Option<&[&str]> = Some(&["bg"]);
+    pub const SPOKEN_LANGUAGE_LIST: Option<&[&str]> = Some(&["bg"]);
+    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: Option<&[usize]> = Some(&[2]);
+    pub const NATIONAL_NUMBER_LENGTH_LIST: Option<&[usize]> = Some(&[8, 9, 10]);
+    pub const NATIONAL_PREFIX: Option<&str> = Some("0");
     pub const NATIONALITY: Option<&str> = Some("Bulgarian");
     pub const NUMBER: &str = "100";
     pub const POSTAL_CODE: bool = true;
@@ -38,6 +38,7 @@ pub mod consts {
     pub const START_DAY_OF_WEEK: WeekDay = WeekDay::Monday;
     pub const SUBREGION: Option<SubRegion> = Some(SubRegion::EasternEurope);
     pub const UN_LOCODE: &str = "BG";
+    pub const UN_MEMBER: bool = true;
     pub const UNOFFICIAL_NAME_LIST: &[&str] = &[
         "Bulgaria",
         "България",
@@ -46,11 +47,13 @@ pub mod consts {
         "ブルガリア",
         "Bulgarije",
     ];
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = Some("BG");
     pub const WORLD_REGION: WorldRegion = WorldRegion::EMEA;
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = true;
     pub const EEA_MEMBER: bool = true;
+    pub const NANP_PREFIX: Option<&str> = None;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
     pub const POPULATION: Option<u64> = Some(6465097);
     #[cfg(feature = "emojis")]
@@ -696,16 +699,17 @@ pub fn new() -> Country {
         maybe_gec: Some(GEC::BU),
         #[cfg(feature = "geo")]
         geo: geo::new(),
-        international_prefix: "00",
+        maybe_international_prefix: Some("00"),
         maybe_ioc: Some(IOC::BUL),
         iso_long_name: "The Republic of Bulgaria",
         iso_short_name: "Bulgaria",
-        official_language_list: ["bg"].to_vec(),
-        spoken_language_list: ["bg"].to_vec(),
-        national_destination_code_length_list: [2].to_vec(),
-        national_number_length_list: [8, 9, 10].to_vec(),
-        national_prefix: "0",
+        maybe_official_language_list: Some(["bg"].to_vec()),
+        maybe_spoken_language_list: Some(["bg"].to_vec()),
+        maybe_national_destination_code_length_list: Some([2].to_vec()),
+        maybe_national_number_length_list: Some([8, 9, 10].to_vec()),
+        maybe_national_prefix: Some("0"),
         maybe_nationality: Some("Bulgarian"),
+        maybe_nanp_prefix: None,
         number: "100",
         postal_code: true,
         postal_code_format: Some("\\d{4}"),
@@ -713,6 +717,7 @@ pub fn new() -> Country {
         start_of_week: WeekDay::Monday,
         maybe_subregion: Some(SubRegion::EasternEurope),
         un_locode: "BG",
+        un_member: true,
         unofficial_name_list: [
             "Bulgaria",
             "България",
@@ -722,6 +727,7 @@ pub fn new() -> Country {
             "Bulgarije",
         ]
         .to_vec(),
+        maybe_vehicle_registration_code: Some("BG"),
         world_region: WorldRegion::EMEA,
         #[cfg(feature = "emojis")]
         emoji: "🇧🇬",

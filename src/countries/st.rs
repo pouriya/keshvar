@@ -18,17 +18,17 @@ pub mod consts {
     pub const ALPHA3: Alpha3 = Alpha3::STP;
     pub const CONTINENT: Continent = Continent::Africa;
     pub const COUNTRY_CODE: usize = 239;
-    pub const CURRENCY_CODE: CurrencyCode = CurrencyCode::STD;
+    pub const CURRENCY_CODE: CurrencyCode = CurrencyCode::STN;
     pub const GEC: Option<GEC> = Some(GEC::TP);
-    pub const INTERNATIONAL_PREFIX: &str = "00";
+    pub const INTERNATIONAL_PREFIX: Option<&str> = Some("00");
     pub const IOC: Option<IOC> = Some(IOC::STP);
     pub const ISO_SHORT_NAME: &str = "Sao Tome and Principe";
     pub const ISO_LONG_NAME: &str = "The Democratic Republic of São Tomé and Príncipe";
-    pub const OFFICIAL_LANGUAGE_LIST: &[&str] = &["pt"];
-    pub const SPOKEN_LANGUAGE_LIST: &[&str] = &["pt"];
-    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: &[usize] = &[2];
-    pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[6, 7];
-    pub const NATIONAL_PREFIX: &str = "0";
+    pub const OFFICIAL_LANGUAGE_LIST: Option<&[&str]> = Some(&["pt"]);
+    pub const SPOKEN_LANGUAGE_LIST: Option<&[&str]> = Some(&["pt"]);
+    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: Option<&[usize]> = Some(&[2]);
+    pub const NATIONAL_NUMBER_LENGTH_LIST: Option<&[usize]> = Some(&[6, 7]);
+    pub const NATIONAL_PREFIX: Option<&str> = Some("0");
     pub const NATIONALITY: Option<&str> = Some("Sao Tomean");
     pub const NUMBER: &str = "678";
     pub const POSTAL_CODE: bool = false;
@@ -37,6 +37,7 @@ pub mod consts {
     pub const START_DAY_OF_WEEK: WeekDay = WeekDay::Monday;
     pub const SUBREGION: Option<SubRegion> = Some(SubRegion::MiddleAfrica);
     pub const UN_LOCODE: &str = "ST";
+    pub const UN_MEMBER: bool = true;
     pub const UNOFFICIAL_NAME_LIST: &[&str] = &[
         "São Tomé and Príncipe",
         "São Tomé und Príncipe",
@@ -45,11 +46,13 @@ pub mod consts {
         "サントメ・プリンシペ",
         "Sao Tomé en Principe",
     ];
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = Some("STP");
     pub const WORLD_REGION: WorldRegion = WorldRegion::EMEA;
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
+    pub const NANP_PREFIX: Option<&str> = None;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
     pub const POPULATION: Option<u64> = Some(227380);
     #[cfg(feature = "emojis")]
@@ -529,20 +532,21 @@ pub fn new() -> Country {
         address_format: None,
         continent: Continent::Africa,
         country_code: 239,
-        currency_code: CurrencyCode::STD,
+        currency_code: CurrencyCode::STN,
         maybe_gec: Some(GEC::TP),
         #[cfg(feature = "geo")]
         geo: geo::new(),
-        international_prefix: "00",
+        maybe_international_prefix: Some("00"),
         maybe_ioc: Some(IOC::STP),
         iso_long_name: "The Democratic Republic of São Tomé and Príncipe",
         iso_short_name: "Sao Tome and Principe",
-        official_language_list: ["pt"].to_vec(),
-        spoken_language_list: ["pt"].to_vec(),
-        national_destination_code_length_list: [2].to_vec(),
-        national_number_length_list: [6, 7].to_vec(),
-        national_prefix: "0",
+        maybe_official_language_list: Some(["pt"].to_vec()),
+        maybe_spoken_language_list: Some(["pt"].to_vec()),
+        maybe_national_destination_code_length_list: Some([2].to_vec()),
+        maybe_national_number_length_list: Some([6, 7].to_vec()),
+        maybe_national_prefix: Some("0"),
         maybe_nationality: Some("Sao Tomean"),
+        maybe_nanp_prefix: None,
         number: "678",
         postal_code: false,
         postal_code_format: None,
@@ -550,7 +554,9 @@ pub fn new() -> Country {
         start_of_week: WeekDay::Monday,
         maybe_subregion: Some(SubRegion::MiddleAfrica),
         un_locode: "ST",
+        un_member: true,
         unofficial_name_list: ["São Tomé and Príncipe", "São Tomé und Príncipe", "São Tomé et Príncipe", "Santo Tomé y Príncipe", "サントメ・プリンシペ", "Sao Tomé en Principe"].to_vec(),
+        maybe_vehicle_registration_code: Some("STP"),
         world_region: WorldRegion::EMEA,
         #[cfg(feature = "emojis")]
         emoji: "🇸🇹",

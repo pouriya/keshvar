@@ -20,15 +20,15 @@ pub mod consts {
     pub const COUNTRY_CODE: usize = 246;
     pub const CURRENCY_CODE: CurrencyCode = CurrencyCode::USD;
     pub const GEC: Option<GEC> = Some(GEC::IO);
-    pub const INTERNATIONAL_PREFIX: &str = "";
+    pub const INTERNATIONAL_PREFIX: Option<&str> = None;
     pub const IOC: Option<IOC> = None;
     pub const ISO_SHORT_NAME: &str = "British Indian Ocean Territory";
     pub const ISO_LONG_NAME: &str = "The British Indian Ocean Territory";
-    pub const OFFICIAL_LANGUAGE_LIST: &[&str] = &["en"];
-    pub const SPOKEN_LANGUAGE_LIST: &[&str] = &["en"];
-    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: &[usize] = &[];
-    pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[];
-    pub const NATIONAL_PREFIX: &str = "";
+    pub const OFFICIAL_LANGUAGE_LIST: Option<&[&str]> = Some(&["en"]);
+    pub const SPOKEN_LANGUAGE_LIST: Option<&[&str]> = Some(&["en"]);
+    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: Option<&[usize]> = None;
+    pub const NATIONAL_NUMBER_LENGTH_LIST: Option<&[usize]> = None;
+    pub const NATIONAL_PREFIX: Option<&str> = None;
     pub const NATIONALITY: Option<&str> = Some("Indian");
     pub const NUMBER: &str = "086";
     pub const POSTAL_CODE: bool = true;
@@ -37,17 +37,20 @@ pub mod consts {
     pub const START_DAY_OF_WEEK: WeekDay = WeekDay::Monday;
     pub const SUBREGION: Option<SubRegion> = Some(SubRegion::EasternAfrica);
     pub const UN_LOCODE: &str = "IO";
+    pub const UN_MEMBER: bool = false;
     pub const UNOFFICIAL_NAME_LIST: &[&str] = &[
         "British Indian Ocean Territory",
         "Britisches Territorium im Indischen Ozean",
         "イギリス領インド洋地域",
         "Britse Gebieden in de Indische Oceaan",
     ];
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = None;
     pub const WORLD_REGION: WorldRegion = WorldRegion::APAC;
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
+    pub const NANP_PREFIX: Option<&str> = None;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
     pub const POPULATION: Option<u64> = None;
     #[cfg(feature = "emojis")]
@@ -265,16 +268,17 @@ pub fn new() -> Country {
         maybe_gec: Some(GEC::IO),
         #[cfg(feature = "geo")]
         geo: geo::new(),
-        international_prefix: "",
+        maybe_international_prefix: None,
         maybe_ioc: None,
         iso_long_name: "The British Indian Ocean Territory",
         iso_short_name: "British Indian Ocean Territory",
-        official_language_list: ["en"].to_vec(),
-        spoken_language_list: ["en"].to_vec(),
-        national_destination_code_length_list: [].to_vec(),
-        national_number_length_list: [].to_vec(),
-        national_prefix: "",
+        maybe_official_language_list: Some(["en"].to_vec()),
+        maybe_spoken_language_list: Some(["en"].to_vec()),
+        maybe_national_destination_code_length_list: None,
+        maybe_national_number_length_list: None,
+        maybe_national_prefix: None,
         maybe_nationality: Some("Indian"),
+        maybe_nanp_prefix: None,
         number: "086",
         postal_code: true,
         postal_code_format: Some("BBND 1ZZ"),
@@ -282,7 +286,9 @@ pub fn new() -> Country {
         start_of_week: WeekDay::Monday,
         maybe_subregion: Some(SubRegion::EasternAfrica),
         un_locode: "IO",
+        un_member: false,
         unofficial_name_list: ["British Indian Ocean Territory", "Britisches Territorium im Indischen Ozean", "イギリス領インド洋地域", "Britse Gebieden in de Indische Oceaan"].to_vec(),
+        maybe_vehicle_registration_code: None,
         world_region: WorldRegion::APAC,
         #[cfg(feature = "emojis")]
         emoji: "🇮🇴",

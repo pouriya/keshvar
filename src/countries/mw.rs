@@ -20,15 +20,15 @@ pub mod consts {
     pub const COUNTRY_CODE: usize = 265;
     pub const CURRENCY_CODE: CurrencyCode = CurrencyCode::MWK;
     pub const GEC: Option<GEC> = Some(GEC::MI);
-    pub const INTERNATIONAL_PREFIX: &str = "00";
+    pub const INTERNATIONAL_PREFIX: Option<&str> = Some("00");
     pub const IOC: Option<IOC> = Some(IOC::MAW);
     pub const ISO_SHORT_NAME: &str = "Malawi";
     pub const ISO_LONG_NAME: &str = "The Republic of Malawi";
-    pub const OFFICIAL_LANGUAGE_LIST: &[&str] = &["en", "ny"];
-    pub const SPOKEN_LANGUAGE_LIST: &[&str] = &["en", "ny"];
-    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: &[usize] = &[2];
-    pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[8];
-    pub const NATIONAL_PREFIX: &str = "None";
+    pub const OFFICIAL_LANGUAGE_LIST: Option<&[&str]> = Some(&["en", "ny"]);
+    pub const SPOKEN_LANGUAGE_LIST: Option<&[&str]> = Some(&["en", "ny"]);
+    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: Option<&[usize]> = Some(&[2]);
+    pub const NATIONAL_NUMBER_LENGTH_LIST: Option<&[usize]> = Some(&[8]);
+    pub const NATIONAL_PREFIX: Option<&str> = Some("None");
     pub const NATIONALITY: Option<&str> = Some("Malawian");
     pub const NUMBER: &str = "454";
     pub const POSTAL_CODE: bool = false;
@@ -37,12 +37,15 @@ pub mod consts {
     pub const START_DAY_OF_WEEK: WeekDay = WeekDay::Monday;
     pub const SUBREGION: Option<SubRegion> = Some(SubRegion::EasternAfrica);
     pub const UN_LOCODE: &str = "MW";
+    pub const UN_MEMBER: bool = true;
     pub const UNOFFICIAL_NAME_LIST: &[&str] = &["Malawi", "マラウイ"];
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = Some("MW");
     pub const WORLD_REGION: WorldRegion = WorldRegion::EMEA;
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
+    pub const NANP_PREFIX: Option<&str> = None;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
     pub const POPULATION: Option<u64> = Some(20405317);
     #[cfg(feature = "emojis")]
@@ -730,16 +733,17 @@ pub fn new() -> Country {
         maybe_gec: Some(GEC::MI),
         #[cfg(feature = "geo")]
         geo: geo::new(),
-        international_prefix: "00",
+        maybe_international_prefix: Some("00"),
         maybe_ioc: Some(IOC::MAW),
         iso_long_name: "The Republic of Malawi",
         iso_short_name: "Malawi",
-        official_language_list: ["en", "ny"].to_vec(),
-        spoken_language_list: ["en", "ny"].to_vec(),
-        national_destination_code_length_list: [2].to_vec(),
-        national_number_length_list: [8].to_vec(),
-        national_prefix: "None",
+        maybe_official_language_list: Some(["en", "ny"].to_vec()),
+        maybe_spoken_language_list: Some(["en", "ny"].to_vec()),
+        maybe_national_destination_code_length_list: Some([2].to_vec()),
+        maybe_national_number_length_list: Some([8].to_vec()),
+        maybe_national_prefix: Some("None"),
         maybe_nationality: Some("Malawian"),
+        maybe_nanp_prefix: None,
         number: "454",
         postal_code: false,
         postal_code_format: None,
@@ -747,7 +751,9 @@ pub fn new() -> Country {
         start_of_week: WeekDay::Monday,
         maybe_subregion: Some(SubRegion::EasternAfrica),
         un_locode: "MW",
+        un_member: true,
         unofficial_name_list: ["Malawi", "マラウイ"].to_vec(),
+        maybe_vehicle_registration_code: Some("MW"),
         world_region: WorldRegion::EMEA,
         #[cfg(feature = "emojis")]
         emoji: "🇲🇼",

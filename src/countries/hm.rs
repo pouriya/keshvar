@@ -20,15 +20,15 @@ pub mod consts {
     pub const COUNTRY_CODE: usize = 672;
     pub const CURRENCY_CODE: CurrencyCode = CurrencyCode::AUD;
     pub const GEC: Option<GEC> = Some(GEC::HM);
-    pub const INTERNATIONAL_PREFIX: &str = "";
+    pub const INTERNATIONAL_PREFIX: Option<&str> = None;
     pub const IOC: Option<IOC> = None;
     pub const ISO_SHORT_NAME: &str = "Heard Island and McDonald Islands";
     pub const ISO_LONG_NAME: &str = "The Territory of Heard Island and McDonald Islands";
-    pub const OFFICIAL_LANGUAGE_LIST: &[&str] = &["en"];
-    pub const SPOKEN_LANGUAGE_LIST: &[&str] = &["en"];
-    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: &[usize] = &[];
-    pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[];
-    pub const NATIONAL_PREFIX: &str = "";
+    pub const OFFICIAL_LANGUAGE_LIST: Option<&[&str]> = Some(&["en"]);
+    pub const SPOKEN_LANGUAGE_LIST: Option<&[&str]> = Some(&["en"]);
+    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: Option<&[usize]> = None;
+    pub const NATIONAL_NUMBER_LENGTH_LIST: Option<&[usize]> = None;
+    pub const NATIONAL_PREFIX: Option<&str> = None;
     pub const NATIONALITY: Option<&str> = Some("Heard and McDonald Islander");
     pub const NUMBER: &str = "334";
     pub const POSTAL_CODE: bool = true;
@@ -37,6 +37,7 @@ pub mod consts {
     pub const START_DAY_OF_WEEK: WeekDay = WeekDay::Monday;
     pub const SUBREGION: Option<SubRegion> = None;
     pub const UN_LOCODE: &str = "HM";
+    pub const UN_MEMBER: bool = false;
     pub const UNOFFICIAL_NAME_LIST: &[&str] = &[
         "Heard and McDonald Islands",
         "Heard und die McDonaldinseln",
@@ -44,11 +45,13 @@ pub mod consts {
         "Heard- en McDonaldeilanden",
         "Heard Island and McDonald Islands",
     ];
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = None;
     pub const WORLD_REGION: WorldRegion = WorldRegion::APAC;
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
+    pub const NANP_PREFIX: Option<&str> = None;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
     pub const POPULATION: Option<u64> = None;
     #[cfg(feature = "emojis")]
@@ -266,16 +269,17 @@ pub fn new() -> Country {
         maybe_gec: Some(GEC::HM),
         #[cfg(feature = "geo")]
         geo: geo::new(),
-        international_prefix: "",
+        maybe_international_prefix: None,
         maybe_ioc: None,
         iso_long_name: "The Territory of Heard Island and McDonald Islands",
         iso_short_name: "Heard Island and McDonald Islands",
-        official_language_list: ["en"].to_vec(),
-        spoken_language_list: ["en"].to_vec(),
-        national_destination_code_length_list: [].to_vec(),
-        national_number_length_list: [].to_vec(),
-        national_prefix: "",
+        maybe_official_language_list: Some(["en"].to_vec()),
+        maybe_spoken_language_list: Some(["en"].to_vec()),
+        maybe_national_destination_code_length_list: None,
+        maybe_national_number_length_list: None,
+        maybe_national_prefix: None,
         maybe_nationality: Some("Heard and McDonald Islander"),
+        maybe_nanp_prefix: None,
         number: "334",
         postal_code: true,
         postal_code_format: Some("\\d{4}"),
@@ -283,7 +287,9 @@ pub fn new() -> Country {
         start_of_week: WeekDay::Monday,
         maybe_subregion: None,
         un_locode: "HM",
+        un_member: false,
         unofficial_name_list: ["Heard and McDonald Islands", "Heard und die McDonaldinseln", "ハード島とマクドナルド諸島", "Heard- en McDonaldeilanden", "Heard Island and McDonald Islands"].to_vec(),
+        maybe_vehicle_registration_code: None,
         world_region: WorldRegion::APAC,
         #[cfg(feature = "emojis")]
         emoji: "🇭🇲",

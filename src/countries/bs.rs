@@ -20,15 +20,15 @@ pub mod consts {
     pub const COUNTRY_CODE: usize = 1;
     pub const CURRENCY_CODE: CurrencyCode = CurrencyCode::BSD;
     pub const GEC: Option<GEC> = Some(GEC::BF);
-    pub const INTERNATIONAL_PREFIX: &str = "011";
+    pub const INTERNATIONAL_PREFIX: Option<&str> = Some("011");
     pub const IOC: Option<IOC> = Some(IOC::BAH);
     pub const ISO_SHORT_NAME: &str = "Bahamas";
     pub const ISO_LONG_NAME: &str = "The Commonwealth of The Bahamas";
-    pub const OFFICIAL_LANGUAGE_LIST: &[&str] = &["en"];
-    pub const SPOKEN_LANGUAGE_LIST: &[&str] = &["en"];
-    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: &[usize] = &[3];
-    pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[10];
-    pub const NATIONAL_PREFIX: &str = "1";
+    pub const OFFICIAL_LANGUAGE_LIST: Option<&[&str]> = Some(&["en"]);
+    pub const SPOKEN_LANGUAGE_LIST: Option<&[&str]> = Some(&["en"]);
+    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: Option<&[usize]> = Some(&[3]);
+    pub const NATIONAL_NUMBER_LENGTH_LIST: Option<&[usize]> = Some(&[10]);
+    pub const NATIONAL_PREFIX: Option<&str> = Some("1");
     pub const NATIONALITY: Option<&str> = Some("Bahamian");
     pub const NUMBER: &str = "044";
     pub const POSTAL_CODE: bool = false;
@@ -37,12 +37,15 @@ pub mod consts {
     pub const START_DAY_OF_WEEK: WeekDay = WeekDay::Monday;
     pub const SUBREGION: Option<SubRegion> = Some(SubRegion::Caribbean);
     pub const UN_LOCODE: &str = "BS";
+    pub const UN_MEMBER: bool = true;
     pub const UNOFFICIAL_NAME_LIST: &[&str] = &["The Bahamas", "バハマ"];
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = Some("BS");
     pub const WORLD_REGION: WorldRegion = WorldRegion::AMER;
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
+    pub const NANP_PREFIX: Option<&str> = Some("1242");
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Mi;
     pub const POPULATION: Option<u64> = Some(409984);
     #[cfg(feature = "emojis")]
@@ -745,16 +748,17 @@ pub fn new() -> Country {
         maybe_gec: Some(GEC::BF),
         #[cfg(feature = "geo")]
         geo: geo::new(),
-        international_prefix: "011",
+        maybe_international_prefix: Some("011"),
         maybe_ioc: Some(IOC::BAH),
         iso_long_name: "The Commonwealth of The Bahamas",
         iso_short_name: "Bahamas",
-        official_language_list: ["en"].to_vec(),
-        spoken_language_list: ["en"].to_vec(),
-        national_destination_code_length_list: [3].to_vec(),
-        national_number_length_list: [10].to_vec(),
-        national_prefix: "1",
+        maybe_official_language_list: Some(["en"].to_vec()),
+        maybe_spoken_language_list: Some(["en"].to_vec()),
+        maybe_national_destination_code_length_list: Some([3].to_vec()),
+        maybe_national_number_length_list: Some([10].to_vec()),
+        maybe_national_prefix: Some("1"),
         maybe_nationality: Some("Bahamian"),
+        maybe_nanp_prefix: Some("1242"),
         number: "044",
         postal_code: false,
         postal_code_format: None,
@@ -762,7 +766,9 @@ pub fn new() -> Country {
         start_of_week: WeekDay::Monday,
         maybe_subregion: Some(SubRegion::Caribbean),
         un_locode: "BS",
+        un_member: true,
         unofficial_name_list: ["The Bahamas", "バハマ"].to_vec(),
+        maybe_vehicle_registration_code: Some("BS"),
         world_region: WorldRegion::AMER,
         #[cfg(feature = "emojis")]
         emoji: "🇧🇸",

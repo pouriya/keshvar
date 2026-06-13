@@ -171,14 +171,14 @@ impl TryFrom<&str> for CurrencyCode {
 #[cfg(feature = "iso-currency-integration")]
 impl CurrencyCode {
     /// If `iso-currency-integration` feature is enabled, you can convert it to [`iso_currency::Currency`](iso_currency::Currency) enum.
-    /// Note that [`CurrencyCode::STD`](crate::CurrencyCode::STD) is not supported by [iso_currency](iso_currency) library.
+    /// Note that [`CurrencyCode::STD`](crate::CurrencyCode::STD) and [`CurrencyCode::XCG`](crate::CurrencyCode::XCG) are not supported by [iso_currency](iso_currency) library.
     pub fn to_iso_currency(&self) -> iso_currency::Currency {
         match self {
 "#
         .as_bytes(),
     )?;
     for currency_code in &sorted_currency_code_list {
-        if currency_code == "STD" {
+        if ["STD", "XCG"].contains(&currency_code.as_str()) {
             continue;
         }
         currency_code_rs_file.write_all(

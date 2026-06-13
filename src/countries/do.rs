@@ -20,15 +20,15 @@ pub mod consts {
     pub const COUNTRY_CODE: usize = 1;
     pub const CURRENCY_CODE: CurrencyCode = CurrencyCode::DOP;
     pub const GEC: Option<GEC> = Some(GEC::DR);
-    pub const INTERNATIONAL_PREFIX: &str = "011";
+    pub const INTERNATIONAL_PREFIX: Option<&str> = Some("011");
     pub const IOC: Option<IOC> = Some(IOC::DOM);
     pub const ISO_SHORT_NAME: &str = "Dominican Republic";
     pub const ISO_LONG_NAME: &str = "The Dominican Republic";
-    pub const OFFICIAL_LANGUAGE_LIST: &[&str] = &["es"];
-    pub const SPOKEN_LANGUAGE_LIST: &[&str] = &["es"];
-    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: &[usize] = &[3];
-    pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[10];
-    pub const NATIONAL_PREFIX: &str = "1";
+    pub const OFFICIAL_LANGUAGE_LIST: Option<&[&str]> = Some(&["es"]);
+    pub const SPOKEN_LANGUAGE_LIST: Option<&[&str]> = Some(&["es"]);
+    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: Option<&[usize]> = Some(&[3]);
+    pub const NATIONAL_NUMBER_LENGTH_LIST: Option<&[usize]> = Some(&[10]);
+    pub const NATIONAL_PREFIX: Option<&str> = Some("1");
     pub const NATIONALITY: Option<&str> = Some("Dominican");
     pub const NUMBER: &str = "214";
     pub const POSTAL_CODE: bool = true;
@@ -37,6 +37,7 @@ pub mod consts {
     pub const START_DAY_OF_WEEK: WeekDay = WeekDay::Monday;
     pub const SUBREGION: Option<SubRegion> = Some(SubRegion::Caribbean);
     pub const UN_LOCODE: &str = "DO";
+    pub const UN_MEMBER: bool = true;
     pub const UNOFFICIAL_NAME_LIST: &[&str] = &[
         "Dominican Republic",
         "Dominikanische Republik",
@@ -45,11 +46,13 @@ pub mod consts {
         "ドミニカ共和国",
         "Dominicaanse Republiek",
     ];
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = Some("DOM");
     pub const WORLD_REGION: WorldRegion = WorldRegion::AMER;
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
+    pub const NANP_PREFIX: Option<&str> = Some("1809");
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
     pub const POPULATION: Option<u64> = Some(11228821);
     #[cfg(feature = "emojis")]
@@ -902,16 +905,17 @@ pub fn new() -> Country {
         maybe_gec: Some(GEC::DR),
         #[cfg(feature = "geo")]
         geo: geo::new(),
-        international_prefix: "011",
+        maybe_international_prefix: Some("011"),
         maybe_ioc: Some(IOC::DOM),
         iso_long_name: "The Dominican Republic",
         iso_short_name: "Dominican Republic",
-        official_language_list: ["es"].to_vec(),
-        spoken_language_list: ["es"].to_vec(),
-        national_destination_code_length_list: [3].to_vec(),
-        national_number_length_list: [10].to_vec(),
-        national_prefix: "1",
+        maybe_official_language_list: Some(["es"].to_vec()),
+        maybe_spoken_language_list: Some(["es"].to_vec()),
+        maybe_national_destination_code_length_list: Some([3].to_vec()),
+        maybe_national_number_length_list: Some([10].to_vec()),
+        maybe_national_prefix: Some("1"),
         maybe_nationality: Some("Dominican"),
+        maybe_nanp_prefix: Some("1809"),
         number: "214",
         postal_code: true,
         postal_code_format: Some("\\d{5}"),
@@ -919,7 +923,9 @@ pub fn new() -> Country {
         start_of_week: WeekDay::Monday,
         maybe_subregion: Some(SubRegion::Caribbean),
         un_locode: "DO",
+        un_member: true,
         unofficial_name_list: ["Dominican Republic", "Dominikanische Republik", "République Dominicaine", "República Dominicana", "ドミニカ共和国", "Dominicaanse Republiek"].to_vec(),
+        maybe_vehicle_registration_code: Some("DOM"),
         world_region: WorldRegion::AMER,
         #[cfg(feature = "emojis")]
         emoji: "🇩🇴",

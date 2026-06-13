@@ -20,15 +20,15 @@ pub mod consts {
     pub const COUNTRY_CODE: usize = 591;
     pub const CURRENCY_CODE: CurrencyCode = CurrencyCode::BOB;
     pub const GEC: Option<GEC> = Some(GEC::BL);
-    pub const INTERNATIONAL_PREFIX: &str = "0010";
+    pub const INTERNATIONAL_PREFIX: Option<&str> = Some("0010");
     pub const IOC: Option<IOC> = Some(IOC::BOL);
     pub const ISO_SHORT_NAME: &str = "Bolivia (Plurinational State of)";
     pub const ISO_LONG_NAME: &str = "The Plurinational State of Bolivia";
-    pub const OFFICIAL_LANGUAGE_LIST: &[&str] = &["ay", "es", "qu"];
-    pub const SPOKEN_LANGUAGE_LIST: &[&str] = &["ay", "es", "qu"];
-    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: &[usize] = &[2];
-    pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[8];
-    pub const NATIONAL_PREFIX: &str = "010";
+    pub const OFFICIAL_LANGUAGE_LIST: Option<&[&str]> = Some(&["ay", "es", "qu"]);
+    pub const SPOKEN_LANGUAGE_LIST: Option<&[&str]> = Some(&["ay", "es", "qu"]);
+    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: Option<&[usize]> = Some(&[2]);
+    pub const NATIONAL_NUMBER_LENGTH_LIST: Option<&[usize]> = Some(&[8]);
+    pub const NATIONAL_PREFIX: Option<&str> = Some("010");
     pub const NATIONALITY: Option<&str> = Some("Bolivian");
     pub const NUMBER: &str = "068";
     pub const POSTAL_CODE: bool = false;
@@ -37,13 +37,16 @@ pub mod consts {
     pub const START_DAY_OF_WEEK: WeekDay = WeekDay::Monday;
     pub const SUBREGION: Option<SubRegion> = Some(SubRegion::SouthAmerica);
     pub const UN_LOCODE: &str = "BO";
+    pub const UN_MEMBER: bool = true;
     pub const UNOFFICIAL_NAME_LIST: &[&str] =
         &["Bolivia", "Bolivien", "Bolivie", "ボリビア多民族国"];
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = Some("BOL");
     pub const WORLD_REGION: WorldRegion = WorldRegion::AMER;
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
+    pub const NANP_PREFIX: Option<&str> = None;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
     pub const POPULATION: Option<u64> = Some(12224110);
     #[cfg(feature = "emojis")]
@@ -404,16 +407,17 @@ pub fn new() -> Country {
         maybe_gec: Some(GEC::BL),
         #[cfg(feature = "geo")]
         geo: geo::new(),
-        international_prefix: "0010",
+        maybe_international_prefix: Some("0010"),
         maybe_ioc: Some(IOC::BOL),
         iso_long_name: "The Plurinational State of Bolivia",
         iso_short_name: "Bolivia (Plurinational State of)",
-        official_language_list: ["ay", "es", "qu"].to_vec(),
-        spoken_language_list: ["ay", "es", "qu"].to_vec(),
-        national_destination_code_length_list: [2].to_vec(),
-        national_number_length_list: [8].to_vec(),
-        national_prefix: "010",
+        maybe_official_language_list: Some(["ay", "es", "qu"].to_vec()),
+        maybe_spoken_language_list: Some(["ay", "es", "qu"].to_vec()),
+        maybe_national_destination_code_length_list: Some([2].to_vec()),
+        maybe_national_number_length_list: Some([8].to_vec()),
+        maybe_national_prefix: Some("010"),
         maybe_nationality: Some("Bolivian"),
+        maybe_nanp_prefix: None,
         number: "068",
         postal_code: false,
         postal_code_format: None,
@@ -421,7 +425,9 @@ pub fn new() -> Country {
         start_of_week: WeekDay::Monday,
         maybe_subregion: Some(SubRegion::SouthAmerica),
         un_locode: "BO",
+        un_member: true,
         unofficial_name_list: ["Bolivia", "Bolivien", "Bolivie", "ボリビア多民族国"].to_vec(),
+        maybe_vehicle_registration_code: Some("BOL"),
         world_region: WorldRegion::AMER,
         #[cfg(feature = "emojis")]
         emoji: "🇧🇴",

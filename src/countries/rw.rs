@@ -20,15 +20,15 @@ pub mod consts {
     pub const COUNTRY_CODE: usize = 250;
     pub const CURRENCY_CODE: CurrencyCode = CurrencyCode::RWF;
     pub const GEC: Option<GEC> = Some(GEC::RW);
-    pub const INTERNATIONAL_PREFIX: &str = "00";
+    pub const INTERNATIONAL_PREFIX: Option<&str> = Some("00");
     pub const IOC: Option<IOC> = Some(IOC::RWA);
     pub const ISO_SHORT_NAME: &str = "Rwanda";
     pub const ISO_LONG_NAME: &str = "The Republic of Rwanda";
-    pub const OFFICIAL_LANGUAGE_LIST: &[&str] = &["en", "fr", "rw"];
-    pub const SPOKEN_LANGUAGE_LIST: &[&str] = &["en", "fr", "rw"];
-    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: &[usize] = &[2];
-    pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[8, 9];
-    pub const NATIONAL_PREFIX: &str = "0";
+    pub const OFFICIAL_LANGUAGE_LIST: Option<&[&str]> = Some(&["en", "fr", "rw"]);
+    pub const SPOKEN_LANGUAGE_LIST: Option<&[&str]> = Some(&["en", "fr", "rw"]);
+    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: Option<&[usize]> = Some(&[2]);
+    pub const NATIONAL_NUMBER_LENGTH_LIST: Option<&[usize]> = Some(&[8, 9]);
+    pub const NATIONAL_PREFIX: Option<&str> = Some("0");
     pub const NATIONALITY: Option<&str> = Some("Rwandan");
     pub const NUMBER: &str = "646";
     pub const POSTAL_CODE: bool = false;
@@ -37,12 +37,15 @@ pub mod consts {
     pub const START_DAY_OF_WEEK: WeekDay = WeekDay::Monday;
     pub const SUBREGION: Option<SubRegion> = Some(SubRegion::EasternAfrica);
     pub const UN_LOCODE: &str = "RW";
+    pub const UN_MEMBER: bool = true;
     pub const UNOFFICIAL_NAME_LIST: &[&str] = &["Rwanda", "Ruanda", "ルワンダ"];
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = Some("RWA");
     pub const WORLD_REGION: WorldRegion = WorldRegion::EMEA;
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
+    pub const NANP_PREFIX: Option<&str> = None;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
     pub const POPULATION: Option<u64> = Some(13776698);
     #[cfg(feature = "emojis")]
@@ -667,16 +670,17 @@ pub fn new() -> Country {
         maybe_gec: Some(GEC::RW),
         #[cfg(feature = "geo")]
         geo: geo::new(),
-        international_prefix: "00",
+        maybe_international_prefix: Some("00"),
         maybe_ioc: Some(IOC::RWA),
         iso_long_name: "The Republic of Rwanda",
         iso_short_name: "Rwanda",
-        official_language_list: ["en", "fr", "rw"].to_vec(),
-        spoken_language_list: ["en", "fr", "rw"].to_vec(),
-        national_destination_code_length_list: [2].to_vec(),
-        national_number_length_list: [8, 9].to_vec(),
-        national_prefix: "0",
+        maybe_official_language_list: Some(["en", "fr", "rw"].to_vec()),
+        maybe_spoken_language_list: Some(["en", "fr", "rw"].to_vec()),
+        maybe_national_destination_code_length_list: Some([2].to_vec()),
+        maybe_national_number_length_list: Some([8, 9].to_vec()),
+        maybe_national_prefix: Some("0"),
         maybe_nationality: Some("Rwandan"),
+        maybe_nanp_prefix: None,
         number: "646",
         postal_code: false,
         postal_code_format: None,
@@ -684,7 +688,9 @@ pub fn new() -> Country {
         start_of_week: WeekDay::Monday,
         maybe_subregion: Some(SubRegion::EasternAfrica),
         un_locode: "RW",
+        un_member: true,
         unofficial_name_list: ["Rwanda", "Ruanda", "ルワンダ"].to_vec(),
+        maybe_vehicle_registration_code: Some("RWA"),
         world_region: WorldRegion::EMEA,
         #[cfg(feature = "emojis")]
         emoji: "🇷🇼",

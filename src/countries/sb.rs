@@ -20,15 +20,15 @@ pub mod consts {
     pub const COUNTRY_CODE: usize = 677;
     pub const CURRENCY_CODE: CurrencyCode = CurrencyCode::SBD;
     pub const GEC: Option<GEC> = Some(GEC::BP);
-    pub const INTERNATIONAL_PREFIX: &str = "00";
+    pub const INTERNATIONAL_PREFIX: Option<&str> = Some("00");
     pub const IOC: Option<IOC> = Some(IOC::SOL);
     pub const ISO_SHORT_NAME: &str = "Solomon Islands";
     pub const ISO_LONG_NAME: &str = "The Solomon Islands";
-    pub const OFFICIAL_LANGUAGE_LIST: &[&str] = &["en"];
-    pub const SPOKEN_LANGUAGE_LIST: &[&str] = &["en"];
-    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: &[usize] = &[2];
-    pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[5];
-    pub const NATIONAL_PREFIX: &str = "None";
+    pub const OFFICIAL_LANGUAGE_LIST: Option<&[&str]> = Some(&["en"]);
+    pub const SPOKEN_LANGUAGE_LIST: Option<&[&str]> = Some(&["en"]);
+    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: Option<&[usize]> = Some(&[2]);
+    pub const NATIONAL_NUMBER_LENGTH_LIST: Option<&[usize]> = Some(&[5]);
+    pub const NATIONAL_PREFIX: Option<&str> = Some("None");
     pub const NATIONALITY: Option<&str> = Some("Solomon Islander");
     pub const NUMBER: &str = "090";
     pub const POSTAL_CODE: bool = false;
@@ -37,6 +37,7 @@ pub mod consts {
     pub const START_DAY_OF_WEEK: WeekDay = WeekDay::Monday;
     pub const SUBREGION: Option<SubRegion> = Some(SubRegion::Melanesia);
     pub const UN_LOCODE: &str = "SB";
+    pub const UN_MEMBER: bool = true;
     pub const UNOFFICIAL_NAME_LIST: &[&str] = &[
         "Solomon Islands",
         "Salomonen",
@@ -45,11 +46,13 @@ pub mod consts {
         "ソロモン諸島",
         "Salomonseilanden",
     ];
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = Some("SOL");
     pub const WORLD_REGION: WorldRegion = WorldRegion::APAC;
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
+    pub const NANP_PREFIX: Option<&str> = None;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
     pub const POPULATION: Option<u64> = Some(724273);
     #[cfg(feature = "emojis")]
@@ -422,16 +425,17 @@ pub fn new() -> Country {
         maybe_gec: Some(GEC::BP),
         #[cfg(feature = "geo")]
         geo: geo::new(),
-        international_prefix: "00",
+        maybe_international_prefix: Some("00"),
         maybe_ioc: Some(IOC::SOL),
         iso_long_name: "The Solomon Islands",
         iso_short_name: "Solomon Islands",
-        official_language_list: ["en"].to_vec(),
-        spoken_language_list: ["en"].to_vec(),
-        national_destination_code_length_list: [2].to_vec(),
-        national_number_length_list: [5].to_vec(),
-        national_prefix: "None",
+        maybe_official_language_list: Some(["en"].to_vec()),
+        maybe_spoken_language_list: Some(["en"].to_vec()),
+        maybe_national_destination_code_length_list: Some([2].to_vec()),
+        maybe_national_number_length_list: Some([5].to_vec()),
+        maybe_national_prefix: Some("None"),
         maybe_nationality: Some("Solomon Islander"),
+        maybe_nanp_prefix: None,
         number: "090",
         postal_code: false,
         postal_code_format: None,
@@ -439,7 +443,9 @@ pub fn new() -> Country {
         start_of_week: WeekDay::Monday,
         maybe_subregion: Some(SubRegion::Melanesia),
         un_locode: "SB",
+        un_member: true,
         unofficial_name_list: ["Solomon Islands", "Salomonen", "Îles Salomon", "Islas Salomón", "ソロモン諸島", "Salomonseilanden"].to_vec(),
+        maybe_vehicle_registration_code: Some("SOL"),
         world_region: WorldRegion::APAC,
         #[cfg(feature = "emojis")]
         emoji: "🇸🇧",

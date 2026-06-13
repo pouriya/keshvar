@@ -20,15 +20,15 @@ pub mod consts {
     pub const COUNTRY_CODE: usize = 262;
     pub const CURRENCY_CODE: CurrencyCode = CurrencyCode::EUR;
     pub const GEC: Option<GEC> = Some(GEC::FS);
-    pub const INTERNATIONAL_PREFIX: &str = "";
+    pub const INTERNATIONAL_PREFIX: Option<&str> = None;
     pub const IOC: Option<IOC> = None;
     pub const ISO_SHORT_NAME: &str = "French Southern Territories";
     pub const ISO_LONG_NAME: &str = "The French Southern and Antarctic Lands";
-    pub const OFFICIAL_LANGUAGE_LIST: &[&str] = &["fr"];
-    pub const SPOKEN_LANGUAGE_LIST: &[&str] = &["fr"];
-    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: &[usize] = &[];
-    pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[];
-    pub const NATIONAL_PREFIX: &str = "";
+    pub const OFFICIAL_LANGUAGE_LIST: Option<&[&str]> = Some(&["fr"]);
+    pub const SPOKEN_LANGUAGE_LIST: Option<&[&str]> = Some(&["fr"]);
+    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: Option<&[usize]> = None;
+    pub const NATIONAL_NUMBER_LENGTH_LIST: Option<&[usize]> = None;
+    pub const NATIONAL_PREFIX: Option<&str> = None;
     pub const NATIONALITY: Option<&str> = Some("French");
     pub const NUMBER: &str = "260";
     pub const POSTAL_CODE: bool = false;
@@ -37,6 +37,7 @@ pub mod consts {
     pub const START_DAY_OF_WEEK: WeekDay = WeekDay::Monday;
     pub const SUBREGION: Option<SubRegion> = Some(SubRegion::EasternAfrica);
     pub const UN_LOCODE: &str = "TF";
+    pub const UN_MEMBER: bool = false;
     pub const UNOFFICIAL_NAME_LIST: &[&str] = &[
         "French Southern Territories",
         "Französische Süd- und Antarktisgebiete",
@@ -46,11 +47,13 @@ pub mod consts {
         "Franse Gebieden in de zuidelijke Indische Oceaan",
         "French Southern and Antarctic Lands",
     ];
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = None;
     pub const WORLD_REGION: WorldRegion = WorldRegion::EMEA;
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
+    pub const NANP_PREFIX: Option<&str> = None;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
     pub const POPULATION: Option<u64> = None;
     #[cfg(feature = "emojis")]
@@ -268,16 +271,17 @@ pub fn new() -> Country {
         maybe_gec: Some(GEC::FS),
         #[cfg(feature = "geo")]
         geo: geo::new(),
-        international_prefix: "",
+        maybe_international_prefix: None,
         maybe_ioc: None,
         iso_long_name: "The French Southern and Antarctic Lands",
         iso_short_name: "French Southern Territories",
-        official_language_list: ["fr"].to_vec(),
-        spoken_language_list: ["fr"].to_vec(),
-        national_destination_code_length_list: [].to_vec(),
-        national_number_length_list: [].to_vec(),
-        national_prefix: "",
+        maybe_official_language_list: Some(["fr"].to_vec()),
+        maybe_spoken_language_list: Some(["fr"].to_vec()),
+        maybe_national_destination_code_length_list: None,
+        maybe_national_number_length_list: None,
+        maybe_national_prefix: None,
         maybe_nationality: Some("French"),
+        maybe_nanp_prefix: None,
         number: "260",
         postal_code: false,
         postal_code_format: None,
@@ -285,7 +289,9 @@ pub fn new() -> Country {
         start_of_week: WeekDay::Monday,
         maybe_subregion: Some(SubRegion::EasternAfrica),
         un_locode: "TF",
+        un_member: false,
         unofficial_name_list: ["French Southern Territories", "Französische Süd- und Antarktisgebiete", "Terres Australes Françaises", "Territorios Franceses del Sur", "フランス領南方・南極地域", "Franse Gebieden in de zuidelijke Indische Oceaan", "French Southern and Antarctic Lands"].to_vec(),
+        maybe_vehicle_registration_code: None,
         world_region: WorldRegion::EMEA,
         #[cfg(feature = "emojis")]
         emoji: "🇹🇫",

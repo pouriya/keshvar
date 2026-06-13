@@ -21,15 +21,15 @@ pub mod consts {
     pub const COUNTRY_CODE: usize = 55;
     pub const CURRENCY_CODE: CurrencyCode = CurrencyCode::BRL;
     pub const GEC: Option<GEC> = Some(GEC::BR);
-    pub const INTERNATIONAL_PREFIX: &str = "0014";
+    pub const INTERNATIONAL_PREFIX: Option<&str> = Some("0014");
     pub const IOC: Option<IOC> = Some(IOC::BRA);
     pub const ISO_SHORT_NAME: &str = "Brazil";
     pub const ISO_LONG_NAME: &str = "The Federative Republic of Brazil";
-    pub const OFFICIAL_LANGUAGE_LIST: &[&str] = &["pt"];
-    pub const SPOKEN_LANGUAGE_LIST: &[&str] = &["pt"];
-    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: &[usize] = &[2];
-    pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[10, 11];
-    pub const NATIONAL_PREFIX: &str = "014";
+    pub const OFFICIAL_LANGUAGE_LIST: Option<&[&str]> = Some(&["pt"]);
+    pub const SPOKEN_LANGUAGE_LIST: Option<&[&str]> = Some(&["pt"]);
+    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: Option<&[usize]> = Some(&[2]);
+    pub const NATIONAL_NUMBER_LENGTH_LIST: Option<&[usize]> = Some(&[10, 11]);
+    pub const NATIONAL_PREFIX: Option<&str> = Some("014");
     pub const NATIONALITY: Option<&str> = Some("Brazilian");
     pub const NUMBER: &str = "076";
     pub const POSTAL_CODE: bool = true;
@@ -38,6 +38,7 @@ pub mod consts {
     pub const START_DAY_OF_WEEK: WeekDay = WeekDay::Monday;
     pub const SUBREGION: Option<SubRegion> = Some(SubRegion::SouthAmerica);
     pub const UN_LOCODE: &str = "BR";
+    pub const UN_MEMBER: bool = true;
     pub const UNOFFICIAL_NAME_LIST: &[&str] = &[
         "Brazil",
         "Brasilien",
@@ -46,11 +47,13 @@ pub mod consts {
         "ブラジル",
         "Brazilië",
     ];
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = Some("BR");
     pub const WORLD_REGION: WorldRegion = WorldRegion::AMER;
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = true;
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
+    pub const NANP_PREFIX: Option<&str> = None;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
     pub const POPULATION: Option<u64> = Some(215313498);
     #[cfg(feature = "emojis")]
@@ -680,16 +683,17 @@ pub fn new() -> Country {
         maybe_gec: Some(GEC::BR),
         #[cfg(feature = "geo")]
         geo: geo::new(),
-        international_prefix: "0014",
+        maybe_international_prefix: Some("0014"),
         maybe_ioc: Some(IOC::BRA),
         iso_long_name: "The Federative Republic of Brazil",
         iso_short_name: "Brazil",
-        official_language_list: ["pt"].to_vec(),
-        spoken_language_list: ["pt"].to_vec(),
-        national_destination_code_length_list: [2].to_vec(),
-        national_number_length_list: [10, 11].to_vec(),
-        national_prefix: "014",
+        maybe_official_language_list: Some(["pt"].to_vec()),
+        maybe_spoken_language_list: Some(["pt"].to_vec()),
+        maybe_national_destination_code_length_list: Some([2].to_vec()),
+        maybe_national_number_length_list: Some([10, 11].to_vec()),
+        maybe_national_prefix: Some("014"),
         maybe_nationality: Some("Brazilian"),
+        maybe_nanp_prefix: None,
         number: "076",
         postal_code: true,
         postal_code_format: Some("\\d{5}-?\\d{3}"),
@@ -697,6 +701,7 @@ pub fn new() -> Country {
         start_of_week: WeekDay::Monday,
         maybe_subregion: Some(SubRegion::SouthAmerica),
         un_locode: "BR",
+        un_member: true,
         unofficial_name_list: [
             "Brazil",
             "Brasilien",
@@ -706,6 +711,7 @@ pub fn new() -> Country {
             "Brazilië",
         ]
         .to_vec(),
+        maybe_vehicle_registration_code: Some("BR"),
         world_region: WorldRegion::AMER,
         #[cfg(feature = "emojis")]
         emoji: "🇧🇷",

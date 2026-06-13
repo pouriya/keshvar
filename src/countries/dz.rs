@@ -20,15 +20,15 @@ pub mod consts {
     pub const COUNTRY_CODE: usize = 213;
     pub const CURRENCY_CODE: CurrencyCode = CurrencyCode::DZD;
     pub const GEC: Option<GEC> = Some(GEC::AG);
-    pub const INTERNATIONAL_PREFIX: &str = "00";
+    pub const INTERNATIONAL_PREFIX: Option<&str> = Some("00");
     pub const IOC: Option<IOC> = Some(IOC::ALG);
     pub const ISO_SHORT_NAME: &str = "Algeria";
     pub const ISO_LONG_NAME: &str = "The People's Democratic Republic of Algeria";
-    pub const OFFICIAL_LANGUAGE_LIST: &[&str] = &["ar"];
-    pub const SPOKEN_LANGUAGE_LIST: &[&str] = &["ar"];
-    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: &[usize] = &[2];
-    pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[8];
-    pub const NATIONAL_PREFIX: &str = "7";
+    pub const OFFICIAL_LANGUAGE_LIST: Option<&[&str]> = Some(&["ar"]);
+    pub const SPOKEN_LANGUAGE_LIST: Option<&[&str]> = Some(&["ar"]);
+    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: Option<&[usize]> = Some(&[2]);
+    pub const NATIONAL_NUMBER_LENGTH_LIST: Option<&[usize]> = Some(&[8]);
+    pub const NATIONAL_PREFIX: Option<&str> = Some("7");
     pub const NATIONALITY: Option<&str> = Some("Algerian");
     pub const NUMBER: &str = "012";
     pub const POSTAL_CODE: bool = true;
@@ -37,6 +37,7 @@ pub mod consts {
     pub const START_DAY_OF_WEEK: WeekDay = WeekDay::Sunday;
     pub const SUBREGION: Option<SubRegion> = Some(SubRegion::NorthernAfrica);
     pub const UN_LOCODE: &str = "DZ";
+    pub const UN_MEMBER: bool = true;
     pub const UNOFFICIAL_NAME_LIST: &[&str] = &[
         "Algeria",
         "الجزائر",
@@ -46,11 +47,13 @@ pub mod consts {
         "アルジェリア",
         "Algerije",
     ];
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = Some("DZ");
     pub const WORLD_REGION: WorldRegion = WorldRegion::EMEA;
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
+    pub const NANP_PREFIX: Option<&str> = None;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
     pub const POPULATION: Option<u64> = Some(44903225);
     #[cfg(feature = "emojis")]
@@ -88,7 +91,7 @@ pub mod consts {
         ("el", "Αλγερία"),
         ("en", "Algeria"),
         ("eo", "Alĝerio"),
-        ("es", "Algeria"),
+        ("es", "Argelia"),
         ("et", "Alžeeria"),
         ("eu", "Aljeria"),
         ("fa", "الجزایر"),
@@ -999,16 +1002,17 @@ pub fn new() -> Country {
         maybe_gec: Some(GEC::AG),
         #[cfg(feature = "geo")]
         geo: geo::new(),
-        international_prefix: "00",
+        maybe_international_prefix: Some("00"),
         maybe_ioc: Some(IOC::ALG),
         iso_long_name: "The People's Democratic Republic of Algeria",
         iso_short_name: "Algeria",
-        official_language_list: ["ar"].to_vec(),
-        spoken_language_list: ["ar"].to_vec(),
-        national_destination_code_length_list: [2].to_vec(),
-        national_number_length_list: [8].to_vec(),
-        national_prefix: "7",
+        maybe_official_language_list: Some(["ar"].to_vec()),
+        maybe_spoken_language_list: Some(["ar"].to_vec()),
+        maybe_national_destination_code_length_list: Some([2].to_vec()),
+        maybe_national_number_length_list: Some([8].to_vec()),
+        maybe_national_prefix: Some("7"),
         maybe_nationality: Some("Algerian"),
+        maybe_nanp_prefix: None,
         number: "012",
         postal_code: true,
         postal_code_format: Some("\\d{5}"),
@@ -1016,6 +1020,7 @@ pub fn new() -> Country {
         start_of_week: WeekDay::Sunday,
         maybe_subregion: Some(SubRegion::NorthernAfrica),
         un_locode: "DZ",
+        un_member: true,
         unofficial_name_list: [
             "Algeria",
             "الجزائر",
@@ -1026,6 +1031,7 @@ pub fn new() -> Country {
             "Algerije",
         ]
         .to_vec(),
+        maybe_vehicle_registration_code: Some("DZ"),
         world_region: WorldRegion::EMEA,
         #[cfg(feature = "emojis")]
         emoji: "🇩🇿",
@@ -1062,7 +1068,7 @@ pub fn new() -> Country {
             ("el", "Αλγερία"),
             ("en", "Algeria"),
             ("eo", "Alĝerio"),
-            ("es", "Algeria"),
+            ("es", "Argelia"),
             ("et", "Alžeeria"),
             ("eu", "Aljeria"),
             ("fa", "الجزایر"),

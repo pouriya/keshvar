@@ -105,8 +105,8 @@ pub fn generate_country(destination_file: &PathBuf, info: &CountryInfo) -> Resul
         ),
         (
             "const INTERNATIONAL_PREFIX",
-            "&str",
-            format!("{:?}", info.international_prefix),
+            "Option<&str>",
+            utils::option_string_to_string(&info.international_prefix),
         ),
         (
             "const IOC",
@@ -129,28 +129,28 @@ pub fn generate_country(destination_file: &PathBuf, info: &CountryInfo) -> Resul
         ),
         (
             "const OFFICIAL_LANGUAGE_LIST",
-            "&[&str]",
-            format!("&{:?}", info.languages_official),
+            "Option<&[&str]>",
+            utils::option_string_slice_to_string(&info.languages_official),
         ),
         (
             "const SPOKEN_LANGUAGE_LIST",
-            "&[&str]",
-            format!("&{:?}", info.languages_spoken),
+            "Option<&[&str]>",
+            utils::option_string_slice_to_string(&info.languages_spoken),
         ),
         (
             "const NATIONAL_DESTINATION_CODE_LENGTH_LIST",
-            "&[usize]",
-            format!("&{:?}", info.national_destination_code_lengths),
+            "Option<&[usize]>",
+            utils::option_usize_slice_to_string(&info.national_destination_code_lengths),
         ),
         (
             "const NATIONAL_NUMBER_LENGTH_LIST",
-            "&[usize]",
-            format!("&{:?}", info.national_number_lengths),
+            "Option<&[usize]>",
+            utils::option_usize_slice_to_string(&info.national_number_lengths),
         ),
         (
             "const NATIONAL_PREFIX",
-            "&str",
-            format!("{:?}", info.national_prefix),
+            "Option<&str>",
+            utils::option_string_to_string(&info.national_prefix),
         ),
         (
             "const NATIONALITY",
@@ -193,9 +193,19 @@ pub fn generate_country(destination_file: &PathBuf, info: &CountryInfo) -> Resul
         ),
         ("const UN_LOCODE", "&str", format!("{:?}", info.un_locode)),
         (
+            "const UN_MEMBER",
+            "bool",
+            info.un_member.unwrap_or(false).to_string(),
+        ),
+        (
             "const UNOFFICIAL_NAME_LIST",
             "&[&str]",
             format!("&{:?}", info.unofficial_names),
+        ),
+        (
+            "const VEHICLE_REGISTRATION_CODE",
+            "Option<&str>",
+            utils::option_string_to_string(&info.vehicle_registration_code),
         ),
         (
             "const WORLD_REGION",
@@ -223,7 +233,12 @@ pub fn generate_country(destination_file: &PathBuf, info: &CountryInfo) -> Resul
         (
             "const EEA_MEMBER",
             "bool",
-            info.eu_member.unwrap_or(false).to_string(),
+            info.eea_member.unwrap_or(false).to_string(),
+        ),
+        (
+            "const NANP_PREFIX",
+            "Option<&str>",
+            utils::option_string_to_string(&info.nanp_prefix),
         ),
         (
             "const DISTANCE_UNIT",
@@ -435,16 +450,17 @@ pub fn new() -> Country {{
         maybe_gec: {},
         #[cfg(feature = "geo")]
         geo: geo::new(),
-        international_prefix: {:?},
+        maybe_international_prefix: {},
         maybe_ioc: {},
         iso_long_name: {:?},
         iso_short_name: {:?},
-        official_language_list: {:?}.to_vec(),
-        spoken_language_list: {:?}.to_vec(),
-        national_destination_code_length_list: {:?}.to_vec(),
-        national_number_length_list: {:?}.to_vec(),
-        national_prefix: {:?},
+        maybe_official_language_list: {},
+        maybe_spoken_language_list: {},
+        maybe_national_destination_code_length_list: {},
+        maybe_national_number_length_list: {},
+        maybe_national_prefix: {},
         maybe_nationality: {},
+        maybe_nanp_prefix: {},
         number: {:?},
         postal_code: {:?},
         postal_code_format: {},
@@ -452,7 +468,9 @@ pub fn new() -> Country {{
         start_of_week: WeekDay::{},
         maybe_subregion: {},
         un_locode: {:?},
+        un_member: {},
         unofficial_name_list: {:?}.to_vec(),
+        maybe_vehicle_registration_code: {},
         world_region: WorldRegion::{},
         #[cfg(feature = "emojis")]
         emoji: {:?},
@@ -481,7 +499,7 @@ pub fn new() -> Country {{
             } else {
                 "None".to_string()
             },
-            info.international_prefix,
+            utils::option_string_to_string(&info.international_prefix),
             if let Some(ref ioc) = info.ioc {
                 format!("Some(IOC::{})", utils::capitalize(ioc).to_uppercase())
             } else {
@@ -489,12 +507,13 @@ pub fn new() -> Country {{
             },
             info.iso_long_name,
             info.iso_short_name,
-            info.languages_official,
-            info.languages_spoken,
-            info.national_destination_code_lengths,
-            info.national_number_lengths,
-            info.national_prefix,
+            utils::option_string_vec_to_string(&info.languages_official),
+            utils::option_string_vec_to_string(&info.languages_spoken),
+            utils::option_usize_vec_to_string(&info.national_destination_code_lengths),
+            utils::option_u8_vec_to_string(&info.national_number_lengths),
+            utils::option_string_to_string(&info.national_prefix),
             utils::option_string_to_string(&info.nationality),
+            utils::option_string_to_string(&info.nanp_prefix),
             info.number,
             info.postal_code,
             utils::option_string_to_string(&info.postal_code_format),
@@ -510,7 +529,9 @@ pub fn new() -> Country {{
                 "None".to_string()
             },
             info.un_locode,
+            info.un_member.unwrap_or(false).to_string(),
             info.unofficial_names,
+            utils::option_string_to_string(&info.vehicle_registration_code),
             utils::capitalize(&info.world_region).to_uppercase(),
             info.emoji,
             info.translation_list,

@@ -21,15 +21,15 @@ pub mod consts {
     pub const COUNTRY_CODE: usize = 49;
     pub const CURRENCY_CODE: CurrencyCode = CurrencyCode::EUR;
     pub const GEC: Option<GEC> = Some(GEC::GM);
-    pub const INTERNATIONAL_PREFIX: &str = "00";
+    pub const INTERNATIONAL_PREFIX: Option<&str> = Some("00");
     pub const IOC: Option<IOC> = Some(IOC::GER);
     pub const ISO_SHORT_NAME: &str = "Germany";
     pub const ISO_LONG_NAME: &str = "The Federal Republic of Germany";
-    pub const OFFICIAL_LANGUAGE_LIST: &[&str] = &["de"];
-    pub const SPOKEN_LANGUAGE_LIST: &[&str] = &["de"];
-    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: &[usize] = &[2, 3, 4, 5];
-    pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[6, 7, 8, 9, 10, 11];
-    pub const NATIONAL_PREFIX: &str = "0";
+    pub const OFFICIAL_LANGUAGE_LIST: Option<&[&str]> = Some(&["de"]);
+    pub const SPOKEN_LANGUAGE_LIST: Option<&[&str]> = Some(&["de"]);
+    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: Option<&[usize]> = Some(&[2, 3, 4, 5]);
+    pub const NATIONAL_NUMBER_LENGTH_LIST: Option<&[usize]> = Some(&[6, 7, 8, 9, 10, 11]);
+    pub const NATIONAL_PREFIX: Option<&str> = Some("0");
     pub const NATIONALITY: Option<&str> = Some("German");
     pub const NUMBER: &str = "276";
     pub const POSTAL_CODE: bool = true;
@@ -38,6 +38,7 @@ pub mod consts {
     pub const START_DAY_OF_WEEK: WeekDay = WeekDay::Monday;
     pub const SUBREGION: Option<SubRegion> = Some(SubRegion::WesternEurope);
     pub const UN_LOCODE: &str = "DE";
+    pub const UN_MEMBER: bool = true;
     pub const UNOFFICIAL_NAME_LIST: &[&str] = &[
         "Germany",
         "Deutschland",
@@ -46,11 +47,13 @@ pub mod consts {
         "ドイツ",
         "Duitsland",
     ];
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = Some("D");
     pub const WORLD_REGION: WorldRegion = WorldRegion::EMEA;
     pub const G7_MEMBER: bool = true;
     pub const G20_MEMBER: bool = true;
     pub const EU_MEMBER: bool = true;
     pub const EEA_MEMBER: bool = true;
+    pub const NANP_PREFIX: Option<&str> = None;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
     pub const POPULATION: Option<u64> = Some(83797985);
     #[cfg(feature = "emojis")]
@@ -519,16 +522,17 @@ pub fn new() -> Country {
         maybe_gec: Some(GEC::GM),
         #[cfg(feature = "geo")]
         geo: geo::new(),
-        international_prefix: "00",
+        maybe_international_prefix: Some("00"),
         maybe_ioc: Some(IOC::GER),
         iso_long_name: "The Federal Republic of Germany",
         iso_short_name: "Germany",
-        official_language_list: ["de"].to_vec(),
-        spoken_language_list: ["de"].to_vec(),
-        national_destination_code_length_list: [2, 3, 4, 5].to_vec(),
-        national_number_length_list: [6, 7, 8, 9, 10, 11].to_vec(),
-        national_prefix: "0",
+        maybe_official_language_list: Some(["de"].to_vec()),
+        maybe_spoken_language_list: Some(["de"].to_vec()),
+        maybe_national_destination_code_length_list: Some([2, 3, 4, 5].to_vec()),
+        maybe_national_number_length_list: Some([6, 7, 8, 9, 10, 11].to_vec()),
+        maybe_national_prefix: Some("0"),
         maybe_nationality: Some("German"),
+        maybe_nanp_prefix: None,
         number: "276",
         postal_code: true,
         postal_code_format: Some("\\d{5}"),
@@ -536,6 +540,7 @@ pub fn new() -> Country {
         start_of_week: WeekDay::Monday,
         maybe_subregion: Some(SubRegion::WesternEurope),
         un_locode: "DE",
+        un_member: true,
         unofficial_name_list: [
             "Germany",
             "Deutschland",
@@ -545,6 +550,7 @@ pub fn new() -> Country {
             "Duitsland",
         ]
         .to_vec(),
+        maybe_vehicle_registration_code: Some("D"),
         world_region: WorldRegion::EMEA,
         #[cfg(feature = "emojis")]
         emoji: "🇩🇪",

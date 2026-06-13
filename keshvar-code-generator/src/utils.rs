@@ -51,6 +51,55 @@ pub fn set_none_if_empty_string(maybe_text: &mut Option<String>) {
     }
 }
 
+#[inline]
+pub fn set_none_if_empty_vec<T>(maybe_vec: &mut Option<Vec<T>>) {
+    if maybe_vec.as_ref().is_some_and(|vec| vec.is_empty()) {
+        *maybe_vec = None;
+    }
+}
+
+pub fn option_string_slice_to_string(maybe_list: &Option<Vec<String>>) -> String {
+    if let Some(list) = maybe_list {
+        format!("Some(&{:?})", list)
+    } else {
+        "None".to_string()
+    }
+}
+
+pub fn option_usize_slice_to_string(maybe_list: &Option<Vec<u8>>) -> String {
+    if let Some(list) = maybe_list {
+        let list = list.iter().map(|value| *value as usize).collect::<Vec<_>>();
+        format!("Some(&{:?})", list)
+    } else {
+        "None".to_string()
+    }
+}
+
+pub fn option_string_vec_to_string(maybe_list: &Option<Vec<String>>) -> String {
+    if let Some(list) = maybe_list {
+        format!("Some({:?}.to_vec())", list)
+    } else {
+        "None".to_string()
+    }
+}
+
+pub fn option_usize_vec_to_string(maybe_list: &Option<Vec<u8>>) -> String {
+    if let Some(list) = maybe_list {
+        let list = list.iter().map(|value| *value as usize).collect::<Vec<_>>();
+        format!("Some({:?}.to_vec())", list)
+    } else {
+        "None".to_string()
+    }
+}
+
+pub fn option_u8_vec_to_string(maybe_list: &Option<Vec<u8>>) -> String {
+    if let Some(list) = maybe_list {
+        format!("Some({:?}.to_vec())", list)
+    } else {
+        "None".to_string()
+    }
+}
+
 pub fn to_module_name(text: &str) -> String {
     let text = text.trim().to_lowercase();
     if ["as", "in", "do"].contains(&&*text) {

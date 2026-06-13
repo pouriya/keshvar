@@ -20,15 +20,15 @@ pub mod consts {
     pub const COUNTRY_CODE: usize = 257;
     pub const CURRENCY_CODE: CurrencyCode = CurrencyCode::BIF;
     pub const GEC: Option<GEC> = Some(GEC::BY);
-    pub const INTERNATIONAL_PREFIX: &str = "00";
+    pub const INTERNATIONAL_PREFIX: Option<&str> = Some("00");
     pub const IOC: Option<IOC> = Some(IOC::BDI);
     pub const ISO_SHORT_NAME: &str = "Burundi";
     pub const ISO_LONG_NAME: &str = "The Republic of Burundi";
-    pub const OFFICIAL_LANGUAGE_LIST: &[&str] = &["fr", "rn"];
-    pub const SPOKEN_LANGUAGE_LIST: &[&str] = &["fr", "rn"];
-    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: &[usize] = &[2];
-    pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[8];
-    pub const NATIONAL_PREFIX: &str = "None";
+    pub const OFFICIAL_LANGUAGE_LIST: Option<&[&str]> = Some(&["fr", "rn"]);
+    pub const SPOKEN_LANGUAGE_LIST: Option<&[&str]> = Some(&["fr", "rn"]);
+    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: Option<&[usize]> = Some(&[2]);
+    pub const NATIONAL_NUMBER_LENGTH_LIST: Option<&[usize]> = Some(&[8]);
+    pub const NATIONAL_PREFIX: Option<&str> = Some("None");
     pub const NATIONALITY: Option<&str> = Some("Burundian");
     pub const NUMBER: &str = "108";
     pub const POSTAL_CODE: bool = false;
@@ -37,12 +37,15 @@ pub mod consts {
     pub const START_DAY_OF_WEEK: WeekDay = WeekDay::Monday;
     pub const SUBREGION: Option<SubRegion> = Some(SubRegion::EasternAfrica);
     pub const UN_LOCODE: &str = "BI";
+    pub const UN_MEMBER: bool = true;
     pub const UNOFFICIAL_NAME_LIST: &[&str] = &["Burundi", "ブルンジ"];
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = Some("RU");
     pub const WORLD_REGION: WorldRegion = WorldRegion::EMEA;
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
+    pub const NANP_PREFIX: Option<&str> = None;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
     pub const POPULATION: Option<u64> = Some(12889576);
     #[cfg(feature = "emojis")]
@@ -553,16 +556,17 @@ pub fn new() -> Country {
         maybe_gec: Some(GEC::BY),
         #[cfg(feature = "geo")]
         geo: geo::new(),
-        international_prefix: "00",
+        maybe_international_prefix: Some("00"),
         maybe_ioc: Some(IOC::BDI),
         iso_long_name: "The Republic of Burundi",
         iso_short_name: "Burundi",
-        official_language_list: ["fr", "rn"].to_vec(),
-        spoken_language_list: ["fr", "rn"].to_vec(),
-        national_destination_code_length_list: [2].to_vec(),
-        national_number_length_list: [8].to_vec(),
-        national_prefix: "None",
+        maybe_official_language_list: Some(["fr", "rn"].to_vec()),
+        maybe_spoken_language_list: Some(["fr", "rn"].to_vec()),
+        maybe_national_destination_code_length_list: Some([2].to_vec()),
+        maybe_national_number_length_list: Some([8].to_vec()),
+        maybe_national_prefix: Some("None"),
         maybe_nationality: Some("Burundian"),
+        maybe_nanp_prefix: None,
         number: "108",
         postal_code: false,
         postal_code_format: None,
@@ -570,7 +574,9 @@ pub fn new() -> Country {
         start_of_week: WeekDay::Monday,
         maybe_subregion: Some(SubRegion::EasternAfrica),
         un_locode: "BI",
+        un_member: true,
         unofficial_name_list: ["Burundi", "ブルンジ"].to_vec(),
+        maybe_vehicle_registration_code: Some("RU"),
         world_region: WorldRegion::EMEA,
         #[cfg(feature = "emojis")]
         emoji: "🇧🇮",

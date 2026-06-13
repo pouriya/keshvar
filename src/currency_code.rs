@@ -32,9 +32,6 @@ pub enum CurrencyCode {
     ALL,
     /// * The Republic of Armenia (Asia)
     AMD,
-    /// * The Country of Curaçao (Americas)
-    /// * Sint Maarten (Americas)
-    ANG,
     /// * The Republic of Angola (Africa)
     AOA,
     /// * The Argentine Republic (Americas)
@@ -325,7 +322,7 @@ pub enum CurrencyCode {
     /// * Saint Helena, Ascension and Tristan da Cunha (Africa)
     SHP,
     /// * The Republic of Sierra Leone (Africa)
-    SLL,
+    SLE,
     /// * The Federal Republic of Somalia (Africa)
     SOS,
     /// * The Republic of Suriname (Americas)
@@ -333,7 +330,7 @@ pub enum CurrencyCode {
     /// * The Republic of South Sudan (Africa)
     SSP,
     /// * The Democratic Republic of São Tomé and Príncipe (Africa)
-    STD,
+    STN,
     /// * The Syrian Arab Republic (Asia)
     SYP,
     /// * The Kingdom of Eswatini (Africa)
@@ -407,6 +404,9 @@ pub enum CurrencyCode {
     /// * Montserrat (Americas)
     /// * Saint Vincent and the Grenadines (Americas)
     XCD,
+    /// * The Country of Curaçao (Americas)
+    /// * Sint Maarten (Americas)
+    XCG,
     /// * Burkina Faso (Africa)
     /// * The Republic of Benin (Africa)
     /// * The Republic of Côte d'Ivoire (Africa)
@@ -435,7 +435,6 @@ impl CurrencyCode {
             Self::AFN => &["AF"],
             Self::ALL => &["AL"],
             Self::AMD => &["AM"],
-            Self::ANG => &["CW", "SX"],
             Self::AOA => &["AO"],
             Self::ARS => &["AR"],
             Self::AUD => &["AU", "CC", "CX", "HM", "KI", "NF", "NR", "TV"],
@@ -556,11 +555,11 @@ impl CurrencyCode {
             Self::SEK => &["SE"],
             Self::SGD => &["SG"],
             Self::SHP => &["SH"],
-            Self::SLL => &["SL"],
+            Self::SLE => &["SL"],
             Self::SOS => &["SO"],
             Self::SRD => &["SR"],
             Self::SSP => &["SS"],
-            Self::STD => &["ST"],
+            Self::STN => &["ST"],
             Self::SYP => &["SY"],
             Self::SZL => &["SZ"],
             Self::THB => &["TH"],
@@ -586,6 +585,7 @@ impl CurrencyCode {
             Self::WST => &["WS"],
             Self::XAF => &["CF", "CG", "CM", "GA", "GQ", "TD"],
             Self::XCD => &["AG", "AI", "DM", "GD", "KN", "LC", "MS", "VC"],
+            Self::XCG => &["CW", "SX"],
             Self::XOF => &["BF", "BJ", "CI", "GW", "ML", "NE", "SN", "TG"],
             Self::XPF => &["NC", "PF", "WF"],
             Self::YER => &["YE"],
@@ -602,7 +602,6 @@ impl ToString for CurrencyCode {
             Self::AFN => "AFN",
             Self::ALL => "ALL",
             Self::AMD => "AMD",
-            Self::ANG => "ANG",
             Self::AOA => "AOA",
             Self::ARS => "ARS",
             Self::AUD => "AUD",
@@ -719,11 +718,11 @@ impl ToString for CurrencyCode {
             Self::SEK => "SEK",
             Self::SGD => "SGD",
             Self::SHP => "SHP",
-            Self::SLL => "SLL",
+            Self::SLE => "SLE",
             Self::SOS => "SOS",
             Self::SRD => "SRD",
             Self::SSP => "SSP",
-            Self::STD => "STD",
+            Self::STN => "STN",
             Self::SYP => "SYP",
             Self::SZL => "SZL",
             Self::THB => "THB",
@@ -746,6 +745,7 @@ impl ToString for CurrencyCode {
             Self::WST => "WST",
             Self::XAF => "XAF",
             Self::XCD => "XCD",
+            Self::XCG => "XCG",
             Self::XOF => "XOF",
             Self::XPF => "XPF",
             Self::YER => "YER",
@@ -770,7 +770,6 @@ impl TryFrom<&str> for CurrencyCode {
             "AFN" => Ok(Self::AFN),
             "ALL" => Ok(Self::ALL),
             "AMD" => Ok(Self::AMD),
-            "ANG" => Ok(Self::ANG),
             "AOA" => Ok(Self::AOA),
             "ARS" => Ok(Self::ARS),
             "AUD" => Ok(Self::AUD),
@@ -887,11 +886,11 @@ impl TryFrom<&str> for CurrencyCode {
             "SEK" => Ok(Self::SEK),
             "SGD" => Ok(Self::SGD),
             "SHP" => Ok(Self::SHP),
-            "SLL" => Ok(Self::SLL),
+            "SLE" => Ok(Self::SLE),
             "SOS" => Ok(Self::SOS),
             "SRD" => Ok(Self::SRD),
             "SSP" => Ok(Self::SSP),
-            "STD" => Ok(Self::STD),
+            "STN" => Ok(Self::STN),
             "SYP" => Ok(Self::SYP),
             "SZL" => Ok(Self::SZL),
             "THB" => Ok(Self::THB),
@@ -914,6 +913,7 @@ impl TryFrom<&str> for CurrencyCode {
             "WST" => Ok(Self::WST),
             "XAF" => Ok(Self::XAF),
             "XCD" => Ok(Self::XCD),
+            "XCG" => Ok(Self::XCG),
             "XOF" => Ok(Self::XOF),
             "XPF" => Ok(Self::XPF),
             "YER" => Ok(Self::YER),
@@ -929,14 +929,13 @@ impl TryFrom<&str> for CurrencyCode {
 #[cfg(feature = "iso-currency-integration")]
 impl CurrencyCode {
     /// If `iso-currency-integration` feature is enabled, you can convert it to [`iso_currency::Currency`](iso_currency::Currency) enum.
-    /// Note that [`CurrencyCode::STD`](crate::CurrencyCode::STD) is not supported by [iso_currency](iso_currency) library.
+    /// Note that [`CurrencyCode::STD`](crate::CurrencyCode::STD) and [`CurrencyCode::XCG`](crate::CurrencyCode::XCG) are not supported by [iso_currency](iso_currency) library.
     pub fn to_iso_currency(&self) -> iso_currency::Currency {
         match self {
             Self::AED => iso_currency::Currency::AED,
             Self::AFN => iso_currency::Currency::AFN,
             Self::ALL => iso_currency::Currency::ALL,
             Self::AMD => iso_currency::Currency::AMD,
-            Self::ANG => iso_currency::Currency::ANG,
             Self::AOA => iso_currency::Currency::AOA,
             Self::ARS => iso_currency::Currency::ARS,
             Self::AUD => iso_currency::Currency::AUD,
@@ -1053,10 +1052,11 @@ impl CurrencyCode {
             Self::SEK => iso_currency::Currency::SEK,
             Self::SGD => iso_currency::Currency::SGD,
             Self::SHP => iso_currency::Currency::SHP,
-            Self::SLL => iso_currency::Currency::SLL,
+            Self::SLE => iso_currency::Currency::SLE,
             Self::SOS => iso_currency::Currency::SOS,
             Self::SRD => iso_currency::Currency::SRD,
             Self::SSP => iso_currency::Currency::SSP,
+            Self::STN => iso_currency::Currency::STN,
             Self::SYP => iso_currency::Currency::SYP,
             Self::SZL => iso_currency::Currency::SZL,
             Self::THB => iso_currency::Currency::THB,

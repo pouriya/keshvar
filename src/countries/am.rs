@@ -20,15 +20,15 @@ pub mod consts {
     pub const COUNTRY_CODE: usize = 374;
     pub const CURRENCY_CODE: CurrencyCode = CurrencyCode::AMD;
     pub const GEC: Option<GEC> = Some(GEC::AM);
-    pub const INTERNATIONAL_PREFIX: &str = "00";
+    pub const INTERNATIONAL_PREFIX: Option<&str> = Some("00");
     pub const IOC: Option<IOC> = Some(IOC::ARM);
     pub const ISO_SHORT_NAME: &str = "Armenia";
     pub const ISO_LONG_NAME: &str = "The Republic of Armenia";
-    pub const OFFICIAL_LANGUAGE_LIST: &[&str] = &["hy"];
-    pub const SPOKEN_LANGUAGE_LIST: &[&str] = &["hy", "ru"];
-    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: &[usize] = &[2];
-    pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[8];
-    pub const NATIONAL_PREFIX: &str = "8";
+    pub const OFFICIAL_LANGUAGE_LIST: Option<&[&str]> = Some(&["hy"]);
+    pub const SPOKEN_LANGUAGE_LIST: Option<&[&str]> = Some(&["hy", "ru"]);
+    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: Option<&[usize]> = Some(&[2]);
+    pub const NATIONAL_NUMBER_LENGTH_LIST: Option<&[usize]> = Some(&[8]);
+    pub const NATIONAL_PREFIX: Option<&str> = Some("8");
     pub const NATIONALITY: Option<&str> = Some("Armenian");
     pub const NUMBER: &str = "051";
     pub const POSTAL_CODE: bool = true;
@@ -37,13 +37,16 @@ pub mod consts {
     pub const START_DAY_OF_WEEK: WeekDay = WeekDay::Monday;
     pub const SUBREGION: Option<SubRegion> = Some(SubRegion::WesternAsia);
     pub const UN_LOCODE: &str = "AM";
+    pub const UN_MEMBER: bool = true;
     pub const UNOFFICIAL_NAME_LIST: &[&str] =
         &["Armenia", "Armenien", "Arménie", "アルメニア", "Armenië"];
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = Some("AM");
     pub const WORLD_REGION: WorldRegion = WorldRegion::EMEA;
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
+    pub const NANP_PREFIX: Option<&str> = None;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
     pub const POPULATION: Option<u64> = Some(2780469);
     #[cfg(feature = "emojis")]
@@ -434,16 +437,17 @@ pub fn new() -> Country {
         maybe_gec: Some(GEC::AM),
         #[cfg(feature = "geo")]
         geo: geo::new(),
-        international_prefix: "00",
+        maybe_international_prefix: Some("00"),
         maybe_ioc: Some(IOC::ARM),
         iso_long_name: "The Republic of Armenia",
         iso_short_name: "Armenia",
-        official_language_list: ["hy"].to_vec(),
-        spoken_language_list: ["hy", "ru"].to_vec(),
-        national_destination_code_length_list: [2].to_vec(),
-        national_number_length_list: [8].to_vec(),
-        national_prefix: "8",
+        maybe_official_language_list: Some(["hy"].to_vec()),
+        maybe_spoken_language_list: Some(["hy", "ru"].to_vec()),
+        maybe_national_destination_code_length_list: Some([2].to_vec()),
+        maybe_national_number_length_list: Some([8].to_vec()),
+        maybe_national_prefix: Some("8"),
         maybe_nationality: Some("Armenian"),
+        maybe_nanp_prefix: None,
         number: "051",
         postal_code: true,
         postal_code_format: Some("(?:37)?\\d{4}"),
@@ -451,7 +455,9 @@ pub fn new() -> Country {
         start_of_week: WeekDay::Monday,
         maybe_subregion: Some(SubRegion::WesternAsia),
         un_locode: "AM",
+        un_member: true,
         unofficial_name_list: ["Armenia", "Armenien", "Arménie", "アルメニア", "Armenië"].to_vec(),
+        maybe_vehicle_registration_code: Some("AM"),
         world_region: WorldRegion::EMEA,
         #[cfg(feature = "emojis")]
         emoji: "🇦🇲",

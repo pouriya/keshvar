@@ -20,15 +20,15 @@ pub mod consts {
     pub const COUNTRY_CODE: usize = 297;
     pub const CURRENCY_CODE: CurrencyCode = CurrencyCode::AWG;
     pub const GEC: Option<GEC> = Some(GEC::AA);
-    pub const INTERNATIONAL_PREFIX: &str = "00";
+    pub const INTERNATIONAL_PREFIX: Option<&str> = Some("00");
     pub const IOC: Option<IOC> = Some(IOC::ARU);
     pub const ISO_SHORT_NAME: &str = "Aruba";
     pub const ISO_LONG_NAME: &str = "Aruba";
-    pub const OFFICIAL_LANGUAGE_LIST: &[&str] = &["nl"];
-    pub const SPOKEN_LANGUAGE_LIST: &[&str] = &["nl"];
-    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: &[usize] = &[2];
-    pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[7];
-    pub const NATIONAL_PREFIX: &str = "None";
+    pub const OFFICIAL_LANGUAGE_LIST: Option<&[&str]> = Some(&["nl"]);
+    pub const SPOKEN_LANGUAGE_LIST: Option<&[&str]> = Some(&["nl"]);
+    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: Option<&[usize]> = Some(&[2]);
+    pub const NATIONAL_NUMBER_LENGTH_LIST: Option<&[usize]> = Some(&[7]);
+    pub const NATIONAL_PREFIX: Option<&str> = Some("None");
     pub const NATIONALITY: Option<&str> = Some("Aruban");
     pub const NUMBER: &str = "533";
     pub const POSTAL_CODE: bool = false;
@@ -37,12 +37,15 @@ pub mod consts {
     pub const START_DAY_OF_WEEK: WeekDay = WeekDay::Monday;
     pub const SUBREGION: Option<SubRegion> = Some(SubRegion::Caribbean);
     pub const UN_LOCODE: &str = "AW";
+    pub const UN_MEMBER: bool = false;
     pub const UNOFFICIAL_NAME_LIST: &[&str] = &["Aruba", "アルバ"];
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = Some("ARU");
     pub const WORLD_REGION: WorldRegion = WorldRegion::AMER;
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
+    pub const NANP_PREFIX: Option<&str> = None;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
     pub const POPULATION: Option<u64> = Some(106445);
     #[cfg(feature = "emojis")]
@@ -260,16 +263,17 @@ pub fn new() -> Country {
         maybe_gec: Some(GEC::AA),
         #[cfg(feature = "geo")]
         geo: geo::new(),
-        international_prefix: "00",
+        maybe_international_prefix: Some("00"),
         maybe_ioc: Some(IOC::ARU),
         iso_long_name: "Aruba",
         iso_short_name: "Aruba",
-        official_language_list: ["nl"].to_vec(),
-        spoken_language_list: ["nl"].to_vec(),
-        national_destination_code_length_list: [2].to_vec(),
-        national_number_length_list: [7].to_vec(),
-        national_prefix: "None",
+        maybe_official_language_list: Some(["nl"].to_vec()),
+        maybe_spoken_language_list: Some(["nl"].to_vec()),
+        maybe_national_destination_code_length_list: Some([2].to_vec()),
+        maybe_national_number_length_list: Some([7].to_vec()),
+        maybe_national_prefix: Some("None"),
         maybe_nationality: Some("Aruban"),
+        maybe_nanp_prefix: None,
         number: "533",
         postal_code: false,
         postal_code_format: None,
@@ -277,7 +281,9 @@ pub fn new() -> Country {
         start_of_week: WeekDay::Monday,
         maybe_subregion: Some(SubRegion::Caribbean),
         un_locode: "AW",
+        un_member: false,
         unofficial_name_list: ["Aruba", "アルバ"].to_vec(),
+        maybe_vehicle_registration_code: Some("ARU"),
         world_region: WorldRegion::AMER,
         #[cfg(feature = "emojis")]
         emoji: "🇦🇼",

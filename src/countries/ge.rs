@@ -20,15 +20,15 @@ pub mod consts {
     pub const COUNTRY_CODE: usize = 995;
     pub const CURRENCY_CODE: CurrencyCode = CurrencyCode::GEL;
     pub const GEC: Option<GEC> = Some(GEC::GG);
-    pub const INTERNATIONAL_PREFIX: &str = "810";
+    pub const INTERNATIONAL_PREFIX: Option<&str> = Some("810");
     pub const IOC: Option<IOC> = Some(IOC::GEO);
     pub const ISO_SHORT_NAME: &str = "Georgia";
     pub const ISO_LONG_NAME: &str = "Georgia";
-    pub const OFFICIAL_LANGUAGE_LIST: &[&str] = &["ka"];
-    pub const SPOKEN_LANGUAGE_LIST: &[&str] = &["ka"];
-    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: &[usize] = &[2];
-    pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[9];
-    pub const NATIONAL_PREFIX: &str = "8*";
+    pub const OFFICIAL_LANGUAGE_LIST: Option<&[&str]> = Some(&["ka"]);
+    pub const SPOKEN_LANGUAGE_LIST: Option<&[&str]> = Some(&["ka"]);
+    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: Option<&[usize]> = Some(&[2]);
+    pub const NATIONAL_NUMBER_LENGTH_LIST: Option<&[usize]> = Some(&[9]);
+    pub const NATIONAL_PREFIX: Option<&str> = Some("8*");
     pub const NATIONALITY: Option<&str> = Some("Georgian");
     pub const NUMBER: &str = "268";
     pub const POSTAL_CODE: bool = true;
@@ -37,13 +37,16 @@ pub mod consts {
     pub const START_DAY_OF_WEEK: WeekDay = WeekDay::Monday;
     pub const SUBREGION: Option<SubRegion> = Some(SubRegion::WesternAsia);
     pub const UN_LOCODE: &str = "GE";
+    pub const UN_MEMBER: bool = true;
     pub const UNOFFICIAL_NAME_LIST: &[&str] =
         &["Georgia", "Georgien", "Géorgie", "グルジア", "Georgië"];
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = Some("GE");
     pub const WORLD_REGION: WorldRegion = WorldRegion::EMEA;
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
+    pub const NANP_PREFIX: Option<&str> = None;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
     pub const POPULATION: Option<u64> = Some(3712502);
     #[cfg(feature = "emojis")]
@@ -449,16 +452,17 @@ pub fn new() -> Country {
         maybe_gec: Some(GEC::GG),
         #[cfg(feature = "geo")]
         geo: geo::new(),
-        international_prefix: "810",
+        maybe_international_prefix: Some("810"),
         maybe_ioc: Some(IOC::GEO),
         iso_long_name: "Georgia",
         iso_short_name: "Georgia",
-        official_language_list: ["ka"].to_vec(),
-        spoken_language_list: ["ka"].to_vec(),
-        national_destination_code_length_list: [2].to_vec(),
-        national_number_length_list: [9].to_vec(),
-        national_prefix: "8*",
+        maybe_official_language_list: Some(["ka"].to_vec()),
+        maybe_spoken_language_list: Some(["ka"].to_vec()),
+        maybe_national_destination_code_length_list: Some([2].to_vec()),
+        maybe_national_number_length_list: Some([9].to_vec()),
+        maybe_national_prefix: Some("8*"),
         maybe_nationality: Some("Georgian"),
+        maybe_nanp_prefix: None,
         number: "268",
         postal_code: true,
         postal_code_format: Some("\\d{4}"),
@@ -466,7 +470,9 @@ pub fn new() -> Country {
         start_of_week: WeekDay::Monday,
         maybe_subregion: Some(SubRegion::WesternAsia),
         un_locode: "GE",
+        un_member: true,
         unofficial_name_list: ["Georgia", "Georgien", "Géorgie", "グルジア", "Georgië"].to_vec(),
+        maybe_vehicle_registration_code: Some("GE"),
         world_region: WorldRegion::EMEA,
         #[cfg(feature = "emojis")]
         emoji: "🇬🇪",

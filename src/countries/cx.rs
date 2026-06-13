@@ -20,15 +20,15 @@ pub mod consts {
     pub const COUNTRY_CODE: usize = 61;
     pub const CURRENCY_CODE: CurrencyCode = CurrencyCode::AUD;
     pub const GEC: Option<GEC> = Some(GEC::KT);
-    pub const INTERNATIONAL_PREFIX: &str = "0011";
+    pub const INTERNATIONAL_PREFIX: Option<&str> = Some("0011");
     pub const IOC: Option<IOC> = None;
     pub const ISO_SHORT_NAME: &str = "Christmas Island";
     pub const ISO_LONG_NAME: &str = "The Territory of Christmas Island";
-    pub const OFFICIAL_LANGUAGE_LIST: &[&str] = &["en", "ms", "zh"];
-    pub const SPOKEN_LANGUAGE_LIST: &[&str] = &["en", "ms", "zh"];
-    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: &[usize] = &[];
-    pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[];
-    pub const NATIONAL_PREFIX: &str = "0";
+    pub const OFFICIAL_LANGUAGE_LIST: Option<&[&str]> = Some(&["en", "ms", "zh"]);
+    pub const SPOKEN_LANGUAGE_LIST: Option<&[&str]> = Some(&["en", "ms", "zh"]);
+    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: Option<&[usize]> = None;
+    pub const NATIONAL_NUMBER_LENGTH_LIST: Option<&[usize]> = None;
+    pub const NATIONAL_PREFIX: Option<&str> = Some("0");
     pub const NATIONALITY: Option<&str> = Some("Christmas Island");
     pub const NUMBER: &str = "162";
     pub const POSTAL_CODE: bool = true;
@@ -37,17 +37,20 @@ pub mod consts {
     pub const START_DAY_OF_WEEK: WeekDay = WeekDay::Monday;
     pub const SUBREGION: Option<SubRegion> = Some(SubRegion::AustraliaAndNewZealand);
     pub const UN_LOCODE: &str = "CX";
+    pub const UN_MEMBER: bool = false;
     pub const UNOFFICIAL_NAME_LIST: &[&str] = &[
         "Christmas Island",
         "Weihnachtsinsel",
         "クリスマス島",
         "Christmaseiland",
     ];
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = None;
     pub const WORLD_REGION: WorldRegion = WorldRegion::APAC;
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
+    pub const NANP_PREFIX: Option<&str> = None;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
     pub const POPULATION: Option<u64> = None;
     #[cfg(feature = "emojis")]
@@ -286,16 +289,17 @@ pub fn new() -> Country {
         maybe_gec: Some(GEC::KT),
         #[cfg(feature = "geo")]
         geo: geo::new(),
-        international_prefix: "0011",
+        maybe_international_prefix: Some("0011"),
         maybe_ioc: None,
         iso_long_name: "The Territory of Christmas Island",
         iso_short_name: "Christmas Island",
-        official_language_list: ["en", "ms", "zh"].to_vec(),
-        spoken_language_list: ["en", "ms", "zh"].to_vec(),
-        national_destination_code_length_list: [].to_vec(),
-        national_number_length_list: [].to_vec(),
-        national_prefix: "0",
+        maybe_official_language_list: Some(["en", "ms", "zh"].to_vec()),
+        maybe_spoken_language_list: Some(["en", "ms", "zh"].to_vec()),
+        maybe_national_destination_code_length_list: None,
+        maybe_national_number_length_list: None,
+        maybe_national_prefix: Some("0"),
         maybe_nationality: Some("Christmas Island"),
+        maybe_nanp_prefix: None,
         number: "162",
         postal_code: true,
         postal_code_format: Some("6798"),
@@ -303,6 +307,7 @@ pub fn new() -> Country {
         start_of_week: WeekDay::Monday,
         maybe_subregion: Some(SubRegion::AustraliaAndNewZealand),
         un_locode: "CX",
+        un_member: false,
         unofficial_name_list: [
             "Christmas Island",
             "Weihnachtsinsel",
@@ -310,6 +315,7 @@ pub fn new() -> Country {
             "Christmaseiland",
         ]
         .to_vec(),
+        maybe_vehicle_registration_code: None,
         world_region: WorldRegion::APAC,
         #[cfg(feature = "emojis")]
         emoji: "🇨🇽",

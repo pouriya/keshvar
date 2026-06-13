@@ -80,19 +80,31 @@ fn code_gen_countries(data_directory: PathBuf, output_directory: PathBuf) -> Res
             PathBuf::from(filename.file_name().unwrap()),
         )?;
         // Check which option has empty value set:
-        for (field, field_name) in [
-            (&info.address_format, "address_format"),
-            (&info.gec, "gec"),
-            (&info.ioc, "ioc"),
-            (&info.nationality, "nationality"),
-            (&info.postal_code_format, "postal_code_format"),
-            (&info.region, "region"),
-            (&info.subregion, "subregion"),
-        ] {
-            if field.is_none() {
-                found_empty.push(field_name);
-            }
+        macro_rules! note_if_none {
+            ($field:expr, $field_name:literal) => {
+                if $field.is_none() {
+                    found_empty.push($field_name);
+                }
+            };
         }
+        note_if_none!(info.address_format, "address_format");
+        note_if_none!(info.gec, "gec");
+        note_if_none!(info.international_prefix, "international_prefix");
+        note_if_none!(info.ioc, "ioc");
+        note_if_none!(info.languages_official, "languages_official");
+        note_if_none!(info.languages_spoken, "languages_spoken");
+        note_if_none!(
+            info.national_destination_code_lengths,
+            "national_destination_code_lengths"
+        );
+        note_if_none!(info.national_number_lengths, "national_number_lengths");
+        note_if_none!(info.national_prefix, "national_prefix");
+        note_if_none!(info.nationality, "nationality");
+        note_if_none!(info.nanp_prefix, "nanp_prefix");
+        note_if_none!(info.postal_code_format, "postal_code_format");
+        note_if_none!(info.region, "region");
+        note_if_none!(info.subregion, "subregion");
+        note_if_none!(info.vehicle_registration_code, "vehicle_registration_code");
         countries_info_list.push((country_name, info))
     }
     countries_info_list.sort_by_key(|(name, _)| name.clone());
@@ -145,11 +157,19 @@ fn code_gen_countries(data_directory: PathBuf, output_directory: PathBuf) -> Res
     for field_name in [
         "address_format",
         "gec",
+        "international_prefix",
         "ioc",
+        "languages_official",
+        "languages_spoken",
+        "national_destination_code_lengths",
+        "national_number_lengths",
+        "national_prefix",
         "nationality",
+        "nanp_prefix",
         "postal_code_format",
         "region",
         "subregion",
+        "vehicle_registration_code",
     ] {
         if !found_empty.contains(&field_name) {
             bail!(

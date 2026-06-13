@@ -21,15 +21,15 @@ pub mod consts {
     pub const COUNTRY_CODE: usize = 886;
     pub const CURRENCY_CODE: CurrencyCode = CurrencyCode::TWD;
     pub const GEC: Option<GEC> = Some(GEC::TW);
-    pub const INTERNATIONAL_PREFIX: &str = "002";
+    pub const INTERNATIONAL_PREFIX: Option<&str> = Some("002");
     pub const IOC: Option<IOC> = Some(IOC::TPE);
     pub const ISO_SHORT_NAME: &str = "Taiwan, Province of China";
     pub const ISO_LONG_NAME: &str = "Taiwan, Province of China";
-    pub const OFFICIAL_LANGUAGE_LIST: &[&str] = &["zh"];
-    pub const SPOKEN_LANGUAGE_LIST: &[&str] = &["zh"];
-    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: &[usize] = &[2];
-    pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[7, 8];
-    pub const NATIONAL_PREFIX: &str = "0";
+    pub const OFFICIAL_LANGUAGE_LIST: Option<&[&str]> = Some(&["zh"]);
+    pub const SPOKEN_LANGUAGE_LIST: Option<&[&str]> = Some(&["zh"]);
+    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: Option<&[usize]> = Some(&[2]);
+    pub const NATIONAL_NUMBER_LENGTH_LIST: Option<&[usize]> = Some(&[7, 8]);
+    pub const NATIONAL_PREFIX: Option<&str> = Some("0");
     pub const NATIONALITY: Option<&str> = Some("Taiwanese");
     pub const NUMBER: &str = "158";
     pub const POSTAL_CODE: bool = true;
@@ -38,12 +38,15 @@ pub mod consts {
     pub const START_DAY_OF_WEEK: WeekDay = WeekDay::Monday;
     pub const SUBREGION: Option<SubRegion> = Some(SubRegion::EasternAsia);
     pub const UN_LOCODE: &str = "TW";
+    pub const UN_MEMBER: bool = false;
     pub const UNOFFICIAL_NAME_LIST: &[&str] = &["Taiwan", "Taiwán", "台灣", "臺灣", "台湾"];
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = Some("RC");
     pub const WORLD_REGION: WorldRegion = WorldRegion::APAC;
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
+    pub const NANP_PREFIX: Option<&str> = None;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
     pub const POPULATION: Option<u64> = None;
     #[cfg(feature = "emojis")]
@@ -604,16 +607,17 @@ pub fn new() -> Country {
         maybe_gec: Some(GEC::TW),
         #[cfg(feature = "geo")]
         geo: geo::new(),
-        international_prefix: "002",
+        maybe_international_prefix: Some("002"),
         maybe_ioc: Some(IOC::TPE),
         iso_long_name: "Taiwan, Province of China",
         iso_short_name: "Taiwan, Province of China",
-        official_language_list: ["zh"].to_vec(),
-        spoken_language_list: ["zh"].to_vec(),
-        national_destination_code_length_list: [2].to_vec(),
-        national_number_length_list: [7, 8].to_vec(),
-        national_prefix: "0",
+        maybe_official_language_list: Some(["zh"].to_vec()),
+        maybe_spoken_language_list: Some(["zh"].to_vec()),
+        maybe_national_destination_code_length_list: Some([2].to_vec()),
+        maybe_national_number_length_list: Some([7, 8].to_vec()),
+        maybe_national_prefix: Some("0"),
         maybe_nationality: Some("Taiwanese"),
+        maybe_nanp_prefix: None,
         number: "158",
         postal_code: true,
         postal_code_format: Some("\\d{3}(?:\\d{2,3})?"),
@@ -621,7 +625,9 @@ pub fn new() -> Country {
         start_of_week: WeekDay::Monday,
         maybe_subregion: Some(SubRegion::EasternAsia),
         un_locode: "TW",
+        un_member: false,
         unofficial_name_list: ["Taiwan", "Taiwán", "台灣", "臺灣", "台湾"].to_vec(),
+        maybe_vehicle_registration_code: Some("RC"),
         world_region: WorldRegion::APAC,
         #[cfg(feature = "emojis")]
         emoji: "🇹🇼",

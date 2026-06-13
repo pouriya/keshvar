@@ -21,15 +21,15 @@ pub mod consts {
     pub const COUNTRY_CODE: usize = 65;
     pub const CURRENCY_CODE: CurrencyCode = CurrencyCode::SGD;
     pub const GEC: Option<GEC> = Some(GEC::SN);
-    pub const INTERNATIONAL_PREFIX: &str = "001";
+    pub const INTERNATIONAL_PREFIX: Option<&str> = Some("001");
     pub const IOC: Option<IOC> = Some(IOC::SGP);
     pub const ISO_SHORT_NAME: &str = "Singapore";
     pub const ISO_LONG_NAME: &str = "The Republic of Singapore";
-    pub const OFFICIAL_LANGUAGE_LIST: &[&str] = &["en", "ms", "ta"];
-    pub const SPOKEN_LANGUAGE_LIST: &[&str] = &["en", "ms", "ta"];
-    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: &[usize] = &[2];
-    pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[8, 9];
-    pub const NATIONAL_PREFIX: &str = "None";
+    pub const OFFICIAL_LANGUAGE_LIST: Option<&[&str]> = Some(&["en", "ms", "ta"]);
+    pub const SPOKEN_LANGUAGE_LIST: Option<&[&str]> = Some(&["en", "ms", "ta"]);
+    pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: Option<&[usize]> = Some(&[2]);
+    pub const NATIONAL_NUMBER_LENGTH_LIST: Option<&[usize]> = Some(&[8, 9]);
+    pub const NATIONAL_PREFIX: Option<&str> = Some("None");
     pub const NATIONALITY: Option<&str> = Some("Singaporean");
     pub const NUMBER: &str = "702";
     pub const POSTAL_CODE: bool = true;
@@ -38,13 +38,16 @@ pub mod consts {
     pub const START_DAY_OF_WEEK: WeekDay = WeekDay::Monday;
     pub const SUBREGION: Option<SubRegion> = Some(SubRegion::SouthEasternAsia);
     pub const UN_LOCODE: &str = "SG";
+    pub const UN_MEMBER: bool = true;
     pub const UNOFFICIAL_NAME_LIST: &[&str] =
         &["Singapore", "Singapur", "Singapour", "シンガポール"];
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = Some("SGP");
     pub const WORLD_REGION: WorldRegion = WorldRegion::APAC;
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
+    pub const NANP_PREFIX: Option<&str> = None;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
     pub const POPULATION: Option<u64> = Some(5637022);
     #[cfg(feature = "emojis")]
@@ -148,7 +151,7 @@ pub mod consts {
         ("pl", "Singapur"),
         ("ps", "سينګاپور"),
         ("pt", "Singapura"),
-        ("pt_BR", "Cingapura"),
+        ("pt_BR", "Singapura"),
         ("ro", "Singapore"),
         ("ru", "Сингапур"),
         ("rw", "Singapore"),
@@ -345,16 +348,17 @@ pub fn new() -> Country {
         maybe_gec: Some(GEC::SN),
         #[cfg(feature = "geo")]
         geo: geo::new(),
-        international_prefix: "001",
+        maybe_international_prefix: Some("001"),
         maybe_ioc: Some(IOC::SGP),
         iso_long_name: "The Republic of Singapore",
         iso_short_name: "Singapore",
-        official_language_list: ["en", "ms", "ta"].to_vec(),
-        spoken_language_list: ["en", "ms", "ta"].to_vec(),
-        national_destination_code_length_list: [2].to_vec(),
-        national_number_length_list: [8, 9].to_vec(),
-        national_prefix: "None",
+        maybe_official_language_list: Some(["en", "ms", "ta"].to_vec()),
+        maybe_spoken_language_list: Some(["en", "ms", "ta"].to_vec()),
+        maybe_national_destination_code_length_list: Some([2].to_vec()),
+        maybe_national_number_length_list: Some([8, 9].to_vec()),
+        maybe_national_prefix: Some("None"),
         maybe_nationality: Some("Singaporean"),
+        maybe_nanp_prefix: None,
         number: "702",
         postal_code: true,
         postal_code_format: Some("\\d{6}"),
@@ -362,7 +366,9 @@ pub fn new() -> Country {
         start_of_week: WeekDay::Monday,
         maybe_subregion: Some(SubRegion::SouthEasternAsia),
         un_locode: "SG",
+        un_member: true,
         unofficial_name_list: ["Singapore", "Singapur", "Singapour", "シンガポール"].to_vec(),
+        maybe_vehicle_registration_code: Some("SGP"),
         world_region: WorldRegion::APAC,
         #[cfg(feature = "emojis")]
         emoji: "🇸🇬",
@@ -465,7 +471,7 @@ pub fn new() -> Country {
             ("pl", "Singapur"),
             ("ps", "سينګاپور"),
             ("pt", "Singapura"),
-            ("pt_BR", "Cingapura"),
+            ("pt_BR", "Singapura"),
             ("ro", "Singapore"),
             ("ru", "Сингапур"),
             ("rw", "Singapore"),
