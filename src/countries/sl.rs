@@ -521,7 +521,7 @@ pub mod subdivisions {
                         ("id", "Wilayah Barat"),
                         ("it", "Area occidentale della Sierra Leone"),
                         ("ja", "西部地域"),
-                        ("kn", "ಪಾಶ\u{ccd}ಚಾತ\u{ccd}ಯ ಪ\u{ccd}ರದೇಶ"),
+                        ("kn", "ಪಾಶ\u{ccd}ಚಾತ\u{ccd}ಯ ಪ\u{ccd}ರದ\u{cc7}ಶ"),
                         ("ko", "서부 구"),
                         ("lt", "Vakarų sritis"),
                         ("lv", "Rietumu apgabals"),

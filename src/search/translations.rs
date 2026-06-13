@@ -61009,37 +61009,37 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     #[cfg(feature = "ai")] // Anguilla (Americas)
     ("ಅಂಗುಲ\u{cbf}ಯಾ", Alpha2::AI),
     #[cfg(feature = "ao")] // The Republic of Angola (Africa)
-    ("ಅಂಗೋಲಾ", Alpha2::AO),
+    ("ಅಂಗ\u{ccb}ಲಾ", Alpha2::AO),
     #[cfg(feature = "aq")] // Antarctica
     ("ಅಂಟಾರ\u{ccd}ಟ\u{cbf}ಕ", Alpha2::AQ),
     #[cfg(feature = "az")] // The Republic of Azerbaijan (Asia)
-    ("ಅಜರ\u{ccd}ಬೈಜಾನ\u{ccd}", Alpha2::AZ),
+    ("ಅಜರ\u{ccd}ಬ\u{cc8}ಜಾನ\u{ccd}", Alpha2::AZ),
     #[cfg(feature = "af")] // The Islamic Republic of Afghanistan (Asia)
     ("ಅಫ\u{ccd}ಗಾನ\u{cbf}ಸ\u{ccd}ಥಾನ\u{ccd}", Alpha2::AF),
     #[cfg(feature = "as")] // The Territory of American Samoa (Oceania)
-    ("ಅಮೇರ\u{cbf}ಕನ\u{ccd} ಸಮೋಆ", Alpha2::AS),
+    ("ಅಮ\u{cc7}ರ\u{cbf}ಕನ\u{ccd} ಸಮ\u{ccb}ಆ", Alpha2::AS),
     #[cfg(feature = "aw")] // Aruba (Americas)
     ("ಅರುಬಾ", Alpha2::AW),
     #[cfg(feature = "ar")] // The Argentine Republic (Americas)
-    ("ಅರ\u{ccd}ಜ\u{cc6}ಂಟೈನಾ", Alpha2::AR),
+    ("ಅರ\u{ccd}ಜ\u{cc6}ಂಟ\u{cc8}ನಾ", Alpha2::AR),
     #[cfg(feature = "ax")] // Åland (Europe)
-    ("ಅಲಾಂಡ\u{ccd} ದ\u{ccd}ವೀಪಗಳು", Alpha2::AX),
+    ("ಅಲಾಂಡ\u{ccd} ದ\u{ccd}ವ\u{cc0}ಪಗಳು", Alpha2::AX),
     #[cfg(feature = "dz")] // The People's Democratic Republic of Algeria (Africa)
-    ("ಅಲ\u{ccd}ಜೀರ\u{cbf}ಯ", Alpha2::DZ),
+    ("ಅಲ\u{ccd}ಜ\u{cc0}ರ\u{cbf}ಯ", Alpha2::DZ),
     #[cfg(feature = "al")] // The Republic of Albania (Europe)
-    ("ಅಲ\u{ccd}ಬೇನ\u{cbf}ಯಾ", Alpha2::AL),
+    ("ಅಲ\u{ccd}ಬ\u{cc7}ನ\u{cbf}ಯಾ", Alpha2::AL),
     #[cfg(feature = "ag")] // Antigua and Barbuda (Americas)
     ("ಆಂಟ\u{cbf}ಗ\u{ccd}ವಾ ಮತ\u{ccd}ತು ಬಾರ\u{ccd}ಬುಡಾ", Alpha2::AG),
     #[cfg(feature = "ad")] // The Principality of Andorra (Europe)
-    ("ಆಂಡೋರ\u{ccd}ರಾ", Alpha2::AD),
+    ("ಆಂಡ\u{ccb}ರ\u{ccd}ರಾ", Alpha2::AD),
     #[cfg(feature = "am")] // The Republic of Armenia (Asia)
-    ("ಆರ\u{ccd}ಮೇನ\u{cbf}ಯಾ", Alpha2::AM),
+    ("ಆರ\u{ccd}ಮ\u{cc7}ನ\u{cbf}ಯಾ", Alpha2::AM),
     #[cfg(feature = "at")] // The Republic of Austria (Europe)
     ("ಆಸ\u{ccd}ಟ\u{ccd}ರ\u{cbf}ಯ", Alpha2::AT),
     #[cfg(feature = "au")] // The Commonwealth of Australia (Oceania)
-    ("ಆಸ\u{ccd}ಟ\u{ccd}ರೇಲ\u{cbf}ಯ", Alpha2::AU),
+    ("ಆಸ\u{ccd}ಟ\u{ccd}ರ\u{cc7}ಲ\u{cbf}ಯ", Alpha2::AU),
     #[cfg(feature = "id")] // The Republic of Indonesia (Asia)
-    ("ಇಂಡೋನೇಶ\u{cbf}ಯಾ", Alpha2::ID),
+    ("ಇಂಡ\u{ccb}ನ\u{cc7}ಶ\u{cbf}ಯಾ", Alpha2::ID),
     #[cfg(feature = "it")] // The Italian Republic (Europe)
     ("ಇಟಲ\u{cbf}", Alpha2::IT),
     #[cfg(feature = "iq")] // The Republic of Iraq (Asia)
@@ -61047,9 +61047,9 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     #[cfg(feature = "ir")] // The Islamic Republic of Iran (Asia)
     ("ಇರಾನ\u{ccd} ಇಸ\u{ccd}ಲಾಮ\u{cbf}ಕ\u{ccd} ಗಣರಾಜ\u{ccd}ಯ", Alpha2::IR),
     #[cfg(feature = "il")] // The State of Israel (Asia)
-    ("ಇಸ\u{ccd}ರೇಲ\u{ccd}", Alpha2::IL),
+    ("ಇಸ\u{ccd}ರ\u{cc7}ಲ\u{ccd}", Alpha2::IL),
     #[cfg(feature = "gq")] // The Republic of Equatorial Guinea (Africa)
-    ("ಈಕ\u{ccd}ವಟೋರ\u{cbf}ಯಲ\u{ccd} ಗ\u{cbf}ನೀ", Alpha2::GQ),
+    ("ಈಕ\u{ccd}ವಟ\u{ccb}ರ\u{cbf}ಯಲ\u{ccd} ಗ\u{cbf}ನ\u{cc0}", Alpha2::GQ),
     #[cfg(feature = "ec")] // The Republic of Ecuador (Americas)
     ("ಈಕ\u{ccd}ವ\u{cc6}ಡಾರ\u{ccd}", Alpha2::EC),
     #[cfg(feature = "eg")] // The Arab Republic of Egypt (Africa)
@@ -61059,17 +61059,17 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     #[cfg(feature = "uz")] // The Republic of Uzbekistan (Asia)
     ("ಉಜ\u{ccd}ಬ\u{cc6}ಕ\u{cbf}ಸ\u{ccd}ತಾನ\u{ccd}", Alpha2::UZ),
     #[cfg(feature = "mp")] // The Commonwealth of the Northern Mariana Islands (Oceania)
-    ("ಉತ\u{ccd}ತರ ಮಾರ\u{cbf}ಯಾನಾ ದ\u{ccd}ವೀಪಗಳು", Alpha2::MP),
+    ("ಉತ\u{ccd}ತರ ಮಾರ\u{cbf}ಯಾನಾ ದ\u{ccd}ವ\u{cc0}ಪಗಳು", Alpha2::MP),
     #[cfg(feature = "uy")] // The Oriental Republic of Uruguay (Americas)
-    ("ಉರುಗ\u{ccd}ವೇ", Alpha2::UY),
+    ("ಉರುಗ\u{ccd}ವ\u{cc7}", Alpha2::UY),
     #[cfg(feature = "et")] // The Federal Democratic Republic of Ethiopia (Africa)
-    ("ಎಥ\u{cbf}ಯೋಪ\u{cbf}ಯಾ", Alpha2::ET),
+    ("ಎಥ\u{cbf}ಯ\u{ccb}ಪ\u{cbf}ಯಾ", Alpha2::ET),
     #[cfg(feature = "er")] // The State of Eritrea (Africa)
     ("ಎರ\u{cbf}ಟ\u{ccd}ರ\u{cbf}ಯಾ", Alpha2::ER),
     #[cfg(feature = "sv")] // The Republic of El Salvador (Americas)
     ("ಎಲ\u{ccd} ಸಾಲ\u{ccd}ವಡಾರ\u{ccd}\u{200d}", Alpha2::SV),
     #[cfg(feature = "ee")] // The Republic of Estonia (Europe)
-    ("ಎಸ\u{ccd}ತೋನ\u{cbf}ಯಾ", Alpha2::EE),
+    ("ಎಸ\u{ccd}ತ\u{ccb}ನ\u{cbf}ಯಾ", Alpha2::EE),
     #[cfg(feature = "ie")] // Ireland (Europe)
     ("ಐರ\u{ccd}ಲ\u{ccd}ಯಂಡ\u{ccd}", Alpha2::IE),
     #[cfg(feature = "is")] // Iceland (Europe)
@@ -61081,59 +61081,59 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     #[cfg(feature = "qa")] // The State of Qatar (Asia)
     ("ಕತಾರ\u{ccd}", Alpha2::QA),
     #[cfg(feature = "cg")] // The Republic of the Congo (Africa)
-    ("ಕಾಂಗೋ", Alpha2::CG),
+    ("ಕಾಂಗ\u{ccb}", Alpha2::CG),
     #[cfg(feature = "cd")] // The Democratic Republic of the Congo (Africa)
-    ("ಕಾಂಗೋ ಪ\u{ccd}ರಜಾಸತ\u{ccd}ತಾತ\u{ccd}ಮಕ ಗಣರಾಜ\u{ccd}ಯ", Alpha2::CD),
+    ("ಕಾಂಗ\u{ccb} ಪ\u{ccd}ರಜಾಸತ\u{ccd}ತಾತ\u{ccd}ಮಕ ಗಣರಾಜ\u{ccd}ಯ", Alpha2::CD),
     #[cfg(feature = "kh")] // The Kingdom of Cambodia (Asia)
-    ("ಕಾಂಬೋಡ\u{cbf}ಯಾ", Alpha2::KH),
+    ("ಕಾಂಬ\u{ccb}ಡ\u{cbf}ಯಾ", Alpha2::KH),
     #[cfg(feature = "ki")] // The Republic of Kiribati (Oceania)
     ("ಕ\u{cbf}ರ\u{cbf}ಬಾಟ\u{cbf}", Alpha2::KI),
     #[cfg(feature = "kg")] // The Kyrgyz Republic (Asia)
     ("ಕ\u{cbf}ರ\u{ccd}ಗ\u{cbf}ಝ\u{ccd}\u{200d}ಸ\u{ccd}ತಾನ\u{ccd}", Alpha2::KG),
     #[cfg(feature = "ke")] // The Republic of Kenya (Africa)
-    ("ಕೀನ\u{ccd}ಯಾ", Alpha2::KE),
+    ("ಕ\u{cc0}ನ\u{ccd}ಯಾ", Alpha2::KE),
     #[cfg(feature = "ck")] // The Cook Islands (Oceania)
-    ("ಕುಕ\u{ccd} ದ\u{ccd}ವೀಪಗಳು", Alpha2::CK),
+    ("ಕುಕ\u{ccd} ದ\u{ccd}ವ\u{cc0}ಪಗಳು", Alpha2::CK),
     #[cfg(feature = "kw")] // The State of Kuwait (Asia)
-    ("ಕುವೈತ\u{ccd}", Alpha2::KW),
+    ("ಕುವ\u{cc8}ತ\u{ccd}", Alpha2::KW),
     #[cfg(feature = "ca")] // Canada (Americas)
     ("ಕ\u{cc6}ನಡ", Alpha2::CA),
     #[cfg(feature = "ky")] // The Cayman Islands (Americas)
-    ("ಕೇಮನ\u{ccd} ದ\u{ccd}ವೀಪಗಳು", Alpha2::KY),
+    ("ಕ\u{cc7}ಮನ\u{ccd} ದ\u{ccd}ವ\u{cc0}ಪಗಳು", Alpha2::KY),
     #[cfg(feature = "km")] // The Union of the Comoros (Africa)
-    ("ಕೊಮೊರೋಸ\u{ccd}", Alpha2::KM),
+    ("ಕ\u{cca}ಮ\u{cca}ರ\u{ccb}ಸ\u{ccd}", Alpha2::KM),
     #[cfg(feature = "cc")] // The Territory of Cocos (Keeling) Islands (Oceania)
-    ("ಕೋಕೋಸ\u{ccd}(ಕೀಲ\u{cbf}ಂಗ\u{ccd})ದ\u{ccd}ವೀಪಗಳು", Alpha2::CC),
+    ("ಕ\u{ccb}ಕ\u{ccb}ಸ\u{ccd}(ಕ\u{cc0}ಲ\u{cbf}ಂಗ\u{ccd})ದ\u{ccd}ವ\u{cc0}ಪಗಳು", Alpha2::CC),
     #[cfg(feature = "kr")] // The Republic of Korea (Asia)
-    ("ಕೋರ\u{cbf}ಯಾ ಗಣರಾಜ\u{ccd}ಯ", Alpha2::KR),
+    ("ಕ\u{ccb}ರ\u{cbf}ಯಾ ಗಣರಾಜ\u{ccd}ಯ", Alpha2::KR),
     #[cfg(feature = "kp")] // The Democratic People's Republic of Korea (Asia)
-    ("ಕೋರ\u{cbf}ಯಾ, ಡ\u{cc6}ಮೊಕ\u{ccd}ರಟ\u{cbf}ಕ\u{ccd} ಪೀಪಲ\u{ccd}ಸ\u{ccd} ರ\u{cbf}ಪಬ\u{ccd}ಲ\u{cbf}ಕ\u{ccd}", Alpha2::KP),
+    ("ಕ\u{ccb}ರ\u{cbf}ಯಾ, ಡ\u{cc6}ಮ\u{cca}ಕ\u{ccd}ರಟ\u{cbf}ಕ\u{ccd} ಪ\u{cc0}ಪಲ\u{ccd}ಸ\u{ccd} ರ\u{cbf}ಪಬ\u{ccd}ಲ\u{cbf}ಕ\u{ccd}", Alpha2::KP),
     #[cfg(feature = "co")] // The Republic of Colombia (Americas)
-    ("ಕೋಲಂಬ\u{cbf}ಯಾ", Alpha2::CO),
+    ("ಕ\u{ccb}ಲಂಬ\u{cbf}ಯಾ", Alpha2::CO),
     #[cfg(feature = "cr")] // The Republic of Costa Rica (Americas)
-    ("ಕೋಸ\u{ccd}ಟಾರ\u{cbf}ಕಾ", Alpha2::CR),
+    ("ಕ\u{ccb}ಸ\u{ccd}ಟಾರ\u{cbf}ಕಾ", Alpha2::CR),
     #[cfg(feature = "cm")] // The Republic of Cameroon (Africa)
     ("ಕ\u{ccd}ಯಾಮರ\u{cc2}ನ\u{ccd}", Alpha2::CM),
     #[cfg(feature = "cu")] // The Republic of Cuba (Americas)
     ("ಕ\u{ccd}ಯ\u{cc2}ಬಾ", Alpha2::CU),
     #[cfg(feature = "cx")] // The Territory of Christmas Island (Oceania)
-    ("ಕ\u{ccd}ರ\u{cbf}ಸ\u{ccd}ಮಸ\u{ccd} ದ\u{ccd}ವೀಪ", Alpha2::CX),
+    ("ಕ\u{ccd}ರ\u{cbf}ಸ\u{ccd}ಮಸ\u{ccd} ದ\u{ccd}ವ\u{cc0}ಪ", Alpha2::CX),
     #[cfg(feature = "hr")] // The Republic of Croatia (Europe)
-    ("ಕ\u{ccd}ರೊಏಶ\u{cbf}ಯಾ", Alpha2::HR),
+    ("ಕ\u{ccd}ರ\u{cca}ಏಶ\u{cbf}ಯಾ", Alpha2::HR),
     #[cfg(feature = "gy")] // The Co-operative Republic of Guyana (Americas)
     ("ಗಯಾನಾ", Alpha2::GY),
     #[cfg(feature = "gn")] // The Republic of Guinea (Africa)
-    ("ಗ\u{cbf}ನೀ", Alpha2::GN),
+    ("ಗ\u{cbf}ನ\u{cc0}", Alpha2::GN),
     #[cfg(feature = "gw")] // The Republic of Guinea-Bissau (Africa)
-    ("ಗ\u{cbf}ನೀ-ಬ\u{cbf}ಸ\u{ccd}ಸೋ", Alpha2::GW),
+    ("ಗ\u{cbf}ನ\u{cc0}-ಬ\u{cbf}ಸ\u{ccd}ಸ\u{ccb}", Alpha2::GW),
     #[cfg(feature = "gm")] // The Republic of The Gambia (Africa)
     ("ಗ\u{ccd}ಯಾಂಬ\u{cbf}ಯಾ", Alpha2::GM),
     #[cfg(feature = "ga")] // The Gabonese Republic (Africa)
     ("ಗ\u{ccd}ಯಾಬನ\u{ccd}", Alpha2::GA),
     #[cfg(feature = "gl")] // Kalaallit Nunaat (Americas)
-    ("ಗ\u{ccd}ರೀನ\u{ccd}\u{200d}ಲ\u{ccd}ಯಾಂಡ\u{ccd}", Alpha2::GL),
+    ("ಗ\u{ccd}ರ\u{cc0}ನ\u{ccd}\u{200d}ಲ\u{ccd}ಯಾಂಡ\u{ccd}", Alpha2::GL),
     #[cfg(feature = "gr")] // The Hellenic Republic (Europe)
-    ("ಗ\u{ccd}ರೀಸ\u{ccd}", Alpha2::GR),
+    ("ಗ\u{ccd}ರ\u{cc0}ಸ\u{ccd}", Alpha2::GR),
     #[cfg(feature = "gd")] // Grenada (Americas)
     ("ಗ\u{ccd}ರ\u{cc6}ನಡಾ", Alpha2::GD),
     #[cfg(feature = "gt")] // The Republic of Guatemala (Americas)
@@ -61145,13 +61145,13 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     #[cfg(feature = "cl")] // The Republic of Chile (Americas)
     ("ಚ\u{cbf}ಲ\u{cbf}", Alpha2::CL),
     #[cfg(feature = "cn")] // The People's Republic of China (Asia)
-    ("ಚೈನಾ", Alpha2::CN),
+    ("ಚ\u{cc8}ನಾ", Alpha2::CN),
     #[cfg(feature = "td")] // The Republic of Chad (Africa)
     ("ಛಾಡ\u{ccd}", Alpha2::TD),
     #[cfg(feature = "jp")] // Japan (Asia)
     ("ಜಪಾನ\u{ccd}", Alpha2::JP),
     #[cfg(feature = "jm")] // Jamaica (Americas)
-    ("ಜಮೈಕ", Alpha2::JM),
+    ("ಜಮ\u{cc8}ಕ", Alpha2::JM),
     #[cfg(feature = "de")] // The Federal Republic of Germany (Europe)
     ("ಜರ\u{ccd}ಮನ\u{cbf}", Alpha2::DE),
     #[cfg(feature = "je")] // The Bailiwick of Jersey (Europe)
@@ -61161,7 +61161,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     #[cfg(feature = "gi")] // Gibraltar (Europe)
     ("ಜ\u{cbf}ಬ\u{ccd}ರಾಲ\u{ccd}ಟರ\u{ccd}", Alpha2::GI),
     #[cfg(feature = "jo")] // The Hashemite Kingdom of Jordan (Asia)
-    ("ಜೋರ\u{ccd}ಡಾನ\u{ccd}", Alpha2::JO),
+    ("ಜ\u{ccb}ರ\u{ccd}ಡಾನ\u{ccd}", Alpha2::JO),
     #[cfg(feature = "zm")] // The Republic of Zambia (Africa)
     ("ಝಾಂಬ\u{cbf}ಯಾ", Alpha2::ZM),
     #[cfg(feature = "zw")] // The Republic of Zimbabwe (Africa)
@@ -61169,19 +61169,19 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     #[cfg(feature = "tr")] // The Republic of Türkiye (Asia)
     ("ಟರ\u{ccd}ಕ\u{cbf}", Alpha2::TR),
     #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
-    ("ಟೈವಾನ\u{ccd}", Alpha2::TW),
+    ("ಟ\u{cc8}ವಾನ\u{ccd}", Alpha2::TW),
     #[cfg(feature = "to")] // The Kingdom of Tonga (Oceania)
-    ("ಟೋಂಗಾ", Alpha2::TO),
+    ("ಟ\u{ccb}ಂಗಾ", Alpha2::TO),
     #[cfg(feature = "tg")] // The Togolese Republic (Africa)
-    ("ಟೋಗೋ", Alpha2::TG),
+    ("ಟ\u{ccb}ಗ\u{ccb}", Alpha2::TG),
     #[cfg(feature = "tt")] // The Republic of Trinidad and Tobago (Americas)
-    ("ಟ\u{ccd}ರ\u{cbf}ನ\u{cbf}ಡಾಡ\u{ccd} ಮತ\u{ccd}ತು ಟೊಬಾಗೋ", Alpha2::TT),
+    ("ಟ\u{ccd}ರ\u{cbf}ನ\u{cbf}ಡಾಡ\u{ccd} ಮತ\u{ccd}ತು ಟ\u{cca}ಬಾಗ\u{ccb}", Alpha2::TT),
     #[cfg(feature = "dk")] // The Kingdom of Denmark (Europe)
     ("ಡ\u{cc6}ನ\u{ccd}ಮಾರ\u{ccd}ಕ\u{ccd}", Alpha2::DK),
     #[cfg(feature = "do")] // The Dominican Republic (Americas)
-    ("ಡೊಮ\u{cbf}ನ\u{cbf}ಕನ\u{ccd} ರ\u{cbf}ಪಬ\u{ccd}ಲ\u{cbf}ಕ\u{ccd}", Alpha2::DO),
+    ("ಡ\u{cca}ಮ\u{cbf}ನ\u{cbf}ಕನ\u{ccd} ರ\u{cbf}ಪಬ\u{ccd}ಲ\u{cbf}ಕ\u{ccd}", Alpha2::DO),
     #[cfg(feature = "dm")] // The Commonwealth of Dominica (Americas)
-    ("ಡೊಮ\u{cbf}ನ\u{cbf}ಕಾ", Alpha2::DM),
+    ("ಡ\u{cca}ಮ\u{cbf}ನ\u{cbf}ಕಾ", Alpha2::DM),
     #[cfg(feature = "dj")] // The Republic of Djibouti (Africa)
     ("ಡ\u{ccd}ಜ\u{cbf}ಬ\u{ccc}ಟ\u{cbf}", Alpha2::DJ),
     #[cfg(feature = "tj")] // The Republic of Tajikistan (Asia)
@@ -61195,23 +61195,23 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     #[cfg(feature = "za")] // The Republic of South Africa (Africa)
     ("ದಕ\u{ccd}ಷ\u{cbf}ಣ ಆಫ\u{ccd}ರ\u{cbf}ಕಾ", Alpha2::ZA),
     #[cfg(feature = "gs")] // South Georgia and the South Sandwich Islands (Americas)
-    ("ದಕ\u{ccd}ಷ\u{cbf}ಣ ಜಾರ\u{ccd}ಜ\u{cbf}ಯಾ ಮತ\u{ccd}ತು ದಕ\u{ccd}ಷ\u{cbf}ಣ ಸ\u{ccd}ಯಾಂಡ\u{ccd}ವ\u{cbf}ಚ\u{ccd} ದ\u{ccd}ವೀಪಗಳು", Alpha2::GS),
+    ("ದಕ\u{ccd}ಷ\u{cbf}ಣ ಜಾರ\u{ccd}ಜ\u{cbf}ಯಾ ಮತ\u{ccd}ತು ದಕ\u{ccd}ಷ\u{cbf}ಣ ಸ\u{ccd}ಯಾಂಡ\u{ccd}ವ\u{cbf}ಚ\u{ccd} ದ\u{ccd}ವ\u{cc0}ಪಗಳು", Alpha2::GS),
     #[cfg(feature = "na")] // The Republic of Namibia (Africa)
-    ("ನಮೀಬ\u{cbf}ಯಾ", Alpha2::NA),
+    ("ನಮ\u{cc0}ಬ\u{cbf}ಯಾ", Alpha2::NA),
     #[cfg(feature = "nf")] // The Territory of Norfolk Island (Oceania)
-    ("ನಾರ\u{ccd}ಫೋಕ\u{ccd} ದ\u{ccd}ವೀಪ", Alpha2::NF),
+    ("ನಾರ\u{ccd}ಫ\u{ccb}ಕ\u{ccd} ದ\u{ccd}ವ\u{cc0}ಪ", Alpha2::NF),
     #[cfg(feature = "no")] // The Kingdom of Norway (Europe)
-    ("ನಾರ\u{ccd}ವೇ", Alpha2::NO),
+    ("ನಾರ\u{ccd}ವ\u{cc7}", Alpha2::NO),
     #[cfg(feature = "ni")] // The Republic of Nicaragua (Americas)
     ("ನ\u{cbf}ಕರಾಗುವಾ", Alpha2::NI),
     #[cfg(feature = "nl")] // The Kingdom of the Netherlands (Europe)
     ("ನ\u{cc6}ದರ\u{ccd}\u{200c}ಲ\u{ccd}ಯಾಂಡ\u{ccd}ಸ\u{ccd}", Alpha2::NL),
     #[cfg(feature = "np")] // The Federal Democratic Republic of Nepal (Asia)
-    ("ನೇಪಾಳ", Alpha2::NP),
+    ("ನ\u{cc7}ಪಾಳ", Alpha2::NP),
     #[cfg(feature = "ne")] // The Republic of the Niger (Africa)
-    ("ನೈಜರ\u{ccd}", Alpha2::NE),
+    ("ನ\u{cc8}ಜರ\u{ccd}", Alpha2::NE),
     #[cfg(feature = "ng")] // The Federal Republic of Nigeria (Africa)
-    ("ನೈಜೀರ\u{cbf}ಯಾ", Alpha2::NG),
+    ("ನ\u{cc8}ಜ\u{cc0}ರ\u{cbf}ಯಾ", Alpha2::NG),
     #[cfg(feature = "nz")] // New Zealand (Oceania)
     ("ನ\u{ccd}ಯ\u{cc2} ಜ\u{cbf}ಲ\u{ccd}ಯಂಡ\u{ccd}", Alpha2::NZ),
     #[cfg(feature = "pa")] // The Republic of Panamá (Americas)
@@ -61219,9 +61219,9 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     #[cfg(feature = "pg")] // The Independent State of Papua New Guinea (Oceania)
     ("ಪಪುವಾ ನ\u{ccd}ಯ\u{cc2} ಗ\u{cbf}ನ\u{cbf}", Alpha2::PG),
     #[cfg(feature = "py")] // The Republic of Paraguay (Americas)
-    ("ಪರಾಗ\u{ccd}ವೇ", Alpha2::PY),
+    ("ಪರಾಗ\u{ccd}ವ\u{cc7}", Alpha2::PY),
     #[cfg(feature = "fo")] // The Faroe Islands (Europe)
-    ("ಪರೋ ದ\u{ccd}ವೀಪಗಳು", Alpha2::FO),
+    ("ಪರ\u{ccb} ದ\u{ccd}ವ\u{cc0}ಪಗಳು", Alpha2::FO),
     #[cfg(feature = "pw")] // The Republic of Palau (Oceania)
     ("ಪಲಾಉ", Alpha2::PW),
     #[cfg(feature = "eh")] // The Sahrawi Arab Democratic Republic (Africa)
@@ -61231,41 +61231,41 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     #[cfg(feature = "pe")] // The Republic of Perú (Americas)
     ("ಪ\u{cc6}ರು", Alpha2::PE),
     #[cfg(feature = "pr")] // The Commonwealth of Puerto Rico (Americas)
-    ("ಪೋರ\u{ccd}ಟೋರ\u{cbf}ಕಾ", Alpha2::PR),
+    ("ಪ\u{ccb}ರ\u{ccd}ಟ\u{ccb}ರ\u{cbf}ಕಾ", Alpha2::PR),
     #[cfg(feature = "pt")] // The Portuguese Republic (Europe)
-    ("ಪೋರ\u{ccd}ತುಗಾಲ\u{ccd}", Alpha2::PT),
+    ("ಪ\u{ccb}ರ\u{ccd}ತುಗಾಲ\u{ccd}", Alpha2::PT),
     #[cfg(feature = "pl")] // The Republic of Poland (Europe)
-    ("ಪೋಲಂಡ\u{ccd}", Alpha2::PL),
+    ("ಪ\u{ccb}ಲಂಡ\u{ccd}", Alpha2::PL),
     #[cfg(feature = "fk")] // The Falkland Islands (Americas)
-    ("ಫಾಕ\u{ccd}\u{200d}ಲ\u{ccd}ಯಾಂಡ\u{ccd} ದ\u{ccd}ವೀಪಗಳು(ಮಾಲ\u{ccd}ವ\u{cbf}ನಾಸ\u{ccd})", Alpha2::FK),
+    ("ಫಾಕ\u{ccd}\u{200d}ಲ\u{ccd}ಯಾಂಡ\u{ccd} ದ\u{ccd}ವ\u{cc0}ಪಗಳು(ಮಾಲ\u{ccd}ವ\u{cbf}ನಾಸ\u{ccd})", Alpha2::FK),
     #[cfg(feature = "fj")] // The Republic of Fiji (Oceania)
     ("ಫ\u{cbf}ಜ\u{cbf}", Alpha2::FJ),
     #[cfg(feature = "fi")] // The Republic of Finland (Europe)
     ("ಫ\u{cbf}ನ\u{ccd}ಲಂಡ\u{ccd}", Alpha2::FI),
     #[cfg(feature = "ph")] // The Republic of the Philippines (Asia)
-    ("ಫ\u{cbf}ಲ\u{cbf}ಪ\u{ccd}ಪೈನ\u{ccd}ಸ\u{ccd}", Alpha2::PH),
+    ("ಫ\u{cbf}ಲ\u{cbf}ಪ\u{ccd}ಪ\u{cc8}ನ\u{ccd}ಸ\u{ccd}", Alpha2::PH),
     #[cfg(feature = "fr")] // The French Republic (Europe)
     ("ಫ\u{ccd}ರಾನ\u{ccd}ಸ\u{ccd}", Alpha2::FR),
     #[cfg(feature = "gf")] // Guyane (Americas)
     ("ಫ\u{ccd}ರ\u{cc6}ಂಚ\u{ccd} ಗಯಾನಾ", Alpha2::GF),
     #[cfg(feature = "pf")] // French Polynesia (Oceania)
-    ("ಫ\u{ccd}ರ\u{cc6}ಂಚ\u{ccd} ಪೊಲ\u{cbf}ನೇಸ\u{cbf}ಯಾ", Alpha2::PF),
+    ("ಫ\u{ccd}ರ\u{cc6}ಂಚ\u{ccd} ಪ\u{cca}ಲ\u{cbf}ನ\u{cc7}ಸ\u{cbf}ಯಾ", Alpha2::PF),
     #[cfg(feature = "tf")] // The French Southern and Antarctic Lands (Africa)
-    ("ಫ\u{ccd}ರ\u{cc6}ಂಚ\u{ccd} ಸದರ\u{ccd}ನ\u{ccd} ಟ\u{cc6}ರ\u{cbf}ಟರೀಸ\u{ccd}", Alpha2::TF),
+    ("ಫ\u{ccd}ರ\u{cc6}ಂಚ\u{ccd} ಸದರ\u{ccd}ನ\u{ccd} ಟ\u{cc6}ರ\u{cbf}ಟರ\u{cc0}ಸ\u{ccd}", Alpha2::TF),
     #[cfg(feature = "bf")] // Burkina Faso (Africa)
-    ("ಬರ\u{ccd}ಕ\u{cbf}ನಾ ಫಾಸೋ", Alpha2::BF),
+    ("ಬರ\u{ccd}ಕ\u{cbf}ನಾ ಫಾಸ\u{ccb}", Alpha2::BF),
     #[cfg(feature = "bm")] // Bermuda (Americas)
     ("ಬರ\u{ccd}ಮುಡಾ", Alpha2::BM),
     #[cfg(feature = "bg")] // The Republic of Bulgaria (Europe)
-    ("ಬಲ\u{ccd}ಗೇರ\u{cbf}ಯಾ", Alpha2::BG),
+    ("ಬಲ\u{ccd}ಗ\u{cc7}ರ\u{cbf}ಯಾ", Alpha2::BG),
     #[cfg(feature = "bv")] // Bouvet Island
-    ("ಬವೇಟ\u{ccd} ದ\u{ccd}ವೀಪ", Alpha2::BV),
+    ("ಬವ\u{cc7}ಟ\u{ccd} ದ\u{ccd}ವ\u{cc0}ಪ", Alpha2::BV),
     #[cfg(feature = "bh")] // The Kingdom of Bahrain (Asia)
-    ("ಬಹರೈನ\u{ccd}", Alpha2::BH),
+    ("ಬಹರ\u{cc8}ನ\u{ccd}", Alpha2::BH),
     #[cfg(feature = "bs")] // The Commonwealth of The Bahamas (Americas)
     ("ಬಹಾಮಾಸ\u{ccd}", Alpha2::BS),
     #[cfg(feature = "bd")] // The People's Republic of Bangladesh (Asia)
-    ("ಬಾಂಗ\u{ccd}ಲಾದೇಶ", Alpha2::BD),
+    ("ಬಾಂಗ\u{ccd}ಲಾದ\u{cc7}ಶ", Alpha2::BD),
     #[cfg(feature = "bb")] // Barbados (Americas)
     ("ಬಾರ\u{ccd}ಬಡಾಸ\u{ccd}", Alpha2::BB),
     #[cfg(feature = "bi")] // The Republic of Burundi (Africa)
@@ -61277,25 +61277,25 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     #[cfg(feature = "be")] // The Kingdom of Belgium (Europe)
     ("ಬ\u{cc6}ಲ\u{ccd}ಜ\u{cbf}ಯಂ", Alpha2::BE),
     #[cfg(feature = "by")] // The Republic of Belarus (Europe)
-    ("ಬೇಲಾರುಸ\u{ccd}", Alpha2::BY),
+    ("ಬ\u{cc7}ಲಾರುಸ\u{ccd}", Alpha2::BY),
     #[cfg(feature = "bo")] // The Plurinational State of Bolivia (Americas)
-    ("ಬೊಲ\u{cbf}ವ\u{cbf}ಯಾ", Alpha2::BO),
+    ("ಬ\u{cca}ಲ\u{cbf}ವ\u{cbf}ಯಾ", Alpha2::BO),
     #[cfg(feature = "bw")] // The Republic of Botswana (Africa)
-    ("ಬೋಟ\u{ccd}ಸ\u{ccd}\u{200d}ವಾನಾ", Alpha2::BW),
+    ("ಬ\u{ccb}ಟ\u{ccd}ಸ\u{ccd}\u{200d}ವಾನಾ", Alpha2::BW),
     #[cfg(feature = "br")] // The Federative Republic of Brazil (Americas)
     ("ಬ\u{ccd}ರಾಝ\u{cbf}ಲ\u{ccd}", Alpha2::BR),
     #[cfg(feature = "io")] // The British Indian Ocean Territory (Africa)
-    ("ಬ\u{ccd}ರ\u{cbf}ಟ\u{cbf}ಷ\u{ccd} ಇಂಡ\u{cbf}ಯನ\u{ccd} ಓಶ\u{cbf}ಯನ\u{ccd} ಪ\u{ccd}ರದೇಶ", Alpha2::IO),
+    ("ಬ\u{ccd}ರ\u{cbf}ಟ\u{cbf}ಷ\u{ccd} ಇಂಡ\u{cbf}ಯನ\u{ccd} ಓಶ\u{cbf}ಯನ\u{ccd} ಪ\u{ccd}ರದ\u{cc7}ಶ", Alpha2::IO),
     #[cfg(feature = "bn")] // The Nation of Brunei, the Abode of Peace (Asia)
-    ("ಬ\u{ccd}ರ\u{cc2}ನೈ ದಾರುಸ\u{ccd}ಸಲಾಂ", Alpha2::BN),
+    ("ಬ\u{ccd}ರ\u{cc2}ನ\u{cc8} ದಾರುಸ\u{ccd}ಸಲಾಂ", Alpha2::BN),
     #[cfg(feature = "in")] // The Republic of India (Asia)
     ("ಭಾರತ", Alpha2::IN),
     #[cfg(feature = "bt")] // The Kingdom of Bhutan (Asia)
     ("ಭ\u{cc2}ತಾನ\u{ccd}", Alpha2::BT),
     #[cfg(feature = "ba")] // Bosnia and Herzegovina (Europe)
-    ("ಭೊಸ\u{ccd}ನ\u{cbf}ಯಾ ಮತ\u{ccd}ತು ಹ\u{cc6}ರ\u{ccd}ಜ\u{cc6}ಗೋವ\u{cbf}ನಾ", Alpha2::BA),
+    ("ಭ\u{cca}ಸ\u{ccd}ನ\u{cbf}ಯಾ ಮತ\u{ccd}ತು ಹ\u{cc6}ರ\u{ccd}ಜ\u{cc6}ಗ\u{ccb}ವ\u{cbf}ನಾ", Alpha2::BA),
     #[cfg(feature = "mn")] // Mongolia (Asia)
-    ("ಮಂಗೋಲ\u{cbf}ಯಾ", Alpha2::MN),
+    ("ಮಂಗ\u{ccb}ಲ\u{cbf}ಯಾ", Alpha2::MN),
     #[cfg(feature = "mo")] // The Macao Special Administrative Region of China (Asia)
     ("ಮಕಾವು", Alpha2::MO),
     #[cfg(feature = "mg")] // The Republic of Madagascar (Africa)
@@ -61305,37 +61305,37 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     #[cfg(feature = "mw")] // The Republic of Malawi (Africa)
     ("ಮಲಾವ\u{cbf}", Alpha2::MW),
     #[cfg(feature = "my")] // Malaysia (Asia)
-    ("ಮಲೇಸ\u{cbf}ಯಾ", Alpha2::MY),
+    ("ಮಲ\u{cc7}ಸ\u{cbf}ಯಾ", Alpha2::MY),
     #[cfg(feature = "me")] // Montenegro (Europe)
-    ("ಮಾಂಟ\u{cc6}ನ\u{cc6}ಗ\u{ccd}ರೋ", Alpha2::ME),
+    ("ಮಾಂಟ\u{cc6}ನ\u{cc6}ಗ\u{ccd}ರ\u{ccb}", Alpha2::ME),
     #[cfg(feature = "ms")] // Montserrat (Americas)
     ("ಮಾಂಟ\u{ccd}ಸ\u{cc6}ರ\u{ccd}ರಾಟ\u{ccd}", Alpha2::MS),
     #[cfg(feature = "mr")] // The Islamic Republic of Mauritania (Africa)
-    ("ಮಾರ\u{cbf}ಟೇನ\u{cbf}ಯಾ", Alpha2::MR),
+    ("ಮಾರ\u{cbf}ಟ\u{cc7}ನ\u{cbf}ಯಾ", Alpha2::MR),
     #[cfg(feature = "mu")] // The Republic of Mauritius (Africa)
     ("ಮಾರ\u{cbf}ಶಸ\u{ccd}", Alpha2::MU),
     #[cfg(feature = "mh")] // The Republic of the Marshall Islands (Oceania)
-    ("ಮಾರ\u{ccd}ಷಲ\u{ccd} ದ\u{ccd}ವೀಪಗಳು", Alpha2::MH),
+    ("ಮಾರ\u{ccd}ಷಲ\u{ccd} ದ\u{ccd}ವ\u{cc0}ಪಗಳು", Alpha2::MH),
     #[cfg(feature = "ml")] // The Republic of Mali (Africa)
     ("ಮಾಲ\u{cbf}", Alpha2::ML),
     #[cfg(feature = "mt")] // The Republic of Malta (Europe)
     ("ಮಾಲ\u{ccd}ಟಾ", Alpha2::MT),
     #[cfg(feature = "mv")] // The Republic of Maldives (Asia)
-    ("ಮಾಲ\u{ccd}ಡೀವ\u{ccd}ಸ\u{ccd}", Alpha2::MV),
+    ("ಮಾಲ\u{ccd}ಡ\u{cc0}ವ\u{ccd}ಸ\u{ccd}", Alpha2::MV),
     #[cfg(feature = "mm")] // The Republic of the Union of Myanmar (Asia)
     ("ಮ\u{cbf}ಯನ\u{ccd}ಮಾರ\u{ccd}", Alpha2::MM),
     #[cfg(feature = "mc")] // The Principality of Monaco (Europe)
-    ("ಮೊನಾಕೋ", Alpha2::MC),
+    ("ಮ\u{cca}ನಾಕ\u{ccb}", Alpha2::MC),
     #[cfg(feature = "ma")] // The Kingdom of Morocco (Africa)
-    ("ಮೊರೊಕ\u{ccd}ಕೊ", Alpha2::MA),
+    ("ಮ\u{cca}ರ\u{cca}ಕ\u{ccd}ಕ\u{cca}", Alpha2::MA),
     #[cfg(feature = "mz")] // The Republic of Mozambique (Africa)
-    ("ಮೋಝಾಂಬ\u{cbf}ಕ\u{ccd}", Alpha2::MZ),
+    ("ಮ\u{ccb}ಝಾಂಬ\u{cbf}ಕ\u{ccd}", Alpha2::MZ),
     #[cfg(feature = "ua")] // Ukraine (Europe)
-    ("ಯುಕ\u{ccd}ರೇನ\u{ccd}", Alpha2::UA),
+    ("ಯುಕ\u{ccd}ರ\u{cc7}ನ\u{ccd}", Alpha2::UA),
     #[cfg(feature = "ae")] // The United Arab Emirates (Asia)
-    ("ಯುನೈಟ\u{cc6}ಡ\u{ccd} ಅರಬ\u{ccd} ಎಮ\u{cbf}ರೇಟ\u{ccd}ಸ\u{ccd}", Alpha2::AE),
+    ("ಯುನ\u{cc8}ಟ\u{cc6}ಡ\u{ccd} ಅರಬ\u{ccd} ಎಮ\u{cbf}ರ\u{cc7}ಟ\u{ccd}ಸ\u{ccd}", Alpha2::AE),
     #[cfg(feature = "gb")] // The United Kingdom of Great Britain and Northern Ireland (Europe)
-    ("ಯುನೈಟ\u{cc6}ಡ\u{ccd} ಕ\u{cbf}ಂಗ\u{ccd}ಡಮ\u{ccd}", Alpha2::GB),
+    ("ಯುನ\u{cc8}ಟ\u{cc6}ಡ\u{ccd} ಕ\u{cbf}ಂಗ\u{ccd}ಡಮ\u{ccd}", Alpha2::GB),
     #[cfg(feature = "ye")] // The Republic of Yemen (Asia)
     ("ಯ\u{cc6}ಮ\u{cc6}ನ\u{ccd}", Alpha2::YE),
     #[cfg(feature = "ru")] // The Russian Federation (Europe)
@@ -61343,13 +61343,13 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     #[cfg(feature = "rw")] // The Republic of Rwanda (Africa)
     ("ರುವಾಂಡಾ", Alpha2::RW),
     #[cfg(feature = "ro")] // Romania (Europe)
-    ("ರೊಮೇನ\u{cbf}ಯಾ", Alpha2::RO),
+    ("ರ\u{cca}ಮ\u{cc7}ನ\u{cbf}ಯಾ", Alpha2::RO),
     #[cfg(feature = "lv")] // The Republic of Latvia (Europe)
     ("ಲಾತ\u{ccd}ವ\u{cbf}ಯಾ", Alpha2::LV),
     #[cfg(feature = "la")] // The Lao People's Democratic Republic (Asia)
-    ("ಲಾವೋ ಪೀಪಲ\u{ccd}ಸ\u{ccd} ಡ\u{cc6}ಮೊಕ\u{ccd}ರಟ\u{cbf}ಕ\u{ccd} ರ\u{cbf}ಪಬ\u{ccd}ಲ\u{cbf}ಕ\u{ccd}", Alpha2::LA),
+    ("ಲಾವ\u{ccb} ಪ\u{cc0}ಪಲ\u{ccd}ಸ\u{ccd} ಡ\u{cc6}ಮ\u{cca}ಕ\u{ccd}ರಟ\u{cbf}ಕ\u{ccd} ರ\u{cbf}ಪಬ\u{ccd}ಲ\u{cbf}ಕ\u{ccd}", Alpha2::LA),
     #[cfg(feature = "lt")] // The Republic of Lithuania (Europe)
-    ("ಲ\u{cbf}ಥುವೇನ\u{cbf}ಯಾ", Alpha2::LT),
+    ("ಲ\u{cbf}ಥುವ\u{cc7}ನ\u{cbf}ಯಾ", Alpha2::LT),
     #[cfg(feature = "lu")] // The Grand Duchy of Luxembourg (Europe)
     ("ಲುಗ\u{ccd}ಸ\u{cc6}ಮ\u{ccd}ಬರ\u{ccd}ಗ\u{ccd}", Alpha2::LU),
     #[cfg(feature = "lb")] // The Lebanese Republic (Asia)
@@ -61357,9 +61357,9 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     #[cfg(feature = "li")] // The Principality of Liechtenstein (Europe)
     ("ಲ\u{cc6}ಷ\u{ccd}ಟ\u{cc6}ಂಸ\u{ccd}ಟ\u{cc6}ನ\u{ccd}", Alpha2::LI),
     #[cfg(feature = "ls")] // The Kingdom of Lesotho (Africa)
-    ("ಲ\u{cc6}ಸೋಥೋ", Alpha2::LS),
+    ("ಲ\u{cc6}ಸ\u{ccb}ಥ\u{ccb}", Alpha2::LS),
     #[cfg(feature = "lr")] // The Republic of Liberia (Africa)
-    ("ಲೈಬೀರ\u{cbf}ಯಾ", Alpha2::LR),
+    ("ಲ\u{cc8}ಬ\u{cc0}ರ\u{cbf}ಯಾ", Alpha2::LR),
     #[cfg(feature = "vg")] // The Virgin Islands (Americas)
     ("ವರ\u{ccd}ಜ\u{cbf}ನ\u{ccd} ಐಲಂಡ\u{ccd}ಸ\u{ccd}, ಬ\u{ccd}ರ\u{cbf}ಟ\u{cbf}ಷ\u{ccd}", Alpha2::VG),
     #[cfg(feature = "vi")] // The Virgin Islands of the United States (Americas)
@@ -61367,13 +61367,13 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     #[cfg(feature = "vn")] // The Socialist Republic of Viet Nam (Asia)
     ("ವ\u{cbf}ಯ\u{cc6}ಟ\u{ccd}ನಾಂ", Alpha2::VN),
     #[cfg(feature = "ve")] // The Bolivarian Republic of Venezuela (Americas)
-    ("ವ\u{cc6}ನೇಹಜುವೇಲಾ", Alpha2::VE),
+    ("ವ\u{cc6}ನ\u{cc7}ಹಜುವ\u{cc7}ಲಾ", Alpha2::VE),
     #[cfg(feature = "lk")] // The Democratic Socialist Republic of Sri Lanka (Asia)
-    ("ಶ\u{ccd}ರೀಲಂಕಾ", Alpha2::LK),
+    ("ಶ\u{ccd}ರ\u{cc0}ಲಂಕಾ", Alpha2::LK),
     #[cfg(feature = "us")] // The United States of America (Americas)
     ("ಸಂಯುಕ\u{ccd}ತ ಸಂಸ\u{ccd}ಥಾನಗಳು", Alpha2::US),
     #[cfg(feature = "ws")] // The Independent State of Samoa (Oceania)
-    ("ಸಮೋಆ", Alpha2::WS),
+    ("ಸಮ\u{ccb}ಆ", Alpha2::WS),
     #[cfg(feature = "rs")] // The Republic of Serbia (Europe)
     ("ಸರ\u{ccd}ಬ\u{cbf}ಯಾ", Alpha2::RS),
     #[cfg(feature = "sg")] // The Republic of Singapore (Asia)
@@ -61387,45 +61387,45 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     #[cfg(feature = "sn")] // The Republic of Senegal (Africa)
     ("ಸ\u{cc6}ನ\u{cc6}ಗಾಲ\u{ccd}", Alpha2::SN),
     #[cfg(feature = "kn")] // Saint Kitts and Nevis (Americas)
-    ("ಸೇಂಟ\u{ccd} ಕ\u{cbf}ಟ\u{ccd}ಸ\u{ccd} ಮತ\u{ccd}ತು ನೇವ\u{cbf}ಸ\u{ccd}", Alpha2::KN),
+    ("ಸ\u{cc7}ಂಟ\u{ccd} ಕ\u{cbf}ಟ\u{ccd}ಸ\u{ccd} ಮತ\u{ccd}ತು ನ\u{cc7}ವ\u{cbf}ಸ\u{ccd}", Alpha2::KN),
     #[cfg(feature = "lc")] // Saint Lucia (Americas)
-    ("ಸೇಂಟ\u{ccd} ಲ\u{cc2}ಸ\u{cbf}ಯಾ", Alpha2::LC),
+    ("ಸ\u{cc7}ಂಟ\u{ccd} ಲ\u{cc2}ಸ\u{cbf}ಯಾ", Alpha2::LC),
     #[cfg(feature = "sc")] // The Republic of Seychelles (Africa)
-    ("ಸೇಷಲ\u{ccd}ಸ\u{ccd}", Alpha2::SC),
+    ("ಸ\u{cc7}ಷಲ\u{ccd}ಸ\u{ccd}", Alpha2::SC),
     #[cfg(feature = "cy")] // The Republic of Cyprus (Asia)
-    ("ಸೈಪ\u{ccd}ರಸ\u{ccd}", Alpha2::CY),
+    ("ಸ\u{cc8}ಪ\u{ccd}ರಸ\u{ccd}", Alpha2::CY),
     #[cfg(feature = "so")] // The Federal Republic of Somalia (Africa)
-    ("ಸೋಮಾಲ\u{cbf}ಯಾ", Alpha2::SO),
+    ("ಸ\u{ccb}ಮಾಲ\u{cbf}ಯಾ", Alpha2::SO),
     #[cfg(feature = "sb")] // The Solomon Islands (Oceania)
-    ("ಸೋಲೋಮನ\u{ccd} ದ\u{ccd}ವೀಪಗಳು", Alpha2::SB),
+    ("ಸ\u{ccb}ಲ\u{ccb}ಮನ\u{ccd} ದ\u{ccd}ವ\u{cc0}ಪಗಳು", Alpha2::SB),
     #[cfg(feature = "sa")] // The Kingdom of Saudi Arabia (Asia)
     ("ಸ\u{ccc}ದ\u{cbf} ಅರ\u{cc6}ಬ\u{cbf}ಯ", Alpha2::SA),
     #[cfg(feature = "es")] // The Kingdom of Spain (Europe)
-    ("ಸ\u{ccd}ಪೇನ\u{ccd}", Alpha2::ES),
+    ("ಸ\u{ccd}ಪ\u{cc7}ನ\u{ccd}", Alpha2::ES),
     #[cfg(feature = "sm")] // The Republic of San Marino (Europe)
-    ("ಸ\u{ccd}ಯಾನ\u{ccd} ಮಾರ\u{cbf}ನೋ", Alpha2::SM),
+    ("ಸ\u{ccd}ಯಾನ\u{ccd} ಮಾರ\u{cbf}ನ\u{ccb}", Alpha2::SM),
     #[cfg(feature = "sk")] // The Slovak Republic (Europe)
-    ("ಸ\u{ccd}ಲೋವಾಕ\u{cbf}ಯಾ", Alpha2::SK),
+    ("ಸ\u{ccd}ಲ\u{ccb}ವಾಕ\u{cbf}ಯಾ", Alpha2::SK),
     #[cfg(feature = "si")] // The Republic of Slovenia (Europe)
-    ("ಸ\u{ccd}ಲೋವೇನ\u{cbf}ಯಾ", Alpha2::SI),
+    ("ಸ\u{ccd}ಲ\u{ccb}ವ\u{cc7}ನ\u{cbf}ಯಾ", Alpha2::SI),
     #[cfg(feature = "ch")] // The Swiss Confederation (Europe)
     ("ಸ\u{ccd}ವ\u{cbf}ಜರ\u{ccd}ಲ\u{ccd}ಯಾಂಡ\u{ccd}", Alpha2::CH),
     #[cfg(feature = "se")] // The Kingdom of Sweden (Europe)
-    ("ಸ\u{ccd}ವೀಡನ\u{ccd}", Alpha2::SE),
+    ("ಸ\u{ccd}ವ\u{cc0}ಡನ\u{ccd}", Alpha2::SE),
     #[cfg(feature = "hu")] // Hungary (Europe)
     ("ಹಂಗರ\u{cbf}", Alpha2::HU),
     #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
-    ("ಹರ\u{ccd}ಡ\u{ccd} ದ\u{ccd}ವೀಪ ಮತ\u{ccd}ತು ಮ\u{cc6}ಕ\u{ccd} ಡೊನಾಲ\u{ccd}ಡ\u{ccd} ದ\u{ccd}ವೀಪಗಳು", Alpha2::HM),
+    ("ಹರ\u{ccd}ಡ\u{ccd} ದ\u{ccd}ವ\u{cc0}ಪ ಮತ\u{ccd}ತು ಮ\u{cc6}ಕ\u{ccd} ಡ\u{cca}ನಾಲ\u{ccd}ಡ\u{ccd} ದ\u{ccd}ವ\u{cc0}ಪಗಳು", Alpha2::HM),
     #[cfg(feature = "hk")] // The Hong Kong Special Administrative Region of China (Asia)
     ("ಹಾಂಗ\u{ccd} ಕಾಂಗ\u{ccd}", Alpha2::HK),
     #[cfg(feature = "ht")] // The Republic of Haiti (Americas)
-    ("ಹೈಟ\u{cbf}", Alpha2::HT),
+    ("ಹ\u{cc8}ಟ\u{cbf}", Alpha2::HT),
     #[cfg(feature = "hn")] // The Republic of Honduras (Americas)
-    ("ಹೊಂಡುರಾಸ\u{ccd}", Alpha2::HN),
+    ("ಹ\u{cca}ಂಡುರಾಸ\u{ccd}", Alpha2::HN),
     #[cfg(feature = "mx")] // The United Mexican States (Americas)
-    ("ಹೊಂಡುರಾಸ\u{ccd}", Alpha2::MX),
+    ("ಹ\u{cca}ಂಡುರಾಸ\u{ccd}", Alpha2::MX),
     #[cfg(feature = "nc")] // New Caledonia (Oceania)
-    ("ಹೊಸ ಕ\u{cc6}ಲ\u{cc6}ಡೊನ\u{cbf}ಯಾ", Alpha2::NC),
+    ("ಹ\u{cca}ಸ ಕ\u{cc6}ಲ\u{cc6}ಡ\u{cca}ನ\u{cbf}ಯಾ", Alpha2::NC),
     #[cfg(feature = "ao")] // The Republic of Angola (Africa)
     ("അംഗോള", Alpha2::AO),
     #[cfg(feature = "aq")] // Antarctica

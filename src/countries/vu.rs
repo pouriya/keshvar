@@ -656,7 +656,7 @@ pub mod subdivisions {
                         ("it", "Torba"),
                         ("ja", "トルバ州"),
                         ("ka", "ტორბა"),
-                        ("kn", "ಟೊರ\u{ccd}ಬಾ ಪ\u{ccd}ರಾಂತ\u{ccd}ಯ"),
+                        ("kn", "ಟ\u{cca}ರ\u{ccd}ಬಾ ಪ\u{ccd}ರಾಂತ\u{ccd}ಯ"),
                         ("ko", "토르바 주"),
                         ("lt", "Torba"),
                         ("lv", "Torbas province"),

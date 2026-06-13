@@ -121,7 +121,7 @@ pub mod consts {
         ("kk", "Норвегия"),
         ("kl", "Norway"),
         ("km", "ន\u{17d0}រវែស"),
-        ("kn", "ನಾರ\u{ccd}ವೇ"),
+        ("kn", "ನಾರ\u{ccd}ವ\u{cc7}"),
         ("ko", "노르웨이"),
         ("ku", "Norweç"),
         ("kv", "Норвегия"),
@@ -259,7 +259,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::County,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("af", "Oslo"), ("am", "ኦስሎ"), ("ar", "أوسلو"), ("az", "Oslo"), ("be", "Осла"), ("bg", "Осло"), ("bn", "অসলো"), ("bs", "Oslo"), ("ca", "Oslo"), ("ccp", "𑄃\u{11127}𑄌\u{11134}𑄣\u{1112e}"), ("ceb", "Oslo"), ("cs", "Oslo"), ("cy", "Oslo"), ("da", "Oslo"), ("de", "Oslo"), ("el", "Όσλο"), ("en", "Oslo"), ("es", "Oslo"), ("et", "Oslo"), ("eu", "Oslo"), ("fa", "اسلو"), ("fi", "Oslo"), ("fr", "Oslo"), ("ga", "Osló"), ("gl", "Oslo"), ("gu", "ઓસ\u{acd}લો"), ("ha", "Oslo"), ("ha_NE", "Oslo"), ("he", "אוסלו"), ("hi", "ओस\u{94d}लो"), ("hr", "Oslo"), ("hu", "Oslo"), ("hy", "Օսլո"), ("id", "Oslo"), ("is", "Osló"), ("it", "Oslo"), ("ja", "オスロ"), ("jv", "Oslo"), ("ka", "ოსლო"), ("kk", "Осло"), ("kn", "ಓಸ\u{ccd}ಲೋ"), ("ko", "오슬로"), ("ky", "Осло"), ("lt", "Oslas"), ("lv", "Oslo"), ("mk", "Осло"), ("ml", "ഓസ\u{d4d}ലൊ"), ("mn", "Осло"), ("mr", "ओस\u{94d}लो"), ("ms", "Oslo"), ("my", "အော\u{1037}စလ\u{102d}\u{102f}မြ\u{102d}\u{102f}\u{1037}"), ("nb", "Oslo"), ("ne", "ओस\u{94d}लो"), ("nl", "Oslo"), ("no", "Oslo"), ("or", "ଅସଲୋ"), ("pa", "ਓਸਲ\u{a4b}"), ("pl", "Oslo"), ("ps", "اوسلو"), ("pt", "Oslo"), ("ro", "Oslo"), ("ru", "Осло"), ("si", "ඔස\u{dca}ලෝ"), ("sk", "Oslo"), ("sl", "Oslo"), ("so", "Oslo"), ("sq", "Oslo"), ("sr", "Осло"), ("sr_Latn", "Oslo"), ("sv", "Oslo"), ("sw", "Oslo"), ("ta", "ஒஸ\u{bcd}லோ"), ("te", "ఓస\u{c4d}ల\u{c4b}"), ("th", "ออสโล"), ("tk", "Oslo"), ("tr", "Oslo"), ("uk", "Осло"), ("ur", "اوسلو"), ("uz", "Oslo"), ("vi", "Oslo"), ("yo", "Oslo"), ("yo_BJ", "Oslo"), ("yue", "奧斯陸"), ("yue_Hans", "奥斯陆"), ("zh", "奥斯陆")]),
+                        translations: HashMap::from([("af", "Oslo"), ("am", "ኦስሎ"), ("ar", "أوسلو"), ("az", "Oslo"), ("be", "Осла"), ("bg", "Осло"), ("bn", "অসলো"), ("bs", "Oslo"), ("ca", "Oslo"), ("ccp", "𑄃\u{11127}𑄌\u{11134}𑄣\u{1112e}"), ("ceb", "Oslo"), ("cs", "Oslo"), ("cy", "Oslo"), ("da", "Oslo"), ("de", "Oslo"), ("el", "Όσλο"), ("en", "Oslo"), ("es", "Oslo"), ("et", "Oslo"), ("eu", "Oslo"), ("fa", "اسلو"), ("fi", "Oslo"), ("fr", "Oslo"), ("ga", "Osló"), ("gl", "Oslo"), ("gu", "ઓસ\u{acd}લો"), ("ha", "Oslo"), ("ha_NE", "Oslo"), ("he", "אוסלו"), ("hi", "ओस\u{94d}लो"), ("hr", "Oslo"), ("hu", "Oslo"), ("hy", "Օսլո"), ("id", "Oslo"), ("is", "Osló"), ("it", "Oslo"), ("ja", "オスロ"), ("jv", "Oslo"), ("ka", "ოსლო"), ("kk", "Осло"), ("kn", "ಓಸ\u{ccd}ಲ\u{ccb}"), ("ko", "오슬로"), ("ky", "Осло"), ("lt", "Oslas"), ("lv", "Oslo"), ("mk", "Осло"), ("ml", "ഓസ\u{d4d}ലൊ"), ("mn", "Осло"), ("mr", "ओस\u{94d}लो"), ("ms", "Oslo"), ("my", "အော\u{1037}စလ\u{102d}\u{102f}မြ\u{102d}\u{102f}\u{1037}"), ("nb", "Oslo"), ("ne", "ओस\u{94d}लो"), ("nl", "Oslo"), ("no", "Oslo"), ("or", "ଅସଲୋ"), ("pa", "ਓਸਲ\u{a4b}"), ("pl", "Oslo"), ("ps", "اوسلو"), ("pt", "Oslo"), ("ro", "Oslo"), ("ru", "Осло"), ("si", "ඔස\u{dca}ලෝ"), ("sk", "Oslo"), ("sl", "Oslo"), ("so", "Oslo"), ("sq", "Oslo"), ("sr", "Осло"), ("sr_Latn", "Oslo"), ("sv", "Oslo"), ("sw", "Oslo"), ("ta", "ஒஸ\u{bcd}லோ"), ("te", "ఓస\u{c4d}ల\u{c4b}"), ("th", "ออสโล"), ("tk", "Oslo"), ("tr", "Oslo"), ("uk", "Осло"), ("ur", "اوسلو"), ("uz", "Oslo"), ("vi", "Oslo"), ("yo", "Oslo"), ("yo_BJ", "Oslo"), ("yue", "奧斯陸"), ("yue_Hans", "奥斯陆"), ("zh", "奥斯陆")]),
                         unofficial_name_list: ["Oslo"].to_vec(),
                     }
                 ),
@@ -563,7 +563,7 @@ pub fn new() -> Country {
             ("kk", "Норвегия"),
             ("kl", "Norway"),
             ("km", "ន\u{17d0}រវែស"),
-            ("kn", "ನಾರ\u{ccd}ವೇ"),
+            ("kn", "ನಾರ\u{ccd}ವ\u{cc7}"),
             ("ko", "노르웨이"),
             ("ku", "Norweç"),
             ("kv", "Норвегия"),

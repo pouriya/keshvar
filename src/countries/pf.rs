@@ -129,7 +129,10 @@ pub mod consts {
             "km",
             "ប\u{17c9}\u{17bc}ល\u{17b8}នេស\u{17ca}\u{17b8}\u{200b}បារា\u{17c6}ង",
         ),
-        ("kn", "ಫ\u{ccd}ರ\u{cc6}ಂಚ\u{ccd} ಪೊಲ\u{cbf}ನೇಸ\u{cbf}ಯಾ"),
+        (
+            "kn",
+            "ಫ\u{ccd}ರ\u{cc6}ಂಚ\u{ccd} ಪ\u{cca}ಲ\u{cbf}ನ\u{cc7}ಸ\u{cbf}ಯಾ",
+        ),
         ("ko", "프랑스령 폴리네시아"),
         ("ku", "Polînesya Fransî"),
         ("kv", "French Polynesia"),
@@ -386,7 +389,10 @@ pub fn new() -> Country {
                 "km",
                 "ប\u{17c9}\u{17bc}ល\u{17b8}នេស\u{17ca}\u{17b8}\u{200b}បារា\u{17c6}ង",
             ),
-            ("kn", "ಫ\u{ccd}ರ\u{cc6}ಂಚ\u{ccd} ಪೊಲ\u{cbf}ನೇಸ\u{cbf}ಯಾ"),
+            (
+                "kn",
+                "ಫ\u{ccd}ರ\u{cc6}ಂಚ\u{ccd} ಪ\u{cca}ಲ\u{cbf}ನ\u{cc7}ಸ\u{cbf}ಯಾ",
+            ),
             ("ko", "프랑스령 폴리네시아"),
             ("ku", "Polînesya Fransî"),
             ("kv", "French Polynesia"),

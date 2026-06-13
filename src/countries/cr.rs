@@ -113,7 +113,7 @@ pub mod consts {
         ("kk", "Коста-Рика"),
         ("kl", "Costa Rica"),
         ("km", "ក\u{17bc}ស\u{17d2}តារ\u{17b8}កា"),
-        ("kn", "ಕೋಸ\u{ccd}ಟಾರ\u{cbf}ಕಾ"),
+        ("kn", "ಕ\u{ccb}ಸ\u{ccd}ಟಾರ\u{cbf}ಕಾ"),
         ("ko", "코스타리카"),
         ("ku", "Kosta Rîka"),
         ("kv", "Коста-Рика"),
@@ -344,7 +344,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Province,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "محافظة سان خوسيه"), ("az", "San-Xose vilayəti"), ("be", "правінцыя Сан-Хасэ"), ("bg", "Сан Хосе"), ("bn", "স\u{9cd}য\u{9be}\u{9be}ন জোসে প\u{9cd}রদেশ"), ("ca", "província de San José"), ("ccp", "𑄥𑄚\u{11134} 𑄎\u{11127}𑄥𑄬"), ("ceb", "Provincia de San José"), ("cs", "San José"), ("cy", "Talaith San José"), ("da", "San José"), ("de", "Provinz San José"), ("el", "Επαρχία Σαν Χοσέ"), ("en", "San José"), ("es", "Provincia de San José"), ("eu", "San Jose (probintzia)"), ("fa", "استان سن خوزه"), ("fi", "San Josén maakunta"), ("fr", "San José"), ("gu", "સ\u{ac7}ન જોસ પ\u{acd}રા\u{a82}ત"), ("he", "סן חוסה"), ("hi", "स\u{948}न जोस प\u{94d}रा\u{902}त"), ("hr", "San José, provincija"), ("hy", "Սան Խոսե"), ("id", "Provinsi San José"), ("it", "provincia di San José"), ("ja", "サンホセ州"), ("ka", "სან-ხოსეს პროვინცია"), ("kn", "ಸ\u{ccd}ಯಾನ\u{ccd} ಜೋಸ\u{ccd} ಪ\u{ccd}ರಾಂತ\u{ccd}ಯ"), ("ko", "산호세 주"), ("lt", "San Chosė provincija"), ("lv", "Sanhosē province"), ("mr", "स\u{945}न जोस प\u{94d}रा\u{902}त"), ("ms", "San Jose Province"), ("nb", "San José"), ("nl", "San José"), ("no", "San José"), ("pl", "San José"), ("pt", "San José"), ("ru", "Сан-Хосе"), ("si", "සැන\u{dca} ජොසේ පළ\u{dcf}ත"), ("sr", "Сан Хосе"), ("sr_Latn", "San Hose"), ("sv", "San José"), ("ta", "ச\u{bbe}ன\u{bcd} ஜோஸ\u{bcd} ம\u{bbe}க\u{bbe}ணம\u{bcd}"), ("te", "స\u{c3e}న\u{c4d} జ\u{c4b}స\u{c4d} ప\u{c4d}ర\u{c3e}వ\u{c3f}న\u{c4d}స\u{c4d}"), ("th", "จ\u{e31}งหว\u{e31}ดซานโฮเซ\u{e48}"), ("tr", "San soze Province"), ("uk", "Сан-Хосе"), ("ur", "سان خوزے صوبہ"), ("vi", "San José"), ("zh", "圣何塞省")]),
+                        translations: HashMap::from([("ar", "محافظة سان خوسيه"), ("az", "San-Xose vilayəti"), ("be", "правінцыя Сан-Хасэ"), ("bg", "Сан Хосе"), ("bn", "স\u{9cd}য\u{9be}\u{9be}ন জোসে প\u{9cd}রদেশ"), ("ca", "província de San José"), ("ccp", "𑄥𑄚\u{11134} 𑄎\u{11127}𑄥𑄬"), ("ceb", "Provincia de San José"), ("cs", "San José"), ("cy", "Talaith San José"), ("da", "San José"), ("de", "Provinz San José"), ("el", "Επαρχία Σαν Χοσέ"), ("en", "San José"), ("es", "Provincia de San José"), ("eu", "San Jose (probintzia)"), ("fa", "استان سن خوزه"), ("fi", "San Josén maakunta"), ("fr", "San José"), ("gu", "સ\u{ac7}ન જોસ પ\u{acd}રા\u{a82}ત"), ("he", "סן חוסה"), ("hi", "स\u{948}न जोस प\u{94d}रा\u{902}त"), ("hr", "San José, provincija"), ("hy", "Սան Խոսե"), ("id", "Provinsi San José"), ("it", "provincia di San José"), ("ja", "サンホセ州"), ("ka", "სან-ხოსეს პროვინცია"), ("kn", "ಸ\u{ccd}ಯಾನ\u{ccd} ಜ\u{ccb}ಸ\u{ccd} ಪ\u{ccd}ರಾಂತ\u{ccd}ಯ"), ("ko", "산호세 주"), ("lt", "San Chosė provincija"), ("lv", "Sanhosē province"), ("mr", "स\u{945}न जोस प\u{94d}रा\u{902}त"), ("ms", "San Jose Province"), ("nb", "San José"), ("nl", "San José"), ("no", "San José"), ("pl", "San José"), ("pt", "San José"), ("ru", "Сан-Хосе"), ("si", "සැන\u{dca} ජොසේ පළ\u{dcf}ත"), ("sr", "Сан Хосе"), ("sr_Latn", "San Hose"), ("sv", "San José"), ("ta", "ச\u{bbe}ன\u{bcd} ஜோஸ\u{bcd} ம\u{bbe}க\u{bbe}ணம\u{bcd}"), ("te", "స\u{c3e}న\u{c4d} జ\u{c4b}స\u{c4d} ప\u{c4d}ర\u{c3e}వ\u{c3f}న\u{c4d}స\u{c4d}"), ("th", "จ\u{e31}งหว\u{e31}ดซานโฮเซ\u{e48}"), ("tr", "San soze Province"), ("uk", "Сан-Хосе"), ("ur", "سان خوزے صوبہ"), ("vi", "San José"), ("zh", "圣何塞省")]),
                         unofficial_name_list: ["San José"].to_vec(),
                     }
                 ),
@@ -460,7 +460,7 @@ pub fn new() -> Country {
             ("kk", "Коста-Рика"),
             ("kl", "Costa Rica"),
             ("km", "ក\u{17bc}ស\u{17d2}តារ\u{17b8}កា"),
-            ("kn", "ಕೋಸ\u{ccd}ಟಾರ\u{cbf}ಕಾ"),
+            ("kn", "ಕ\u{ccb}ಸ\u{ccd}ಟಾರ\u{cbf}ಕಾ"),
             ("ko", "코스타리카"),
             ("ku", "Kosta Rîka"),
             ("kv", "Коста-Рика"),

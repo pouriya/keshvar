@@ -609,7 +609,7 @@ pub mod subdivisions {
                         ("ja", "マル州"),
                         ("ka", "მარის ველაიათი"),
                         ("kk", "Мары уәлаяты"),
-                        ("kn", "ಮೇರ\u{cbf} ಪ\u{ccd}ರಾಂತ\u{ccd}ಯ"),
+                        ("kn", "ಮ\u{cc7}ರ\u{cbf} ಪ\u{ccd}ರಾಂತ\u{ccd}ಯ"),
                         ("ko", "마리 주"),
                         ("lt", "Maro velajatas"),
                         ("lv", "Mari vilajets"),

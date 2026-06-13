@@ -119,7 +119,7 @@ pub mod consts {
         ("kk", "Непал"),
         ("kl", "Nepal"),
         ("km", "នេប\u{17c9}ាល\u{17cb}"),
-        ("kn", "ನೇಪಾಳ"),
+        ("kn", "ನ\u{cc7}ಪಾಳ"),
         ("ko", "네팔"),
         ("ku", "Nepal"),
         ("kv", "Непал"),
@@ -347,7 +347,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Zone,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "مديرية بهري"), ("bg", "Бхери"), ("bn", "ভেরী অঞ\u{9cd}চল"), ("ccp", "𑄞𑄬𑄢\u{11128}"), ("ceb", "Bherī Zone"), ("da", "Bheri Zone"), ("de", "Bheri"), ("el", "Μπέρι"), ("en", "Bheri"), ("es", "Zona de Bheri"), ("eu", "Bheri Gunea"), ("fa", "منطقه بری"), ("fi", "Bheri"), ("fr", "Bheri"), ("gu", "ભ\u{ac7}રી પ\u{acd}રા\u{a82}ત"), ("hi", "भ\u{947}री अ\u{902}चल"), ("id", "Bheri Zone"), ("it", "Bheri"), ("ja", "ベリ県"), ("kn", "ಭೇರ\u{cbf} ವಲಯ"), ("ko", "베리 구"), ("lt", "Bherio zona"), ("lv", "Berio zona"), ("mr", "ब\u{947}री झोन"), ("ms", "Bheri Zone"), ("nb", "Bheri sone"), ("ne", "भ\u{947}री अञ\u{94d}चल"), ("nl", "Bheri"), ("no", "Bheri sone"), ("pl", "Bheri"), ("pt", "Bheri"), ("ru", "Бхери"), ("si", "භේර\u{dd2} කල\u{dcf}පය"), ("sk", "Bherí"), ("sv", "Bheri"), ("ta", "பஹிரி ஸ\u{bcd}யோனே"), ("te", "భ\u{c47}ర\u{c40} జ\u{c4b}న\u{c4d}"), ("th", "เขตเบร\u{e35}"), ("tr", "Bheri Zone"), ("uk", "Бхері"), ("ur", "بھیری زون"), ("vi", "Vùng Bheri"), ("zh", "佩里專區")]),
+                        translations: HashMap::from([("ar", "مديرية بهري"), ("bg", "Бхери"), ("bn", "ভেরী অঞ\u{9cd}চল"), ("ccp", "𑄞𑄬𑄢\u{11128}"), ("ceb", "Bherī Zone"), ("da", "Bheri Zone"), ("de", "Bheri"), ("el", "Μπέρι"), ("en", "Bheri"), ("es", "Zona de Bheri"), ("eu", "Bheri Gunea"), ("fa", "منطقه بری"), ("fi", "Bheri"), ("fr", "Bheri"), ("gu", "ભ\u{ac7}રી પ\u{acd}રા\u{a82}ત"), ("hi", "भ\u{947}री अ\u{902}चल"), ("id", "Bheri Zone"), ("it", "Bheri"), ("ja", "ベリ県"), ("kn", "ಭ\u{cc7}ರ\u{cbf} ವಲಯ"), ("ko", "베리 구"), ("lt", "Bherio zona"), ("lv", "Berio zona"), ("mr", "ब\u{947}री झोन"), ("ms", "Bheri Zone"), ("nb", "Bheri sone"), ("ne", "भ\u{947}री अञ\u{94d}चल"), ("nl", "Bheri"), ("no", "Bheri sone"), ("pl", "Bheri"), ("pt", "Bheri"), ("ru", "Бхери"), ("si", "භේර\u{dd2} කල\u{dcf}පය"), ("sk", "Bherí"), ("sv", "Bheri"), ("ta", "பஹிரி ஸ\u{bcd}யோனே"), ("te", "భ\u{c47}ర\u{c40} జ\u{c4b}న\u{c4d}"), ("th", "เขตเบร\u{e35}"), ("tr", "Bheri Zone"), ("uk", "Бхері"), ("ur", "بھیری زون"), ("vi", "Vùng Bheri"), ("zh", "佩里專區")]),
                         unofficial_name_list: ["Bheri"].to_vec(),
                     }
                 ),
@@ -756,7 +756,7 @@ pub fn new() -> Country {
             ("kk", "Непал"),
             ("kl", "Nepal"),
             ("km", "នេប\u{17c9}ាល\u{17cb}"),
-            ("kn", "ನೇಪಾಳ"),
+            ("kn", "ನ\u{cc7}ಪಾಳ"),
             ("ko", "네팔"),
             ("ku", "Nepal"),
             ("kv", "Непал"),
