@@ -26,7 +26,7 @@ pub mod consts {
     pub const ISO_SHORT_NAME: &str = "Netherlands";
     pub const ISO_LONG_NAME: &str = "The Kingdom of the Netherlands";
     pub const OFFICIAL_LANGUAGE_LIST: &[&str] = &["nl"];
-    pub const SPOKEN_LANGUAGE_LIST: &[&str] = &["nl"];
+    pub const SPOKEN_LANGUAGE_LIST: &[&str] = &["fy", "nl"];
     pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: &[usize] = &[2];
     pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[9];
     pub const NATIONAL_PREFIX: &str = "0";
@@ -553,7 +553,7 @@ pub fn new() -> Country {
         iso_long_name: "The Kingdom of the Netherlands",
         iso_short_name: "Netherlands",
         official_language_list: ["nl"].to_vec(),
-        spoken_language_list: ["nl"].to_vec(),
+        spoken_language_list: ["fy", "nl"].to_vec(),
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [9].to_vec(),
         national_prefix: "0",

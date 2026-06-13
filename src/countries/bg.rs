@@ -40,6 +40,7 @@ pub mod consts {
     pub const UN_LOCODE: &str = "BG";
     pub const UNOFFICIAL_NAME_LIST: &[&str] = &[
         "Bulgaria",
+        "България",
         "Bulgarien",
         "Bulgarie",
         "ブルガリア",
@@ -714,6 +715,7 @@ pub fn new() -> Country {
         un_locode: "BG",
         unofficial_name_list: [
             "Bulgaria",
+            "България",
             "Bulgarien",
             "Bulgarie",
             "ブルガリア",
