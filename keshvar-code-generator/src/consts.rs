@@ -18,7 +18,6 @@ pub fn generate(
     consts_rs_file.write_all(b"#[allow(unused_imports)]\n")?;
     consts_rs_file
         .write_all(b"use crate::{Alpha2, Continent, Region, SubRegion, WorldRegion};\n")?;
-    consts_rs_file.write_all(b"use lazy_static::lazy_static;\n")?;
     consts_rs_file.write_all(
         format!(
             "pub const ALL_COUNTRIES_COUNT: usize = {};",
@@ -28,8 +27,8 @@ pub fn generate(
     )?;
     consts_rs_file.write_all(
         r#"
-lazy_static! { pub static ref SUPPORTED_COUNTRIES_COUNT: usize = SUPPORTED_ALPHA2_LIST.len(); }
-lazy_static! { pub static ref UNSUPPORTED_COUNTRIES_COUNT: usize = ALL_COUNTRIES_COUNT - *SUPPORTED_COUNTRIES_COUNT; }
+pub const SUPPORTED_COUNTRIES_COUNT: usize = SUPPORTED_ALPHA2_LIST.len();
+pub const UNSUPPORTED_COUNTRIES_COUNT: usize = ALL_COUNTRIES_COUNT - SUPPORTED_COUNTRIES_COUNT;
 "#
         .as_bytes(),
     )?;

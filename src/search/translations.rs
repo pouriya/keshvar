@@ -3,11 +3,13 @@
 #[cfg(feature = "search-translations")]
 use crate::Alpha2;
 #[cfg(feature = "search-translations")]
-use hashbrown::HashMap;
+use std::collections::HashMap;
 #[cfg(feature = "search-translations")]
-use lazy_static::lazy_static;
+use std::sync::LazyLock;
 #[cfg(feature = "search-translations")]
-lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'static str, Alpha2> = HashMap::from([
+pub static SUPPORTED_COUNTRY_TRANSLATED_NAMES: LazyLock<HashMap<&'static str, Alpha2>> =
+    LazyLock::new(|| {
+        HashMap::from([
     #[cfg(feature = "in")] // The Republic of India (Asia)
     ("a india", Alpha2::IN),
     #[cfg(feature = "af")] // The Islamic Republic of Afghanistan (Asia)
@@ -738,7 +740,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("an airméin", Alpha2::AM),
     #[cfg(feature = "al")] // The Republic of Albania (Europe)
     ("an albáin", Alpha2::AL),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("an antartaice", Alpha2::AQ),
     #[cfg(feature = "sa")] // The Kingdom of Saudi Arabia (Asia)
     ("an araib shádach", Alpha2::SA),
@@ -1444,175 +1446,175 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("anqola", Alpha2::AO),
     #[cfg(feature = "ai")] // Anguilla (Americas)
     ("anquilla", Alpha2::AI),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("antaktika", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("antarctica", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("antarctica", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("antarctica", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("antarctica", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("antarctica", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("antarctica", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("antarctica", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("antarctica", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("antarctica", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("antarctica", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("antarctica", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("antarctica", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("antarctica", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("antarctica", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("antarctica", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("antarctica", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("antarctica", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("antarctica", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("antarctica", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("antarctica", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("antarctica", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("antarctica", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("antarctica", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("antarctica", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("antarctica", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("antarctica", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("antarctica", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("antarctica", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("antarctica", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("antarctica", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("antarctica", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("antarctica", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("antarctica", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("antarctica", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("antarctica", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("antarctica", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("antarctica", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("antarctica", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("antarctica", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("antarctica", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("antarctica", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("antarctica", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("antarctica", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("antarctica", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("antarctica", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("antarctica", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("antarctique", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("antarctique", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("antarigitika", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("antarktida", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("antarktida", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("antarktidë", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("antarktik", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("antarktik", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("antarktika", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("antarktika", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("antarktika", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("antarktika", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("antarktika", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("antarktika", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("antarktika", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("antarktika", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("antarktika", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("antarktika", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("antarktis", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("antarktis", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("antarktis", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("antarktis", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("antarktis", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("antarktis", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("antarktis", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("antarktisz", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("antarkto", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("antarktyka", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("antarktída", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("antarktîka", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("antartica", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("antartida", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("antartide", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("antartika", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("antartika", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("antartika", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("antartike", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("antatik", Alpha2::AQ),
     #[cfg(feature = "ag")] // Antigua and Barbuda (Americas)
     ("antiga e barbuda", Alpha2::AG),
@@ -1790,19 +1792,19 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("antigwa u barbuda", Alpha2::AG),
     #[cfg(feature = "ag")] // Antigua and Barbuda (Americas)
     ("antiq və barbuda", Alpha2::AG),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("antàrticu", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("antàrtida", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("antártida", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("antártida", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("antártida", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("antártida", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("antártida", Alpha2::AQ),
     #[cfg(feature = "ag")] // Antigua and Barbuda (Americas)
     ("antígua e barbuda", Alpha2::AG),
@@ -5102,121 +5104,121 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("boutan", Alpha2::BT),
     #[cfg(feature = "bt")] // The Kingdom of Bhutan (Asia)
     ("boutan", Alpha2::BT),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("bouvet adası", Alpha2::BV),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("bouvet insulo", Alpha2::BV),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("bouvet island", Alpha2::BV),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("bouvet island", Alpha2::BV),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("bouvet island", Alpha2::BV),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("bouvet island", Alpha2::BV),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("bouvet island", Alpha2::BV),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("bouvet island", Alpha2::BV),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("bouvet island", Alpha2::BV),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("bouvet island", Alpha2::BV),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("bouvet island", Alpha2::BV),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("bouvet island", Alpha2::BV),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("bouvet island", Alpha2::BV),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("bouvet island", Alpha2::BV),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("bouvet island", Alpha2::BV),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("bouvet island", Alpha2::BV),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("bouvet island", Alpha2::BV),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("bouvet island", Alpha2::BV),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("bouvet island", Alpha2::BV),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("bouvet island", Alpha2::BV),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("bouvet island", Alpha2::BV),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("bouvet island", Alpha2::BV),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("bouvet island", Alpha2::BV),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("bouvet island", Alpha2::BV),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("bouvet island", Alpha2::BV),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("bouvet island", Alpha2::BV),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("bouvet island", Alpha2::BV),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("bouvet island", Alpha2::BV),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("bouvet island", Alpha2::BV),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("bouvet island", Alpha2::BV),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("bouvet island", Alpha2::BV),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("bouvet island", Alpha2::BV),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("bouvet island", Alpha2::BV),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("bouvet island", Alpha2::BV),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("bouvet island", Alpha2::BV),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("bouvet island", Alpha2::BV),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("bouvet island", Alpha2::BV),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("bouvet island", Alpha2::BV),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("bouvet island", Alpha2::BV),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("bouvet island", Alpha2::BV),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("bouvet uhartea", Alpha2::BV),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("bouvet' saar", Alpha2::BV),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("bouvet'nsaari", Alpha2::BV),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("bouvet-eiland", Alpha2::BV),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("bouvet-insel", Alpha2::BV),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("bouvet-sziget", Alpha2::BV),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("bouvet-øen", Alpha2::BV),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("bouveteiland", Alpha2::BV),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("bouveteiland", Alpha2::BV),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("bouveteilân", Alpha2::BV),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("bouveteyja", Alpha2::BV),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("bouvetinsel", Alpha2::BV),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("bouvetov ostrov", Alpha2::BV),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("bouvetov otok", Alpha2::BV),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("bouvetön", Alpha2::BV),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("bouvetøya", Alpha2::BV),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("bouvetøya", Alpha2::BV),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("bouvetův ostrov", Alpha2::BV),
     #[cfg(feature = "ba")] // Bosnia and Herzegovina (Europe)
     ("bośnia i hercegowina", Alpha2::BA),
@@ -6210,15 +6212,15 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("butão", Alpha2::BT),
     #[cfg(feature = "bt")] // The Kingdom of Bhutan (Asia)
     ("butāna", Alpha2::BT),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("buvet adası", Alpha2::BV),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("buvetinsulo", Alpha2::BV),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("buvē sala", Alpha2::BV),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("buvė sala", Alpha2::BV),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("buwe adasy", Alpha2::BV),
     #[cfg(feature = "bg")] // The Republic of Bulgaria (Europe)
     ("bułgaria", Alpha2::BG),
@@ -9632,7 +9634,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("duitsland", Alpha2::DE),
     #[cfg(feature = "ax")] // Åland (Europe)
     ("dunu aland", Alpha2::AX),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("dunu buwet", Alpha2::BV),
     #[cfg(feature = "np")] // The Federal Democratic Republic of Nepal (Asia)
     ("dziłghą\u{301}ąʼdi naakaii dootłʼizhí bikéyah", Alpha2::NP),
@@ -10188,7 +10190,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("elfenbenskysten", Alpha2::CI),
     #[cfg(feature = "sv")] // The Republic of El Salvador (Americas)
     ("eli saluvadoro", Alpha2::SV),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("ellan heard as ellanyn mcdonald", Alpha2::HM),
     #[cfg(feature = "nf")] // The Territory of Norfolk Island (Oceania)
     ("ellan norfolk", Alpha2::NF),
@@ -10252,11 +10254,11 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("endonezya", Alpha2::ID),
     #[cfg(feature = "re")] // Réunion (Africa)
     ("enez ar reunion", Alpha2::RE),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("enez bouvet", Alpha2::BV),
     #[cfg(feature = "cy")] // The Republic of Cyprus (Asia)
     ("enez chipr", Alpha2::CY),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("enez heard hag inizi mcdonald", Alpha2::HM),
     #[cfg(feature = "ms")] // Montserrat (Americas)
     ("enez montserrat", Alpha2::MS),
@@ -10504,9 +10506,9 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("ersarbador", Alpha2::SV),
     #[cfg(feature = "er")] // The State of Eritrea (Africa)
     ("erytrea", Alpha2::ER),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("erékùṣù bouvet", Alpha2::BV),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("erékùṣù heard àti àwọn erékùṣù mcdonald", Alpha2::HM),
     #[cfg(feature = "im")] // The Isle of Man (Europe)
     ("erékùṣù ilẹ\u{300} man", Alpha2::IM),
@@ -13370,7 +13372,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("giordania", Alpha2::JO),
     #[cfg(feature = "jo")] // The Hashemite Kingdom of Jordan (Asia)
     ("giordània", Alpha2::JO),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("girava boyuvet", Alpha2::BV),
     #[cfg(feature = "gd")] // Grenada (Americas)
     ("girava grenada", Alpha2::GD),
@@ -13390,7 +13392,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("giravên falkland (malvin)", Alpha2::FK),
     #[cfg(feature = "fo")] // The Faroe Islands (Europe)
     ("giravên faroye", Alpha2::FO),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("giravên heard û mcdonald", Alpha2::HM),
     #[cfg(feature = "ky")] // The Cayman Islands (Americas)
     ("giravên kayman", Alpha2::KY),
@@ -15244,7 +15246,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("gżejjer cook", Alpha2::CK),
     #[cfg(feature = "fo")] // The Faroe Islands (Europe)
     ("gżejjer faroe", Alpha2::FO),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("gżejjer heard u mcdonald", Alpha2::HM),
     #[cfg(feature = "ky")] // The Cayman Islands (Americas)
     ("gżejjer kajman", Alpha2::KY),
@@ -15264,7 +15266,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("gżejjer åland", Alpha2::AX),
     #[cfg(feature = "nf")] // The Territory of Norfolk Island (Oceania)
     ("gżira norfolk", Alpha2::NF),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("gżira ta' bouvet", Alpha2::BV),
     #[cfg(feature = "im")] // The Isle of Man (Europe)
     ("gżira ta' man", Alpha2::IM),
@@ -15468,139 +15470,139 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("haʼaʼaahjí hakʼaz dineʼé bikéyah", Alpha2::GL),
     #[cfg(feature = "bd")] // The People's Republic of Bangladesh (Asia)
     ("haʼaʼaahjí naakaii dootłʼizhí bikéyah", Alpha2::BD),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("heard adası ve mcdonald adaları", Alpha2::HM),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("heard and mcdonald islands", Alpha2::HM),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("heard eta mcdonald uharteak", Alpha2::HM),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("heard island and mcdonald islands", Alpha2::HM),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("heard island and mcdonald islands", Alpha2::HM),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("heard island and mcdonald islands", Alpha2::HM),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("heard island and mcdonald islands", Alpha2::HM),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("heard island and mcdonald islands", Alpha2::HM),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("heard island and mcdonald islands", Alpha2::HM),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("heard island and mcdonald islands", Alpha2::HM),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("heard island and mcdonald islands", Alpha2::HM),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("heard island and mcdonald islands", Alpha2::HM),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("heard island and mcdonald islands", Alpha2::HM),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("heard island and mcdonald islands", Alpha2::HM),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("heard island and mcdonald islands", Alpha2::HM),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("heard island and mcdonald islands", Alpha2::HM),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("heard island and mcdonald islands", Alpha2::HM),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("heard island and mcdonald islands", Alpha2::HM),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("heard island and mcdonald islands", Alpha2::HM),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("heard island and mcdonald islands", Alpha2::HM),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("heard island and mcdonald islands", Alpha2::HM),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("heard island and mcdonald islands", Alpha2::HM),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("heard island and mcdonald islands", Alpha2::HM),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("heard island and mcdonald islands", Alpha2::HM),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("heard island and mcdonald islands", Alpha2::HM),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("heard island and mcdonald islands", Alpha2::HM),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("heard island and mcdonald islands", Alpha2::HM),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("heard island and mcdonald islands", Alpha2::HM),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("heard island and mcdonald islands", Alpha2::HM),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("heard island and mcdonald islands", Alpha2::HM),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("heard island and mcdonald islands", Alpha2::HM),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("heard island and mcdonald islands", Alpha2::HM),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("heard island and mcdonald islands", Alpha2::HM),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("heard island and mcdonald islands", Alpha2::HM),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("heard island and mcdonald islands", Alpha2::HM),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("heard island and mcdonald islands", Alpha2::HM),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("heard island and mcdonald islands", Alpha2::HM),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("heard island and mcdonald islands", Alpha2::HM),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("heard island and mcdonald islands", Alpha2::HM),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("heard island and mcdonald islands", Alpha2::HM),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("heard island and mcdonald islands", Alpha2::HM),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("heard island and mcdonald islands", Alpha2::HM),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("heard island and mcdonald islands", Alpha2::HM),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("heard island and mcdonald islands", Alpha2::HM),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("heard island and mcdonald islands", Alpha2::HM),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("heard island and mcdonald islands", Alpha2::HM),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("heard island and mcdonald islands", Alpha2::HM),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("heard island and mcdonald islands", Alpha2::HM),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("heard island and mcdonald islands", Alpha2::HM),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("heard island at mcdonald islands", Alpha2::HM),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("heard ja mcdonald", Alpha2::HM),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("heard ja mcdonaldinsaaret", Alpha2::HM),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("heard og mcdonaldseyjar", Alpha2::HM),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("heard ostrvo i mcdonald ostrva", Alpha2::HM),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("heard und die mcdonaldinseln", Alpha2::HM),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("heard und mcdonaldinseln", Alpha2::HM),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("heard- en mcdonaldeilande", Alpha2::HM),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("heard- en mcdonaldeilanden", Alpha2::HM),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("heard- og mcdonaldøyane", Alpha2::HM),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("heard- og mcdonaldøyene", Alpha2::HM),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("heard-sziget és mcdonald-szigetek", Alpha2::HM),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("heard-øen og mcdonald-øerne", Alpha2::HM),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("heardeiland en mcdonaldeilanden", Alpha2::HM),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("heardeilân en mcdonaldeilannen", Alpha2::HM),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("heardov ostrov", Alpha2::HM),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("heardön och mcdonaldöarna", Alpha2::HM),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("heardův a mcdonaldovy ostrovy", Alpha2::HM),
     #[cfg(feature = "za")] // The Republic of South Africa (Africa)
     ("hegoafrika", Alpha2::ZA),
@@ -15618,11 +15620,11 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("hellas", Alpha2::GR),
     #[cfg(feature = "nl")] // The Kingdom of the Netherlands (Europe)
     ("herbehereak", Alpha2::NL),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("herd adasy we makdonald adalary", Alpha2::HM),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("herda kaj makdonaldaj insuloj", Alpha2::HM),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("herdo ir makdonaldo salos", Alpha2::HM),
     #[cfg(feature = "ba")] // Bosnia and Herzegovina (Europe)
     ("herzegovina", Alpha2::BA),
@@ -16250,7 +16252,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("húngárì", Alpha2::HU),
     #[cfg(feature = "as")] // The Territory of American Samoa (Oceania)
     ("hāmoa amerikana", Alpha2::AS),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("hērda sala un makdonalda salas", Alpha2::HM),
     #[cfg(feature = "hr")] // The Republic of Croatia (Europe)
     ("hırvatistan", Alpha2::HR),
@@ -16434,7 +16436,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("iceland", Alpha2::IS),
     #[cfg(feature = "is")] // Iceland (Europe)
     ("iceland", Alpha2::IS),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("icyirwa hadi n'ibirwa makedonalidi", Alpha2::HM),
     #[cfg(feature = "tl")] // The Democratic Republic of Timor-Leste (Asia)
     ("ida-timor (timor-leste)", Alpha2::TL),
@@ -16518,7 +16520,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("ikerene", Alpha2::UA),
     #[cfg(feature = "gr")] // The Hellenic Republic (Europe)
     ("ikigereki", Alpha2::GR),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("ikirwa cya bouve", Alpha2::BV),
     #[cfg(feature = "im")] // The Isle of Man (Europe)
     ("ikirwa cya man", Alpha2::IM),
@@ -16538,9 +16540,9 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("ilann", Alpha2::IE),
     #[cfg(feature = "lv")] // The Republic of Latvia (Europe)
     ("ilatviya", Alpha2::LV),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("ilha bouvet", Alpha2::BV),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("ilha bouvet", Alpha2::BV),
     #[cfg(feature = "cx")] // The Territory of Christmas Island (Oceania)
     ("ilha christmas", Alpha2::CX),
@@ -16548,9 +16550,9 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("ilha de man", Alpha2::IM),
     #[cfg(feature = "im")] // The Isle of Man (Europe)
     ("ilha de man", Alpha2::IM),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("ilha heard e ilhas mcdonald", Alpha2::HM),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("ilha heard e ilhas mcdonald", Alpha2::HM),
     #[cfg(feature = "cx")] // The Territory of Christmas Island (Oceania)
     ("ilha natal", Alpha2::CX),
@@ -16620,11 +16622,11 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("ilibiya", Alpha2::LY),
     #[cfg(feature = "lt")] // The Republic of Lithuania (Europe)
     ("ilithuwaniya", Alpha2::LT),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("illa bouvet", Alpha2::BV),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("illa bouvet", Alpha2::BV),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("illa bouvet", Alpha2::BV),
     #[cfg(feature = "cx")] // The Territory of Christmas Island (Oceania)
     ("illa christmas", Alpha2::CX),
@@ -16640,9 +16642,9 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("illa de man", Alpha2::IM),
     #[cfg(feature = "pn")] // The Pitcairn, Henderson, Ducie and Oeno Islands (Oceania)
     ("illa de pitcairn", Alpha2::PN),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("illa heard e illas mcdonald", Alpha2::HM),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("illa heard i illes mcdonald", Alpha2::HM),
     #[cfg(feature = "nf")] // The Territory of Norfolk Island (Oceania)
     ("illa norfolk", Alpha2::NF),
@@ -17052,9 +17054,9 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("insel man", Alpha2::IM),
     #[cfg(feature = "im")] // The Isle of Man (Europe)
     ("insel man", Alpha2::IM),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("insula bouvet", Alpha2::BV),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("insula bouvet", Alpha2::BV),
     #[cfg(feature = "cx")] // The Territory of Christmas Island (Oceania)
     ("insula crăciunului", Alpha2::CX),
@@ -17062,9 +17064,9 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("insula de man", Alpha2::IM),
     #[cfg(feature = "cx")] // The Territory of Christmas Island (Oceania)
     ("insula de natal", Alpha2::CX),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("insula heard e insulas mcdonald", Alpha2::HM),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("insula heard și insulele mcdonald", Alpha2::HM),
     #[cfg(feature = "im")] // The Isle of Man (Europe)
     ("insula man", Alpha2::IM),
@@ -17636,9 +17638,9 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("ishujt turks dhe kaikos", Alpha2::TC),
     #[cfg(feature = "mp")] // The Commonwealth of the Northern Mariana Islands (Oceania)
     ("ishujt veriorë mariana", Alpha2::MP),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("ishulli buve", Alpha2::BV),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("ishulli hërd dhe ishujt mkdonald", Alpha2::HM),
     #[cfg(feature = "cx")] // The Territory of Christmas Island (Oceania)
     ("ishulli i krishtlindjes", Alpha2::CX),
@@ -17662,9 +17664,9 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("isirayeli", Alpha2::IL),
     #[cfg(feature = "sc")] // The Republic of Seychelles (Africa)
     ("isiseyisheli", Alpha2::SC),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("isla bouvet", Alpha2::BV),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("isla bouvet", Alpha2::BV),
     #[cfg(feature = "im")] // The Isle of Man (Europe)
     ("isla de man", Alpha2::IM),
@@ -17752,7 +17754,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("islando", Alpha2::IS),
     #[cfg(feature = "is")] // Iceland (Europe)
     ("islandë", Alpha2::IS),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("islang bouvet", Alpha2::BV),
     #[cfg(feature = "is")] // Iceland (Europe)
     ("islann", Alpha2::IS),
@@ -17782,7 +17784,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("islas feroe", Alpha2::FO),
     #[cfg(feature = "gs")] // South Georgia and the South Sandwich Islands (Americas)
     ("islas georgias del sur y sándwich del sur", Alpha2::GS),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("islas heard y mcdonald", Alpha2::HM),
     #[cfg(feature = "mv")] // The Republic of Maldives (Asia)
     ("islas maldivas", Alpha2::MV),
@@ -17934,7 +17936,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("islândia", Alpha2::IS),
     #[cfg(feature = "is")] // Iceland (Europe)
     ("islândia", Alpha2::IS),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("isola bouvet", Alpha2::BV),
     #[cfg(feature = "im")] // The Isle of Man (Europe)
     ("isola di man", Alpha2::IM),
@@ -17952,7 +17954,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("isole falkland (malvine)", Alpha2::FK),
     #[cfg(feature = "fo")] // The Faroe Islands (Europe)
     ("isole fær øer", Alpha2::FO),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("isole heard e mcdonald", Alpha2::HM),
     #[cfg(feature = "mp")] // The Commonwealth of the Northern Mariana Islands (Oceania)
     ("isole marianne settentrionali", Alpha2::MP),
@@ -18290,7 +18292,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("iwerddon", Alpha2::IE),
     #[cfg(feature = "ie")] // Ireland (Europe)
     ("iwerzhon", Alpha2::IE),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("iye bouvet", Alpha2::BV),
     #[cfg(feature = "cx")] // The Territory of Christmas Island (Oceania)
     ("iye christmas", Alpha2::CX),
@@ -18300,7 +18302,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("iye môrice", Alpha2::MU),
     #[cfg(feature = "nf")] // The Territory of Norfolk Island (Oceania)
     ("iye norfolk", Alpha2::NF),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("iyeas heard et mcdonald", Alpha2::HM),
     #[cfg(feature = "ye")] // The Republic of Yemen (Asia)
     ("iyemen", Alpha2::YE),
@@ -19914,7 +19916,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("kepi i fildishtë", Alpha2::CI),
     #[cfg(feature = "cv")] // The Republic of Cabo Verde (Africa)
     ("kepi i gjelbërt", Alpha2::CV),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("kepulauan bouvet", Alpha2::BV),
     #[cfg(feature = "ky")] // The Cayman Islands (Americas)
     ("kepulauan cayman", Alpha2::KY),
@@ -20294,7 +20296,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("kiripati", Alpha2::KI),
     #[cfg(feature = "ki")] // The Republic of Kiribati (Oceania)
     ("kirîbatî", Alpha2::KI),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("kisiwa cha bouvet", Alpha2::BV),
     #[cfg(feature = "cx")] // The Territory of Christmas Island (Oceania)
     ("kisiwa cha christmas", Alpha2::CX),
@@ -26648,7 +26650,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("nahatʼeʼiitsoh bikéyah", Alpha2::AU),
     #[cfg(feature = "fi")] // The Republic of Finland (Europe)
     ("nahoditsʼǫʼłání dineʼé bikéyah", Alpha2::FI),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("nam cực", Alpha2::AQ),
     #[cfg(feature = "id")] // The Republic of Indonesia (Asia)
     ("nam dương", Alpha2::ID),
@@ -29000,11 +29002,11 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("oileáin vailís agus futúna", Alpha2::WF),
     #[cfg(feature = "ax")] // Åland (Europe)
     ("oileáin åland", Alpha2::AX),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("oileán bouvet", Alpha2::BV),
     #[cfg(feature = "km")] // The Union of the Comoros (Africa)
     ("oileán chomóra", Alpha2::KM),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("oileán heard agus oileáin mcdonald", Alpha2::HM),
     #[cfg(feature = "im")] // The Isle of Man (Europe)
     ("oileán mhanann", Alpha2::IM),
@@ -29242,7 +29244,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("ostrov man", Alpha2::IM),
     #[cfg(feature = "tc")] // The Turks and Caicos Islands (Americas)
     ("ostrovy turks a caicos", Alpha2::TC),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("ostrvo bouvet", Alpha2::BV),
     #[cfg(feature = "im")] // The Isle of Man (Europe)
     ("ostrvo man", Alpha2::IM),
@@ -29254,9 +29256,9 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("otiris", Alpha2::AT),
     #[cfg(feature = "tc")] // The Turks and Caicos Islands (Americas)
     ("otoci turks i caicos", Alpha2::TC),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("otok bouvet", Alpha2::BV),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("otok heard i otočje mcdonald", Alpha2::HM),
     #[cfg(feature = "im")] // The Isle of Man (Europe)
     ("otok man", Alpha2::IM),
@@ -29264,7 +29266,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("otok man", Alpha2::IM),
     #[cfg(feature = "nf")] // The Territory of Norfolk Island (Oceania)
     ("otok norfolk", Alpha2::NF),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("otoki heard in mcdonald", Alpha2::HM),
     #[cfg(feature = "at")] // The Republic of Austria (Europe)
     ("otrich", Alpha2::AT),
@@ -31372,11 +31374,11 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("puerto-riko", Alpha2::PR),
     #[cfg(feature = "pr")] // The Commonwealth of Puerto Rico (Americas)
     ("puertoriko", Alpha2::PR),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("pulau bouvet", Alpha2::BV),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("pulau heard dan kepulauan mcdonald", Alpha2::HM),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("pulau heard dan kepulauan mcdonald", Alpha2::HM),
     #[cfg(feature = "im")] // The Isle of Man (Europe)
     ("pulau man", Alpha2::IM),
@@ -31616,7 +31618,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("quênia", Alpha2::KE),
     #[cfg(feature = "ax")] // Åland (Europe)
     ("quần đảo a-lanh", Alpha2::AX),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("quần đảo bu-vê", Alpha2::BV),
     #[cfg(feature = "ky")] // The Cayman Islands (Americas)
     ("quần đảo cay-man", Alpha2::KY),
@@ -37232,7 +37234,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("suður-súdan", Alpha2::SS),
     #[cfg(feature = "za")] // The Republic of South Africa (Africa)
     ("suðurafrika", Alpha2::ZA),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("suðurskautslandið", Alpha2::AQ),
     #[cfg(feature = "sz")] // The Kingdom of Eswatini (Africa)
     ("svaasimaa", Alpha2::SZ),
@@ -39182,7 +39184,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("the territory of cocos (keeling) islands", Alpha2::CC),
     #[cfg(feature = "gu")] // The Territory of Guam (Oceania)
     ("the territory of guam", Alpha2::GU),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("the territory of heard island and mcdonald islands", Alpha2::HM),
     #[cfg(feature = "nf")] // The Territory of Norfolk Island (Oceania)
     ("the territory of norfolk island", Alpha2::NF),
@@ -43130,7 +43132,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("wsbecistan", Alpha2::UZ),
     #[cfg(feature = "ci")] // The Republic of Côte d'Ivoire (Africa)
     ("wybrzeże kości słoniowej", Alpha2::CI),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("wyspa bouveta", Alpha2::BV),
     #[cfg(feature = "cx")] // The Territory of Christmas Island (Oceania)
     ("wyspa bożego narodzenia", Alpha2::CX),
@@ -43144,7 +43146,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("wyspy cooka", Alpha2::CK),
     #[cfg(feature = "vi")] // The Virgin Islands of the United States (Americas)
     ("wyspy dziewicze stanów zjednoczonych", Alpha2::VI),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("wyspy heard i mcdonalda", Alpha2::HM),
     #[cfg(feature = "cc")] // The Territory of Cocos (Keeling) Islands (Oceania)
     ("wyspy kokosowe (wyspy keelinga)", Alpha2::CC),
@@ -43612,9 +43614,9 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("yndia", Alpha2::IN),
     #[cfg(feature = "id")] // The Republic of Indonesia (Asia)
     ("yndoneezje", Alpha2::ID),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("ynys bouvet", Alpha2::BV),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("ynys heard ac ynysoedd mcdonald", Alpha2::HM),
     #[cfg(feature = "im")] // The Isle of Man (Europe)
     ("ynys manaw", Alpha2::IM),
@@ -44348,7 +44350,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("ê-ti-ô-pi-a", Alpha2::ET),
     #[cfg(feature = "in")] // The Republic of India (Asia)
     ("ìndia", Alpha2::IN),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("ìsula bouvet", Alpha2::BV),
     #[cfg(feature = "im")] // The Isle of Man (Europe)
     ("ìsula de man", Alpha2::IM),
@@ -44366,7 +44368,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("ìsulas falkland (malvinas)", Alpha2::FK),
     #[cfg(feature = "fo")] // The Faroe Islands (Europe)
     ("ìsulas føroyar", Alpha2::FO),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("ìsulas heard e mcdonald", Alpha2::HM),
     #[cfg(feature = "mp")] // The Commonwealth of the Northern Mariana Islands (Oceania)
     ("ìsulas mariannas setentrionales", Alpha2::MP),
@@ -44426,7 +44428,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("ítalía", Alpha2::IT),
     #[cfg(feature = "il")] // The State of Israel (Asia)
     ("ízrel bikéyah", Alpha2::IL),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("île bouvet", Alpha2::BV),
     #[cfg(feature = "im")] // The Isle of Man (Europe)
     ("île de man", Alpha2::IM),
@@ -44450,7 +44452,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("îles féroé", Alpha2::FO),
     #[cfg(feature = "fo")] // The Faroe Islands (Europe)
     ("îles féroé", Alpha2::FO),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("îles heard-et-macdonald", Alpha2::HM),
     #[cfg(feature = "fk")] // The Falkland Islands (Americas)
     ("îles malouines", Alpha2::FK),
@@ -44652,7 +44654,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("đô-mi-ni-cạ", Alpha2::DM),
     #[cfg(feature = "gl")] // Kalaallit Nunaat (Americas)
     ("đảo băng", Alpha2::GL),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("đảo he-ợ-đợ và quần đảo mợc-đo-nậ-đợ", Alpha2::HM),
     #[cfg(feature = "cx")] // The Territory of Christmas Island (Oceania)
     ("đảo kh-ri-xợ-mà-xợ", Alpha2::CX),
@@ -44832,7 +44834,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("ανδόρρα", Alpha2::AD),
     #[cfg(feature = "ag")] // Antigua and Barbuda (Americas)
     ("αντίγκουα και μπαρμπούντα", Alpha2::AG),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("ανταρκτική", Alpha2::AQ),
     #[cfg(feature = "um")] // United States Minor Outlying Islands (Americas)
     ("απομακρυσμένες νησίδες των ηνωμένων πολιτειών", Alpha2::UM),
@@ -45118,13 +45120,13 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("νήσοι χριστουγέννων", Alpha2::CX),
     #[cfg(feature = "ax")] // Åland (Europe)
     ("νήσοι ώλαντ", Alpha2::AX),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("νήσος μπουβέ", Alpha2::BV),
     #[cfg(feature = "nf")] // The Territory of Norfolk Island (Oceania)
     ("νήσος νόρφολκ", Alpha2::NF),
     #[cfg(feature = "im")] // The Isle of Man (Europe)
     ("νήσος του μαν", Alpha2::IM),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("νήσος χερντ και νήσοι μακντόναλντ", Alpha2::HM),
     #[cfg(feature = "ne")] // The Republic of the Niger (Africa)
     ("νίγηρας", Alpha2::NE),
@@ -45552,25 +45554,25 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("андорра", Alpha2::AD),
     #[cfg(feature = "ad")] // The Principality of Andorra (Europe)
     ("андорра", Alpha2::AD),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("антарктида", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("антарктида", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("антарктида", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("антарктида", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("антарктик", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("антарктика", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("антарктика", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("антарктика", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("антарктыда", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("антартика", Alpha2::AQ),
     #[cfg(feature = "ag")] // Antigua and Barbuda (Americas)
     ("антиgуа белән барбуда", Alpha2::AG),
@@ -45594,7 +45596,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("антигуа і барбуда", Alpha2::AG),
     #[cfg(feature = "ag")] // Antigua and Barbuda (Americas)
     ("антика и барбуда", Alpha2::AG),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("антрактид", Alpha2::AQ),
     #[cfg(feature = "ag")] // Antigua and Barbuda (Americas)
     ("антыгуа і барбуда", Alpha2::AG),
@@ -46090,7 +46092,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("ботсвана", Alpha2::BW),
     #[cfg(feature = "bw")] // The Republic of Botswana (Africa)
     ("ботсуана", Alpha2::BW),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("боувет утравы", Alpha2::BV),
     #[cfg(feature = "bw")] // The Republic of Botswana (Africa)
     ("боцвана", Alpha2::BW),
@@ -46162,17 +46164,17 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("брунейн вант улс", Alpha2::BN),
     #[cfg(feature = "io")] // The British Indian Ocean Territory (Africa)
     ("брытанская тэрыторыя ў індыйскім акіяне", Alpha2::IO),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("буве арал", Alpha2::BV),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("буве аралдары", Alpha2::BV),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("буве аралы", Alpha2::BV),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("бувен гӏайре", Alpha2::BV),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("бувен гӏайре", Alpha2::BV),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("бувет острови", Alpha2::BV),
     #[cfg(feature = "bg")] // The Republic of Bulgaria (Europe)
     ("бугарија", Alpha2::BG),
@@ -46396,7 +46398,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("волліс і футуна", Alpha2::WF),
     #[cfg(feature = "tl")] // The Democratic Republic of Timor-Leste (Asia)
     ("восточный тимор", Alpha2::TL),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("востраў бувэ", Alpha2::BV),
     #[cfg(feature = "im")] // The Isle of Man (Europe)
     ("востраў мэн", Alpha2::IM),
@@ -46406,7 +46408,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("востраў раства", Alpha2::CX),
     #[cfg(feature = "mf")] // The Collectivity of Saint-Martin (Americas)
     ("востраў святога марціна (французская частка)", Alpha2::MF),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("востраў херд і астравы макдоналд", Alpha2::HM),
     #[cfg(feature = "nz")] // New Zealand (Oceania)
     ("выль зеландия", Alpha2::NZ),
@@ -49082,17 +49084,17 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("острва соломон", Alpha2::SB),
     #[cfg(feature = "tc")] // The Turks and Caicos Islands (Americas)
     ("острва туркс и каикос", Alpha2::TC),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("острво бов", Alpha2::BV),
     #[cfg(feature = "im")] // The Isle of Man (Europe)
     ("острво ман", Alpha2::IM),
     #[cfg(feature = "nf")] // The Territory of Norfolk Island (Oceania)
     ("острво норфолк", Alpha2::NF),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("острво херд и острва мекдоналд", Alpha2::HM),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("остров буве", Alpha2::BV),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("остров буве", Alpha2::BV),
     #[cfg(feature = "im")] // The Isle of Man (Europe)
     ("остров мэн", Alpha2::IM),
@@ -49104,7 +49106,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("остров рождества", Alpha2::CX),
     #[cfg(feature = "sh")] // Saint Helena, Ascension and Tristan da Cunha (Africa)
     ("остров святой елены, остров вознесения и тристан-да-кунья", Alpha2::SH),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("остров херд и острова макдональд", Alpha2::HM),
     #[cfg(feature = "ck")] // The Cook Islands (Oceania)
     ("острова кука", Alpha2::CK),
@@ -49128,11 +49130,11 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("острови уолис и футуна", Alpha2::WF),
     #[cfg(feature = "fo")] // The Faroe Islands (Europe)
     ("острови фаро", Alpha2::FO),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("острови хърд и макдоналд", Alpha2::HM),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("острів буве", Alpha2::BV),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("острів герд і острови макдональд", Alpha2::HM),
     #[cfg(feature = "gg")] // The Bailiwick of Guernsey (Europe)
     ("острів гернсі", Alpha2::GG),
@@ -50900,11 +50902,11 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("хаити", Alpha2::HT),
     #[cfg(feature = "hr")] // The Republic of Croatia (Europe)
     ("харватыя", Alpha2::HR),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("хеард пен макдональд аралдары", Alpha2::HM),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("херд аралы жана макдональд аралдары", Alpha2::HM),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("херд острови и мекдоналд острови", Alpha2::HM),
     #[cfg(feature = "mp")] // The Commonwealth of the Northern Mariana Islands (Oceania)
     ("хойд марианы арлууд", Alpha2::MP),
@@ -51430,7 +51432,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("ҳонгконг", Alpha2::HK),
     #[cfg(feature = "hn")] // The Republic of Honduras (Americas)
     ("ҳондурас", Alpha2::HN),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("ҷазираи бувит", Alpha2::BV),
     #[cfg(feature = "cx")] // The Territory of Christmas Island (Oceania)
     ("ҷазираи крисмас", Alpha2::CX),
@@ -51438,7 +51440,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("ҷазираи мэн", Alpha2::IM),
     #[cfg(feature = "nf")] // The Territory of Norfolk Island (Oceania)
     ("ҷазираи норфолк", Alpha2::NF),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("ҷазираи ҳерд ва ҷазираҳои макдоналд", Alpha2::HM),
     #[cfg(feature = "ax")] // Åland (Europe)
     ("ҷазираҳои аланд", Alpha2::AX),
@@ -51556,7 +51558,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("անգոլա", Alpha2::AO),
     #[cfg(feature = "ad")] // The Principality of Andorra (Europe)
     ("անդորա", Alpha2::AD),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("անտարկտիդա", Alpha2::AQ),
     #[cfg(feature = "ag")] // Antigua and Barbuda (Americas)
     ("անտիգուա-բարբուդա", Alpha2::AG),
@@ -51604,7 +51606,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("բութան", Alpha2::BT),
     #[cfg(feature = "bg")] // The Republic of Bulgaria (Europe)
     ("բուլղարիա", Alpha2::BG),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("բուվետ կղզի", Alpha2::BV),
     #[cfg(feature = "bf")] // Burkina Faso (Africa)
     ("բուրկինա ֆասո", Alpha2::BF),
@@ -51770,7 +51772,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("հարավային ջորջիա և հարավային սանդվիչյան կղզիներ", Alpha2::GS),
     #[cfg(feature = "ss")] // The Republic of South Sudan (Africa)
     ("հարավային սուդան", Alpha2::SS),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("հերդ և մակդոնալդ կղզիներ", Alpha2::HM),
     #[cfg(feature = "mp")] // The Commonwealth of the Northern Mariana Islands (Oceania)
     ("հյուսիսային մարիանայի կղզիներ", Alpha2::MP),
@@ -52094,7 +52096,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("אנדורה", Alpha2::AD),
     #[cfg(feature = "ag")] // Antigua and Barbuda (Americas)
     ("אנטיגואה וברבודה", Alpha2::AG),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("אנטרקטיקה", Alpha2::AQ),
     #[cfg(feature = "sz")] // The Kingdom of Eswatini (Africa)
     ("אסווטני", Alpha2::SZ),
@@ -52120,7 +52122,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("בהוטן", Alpha2::BT),
     #[cfg(feature = "bs")] // The Commonwealth of The Bahamas (Americas)
     ("בהמאס", Alpha2::BS),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("בובה", Alpha2::BV),
     #[cfg(feature = "bw")] // The Republic of Botswana (Africa)
     ("בוטסואנה", Alpha2::BW),
@@ -52204,7 +52206,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("דרום אפריקה", Alpha2::ZA),
     #[cfg(feature = "ss")] // The Republic of South Sudan (Africa)
     ("דרום סודאן", Alpha2::SS),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("האי הרד ואיי מקדונלד", Alpha2::HM),
     #[cfg(feature = "im")] // The Isle of Man (Europe)
     ("האי מאן", Alpha2::IM),
@@ -52642,7 +52644,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("ئامېرىكىغا قاراشلىق ساموئا", Alpha2::AS),
     #[cfg(feature = "vi")] // The Virgin Islands of the United States (Americas)
     ("ئامېرىكىغا قاراشلىق ۋىرجىن تاقىم ئاراللىرى", Alpha2::VI),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("ئانتاركتىكا", Alpha2::AQ),
     #[cfg(feature = "ag")] // Antigua and Barbuda (Americas)
     ("ئانتىگۇئا ۋە باربۇدا", Alpha2::AG),
@@ -52874,7 +52876,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("الفلب\u{651}ين", Alpha2::PH),
     #[cfg(feature = "vn")] // The Socialist Republic of Viet Nam (Asia)
     ("الفيتنام", Alpha2::VN),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("القطب الجنوبي", Alpha2::AQ),
     #[cfg(feature = "cm")] // The Republic of Cameroon (Africa)
     ("الكاميرون", Alpha2::CM),
@@ -52930,7 +52932,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("امریکی سمووا", Alpha2::AS),
     #[cfg(feature = "um")] // United States Minor Outlying Islands (Americas)
     ("امریکی چھوٹے بیرونی جزائر", Alpha2::UM),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("انتارکتیکا", Alpha2::AQ),
     #[cfg(feature = "ad")] // The Principality of Andorra (Europe)
     ("اندورا", Alpha2::AD),
@@ -53170,7 +53172,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("بۇرۇندى", Alpha2::BI),
     #[cfg(feature = "bg")] // The Republic of Bulgaria (Europe)
     ("بۇلغارىيە", Alpha2::BG),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("بۇۋېت ئارىلى", Alpha2::BV),
     #[cfg(feature = "by")] // The Republic of Belarus (Europe)
     ("بیلاروس", Alpha2::BY),
@@ -53410,31 +53412,31 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("جزر كوك", Alpha2::CK),
     #[cfg(feature = "mp")] // The Commonwealth of the Northern Mariana Islands (Oceania)
     ("جزر ماريانا الش\u{651}مالي\u{651}ة", Alpha2::MP),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("جزيرة بوفي", Alpha2::BV),
     #[cfg(feature = "gg")] // The Bailiwick of Guernsey (Europe)
     ("جزيرة جويرزني", Alpha2::GG),
     #[cfg(feature = "nf")] // The Territory of Norfolk Island (Oceania)
     ("جزيرة نورفولك", Alpha2::NF),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("جزيرة هيرد وجزر م\u{64e}ك\u{652}دونالد", Alpha2::HM),
     #[cfg(feature = "mt")] // The Republic of Malta (Europe)
     ("جزیره مالت", Alpha2::MT),
     #[cfg(feature = "im")] // The Isle of Man (Europe)
     ("جزیره من", Alpha2::IM),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("جزیره\u{654} بووت", Alpha2::BV),
     #[cfg(feature = "nf")] // The Territory of Norfolk Island (Oceania)
     ("جزیره\u{654} نورفولک", Alpha2::NF),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("جزیره\u{654} هرد و جزایر مک\u{200c}دونالد", Alpha2::HM),
     #[cfg(feature = "cx")] // The Territory of Christmas Island (Oceania)
     ("جزیره\u{654} کریسمس", Alpha2::CX),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("جزیرہ بووہ", Alpha2::BV),
     #[cfg(feature = "nf")] // The Territory of Norfolk Island (Oceania)
     ("جزیرہ نارفولک", Alpha2::NF),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("جزیرہ ہرڈ و جزائر مکڈونلڈ", Alpha2::HM),
     #[cfg(feature = "cf")] // The Central African Republic (Africa)
     ("جمهورية إفريقي\u{651}ا الوسطى", Alpha2::CF),
@@ -53472,7 +53474,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("جنوب إفريقيا", Alpha2::ZA),
     #[cfg(feature = "ss")] // The Republic of South Sudan (Africa)
     ("جنوب الس\u{651}ودان", Alpha2::SS),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("جنوبگان", Alpha2::AQ),
     #[cfg(feature = "za")] // The Republic of South Africa (Africa)
     ("جنوبی افریقا", Alpha2::ZA),
@@ -53516,7 +53518,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("جەنۇبىي سۇدان", Alpha2::SS),
     #[cfg(feature = "et")] // The Federal Democratic Republic of Ethiopia (Africa)
     ("حبشه", Alpha2::ET),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("خېرد ئارىلى ۋە ماك-دونالد ئارىلى", Alpha2::HM),
     #[cfg(feature = "ie")] // Ireland (Europe)
     ("د آيرلېنډ جمهوريت", Alpha2::IE),
@@ -55326,9 +55328,9 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("अ\u{902}गोला", Alpha2::AO),
     #[cfg(feature = "ao")] // The Republic of Angola (Africa)
     ("अ\u{902}गोला", Alpha2::AO),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("अ\u{902}टार\u{94d}कटिका", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("अ\u{902}टार\u{94d}क\u{94d}टिका", Alpha2::AQ),
     #[cfg(feature = "ad")] // The Principality of Andorra (Europe)
     ("अ\u{902}डोरा", Alpha2::AD),
@@ -55346,7 +55348,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("अण\u{94d}टीग\u{941}आ और बारब\u{942}डा", Alpha2::AG),
     #[cfg(feature = "ad")] // The Principality of Andorra (Europe)
     ("अण\u{94d}डोरा", Alpha2::AD),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("अन\u{94d}टार\u{94d}टिका", Alpha2::AQ),
     #[cfg(feature = "af")] // The Islamic Republic of Afghanistan (Asia)
     ("अफगाणिस\u{94d}तान", Alpha2::AF),
@@ -56424,9 +56426,9 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("ब\u{947}ल\u{94d}जियम", Alpha2::BE),
     #[cfg(feature = "ba")] // Bosnia and Herzegovina (Europe)
     ("बॉस\u{94d}निया और हर\u{94d}ज\u{93c}\u{947}गोविना", Alpha2::BA),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("बोउव\u{947}ट आइल\u{948}\u{902}ड", Alpha2::BV),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("बोउव\u{947}ट टाप\u{941}", Alpha2::BV),
     #[cfg(feature = "bw")] // The Republic of Botswana (Africa)
     ("बोट\u{94d}सवाना", Alpha2::BW),
@@ -56448,7 +56450,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("बोलिविया", Alpha2::BO),
     #[cfg(feature = "bo")] // The Plurinational State of Bolivia (Americas)
     ("बोलिव\u{94d}हिय\u{947}", Alpha2::BO),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("बोव\u{94d}ह\u{947} आयल\u{945}\u{902}ड", Alpha2::BV),
     #[cfg(feature = "ba")] // Bosnia and Herzegovina (Europe)
     ("बोस\u{94d}निया आणी हर\u{94d}झ\u{947}गोव\u{94d}हिना", Alpha2::BA),
@@ -57092,11 +57094,11 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("हङ\u{94d}ग\u{947}री", Alpha2::HU),
     #[cfg(feature = "hn")] // The Republic of Honduras (Americas)
     ("हन\u{94d}ड\u{941}रस\u{94d}", Alpha2::HN),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("हर\u{94d}ड आयल\u{945}\u{902}ड आणी म\u{945}कडोनाल\u{94d}ड आयल\u{945}\u{902}डस\u{94d}", Alpha2::HM),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("हर\u{94d}ड टाप\u{941} र एमसी डोनाल\u{94d}ड टाप\u{941}", Alpha2::HM),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("हर\u{94d}ड द\u{94d}वीप और म\u{948}कडोनाल\u{94d}ड द\u{94d}वीप", Alpha2::HM),
     #[cfg(feature = "hk")] // The Hong Kong Special Administrative Region of China (Asia)
     ("हा\u{902}गका\u{902}ग", Alpha2::HK),
@@ -57182,11 +57184,11 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("আজ\u{9be}রব\u{9be}ইজ\u{9be}ন", Alpha2::AZ),
     #[cfg(feature = "az")] // The Republic of Azerbaijan (Asia)
     ("আজেৰ\u{9cd}বেইজ\u{9be}ন", Alpha2::AZ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("আনট\u{9be}র\u{9cd}কটিক\u{9be}", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("আনট\u{9be}র\u{9cd}কটিক\u{9be}", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("আনট\u{9be}ৰ\u{9cd}কটিক\u{9be}", Alpha2::AQ),
     #[cfg(feature = "af")] // The Islamic Republic of Afghanistan (Asia)
     ("আফগ\u{9be}নিস\u{9cd}ত\u{9be}ন", Alpha2::AF),
@@ -58070,9 +58072,9 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("ব\u{9be}ৰ\u{9cd}ম\u{9c1}ড\u{9be}", Alpha2::BM),
     #[cfg(feature = "gq")] // The Republic of Equatorial Guinea (Africa)
     ("বিষ\u{9c1}বীয় গিনি", Alpha2::GQ),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("ব\u{9c1}ভে দ\u{9cd}বীপ", Alpha2::BV),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("ব\u{9c1}ভে দ\u{9cd}বীপ", Alpha2::BV),
     #[cfg(feature = "bi")] // The Republic of Burundi (Africa)
     ("ব\u{9c1}র\u{9c1}ন\u{9cd}ডি", Alpha2::BI),
@@ -58124,7 +58126,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("বোটসওয়\u{9be}ন\u{9be}", Alpha2::BW),
     #[cfg(feature = "bq")] // Bonaire, Sint Eustatius and Saba (Americas)
     ("বোন\u{9be}ইর, ইসট\u{9be}টিস এবং স\u{9be}ব\u{9be}", Alpha2::BQ),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("বোভেট দ\u{9cd}বীপ", Alpha2::BV),
     #[cfg(feature = "bo")] // The Plurinational State of Bolivia (Americas)
     ("বোলিভিয়\u{9be}", Alpha2::BO),
@@ -58572,11 +58574,11 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("হ\u{9be}ঙ\u{9cd}গেরি", Alpha2::HU),
     #[cfg(feature = "hu")] // Hungary (Europe)
     ("হ\u{9be}ঙ\u{9cd}গেরি", Alpha2::HU),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("হ\u{9be}র\u{9cd}ড দ\u{9cd}বীপ ও ম\u{9cd}য\u{9be}কডোন\u{9be}ল\u{9cd}ড দ\u{9cd}বীপপ\u{9c1}ঞ\u{9cd}জ", Alpha2::HM),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("হ\u{9be}র\u{9cd}ড দ\u{9cd}বীপ ও ম\u{9cd}য\u{9be}কডোন\u{9be}ল\u{9cd}ড দ\u{9cd}বীপপ\u{9c1}ঞ\u{9cd}জ", Alpha2::HM),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("হ\u{9be}ৰ\u{9cd}ড দ\u{9cd}বীপ আৰ\u{9c1} মেকডোন\u{9be}ল\u{9cd}ড দ\u{9cd}বীপপ\u{9c1}ঞ\u{9cd}জ", Alpha2::HM),
     #[cfg(feature = "va")] // The Holy See (Europe)
     ("হোলি ছি (ভেটিক\u{9be}ন)", Alpha2::VA),
@@ -58624,7 +58626,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("ਅ\u{a70}ਗ\u{a42}ਲੀਆ\u{a02}", Alpha2::AI),
     #[cfg(feature = "ao")] // The Republic of Angola (Africa)
     ("ਅ\u{a70}ਗ\u{a4b}ਲਾ", Alpha2::AO),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("ਅ\u{a70}ਟਾਰਿਕਟਾ", Alpha2::AQ),
     #[cfg(feature = "ie")] // Ireland (Europe)
     ("ਆਈਰਲ\u{a48}\u{a02}ਡ", Alpha2::IE),
@@ -58902,7 +58904,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("ਬੀਲੀਜ\u{a3c}ੀ", Alpha2::BZ),
     #[cfg(feature = "bg")] // The Republic of Bulgaria (Europe)
     ("ਬ\u{a41}ਲਗਾਰੀਆ", Alpha2::BG),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("ਬ\u{a42}ਟਵਟ ਟਾਪ\u{a42}", Alpha2::BV),
     #[cfg(feature = "bw")] // The Republic of Botswana (Africa)
     ("ਬ\u{a42}ਟਸਵਾਨਾ", Alpha2::BW),
@@ -59084,7 +59086,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("ਹਾਈਟੀ", Alpha2::HT),
     #[cfg(feature = "hn")] // The Republic of Honduras (Americas)
     ("ਹਾਨਡ\u{a42}ਰਸ", Alpha2::HN),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("ਹਾਰਡ ਟਾਪ\u{a42} ਅਤ\u{a47} ਮ\u{a48}ਕਡਾਨਲਡ ਟਾਪ\u{a42}", Alpha2::HM),
     #[cfg(feature = "va")] // The Holy See (Europe)
     ("ਹ\u{a4b}ਲੀ ਸੀ (ਵ\u{a47}ਟੀਕ\u{a48}ਨ ਸਿਟੀ ਪ\u{a4d}ਰਾ\u{a02}ਤ)", Alpha2::VA),
@@ -59152,7 +59154,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("ઉર\u{ac1}ગ\u{acd}વ\u{ac7}", Alpha2::UY),
     #[cfg(feature = "ai")] // Anguilla (Americas)
     ("એન\u{acd}ગ\u{ac1}લિઆ", Alpha2::AI),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("એન\u{acd}ટાર\u{acd}કટિકા", Alpha2::AQ),
     #[cfg(feature = "ag")] // Antigua and Barbuda (Americas)
     ("એન\u{acd}ટિગ\u{ac1}આ અન\u{ac7} બાર\u{acd}બ\u{ac1}ડા", Alpha2::AG),
@@ -59398,7 +59400,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("બ\u{ac7}લિઝ", Alpha2::BZ),
     #[cfg(feature = "be")] // The Kingdom of Belgium (Europe)
     ("બ\u{ac7}લ\u{acd}જીયમ", Alpha2::BE),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("બોઉવ\u{ac7}ટ ટાપ\u{ac1}ઓ", Alpha2::BV),
     #[cfg(feature = "bw")] // The Republic of Botswana (Africa)
     ("બોટ\u{acd}સ\u{acd}વાના", Alpha2::BW),
@@ -59582,7 +59584,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("સ\u{acd}વિત\u{acd}ઝરલ\u{ac7}ન\u{acd}ડ", Alpha2::CH),
     #[cfg(feature = "hu")] // Hungary (Europe)
     ("હ\u{a82}ગ\u{ac7}રી", Alpha2::HU),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("હ\u{ac7}ર\u{acd}ડ ટાપ\u{ac1}ઓ અન\u{ac7} મ\u{ac7}કડોનાલ\u{acd}ડ ટાપ\u{ac1}ઓ", Alpha2::HM),
     #[cfg(feature = "ht")] // The Republic of Haiti (Americas)
     ("હ\u{ac8}તી", Alpha2::HT),
@@ -59614,7 +59616,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("ଆଙ\u{b4d}ଗୋଲୀୟ\u{b3e}", Alpha2::AI),
     #[cfg(feature = "az")] // The Republic of Azerbaijan (Asia)
     ("ଆଜର\u{b4d}ବେଜ\u{b3e}ନ", Alpha2::AZ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("ଆଣ\u{b4d}ଟ\u{b3e}ର\u{b4d}କଟ\u{b3f}କ\u{b3e}", Alpha2::AQ),
     #[cfg(feature = "af")] // The Islamic Republic of Afghanistan (Asia)
     ("ଆଫଗ\u{b3e}ନ\u{b3f}ସ\u{b4d}ତ\u{b3e}ନ", Alpha2::AF),
@@ -59888,7 +59890,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("ବ\u{b3e}ହ\u{b3e}ରୀନ", Alpha2::BH),
     #[cfg(feature = "gq")] // The Republic of Equatorial Guinea (Africa)
     ("ବ\u{b3f}ଷ\u{b41}ବରେଖୀୟ ଗ\u{b3f}ନୀ", Alpha2::GQ),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("ବ\u{b41}ଭେଟ\u{b4d} ଦ\u{b4d}ବୀପ", Alpha2::BV),
     #[cfg(feature = "bi")] // The Republic of Burundi (Africa)
     ("ବ\u{b41}ର\u{b41}ଣ\u{b4d}ଡ\u{b3f}", Alpha2::BI),
@@ -60074,7 +60076,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("ହଙ\u{b4d}ଗ କଙ\u{b4d}ଗ", Alpha2::HK),
     #[cfg(feature = "hu")] // Hungary (Europe)
     ("ହଙ\u{b4d}ଗ\u{b3e}ରୀ", Alpha2::HU),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("ହ\u{b3e}ର\u{b4d}ଡ ଦ\u{b4d}ୱୀପ ଏବଂ ମ\u{b3e}କ ଡନ\u{b3e}ଲ\u{b4d}ଡ ଦ\u{b4d}ୱୀପ", Alpha2::HM),
     #[cfg(feature = "ht")] // The Republic of Haiti (Americas)
     ("ହୈତ\u{b3f}", Alpha2::HT),
@@ -60104,7 +60106,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("அங\u{bcd}கோல\u{bbe}", Alpha2::AO),
     #[cfg(feature = "az")] // The Republic of Azerbaijan (Asia)
     ("அசர\u{bcd}பைச\u{bbe}ன\u{bcd}", Alpha2::AZ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("அண\u{bcd}ட\u{bbe}ர\u{bcd}ட\u{bcd}டிக\u{bcd}க\u{bbe}", Alpha2::AQ),
     #[cfg(feature = "ad")] // The Principality of Andorra (Europe)
     ("அன\u{bcd}டோர\u{bbe}", Alpha2::AD),
@@ -60452,7 +60454,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("போர\u{bcd}ட\u{bcd}டோ ர\u{bc0}க\u{bcd}கோ", Alpha2::PR),
     #[cfg(feature = "pl")] // The Republic of Poland (Europe)
     ("போலந\u{bcd}து", Alpha2::PL),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("போவெட\u{bcd} த\u{bc0}வு", Alpha2::BV),
     #[cfg(feature = "ba")] // Bosnia and Herzegovina (Europe)
     ("போஸ\u{bcd}னிய\u{bbe} ஹெர\u{bcd}ஸிகோவின\u{bbe}", Alpha2::BA),
@@ -60558,7 +60560,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("ஹங\u{bcd}கேரி", Alpha2::HU),
     #[cfg(feature = "hk")] // The Hong Kong Special Administrative Region of China (Asia)
     ("ஹ\u{bbe}ங\u{bcd}க\u{bbe}ங\u{bcd}", Alpha2::HK),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("ஹெர\u{bcd}ட\u{bcd} த\u{bc0}வு மற\u{bcd}றும\u{bcd} மெக\u{bcd} டொன\u{bbe}ல\u{bcd}ட\u{bcd} த\u{bc0}வுகள\u{bcd}", Alpha2::HM),
     #[cfg(feature = "va")] // The Holy See (Europe)
     ("ஹொலி சி (வ\u{bbe}டிகன\u{bcd} நகர ந\u{bbe}டு)", Alpha2::VA),
@@ -60566,7 +60568,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("ஹோன\u{bcd}டுர\u{bbe}ஸ\u{bcd}", Alpha2::HN),
     #[cfg(feature = "ao")] // The Republic of Angola (Africa)
     ("అంగ\u{c4b}ల\u{c3e}", Alpha2::AO),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("అంట\u{c3e}ర\u{c4d}క\u{c4d}ట\u{c3f}క\u{c3e}", Alpha2::AQ),
     #[cfg(feature = "az")] // The Republic of Azerbaijan (Asia)
     ("అఝ\u{c47}ర\u{c4d}బ\u{c47}జ\u{c3e}న", Alpha2::AZ),
@@ -60850,7 +60852,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("బ\u{c47}ల\u{c3f}ఝ", Alpha2::BZ),
     #[cfg(feature = "bo")] // The Plurinational State of Bolivia (Americas)
     ("బ\u{c4b}ల\u{c3f}వ\u{c3f}య", Alpha2::BO),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("బ\u{c4b}వ\u{c4d}హ\u{c47} ఐల\u{c3e}ండ\u{c4d}", Alpha2::BV),
     #[cfg(feature = "ba")] // Bosnia and Herzegovina (Europe)
     ("బ\u{c4b}స\u{c4d}న\u{c3f}య\u{c3e} మర\u{c3f}యు హర\u{c4d}ఝ\u{c47}గ\u{c4b}వ\u{c4d}హ\u{c3f}న\u{c3e}", Alpha2::BA),
@@ -61026,7 +61028,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("స\u{c4d}వ\u{c40}డన\u{c4d}", Alpha2::SE),
     #[cfg(feature = "hu")] // Hungary (Europe)
     ("హంగ\u{c47}ర\u{c40}", Alpha2::HU),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("హర\u{c4d}డ ఐల\u{c3e}ండ\u{c4d} మర\u{c3f}యు మ\u{c46}క\u{c4d}\u{200c}డ\u{c4b}న\u{c3e}ల\u{c4d}డ\u{c4d} ఐల\u{c3e}ండ\u{c4d}స\u{c4d}", Alpha2::HM),
     #[cfg(feature = "ht")] // The Republic of Haiti (Americas)
     ("హ\u{c48}త\u{c40}", Alpha2::HT),
@@ -61040,7 +61042,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("ಅಂಗುಲ\u{cbf}ಯಾ", Alpha2::AI),
     #[cfg(feature = "ao")] // The Republic of Angola (Africa)
     ("ಅಂಗ\u{ccb}ಲಾ", Alpha2::AO),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("ಅಂಟಾರ\u{ccd}ಟ\u{cbf}ಕ", Alpha2::AQ),
     #[cfg(feature = "az")] // The Republic of Azerbaijan (Asia)
     ("ಅಜರ\u{ccd}ಬ\u{cc8}ಜಾನ\u{ccd}", Alpha2::AZ),
@@ -61288,7 +61290,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("ಬರ\u{ccd}ಮುಡಾ", Alpha2::BM),
     #[cfg(feature = "bg")] // The Republic of Bulgaria (Europe)
     ("ಬಲ\u{ccd}ಗ\u{cc7}ರ\u{cbf}ಯಾ", Alpha2::BG),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("ಬವ\u{cc7}ಟ\u{ccd} ದ\u{ccd}ವ\u{cc0}ಪ", Alpha2::BV),
     #[cfg(feature = "bh")] // The Kingdom of Bahrain (Asia)
     ("ಬಹರ\u{cc8}ನ\u{ccd}", Alpha2::BH),
@@ -61444,7 +61446,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("ಸ\u{ccd}ವ\u{cc0}ಡನ\u{ccd}", Alpha2::SE),
     #[cfg(feature = "hu")] // Hungary (Europe)
     ("ಹಂಗರ\u{cbf}", Alpha2::HU),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("ಹರ\u{ccd}ಡ\u{ccd} ದ\u{ccd}ವ\u{cc0}ಪ ಮತ\u{ccd}ತು ಮ\u{cc6}ಕ\u{ccd} ಡ\u{cca}ನಾಲ\u{ccd}ಡ\u{ccd} ದ\u{ccd}ವ\u{cc0}ಪಗಳು", Alpha2::HM),
     #[cfg(feature = "hk")] // The Hong Kong Special Administrative Region of China (Asia)
     ("ಹಾಂಗ\u{ccd} ಕಾಂಗ\u{ccd}", Alpha2::HK),
@@ -61458,7 +61460,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("ಹ\u{cca}ಸ ಕ\u{cc6}ಲ\u{cc6}ಡ\u{cca}ನ\u{cbf}ಯಾ", Alpha2::NC),
     #[cfg(feature = "ao")] // The Republic of Angola (Africa)
     ("അംഗോള", Alpha2::AO),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("അന\u{d4d}റ\u{d3e}ര\u{d4d}\u{200d}ട\u{d4d}ടിക\u{d4d}ക", Alpha2::AQ),
     #[cfg(feature = "ad")] // The Principality of Andorra (Europe)
     ("അന\u{d4d}\u{200d}ഡോറ", Alpha2::AD),
@@ -61756,7 +61758,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("ബോട\u{d4d}സ\u{d4d}വ\u{d3e}ന", Alpha2::BW),
     #[cfg(feature = "ba")] // Bosnia and Herzegovina (Europe)
     ("ബോസ\u{d4d}നിയയ\u{d41}ം ഹെര\u{d4d}\u{200d}സഗോവിനയ\u{d41}ം", Alpha2::BA),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("ബൌവെ ദ\u{d4d}വീപ\u{d41}കള\u{d4d}\u{200d}", Alpha2::BV),
     #[cfg(feature = "br")] // The Federative Republic of Brazil (Americas)
     ("ബ\u{d4d}രസീല\u{d4d}\u{200d}", Alpha2::BR),
@@ -61920,7 +61922,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("സ\u{d4d}വീഡന\u{d4d}\u{200d}", Alpha2::SE),
     #[cfg(feature = "hu")] // Hungary (Europe)
     ("ഹംഗറി", Alpha2::HU),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("ഹെര\u{d4d}\u{200d}ഡ\u{d4d} ദ\u{d4d}വീപ\u{d41}ം മക\u{d4d}ഡൊണ\u{d3e}ള\u{d4d}\u{200d}ഡ\u{d4d} ദ\u{d4d}വീപ\u{d41}കള\u{d41}ം", Alpha2::HM),
     #[cfg(feature = "ht")] // The Republic of Haiti (Americas)
     ("ഹൈതി", Alpha2::HT),
@@ -61944,7 +61946,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("ඇන\u{dca}ග\u{dd4}ය\u{dd2}ල\u{dcf}", Alpha2::AI),
     #[cfg(feature = "ao")] // The Republic of Angola (Africa)
     ("ඇන\u{dca}ගෝල\u{dcf}ව", Alpha2::AO),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("ඇන\u{dca}ට\u{dcf}ක\u{dca}ට\u{dd2}ක\u{dcf}", Alpha2::AQ),
     #[cfg(feature = "ag")] // Antigua and Barbuda (Americas)
     ("ඇන\u{dca}ට\u{dd2}ග\u{dd4}ව\u{dcf} හ\u{dcf} බ\u{dcf}බ\u{dd4}ඩ\u{dcf}", Alpha2::AG),
@@ -62236,7 +62238,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("බොල\u{dd3}ව\u{dd2}ය\u{dcf}ව", Alpha2::BO),
     #[cfg(feature = "ba")] // Bosnia and Herzegovina (Europe)
     ("බොස\u{dca}න\u{dd2}ය\u{dcf}ව හ\u{dcf} හර\u{dca}සගෝව\u{dd2}න\u{dd2}ය\u{dcf}ව", Alpha2::BA),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("බෝවෙට\u{dca} ද\u{dd6}පත", Alpha2::BV),
     #[cfg(feature = "bn")] // The Nation of Brunei, the Abode of Peace (Asia)
     ("බෲන\u{dcf}ය\u{dd2} දර\u{dd4}සලම\u{dca}", Alpha2::BN),
@@ -62400,7 +62402,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("හංගේර\u{dd2}ය\u{dcf}ව", Alpha2::HU),
     #[cfg(feature = "ht")] // The Republic of Haiti (Americas)
     ("හය\u{dd2}ට\u{dd2}", Alpha2::HT),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("හර\u{dca}ඩ\u{dca} හ\u{dcf} මැක\u{dca}ඩොනල\u{dca}ඩ\u{dca} ද\u{dd6}පත\u{dca}", Alpha2::HM),
     #[cfg(feature = "hk")] // The Hong Kong Special Administrative Region of China (Asia)
     ("හොංග\u{dca} කොංග\u{dca}", Alpha2::HK),
@@ -62740,13 +62742,13 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("เกาะคร\u{e34}สต\u{e4c}มาส", Alpha2::CX),
     #[cfg(feature = "nf")] // The Territory of Norfolk Island (Oceania)
     ("เกาะนอร\u{e4c}ฟอล\u{e4c}ก", Alpha2::NF),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("เกาะบ\u{e39}เวต\u{e4c}", Alpha2::BV),
     #[cfg(feature = "gs")] // South Georgia and the South Sandwich Islands (Americas)
     ("เกาะเซาท\u{e4c}จอร\u{e4c}เจ\u{e35}ยและหม\u{e39}\u{e48}เกาะเซาท\u{e4c}แซนด\u{e4c}ว\u{e34}ช", Alpha2::GS),
     #[cfg(feature = "um")] // United States Minor Outlying Islands (Americas)
     ("เกาะเล\u{e47}กรอบนอกของสหร\u{e31}ฐอเมร\u{e34}กา", Alpha2::UM),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("เกาะเฮ\u{e34}ร\u{e4c}ดและหม\u{e39}\u{e48}เกาะแมกดอน\u{e31}ลด\u{e4c}", Alpha2::HM),
     #[cfg(feature = "im")] // The Isle of Man (Europe)
     ("เกาะแมน", Alpha2::IM),
@@ -62856,7 +62858,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("แองกว\u{e34}ลลา", Alpha2::AI),
     #[cfg(feature = "ao")] // The Republic of Angola (Africa)
     ("แองโกลา", Alpha2::AO),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("แอนตาร\u{e4c}กต\u{e34}กา", Alpha2::AQ),
     #[cfg(feature = "ag")] // Antigua and Barbuda (Americas)
     ("แอนต\u{e34}กาและบาร\u{e4c}บ\u{e39}ดา", Alpha2::AG),
@@ -63260,7 +63262,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("བ་ཧ་མ\u{f71}ས\u{f72}།", Alpha2::BS),
     #[cfg(feature = "bd")] // The People's Republic of Bangladesh (Asia)
     ("བང་ལ་ད\u{f7a}ཤ\u{f72}།", Alpha2::BD),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("བའ\u{f74}་བ\u{f7a}ཊ\u{f72}་ ཨའ\u{f72}་ལ\u{f7a}ནཌ\u{f72}།", Alpha2::BV),
     #[cfg(feature = "bb")] // Barbados (Americas)
     ("བར་བ་ཌ\u{f7c}ས\u{f72}།", Alpha2::BB),
@@ -63464,7 +63466,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("ཧང་ག་ར\u{f72}།", Alpha2::HU),
     #[cfg(feature = "ht")] // The Republic of Haiti (Americas)
     ("ཧའ\u{f72}་ཏ\u{f72}།", Alpha2::HT),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("ཧརཌ་མཚ\u{f7c}་ག\u{fb3}\u{f72}ང་དང་ཨ\u{f7a}མ་ས\u{f72}་ ཌའ\u{f74}ན་ལ\u{f7a}ནཌ་ མཚ\u{f7c}་གལ\u{f72}ང།", Alpha2::HM),
     #[cfg(feature = "hn")] // The Republic of Honduras (Americas)
     ("ཧ\u{f71}\u{f7c}ན་ཌ\u{f74}་ར\u{f71}ས\u{f72}།", Alpha2::HN),
@@ -63530,7 +63532,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("ཨ\u{f7a}ང་ག\u{f74}འ\u{f72}་ལ།", Alpha2::AI),
     #[cfg(feature = "ao")] // The Republic of Angola (Africa)
     ("ཨ\u{f7a}ང་ག\u{f7c}་ལ།", Alpha2::AO),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("ཨ\u{f7a}ན་ཊར་ཊ\u{f72}་ཀ།", Alpha2::AQ),
     #[cfg(feature = "ag")] // Antigua and Barbuda (Americas)
     ("ཨ\u{f7a}ན་ཊ\u{f72}་ག\u{f74}འ་དང་ བར་བ\u{f74}་ཌ།", Alpha2::AG),
@@ -63922,7 +63924,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("ანგოლა", Alpha2::AO),
     #[cfg(feature = "ad")] // The Principality of Andorra (Europe)
     ("ანდორა", Alpha2::AD),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("ანტარქტიკა", Alpha2::AQ),
     #[cfg(feature = "ag")] // Antigua and Barbuda (Americas)
     ("ანტიგუა და ბარბუდა", Alpha2::AG),
@@ -63968,7 +63970,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("ბრიტანეთის ინდოეთის ოკეანის ტერიტორია", Alpha2::IO),
     #[cfg(feature = "bn")] // The Nation of Brunei, the Abode of Peace (Asia)
     ("ბრუნეი დარუსალამი", Alpha2::BN),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("ბუვეტის კუნძული", Alpha2::BV),
     #[cfg(feature = "bg")] // The Republic of Bulgaria (Europe)
     ("ბულგარეთი", Alpha2::BG),
@@ -64364,7 +64366,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("ჯიბუტი", Alpha2::DJ),
     #[cfg(feature = "ht")] // The Republic of Haiti (Americas)
     ("ჰაიტი", Alpha2::HT),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("ჰერდის და მაკდონალდის კუნძულები", Alpha2::HM),
     #[cfg(feature = "hn")] // The Republic of Honduras (Americas)
     ("ჰონდურასი", Alpha2::HN),
@@ -64774,7 +64776,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("ኣርሜንያ", Alpha2::AM),
     #[cfg(feature = "ar")] // The Argentine Republic (Americas)
     ("ኣርጀንቲና", Alpha2::AR),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("ኣንታርክቲካ", Alpha2::AQ),
     #[cfg(feature = "ao")] // The Republic of Angola (Africa)
     ("ኣንጎላ", Alpha2::AO),
@@ -65136,7 +65138,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("កោះ\u{200b}ត\u{17bc}ច\u{200b}នៅ\u{200b}ឆ\u{17d2}ងាយ\u{200b}ព\u{17b8}\u{200b}សហរដ\u{17d2}ឋ\u{200b}អាមេរ\u{17b7}ក", Alpha2::UM),
     #[cfg(feature = "tc")] // The Turks and Caicos Islands (Americas)
     ("កោះ\u{200b}ទ\u{17bd}ក ន\u{17b7}ង កៃក\u{17bc}ស", Alpha2::TC),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("កោះ\u{200b}ប\u{17ca}\u{17bc}វ\u{17c9}ែ", Alpha2::BV),
     #[cfg(feature = "mp")] // The Commonwealth of the Northern Mariana Islands (Oceania)
     ("កោះ\u{200b}ម\u{17c9}ារៀណា\u{200b}ភាគ\u{200b}ខាង\u{200b}ជើង", Alpha2::MP),
@@ -65146,7 +65148,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("កោះ\u{200b}វ\u{17b8}ជ\u{17b8}ន ចក\u{17d2}រភពអង\u{17cb}គ\u{17d2}លេស", Alpha2::VG),
     #[cfg(feature = "sb")] // The Solomon Islands (Oceania)
     ("កោះ\u{200b}ស\u{17bc}ឡ\u{17bc}ម\u{17c9}\u{17bc}ន", Alpha2::SB),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("កោះ\u{200b}ហ\u{17ca}ើដ ន\u{17b7}ង កោះ\u{200b}ម\u{17c9}ាកដ\u{17bc}ណាល\u{17cb}", Alpha2::HM),
     #[cfg(feature = "fo")] // The Faroe Islands (Europe)
     ("កោះ\u{200b}ហ\u{17d2}វារ\u{17c9}\u{17bc}", Alpha2::FO),
@@ -65490,7 +65492,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("ឡេស\u{17bc}ត\u{17bc}", Alpha2::LS),
     #[cfg(feature = "ad")] // The Principality of Andorra (Europe)
     ("អង\u{17cb}ដ\u{17bc}រ\u{17c9}ា", Alpha2::AD),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("អង\u{17cb}តាទ\u{17b8}កា", Alpha2::AQ),
     #[cfg(feature = "ag")] // Antigua and Barbuda (Americas)
     ("អង\u{17cb}ទ\u{17b8}ហ\u{17d2}គា ន\u{17b7}ង បារប\u{17ca}\u{17bb}យដា", Alpha2::AG),
@@ -66174,9 +66176,9 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("ハンガリー", Alpha2::HU),
     #[cfg(feature = "hu")] // Hungary (Europe)
     ("ハンガリー", Alpha2::HU),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("ハード島とマクドナルド諸島", Alpha2::HM),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("ハード島及びマクドナルド諸島", Alpha2::HM),
     #[cfg(feature = "va")] // The Holy See (Europe)
     ("バチカン市国", Alpha2::VA),
@@ -66288,9 +66290,9 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("ブータン", Alpha2::BT),
     #[cfg(feature = "bt")] // The Kingdom of Bhutan (Asia)
     ("ブータン", Alpha2::BT),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("ブーベ島", Alpha2::BV),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("ブーベ島", Alpha2::BV),
     #[cfg(feature = "pr")] // The Commonwealth of Puerto Rico (Americas)
     ("プエルトリコ", Alpha2::PR),
@@ -66716,15 +66718,15 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("南佐治亞及南三文治羣島", Alpha2::GS),
     #[cfg(feature = "gs")] // South Georgia and the South Sandwich Islands (Americas)
     ("南喬治亞及南三明治群島", Alpha2::GS),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("南极洲", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("南極", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("南極大陸", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("南極洲", Alpha2::AQ),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("南極洲", Alpha2::AQ),
     #[cfg(feature = "ss")] // The Republic of South Sudan (Africa)
     ("南苏丹", Alpha2::SS),
@@ -67118,9 +67120,9 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("布基納法索", Alpha2::BF),
     #[cfg(feature = "bf")] // Burkina Faso (Africa)
     ("布基纳法索", Alpha2::BF),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("布威島", Alpha2::BV),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("布维群岛", Alpha2::BV),
     #[cfg(feature = "bi")] // The Republic of Burundi (Africa)
     ("布隆迪", Alpha2::BI),
@@ -67158,7 +67160,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("德國", Alpha2::DE),
     #[cfg(feature = "de")] // The Federal Republic of Germany (Europe)
     ("德國", Alpha2::DE),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("德島及麥當勞羣島", Alpha2::HM),
     #[cfg(feature = "it")] // The Italian Republic (Europe)
     ("意大利", Alpha2::IT),
@@ -67428,7 +67430,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("波斯尼亞和黑塞哥維那", Alpha2::BA),
     #[cfg(feature = "bw")] // The Republic of Botswana (Africa)
     ("波札那", Alpha2::BW),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("波維特島", Alpha2::BV),
     #[cfg(feature = "pl")] // The Republic of Poland (Europe)
     ("波蘭", Alpha2::PL),
@@ -67942,9 +67944,9 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("赤道幾內亞", Alpha2::GQ),
     #[cfg(feature = "gq")] // The Republic of Equatorial Guinea (Africa)
     ("赤道畿內亞", Alpha2::GQ),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("赫德岛与麦克唐纳群岛", Alpha2::HM),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("赫德島及麥當勞群島", Alpha2::HM),
     #[cfg(feature = "vn")] // The Socialist Republic of Viet Nam (Asia)
     ("越南", Alpha2::VN),
@@ -68114,7 +68116,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("나우루", Alpha2::NR),
     #[cfg(feature = "ng")] // The Federal Republic of Nigeria (Africa)
     ("나이지리아", Alpha2::NG),
-    #[cfg(feature = "aq")] // Antarctica
+    #[cfg(feature = "aq")] // Antarctica 
     ("남극", Alpha2::AQ),
     #[cfg(feature = "ss")] // The Republic of South Sudan (Africa)
     ("남수단", Alpha2::SS),
@@ -68268,7 +68270,7 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("부룬디", Alpha2::BI),
     #[cfg(feature = "bf")] // Burkina Faso (Africa)
     ("부르키나파소", Alpha2::BF),
-    #[cfg(feature = "bv")] // Bouvet Island
+    #[cfg(feature = "bv")] // Bouvet Island 
     ("부베 섬", Alpha2::BV),
     #[cfg(feature = "bt")] // The Kingdom of Bhutan (Asia)
     ("부탄", Alpha2::BT),
@@ -68574,10 +68576,11 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("필리핀", Alpha2::PH),
     #[cfg(feature = "pn")] // The Pitcairn, Henderson, Ducie and Oeno Islands (Oceania)
     ("핏케언 제도", Alpha2::PN),
-    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands
+    #[cfg(feature = "hm")] // The Territory of Heard Island and McDonald Islands 
     ("허드 맥도널드 제도", Alpha2::HM),
     #[cfg(feature = "hu")] // Hungary (Europe)
     ("헝가리", Alpha2::HU),
     #[cfg(feature = "hk")] // The Hong Kong Special Administrative Region of China (Asia)
     ("홍콩", Alpha2::HK),
-]);}
+])
+    });

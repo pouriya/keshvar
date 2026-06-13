@@ -30,8 +30,6 @@ pub use consts::{
 #[cfg(feature = "chrono-integration")]
 #[doc(hidden)]
 pub use chrono;
-#[doc(hidden)]
-pub use hashbrown;
 #[cfg(feature = "iso-currency-integration")]
 #[doc(hidden)]
 pub use iso_currency;
@@ -43,7 +41,7 @@ pub use iso_currency;
 /// You need to enable `search-iso-short-name` feature to use this function.
 ///
 /// ## Memory notes
-/// If you enabling this feature, Keshvar creates a global [`lazy_static`](https://docs.rs/lazy_static/latest/lazy_static/) hashmap and keeps all of included country iso shortnames in it.
+/// If you enabling this feature, Keshvar creates a global [`LazyLock`](std::sync::LazyLock) hashmap and keeps all of included country iso shortnames in it.
 ///
 /// # Example
 /// ```
@@ -76,7 +74,7 @@ pub fn find_by_iso_short_name(iso_short_name: &str) -> Result<Country, SearchErr
 /// You need to enable `search-iso-long-name` feature to use this function.
 ///
 /// ## Memory notes
-/// If you enabling this feature, Keshvar creates a global [`lazy_static`](https://docs.rs/lazy_static/latest/lazy_static/) hashmap and keeps all of included country iso longnames in it.
+/// If you enabling this feature, Keshvar creates a global [`LazyLock`](std::sync::LazyLock) hashmap and keeps all of included country iso longnames in it.
 ///
 /// # Example
 /// ```
@@ -107,7 +105,7 @@ pub fn find_by_iso_long_name(iso_long_name: &str) -> Result<Country, SearchError
 /// You need to enable `search-country-code` feature to use this function.
 ///
 /// ## Memory notes
-/// If you enabling this feature, Keshvar creates a global [`lazy_static`](https://docs.rs/lazy_static/latest/lazy_static/) hashmap and keeps all of included country codes in it.
+/// If you enabling this feature, Keshvar creates a global [`LazyLock`](std::sync::LazyLock) hashmap and keeps all of included country codes in it.
 ///
 /// # Example
 /// ```
@@ -130,7 +128,7 @@ pub fn find_by_code(code: usize) -> Result<Country, SearchError> {
 /// You need to enable `search-iso-number` feature to use this function.
 ///
 /// ## Memory notes
-/// If you enabling this feature, Keshvar creates a global [`lazy_static`](https://docs.rs/lazy_static/latest/lazy_static/) hashmap and keeps all of included country numbers in it.
+/// If you enabling this feature, Keshvar creates a global [`LazyLock`](std::sync::LazyLock) hashmap and keeps all of included country numbers in it.
 ///
 /// # Example
 /// ```
@@ -155,7 +153,7 @@ pub fn find_by_number(code: usize) -> Result<Country, SearchError> {
 /// You need to enable `search-translations` feature to use this function.
 ///
 /// ## Memory notes
-/// If you enabling this feature, Keshvar creates a global [`lazy_static`](https://docs.rs/lazy_static/latest/lazy_static/) hashmap and keeps all of included country names and their translations in it.
+/// If you enabling this feature, Keshvar creates a global [`LazyLock`](std::sync::LazyLock) hashmap and keeps all of included country names and their translations in it.
 ///
 /// # Example
 /// ```
