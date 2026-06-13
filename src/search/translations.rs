@@ -46246,6 +46246,8 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("бутон", Alpha2::BT),
     #[cfg(feature = "bg")] // The Republic of Bulgaria (Europe)
     ("българия", Alpha2::BG),
+    #[cfg(feature = "bg")] // The Republic of Bulgaria (Europe)
+    ("българия", Alpha2::BG),
     #[cfg(feature = "by")] // The Republic of Belarus (Europe)
     ("білорусь", Alpha2::BY),
     #[cfg(feature = "ae")] // The United Arab Emirates (Asia)
