@@ -58,7 +58,7 @@ pub(crate) fn make_search_error() -> SearchError {
         }
     } else {
         SearchError::NotFound {
-            searched_items: SearchedItems::SupportedCountries(*SUPPORTED_COUNTRIES_COUNT),
+            searched_items: SearchedItems::SupportedCountries(SUPPORTED_COUNTRIES_COUNT),
         }
     }
 }

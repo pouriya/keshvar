@@ -141,7 +141,7 @@ impl_iterator!(
     CountryIterator,
     Country,
     SUPPORTED_ALPHA2_LIST,
-    *SUPPORTED_COUNTRIES_COUNT,
+    SUPPORTED_COUNTRIES_COUNT,
     |alpha2| alpha2.to_country()
 );
 

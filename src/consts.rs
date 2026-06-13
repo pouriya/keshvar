@@ -2,15 +2,9 @@
 
 #[allow(unused_imports)]
 use crate::{Alpha2, Continent, Region, SubRegion, WorldRegion};
-use lazy_static::lazy_static;
 pub const ALL_COUNTRIES_COUNT: usize = 249;
-lazy_static! {
-    pub static ref SUPPORTED_COUNTRIES_COUNT: usize = SUPPORTED_ALPHA2_LIST.len();
-}
-lazy_static! {
-    pub static ref UNSUPPORTED_COUNTRIES_COUNT: usize =
-        ALL_COUNTRIES_COUNT - *SUPPORTED_COUNTRIES_COUNT;
-}
+pub const SUPPORTED_COUNTRIES_COUNT: usize = SUPPORTED_ALPHA2_LIST.len();
+pub const UNSUPPORTED_COUNTRIES_COUNT: usize = ALL_COUNTRIES_COUNT - SUPPORTED_COUNTRIES_COUNT;
 #[cfg(all(
     feature = "ad",
     feature = "ae",
