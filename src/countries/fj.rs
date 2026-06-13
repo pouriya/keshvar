@@ -24,7 +24,7 @@ pub mod consts {
     pub const IOC: Option<IOC> = Some(IOC::FIJ);
     pub const ISO_SHORT_NAME: &str = "Fiji";
     pub const ISO_LONG_NAME: &str = "The Republic of Fiji";
-    pub const OFFICIAL_LANGUAGE_LIST: &[&str] = &["en", "fj", "hi", "ur"];
+    pub const OFFICIAL_LANGUAGE_LIST: &[&str] = &["en", "fj", "hi"];
     pub const SPOKEN_LANGUAGE_LIST: &[&str] = &["en", "fj", "hi", "ur"];
     pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: &[usize] = &[2];
     pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[7];
@@ -1138,7 +1138,7 @@ pub fn new() -> Country {
         maybe_ioc: Some(IOC::FIJ),
         iso_long_name: "The Republic of Fiji",
         iso_short_name: "Fiji",
-        official_language_list: ["en", "fj", "hi", "ur"].to_vec(),
+        official_language_list: ["en", "fj", "hi"].to_vec(),
         spoken_language_list: ["en", "fj", "hi", "ur"].to_vec(),
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [7].to_vec(),

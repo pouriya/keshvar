@@ -732,7 +732,7 @@ pub fn new() -> Country {
         eu_member: true,
         eea_member: true,
         maybe_vat_rates: Some(VatRates {
-            standard: 24.0,
+            standard: 25.5,
             reduced: Vec::from([10.0, 14.0]),
             super_reduced: None,
             parking: None,

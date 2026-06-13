@@ -116,6 +116,7 @@ pub enum CurrencyCode {
     /// * The Arab Republic of Egypt (Africa)
     EGP,
     /// * The State of Eritrea (Africa)
+    ERN,
     /// * The Federal Democratic Republic of Ethiopia (Africa)
     ETB,
     /// * The Principality of Andorra (Europe)
@@ -470,7 +471,8 @@ impl CurrencyCode {
             Self::DOP => &["DO"],
             Self::DZD => &["DZ"],
             Self::EGP => &["EG"],
-            Self::ETB => &["ER", "ET"],
+            Self::ERN => &["ER"],
+            Self::ETB => &["ET"],
             Self::EUR => &[
                 "AD", "AT", "AX", "BE", "BL", "CY", "DE", "EE", "ES", "FI", "FR", "GF", "GP", "GR",
                 "HR", "IE", "IT", "LT", "LU", "LV", "MC", "ME", "MF", "MQ", "MT", "NL", "PM", "PT",
@@ -636,6 +638,7 @@ impl ToString for CurrencyCode {
             Self::DOP => "DOP",
             Self::DZD => "DZD",
             Self::EGP => "EGP",
+            Self::ERN => "ERN",
             Self::ETB => "ETB",
             Self::EUR => "EUR",
             Self::FJD => "FJD",
@@ -803,6 +806,7 @@ impl TryFrom<&str> for CurrencyCode {
             "DOP" => Ok(Self::DOP),
             "DZD" => Ok(Self::DZD),
             "EGP" => Ok(Self::EGP),
+            "ERN" => Ok(Self::ERN),
             "ETB" => Ok(Self::ETB),
             "EUR" => Ok(Self::EUR),
             "FJD" => Ok(Self::FJD),
@@ -968,6 +972,7 @@ impl CurrencyCode {
             Self::DOP => iso_currency::Currency::DOP,
             Self::DZD => iso_currency::Currency::DZD,
             Self::EGP => iso_currency::Currency::EGP,
+            Self::ERN => iso_currency::Currency::ERN,
             Self::ETB => iso_currency::Currency::ETB,
             Self::EUR => iso_currency::Currency::EUR,
             Self::FJD => iso_currency::Currency::FJD,

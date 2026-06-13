@@ -46,6 +46,7 @@ pub mod consts {
         "Congo (The Democratic Republic Of The)",
         "Democratic Republic of the Congo",
         "Congo, Democratic Republic of",
+        "Congo (Kinshasa)",
     ];
     pub const WORLD_REGION: WorldRegion = WorldRegion::EMEA;
     pub const G7_MEMBER: bool = false;
@@ -681,7 +682,7 @@ pub fn new() -> Country {
         start_of_week: WeekDay::Monday,
         maybe_subregion: Some(SubRegion::MiddleAfrica),
         un_locode: "CD",
-        unofficial_name_list: ["Congo (Dem. Rep.)", "Kongo (Dem. Rep.)", "Congo (Rep. Dem.)", "コンゴ民主共和国", "Congo [DRC]", "Congo (The Democratic Republic Of The)", "Democratic Republic of the Congo", "Congo, Democratic Republic of"].to_vec(),
+        unofficial_name_list: ["Congo (Dem. Rep.)", "Kongo (Dem. Rep.)", "Congo (Rep. Dem.)", "コンゴ民主共和国", "Congo [DRC]", "Congo (The Democratic Republic Of The)", "Democratic Republic of the Congo", "Congo, Democratic Republic of", "Congo (Kinshasa)"].to_vec(),
         world_region: WorldRegion::EMEA,
         #[cfg(feature = "emojis")]
         emoji: "🇨🇩",

@@ -37,7 +37,7 @@ pub mod consts {
     pub const START_DAY_OF_WEEK: WeekDay = WeekDay::Monday;
     pub const SUBREGION: Option<SubRegion> = Some(SubRegion::SouthEasternAsia);
     pub const UN_LOCODE: &str = "MM";
-    pub const UNOFFICIAL_NAME_LIST: &[&str] = &["Myanmar (Burma)", "ミャンマー"];
+    pub const UNOFFICIAL_NAME_LIST: &[&str] = &["Myanmar (Burma)", "ミャンマー", "Burma"];
     pub const WORLD_REGION: WorldRegion = WorldRegion::APAC;
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
@@ -507,7 +507,7 @@ pub fn new() -> Country {
         start_of_week: WeekDay::Monday,
         maybe_subregion: Some(SubRegion::SouthEasternAsia),
         un_locode: "MM",
-        unofficial_name_list: ["Myanmar (Burma)", "ミャンマー"].to_vec(),
+        unofficial_name_list: ["Myanmar (Burma)", "ミャンマー", "Burma"].to_vec(),
         world_region: WorldRegion::APAC,
         #[cfg(feature = "emojis")]
         emoji: "🇲🇲",

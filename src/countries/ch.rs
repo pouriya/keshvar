@@ -25,8 +25,8 @@ pub mod consts {
     pub const IOC: Option<IOC> = Some(IOC::SUI);
     pub const ISO_SHORT_NAME: &str = "Switzerland";
     pub const ISO_LONG_NAME: &str = "The Swiss Confederation";
-    pub const OFFICIAL_LANGUAGE_LIST: &[&str] = &["de", "fr", "it"];
-    pub const SPOKEN_LANGUAGE_LIST: &[&str] = &["de", "fr", "it"];
+    pub const OFFICIAL_LANGUAGE_LIST: &[&str] = &["de", "fr", "it", "rm"];
+    pub const SPOKEN_LANGUAGE_LIST: &[&str] = &["de", "fr", "it", "rm"];
     pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: &[usize] = &[2];
     pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[9, 10];
     pub const NATIONAL_PREFIX: &str = "0";
@@ -673,8 +673,8 @@ pub fn new() -> Country {
         maybe_ioc: Some(IOC::SUI),
         iso_long_name: "The Swiss Confederation",
         iso_short_name: "Switzerland",
-        official_language_list: ["de", "fr", "it"].to_vec(),
-        spoken_language_list: ["de", "fr", "it"].to_vec(),
+        official_language_list: ["de", "fr", "it", "rm"].to_vec(),
+        spoken_language_list: ["de", "fr", "it", "rm"].to_vec(),
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [9, 10].to_vec(),
         national_prefix: "0",
@@ -845,8 +845,8 @@ pub fn new() -> Country {
         eu_member: false,
         eea_member: false,
         maybe_vat_rates: Some(VatRates {
-            standard: 7.7,
-            reduced: Vec::from([2.5, 3.7]),
+            standard: 8.1,
+            reduced: Vec::from([2.6, 3.8]),
             super_reduced: None,
             parking: None,
         }),
