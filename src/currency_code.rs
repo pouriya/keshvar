@@ -593,9 +593,9 @@ impl CurrencyCode {
     }
 }
 
-impl ToString for CurrencyCode {
-    fn to_string(&self) -> String {
-        match self {
+impl std::fmt::Display for CurrencyCode {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        f.write_str(match self {
             Self::AED => "AED",
             Self::AFN => "AFN",
             Self::ALL => "ALL",
@@ -748,8 +748,7 @@ impl ToString for CurrencyCode {
             Self::YER => "YER",
             Self::ZAR => "ZAR",
             Self::ZMW => "ZMW",
-        }
-        .to_string()
+        })
     }
 }
 

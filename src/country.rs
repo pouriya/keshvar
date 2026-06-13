@@ -145,27 +145,19 @@ impl Country {
     }
 
     pub fn maybe_official_language_list(&self) -> Option<&[&'static str]> {
-        self.maybe_official_language_list
-            .as_ref()
-            .map(|list| list.as_slice())
+        self.maybe_official_language_list.as_deref()
     }
 
     pub fn maybe_spoken_language_list(&self) -> Option<&[&'static str]> {
-        self.maybe_spoken_language_list
-            .as_ref()
-            .map(|list| list.as_slice())
+        self.maybe_spoken_language_list.as_deref()
     }
 
     pub fn maybe_national_destination_code_length_list(&self) -> Option<&[usize]> {
-        self.maybe_national_destination_code_length_list
-            .as_ref()
-            .map(|list| list.as_slice())
+        self.maybe_national_destination_code_length_list.as_deref()
     }
 
     pub fn maybe_national_number_length_list(&self) -> Option<&[u8]> {
-        self.maybe_national_number_length_list
-            .as_ref()
-            .map(|list| list.as_slice())
+        self.maybe_national_number_length_list.as_deref()
     }
 
     pub fn maybe_national_prefix(&self) -> Option<&'static str> {
@@ -546,9 +538,9 @@ impl TryFrom<&str> for WeekDay {
     }
 }
 
-impl ToString for WeekDay {
-    fn to_string(&self) -> String {
-        match self {
+impl std::fmt::Display for WeekDay {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        f.write_str(match self {
             Self::Monday => "Monday",
             Self::Tuesday => "Tuesday",
             Self::Wednesday => "Wednesday",
@@ -556,8 +548,7 @@ impl ToString for WeekDay {
             Self::Friday => "Friday",
             Self::Saturday => "Saturday",
             Self::Sunday => "Sunday",
-        }
-        .to_string()
+        })
     }
 }
 

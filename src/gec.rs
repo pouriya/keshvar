@@ -1513,9 +1513,9 @@ mod impls {
         }
     }
 
-    impl ToString for GEC {
-        fn to_string(&self) -> String {
-            match self {
+    impl std::fmt::Display for GEC {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            f.write_str(match self {
                 #[cfg(feature = "ad")] // The Principality of Andorra (Europe)
                 GEC::AN => "AN",
                 #[cfg(feature = "ae")] // The United Arab Emirates (Asia)
@@ -2011,8 +2011,7 @@ mod impls {
                 GEC::ZA => "ZA",
                 #[cfg(feature = "zw")] // The Republic of Zimbabwe (Africa)
                 GEC::ZI => "ZI",
-            }
-            .to_string()
+            })
         }
     }
 
@@ -2788,9 +2787,9 @@ mod impls {
         }
     }
 
-    impl ToString for GEC {
-        fn to_string(&self) -> String {
-            unimplemented!("No country feature with GEC code is used");
+    impl std::fmt::Display for GEC {
+        fn fmt(&self, _: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            unimplemented!("No country feature with GEC code is used")
         }
     }
 
