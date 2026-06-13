@@ -106,9 +106,9 @@ pub enum IOC {
 
     ioc_rs_file.write_all(
         r#"
-    impl ToString for IOC {
-        fn to_string(&self) -> String {
-            match self {
+    impl std::fmt::Display for IOC {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            f.write_str(match self {
 "#
         .as_bytes(),
     )?;
@@ -124,7 +124,7 @@ pub enum IOC {
         )?;
     }
     ioc_rs_file.write_all(
-        r#"            }.to_string()
+        r#"            })
         }
     }
 "#
@@ -191,9 +191,9 @@ pub enum IOC {
         }
     }
 
-    impl ToString for IOC {
-        fn to_string(&self) -> String {
-            unimplemented!("No country feature with IOC code is used");
+    impl std::fmt::Display for IOC {
+        fn fmt(&self, _: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            unimplemented!("No country feature with IOC code is used")
         }
     }
 

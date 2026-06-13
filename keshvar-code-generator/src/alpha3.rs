@@ -165,9 +165,9 @@ impl Alpha3 {
 
     alpha3_rs_file.write_all(
         r#"
-    impl ToString for Alpha3 {
-        fn to_string(&self) -> String {
-            match self {
+    impl std::fmt::Display for Alpha3 {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            f.write_str(match self {
 "#
         .as_bytes(),
     )?;
@@ -183,7 +183,7 @@ impl Alpha3 {
             .as_bytes(),
         )?;
     }
-    alpha3_rs_file.write_all("            }.to_string()\n        }\n    }\n".as_bytes())?;
+    alpha3_rs_file.write_all("            })\n        }\n    }\n".as_bytes())?;
 
     alpha3_rs_file.write_all(
         r#"
@@ -232,9 +232,9 @@ impl Alpha3 {
         }
     }
 
-    impl ToString for Alpha3 {
-        fn to_string(&self) -> String {
-            unimplemented!("No country feature is used");
+    impl std::fmt::Display for Alpha3 {
+        fn fmt(&self, _: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            unimplemented!("No country feature is used")
         }
     }
 

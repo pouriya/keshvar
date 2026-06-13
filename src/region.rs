@@ -337,9 +337,9 @@ impl TryFrom<&str> for Continent {
         }
     }
 }
-impl ToString for Continent {
-    fn to_string(&self) -> String {
-        match self {
+impl std::fmt::Display for Continent {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        f.write_str(match self {
             Self::Africa => "africa",
             Self::Antarctica => "antarctica",
             Self::Asia => "asia",
@@ -347,8 +347,7 @@ impl ToString for Continent {
             Self::Europe => "europe",
             Self::NorthAmerica => "north-america",
             Self::SouthAmerica => "south-america",
-        }
-        .to_string()
+        })
     }
 }
 
@@ -679,17 +678,16 @@ impl TryFrom<&str> for Region {
         }
     }
 }
-impl ToString for Region {
-    fn to_string(&self) -> String {
-        match self {
+impl std::fmt::Display for Region {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        f.write_str(match self {
             Self::Africa => "africa",
             Self::Americas => "americas",
             Self::Antarctica => "antarctica",
             Self::Asia => "asia",
             Self::Europe => "europe",
             Self::Oceania => "oceania",
-        }
-        .to_string()
+        })
     }
 }
 #[derive(Debug, Clone, Copy, PartialEq)]
@@ -1065,9 +1063,9 @@ impl TryFrom<&str> for SubRegion {
         }
     }
 }
-impl ToString for SubRegion {
-    fn to_string(&self) -> String {
-        match self {
+impl std::fmt::Display for SubRegion {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        f.write_str(match self {
             Self::AustraliaAndNewZealand => "australia-and-new-zealand",
             Self::Caribbean => "caribbean",
             Self::CentralAmerica => "central-america",
@@ -1090,8 +1088,7 @@ impl ToString for SubRegion {
             Self::WesternAfrica => "western-africa",
             Self::WesternAsia => "western-asia",
             Self::WesternEurope => "western-europe",
-        }
-        .to_string()
+        })
     }
 }
 #[derive(Debug, Clone, Copy, PartialEq)]
@@ -1412,14 +1409,13 @@ impl TryFrom<&str> for WorldRegion {
         }
     }
 }
-impl ToString for WorldRegion {
-    fn to_string(&self) -> String {
-        match self {
+impl std::fmt::Display for WorldRegion {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        f.write_str(match self {
             Self::AMER => "AMER",
             Self::APAC => "APAC",
             Self::EMEA => "EMEA",
-        }
-        .to_string()
+        })
     }
 }
 #[cfg(feature = "subdivisions")]
@@ -2036,9 +2032,9 @@ impl TryFrom<&str> for SubdivisionType {
     }
 }
 #[cfg(feature = "subdivisions")]
-impl ToString for SubdivisionType {
-    fn to_string(&self) -> String {
-        match self {
+impl std::fmt::Display for SubdivisionType {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        f.write_str(match self {
             Self::Administration => "administration",
             Self::AdministrativeAtoll => "administrative_atoll",
             Self::AdministrativePrecinct => "administrative_precinct",
@@ -2151,7 +2147,6 @@ impl ToString for SubdivisionType {
             Self::Voivodeship => "voivodeship",
             Self::Ward => "ward",
             Self::Zone => "zone",
-        }
-        .to_string()
+        })
     }
 }

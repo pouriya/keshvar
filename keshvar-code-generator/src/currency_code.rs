@@ -104,9 +104,9 @@ impl CurrencyCode {
 
     currency_code_rs_file.write_all(
         r#"
-impl ToString for CurrencyCode {
-    fn to_string(&self) -> String {
-        match self {
+impl std::fmt::Display for CurrencyCode {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        f.write_str(match self {
 "#
         .as_bytes(),
     )?;
@@ -121,7 +121,7 @@ impl ToString for CurrencyCode {
         )?;
     }
     currency_code_rs_file.write_all(
-        r#"        }.to_string()
+        r#"        })
     }
 }
 "#

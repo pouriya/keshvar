@@ -1604,9 +1604,9 @@ mod impls {
         }
     }
 
-    impl ToString for Alpha3 {
-        fn to_string(&self) -> String {
-            match self {
+    impl std::fmt::Display for Alpha3 {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            f.write_str(match self {
                 #[cfg(feature = "ad")] // The Principality of Andorra (Europe)
                 Alpha3::AND => "AND",
                 #[cfg(feature = "ae")] // The United Arab Emirates (Asia)
@@ -2108,8 +2108,7 @@ mod impls {
                 Alpha3::ZMB => "ZMB",
                 #[cfg(feature = "zw")] // The Republic of Zimbabwe (Africa)
                 Alpha3::ZWE => "ZWE",
-            }
-            .to_string()
+            })
         }
     }
 
@@ -2884,9 +2883,9 @@ mod impls {
         }
     }
 
-    impl ToString for Alpha3 {
-        fn to_string(&self) -> String {
-            unimplemented!("No country feature is used");
+    impl std::fmt::Display for Alpha3 {
+        fn fmt(&self, _: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            unimplemented!("No country feature is used")
         }
     }
 

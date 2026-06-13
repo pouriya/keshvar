@@ -1587,9 +1587,9 @@ mod impls {
         }
     }
 
-    impl ToString for Alpha2 {
-        fn to_string(&self) -> String {
-            match self {
+    impl std::fmt::Display for Alpha2 {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            f.write_str(match self {
                 #[cfg(feature = "ad")]
                 Alpha2::AD => "AD",
                 #[cfg(feature = "ae")]
@@ -2088,8 +2088,7 @@ mod impls {
                 Alpha2::ZM => "ZM",
                 #[cfg(feature = "zw")]
                 Alpha2::ZW => "ZW",
-            }
-            .to_string()
+            })
         }
     }
 
@@ -3882,9 +3881,9 @@ mod impls {
         }
     }
 
-    impl ToString for Alpha2 {
-        fn to_string(&self) -> String {
-            unimplemented!("No country feature is used");
+    impl std::fmt::Display for Alpha2 {
+        fn fmt(&self, _: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            unimplemented!("No country feature is used")
         }
     }
 
