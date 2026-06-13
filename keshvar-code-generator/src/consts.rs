@@ -19,6 +19,14 @@ pub fn generate(
     consts_rs_file
         .write_all(b"use crate::{Alpha2, Continent, Region, SubRegion, WorldRegion};\n")?;
     consts_rs_file.write_all(
+        r#"
+/// Total number of countries in the dataset.
+///
+/// This value is fixed and does not depend on which country features are enabled.
+"#
+        .as_bytes(),
+    )?;
+    consts_rs_file.write_all(
         format!(
             "pub const ALL_COUNTRIES_COUNT: usize = {};",
             countries_info_list.len()
@@ -27,7 +35,16 @@ pub fn generate(
     )?;
     consts_rs_file.write_all(
         r#"
+
+/// Number of countries included in the current build.
+///
+/// Computed from [`SUPPORTED_ALPHA2_LIST`], so its value depends on which
+/// country Cargo features (e.g. `us`, `de`, or `default`) are enabled.
 pub const SUPPORTED_COUNTRIES_COUNT: usize = SUPPORTED_ALPHA2_LIST.len();
+
+/// Number of countries in the dataset that are not included in the current build.
+///
+/// Equal to [`ALL_COUNTRIES_COUNT`] minus [`SUPPORTED_COUNTRIES_COUNT`].
 pub const UNSUPPORTED_COUNTRIES_COUNT: usize = ALL_COUNTRIES_COUNT - SUPPORTED_COUNTRIES_COUNT;
 "#
         .as_bytes(),
