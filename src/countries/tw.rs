@@ -39,7 +39,14 @@ pub mod consts {
     pub const SUBREGION: Option<SubRegion> = Some(SubRegion::EasternAsia);
     pub const UN_LOCODE: &str = "TW";
     pub const UN_MEMBER: bool = false;
-    pub const UNOFFICIAL_NAME_LIST: &[&str] = &["Taiwan", "Taiwán", "台灣", "臺灣", "台湾"];
+    pub const UNOFFICIAL_NAME_LIST: &[&str] = &[
+        "Taiwan, Province of China",
+        "Taiwan",
+        "Taiwán",
+        "台灣",
+        "臺灣",
+        "台湾",
+    ];
     pub const VEHICLE_REGISTRATION_CODE: Option<&str> = Some("RC");
     pub const WORLD_REGION: WorldRegion = WorldRegion::APAC;
     pub const G7_MEMBER: bool = false;
@@ -626,7 +633,15 @@ pub fn new() -> Country {
         maybe_subregion: Some(SubRegion::EasternAsia),
         un_locode: "TW",
         un_member: false,
-        unofficial_name_list: ["Taiwan", "Taiwán", "台灣", "臺灣", "台湾"].to_vec(),
+        unofficial_name_list: [
+            "Taiwan, Province of China",
+            "Taiwan",
+            "Taiwán",
+            "台灣",
+            "臺灣",
+            "台湾",
+        ]
+        .to_vec(),
         maybe_vehicle_registration_code: Some("RC"),
         world_region: WorldRegion::APAC,
         #[cfg(feature = "emojis")]

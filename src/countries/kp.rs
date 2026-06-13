@@ -39,6 +39,7 @@ pub mod consts {
     pub const UN_LOCODE: &str = "KP";
     pub const UN_MEMBER: bool = true;
     pub const UNOFFICIAL_NAME_LIST: &[&str] = &[
+        "Korea (Democratic People's Republic of)",
         "Korea (North)",
         "North Korea",
         "Nordkorea",
@@ -477,7 +478,7 @@ pub fn new() -> Country {
         maybe_subregion: Some(SubRegion::EasternAsia),
         un_locode: "KP",
         un_member: true,
-        unofficial_name_list: ["Korea (North)", "North Korea", "Nordkorea", "Corée du Nord", "Corea del Norte", "朝鮮民主主義人民共和国", "Noord-Korea", "Korea Democratic People's Republic", "Korea (Democratic People s Republic of)"].to_vec(),
+        unofficial_name_list: ["Korea (Democratic People's Republic of)", "Korea (North)", "North Korea", "Nordkorea", "Corée du Nord", "Corea del Norte", "朝鮮民主主義人民共和国", "Noord-Korea", "Korea Democratic People's Republic", "Korea (Democratic People s Republic of)"].to_vec(),
         maybe_vehicle_registration_code: Some("KP"),
         world_region: WorldRegion::APAC,
         #[cfg(feature = "emojis")]

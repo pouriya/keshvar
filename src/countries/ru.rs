@@ -41,6 +41,7 @@ pub mod consts {
     pub const UN_MEMBER: bool = true;
     pub const UNOFFICIAL_NAME_LIST: &[&str] = &[
         "Russia",
+        "Russian Federation",
         "Russland",
         "Russie",
         "Rusia",
@@ -1553,6 +1554,7 @@ pub fn new() -> Country {
         un_member: true,
         unofficial_name_list: [
             "Russia",
+            "Russian Federation",
             "Russland",
             "Russie",
             "Rusia",

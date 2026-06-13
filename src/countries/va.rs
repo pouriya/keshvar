@@ -29,7 +29,7 @@ pub mod consts {
     pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: Option<&[usize]> = Some(&[3]);
     pub const NATIONAL_NUMBER_LENGTH_LIST: Option<&[usize]> = Some(&[9]);
     pub const NATIONAL_PREFIX: Option<&str> = Some("None");
-    pub const NATIONALITY: Option<&str> = Some("Italian");
+    pub const NATIONALITY: Option<&str> = Some("Vatican Citizen");
     pub const NUMBER: &str = "336";
     pub const POSTAL_CODE: bool = true;
     pub const POSTAL_CODE_FORMAT: Option<&str> = Some("00120");
@@ -40,6 +40,7 @@ pub mod consts {
     pub const UN_MEMBER: bool = false;
     pub const UNOFFICIAL_NAME_LIST: &[&str] = &[
         "Vatican City",
+        "Holy See",
         "Vatikan",
         "Cité du Vatican",
         "Ciudad del Vaticano",
@@ -280,7 +281,7 @@ pub fn new() -> Country {
         maybe_national_destination_code_length_list: Some([3].to_vec()),
         maybe_national_number_length_list: Some([9].to_vec()),
         maybe_national_prefix: Some("None"),
-        maybe_nationality: Some("Italian"),
+        maybe_nationality: Some("Vatican Citizen"),
         maybe_nanp_prefix: Some("379"),
         number: "336",
         postal_code: true,
@@ -290,7 +291,7 @@ pub fn new() -> Country {
         maybe_subregion: Some(SubRegion::SouthernEurope),
         un_locode: "VA",
         un_member: false,
-        unofficial_name_list: ["Vatican City", "Vatikan", "Cité du Vatican", "Ciudad del Vaticano", "バチカン市国", "Vaticaanstad", "Vatican City State (Holy See)"].to_vec(),
+        unofficial_name_list: ["Vatican City", "Holy See", "Vatikan", "Cité du Vatican", "Ciudad del Vaticano", "バチカン市国", "Vaticaanstad", "Vatican City State (Holy See)"].to_vec(),
         maybe_vehicle_registration_code: Some("V"),
         world_region: WorldRegion::EMEA,
         #[cfg(feature = "emojis")]

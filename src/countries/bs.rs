@@ -38,7 +38,7 @@ pub mod consts {
     pub const SUBREGION: Option<SubRegion> = Some(SubRegion::Caribbean);
     pub const UN_LOCODE: &str = "BS";
     pub const UN_MEMBER: bool = true;
-    pub const UNOFFICIAL_NAME_LIST: &[&str] = &["The Bahamas", "バハマ"];
+    pub const UNOFFICIAL_NAME_LIST: &[&str] = &["Bahamas", "The Bahamas", "バハマ"];
     pub const VEHICLE_REGISTRATION_CODE: Option<&str> = Some("BS");
     pub const WORLD_REGION: WorldRegion = WorldRegion::AMER;
     pub const G7_MEMBER: bool = false;
@@ -767,7 +767,7 @@ pub fn new() -> Country {
         maybe_subregion: Some(SubRegion::Caribbean),
         un_locode: "BS",
         un_member: true,
-        unofficial_name_list: ["The Bahamas", "バハマ"].to_vec(),
+        unofficial_name_list: ["Bahamas", "The Bahamas", "バハマ"].to_vec(),
         maybe_vehicle_registration_code: Some("BS"),
         world_region: WorldRegion::AMER,
         #[cfg(feature = "emojis")]
