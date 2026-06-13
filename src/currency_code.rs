@@ -55,8 +55,6 @@ pub enum CurrencyCode {
     BBD,
     /// * The People's Republic of Bangladesh (Asia)
     BDT,
-    /// * The Republic of Bulgaria (Europe)
-    BGN,
     /// * The Kingdom of Bahrain (Asia)
     BHD,
     /// * The Republic of Burundi (Africa)
@@ -120,6 +118,7 @@ pub enum CurrencyCode {
     /// * The Republic of Austria (Europe)
     /// * Åland (Europe)
     /// * The Kingdom of Belgium (Europe)
+    /// * The Republic of Bulgaria (Europe)
     /// * The Collectivity of Saint-Barthélemy (Americas)
     /// * The Republic of Cyprus (Asia)
     /// * The Federal Republic of Germany (Europe)
@@ -443,7 +442,6 @@ impl CurrencyCode {
             Self::BAM => &["BA"],
             Self::BBD => &["BB"],
             Self::BDT => &["BD"],
-            Self::BGN => &["BG"],
             Self::BHD => &["BH"],
             Self::BIF => &["BI"],
             Self::BMD => &["BM"],
@@ -473,9 +471,9 @@ impl CurrencyCode {
             Self::ERN => &["ER"],
             Self::ETB => &["ET"],
             Self::EUR => &[
-                "AD", "AT", "AX", "BE", "BL", "CY", "DE", "EE", "ES", "FI", "FR", "GF", "GP", "GR",
-                "HR", "IE", "IT", "LT", "LU", "LV", "MC", "ME", "MF", "MQ", "MT", "NL", "PM", "PT",
-                "RE", "SI", "SK", "SM", "TF", "VA", "YT",
+                "AD", "AT", "AX", "BE", "BG", "BL", "CY", "DE", "EE", "ES", "FI", "FR", "GF", "GP",
+                "GR", "HR", "IE", "IT", "LT", "LU", "LV", "MC", "ME", "MF", "MQ", "MT", "NL", "PM",
+                "PT", "RE", "SI", "SK", "SM", "TF", "VA", "YT",
             ],
             Self::FJD => &["FJ"],
             Self::FKP => &["FK"],
@@ -610,7 +608,6 @@ impl ToString for CurrencyCode {
             Self::BAM => "BAM",
             Self::BBD => "BBD",
             Self::BDT => "BDT",
-            Self::BGN => "BGN",
             Self::BHD => "BHD",
             Self::BIF => "BIF",
             Self::BMD => "BMD",
@@ -778,7 +775,6 @@ impl TryFrom<&str> for CurrencyCode {
             "BAM" => Ok(Self::BAM),
             "BBD" => Ok(Self::BBD),
             "BDT" => Ok(Self::BDT),
-            "BGN" => Ok(Self::BGN),
             "BHD" => Ok(Self::BHD),
             "BIF" => Ok(Self::BIF),
             "BMD" => Ok(Self::BMD),
@@ -944,7 +940,6 @@ impl CurrencyCode {
             Self::BAM => iso_currency::Currency::BAM,
             Self::BBD => iso_currency::Currency::BBD,
             Self::BDT => iso_currency::Currency::BDT,
-            Self::BGN => iso_currency::Currency::BGN,
             Self::BHD => iso_currency::Currency::BHD,
             Self::BIF => iso_currency::Currency::BIF,
             Self::BMD => iso_currency::Currency::BMD,

@@ -2959,6 +2959,8 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     #[cfg(feature = "bs")] // The Commonwealth of The Bahamas (Americas)
     ("bahamas", Alpha2::BS),
     #[cfg(feature = "bs")] // The Commonwealth of The Bahamas (Americas)
+    ("bahamas", Alpha2::BS),
+    #[cfg(feature = "bs")] // The Commonwealth of The Bahamas (Americas)
     ("bahamasi", Alpha2::BS),
     #[cfg(feature = "bs")] // The Commonwealth of The Bahamas (Americas)
     ("bahames", Alpha2::BS),
@@ -6517,8 +6519,6 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     #[cfg(feature = "cv")] // The Republic of Cabo Verde (Africa)
     ("cabo verde", Alpha2::CV),
     #[cfg(feature = "cv")] // The Republic of Cabo Verde (Africa)
-    ("cabo verde", Alpha2::CV),
-    #[cfg(feature = "cv")] // The Republic of Cabo Verde (Africa)
     ("cabu birde", Alpha2::CV),
     #[cfg(feature = "td")] // The Republic of Chad (Africa)
     ("cad", Alpha2::TD),
@@ -7827,11 +7827,11 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     #[cfg(feature = "cd")] // The Democratic Republic of the Congo (Africa)
     ("congo (democratic republic of the)", Alpha2::CD),
     #[cfg(feature = "cd")] // The Democratic Republic of the Congo (Africa)
+    ("congo (democratic republic of the)", Alpha2::CD),
+    #[cfg(feature = "cd")] // The Democratic Republic of the Congo (Africa)
     ("congo (kinshasa)", Alpha2::CD),
     #[cfg(feature = "cd")] // The Democratic Republic of the Congo (Africa)
     ("congo (rep. dem.)", Alpha2::CD),
-    #[cfg(feature = "cd")] // The Democratic Republic of the Congo (Africa)
-    ("congo (the democratic republic of the)", Alpha2::CD),
     #[cfg(feature = "cd")] // The Democratic Republic of the Congo (Africa)
     ("congo [drc]", Alpha2::CD),
     #[cfg(feature = "cg")] // The Republic of the Congo (Africa)
@@ -8684,8 +8684,6 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("czarnogóra", Alpha2::ME),
     #[cfg(feature = "cz")] // The Czech Republic (Europe)
     ("czech republic", Alpha2::CZ),
-    #[cfg(feature = "cz")] // The Czech Republic (Europe)
-    ("czechia", Alpha2::CZ),
     #[cfg(feature = "cz")] // The Czech Republic (Europe)
     ("czechia", Alpha2::CZ),
     #[cfg(feature = "cz")] // The Czech Republic (Europe)
@@ -10981,8 +10979,6 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     #[cfg(feature = "sz")] // The Kingdom of Eswatini (Africa)
     ("eswatini", Alpha2::SZ),
     #[cfg(feature = "sz")] // The Kingdom of Eswatini (Africa)
-    ("eswatini", Alpha2::SZ),
-    #[cfg(feature = "sz")] // The Kingdom of Eswatini (Africa)
     ("eswatini (tidligere swasiland)", Alpha2::SZ),
     #[cfg(feature = "us")] // The United States of America (Americas)
     ("etazini", Alpha2::US),
@@ -11274,6 +11270,8 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("falkland islands (malvinas)", Alpha2::FK),
     #[cfg(feature = "fk")] // The Falkland Islands (Americas)
     ("falkland islands (malvinas)", Alpha2::FK),
+    #[cfg(feature = "fk")] // The Falkland Islands (Americas)
+    ("falkland islands [malvinas]", Alpha2::FK),
     #[cfg(feature = "fk")] // The Falkland Islands (Americas)
     ("falkland uharteak (malvina uharteak)", Alpha2::FK),
     #[cfg(feature = "fk")] // The Falkland Islands (Americas)
@@ -12616,6 +12614,8 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("gajāna", Alpha2::GY),
     #[cfg(feature = "gm")] // The Republic of The Gambia (Africa)
     ("gambeye", Alpha2::GM),
+    #[cfg(feature = "gm")] // The Republic of The Gambia (Africa)
+    ("gambia", Alpha2::GM),
     #[cfg(feature = "gm")] // The Republic of The Gambia (Africa)
     ("gambia", Alpha2::GM),
     #[cfg(feature = "gm")] // The Republic of The Gambia (Africa)
@@ -15692,6 +15692,8 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("hollandia", Alpha2::NL),
     #[cfg(feature = "nl")] // The Kingdom of the Netherlands (Europe)
     ("hollandiya", Alpha2::NL),
+    #[cfg(feature = "va")] // The Holy See (Europe)
+    ("holy see", Alpha2::VA),
     #[cfg(feature = "va")] // The Holy See (Europe)
     ("holy see", Alpha2::VA),
     #[cfg(feature = "va")] // The Holy See (Europe)
@@ -20615,6 +20617,8 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     #[cfg(feature = "kp")] // The Democratic People's Republic of Korea (Asia)
     ("korea (democratic people's republic of)", Alpha2::KP),
     #[cfg(feature = "kp")] // The Democratic People's Republic of Korea (Asia)
+    ("korea (democratic people's republic of)", Alpha2::KP),
+    #[cfg(feature = "kp")] // The Democratic People's Republic of Korea (Asia)
     ("korea (gweriniaeth democrataidd pobl)", Alpha2::KP),
     #[cfg(feature = "kp")] // The Democratic People's Republic of Korea (Asia)
     ("korea (north)", Alpha2::KP),
@@ -25487,6 +25491,8 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     #[cfg(feature = "md")] // The Republic of Moldova (Europe)
     ("moldova (republic of)", Alpha2::MD),
     #[cfg(feature = "md")] // The Republic of Moldova (Europe)
+    ("moldova (republic of)", Alpha2::MD),
+    #[cfg(feature = "md")] // The Republic of Moldova (Europe)
     ("moldowa", Alpha2::MD),
     #[cfg(feature = "md")] // The Republic of Moldova (Europe)
     ("moldufiniya", Alpha2::MD),
@@ -28376,8 +28382,6 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("north korea", Alpha2::KP),
     #[cfg(feature = "kp")] // The Democratic People's Republic of Korea (Asia)
     ("north korea", Alpha2::KP),
-    #[cfg(feature = "mk")] // The Republic of North Macedonia (Europe)
-    ("north macedonia", Alpha2::MK),
     #[cfg(feature = "mk")] // The Republic of North Macedonia (Europe)
     ("north macedonia", Alpha2::MK),
     #[cfg(feature = "mk")] // The Republic of North Macedonia (Europe)
@@ -32180,6 +32184,8 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("russia", Alpha2::RU),
     #[cfg(feature = "ru")] // The Russian Federation (Europe)
     ("russia", Alpha2::RU),
+    #[cfg(feature = "ru")] // The Russian Federation (Europe)
+    ("russian federation", Alpha2::RU),
     #[cfg(feature = "ru")] // The Russian Federation (Europe)
     ("russian federation", Alpha2::RU),
     #[cfg(feature = "ru")] // The Russian Federation (Europe)
@@ -38221,6 +38227,8 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("taiwan, province of china", Alpha2::TW),
     #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
+    ("taiwan, province of china", Alpha2::TW),
+    #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("taiwana", Alpha2::TW),
     #[cfg(feature = "tw")] // Taiwan, Province of China (Asia)
     ("taiwán", Alpha2::TW),
@@ -41500,6 +41508,8 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("united kingdom", Alpha2::GB),
     #[cfg(feature = "gb")] // The United Kingdom of Great Britain and Northern Ireland (Europe)
     ("united kingdom of great britain and northern ireland", Alpha2::GB),
+    #[cfg(feature = "gb")] // The United Kingdom of Great Britain and Northern Ireland (Europe)
+    ("united kingdom of great britain and northern ireland", Alpha2::GB),
     #[cfg(feature = "us")] // The United States of America (Americas)
     ("united states", Alpha2::US),
     #[cfg(feature = "us")] // The United States of America (Americas)
@@ -41680,6 +41690,8 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("united states minor outlying islands", Alpha2::UM),
     #[cfg(feature = "um")] // United States Minor Outlying Islands (Americas)
     ("united states minor outlying islands", Alpha2::UM),
+    #[cfg(feature = "us")] // The United States of America (Americas)
+    ("united states of america", Alpha2::US),
     #[cfg(feature = "us")] // The United States of America (Americas)
     ("united states of america", Alpha2::US),
     #[cfg(feature = "vi")] // The Virgin Islands of the United States (Americas)
@@ -46886,8 +46898,6 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("девствени острови, сад", Alpha2::VI),
     #[cfg(feature = "cd")] // The Democratic Republic of the Congo (Africa)
     ("демократическая республика конго", Alpha2::CD),
-    #[cfg(feature = "la")] // The Lao People's Democratic Republic (Asia)
-    ("демократична република на народа на лао", Alpha2::LA),
     #[cfg(feature = "je")] // The Bailiwick of Jersey (Europe)
     ("джерси", Alpha2::JE),
     #[cfg(feature = "je")] // The Bailiwick of Jersey (Europe)
@@ -47028,6 +47038,8 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("еритреја", Alpha2::ER),
     #[cfg(feature = "am")] // The Republic of Armenia (Asia)
     ("ерменија", Alpha2::AM),
+    #[cfg(feature = "sz")] // The Kingdom of Eswatini (Africa)
+    ("есватини", Alpha2::SZ),
     #[cfg(feature = "sz")] // The Kingdom of Eswatini (Africa)
     ("есватини", Alpha2::SZ),
     #[cfg(feature = "sz")] // The Kingdom of Eswatini (Africa)
@@ -47364,6 +47376,8 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("йорданія", Alpha2::JO),
     #[cfg(feature = "cv")] // The Republic of Cabo Verde (Africa)
     ("каба-вердэ", Alpha2::CV),
+    #[cfg(feature = "cv")] // The Republic of Cabo Verde (Africa)
+    ("кабо верде", Alpha2::CV),
     #[cfg(feature = "cv")] // The Republic of Cabo Verde (Africa)
     ("кабо-верде", Alpha2::CV),
     #[cfg(feature = "cv")] // The Republic of Cabo Verde (Africa)
@@ -47932,6 +47946,8 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("күвәйт", Alpha2::KW),
     #[cfg(feature = "za")] // The Republic of South Africa (Africa)
     ("көняк африка", Alpha2::ZA),
+    #[cfg(feature = "la")] // The Lao People's Democratic Republic (Asia)
+    ("лаос", Alpha2::LA),
     #[cfg(feature = "la")] // The Lao People's Democratic Republic (Asia)
     ("лаос халық демократиялық республикасы", Alpha2::LA),
     #[cfg(feature = "la")] // The Lao People's Democratic Republic (Asia)
@@ -49735,6 +49751,8 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     #[cfg(feature = "va")] // The Holy See (Europe)
     ("святы прастол (ватыкан)", Alpha2::VA),
     #[cfg(feature = "mk")] // The Republic of North Macedonia (Europe)
+    ("северна македония", Alpha2::MK),
+    #[cfg(feature = "mk")] // The Republic of North Macedonia (Europe)
     ("северна македонија", Alpha2::MK),
     #[cfg(feature = "mk")] // The Republic of North Macedonia (Europe)
     ("северна македонија", Alpha2::MK),
@@ -50992,6 +51010,8 @@ lazy_static! { pub static ref SUPPORTED_COUNTRY_TRANSLATED_NAMES: HashMap<&'stat
     ("черногория", Alpha2::ME),
     #[cfg(feature = "me")] // Montenegro (Europe)
     ("черногория", Alpha2::ME),
+    #[cfg(feature = "cz")] // The Czech Republic (Europe)
+    ("чехия", Alpha2::CZ),
     #[cfg(feature = "cz")] // The Czech Republic (Europe)
     ("чехия", Alpha2::CZ),
     #[cfg(feature = "cz")] // The Czech Republic (Europe)

@@ -42,6 +42,7 @@ pub mod consts {
     pub const UNOFFICIAL_NAME_LIST: &[&str] = &[
         "United Kingdom",
         "The United Kingdom",
+        "United Kingdom of Great Britain and Northern Ireland",
         "England",
         "Großbritannien",
         "Vereinigtes Königreich",
@@ -3617,7 +3618,7 @@ pub fn new() -> Country {
         maybe_subregion: Some(SubRegion::NorthernEurope),
         un_locode: "GB",
         un_member: true,
-        unofficial_name_list: ["United Kingdom", "The United Kingdom", "England", "Großbritannien", "Vereinigtes Königreich", "Royaume-Uni", "Reino Unido", "イギリス", "Verenigd Koninkrijk", "Great Britain (UK)", "UK", "Великобритания", "Velká Británie", "İngiltere", "Великобританія", "Great Britain"].to_vec(),
+        unofficial_name_list: ["United Kingdom", "The United Kingdom", "United Kingdom of Great Britain and Northern Ireland", "England", "Großbritannien", "Vereinigtes Königreich", "Royaume-Uni", "Reino Unido", "イギリス", "Verenigd Koninkrijk", "Great Britain (UK)", "UK", "Великобритания", "Velká Británie", "İngiltere", "Великобританія", "Great Britain"].to_vec(),
         maybe_vehicle_registration_code: Some("UK"),
         world_region: WorldRegion::EMEA,
         #[cfg(feature = "emojis")]

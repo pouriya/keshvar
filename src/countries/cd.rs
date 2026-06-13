@@ -39,12 +39,12 @@ pub mod consts {
     pub const UN_LOCODE: &str = "CD";
     pub const UN_MEMBER: bool = true;
     pub const UNOFFICIAL_NAME_LIST: &[&str] = &[
+        "Congo (Democratic Republic of the)",
         "Congo (Dem. Rep.)",
         "Kongo (Dem. Rep.)",
         "Congo (Rep. Dem.)",
         "コンゴ民主共和国",
         "Congo [DRC]",
-        "Congo (The Democratic Republic Of The)",
         "Democratic Republic of the Congo",
         "Congo, Democratic Republic of",
         "Congo (Kinshasa)",
@@ -687,7 +687,7 @@ pub fn new() -> Country {
         maybe_subregion: Some(SubRegion::MiddleAfrica),
         un_locode: "CD",
         un_member: true,
-        unofficial_name_list: ["Congo (Dem. Rep.)", "Kongo (Dem. Rep.)", "Congo (Rep. Dem.)", "コンゴ民主共和国", "Congo [DRC]", "Congo (The Democratic Republic Of The)", "Democratic Republic of the Congo", "Congo, Democratic Republic of", "Congo (Kinshasa)"].to_vec(),
+        unofficial_name_list: ["Congo (Democratic Republic of the)", "Congo (Dem. Rep.)", "Kongo (Dem. Rep.)", "Congo (Rep. Dem.)", "コンゴ民主共和国", "Congo [DRC]", "Democratic Republic of the Congo", "Congo, Democratic Republic of", "Congo (Kinshasa)"].to_vec(),
         maybe_vehicle_registration_code: Some("CGO"),
         world_region: WorldRegion::EMEA,
         #[cfg(feature = "emojis")]

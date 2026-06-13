@@ -1985,7 +1985,7 @@ pub mod subdivisions {
                 (
                     "NC",
                     Subdivision{
-                        name: "New Caledonia",
+                        name: "Nouvelle-Calédonie",
                         country_alpha2: Alpha2::FR,
                         code: "NC",
                         #[cfg(feature = "geo")]

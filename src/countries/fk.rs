@@ -40,6 +40,7 @@ pub mod consts {
     pub const UN_MEMBER: bool = false;
     pub const UNOFFICIAL_NAME_LIST: &[&str] = &[
         "Falkland Islands",
+        "Falkland Islands [Malvinas]",
         "Falklandinseln",
         "Îles Malouines",
         "Islas Malvinas",
@@ -289,7 +290,7 @@ pub fn new() -> Country {
         maybe_subregion: Some(SubRegion::SouthAmerica),
         un_locode: "FK",
         un_member: false,
-        unofficial_name_list: ["Falkland Islands", "Falklandinseln", "Îles Malouines", "Islas Malvinas", "フォークランド（マルビナス）諸島", "Falklandeilanden [Islas Malvinas]"].to_vec(),
+        unofficial_name_list: ["Falkland Islands", "Falkland Islands [Malvinas]", "Falklandinseln", "Îles Malouines", "Islas Malvinas", "フォークランド（マルビナス）諸島", "Falklandeilanden [Islas Malvinas]"].to_vec(),
         maybe_vehicle_registration_code: None,
         world_region: WorldRegion::AMER,
         #[cfg(feature = "emojis")]
