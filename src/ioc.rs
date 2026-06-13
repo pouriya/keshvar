@@ -333,7 +333,7 @@ pub enum IOC {
     LAO,
     #[cfg(feature = "lb")]
     /// The Lebanese Republic (Asia)
-    LIB,
+    LBN,
     #[cfg(feature = "lc")]
     /// Saint Lucia (Americas)
     LCA,
@@ -1059,7 +1059,7 @@ mod impls {
                 #[cfg(feature = "la")] // The Lao People's Democratic Republic (Asia)
                 IOC::LAO => Alpha2::LA,
                 #[cfg(feature = "lb")] // The Lebanese Republic (Asia)
-                IOC::LIB => Alpha2::LB,
+                IOC::LBN => Alpha2::LB,
                 #[cfg(feature = "lc")] // Saint Lucia (Americas)
                 IOC::LCA => Alpha2::LC,
                 #[cfg(feature = "li")] // The Principality of Liechtenstein (Europe)
@@ -1482,7 +1482,7 @@ mod impls {
                 #[cfg(feature = "la")] // The Lao People's Democratic Republic (Asia)
                 IOC::LAO => "LAO",
                 #[cfg(feature = "lb")] // The Lebanese Republic (Asia)
-                IOC::LIB => "LIB",
+                IOC::LBN => "LBN",
                 #[cfg(feature = "lc")] // Saint Lucia (Americas)
                 IOC::LCA => "LCA",
                 #[cfg(feature = "li")] // The Principality of Liechtenstein (Europe)
@@ -1909,7 +1909,7 @@ mod impls {
                 #[cfg(feature = "la")] // The Lao People's Democratic Republic (Asia)
                 "LAO" => Ok(IOC::LAO),
                 #[cfg(feature = "lb")] // The Lebanese Republic (Asia)
-                "LIB" => Ok(IOC::LIB),
+                "LBN" => Ok(IOC::LBN),
                 #[cfg(feature = "lc")] // Saint Lucia (Americas)
                 "LCA" => Ok(IOC::LCA),
                 #[cfg(feature = "li")] // The Principality of Liechtenstein (Europe)

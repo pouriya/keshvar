@@ -119,7 +119,7 @@ pub mod consts {
         ("kk", "Мальдив аралдары"),
         ("kl", "Maldives"),
         ("km", "ម\u{17c9}ាល\u{17cb}ឌ\u{17b8}វ"),
-        ("kn", "ಮಾಲ\u{ccd}ಡೀವ\u{ccd}ಸ\u{ccd}"),
+        ("kn", "ಮಾಲ\u{ccd}ಡ\u{cc0}ವ\u{ccd}ಸ\u{ccd}"),
         ("ko", "몰디브"),
         ("ku", "Giravên Maldiv"),
         ("kv", "Мальдивъяс"),
@@ -380,7 +380,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::AdministrativeAtoll,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "ميمو أتول"), ("bn", "মেমো আটল"), ("ccp", "𑄟\u{11128}𑄟\u{1112a}"), ("ceb", "Meemu Atholhu"), ("da", "Meemu Atoll"), ("de", "Mulaku-Atoll"), ("dv", "Mulakatholhu"), ("el", "Μέμου Ατόλ"), ("en", "Mulaku Atoll"), ("es", "Atolón Meemu"), ("fi", "Meemu Atoll"), ("fr", "Atoll Mulaku"), ("gu", "અબખાઝિયા"), ("hi", "मीम\u{941} एटोल"), ("hu", "Mulaku-atoll"), ("id", "Atol Meemu"), ("it", "Atollo Meemu"), ("ja", "ミーム環礁"), ("kn", "ಮೀಮು ಅಟಾಲ\u{ccd}"), ("ko", "미무 환초"), ("lt", "Memu atolas"), ("lv", "Meemu atols"), ("mr", "म\u{947}म\u{942} एटोल"), ("ms", "Meemu Atoll"), ("nb", "Meemu Atoll"), ("nl", "Meemu-atol"), ("no", "Meemu Atoll"), ("pl", "Meemu"), ("pt", "Meemu Atoll"), ("ru", "Меему"), ("si", "ම\u{dd3}ම\u{dd4} ද\u{dd4}පත\u{dca} සම\u{dd4}හය"), ("sk", "Mímu"), ("sv", "Meemu Atholhu"), ("ta", "ம\u{bc0}மு அடோல\u{bcd}"), ("te", "మ\u{c40}ము ఆట\u{c4b}ల\u{c4d}"), ("th", "ม\u{e35}ม\u{e38} ม\u{e31}ลด\u{e35}ฟส\u{e4c}"), ("tr", "Meemu Atoll"), ("uk", "Атол Меему"), ("ur", "مییمو اتول"), ("vi", "Meemu Atoll"), ("zh", "美慕環礁")]),
+                        translations: HashMap::from([("ar", "ميمو أتول"), ("bn", "মেমো আটল"), ("ccp", "𑄟\u{11128}𑄟\u{1112a}"), ("ceb", "Meemu Atholhu"), ("da", "Meemu Atoll"), ("de", "Mulaku-Atoll"), ("dv", "Mulakatholhu"), ("el", "Μέμου Ατόλ"), ("en", "Mulaku Atoll"), ("es", "Atolón Meemu"), ("fi", "Meemu Atoll"), ("fr", "Atoll Mulaku"), ("gu", "અબખાઝિયા"), ("hi", "मीम\u{941} एटोल"), ("hu", "Mulaku-atoll"), ("id", "Atol Meemu"), ("it", "Atollo Meemu"), ("ja", "ミーム環礁"), ("kn", "ಮ\u{cc0}ಮು ಅಟಾಲ\u{ccd}"), ("ko", "미무 환초"), ("lt", "Memu atolas"), ("lv", "Meemu atols"), ("mr", "म\u{947}म\u{942} एटोल"), ("ms", "Meemu Atoll"), ("nb", "Meemu Atoll"), ("nl", "Meemu-atol"), ("no", "Meemu Atoll"), ("pl", "Meemu"), ("pt", "Meemu Atoll"), ("ru", "Меему"), ("si", "ම\u{dd3}ම\u{dd4} ද\u{dd4}පත\u{dca} සම\u{dd4}හය"), ("sk", "Mímu"), ("sv", "Meemu Atholhu"), ("ta", "ம\u{bc0}மு அடோல\u{bcd}"), ("te", "మ\u{c40}ము ఆట\u{c4b}ల\u{c4d}"), ("th", "ม\u{e35}ม\u{e38} ม\u{e31}ลด\u{e35}ฟส\u{e4c}"), ("tr", "Meemu Atoll"), ("uk", "Атол Меему"), ("ur", "مییمو اتول"), ("vi", "Meemu Atoll"), ("zh", "美慕環礁")]),
                         unofficial_name_list: ["Meemu", "Mimu", "Mulakatholhu", "Mulaku", "Mulaku Atholhu", "Mîm"].to_vec(),
                     }
                 ),
@@ -683,7 +683,7 @@ pub fn new() -> Country {
             ("kk", "Мальдив аралдары"),
             ("kl", "Maldives"),
             ("km", "ម\u{17c9}ាល\u{17cb}ឌ\u{17b8}វ"),
-            ("kn", "ಮಾಲ\u{ccd}ಡೀವ\u{ccd}ಸ\u{ccd}"),
+            ("kn", "ಮಾಲ\u{ccd}ಡ\u{cc0}ವ\u{ccd}ಸ\u{ccd}"),
             ("ko", "몰디브"),
             ("ku", "Giravên Maldiv"),
             ("kv", "Мальдивъяс"),
